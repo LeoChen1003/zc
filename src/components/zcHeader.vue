@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <div class="header headerW">
     <div class="header_logo">
       utzc
     </div>
@@ -12,12 +12,18 @@
     <div class="header_btn">
       联系我们
     </div>
+    <div class=""></div>
   </div>
+
 </template>
 
 <script>
 export default {
   props: {
+  },
+  data () {
+    return {
+    }
   }
 }
 </script>
@@ -28,11 +34,9 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #000;
   width: 100%;
   padding: 0 22.2rem;
   box-sizing: border-box;
-  color: #fff;
   height: 3rem;
   line-height: 3rem;
   box-shadow: 0rem -0.06rem 0rem 0rem;
@@ -55,6 +59,28 @@ export default {
     background: rgba(255, 255, 255, 1);
     border-radius: 1rem;
     cursor: pointer;
+  }
+}
+.headerB {
+  color: #fff;
+  background: #000;
+  .header_navbar {
+    color: #a2a6ac;
+  }
+  .header_btn {
+    color: #000;
+    background: rgba(255, 255, 255, 1);
+  }
+}
+.headerW {
+  color: #333;
+  background: #fff;
+  .header_navbar {
+    color: #a2a6ac;
+  }
+  .header_btn {
+    color: #fff;
+    background: rgba(0, 0, 0, 1);
   }
 }
 </style>

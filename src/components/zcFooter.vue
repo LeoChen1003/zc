@@ -36,8 +36,13 @@
           <div>客服联系电话</div>
           <div>周一至周日 8:00-20:00</div>
         </div>
-        <div>
+        <div class="footer_right_about">
           <span>关注我们：</span>
+          <svg-icon icon-class="homeWeixin"
+                    style="margin-right:1rem;"
+                    class-name="svg_size"></svg-icon>
+          <svg-icon icon-class="homeWeibo"
+                    class-name="svg_size"></svg-icon>
         </div>
       </div>
     </div>
@@ -92,6 +97,18 @@ export default {
     margin-bottom: 1.5rem;
     div {
       margin-bottom: 0.5rem;
+    }
+  }
+  .footer_right_about {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    span {
+      margin-right: 1rem;
+    }
+    .svg_size {
+      width: 1.5rem;
+      height: 1.5rem;
     }
   }
 }

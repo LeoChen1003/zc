@@ -47,6 +47,63 @@
         <div>精准投料智能控温还原菜肴</div>
       </div>
     </div>
+    <div class="home_pro_one">
+      <div class="home_title_top">“星级大厨”带你体验舌尖上的美味</div>
+      <div class="home_pro_one_title">智能一拖三炒菜机</div>
+      <div class="home_pro_one_tip">
+        <span>智能云菜谱</span>
+        <span class="home_pro_one_tip_line">|</span>
+        <span>智能大滚筒炒菜机</span>
+        <span class="home_pro_one_tip_line">|</span>
+        <span>中控任务管理</span>
+        <span class="home_pro_one_tip_line">|</span>
+        <span>智能调料机</span>
+        <span class="home_pro_one_tip_line">|</span>
+        <span>气压站</span>
+      </div>
+      <div class="home_line"></div>
+      <div class="home_pro_one_detail">
+        <div class="home_pro_one_item">
+          <div>星级口味</div>
+          <p>百种星级主厨菜谱，顶级烹饪手法精确复现</p>
+        </div>
+        <div class="home_pro_one_item">
+          <div>中控软件</div>
+          <p>通过中控系统，智能控制硬件，实现软硬件精准配合</p>
+        </div>
+        <div class="home_pro_one_item">
+          <div>云端菜谱</div>
+          <p>链接云端海量专属定制化菜谱，经过多道标准化工序，极大程度还原星级大厨餐饮品质</p>
+        </div>
+        <div class="home_pro_one_item">
+          <div>精准调控</div>
+          <p>全自动翻炒，精准喷料至每1克，精准控温至1℃，让美味有保证。</p>
+        </div>
+      </div>
+    </div>
+    <div class="home_pro_two">
+      <div class="home_pro_two_top">超级烹饪专家</div>
+      <div class="home_pro_two_title">智能精炒一体机</div>
+      <div class="home_line"></div>
+      <div class="home_pro_two_detail">
+        <div class="home_pro_two_item">
+          <div>星级菜谱</div>
+          <p>海量星级主厨菜谱，顶级烹饪手法精确复现</p>
+        </div>
+        <div class="home_pro_two_item">
+          <div>智能提醒</div>
+          <p>智能屏+语音实时提醒，0基础新手复制大厨烹饪行为，还原顶级厨师口味</p>
+        </div>
+        <div class="home_pro_two_item">
+          <div>精准投料</div>
+          <p>智能精准投料,精准至0.1g，美味丝毫不差</p>
+        </div>
+        <div class="home_pro_two_item">
+          <div>精准控温</div>
+          <p>11级火力智能调节，满足“煸炒”、“烧”、“煮”等多种烹调行为</p>
+        </div>
+      </div>
+    </div>
     <div class="home_product_more">
       <div class="home_product_more_item">
         <div>更多智厨产品</div>
@@ -60,11 +117,13 @@
     <div class="home_news">
       <div class="home_news_header">
         <div class="home_news_header_title">
-          <div>对我们了解更多</div>
+          <div class="home_title_top">对我们了解更多</div>
           <div>新闻中心</div>
         </div>
         <div class="home_news_header_btn">
-          了解更多
+          <svg-icon icon-class="homeKnowMore"
+                    class-name="svg_size"></svg-icon>
+          <span>了解更多</span>
         </div>
       </div>
       <div class="home_news_circle">
@@ -76,10 +135,14 @@
     </div>
     <div class="home_about">
       <div class="home_about_left">
-        <div>优特智厨</div>
+        <div class="home_title_top">优特智厨</div>
         <div>关于我们</div>
-        <div></div>
-        <div class="home_about_left_btn">了解更多</div>
+        <div class="home_line"></div>
+        <div class="home_about_left_btn">
+          <svg-icon icon-class="homeKnowMore"
+                    class-name="svg_size"></svg-icon>
+          <span>了解更多</span>
+        </div>
       </div>
       <div class="home_about_right">
         <div class="home_about_right_item">
@@ -260,22 +323,7 @@ export default {
       align-items: center;
       padding: 0 15%;
       box-sizing: border-box;
-      .home_news_header_btn {
-        width: 6.75rem;
-        height: 2.25rem;
-        background: rgba(255, 255, 255, 0);
-        border-radius: 1.13rem;
-        border: 0.06rem solid rgba(0, 0, 0, 1);
-        line-height: 2.25rem;
-        text-align: center;
-        cursor: pointer;
-      }
       .home_news_header_title {
-        div:nth-child(1) {
-          font-size: 0.88rem;
-          color: #333333;
-          margin-bottom: 0.5rem;
-        }
         div:nth-child(2) {
           font-size: 2rem;
           color: #000;
@@ -304,30 +352,11 @@ export default {
     padding: 6.63rem 15%;
     box-sizing: border-box;
     .home_about_left {
-      div:nth-child(1) {
-        font-size: 0.88rem;
-        color: #333;
-        margin-bottom: 0.5rem;
-      }
       div:nth-child(2) {
         font-size: 2rem;
         font-weight: 600;
         color: #000;
         margin-bottom: 2.5rem;
-      }
-      div:nth-child(3) {
-        border-bottom: 1px solid #2cc6c0;
-        width: 1.5rem;
-        margin-bottom: 2.5rem;
-      }
-      .home_about_left_btn {
-        width: 6.75rem;
-        height: 2.25rem;
-        background: rgba(255, 255, 255, 0);
-        border-radius: 1.13rem;
-        border: 0.06rem solid rgba(0, 0, 0, 1);
-        text-align: center;
-        line-height: 2.25rem;
       }
     }
     .home_about_right {
@@ -349,6 +378,116 @@ export default {
       }
     }
   }
+  .home_pro_one {
+    height: 55.63rem;
+    background: rgba(254, 254, 254, 1);
+    padding: 7.5rem 14%;
+    .home_pro_one_title {
+      font-size: 2.5rem;
+      color: #000;
+      margin-bottom: 1rem;
+    }
+    .home_pro_one_tip {
+      font-size: 0.88rem;
+      color: #333;
+      margin-bottom: 2.5rem;
+      .home_pro_one_tip_line {
+        color: #ccc;
+        margin-right: 1.25rem;
+        margin-left: 1.25rem;
+      }
+    }
+    .home_pro_one_detail {
+      display: flex;
+      .home_pro_one_item {
+        margin-right: 3rem;
+        div {
+          width: 4.5rem;
+          height: 1.5rem;
+          background: rgba(8, 8, 8, 1);
+          border-radius: 0.19rem;
+          font-size: 0.88rem;
+          font-weight: 600;
+          line-height: 1.5rem;
+          color: #fff;
+          text-align: center;
+          margin-bottom: 0.88rem;
+        }
+        p {
+          font-size: 0.88rem;
+          font-weight: 400;
+          color: #333;
+          width: 12.25rem;
+        }
+      }
+    }
+  }
+  .home_pro_two {
+    height: 55.63rem;
+    background: #000;
+    padding: 13.88rem 0 0 60%;
+    .home_pro_two_top {
+      font-size: 0.88rem;
+      color: #999;
+      margin-bottom: 0.5rem;
+    }
+    .home_pro_two_title {
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 2rem;
+    }
+    .home_pro_two_item {
+      div {
+        width: 4.5rem;
+        height: 1.5rem;
+        background: rgba(255, 255, 255, 1);
+        border-radius: 0.19rem;
+        margin-bottom: 0.75rem;
+        color: #080808;
+        text-align: center;
+        line-height: 1.5rem;
+        font-size: 0.88rem;
+      }
+      p {
+        font-size: 0.88rem;
+        color: #999;
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+}
+// 了解更多
+.home_about_left_btn,
+.home_news_header_btn {
+  width: 6.75rem;
+  height: 2.25rem;
+  background: rgba(255, 255, 255, 0);
+  border-radius: 1.13rem;
+  border: 0.06rem solid rgba(0, 0, 0, 1);
+  text-align: center;
+  line-height: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .svg_size {
+    width: 1.13rem;
+    height: 1.13rem;
+  }
+  span {
+    margin-left: 0.3rem;
+  }
+}
+.home_title_top {
+  font-size: 0.88rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+.home_line {
+  border-bottom: 1px solid #2cc6c0;
+  width: 1.5rem;
+  height: 0.13rem;
+  margin-bottom: 2.5rem;
 }
 </style>
 
