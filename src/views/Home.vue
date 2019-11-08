@@ -423,9 +423,10 @@ export default {
     }
   }
   .home_pro_two {
-    height: 55.63rem;
+    height: 41.77rem;
     background: #000;
-    padding: 13.88rem 0 0 60%;
+    background-image: url('../assets/home/编组.png');
+    padding: 13.88rem 0 0 63%;
     .home_pro_two_top {
       font-size: 0.88rem;
       color: #999;

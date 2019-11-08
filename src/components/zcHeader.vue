@@ -1,7 +1,7 @@
 <template>
   <div class="header headerW">
     <div class="header_logo">
-      utzc
+      UTZC
     </div>
     <div class="header_navbar">
       <span>产品中心</span>
@@ -40,6 +40,12 @@ export default {
   height: 3rem;
   line-height: 3rem;
   box-shadow: 0rem -0.06rem 0rem 0rem;
+  background-color: #fff;
+  .header_logo {
+    color: #000;
+    font-size: 1.6rem;
+    font-weight: bolder;
+  }
   .header_navbar {
     color: #a2a6ac;
     font-size: 0.88rem;
@@ -54,9 +60,9 @@ export default {
     width: 6.5rem;
     height: 2rem;
     line-height: 2rem;
-    color: #000;
+    color: #fff;
     text-align: center;
-    background: rgba(255, 255, 255, 1);
+    background: rgba(0, 0, 0, 1);
     border-radius: 1rem;
     cursor: pointer;
   }
@@ -74,7 +80,7 @@ export default {
 }
 .headerW {
   color: #333;
-  background: #fff;
+  background: #ffffff;
   .header_navbar {
     color: #a2a6ac;
   }
