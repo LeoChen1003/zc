@@ -4,9 +4,8 @@ import Home from '../views/Home.vue'
 import AboutWith from '../views/AboutWith.vue'
 import New from '../views/New.vue'
 import newDetail1 from '../views/newDetail1.vue'
-
+import wepIndex from '../views/wap/index.vue'
 Vue.use(VueRouter)
-
 const routes = [
   {
     path: '/',
@@ -35,13 +34,22 @@ const routes = [
     path: '/new/detail1',
     name: 'detail1',
     component: newDetail1
+  },
+  {
+    path: '/wap',
+    component: wepIndex,
+    children: [
+      {
+        path: 'index',
+        name: 'index',
+        component: wepIndex
+      }
+    ]
   }
 ]
-
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
 })
-
 export default router
