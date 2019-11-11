@@ -1,7 +1,6 @@
 <!-- index -->
 <template>
   <div>
-    <wapHeader></wapHeader>
     <div class="cell cell-1">
       <div class="title-1">优特智厨</div>
       <div class="title-2">人工智能时代的餐饮革命</div>
@@ -144,20 +143,14 @@
         <div class="text">我们的使命是推行中餐标准化，提升餐饮品质，让中餐更美味、更安全、更便捷，助力传统中餐走遍全球。</div>
       </div>
     </div>
-    <div class="cell cell-7">
-
-    </div>
+    <router-view />
   </div>
 </template>
 
 <script>
-import wapHeader from '@/components/wapHeader.vue'
 // import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
-  components: {
-    wapHeader
-  },
   data () {
     return {
       swiperOption: {
@@ -494,6 +487,7 @@ export default {
 .cell-6 {
   img {
     width: 100%;
+    margin-bottom: 2.5rem;
   }
 
   .cell-header {
