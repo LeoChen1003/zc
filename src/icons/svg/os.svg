@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="810px" height="494px" viewBox="0 0 810 494" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>椭圆形</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="48.7784331%" cy="41.3175349%" fx="48.7784331%" fy="41.3175349%" r="58.6824651%" id="radialGradient-1">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="56.525528%"></stop>
+            <stop stop-color="#EFFFFD" offset="83.4270567%"></stop>
+            <stop stop-color="#DBF7F7" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="页面1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="智能系统-OS" transform="translate(-350.000000, -159.000000)" fill="url(#radialGradient-1)">
+            <g id="椭圆形-+-椭圆形-+-椭圆形备份-6-+-椭圆形备份-8-+-椭圆形备份-7-+-椭圆形备份-9-+-椭圆形备份-10-+-椭圆形备份-3-+-椭圆形备份-4-+-椭圆形备份-5-+-椭圆形-+-椭圆形备份-2蒙版" transform="translate(350.000000, 159.000000)">
+                <g id="椭圆形">
+                    <circle cx="220" cy="-105" r="599"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

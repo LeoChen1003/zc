@@ -5,9 +5,9 @@
             图片
         </div>
         <div class="about_item">
-            <span @click="toggleTab('comIntro')">企业介绍</span>
-            <span @click="toggleTab('inven')">专利发明</span>
-            <span @click="toggleTab('labor')">实验室</span>
+            <span @click="toggleTab('comIntro')" class="item_span">企业介绍</span>
+            <span @click="toggleTab('inven')" class="item_span">专利发明</span>
+            <span @click="toggleTab('labor')" class="item_span">实验室</span>
         </div>
         <comIntro :is="currentTab"></comIntro>
         <zcFooter></zcFooter>
@@ -38,6 +38,21 @@ export default {
     methods:{
         toggleTab:function(tab){
             this.currentTab = tab;
+        }
+    },
+    mounted(){
+        var itemSpan = document.getElementsByClassName("item_span");
+        itemSpan[0].style.color = "#000000";
+        itemSpan[0].style.fontWeight = 600;
+        for(var i = 0; i < itemSpan.length; i++){
+            itemSpan[i].onclick = function(){
+                for(var i = 0; i < itemSpan.length; i++){
+                    itemSpan[i].style.fontWeight = 400;
+                    itemSpan[i].style.color = "#333333";
+                }
+                this.style.color = "#000000";
+                this.style.fontWeight = 600;
+            }
         }
     }
 }
