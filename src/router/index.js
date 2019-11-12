@@ -4,6 +4,13 @@ import Home from '../views/Home.vue'
 import AboutWith from '../views/AboutWith.vue'
 import New from '../views/New.vue'
 import newDetail1 from '../views/newDetail1.vue'
+import coreAdvan from '../views/coreAdvan.vue'
+import sytOs from '../views/intellSyt.vue'
+import intellTech from '../views/intellTech.vue'
+import intellData from '../views/intellData.vue'
+import intellMach from '../views/intellMach.vue'
+import intellStar from '../views/intellStar.vue'
+import product from '../views/product.vue'
 
 Vue.use(VueRouter)
 
@@ -35,6 +42,41 @@ const routes = [
     path: '/new/detail1',
     name: 'detail1',
     component: newDetail1
+  },
+  {
+    path: '/coreAdvan',
+    name: "coreAdvan",
+    component: coreAdvan,
+  },
+  {
+    path: '/coreAdvan/sytOs',
+    name: 'sytOs',
+    component: sytOs
+  },
+  {
+    path: '/coreAdvan/intellTech',
+    name: 'intellTech',
+    component: intellTech
+  },
+  {
+    path: '/coreAdvan/intellData',
+    name: 'intellData',
+    component: intellData
+  },
+  {
+    path: '/coreAdvan/intellMach',
+    name: 'intellMach',
+    component: intellMach
+  },
+  {
+    path: '/coreAdvan/intellStar',
+    name: 'intellStar',
+    component: intellStar
+  },
+  {
+    path: '/product',
+    name: 'product',
+    component: product
   }
 ]
 

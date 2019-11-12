@@ -90,6 +90,22 @@ export default {
                 "time2"
             ]
         }
+    },
+    mounted(){
+        var tLine = document.getElementsByClassName("el-timeline")[0];
+        var tTail = tLine.getElementsByClassName("el-timeline-item__tail")[0];
+        tTail.style.borderColor = "#2CC6C0";
+        var tLarge = document.getElementsByClassName("el-timeline-item__node--large");
+        for(var i = 0; i < tLarge.length; i++){
+            var div = document.createElement("div");
+            var tSmall = tLarge[i].appendChild(div);
+            tSmall.className = "el-timeline-item__node--small";
+        }
+        var con = document.getElementsByClassName("el-timeline-item__content");
+        for(var j = 0; j <= con.length; j++){
+            var time = con[j].getElementsByTagName("p")[0];
+            time.style.fontSize = "2.12rem";
+        }
     }
 }
 </script>
@@ -97,6 +113,31 @@ export default {
 <style  lang="scss" scope>
     .intro{
         border-top: 1px solid rgb(218, 216, 216);
+        .block{
+            .el-timeline-item__tail{
+                border-left: 8px solid #ECECEC;
+            }
+            .el-timeline-item__node--large{
+                width: 1.25rem;
+                height: 1.25rem;
+                .el-timeline-item__node--small{
+                    position: absolute;
+                    background-color: #fff;
+                    width: 0.68rem;
+                    height: 0.68rem;
+                    border-radius: 50%;
+                }
+            }
+            .el-timeline-item__wrapper{
+                top: -1rem;
+            }
+        }
+        .line1{
+            margin-left: 22rem;
+            width: 62%;
+            height: 0.06rem;
+            background-color: rgb(230, 227, 227);
+        }
         .about_con1{
             width: 100%;
             height: 40.12rem;
@@ -152,12 +193,6 @@ export default {
             }
         } 
     }
-        .intro .line1{
-            margin-left: 22rem;
-            width: 62%;
-            height: 0.06rem;
-            background-color: rgb(230, 227, 227);
-        }
         .about_con2{
             width: 100%;
             height: 37.56rem;
