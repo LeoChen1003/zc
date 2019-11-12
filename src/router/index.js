@@ -11,6 +11,7 @@ import intellData from '../views/intellData.vue'
 import intellMach from '../views/intellMach.vue'
 import intellStar from '../views/intellStar.vue'
 import product from '../views/product.vue'
+import proCai from '../views/proCai.vue'
 
 import wapLayout from '../views/wap/layout'
 import wapIndex from '../views/wap/index'
@@ -39,63 +40,68 @@ const routes = [
   {
     path: '/new',
     name: 'new',
-    component: New
+    component: New,
   },
   {
     path: '/new/detail1',
     name: 'detail1',
     component: newDetail1
   },
+    {
+        path: '/wap',
+        component: wapLayout,
+        children: [
+            {
+                path: 'index',
+                name: '首页',
+                component: wapIndex
+            },
+            {
+                path: 'productCenter',
+                name: '产品中心',
+                component: wapProductCenter
+            }
+        ]
+    },
   {
-    path: '/wap',
-    component: wapLayout,
-    children: [
-      {
-        path: 'index',
-        name: '首页',
-        component: wapIndex
-      },
-      {
-        path: 'productCenter',
-        name: '产品中心',
-        component: wapProductCenter
-      }
-    ]
+    path: '/coreAdvan',
+    name: "coreAdvan",
+    component: coreAdvan,
+  },
+  {
+    path: '/coreAdvan/sytOs',
+    name: 'sytOs',
+    component: sytOs
+  },
+  {
+    path: '/coreAdvan/intellTech',
+    name: 'intellTech',
+    component: intellTech
+  },
+  {
+    path: '/coreAdvan/intellData',
+    name: 'intellData',
+    component: intellData
+  },
+  {
+    path: '/coreAdvan/intellMach',
+    name: 'intellMach',
+    component: intellMach
+  },
+  {
+    path: '/coreAdvan/intellStar',
+    name: 'intellStar',
+    component: intellStar
+  },
+  {
+    path: '/product',
+    name: 'product',
+    component: product
   },
     {
-        path: '/coreAdvan',
-        name: "coreAdvan",
-        component: coreAdvan,
-    },
-    {
-        path: '/coreAdvan/sytOs',
-        name: 'sytOs',
-        component: sytOs
-    },
-    {
-        path: '/coreAdvan/intellTech',
-        name: 'intellTech',
-        component: intellTech
-    },
-    {
-        path: '/coreAdvan/intellData',
-        name: 'intellData',
-        component: intellData
-    },
-    {
-        path: '/coreAdvan/intellMach',
-        name: 'intellMach',
-        component: intellMach
-    },
-    {
-        path: '/coreAdvan/intellStar',
-        name: 'intellStar',
-        component: intellStar
-    },
-    {
-        path: '/product',
-        name: 'product',
-        component: product
+        path: '/product/proCai',
+        name: 'proCai',
+        component: proCai
     }
 ]
 
