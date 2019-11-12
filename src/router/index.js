@@ -11,6 +11,7 @@ import intellData from '../views/intellData.vue'
 import intellMach from '../views/intellMach.vue'
 import intellStar from '../views/intellStar.vue'
 import product from '../views/product.vue'
+import proCai from '../views/proCai.vue'
 
 Vue.use(VueRouter)
 
@@ -77,6 +78,11 @@ const routes = [
     path: '/product',
     name: 'product',
     component: product
+  },
+  {
+    path: '/product/proCai',
+    name: 'proCai',
+    component: proCai
   }
 ]
 
