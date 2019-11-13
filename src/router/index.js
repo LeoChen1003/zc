@@ -12,6 +12,9 @@ import intellMach from '../views/intellMach.vue'
 import intellStar from '../views/intellStar.vue'
 import product from '../views/product.vue'
 import proCai from '../views/proCai.vue'
+import proCaiTechSpecs from '../views/proCaiTechSpecs.vue'
+import proAIO from '../views/proAIO.vue'
+import proAIOTechSpecs from '../views/proAIOTechSpecs.vue'
 
 import wapLayout from '../views/wap/layout'
 import wapIndex from '../views/wap/index'
@@ -39,12 +42,10 @@ const routes = [
   },
   {
     path: '/new',
-    name: 'new',
     component: New,
   },
   {
     path: '/new/detail1',
-    name: 'detail1',
     component: newDetail1
   },
     {
@@ -98,11 +99,26 @@ const routes = [
     name: 'product',
     component: product
   },
-    {
-        path: '/product/proCai',
-        name: 'proCai',
-        component: proCai
-    }
+  {
+    path: '/product/proCai',
+    name: 'proCai',
+    component: proCai
+  },
+  {
+    path: '/product/proAIO',
+    name: 'proAIO',
+    component: proAIO
+  },
+  {
+    path: '/product/proCai/proCaiTechSpecs',
+    name: 'proCaiTechSpecs',
+    component: proCaiTechSpecs
+  },
+  {
+    path: '/product/proAIO/proAIOTechSpecs',
+    name: 'proAIOTechSpecs',
+    component: proAIOTechSpecs
+  }
 ]
 
 const router = new VueRouter({

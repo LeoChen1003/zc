@@ -75,6 +75,7 @@
 
 <script>
 export default {
+    name: 'intellStar',
     methods:{
         cancel(){
             this.$router.push("/coreAdvan");

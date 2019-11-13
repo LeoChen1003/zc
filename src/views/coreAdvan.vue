@@ -5,7 +5,7 @@
             <div class="core_syt_l">
                 <div class="core_syt_s"></div>
             </div>
-            <router-link to="/coreAdvan/sytOs" class="core_syt_p1">智能系统 OS</router-link>
+            <router-link :to="{name:'sytOs'}" class="core_syt_p1">智能系统 OS</router-link>
             <p class="core_syt_p2">简单易用的智能，背后藏着强大的科技</p>
             <div class="core_syt_pic">
                 <div>
@@ -32,7 +32,7 @@
         </div>
         <div class="core_tech">
             <p>以智能解构中餐</p>
-            <router-link to="/coreAdvan/intellTech">智能技术</router-link>
+            <router-link :to="{name: 'intellTech'}">智能技术</router-link>
             <p>简单易用的智能，背后藏着强大的科技</p>
             <img src="../assets/coreAdvan/coreTech.png" alt="">
             <div class="core_tech_btn">
@@ -42,7 +42,7 @@
         </div>
         <div class="core_data">
             <p>以智能解构中餐</p>
-            <router-link to="/coreAdvan/intellData">智能数据管控</router-link>
+            <router-link :to="{name: 'intellData'}">智能数据管控</router-link>
             <p>智能管理前厅、后厨数据，实现成本、利润全透明化</p>
             <img src="../assets/coreAdvan/coreData.png" alt="">
             <div class="core_data_btn">
@@ -52,7 +52,7 @@
         </div>
         <div class="core_mach">
             <p>以智能解构中餐</p>
-            <router-link to="/coreAdvan/intellMach">智能配件</router-link>
+            <router-link :to="{name: 'intellMach'}">智能配件</router-link>
             <p>智能管理前厅、后厨数据，实现成本、利润全透明化</p>
             <div class="core_mach_svg">
                 <div>
@@ -78,7 +78,7 @@
         </div>
         <div class="core_star">
             <img src="../assets/coreAdvan/coreStar.png" alt="">
-            <router-link to="/coreAdvan/intellStar">7 星尊享服务体系</router-link>
+            <router-link :to="{name: 'intellStar'}">7 星尊享服务体系</router-link>
             <p>优特智厨科技有限公司配备专业的技术、研发、营销、运营及售后团队。让客户从了解产品第一刻起，即享受专业、周到的服务</p>
             <img src="../assets/coreAdvan/coreSer.png" alt="">
             <div class="core_star_btn">

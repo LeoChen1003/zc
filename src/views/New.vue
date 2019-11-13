@@ -7,7 +7,7 @@
                 <div class="new_con_del_l"></div>
                 <div class="new_con_del_r">
                     <p>2019年9月19日  <a href="javascript:;">更新</a></p>
-                    <p>优特智能炒菜机 开启中餐标准化时代</p>
+                    <router-link to="/new/detail1">优特智能炒菜机 开启中餐标准化时代</router-link>
                     <p>近年来，餐饮行业陷入三高一低的困境，面对行业不断洗牌，餐饮企业一次次陷入困局。优特智厨一直在思考，如何通过智能化设备，直击餐饮行业痛点，解…</p>
                 </div>
             </div>
@@ -147,6 +147,7 @@
             </div>
         </div>
         <zcFooter></zcFooter>
+        <router-view></router-view>
     </div>
 </template>
 
@@ -204,7 +205,8 @@ export default {
                     font-size: 0.87rem;
                     margin-top: 0.3rem;
                 }
-                p:nth-child(2){
+                a:nth-child(2){
+                    display: block;
                     margin-top: 0.5rem;
                     font-size: 1.25rem;
                     color: #161616;

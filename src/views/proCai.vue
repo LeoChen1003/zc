@@ -4,7 +4,7 @@
         <div class="cai_hd">
             <p>智能大滚筒炒菜机套机</p>
             <p>概览</p>
-            <p>技术规格</p>
+            <router-link to="/product/proCai/proCaiTechSpecs">技术规格</router-link>
         </div>
         <div class="cai_con1">
             <p>“星级大厨”带你体验舌尖上的美味</p>
@@ -58,7 +58,7 @@
             <span>厨艺还原</span>
             <span>出菜品质</span>
             <div class="cai_con3_pic">
-                <img src="../assets/product/滚筒1.png" alt="">
+                <img src="../assets/product/rotary1.png" alt="">
             </div>
         </div>
         <div class="cai_con4">
@@ -81,7 +81,7 @@
                 <p>平均1小时出菜量</p>
             </div>
             <div class="cai_con4_pic">
-                <img src="../assets/product/滚筒2.png" alt="">
+                <img src="../assets/product/rotary2.png" alt="">
             </div>
         </div>
         <div class="cai_con5">
@@ -95,12 +95,12 @@
             <p class="cai_con5_PL">航天级</p>
             <p class="cai_con5_PM">保证零配件精准度</p>
             <div class="cai_con5_pic">
-                <img src="../assets/product/调料机1.png" alt="">
+                <img src="../assets/product/seasoningMachine1.png" alt="">
             </div>
         </div>
         <div class="cai_con6">
             <div class="cai_con6_pic">
-                <img src="../assets/product/调料机2.png" alt="">
+                <img src="../assets/product/seasoningMachine2.png" alt="">
             </div>
             <p>一键清洗，<br>操作便捷。</p>
             <p>一键锅体加热，高压水枪辅助冲刷。调料机臭氧水消毒，自动烘干。</p>
@@ -119,19 +119,66 @@
             <p>智能管理烹饪任务，协调订单与生产管理实时监控全套智能设备工作状态，提前进行故障诊断统计分析后厨能耗数据，有效优化后厨成本。</p>
             <div class="cai_con7_txt1">
                 <p>高效操作</p>
-                <p>控制多台设备运行</p>
+                <p class="p">控制多台设备运行</p>
             </div>
             <div class="cai_con7_txt2">
                 <p>数据统计</p>
-                <p>优化后厨成本</p>
-            </div>
+                <p class="p">优化后厨成本</p>
+            </div><br>
             <div class="cai_con7_txt3">
                 <p>协调订单</p>
-                <p>联动操控</p>
+                <p class="p">联动操控</p>
             </div>
             <div class="cai_con7_txt4">
                 <p>实时监控</p>
-                <p>动态变化一目了然</p>
+                <p class="p">动态变化一目了然</p>
+            </div>
+            <div class="cai_con7_pic">
+                <img src="../assets/product/zhongkong1.png" alt="">
+            </div>
+        </div>
+        <div class="cai_con8">
+            <div class="cai_con8_title">
+                智能大滚筒炒菜机
+            </div>
+            <p class="cai_con8_p1">APP 智能联动，<br>远程同步菜谱。</p>
+            <p class="cai_con8_p2">每道菜谱都可精准控制烹饪的火力曲线、翻炒速度与角度。酥软、适中、有嚼劲，不同口感，不同烹饪方式。自定义菜谱的口味与口感，同步最新营养菜谱，APP 端统统意见搞定，开启智能数据厨房。</p>
+            <div class="cai_con8_d1">
+                <p>DIY 菜谱</p>
+                <p>自定义修改口味与口感</p>
+            </div>
+            <div class="cai_con8_d2">
+                <p>自定义烹饪</p>
+                <p>自定义修改翻炒方式</p>
+            </div>
+            <svg-icon icon-class="productHd" class-name="cai_con8_svg"></svg-icon>
+            <div class="cai_con8_pic">
+                <img src="../assets/product/phone1.png" alt="">
+            </div>
+        </div>
+        <div class="cai_con9">
+            <p class="cai_con9_p1">不止是一台厨具，更是一名星级大厨。</p>
+            <p class="cai_con9_p2">海量云菜谱实时更新，连接网络后，APP端还有多种烹饪菜单键选择，支持自定义分组。从火辣的川湘菜到清鲜美味的南方江浙菜肴，均可简单完成，菜谱涵盖8大菜系，配合智能语音提示，零基础无门槛，不用调温不用投料，只需简单跟着提示投入主食材，便可让你使用一台厨具就能享用20名不同类型大厨的美味。</p>
+            <div class="cai_con9_d1">
+                <p>实时更新</p>
+                <p>海量云菜谱</p>
+            </div>
+            <div class="cai_con9_d2">
+                <p>＞1000道</p>
+                <p>理论菜谱支持</p>
+            </div>
+            <div class="cai_con9_d3">
+                <p>8大菜系</p>
+                <p>菜谱涵盖</p>
+            </div>
+            <div class="cai_con9_pic">
+                <img src="../assets/product/phone2.png" alt="">
+            </div>
+        </div>
+        <div class="cai_bottom">
+            <div class="cai_bottom_btn">
+                <img src="../assets/product/addBlack.png" alt="">
+                <span>了解参数明细</span>
             </div>
         </div>
         <zcFooter></zcFooter>
@@ -171,7 +218,7 @@ p{
             margin-left: 22.12rem;
             margin-top: 0.88rem;
         }
-        p:nth-child(2),p:last-child{
+        p:nth-child(2),a:last-child{
             float: left;
             height:1.06rem;
             font-size:0.75rem;
@@ -183,7 +230,7 @@ p{
             font-weight:600;
             margin-left: 9.62rem;
         }
-        p:last-child{
+        a:last-child{
             width: 3rem;
             font-weight: 400;
             margin-left: 1.5rem;
@@ -249,7 +296,7 @@ p{
     .cai_con2{
         width: 100%;
         height: 18.25rem;
-        background: url("../assets/product/数据图背景.jpg");
+        background: url("../assets/product/dataBack.jpg");
         display: flex;
         justify-content: center;
         align-items: center;
@@ -703,6 +750,234 @@ p{
             line-height:2rem;
             margin-left: 12rem;
             margin-top: 2.5rem;
+        }
+        .cai_con7_txt1,.cai_con7_txt2,.cai_con7_txt3,.cai_con7_txt4{
+            float: left;
+            margin-top: 3rem;
+            margin-left: 12rem;
+            width: 9rem;
+            height: 5.63rem;
+            p:first-child{
+                width:9rem;
+                height:3.13rem;
+                font-size:2.25rem;
+                font-weight:600;
+                color:rgba(44,198,192,1);
+                line-height:3.13rem;
+            }
+            .p{
+                width:8rem;
+                height:2rem;
+                font-size:1rem;
+                font-weight:400;
+                color:rgba(51,51,51,1);
+                line-height:2rem;
+                margin-left: 0rem;
+                margin-top: 0rem;
+            }
+        }
+        .cai_con7_txt2{
+            margin-left: 4.38rem;
+        }
+        .cai_con7_txt3{
+            margin-left: -22.4rem;
+            margin-top: 9rem;
+        }
+        .cai_con7_txt4{
+            margin-left: -9.2rem;
+            margin-top: 9rem;
+        }
+        .cai_con7_pic{
+            position: absolute;
+            width: 40.82rem;
+            height: 33.13rem;
+            top: 25.6rem;
+            right: 6.87rem;
+        }
+    }
+    .cai_con8{
+        width: 100%;
+        height: 58.75rem;
+        position: relative;
+        background:linear-gradient(180deg,rgba(7,47,51,1) 0%,rgba(30,31,32,1) 100%);
+        box-shadow:0px 10px 20px 0px rgba(0,0,0,0.02);
+        overflow: hidden;
+        .cai_con8_title{
+            margin-left: 12rem;
+            margin-top: 7.5rem;
+            width:8rem;
+            height:1.5rem;
+            background:rgba(44,198,192,1);
+            border-radius:0.19rem;
+            font-size:0.88rem;
+            font-weight:600;
+            color:rgba(255,255,255,1);
+            line-height: 1.5rem;
+            text-align: center;
+        }
+        .cai_con8_p1{
+            width:18.32rem;
+            height:7rem;
+            font-size:2.5rem;
+            font-weight:600;
+            color:rgba(255,255,255,1);
+            margin-left: 12rem;
+            margin-top: 1.63rem;
+        }
+        .cai_con8_p2{
+            width:33.75rem;
+            height:6rem;
+            font-size:1rem;
+            font-weight:400;
+            color:rgba(136,136,136,1);
+            margin-left: 12rem;
+            margin-top: 2rem;
+        }
+        .cai_con8_d1,.cai_con8_d2{
+            width: 10rem;
+            height: 5.64rem;
+            float: left;
+            margin-left: 12rem;
+            margin-top: 2.75rem;
+            p:first-child{
+                width:9.07rem;
+                height:3.13rem;
+                font-size:2.25rem;
+                font-weight:600;
+                color:rgba(44,198,192,1);
+                line-height:3.13rem;
+            }
+            p:nth-child(2){
+                width:10rem;
+                height:2rem;
+                font-size:1rem;
+                font-weight:400;
+                color:rgba(136,136,136,1);
+                line-height:2rem;
+                margin-top: 0.5rem;
+            }
+        }
+        .cai_con8_d2{
+            width: 11.25rem;
+            margin-left: 3.88rem;
+            p:first-child{
+                width: 11.25rem;
+            }
+        }
+        .cai_con8_svg{
+            width: 75.13rem;
+            height: 23.75rem;
+            margin-top: 1.13rem;
+            margin-left: 6.8rem;
+        }
+        .cai_con8_pic{
+            width: 12.38rem;
+            height: 26.38rem;
+            position: absolute;
+            top: 28.56rem;
+            right: 24.93rem;
+        }
+    }
+    .cai_con9{
+        width:100%;
+        height:58.75rem;
+        background:linear-gradient(180deg,rgba(7,47,51,1) 0%,rgba(30,31,32,1) 100%);
+        box-shadow:0px 10px 20px 0px rgba(0,0,0,0.02);
+        overflow: hidden;
+        position: relative;
+        .cai_con9_p1{
+            width:42.5rem;
+            height:3.5rem;
+            font-size:2.5rem;
+            font-weight:600;
+            color:rgba(255,255,255,1);
+            line-height:3.5rem;
+            margin-top: 7.5rem;
+            margin-left: 12rem;
+        }
+        .cai_con9_p2{
+            margin-left: 12rem;
+            margin-top: 2.5rem;
+            width:52.5rem;
+            height:6rem;
+            font-size:1rem;
+            font-weight:400;
+            color:rgba(136,136,136,1);
+            line-height:2rem;
+        }
+        .cai_con9_d1,.cai_con9_d2,.cai_con9_d3{
+            width: 9rem;
+            height: 5.23rem;
+            float: left;
+            margin-left: 12rem;
+            margin-top: 3rem;
+            p:first-child{
+                width:9rem;
+                height:3.13rem;
+                font-size:2.25rem;
+                font-weight:600;
+                color:rgba(44,198,192,1);
+                line-height:3.13rem;
+            }
+            p:nth-child(2){
+                width:6rem;
+                height:2rem;
+                font-size:1rem;
+                font-weight:400;
+                color:rgba(136,136,136,1);
+                line-height:2rem;
+                margin-top: 0.5rem;
+            }
+        }
+        .cai_con9_d2{
+            width: 9.5rem;
+            margin-left: 7.31rem;
+            p:first-child{
+                width: 9.5rem;
+            }
+        }
+        .cai_con9_d3{
+            margin-left: 8.56rem;
+        }
+        .cai_con9_pic{
+            width: 65.06rem;
+            height: 24.88rem;
+            margin: 14.4rem auto 0;
+            img{
+                margin-bottom: 0rem;
+            }
+        }
+    }
+    .cai_bottom{
+        width: 100%;
+        height: 15rem;
+        background: url("../assets/product/bottom.jpg");
+        overflow: hidden;
+        .cai_bottom_btn{
+            width:9.38rem;
+            height:2rem;
+            background:rgba(255,255,255,0);
+            border-radius:1rem;
+            border:1px solid rgba(0,0,0,1);
+            margin: 6.56rem auto 0;
+            position: relative;
+            cursor: pointer;
+            img{
+                position: absolute;
+                top: 0.45rem;
+                left: 1rem;
+            }
+            span{
+                width:5.3rem;
+                height:1.25rem;
+                font-size:0.88rem;
+                font-family:PingFangSC-Semibold,PingFang SC;
+                font-weight:600;
+                color:rgba(0,0,0,1);
+                line-height:2rem;
+                position: absolute;
+                left: 2.63rem;
+            }
         }
     }
 }

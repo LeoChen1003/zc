@@ -19,7 +19,7 @@
                 </div>
             </div>
             <div class="pro_con1_r">
-                <img src="../assets/product/一拖三.jpg" alt="">
+                <img src="../assets/product/ODT.jpg" alt="">
             </div>
         </div>
         <div class="pro_con2">
@@ -37,7 +37,7 @@
                 </div>
             </div>
             <div class="pro_con2_r">
-                <img src="../assets/product/一体机.jpg" alt="">
+                <img src="../assets/product/AIO.jpg" alt="">
             </div>
         </div>
         <div class="pro_title2">

@@ -22,6 +22,7 @@
             <div class="line1"></div>
         </div>
         <zcFooter></zcFooter>
+        <router-view></router-view>
     </div>
 </template>
 

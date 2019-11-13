@@ -1,0 +1,194 @@
+<template>
+    <div class="aio_specs">
+        <zcHeader></zcHeader>
+        <div class="aio_specs_hd">
+            <p>智能大滚筒炒菜机套机</p>
+            <router-link to="/product/proAIO">概览</router-link>
+            <router-link to="/product/proAIO/proAIOTechSpecs">技术规格</router-link>
+            <div class="aio_specs_hd_btn">
+                立即预约
+            </div>
+        </div>
+        <div class="aio_specs_con">
+            <p>超级烹饪专家</p>
+            <p>智能精炒一体机</p>
+            <p>三合一体，中高级餐饮店的御用超级“厨神”</p>
+            <div class="aio_specs_con_pic">
+                <img src="../assets/product/AIO5.png" alt="">
+            </div>
+        </div>
+         <div class="aio_specs_txt">
+            <span>产品参数</span>
+            <p>型号：SZZNYTJ-1B<br>
+            额定功率：8200W<br>
+            电源电压：220V/50HZ<br>
+            整机尺寸：900*650*1505mm<br>
+            净重：110kg<br>
+            配置：内嵌抽油烟机</p>
+        </div>
+        <div class="aio_specs_txt">
+            <span>产品参数</span>
+            <p>型号：SZZNYTJ-1A<br>
+            额定功率：6700W<br>
+            电源电压：220V/50HZ<br>
+            整机尺寸：900*650*1505mm<br>
+            净重：115kg<br>
+            配置：内嵌抽油烟机</p>
+        </div>
+        <div class="aio_specs_txt aio_last">
+            <span>产品参数</span>
+            <p>型号：DZZNYTJ-1A<br>
+                额定功率：4500W<br>
+                电源电压：220V/50HZ<br>
+                整机尺寸：900*650*1505mm<br>
+                净重：90kg<br>
+                配置：内嵌抽油烟机</p>
+        </div>
+        <zcFooter></zcFooter>
+    </div>
+</template>
+
+<script>
+import zcHeader from '@/components/zcHeader.vue';
+import zcFooter from '@/components/zcFooter.vue';
+import '../styles/variables.scss';
+export default {
+    name: 'proAIOTechSpecs',
+    components:{
+        zcHeader,
+        zcFooter,
+    },
+    mounted(){
+        // this.$refs.hder.className = "blackBack";
+        var hder  = document.getElementsByClassName("whiteBack")[0];
+        hder.className = "blackBack";
+    }
+}
+</script>
+
+<style lang="scss" scope>
+p{
+    font-family:PingFangSC-Semibold,PingFang SC;
+}
+.aio_specs{
+    width: 100%;
+    overflow: hidden;
+    .aio_specs_hd{
+        width: 100%;
+        height: 3rem;
+        border-top: 1px solid #000;
+        background-color: #000;
+        p:first-child{
+            float: left;
+            width:8.75rem;
+            height:1.25rem;
+            font-size:0.87rem;
+            font-weight:400;
+            color:#fff;
+            margin-left: 22.12rem;
+            margin-top: 0.88rem;
+        }
+        a:nth-child(2),a:nth-child(3){
+            float: left;
+            height:1.06rem;
+            font-size:0.75rem;
+            color:#fff;
+            margin-top: 0.88rem;
+        }
+        a:nth-child(2){
+            width:1.5rem;
+            font-weight:400;
+            margin-left: 9.62rem;
+        }
+        a:nth-child(3){
+            width: 3rem;
+            font-weight: 600;
+            margin-left: 1.5rem;
+        }
+        .aio_specs_hd_btn{
+            float: left;
+            width:6.5rem;
+            height:2rem;
+            background:rgba(44,198,192,1);
+            border-radius:1rem;
+            font-size:0.88rem;
+            font-weight:600;
+            color:rgba(255,255,255,1);
+            line-height:2rem;
+            text-align: center;
+            margin-left: 14.00rem;
+            margin-top: 0.5rem;
+            cursor: pointer;
+        }
+    }
+    .aio_specs_con{
+        width:100%;
+        height:44rem;
+        background:linear-gradient(180deg,rgba(17,17,17,1) 0%,rgba(30,31,33,1) 100%);
+        box-shadow:0px 10px 20px 0px rgba(0,0,0,0.02);
+        overflow: hidden;
+        position: relative;
+        p:first-child{
+            font-size:0.88rem;
+            font-weight:400;
+            color:rgba(136,136,136,1);
+            margin-left: 18rem;
+            margin-top: 7.5rem;
+        }
+        p:nth-child(2){
+            font-size:2.5rem;
+            font-weight:600;
+            color:rgba(255,255,255,1);
+            margin-top: 0.5rem;
+            margin-left: 18rem;
+        }
+        p:nth-child(3){
+            font-size:0.88rem;
+            font-weight:400;
+            color:rgba(133,133,133,1);
+            margin-left: 18rem;
+            margin-top: 1rem;
+        }
+        .aio_specs_con_pic{
+            width: 33.13rem;
+            height: 33rem;
+            position: absolute;
+            right: 9.37rem;
+            bottom: -1.7rem;
+        }
+    }
+    .aio_specs_txt{
+        width: 60.43rem;
+        border-top: 1px solid #ECECEC;
+        margin: 5rem auto 0;
+        overflow: hidden;
+        span{
+            float: left;
+            display: inline-block;
+            font-size:1.25rem;
+            font-family:PingFangSC-Semibold,PingFang SC;
+            font-weight:600;
+            color:rgba(51,51,51,1);
+            margin-top: 5rem;
+            // float: left;
+        }
+        p{
+            float: left;
+            width:12.07rem;
+            font-size:1rem;
+            font-weight:400;
+            color:rgba(51,51,51,1);
+            line-height:2rem;
+            margin-left: 15.5rem;
+            margin-top: 5rem;
+        }
+    }
+    .aio_last{
+        border-bottom: 1px solid #ECECEC;
+        margin-bottom: 5rem;
+        p{
+            margin-bottom: 4.81rem;
+        }
+    }
+}
+</style>
