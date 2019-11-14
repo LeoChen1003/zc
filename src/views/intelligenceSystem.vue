@@ -17,12 +17,12 @@
                     <p>后厨智能大脑，实时在线同步管理，集调料机、炉头为一体，实现从智能控温、自动投料、智能翻炒烹饪步骤全流程SOP，结合精简的UI布局，1人即可同时完成多人操作，更高效、更稳定、更低成本。</p>
                 </div>
                 <div class="os_con_cen1_r">
-                    <img src="../assets/coreAdvan/syt_os1.jpg" alt="">
+                    <img src="../assets/coreAdvantage/system_os1.jpg" alt="">
                 </div>
             </div>
             <div class="os_con_cen2">
                 <div class="os_con_cen2_l">
-                    <img src="../assets/coreAdvan/syt_os2.jpg" alt="">
+                    <img src="../assets/coreAdvantage/system_os2.jpg" alt="">
                 </div>
                 <div class="os_con_cen2_r">
                     <p>移动端 App</p>
@@ -35,7 +35,7 @@
                     <p>为商家提供线上门店日常管理功能，例如查看门店基础信息、设备绑定信息、菜谱信息、烹饪任务信息等等。菜谱商城提供大量智能菜谱，供商家门店选用。</p>
                 </div>
                 <div class="os_con_cen3_r">
-                    <img src="../assets/coreAdvan/syt_os3.jpg" alt="">
+                    <img src="../assets/coreAdvantage/system_os3.jpg" alt="">
                 </div>
             </div>
         </div>
@@ -53,7 +53,7 @@ export default {
     },
     methods:{
         cancel(){
-            this.$router.push("/coreAdvan")
+            this.$router.push("/coreAdvantage")
         }
     }
 }

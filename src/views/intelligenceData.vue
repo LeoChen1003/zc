@@ -11,12 +11,12 @@
                     <p>门店数据运筹帷幄，设备运行数据一目了然，成本透明，合理管理设备。</p>
                 </div>
                 <div class="data_con_cen1_r">
-                    <img src="../assets/coreAdvan/data1.jpg" alt="">
+                    <img src="../assets/coreAdvantage/data1.jpg" alt="">
                 </div>
             </div>
             <div class="data_con_cen2">
                 <div class="data_con_cen2_l">
-                    <img src="../assets/coreAdvan/data2.jpg" alt="">
+                    <img src="../assets/coreAdvantage/data2.jpg" alt="">
                 </div>
                 <div class="data_con_cen2_r">
                     <p>门店管理平台</p>
@@ -32,7 +32,7 @@
 export default {
     methods:{
         cancel(){
-            this.$router.push("/coreAdvan");
+            this.$router.push("/coreAdvantage");
         }
     }
 }
@@ -55,7 +55,7 @@ p{
         .data_con_hd{
             width: 100%;
             height: 33.75rem;
-            background: url("../assets/coreAdvan/dataHd.jpg");
+            background: url("../assets/coreAdvantage/dataHeader.jpg");
             overflow: hidden;
             p:first-child{
                 width:12.75rem;

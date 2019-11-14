@@ -5,20 +5,13 @@
         UTZC
       </div>
       <div class="header_navbar">
-        <span @mousemove="proShow" @mouseleave="proHide">产品中心</span>
-        <span>新闻中心</span> 
-        <span>核心优势</span>
-        <span @mousemove="show" @mouseleave="hide">关于我们</span>
+        <span @click="product" class="productCenter">产品中心</span>
+        <span @click="newCenter">新闻中心</span> 
+        <span @click="coreAdvantage">核心优势</span>
+        <span @mousemove="show" @mouseleave="hide" @click="withUs">关于我们</span>
       </div>
       <div class="header_btn">
         联系我们
-      </div>
-      <div class="proShow" ref="pShow">
-        <p>旗舰智厨产品</p>
-        <p>···</p>
-        <p>更多智厨产品</p>
-        <p>···</p>
-        <p>其他智能产品</p>
       </div>
       <div class="show">
         <p>企业介绍</p>
@@ -36,6 +29,7 @@ export default {
   },
   data () {
     return {
+      
     }
   },
   methods:{
@@ -47,13 +41,17 @@ export default {
       var show = document.getElementsByClassName("show")[0];
       show.style.display = "none";
     },
-    proShow(){
-      this.$refs.pShow.style.display = "block";
-      // var proShow = document.getElementsByClassName("proShow")[0];
-      // proShow.style.display = "block";
+    product(){
+      this.$router.push("/product");
     },
-    proHide(){
-      this.$refs.pShow.style.display = "none";
+    newCenter(){
+      this.$router.push("/new");
+    },
+    coreAdvantage(){
+      this.$router.push("/coreAdvantage");
+    },
+    withUs(){
+      this.$router.push("/with");
     }
   },
   mounted(){
@@ -74,18 +72,23 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.whiteBack{
+.whiteBack,.whiteBack1{
+  height: 3rem;
   .header {
+    z-index: 99;
+    position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    margin-top: 0rem;
     padding: 0 22.2rem;
     box-sizing: border-box;
     height: 3rem;
     line-height: 3rem;
     box-shadow: 0rem -0.06rem 0rem 0rem;
     background-color: #fff;
+    border-bottom: 1px solid #ccc;
   .header_logo {
     color: #000;
     font-size: 1.6rem;
@@ -111,22 +114,6 @@ export default {
     background: rgba(0, 0, 0, 1);
     border-radius: 1rem;
     cursor: pointer;
-  }
-  .proShow{
-    width: 100%;
-    height: 2.56rem;
-    position: absolute;
-    margin-top: 2.94rem;
-    margin-left: -23.12rem;
-    background-color: #fff;
-    padding-left: 31rem;
-    display: none;
-    p{
-      float: left;
-      margin-left: 2rem;
-      font-size: 0.75rem;
-      cursor:pointer;
-    }
   }
   .show{
     width: 90rem;
@@ -179,8 +166,14 @@ export default {
   }
 }
 }
-.blackBack{
+.whiteBack1{
+  transition: all 2s;
+}
+.blackBack,.blackBack1{
+  height: 3rem;
   .header {
+    z-index: 99;
+    position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -216,22 +209,6 @@ export default {
     background: #fff;
     border-radius: 1rem;
     cursor: pointer;
-  }
-  .proShow{
-    width: 100%;
-    height: 2.56rem;
-    position: absolute;
-    margin-top: 2.94rem;
-    margin-left: -23.12rem;
-    background-color: #000;
-    padding-left: 31rem;
-    display: none;
-    p{
-      float: left;
-      margin-left: 2rem;
-      font-size: 0.75rem;
-      cursor:pointer;
-    }
   }
   .show{
     width: 90rem;
@@ -283,5 +260,8 @@ export default {
     background: #fff;
   }
 }
+}
+.blackBack1{
+  transition: all 2s;
 }
 </style>

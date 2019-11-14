@@ -1,292 +1,302 @@
 <template>
-    <div class="pro">
+    <div class="product">
         <zcHeader></zcHeader>
-        <div class="pro_title1">
-            旗舰智厨产品
+        <div class="product_header">
+            <p>旗舰智厨产品</p>
+            <p>···</p>
+            <p>更多智厨产品</p>
+            <p>···</p>
+            <p>其他智能产品</p>
         </div>
-        <div class="pro_con1">
-            <div class="pro_con1_l">
-                <div class="pro_con1_l_tag">旗舰</div>
-                <p class="p1">“星级大厨”带你体验舌尖上的美味</p>
-                <p class="p2">智能一拖三炒菜机</p>
-                <p class="p3">智能一拖三炒菜机是高度集成优特智厨智能厨电技术，在行业率先实现自动喷投多种类型调料，同时满足中餐标准化和规模化的烹饪要求的智能炒菜设备。</p>
-                <div class="pro_con1_l_btn">
-                    <div class="pro_con1_l_btn_1">立即预约</div>
-                    <div class="pro_con1_l_btn_2">
-                        <img src="../assets/product/addBlack.png" alt="">
-                        <p>了解更多</p>
+        <div class="pro">
+            <div class="pro_title1">
+                旗舰智厨产品
+            </div>
+            <div class="pro_con1">
+                <div class="pro_con1_l">
+                    <div class="pro_con1_l_tag">旗舰</div>
+                    <p class="p1">“星级大厨”带你体验舌尖上的美味</p>
+                    <p class="p2" @click="proCai">智能一拖三炒菜机</p>
+                    <p class="p3">智能一拖三炒菜机是高度集成优特智厨智能厨电技术，在行业率先实现自动喷投多种类型调料，同时满足中餐标准化和规模化的烹饪要求的智能炒菜设备。</p>
+                    <div class="pro_con1_l_btn">
+                        <div class="pro_con1_l_btn_1">立即预约</div>
+                        <div class="pro_con1_l_btn_2">
+                            <img src="../assets/product/addBlack.png" alt="">
+                            <p>了解更多</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pro_con1_r">
+                    <img src="../assets/product/ODT.jpg" alt="">
+                </div>
+            </div>
+            <div class="pro_con2">
+                <div class="pro_con2_l">
+                    <div class="pro_con2_l_tag">旗舰</div>
+                    <p class="p1">超级烹饪专家</p>
+                    <p class="p2" @click="proAIO">智能精炒一体机</p>
+                    <p class="p3">智能精炒一体机是优特智厨为小份精炒用户量身打造的“超级烹饪专家”。既能通过对温度、调料的智能控制实现菜品口味100%的复刻，又能实现人人都能当大厨的愿望。</p>
+                    <div class="pro_con2_l_btn">
+                        <div class="pro_con2_l_btn_1">立即预约</div>
+                        <div class="pro_con2_l_btn_2">
+                            <img src="../assets/product/addWhite.png" alt="">
+                            <p>了解更多</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pro_con2_r">
+                    <img src="../assets/product/AIO.jpg" alt="">
+                </div>
+            </div>
+            <div class="pro_title2">
+                其他智厨产品
+            </div>
+            <div class="pro_con3">
+                <div class="pro_con3_l">
+                    <p>智能多头平面炉</p>
+                    <div class="pro_con3_l_c1">
+                        <div>1</div>
+                        <p>海量智能菜谱，并支持更新</p>
+                    </div>
+                    <br>
+                    <div class="pro_con3_l_c2">
+                        <div>2</div>
+                        <p>火力与时间的精准掌控</p>
+                    </div>
+                    <br>
+                    <div class="pro_con3_l_c3">
+                        <div>3</div>
+                        <p>防干烧，防漏电，安全可靠</p>
+                    </div>
+                    <br>
+                    <div class="pro_con3_l_det">
+                        型号: UDOT-CL02-3.5X4<br>
+                        功率: 3.5kW*4<br>
+                        电源电压: 380V / 50Hz<br>
+                        整机尺寸: 800*900*(810+160)mm<br>
+                        防水等级:  IPX4 <br>
+                        辅助配置: 8档 (可定制)
+                    </div>
+                </div>
+                <div class="pro_con3_r">
+                    <p>智能单头凹面炒炉</p>
+                    <div class="pro_con3_l_c1">
+                        <div>1</div>
+                        <p>智能菜谱，自动控制</p>
+                    </div>
+                    <br>
+                    <div class="pro_con3_l_c2">
+                        <div>2</div>
+                        <p>大火力，出品快</p>
+                    </div>
+                    <br>
+                    <div class="pro_con3_l_c3">
+                        <div>3</div>
+                        <p>机身可拆卸，易清洁</p>
+                    </div>
+                    <br>
+                    <div class="pro_con3_l_det">
+                        型号: UDOT-CL01-5<br>
+                        功率: 5kW<br>
+                        电源电压: 220V<br>
+                        整机尺寸: 400*750*950mm<br>
+                        锅口直径: 340mm<br>
+                        屏幕尺寸: 5英寸彩色液晶屏<br>
+                        辅助配置: 蓝牙测温锅，400/600柜座
                     </div>
                 </div>
             </div>
-            <div class="pro_con1_r">
-                <img src="../assets/product/ODT.jpg" alt="">
-            </div>
-        </div>
-        <div class="pro_con2">
-            <div class="pro_con2_l">
-                <div class="pro_con2_l_tag">旗舰</div>
-                <p class="p1">超级烹饪专家</p>
-                <p class="p2">智能精炒一体机</p>
-                <p class="p3">智能精炒一体机是优特智厨为小份精炒用户量身打造的“超级烹饪专家”。既能通过对温度、调料的智能控制实现菜品口味100%的复刻，又能实现人人都能当大厨的愿望。</p>
-                <div class="pro_con2_l_btn">
-                    <div class="pro_con2_l_btn_1">立即预约</div>
-                    <div class="pro_con2_l_btn_2">
-                        <img src="../assets/product/addWhite.png" alt="">
-                        <p>了解更多</p>
+            <div class="pro_con3">
+                <div class="pro_con3_l">
+                    <p>智能多头平面炉</p>
+                    <div class="pro_con3_l_c1">
+                        <div>1</div>
+                        <p>海量智能菜谱，并支持更新</p>
+                    </div>
+                    <br>
+                    <div class="pro_con3_l_c2">
+                        <div>2</div>
+                        <p>火力与时间的精准掌控</p>
+                    </div>
+                    <br>
+                    <div class="pro_con3_l_c3">
+                        <div>3</div>
+                        <p>防干烧，防漏电，安全可靠</p>
+                    </div>
+                    <br>
+                    <div class="pro_con3_l_det">
+                        型号: UDOT-CL02-3.5X4<br>
+                        功率: 3.5kW*4<br>
+                        电源电压: 380V / 50Hz<br>
+                        整机尺寸: 800*900*(810+160)mm<br>
+                        防水等级:  IPX4 <br>
+                        辅助配置: 8档 (可定制)
+                    </div>
+                </div>
+                <div class="pro_con3_r">
+                    <p>智能单头凹面炒炉</p>
+                    <div class="pro_con3_l_c1">
+                        <div>1</div>
+                        <p>智能菜谱，自动控制</p>
+                    </div>
+                    <br>
+                    <div class="pro_con3_l_c2">
+                        <div>2</div>
+                        <p>大火力，出品快</p>
+                    </div>
+                    <br>
+                    <div class="pro_con3_l_c3">
+                        <div>3</div>
+                        <p>机身可拆卸，易清洁</p>
+                    </div>
+                    <br>
+                    <div class="pro_con3_l_det">
+                        型号: UDOT-CL01-5<br>
+                        功率: 5kW<br>
+                        电源电压: 220V<br>
+                        整机尺寸: 400*750*950mm<br>
+                        锅口直径: 340mm<br>
+                        屏幕尺寸: 5英寸彩色液晶屏<br>
+                        辅助配置: 蓝牙测温锅，400/600柜座
                     </div>
                 </div>
             </div>
-            <div class="pro_con2_r">
-                <img src="../assets/product/AIO.jpg" alt="">
-            </div>
-        </div>
-        <div class="pro_title2">
-            其他智厨产品
-        </div>
-        <div class="pro_con3">
-            <div class="pro_con3_l">
-                <p>智能多头平面炉</p>
-                <div class="pro_con3_l_c1">
-                    <div>1</div>
-                    <p>海量智能菜谱，并支持更新</p>
+            <div class="pro_con3">
+                <div class="pro_con3_l">
+                    <p>智能多头平面炉</p>
+                    <div class="pro_con3_l_c1">
+                        <div>1</div>
+                        <p>海量智能菜谱，并支持更新</p>
+                    </div>
+                    <br>
+                    <div class="pro_con3_l_c2">
+                        <div>2</div>
+                        <p>火力与时间的精准掌控</p>
+                    </div>
+                    <br>
+                    <div class="pro_con3_l_c3">
+                        <div>3</div>
+                        <p>防干烧，防漏电，安全可靠</p>
+                    </div>
+                    <br>
+                    <div class="pro_con3_l_det">
+                        型号: UDOT-CL02-3.5X4<br>
+                        功率: 3.5kW*4<br>
+                        电源电压: 380V / 50Hz<br>
+                        整机尺寸: 800*900*(810+160)mm<br>
+                        防水等级:  IPX4 <br>
+                        辅助配置: 8档 (可定制)
+                    </div>
                 </div>
-                <br>
-                <div class="pro_con3_l_c2">
-                    <div>2</div>
-                    <p>火力与时间的精准掌控</p>
-                </div>
-                <br>
-                <div class="pro_con3_l_c3">
-                    <div>3</div>
-                    <p>防干烧，防漏电，安全可靠</p>
-                </div>
-                <br>
-                <div class="pro_con3_l_det">
-                    型号: UDOT-CL02-3.5X4<br>
-                    功率: 3.5kW*4<br>
-                    电源电压: 380V / 50Hz<br>
-                    整机尺寸: 800*900*(810+160)mm<br>
-                    防水等级:  IPX4 <br>
-                    辅助配置: 8档 (可定制)
-                </div>
-            </div>
-            <div class="pro_con3_r">
-                <p>智能单头凹面炒炉</p>
-                <div class="pro_con3_l_c1">
-                    <div>1</div>
-                    <p>智能菜谱，自动控制</p>
-                </div>
-                <br>
-                <div class="pro_con3_l_c2">
-                    <div>2</div>
-                    <p>大火力，出品快</p>
-                </div>
-                <br>
-                <div class="pro_con3_l_c3">
-                    <div>3</div>
-                    <p>机身可拆卸，易清洁</p>
-                </div>
-                <br>
-                <div class="pro_con3_l_det">
-                    型号: UDOT-CL01-5<br>
-                    功率: 5kW<br>
-                    电源电压: 220V<br>
-                    整机尺寸: 400*750*950mm<br>
-                    锅口直径: 340mm<br>
-                    屏幕尺寸: 5英寸彩色液晶屏<br>
-                    辅助配置: 蓝牙测温锅，400/600柜座
+                <div class="pro_con3_r">
+                    <p>智能单头凹面炒炉</p>
+                    <div class="pro_con3_l_c1">
+                        <div>1</div>
+                        <p>智能菜谱，自动控制</p>
+                    </div>
+                    <br>
+                    <div class="pro_con3_l_c2">
+                        <div>2</div>
+                        <p>大火力，出品快</p>
+                    </div>
+                    <br>
+                    <div class="pro_con3_l_c3">
+                        <div>3</div>
+                        <p>机身可拆卸，易清洁</p>
+                    </div>
+                    <br>
+                    <div class="pro_con3_l_det">
+                        型号: UDOT-CL01-5<br>
+                        功率: 5kW<br>
+                        电源电压: 220V<br>
+                        整机尺寸: 400*750*950mm<br>
+                        锅口直径: 340mm<br>
+                        屏幕尺寸: 5英寸彩色液晶屏<br>
+                        辅助配置: 蓝牙测温锅，400/600柜座
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="pro_con3">
-            <div class="pro_con3_l">
-                <p>智能多头平面炉</p>
-                <div class="pro_con3_l_c1">
-                    <div>1</div>
-                    <p>海量智能菜谱，并支持更新</p>
+            <div class="pro_title3">
+                其他智能产品
+            </div>
+            <div class="pro_con4">
+                <div class="pro_con4_l">
+                    <p>优特智能打菜机</p>
+                    <div class="pro_con4_l_c1">
+                        <div>1</div>
+                        <p>无感支付快速结账，提高用户体验</p>
+                    </div>
+                    <br>
+                    <div class="pro_con4_l_c2">
+                        <div>2</div>
+                        <p>减重式称重扣费，绝对公平按价取菜</p>
+                    </div>
+                    <br>
+                    <div class="pro_con4_l_c3">
+                        <div>3</div>
+                        <p>自动感应翻盖防逃单，保持食品卫生</p>
+                    </div>
+                    <br>
+                    <div class="pro_con4_l_c4">
+                        <div>4</div>
+                        <p>内嵌式加热系统维持菜温</p>
+                    </div>
+                    <br>
+                    <div class="pro_con4_l_c5">
+                        <div>5</div>
+                        <p>前后厅信息互通，实时插单加菜，提高管理效率</p>
+                    </div>
                 </div>
-                <br>
-                <div class="pro_con3_l_c2">
-                    <div>2</div>
-                    <p>火力与时间的精准掌控</p>
-                </div>
-                <br>
-                <div class="pro_con3_l_c3">
-                    <div>3</div>
-                    <p>防干烧，防漏电，安全可靠</p>
-                </div>
-                <br>
-                <div class="pro_con3_l_det">
-                    型号: UDOT-CL02-3.5X4<br>
-                    功率: 3.5kW*4<br>
-                    电源电压: 380V / 50Hz<br>
-                    整机尺寸: 800*900*(810+160)mm<br>
-                    防水等级:  IPX4 <br>
-                    辅助配置: 8档 (可定制)
+                <div class="pro_con4_r">
                 </div>
             </div>
-            <div class="pro_con3_r">
-                <p>智能单头凹面炒炉</p>
-                <div class="pro_con3_l_c1">
-                    <div>1</div>
-                    <p>智能菜谱，自动控制</p>
+            <div class="pro_con5">
+                <div class="pro_con5_l">
+                    <p>优特配送箱</p>
+                    <div class="pro_con5_l_c1">
+                        <div>1</div>
+                        <p>蓝牙锁管控配送过程</p>
+                    </div>
+                    <br>
+                    <div class="pro_con5_l_c2">
+                        <div>2</div>
+                        <p>解决食品安全卫生问题</p>
+                    </div>
+                    <br>
+                    <div class="pro_con5_l_c3">
+                        <div>3</div>
+                        <p>2~8℃ 保温保鲜长达12小时</p>
+                    </div>
                 </div>
-                <br>
-                <div class="pro_con3_l_c2">
-                    <div>2</div>
-                    <p>大火力，出品快</p>
-                </div>
-                <br>
-                <div class="pro_con3_l_c3">
-                    <div>3</div>
-                    <p>机身可拆卸，易清洁</p>
-                </div>
-                <br>
-                <div class="pro_con3_l_det">
-                    型号: UDOT-CL01-5<br>
-                    功率: 5kW<br>
-                    电源电压: 220V<br>
-                    整机尺寸: 400*750*950mm<br>
-                    锅口直径: 340mm<br>
-                    屏幕尺寸: 5英寸彩色液晶屏<br>
-                    辅助配置: 蓝牙测温锅，400/600柜座
-                </div>
-            </div>
-        </div>
-        <div class="pro_con3">
-            <div class="pro_con3_l">
-                <p>智能多头平面炉</p>
-                <div class="pro_con3_l_c1">
-                    <div>1</div>
-                    <p>海量智能菜谱，并支持更新</p>
-                </div>
-                <br>
-                <div class="pro_con3_l_c2">
-                    <div>2</div>
-                    <p>火力与时间的精准掌控</p>
-                </div>
-                <br>
-                <div class="pro_con3_l_c3">
-                    <div>3</div>
-                    <p>防干烧，防漏电，安全可靠</p>
-                </div>
-                <br>
-                <div class="pro_con3_l_det">
-                    型号: UDOT-CL02-3.5X4<br>
-                    功率: 3.5kW*4<br>
-                    电源电压: 380V / 50Hz<br>
-                    整机尺寸: 800*900*(810+160)mm<br>
-                    防水等级:  IPX4 <br>
-                    辅助配置: 8档 (可定制)
+                <div class="pro_con5_r">
+                    <p>优特智能取餐柜</p>
+                    <div class="pro_con5_l_c1">
+                        <div>1</div>
+                        <p>热柜具备热菜保温功能</p>
+                    </div>
+                    <br>
+                    <div class="pro_con5_l_c2">
+                        <div>2</div>
+                        <p>冷柜具备凉菜冷藏功能、净菜冷藏功能</p>
+                    </div>
+                    <br>
+                    <div class="pro_con5_l_c3">
+                        <div>3</div>
+                        <p>冷柜和热柜可级联、结合场景按需组合模块</p>
+                    </div>
+                    <br>
+                    <div class="pro_con5_l_c4">
+                        <div>4</div>
+                        <p>具备自动除菌功能</p>
+                    </div>
+                    <br>
+                    <div class="pro_con5_l_c5">
+                        <div>5</div>
+                        <p>支持多种送餐取餐方式</p>
+                    </div>
                 </div>
             </div>
-            <div class="pro_con3_r">
-                <p>智能单头凹面炒炉</p>
-                <div class="pro_con3_l_c1">
-                    <div>1</div>
-                    <p>智能菜谱，自动控制</p>
-                </div>
-                <br>
-                <div class="pro_con3_l_c2">
-                    <div>2</div>
-                    <p>大火力，出品快</p>
-                </div>
-                <br>
-                <div class="pro_con3_l_c3">
-                    <div>3</div>
-                    <p>机身可拆卸，易清洁</p>
-                </div>
-                <br>
-                <div class="pro_con3_l_det">
-                    型号: UDOT-CL01-5<br>
-                    功率: 5kW<br>
-                    电源电压: 220V<br>
-                    整机尺寸: 400*750*950mm<br>
-                    锅口直径: 340mm<br>
-                    屏幕尺寸: 5英寸彩色液晶屏<br>
-                    辅助配置: 蓝牙测温锅，400/600柜座
-                </div>
-            </div>
-        </div>
-        <div class="pro_title3">
-            其他智能产品
-        </div>
-        <div class="pro_con4">
-            <div class="pro_con4_l">
-                <p>优特智能打菜机</p>
-                <div class="pro_con4_l_c1">
-                    <div>1</div>
-                    <p>无感支付快速结账，提高用户体验</p>
-                </div>
-                <br>
-                <div class="pro_con4_l_c2">
-                    <div>2</div>
-                    <p>减重式称重扣费，绝对公平按价取菜</p>
-                </div>
-                <br>
-                <div class="pro_con4_l_c3">
-                    <div>3</div>
-                    <p>自动感应翻盖防逃单，保持食品卫生</p>
-                </div>
-                <br>
-                <div class="pro_con4_l_c4">
-                    <div>4</div>
-                    <p>内嵌式加热系统维持菜温</p>
-                </div>
-                <br>
-                <div class="pro_con4_l_c5">
-                    <div>5</div>
-                    <p>前后厅信息互通，实时插单加菜，提高管理效率</p>
-                </div>
-            </div>
-            <div class="pro_con4_r"></div>
-        </div>
-        <div class="pro_con5">
-            <div class="pro_con5_l">
-                <p>优特配送箱</p>
-                <div class="pro_con5_l_c1">
-                    <div>1</div>
-                    <p>蓝牙锁管控配送过程</p>
-                </div>
-                <br>
-                <div class="pro_con5_l_c2">
-                    <div>2</div>
-                    <p>解决食品安全卫生问题</p>
-                </div>
-                <br>
-                <div class="pro_con5_l_c3">
-                    <div>3</div>
-                    <p>2~8℃ 保温保鲜长达12小时</p>
-                </div>
-            </div>
-            <div class="pro_con5_r">
-                <p>优特智能取餐柜</p>
-                <div class="pro_con5_l_c1">
-                    <div>1</div>
-                    <p>热柜具备热菜保温功能</p>
-                </div>
-                <br>
-                <div class="pro_con5_l_c2">
-                    <div>2</div>
-                    <p>冷柜具备凉菜冷藏功能、净菜冷藏功能</p>
-                </div>
-                <br>
-                <div class="pro_con5_l_c3">
-                    <div>3</div>
-                    <p>冷柜和热柜可级联、结合场景按需组合模块</p>
-                </div>
-                <br>
-                <div class="pro_con5_l_c4">
-                    <div>4</div>
-                    <p>具备自动除菌功能</p>
-                </div>
-                <br>
-                <div class="pro_con5_l_c5">
-                    <div>5</div>
-                    <p>支持多种送餐取餐方式</p>
-                </div>
-            </div>
-        </div>
+        </div>     
         <zcFooter></zcFooter>
     </div>
 </template>
@@ -300,18 +310,69 @@ export default {
     components:{
         zcHeader,
         zcFooter,
+    },
+    methods:{
+        proCai(){
+            this.$router.push("/product/proCai");
+        },
+        proAIO(){
+            this.$router.push("/product/proAIO");
+        }
     }
 }
 </script>
+
+<style lang="scss">
+.whiteBlack{
+    .header{
+        .header_navbar{
+            .productCenter{
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+</style>
 
 <style lang="scss" scoped>
 p{
     font-family:PingFangSC-Semibold,PingFang SC;
 }
-.pro{
+.product {
     width: 100%;
     height: 100%;
-    background-color: #F8F9FB;
+    overflow: hidden;
+    .product_header{
+        width: 100%;
+        height: 3rem;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        p{
+            float: left;
+            color: #333333;
+            font-size:0.75rem;
+        }
+        p:first-child{
+            font-weight: 600;
+            cursor: pointer;
+        }
+        p:nth-child(3),p:nth-child(5){
+            font-weight: 400;
+            cursor: pointer;
+        }
+        p:not(:first-child){
+            margin-left: 1rem;
+        }
+    }
+    .pro{
+        overflow: hidden;
+        width: 100%;
+        background-color: #F8F9FB;
+        position: relative;
+        padding-top: 2.5rem;
     .pro_title1,.pro_title2,.pro_title3{
         width: 8.25rem;
         height: 2rem;
@@ -321,9 +382,11 @@ p{
         text-align: center;
         border-radius: 1rem;
         font-size: 0.87rem;
+        // position: absolute;
     }
     .pro_title1{
-        margin: 5.06rem auto 0;
+        // margin: 5.06rem auto 0;
+        margin: 0 auto;
     }
     .pro_title2,.pro_title3{
         margin: 5rem auto 0;
@@ -371,6 +434,7 @@ p{
                 height:2.81rem;
                 font-size:2rem;
                 font-weight:600;
+                cursor: pointer;
                 color:rgba(0,0,0,1);
             }
             .p3{
@@ -466,6 +530,7 @@ p{
                 font-size:2rem;
                 font-weight:600;
                 color:#fff;
+                cursor: pointer;
             }
             .p3{
                 top: 11.62rem;
@@ -757,5 +822,6 @@ p{
             margin-left: 2rem;
         }
     }
+}
 }
 </style>

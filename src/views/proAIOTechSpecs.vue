@@ -59,9 +59,17 @@ export default {
         zcFooter,
     },
     mounted(){
-        // this.$refs.hder.className = "blackBack";
         var hder  = document.getElementsByClassName("whiteBack")[0];
         hder.className = "blackBack";
+        window.onscroll = function(){
+            var top = document.documentElement.scrollTop;
+            // window.console.log(document.documentElement.scrollTop);
+            if(top>=774 && top<= 2066){
+                hder.className = "whiteBack";
+            }else{
+                hder.className = "blackBack";
+            }
+        }
     }
 }
 </script>

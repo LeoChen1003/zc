@@ -5,54 +5,54 @@
             <div class="core_syt_l">
                 <div class="core_syt_s"></div>
             </div>
-            <router-link :to="{name:'sytOs'}" class="core_syt_p1">智能系统 OS</router-link>
+            <router-link to="/coreAdvantage/intelligenceSystem" class="core_syt_p1">智能系统 OS</router-link>
             <p class="core_syt_p2">简单易用的智能，背后藏着强大的科技</p>
             <div class="core_syt_pic">
                 <div>
-                    <img src="../assets/coreAdvan/osZK.png"/>
+                    <img src="../assets/coreAdvantage/osZK.png"/>
                     <p class="core_syt_pic_p1">大滚筒套机中控屏</p>
                 </div>
                 <div>
-                    <img src="../assets/coreAdvan/osYT.png"/>
+                    <img src="../assets/coreAdvantage/osYT.png"/>
                     <p class="core_syt_pic_p2">精炒一体机屏幕</p>
                 </div>
                 <div>
-                    <img src="../assets/coreAdvan/osPhone.png"/>
+                    <img src="../assets/coreAdvantage/osPhone.png"/>
                     <p class="core_syt_pic_p3">手机端 App</p>
                 </div>
                 <div>
-                    <img src="../assets/coreAdvan/osCom.png"/>
+                    <img src="../assets/coreAdvantage/osCompute.png"/>
                     <p class="core_syt_pic_p4">电脑端后台管理</p>
                 </div>
             </div>
             <div class="core_syt_btn">
-                <img src="../assets/coreAdvan/iconAddBlack.png" alt="">
+                <img src="../assets/coreAdvantage/iconAddBlack.png" alt="">
                 <p @click="os">了解更多</p>
             </div>
         </div>
         <div class="core_tech">
             <p>以智能解构中餐</p>
-            <router-link :to="{name: 'intellTech'}">智能技术</router-link>
+            <router-link to="/coreAdvantage/intelligencTech">智能技术</router-link>
             <p>简单易用的智能，背后藏着强大的科技</p>
-            <img src="../assets/coreAdvan/coreTech.png" alt="">
+            <img src="../assets/coreAdvantage/coreTech.png" alt="">
             <div class="core_tech_btn">
-                <img src="../assets/coreAdvan/iconAddWhite.png" alt="">
+                <img src="../assets/coreAdvantage/iconAddWhite.png" alt="">
                 <p @click="tech">了解更多</p>
             </div>
         </div>
         <div class="core_data">
             <p>以智能解构中餐</p>
-            <router-link :to="{name: 'intellData'}">智能数据管控</router-link>
+            <router-link to="/coreAdvantage/intelligenceData">智能数据管控</router-link>
             <p>智能管理前厅、后厨数据，实现成本、利润全透明化</p>
-            <img src="../assets/coreAdvan/coreData.png" alt="">
+            <img src="../assets/coreAdvantage/coreData.png" alt="">
             <div class="core_data_btn">
-                <img src="../assets/coreAdvan/iconAddBlack.png" alt="">
+                <img src="../assets/coreAdvantage/iconAddBlack.png" alt="">
                 <p @click="data">了解更多</p>
             </div>
         </div>
         <div class="core_mach">
             <p>以智能解构中餐</p>
-            <router-link :to="{name: 'intellMach'}">智能配件</router-link>
+            <router-link to="/coreAdvantage/intelligenceMachine">智能配件</router-link>
             <p>智能管理前厅、后厨数据，实现成本、利润全透明化</p>
             <div class="core_mach_svg">
                 <div>
@@ -72,17 +72,17 @@
                 </div>
             </div>
             <div class="core_mach_btn">
-                <img src="../assets/coreAdvan/iconAddWhite.png" alt="">
+                <img src="../assets/coreAdvantage/iconAddWhite.png" alt="">
                 <p @click="mach">了解更多</p>
             </div>
         </div>
         <div class="core_star">
-            <img src="../assets/coreAdvan/coreStar.png" alt="">
-            <router-link :to="{name: 'intellStar'}">7 星尊享服务体系</router-link>
+            <img src="../assets/coreAdvantage/coreStar.png" alt="">
+            <router-link to="/coreAdvantage/intelligenceStar">7 星尊享服务体系</router-link>
             <p>优特智厨科技有限公司配备专业的技术、研发、营销、运营及售后团队。让客户从了解产品第一刻起，即享受专业、周到的服务</p>
-            <img src="../assets/coreAdvan/coreSer.png" alt="">
+            <img src="../assets/coreAdvantage/coreService.png" alt="">
             <div class="core_star_btn">
-                <img src="../assets/coreAdvan/iconAddWhite.png" alt="">
+                <img src="../assets/coreAdvantage/iconAddWhite.png" alt="">
                 <p @click="star">了解更多</p>
             </div>
         </div>
@@ -102,21 +102,37 @@ export default {
     },
     methods:{
         os(){
-            this.$router.push("/coreAdvan/sytOs");
+            this.$router.push("/coreAdvantage/intelligenceSystem");
         },
         tech(){
-            this.$router.push("/coreAdvan/intellTech");
+            this.$router.push("/coreAdvantage/intelligenceTech");
         },
         data(){
-            this.$router.push("/coreAdvan/intellData");
+            this.$router.push("/coreAdvantage/intelligenceData");
         },
         mach(){
-            this.$router.push("/coreAdvan/intellMach");
+            this.$router.push("/coreAdvantage/intelligenceMachine");
         },
         star(){
-            this.$router.push("/coreAdvan/intellStar");
+            this.$router.push("/coreAdvantage/intelligenceStar");
         }
-    }
+    },
+    mounted(){
+        var hder  = document.getElementsByClassName("whiteBack")[0];
+        window.onscroll = function(){
+            var top = document.documentElement.scrollTop;
+            // window.console.log(document.documentElement.scrollTop);
+            if(top >= 776 && top <= 1497){
+                hder.className = "blackBack1";
+            }else if(top >= 1497 && top <= 2218){
+                hder.className = "whiteBack1";
+            }else if(top >= 2218){
+                hder.className = "blackBack1";
+            }else{
+                hder.className = "whiteBack1";
+            }
+        }
+    },
 }
 </script>
 
@@ -130,7 +146,7 @@ p{
         width: 100%;
         height: 51.43rem;
         border-top: 1px solid #cccccc;
-        background: url("../assets/coreAdvan/osBac.jpg");
+        background: url("../assets/coreAdvantage/osBackground.jpg");
         .core_syt_l{
             position: relative;
             width:10rem;
@@ -226,7 +242,7 @@ p{
         width: 100%;
         box-sizing: border-box;
         height: 45rem;
-        background: url("../assets/coreAdvan/techBac.jpg");
+        background: url("../assets/coreAdvantage/techBackground.jpg");
         overflow: hidden;
         // background:linear-gradient(225deg,rgba(0,0,0,0) 0%,rgba(0,0,0,0.26) 26%,rgba(0,0,0,0.75) 50%,rgba(0,0,0,1) 100%);
         // opacity:0.8;    
@@ -293,7 +309,7 @@ p{
         width: 100%;
         box-sizing: border-box;
         height: 45rem;
-        background: url("../assets/coreAdvan/dataBac.jpg");
+        background: url("../assets/coreAdvantage/dataBackground.jpg");
         overflow: hidden;
         p:first-child{
             font-size: 1.12rem;
@@ -355,7 +371,7 @@ p{
         height: 45rem;
         // background:linear-gradient(225deg,rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 13%,rgba(0,0,0,0.8) 40%,rgba(0,0,0,0.7) 100%);
         // opacity:0.8;
-        background: url("../assets/coreAdvan/machBac.jpg");
+        background: url("../assets/coreAdvantage/machineBackground.jpg");
         overflow: hidden;
         p:first-child{
             width: 7.88rem;
@@ -464,7 +480,7 @@ p{
         height: 45rem;
         // background:linear-gradient(225deg,rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 18%,rgba(0,0,0,0.73) 41%,rgba(0,0,0,0.89) 100%);
         // opacity:0.2;
-        background: url("../assets/coreAdvan/starBac.jpg");
+        background: url("../assets/coreAdvantage/starBackground.jpg");
         img:first-child{
             display: block;
             margin: 7.5rem auto 0;

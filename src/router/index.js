@@ -4,17 +4,18 @@ import Home from '../views/Home.vue'
 import AboutWith from '../views/AboutWith.vue'
 import New from '../views/New.vue'
 import newDetail1 from '../views/newDetail1.vue'
-import coreAdvan from '../views/coreAdvan.vue'
-import sytOs from '../views/intellSyt.vue'
-import intellTech from '../views/intellTech.vue'
-import intellData from '../views/intellData.vue'
-import intellMach from '../views/intellMach.vue'
-import intellStar from '../views/intellStar.vue'
+import coreAdvantage from '../views/coreAdvantage.vue'
+import intelligenceSystem from '../views/intelligenceSystem'
+import intelligenceTech from '../views/intelligenceTech.vue'
+import intelligenceData from '../views/intelligenceData.vue'
+import intelligenceMachine from '../views/intelligenceMachine.vue'
+import intelligenceStar from '../views/intelligenceStar.vue'
 import product from '../views/product.vue'
 import proCai from '../views/proCai.vue'
 import proCaiTechSpecs from '../views/proCaiTechSpecs.vue'
 import proAIO from '../views/proAIO.vue'
 import proAIOTechSpecs from '../views/proAIOTechSpecs.vue'
+import contact from  '../views/contact.vue'
 
 import wapLayout from '../views/wap/layout'
 import wapIndex from '../views/wap/index'
@@ -48,6 +49,10 @@ const routes = [
     path: '/new/detail1',
     component: newDetail1
   },
+  {
+    path: '/contact',
+    component: contact
+  },
     {
         path: '/wap',
         component: wapLayout,
@@ -65,34 +70,34 @@ const routes = [
         ]
     },
   {
-    path: '/coreAdvan',
-    name: "coreAdvan",
-    component: coreAdvan,
+    path: '/coreAdvantage',
+    name: "coreAdvantage",
+    component: coreAdvantage,
   },
   {
-    path: '/coreAdvan/sytOs',
-    name: 'sytOs',
-    component: sytOs
+    path: '/coreAdvantage/intelligenceSystem',
+    name: 'intelligenceSystem',
+    component: intelligenceSystem
   },
   {
-    path: '/coreAdvan/intellTech',
-    name: 'intellTech',
-    component: intellTech
+    path: '/coreAdvantage/intelligenceTech',
+    name: 'intelligenceTech',
+    component: intelligenceTech
   },
   {
-    path: '/coreAdvan/intellData',
-    name: 'intellData',
-    component: intellData
+    path: '/coreAdvantage/intelligenceData',
+    name: 'intelligenceData',
+    component: intelligenceData
   },
   {
-    path: '/coreAdvan/intellMach',
-    name: 'intellMach',
-    component: intellMach
+    path: '/coreAdvantage/intelligenceMachine',
+    name: 'intelligenceMachine',
+    component: intelligenceMachine
   },
   {
-    path: '/coreAdvan/intellStar',
-    name: 'intellStar',
-    component: intellStar
+    path: '/coreAdvantage/intelligenceStar',
+    name: 'intelligenceStar',
+    component: intelligenceStar
   },
   {
     path: '/product',

@@ -11,12 +11,12 @@
                     <p>智能灶接受中控主机指令，精准测算所需调料，及时响应投放指令。</p>
                 </div>
                 <div class="tech_con_cen1_r">
-                    <img src="../assets/coreAdvan/tech1.jpg" alt="">
+                    <img src="../assets/coreAdvantage/tech1.jpg" alt="">
                 </div>
             </div> 
             <div class="tech_con_cen2">
                 <div class="tech_con_cen2_l">
-                    <img src="../assets/coreAdvan/tech2.jpg" alt="">
+                    <img src="../assets/coreAdvantage/tech2.jpg" alt="">
                 </div>
                 <div class="tech_con_cen2_r">
                     <p>智能补料</p>
@@ -29,12 +29,12 @@
                     <p>智能判断烹饪方式、菜量，自动调整工位，满足多烹饪工位需求。</p>
                 </div>
                 <div class="tech_con_cen1_r">
-                    <img src="../assets/coreAdvan/tech3.jpg" alt="">
+                    <img src="../assets/coreAdvantage/tech3.jpg" alt="">
                 </div>
             </div> 
             <div class="tech_con_cen2">
                 <div class="tech_con_cen2_l">
-                    <img src="../assets/coreAdvan/tech4.jpg" alt="">
+                    <img src="../assets/coreAdvantage/tech4.jpg" alt="">
                 </div>
                 <div class="tech_con_cen2_r">
                     <p>智能控温</p>
@@ -47,12 +47,12 @@
                     <p>智能判断烹饪方式，实现顺/逆时针智能翻炒，翻炒更均匀。</p>
                 </div>
                 <div class="tech_con_cen1_r">
-                    <img src="../assets/coreAdvan/tech5.jpg" alt="">
+                    <img src="../assets/coreAdvantage/tech5.jpg" alt="">
                 </div>
             </div> 
             <div class="tech_con_cen2">
                 <div class="tech_con_cen2_l">
-                    <img src="../assets/coreAdvan/tech6.jpg" alt="">
+                    <img src="../assets/coreAdvantage/tech6.jpg" alt="">
                 </div>
                 <div class="tech_con_cen2_r">
                     <p>智能提醒</p>
@@ -65,12 +65,12 @@
                     <p>多种清洗方式选择，智能完成清洗、消毒、烘干步骤。</p>
                 </div>
                 <div class="tech_con_cen1_r">
-                    <img src="../assets/coreAdvan/tech7.jpg" alt="">
+                    <img src="../assets/coreAdvantage/tech7.jpg" alt="">
                 </div>
             </div> 
             <div class="tech_con_cen2">
                 <div class="tech_con_cen2_l">
-                    <img src="../assets/coreAdvan/tech8.jpg" alt="">
+                    <img src="../assets/coreAdvantage/tech8.jpg" alt="">
                 </div>
                 <div class="tech_con_cen2_r">
                     <p>智能菜谱</p>
@@ -86,7 +86,7 @@
 export default {
     methods:{
         cancel(){
-            this.$router.push("/coreAdvan");
+            this.$router.push("/coreAdvantage");
         }
     }
 }
@@ -109,7 +109,7 @@ p{
         .tech_con_hd{
             width: 100%;
             height: 33.75rem;
-            background: url("../assets/coreAdvan/techHd.jpg");
+            background: url("../assets/coreAdvantage/techHeader.jpg");
             overflow: hidden;
             p:first-child{
                 width:8.5rem;

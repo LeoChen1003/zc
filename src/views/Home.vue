@@ -105,11 +105,12 @@
       </div>
     </div>
     <div class="home_product_more">
-      <div class="home_product_more_item">
+      <div class="home_product_more_item1">
         <div>更多智厨产品</div>
         <div>更多智厨产品</div>
+        <div></div>
       </div>
-      <div class="home_product_more_item">
+      <div class="home_product_more_item2">
         <div>其他产品</div>
         <div>其他智能产品</div>
       </div>
@@ -131,7 +132,6 @@
       </div>
     </div>
     <div class="home_img">
-      图片
     </div>
     <div class="home_about">
       <div class="home_about_left">
@@ -171,6 +171,26 @@ export default {
     zcFooter,
     zcHeader,
     homeSwiper
+  },
+  mounted(){
+    var hder  = document.getElementsByClassName("whiteBack")[0];
+    hder.className = "blackBack";
+    window.onscroll = function(){
+      var top = document.documentElement.scrollTop;
+      // window.console.log(document.documentElement.scrollTop);
+      if(top >= 1005 && top <= 1897){
+        hder.className = "whiteBack1";
+      }else if(top >= 1897 && top <= 2783){
+        hder.className = "blackBack1";
+      }else if(top >= 2783){
+        hder.className = "whiteBack1";
+      }else{
+        hder.className = "blackBack1";
+      }
+    }
+  },
+  methods:{
+    
   }
 }
 </script>
@@ -280,17 +300,12 @@ export default {
   }
   .home_product_more {
     display: flex;
-    .home_product_more_item {
+    .home_product_more_item1,.home_product_more_item2 {
       display: flex;
       align-items: center;
       flex-direction: column;
       width: 50%;
       height: 26.25rem;
-      background: linear-gradient(
-        225deg,
-        rgba(247, 248, 251, 1) 0%,
-        rgba(206, 211, 221, 1) 100%
-      );
       div:first-child {
         font-size: 1.5rem;
         font-weight: 600;
@@ -302,6 +317,14 @@ export default {
         color: #333;
         margin-top: 0.38rem;
       }
+    }
+    .home_product_more_item1{
+      background: url("../assets/home/zcEquipment.jpg");
+      background-position: 46% 0;
+    }
+    .home_product_more_item2{
+      background: url("../assets/home/otherPro.jpg");
+      background-position: 46% 0;
     }
   }
   .home_news {
@@ -341,8 +364,9 @@ export default {
     }
   }
   .home_img {
-    height: 15rem;
-    background: #eee;
+    height: 12.8rem;
+    background: url("../assets/home/aboutUs.jpg");
+    background-size: cover;
   }
   .home_about {
     display: flex;
@@ -379,8 +403,9 @@ export default {
     }
   }
   .home_pro_one {
-    height: 55.63rem;
-    background: rgba(254, 254, 254, 1);
+    height: 40.62rem;
+    background:url("../assets/home/drumFryingMachine.jpg");
+    background-size: 90rem 55.62rem;
     padding: 7.5rem 14%;
     .home_pro_one_title {
       font-size: 2.5rem;
@@ -425,8 +450,9 @@ export default {
   .home_pro_two {
     height: 41.77rem;
     background: #000;
-    background-image: url('../assets/home/编组.png');
-    padding: 13.88rem 0 0 63%;
+    background-image: url('../assets/home/AIO.png');
+    background-size: 90rem 55.62rem;
+    padding: 13.88rem 0 0 56%;
     .home_pro_two_top {
       font-size: 0.88rem;
       color: #999;

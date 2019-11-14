@@ -11,12 +11,12 @@
                     <p>无感支付快速结账，提高用户体验<br>减重式称重扣费，绝对公平按价取菜自动感应翻盖防逃单，保持食品卫生内嵌式加热系统维持菜温前后厅信息互通，实时插单加菜，提高管理效率</p>
                 </div>
                 <div class="mach_con_cen1_r">
-                    <img src="../assets/coreAdvan/mach1.jpg" alt="">
+                    <img src="../assets/coreAdvantage/machine1.jpg" alt="">
                 </div>
             </div>
             <div class="mach_con_cen2">
                 <div class="mach_con_cen2_l">
-                    <img src="../assets/coreAdvan/mach2.jpg" alt="">
+                    <img src="../assets/coreAdvantage/machine2.jpg" alt="">
                 </div>
                 <div class="mach_con_cen2_r">
                     <p>智能配送箱</p>
@@ -29,7 +29,7 @@
                     <p>热柜具备热菜保温功能<br>冷柜具备凉菜冷藏功能、净菜冷藏功能冷柜和热柜可级联、结合场景按需组合模块具备自动除菌功能支持多种送餐取餐方式</p>
                 </div>
                 <div class="mach_con_cen1_r">
-                    <img src="../assets/coreAdvan/mach3.jpg" alt="">
+                    <img src="../assets/coreAdvantage/machine3.jpg" alt="">
                 </div>
             </div>
         </div>
@@ -41,7 +41,7 @@
 export default {
     methods:{
         cancel(){
-            this.$router.push("/coreAdvan");
+            this.$router.push("/coreAdvantage");
         }
     }
 }
@@ -64,7 +64,7 @@ p{
         .mach_con_hd{
             width: 100%;
             height: 33.75rem;
-            background: url("../assets/coreAdvan/machHd.jpg");
+            background: url("../assets/coreAdvantage/machineHeader.jpg");
             overflow: hidden;
             p:first-child{
                 width:8.5rem;

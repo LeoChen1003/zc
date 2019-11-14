@@ -11,12 +11,12 @@
                     <p>根据客户需求，展开咨询工作，制定项目计划。</p>
                 </div>
                 <div class="star_con_cen1_r">
-                    <img src="../assets/coreAdvan/star1.jpg" alt="">
+                    <img src="../assets/coreAdvantage/star1.jpg" alt="">
                 </div>
             </div>
             <div class="star_con_cen2">
                 <div class="star_con_cen2_l">
-                    <img src="../assets/coreAdvan/star2.jpg" alt="">
+                    <img src="../assets/coreAdvantage/star2.jpg" alt="">
                 </div>
                 <div class="star_con_cen2_r">
                     <p>全方位规划设计</p>
@@ -29,12 +29,12 @@
                     <p>XXXXXXXXXXXXXXXXXXXXXXXXXXX<br>XXXXXXXXXXXXXXX。</p>
                 </div>
                 <div class="star_con_cen1_r">
-                    <img src="../assets/coreAdvan/star3.jpg" alt="">
+                    <img src="../assets/coreAdvantage/star3.jpg" alt="">
                 </div>
             </div>
             <div class="star_con_cen3">
                 <div class="star_con_cen3_l">
-                    <img src="../assets/coreAdvan/star4.jpg" alt="">
+                    <img src="../assets/coreAdvantage/star4.jpg" alt="">
                 </div>
                 <div class="star_con_cen3_r">
                     <p>全方位使用培训</p>
@@ -47,12 +47,12 @@
                     <p>设备定期全面检测、保养，减少设备故障、延长使用寿命。</p>
                 </div>
                 <div class="star_con_cen1_r">
-                    <img src="../assets/coreAdvan/star5.jpg" alt="">
+                    <img src="../assets/coreAdvantage/star5.jpg" alt="">
                 </div>
             </div>
             <div class="star_con_cen4">
                 <div class="star_con_cen4_l">
-                    <img src="../assets/coreAdvan/star6.jpg" alt="">
+                    <img src="../assets/coreAdvantage/star6.jpg" alt="">
                 </div>
                 <div class="star_con_cen4_r">
                     <p>全方位配件维修</p>
@@ -65,7 +65,7 @@
                     <p>不定期进行回访，全面了解客户使用体验，提高服务质量。</p>
                 </div>
                 <div class="star_con_cen1_r">
-                    <img src="../assets/coreAdvan/star7.jpg" alt="">
+                    <img src="../assets/coreAdvantage/star7.jpg" alt="">
                 </div>
             </div>
         </div>
@@ -78,7 +78,7 @@ export default {
     name: 'intellStar',
     methods:{
         cancel(){
-            this.$router.push("/coreAdvan");
+            this.$router.push("/coreAdvantage");
         }
     }
 }
@@ -99,7 +99,7 @@ p{
         overflow: hidden;
         border-radius: 0.62rem;
         .star_con_hd{
-            background: url("../assets/coreAdvan/starHd.jpg");
+            background: url("../assets/coreAdvantage/starHeader.jpg");
             width: 100%;
             height: 33.75rem;
             overflow: hidden;

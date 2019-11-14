@@ -194,6 +194,18 @@ export default {
     components:{
         zcHeader,
         zcFooter,
+    },
+    mounted(){
+        var hder  = document.getElementsByClassName("whiteBack")[0];
+        window.onscroll = function(){
+            var top = document.documentElement.scrollTop;
+            // window.console.log(document.documentElement.scrollTop);
+            if(top >= 3018 && top <= 4897){
+                hder.className = "blackBack1";
+            }else{
+                hder.className = "whiteBack1";
+            }
+        }
     }
 }
 </script>
@@ -455,11 +467,11 @@ p{
             text-align: center;
             color: #ffffff;
             margin-top: 10rem;
-            margin-left: 12rem;
+            margin-left: 19rem;
             line-height: 1.5rem;
         }
         p:nth-child(2){
-            margin-left: 12rem;
+            margin-left: 19rem;
             width:22.5rem;
             height:11.25rem;
             font-size:2.5rem;
@@ -474,7 +486,7 @@ p{
             font-weight:400;
             color:#333;
             margin-top: 2.5rem;
-            margin-left: 12rem;
+            margin-left: 19rem;
         }
         span:nth-child(4),span:nth-child(5){
             height:3.13rem;
@@ -484,7 +496,7 @@ p{
             margin-top: 3rem;
         }
         span:nth-child(4){
-            margin-left: 12rem;
+            margin-left: 19rem;
             width:5.88rem;
         }
         span:nth-child(5){
@@ -500,7 +512,7 @@ p{
             margin-top: 0.5rem;
         }
         span:nth-child(7){
-            margin-left: 12rem;  
+            margin-left: 19rem;  
         }
         span:nth-child(8){
             margin-left: 6.94rem;
@@ -519,7 +531,7 @@ p{
         background:linear-gradient(149deg,rgb(4, 25, 34) 0%,rgba(231,235,239,1) 6%,rgba(247,248,249,1) 39%,rgba(255,255,255,1) 60%,rgba(235,240,243,1) 84%,rgba(223,231,235,1) 100%);
         overflow: hidden;
         .p1{
-            margin-left: 12rem;
+            margin-left: 19rem;
             margin-top: 10rem;
             width:25rem;
             height:3.5rem;
@@ -534,14 +546,14 @@ p{
             font-weight:400;
             color:#333;
             line-height:2rem;
-            margin-left: 12rem;
+            margin-left: 19rem;
             margin-top: 2rem;
         }
         .cai_con4_text1{
             float: left;
             width: 5.88rem;
             height: 5.63rem;
-            margin-left: 12rem;
+            margin-left: 19rem;
             margin-top: 3rem;
             p:first-child{
                 font-size:2.25rem;
@@ -598,7 +610,7 @@ p{
             height:1.5rem;
             background:rgba(44,198,192,1);
             border-radius:0.19rem;
-            margin-left: 12rem;
+            margin-left: 19rem;
             margin-top: 9rem;
             font-size:0.88rem;
             font-weight:600;
@@ -612,7 +624,7 @@ p{
             font-size:2.5rem;
             font-weight:600;
             color:rgba(255,255,255,1);
-            margin-left: 12rem;
+            margin-left: 19rem;
             margin-top: 1.5rem;
         }
         p:nth-child(3){
@@ -622,7 +634,7 @@ p{
             font-weight:400;
             color:rgba(136,136,136,1);
             line-height:2rem;
-            margin-left: 12rem;
+            margin-left: 19rem;
             margin-top: 2rem;
         }
         .cai_con5_PL{
@@ -630,7 +642,7 @@ p{
             font-weight:600;
             color:rgba(44,198,192,1);
             line-height:3.13rem;
-            margin-left: 12rem;
+            margin-left: 19rem;
             margin-top: 1.5rem;
         }
         p:nth-child(4){
@@ -642,7 +654,7 @@ p{
             font-weight:400;
             color:rgba(136,136,136,1);
             line-height:2rem;
-            margin-left: 12rem;
+            margin-left: 19rem;
             margin-top: 0.5rem;
         }
         .cai_con5_pic{
@@ -724,7 +736,7 @@ p{
             background: #2CC6C0;
             border-radius: 0.18rem;
             margin-top: 11.25rem;
-            margin-left: 12rem;
+            margin-left: 15rem;
             font-size:0.88rem;
             font-weight:600;
             color:rgba(255,255,255,1);
@@ -738,7 +750,7 @@ p{
             font-weight:600;
             color:rgba(0,0,0,1);
             line-height:3.5rem;
-            margin-left: 12rem;
+            margin-left: 15rem;
             margin-top: 1.63rem;
         }
         p:nth-child(3){
@@ -748,13 +760,13 @@ p{
             font-weight:400;
             color:rgba(51,51,51,1);
             line-height:2rem;
-            margin-left: 12rem;
+            margin-left: 15rem;
             margin-top: 2.5rem;
         }
         .cai_con7_txt1,.cai_con7_txt2,.cai_con7_txt3,.cai_con7_txt4{
             float: left;
             margin-top: 3rem;
-            margin-left: 12rem;
+            margin-left: 15rem;
             width: 9rem;
             height: 5.63rem;
             p:first-child{
@@ -803,7 +815,7 @@ p{
         box-shadow:0px 10px 20px 0px rgba(0,0,0,0.02);
         overflow: hidden;
         .cai_con8_title{
-            margin-left: 12rem;
+            margin-left: 19rem;
             margin-top: 7.5rem;
             width:8rem;
             height:1.5rem;
@@ -821,7 +833,7 @@ p{
             font-size:2.5rem;
             font-weight:600;
             color:rgba(255,255,255,1);
-            margin-left: 12rem;
+            margin-left: 19rem;
             margin-top: 1.63rem;
         }
         .cai_con8_p2{
@@ -830,14 +842,14 @@ p{
             font-size:1rem;
             font-weight:400;
             color:rgba(136,136,136,1);
-            margin-left: 12rem;
+            margin-left: 19rem;
             margin-top: 2rem;
         }
         .cai_con8_d1,.cai_con8_d2{
             width: 10rem;
             height: 5.64rem;
             float: left;
-            margin-left: 12rem;
+            margin-left: 19rem;
             margin-top: 2.75rem;
             p:first-child{
                 width:9.07rem;
@@ -893,10 +905,10 @@ p{
             color:rgba(255,255,255,1);
             line-height:3.5rem;
             margin-top: 7.5rem;
-            margin-left: 12rem;
+            margin-left: 19rem;
         }
         .cai_con9_p2{
-            margin-left: 12rem;
+            margin-left: 19rem;
             margin-top: 2.5rem;
             width:52.5rem;
             height:6rem;
@@ -909,7 +921,7 @@ p{
             width: 9rem;
             height: 5.23rem;
             float: left;
-            margin-left: 12rem;
+            margin-left: 19rem;
             margin-top: 3rem;
             p:first-child{
                 width:9rem;

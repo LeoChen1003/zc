@@ -88,6 +88,19 @@ export default {
     components:{
         zcHeader,
         zcFooter,
+    },
+    mounted(){
+        var hder  = document.getElementsByClassName("whiteBack")[0];
+        hder.className = "blackBack";
+        window.onscroll = function(){
+            var top = document.documentElement.scrollTop;
+            // window.console.log(document.documentElement.scrollTop);
+            if(top>=755){
+                hder.className = "whiteBack";
+            }else{
+                hder.className = "blackBack";
+            }
+        }
     }
 }
 </script>
@@ -102,7 +115,7 @@ p{
     .specs_hd{
         width: 100%;
         height: 3rem;
-        border-top: 1px solid #ccc;
+        border-top: 1px solid #000;
         background-color: #000;
         p:first-child{
             float: left;
