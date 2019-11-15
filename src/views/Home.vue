@@ -9,7 +9,7 @@
           <span>观</span>
           <span>看</span>
         </div>
-        <div class="home_video_c_btn">
+        <div class="home_video_c_btn" @click="video">
           <div class="home_video_c_btn_c"></div>
         </div>
         <div>
@@ -190,7 +190,9 @@ export default {
     }
   },
   methods:{
-    
+    video(){
+      this.$router.push("/home/video");
+    }
   }
 }
 </script>

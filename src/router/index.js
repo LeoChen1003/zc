@@ -16,6 +16,8 @@ import proCaiTechSpecs from '../views/proCaiTechSpecs.vue'
 import proAIO from '../views/proAIO.vue'
 import proAIOTechSpecs from '../views/proAIOTechSpecs.vue'
 import contact from  '../views/contact.vue'
+import buyConsult from '../views/buyConsult.vue'
+import homeVideo from '../views/video.vue'
 
 import wapLayout from '../views/wap/layout'
 import wapIndex from '../views/wap/index'
@@ -27,6 +29,10 @@ const routes = [
     path: '/',
     name: 'home',
     component: Home
+  },
+  {
+    path: '/home/video',
+    component: homeVideo
   },
   {
     path: '/about',
@@ -52,6 +58,10 @@ const routes = [
   {
     path: '/contact',
     component: contact
+  },
+  {
+    path: '/buyConsult',
+    component: buyConsult
   },
     {
         path: '/wap',

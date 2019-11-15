@@ -9,7 +9,7 @@
             <p>其他智能产品</p>
         </div>
         <div class="pro">
-            <div class="pro_title1">
+            <div class="pro_title1" ref="pro1">
                 旗舰智厨产品
             </div>
             <div class="pro_con1">
@@ -19,8 +19,8 @@
                     <p class="p2" @click="proCai">智能一拖三炒菜机</p>
                     <p class="p3">智能一拖三炒菜机是高度集成优特智厨智能厨电技术，在行业率先实现自动喷投多种类型调料，同时满足中餐标准化和规模化的烹饪要求的智能炒菜设备。</p>
                     <div class="pro_con1_l_btn">
-                        <div class="pro_con1_l_btn_1">立即预约</div>
-                        <div class="pro_con1_l_btn_2">
+                        <div class="pro_con1_l_btn_1" @click="buy">立即预约</div>
+                        <div class="pro_con1_l_btn_2" @click="proCai">
                             <img src="../assets/product/addBlack.png" alt="">
                             <p>了解更多</p>
                         </div>
@@ -37,8 +37,8 @@
                     <p class="p2" @click="proAIO">智能精炒一体机</p>
                     <p class="p3">智能精炒一体机是优特智厨为小份精炒用户量身打造的“超级烹饪专家”。既能通过对温度、调料的智能控制实现菜品口味100%的复刻，又能实现人人都能当大厨的愿望。</p>
                     <div class="pro_con2_l_btn">
-                        <div class="pro_con2_l_btn_1">立即预约</div>
-                        <div class="pro_con2_l_btn_2">
+                        <div class="pro_con2_l_btn_1" @click="buy">立即预约</div>
+                        <div class="pro_con2_l_btn_2" @click="proAIO">
                             <img src="../assets/product/addWhite.png" alt="">
                             <p>了解更多</p>
                         </div>
@@ -48,7 +48,7 @@
                     <img src="../assets/product/AIO.jpg" alt="">
                 </div>
             </div>
-            <div class="pro_title2">
+            <div class="pro_title2" ref="pro2">
                 其他智厨产品
             </div>
             <div class="pro_con3">
@@ -216,7 +216,7 @@
                     </div>
                 </div>
             </div>
-            <div class="pro_title3">
+            <div class="pro_title3" ref="pro3">
                 其他智能产品
             </div>
             <div class="pro_con4">
@@ -317,7 +317,55 @@ export default {
         },
         proAIO(){
             this.$router.push("/product/proAIO");
-        }
+        },
+        buy(){
+            this.$router.push("/buyConsult");
+        },
+        onScroll(){
+            // let scrolled = document.documentElement.scrollTop || document.body.scrollTop;
+            // window.console.log(scrolled);
+            // let item = this.$refs.pro1.offsetTop;
+            // let item1 = this.$refs.pro2.offsetTop;
+            // window.console.log(item);//80
+            // window.console.log(item1);//1216
+        },
+        // jump(i){
+        //     let item = this.$refs.i;
+        //     let total = item.offsetTop;
+        //     let distance = document.documentElement.scrollTop || document.body.scrollTop;
+        //     let step = total / 50;
+        //     if(total > distance){
+        //         moveDown();
+        //     }else{
+        //         let newTotal = distance - total;
+        //         step = newTotal / 50;
+        //         moveUp();
+        //     }
+        //     function moveDown(){
+        //         if (distance < total) {
+        //             distance += step
+        //             document.documentElement.scrollTop = distance;
+        //             setTimeout(moveDown, 10)
+        //         } else {
+        //             document.documentElement.scrollTop = total -57;
+        //         }
+        //     }
+        //     function moveUp(){
+        //        if (distance > total) {
+        //             distance -= step
+        //             // Firefox
+        //             document.documentElement.scrollTop = distance
+        //             // Chrome
+        //             document.body.scrollTop = distance
+        //             setTimeout(moveUp, 10)
+        //         }else{
+        //             document.documentElement.scrollTop = total - 57;
+        //         }
+        //     }
+        // }
+    },
+    mounted(){
+        // window.addEventListener('scroll',this.onScroll);
     }
 }
 </script>
@@ -350,6 +398,8 @@ p{
         display: flex;
         justify-content: center;
         align-items: center;
+        position: fixed;
+        z-index: 1;
         p{
             float: left;
             color: #333333;
@@ -372,7 +422,7 @@ p{
         width: 100%;
         background-color: #F8F9FB;
         position: relative;
-        padding-top: 2.5rem;
+        padding-top: 5rem;
     .pro_title1,.pro_title2,.pro_title3{
         width: 8.25rem;
         height: 2rem;
@@ -450,6 +500,7 @@ p{
                 top: 23.37rem;
                 left: 5rem;
                 .pro_con1_l_btn_1,.pro_con1_l_btn_2{
+                    cursor: pointer;
                     float: left;
                 }
                 .pro_con1_l_btn_1{
@@ -546,6 +597,7 @@ p{
                 left: 5rem;
                 .pro_con2_l_btn_1,.pro_con2_l_btn_2{
                     float: left;
+                    cursor: pointer;
                 }
                 .pro_con2_l_btn_1{
                     width: 7rem;

@@ -20,7 +20,7 @@
             </div>
             <div class="contact_commit_input">
                 <span>需求设备</span><input placeholder="请选择需求设备…" class="input4"/><div class="arrow" @click="open" ><svg-icon :icon-class="iconClass" class-name="xia_arrow"></svg-icon></div><br>
-                <div :style="{display:selectDisplay}" class="contact_commit_input_select">
+                <div :style="{display:selectDisplay}" class="contact_commit_input_select" ref="select">
                     <p v-for="(item,i) of machine" @click="changeTxt(i)" :key="i" :class="{blue:changeColor==i}">{{machine[i]}}</p>
                 </div>
             </div>
@@ -49,32 +49,40 @@
             </div>
         </div>
         <div class="contact_d3">
-            <div class="contact_d3_circle1"></div>
-            <div class="contact_d3_circle2"></div>
-            <div class="contact_d3_circle3"></div>
             <p>企业位置</p>
+            <div class="contact_d3_circle1" :class="{cir_white:target ==='btn3',cir_blue:target!=='btn3'}"></div>
+            <div class="contact_d3_circle2" :class="{cir_white:target ==='btn2',cir_blue:target!=='btn2'}"></div>
+            <div class="contact_d3_circle3" :class="{cir_white:target ==='btn1',cir_blue:target!=='btn1'}"></div>
             <div class="contact_d3_location">
                 <svg-icon icon-class="china" class-name="svg_china"></svg-icon>
                 <div class="contact_d3_location_city">
-                    <div class="contact_d3_location_city_zh">
+                    <div class="contact_d3_location_city_zh" @click="changeCity('btn1')" :class="{white:target==='btn1',light:target!=='btn1'}">
                         <svg-icon icon-class="city_zh" class-name="svg_zh"></svg-icon>
                         <p>珠海</p>
                         <p>硬件研发中心 (总部)</p>
                         <p>广东省珠海市香洲区银桦路102号优特科技大厦</p>
                     </div>
-                    <div class="contact_d3_location_city_sz">
+                    <div class="contact_d3_location_city_sz" @click="changeCity('btn2')" :class="{white:target==='btn2',light:target!=='btn2'}">
                         <svg-icon icon-class="city_sz" class-name="svg_zh"></svg-icon>
                         <p>深圳</p>
                         <p>工业设计中心</p>
                         <p>广东省深圳市广东省深圳市塘朗金骐智谷大厦1705</p>
                     </div>
-                    <div class="contact_d3_location_city_hz">
+                    <div class="contact_d3_location_city_hz" @click="changeCity('btn3')" :class="{white:target==='btn3',light:target!=='btn3'}">
                         <svg-icon icon-class="city_hz" class-name="svg_hz"></svg-icon>
                         <p>杭州</p>
                         <p>软件研发中心</p>
                         <p>浙江省杭州市文一西路西溪八方城9-503</p>
                     </div>
                 </div>
+                <!-- <div class="contact_d3_location_city">
+                    <div v-for="(city,i) of citys" :key="i" :class="classN[i]" @click="changeCity(i)">
+                        <svg-icon :icon-class="city.svg_icon" :class-name="classN1[i]"></svg-icon>
+                        <p>{{city.name}}</p> 
+                        <p>{{city.title}}</p>
+                        <p>{{city.address}}</p>
+                    </div>
+                </div> -->
             </div>
         </div>
         <zcFooter></zcFooter>
@@ -92,7 +100,30 @@ export default {
             iconClass: 'xia',
             machine:["智能大滚筒炒菜机套机","智能精炒一体机","其他设备"],
             changeColor: -1,
-            hideSel: -1
+            cityColor : false,
+            target: 'btn1'
+            // classN: ['contact_d3_location_city_zh','contact_d3_location_city_sz','contact_d3_location_city_hz'],
+            // classN1: ['svg_zh','svg_zh','svg_hz'],
+            // citys: [
+            //     {
+            //         name : '珠海',
+            //         title : '硬件研发中心 (总部)',
+            //         address: '广东省珠海市香洲区银桦路102号优特科技大厦',
+            //         svg_icon : 'city_zh'
+            //     },
+            //     {
+            //         name : '深圳',
+            //         title : '工业设计中心',
+            //         address : '广东省深圳市广东省深圳市塘朗金骐智谷大厦1705',
+            //         svg_icon : 'city_sz'
+            //     },
+            //     {
+            //         name : '杭州',
+            //         title : '软件研发中心',
+            //         address : '浙江省杭州市文一西路西溪八方城9-503',
+            //         svg_icon : 'city_hz'
+            //     }
+            // ]
         }
     },
     components:{
@@ -104,16 +135,34 @@ export default {
             this.selectDisplay = "block";
             this.iconClass = "shang";
         },
+        // show(){
+        //     document.addEventListener('click', this.hidePanel, false)
+        // },
+        // hide(){
+        //     document.removeEventListener('click', this.hidePanel, false);
+        // },
+        // showAndHide(e){
+        //     if(!this.$refs.select.contains(e.target)){
+        //         this.selectDisplay = "none";
+        //         this.hide();
+        //     }
+        // },
         changeTxt(index){
             var input4 = document.getElementsByClassName("input4")[0];
             input4.value = this.machine[index];
             this.changeColor = index;
+        },
+        changeCity(index){
+            this.target = index;
         }
     }
 }
 </script>
 
 <style lang="scss" scoped>
+.hide{
+    display: none;
+}
 p{
     font-family:PingFangSC-Semibold,PingFang SC;
 }
@@ -320,20 +369,30 @@ p{
             position: absolute;
             width:1.38rem;
             height:1.38rem;
-            background:rgba(13,168,162,1);
             border:3px solid rgba(255,255,255,1);
+            border-radius: 50%;
+            z-index: 1;
         }
         .contact_d3_circle1{
-            left: 36rem;
-            top: 27.06rem;
+            left: 35.5rem;
+            top: 30.06rem;
+            background:rgba(13,168,162,1);
         }
         .contact_d3_circle2{
-            left: 37.12rem;
-            top: 28.31rem;
+            left: 30.32rem;
+            top: 33rem;
+            background:rgba(13,168,162,1);
         }
         .contact_d3_circle3{
-            left: 41.06rem;
-            top: 22.12rem;
+            left: 32.06rem;
+            top: 33.89rem;
+            background-color: #fff;
+        }
+        .cir_blue{
+            background:rgba(13,168,162,1);
+        }
+        .cir_white{
+            background-color: #fff;
         }
         p:first-child{
             width:7rem;
@@ -364,6 +423,7 @@ p{
                 top: 5.68rem;
                 right: 9.88rem;
                 position: absolute;
+                cursor: pointer;
                 .contact_d3_location_city_zh,.contact_d3_location_city_sz,.contact_d3_location_city_hz{
                     width: 100%;
                     height: 7.87rem;
@@ -372,7 +432,7 @@ p{
                 .contact_d3_location_city_zh,
                 .contact_d3_location_city_sz,
                 .contact_d3_location_city_hz{
-                    background-color: #fff;
+                    // background-color: #fff;
                     border-radius: 0.63rem 0.63rem 0 0;
                     .svg_zh{
                         position: absolute;
@@ -406,8 +466,17 @@ p{
                         left: 6.62rem;
                     }
                 }
+                .contact_d3_location_city_zh{
+                    background-color: #fff;
+                }
                 .contact_d3_location_city_sz,.contact_d3_location_city_hz{
                     background-color: #EAF9F8;
+                }
+                .light{
+                    background-color: #EAF9F8 ;
+                }
+                .white{
+                    background-color: #fff;
                 }
                 .contact_d3_location_city_sz{
                     border-radius: 0;
