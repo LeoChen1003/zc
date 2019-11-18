@@ -2,14 +2,14 @@
     <div class="product">
         <zcHeader></zcHeader>
         <div class="product_header">
-            <p>旗舰智厨产品</p>
+            <p @click="jump(0)">旗舰智厨产品</p>
             <p>···</p>
-            <p>更多智厨产品</p>
+            <p @click="jump(1)">更多智厨产品</p>
             <p>···</p>
-            <p>其他智能产品</p>
+            <p @click="jump(2)">其他智能产品</p>
         </div>
         <div class="pro">
-            <div class="pro_title1" ref="pro1">
+            <div class="pro_title1 d_jump" ref="pro1">
                 旗舰智厨产品
             </div>
             <div class="pro_con1">
@@ -48,7 +48,7 @@
                     <img src="../assets/product/AIO.jpg" alt="">
                 </div>
             </div>
-            <div class="pro_title2" ref="pro2">
+            <div class="pro_title2 d_jump" ref="pro2">
                 其他智厨产品
             </div>
             <div class="pro_con3">
@@ -216,7 +216,7 @@
                     </div>
                 </div>
             </div>
-            <div class="pro_title3" ref="pro3">
+            <div class="pro_title3 d_jump" ref="pro3">
                 其他智能产品
             </div>
             <div class="pro_con4">
@@ -321,52 +321,73 @@ export default {
         buy(){
             this.$router.push("/buyConsult");
         },
-        onScroll(){
-            // let scrolled = document.documentElement.scrollTop || document.body.scrollTop;
-            // window.console.log(scrolled);
-            // let item = this.$refs.pro1.offsetTop;
-            // let item1 = this.$refs.pro2.offsetTop;
-            // window.console.log(item);//80
-            // window.console.log(item1);//1216
-        },
-        // jump(i){
-        //     let item = this.$refs.i;
-        //     let total = item.offsetTop;
-        //     let distance = document.documentElement.scrollTop || document.body.scrollTop;
-        //     let step = total / 50;
-        //     if(total > distance){
-        //         moveDown();
-        //     }else{
-        //         let newTotal = distance - total;
-        //         step = newTotal / 50;
-        //         moveUp();
-        //     }
-        //     function moveDown(){
-        //         if (distance < total) {
-        //             distance += step
-        //             document.documentElement.scrollTop = distance;
-        //             setTimeout(moveDown, 10)
-        //         } else {
-        //             document.documentElement.scrollTop = total -57;
-        //         }
-        //     }
-        //     function moveUp(){
-        //        if (distance > total) {
-        //             distance -= step
-        //             // Firefox
-        //             document.documentElement.scrollTop = distance
-        //             // Chrome
-        //             document.body.scrollTop = distance
-        //             setTimeout(moveUp, 10)
-        //         }else{
-        //             document.documentElement.scrollTop = total - 57;
-        //         }
-        //     }
-        // }
-    },
-    mounted(){
-        // window.addEventListener('scroll',this.onScroll);
+        // onScroll(){
+        //     let scrolled = document.documentElement.scrollTop || document.body.scrollTop;
+        //     window.console.log(scrolled); //18
+        //     // let item = this.$refs.pro1.offsetTop;
+        //     // let item1 = this.$refs.pro2.offsetTop;
+        //     // let item2 = this.$refs.pro3.offsetTop;
+        //     // window.console.log(item);//80
+        //     // window.console.log(item1);//1216
+        //     // window.console.log(item2);//2477
+        // },
+        jump(i){
+            window.console.log(i);
+            let jump = document.getElementsByClassName("d_jump");
+            //获取当前滚动条与窗体顶部的距离
+            let distance = document.documentElement.scrollTop || document.body.scrollTop;
+            //获取需要滚动的距离
+            let total = jump[i].offsetTop - 48;
+            //计算每小段的距离
+            let step = total / 50;
+            window.console.log(total);
+            //Chrome
+            // document.body.scrollTop = total;
+            //distance = total;
+            //firefox
+            //document.documentElement.scrollTop = total;
+            //safari
+            //window.pageYOffset = total;
+            if(total > distance){
+                moveDown();
+            }else{
+                let newTotal = distance - total
+                step = newTotal / 50;
+                moveUp();
+            }
+            function moveDown(){
+                if(distance < total){
+                    distance += step;
+                    window.console.log(step);
+                    // window.console.log(distance);
+                    document.body.scrollTop = distance;
+                    document.documentElement.scrollTop = distance;
+                    setTimeout(moveDown,10);
+                    window.console.log(distance);
+                    // window.console.log(document.documentElement.scrollTop);
+                }else{
+                    document.body.scrollTop = distance;
+                    document.documentElement.scrollTop = total;
+                }
+                // window.console.log(1);
+            }
+            function moveUp(){
+                if(distance > total){
+                    distance -= step;
+                    document.body.scrollTop = distance;
+                    document.documentElement.scrollTop = distance;
+                    setTimeout(moveUp,10);
+                }else{
+                    document.body.scrollTop = total;
+                    document.documentElement.scrollTop = total;
+                }
+                // window.console.log(2);
+            }
+        }
     }
+    // mounted(){
+    //     window.addEventListener('scroll',this.onScroll);
+    // }
 }
 </script>
 
