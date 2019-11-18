@@ -1,6 +1,6 @@
 <!-- index -->
 <template>
-  <div>
+  <div class="wrapper">
     <div class="cell cell-1">
       <div class="title-1">优特智厨</div>
       <div class="title-2">人工智能时代的餐饮革命</div>
@@ -9,7 +9,7 @@
         <div class="view-text">观</div>
         <div class="view-text">看</div>
         <div class="video-button">
-
+          <div class="video-btn—c"></div>
         </div>
         <div class="view-text">视</div>
         <div class="view-text">频</div>
@@ -87,6 +87,22 @@
     </div>
     <div class="cell cell-5">
       <div class="cell-header">
+        更多智厨产品
+      </div>
+      <div class="sub-title">
+        更多智厨产品
+      </div>
+    </div>
+    <div class="cell cell-6">
+      <div class="cell-header">
+        其他产品
+      </div>
+      <div class="sub-title">
+        其他智能产品
+      </div>
+    </div>
+    <div class="cell cell-7">
+      <div class="cell-header">
         <div class="sub-title">对我们了解更多</div>
         <div class="inline">
           <div class="title">新闻中心</div>
@@ -121,8 +137,8 @@
         </swiper>
       </div>
     </div>
-    <div class="cell cell-6">
-      <img src="../../assets/home/wap_bg_2.png"
+    <div class="cell cell-8">
+      <img src="../../assets/wap/index/aboutBg.jpg"
            alt="">
       <div class="cell-header">
         <div class="sub-title">优特智厨</div>
@@ -149,7 +165,9 @@
 
 <script>
 // import { swiper, swiperSlide } from 'vue-awesome-swiper'
+/* eslint-disable no-alert, no-console*/
 
+// let self
 export default {
   data () {
     return {
@@ -165,8 +183,18 @@ export default {
     };
   },
   mounted () {
+    // window.addEventListener('scroll', this.handleScroll)
   },
-  methods: {}
+  methods: {
+    // handleScroll () {
+    //   console.log(document.documentElement.scrollTop)
+    //   console.log('bb')
+
+    // },
+  },
+  created () {
+    // self = this
+  },
 }
 
 </script>
@@ -213,22 +241,36 @@ export default {
     align-items: center;
     box-sizing: border-box;
     padding: 0 2rem;
+    .video-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 3.75rem;
+      height: 3.75rem;
+      background: rgba(216, 216, 216, 0);
+      border: 0.06rem solid #2cc6c0;
+      border-radius: 50%;
+      cursor: pointer;
+      .video-btn—c {
+        width: 0;
+        height: 0;
+        border-top: 0.35rem solid transparent;
+        border-left: 0.6rem solid #fff;
+        border-bottom: 0.35rem solid transparent;
+      }
+    }
   }
 }
 
 .cell-2 {
   width: 100%;
-  background: rgba(0, 0, 0);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  background-color: #4a4949;
-  background-image: linear-gradient(
-    135deg,
-    #4a4949 0%,
-    #1f1e1e 40%,
-    #0a0a0a 84%
-  );
+  background: rgba(0, 0, 0, 1) url("../../assets/wap/productCenter/sjbj.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: 100% 100%;
 
   .info-box {
     width: 50%;
@@ -404,7 +446,45 @@ export default {
   }
 }
 
+.cell-5,
+.cell-6 {
+  width: 100%;
+  height: 23rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 3.25rem;
+  box-sizing: border-box;
+
+  .cell-header {
+    font-size: 1.13rem;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 0.38rem;
+  }
+
+  .sub-title {
+    font-size: 0.69rem;
+    font-weight: 400;
+    color: #333;
+  }
+}
+
 .cell-5 {
+  background: url("../../assets/wap/index/moredeivce.jpg");
+  background-position: bottom;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.cell-6 {
+  background: url("../../assets/wap/index/otherproduct.jpg");
+  background-position: bottom;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.cell-7 {
   box-sizing: border-box;
   padding: 2.5rem 0;
   background: linear-gradient(
@@ -484,7 +564,7 @@ export default {
   }
 }
 
-.cell-6 {
+.cell-8 {
   img {
     width: 100%;
     margin-bottom: 2.5rem;
