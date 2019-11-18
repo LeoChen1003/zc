@@ -15,13 +15,15 @@ import proCai from '../views/proCai.vue'
 import proCaiTechSpecs from '../views/proCaiTechSpecs.vue'
 import proAIO from '../views/proAIO.vue'
 import proAIOTechSpecs from '../views/proAIOTechSpecs.vue'
-import contact from  '../views/contact.vue'
+import contact from '../views/contact.vue'
 import buyConsult from '../views/buyConsult.vue'
 import homeVideo from '../views/video.vue'
 
 import wapLayout from '../views/wap/layout'
 import wapIndex from '../views/wap/index'
 import wapProductCenter from '../views/wap/productCenter'
+import wapproDetailGTJS from '../views/wap/proDetailGTJS'
+import wapproDetailGTGL from '../views/wap/proDetailGTGL'
 Vue.use(VueRouter)
 
 const routes = [
@@ -40,7 +42,8 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    component: () =>
+      import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
   {
     path: '/with',
@@ -49,7 +52,7 @@ const routes = [
   },
   {
     path: '/new',
-    component: New,
+    component: New
   },
   {
     path: '/new/detail1',
@@ -63,26 +66,36 @@ const routes = [
     path: '/buyConsult',
     component: buyConsult
   },
-    {
-        path: '/wap',
-        component: wapLayout,
-        children: [
-            {
-                path: 'index',
-                name: '首页',
-                component: wapIndex
-            },
-            {
-                path: 'productCenter',
-                name: '产品中心',
-                component: wapProductCenter
-            }
-        ]
-    },
+  {
+    path: '/wap',
+    component: wapLayout,
+    children: [
+      {
+        path: 'index',
+        name: '首页',
+        component: wapIndex
+      },
+      {
+        path: 'productCenter',
+        name: '产品中心',
+        component: wapProductCenter
+      },
+      {
+        path: 'proDetailGTGL',
+        name: '智能大滚筒炒菜机套机概览',
+        component: wapproDetailGTGL
+      },
+      {
+        path: 'proDetailGTJS',
+        name: '智能大滚筒炒菜机套机技术规格',
+        component: wapproDetailGTJS
+      }
+    ]
+  },
   {
     path: '/coreAdvantage',
-    name: "coreAdvantage",
-    component: coreAdvantage,
+    name: 'coreAdvantage',
+    component: coreAdvantage
   },
   {
     path: '/coreAdvantage/intelligenceSystem',

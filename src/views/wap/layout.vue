@@ -38,10 +38,14 @@
       </div>
     </transition>
     <router-view />
+    <div class="footer">
+
+    </div>
   </div>
 </template>
 
 <script>
+/* eslint-disable no-alert, no-console*/
 let self;
 export default {
   created () {
@@ -59,8 +63,8 @@ export default {
           name: '产品中心-1',
           url: '/wap/productCenter'
         }, {
-          name: '产品中心-2',
-          url: '/wap/productCenter'
+          name: '智能大滚筒炒菜机套机',
+          url: '/wap/proDetailGT'
         }],
         show: false
       }, {
@@ -70,8 +74,14 @@ export default {
     };
   },
   mounted () {
+    // window.addEventListener('scroll', this.handleScroll)
   },
-  methods: {},
+  methods: {
+    // handleScroll () {
+    //   console.log(document.documentElement.scrollTop)
+    //   console.log('aa')
+    // },
+  },
   watch: {
     $route () {
       self.dropdown = false;
