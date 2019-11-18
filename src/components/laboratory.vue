@@ -8,12 +8,12 @@
                     <p>获得国家认可委员会实验室认可。严格执行检验标准、规划，确保检测方法的科学性。引入LVO2HC4:358 SHIYAN 实验室管理体系，达标国际级标准。</p>
                 </div>
                 <div class="lab_con1_r">
-                    图片
+                    <img src="../assets/aboutUs/1.jpg" alt="">
                 </div>
             </div>
             <div class="lab_con2">
                 <div class="lab_con2_l">
-                    图片
+                    <img src="../assets/aboutUs/2.jpg" alt="">
                 </div>
                 <div class="lab_con2_r">
                     <p>高学历人才</p>
@@ -26,7 +26,7 @@
                     <p>划分7个专业化实验室，引入专业化实验设备。实验室涵盖电磁兼容实验室、环境实验室、高压实验室等。</p>
                 </div>
                 <div class="lab_con3_r">
-                    图片
+                    <img src="../assets/aboutUs/3.jpg" alt="">
                 </div>
             </div>
         </div>
