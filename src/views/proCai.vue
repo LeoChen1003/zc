@@ -10,7 +10,7 @@
             <p>“星级大厨”带你体验舌尖上的美味</p>
             <p>智能一拖三炒菜机</p>
             <p>智能云菜谱   &nbsp;|   &nbsp;智能大滚筒炒菜机 &nbsp;  |  &nbsp; 中控任务管理 &nbsp;  |  &nbsp; 智能调料机  &nbsp; | &nbsp;  气压站</p>
-            <div class="cai_con1_btn">
+            <div @click="buy" class="cai_con1_btn">
                 立即预约
             </div>
             <div class="cai_con1_cir">
@@ -176,7 +176,7 @@
             </div>
         </div>
         <div class="cai_bottom">
-            <div class="cai_bottom_btn">
+            <div class="cai_bottom_btn" @click="tech">
                 <img src="../assets/product/addBlack.png" alt="">
                 <span>了解参数明细</span>
             </div>
@@ -205,6 +205,14 @@ export default {
             }else{
                 hder.className = "whiteBack1";
             }
+        }
+    },
+    methods:{
+        buy(){
+            this.$router.push("/buyConsult");
+        },
+        tech(){
+            this.$router.push("/product/proCai/proCaiTechSpecs");
         }
     }
 }
@@ -252,6 +260,7 @@ p{
         width: 100%;
         height: 52.68rem;
         background: url("../assets/product/caiHd.jpg");
+        background-size: 100% 100%;
         overflow: hidden;
         p:first-child{
             width:13.25rem;
@@ -288,6 +297,7 @@ p{
             font-size: 1rem;
             color: #fff;
             margin: 3.63rem auto 0;
+            cursor: pointer;
         }
         .cai_con1_cir{
             width:1.5rem;
@@ -467,11 +477,11 @@ p{
             text-align: center;
             color: #ffffff;
             margin-top: 10rem;
-            margin-left: 19rem;
+            margin-left: 21.3%;
             line-height: 1.5rem;
         }
         p:nth-child(2){
-            margin-left: 19rem;
+            margin-left: 21.3%;
             width:22.5rem;
             height:11.25rem;
             font-size:2.5rem;
@@ -486,7 +496,7 @@ p{
             font-weight:400;
             color:#333;
             margin-top: 2.5rem;
-            margin-left: 19rem;
+            margin-left: 21.3%;
         }
         span:nth-child(4),span:nth-child(5){
             height:3.13rem;
@@ -496,7 +506,7 @@ p{
             margin-top: 3rem;
         }
         span:nth-child(4){
-            margin-left: 19rem;
+            margin-left: 21.3%;
             width:5.88rem;
         }
         span:nth-child(5){
@@ -522,16 +532,16 @@ p{
             width: 41.875rem;
             height: 26.875rem;
             top: 31.87rem;
-            right: 5.81rem;
+            right: 8.4%;
         }
     }
     .cai_con4{
         width:100%;
         height:58.75rem;
-        background:linear-gradient(149deg,rgb(4, 25, 34) 0%,rgba(231,235,239,1) 6%,rgba(247,248,249,1) 39%,rgba(255,255,255,1) 60%,rgba(235,240,243,1) 84%,rgba(223,231,235,1) 100%);
+        background:linear-gradient(149deg,rgba(231,238,241,1) 0%,rgba(231,235,239,1) 6%,rgba(247,248,249,1) 39%,rgba(255,255,255,1) 60%,rgba(235,240,243,1) 84%,rgba(223,231,235,1) 100%);
         overflow: hidden;
         .p1{
-            margin-left: 19rem;
+            margin-left: 21.3%;
             margin-top: 10rem;
             width:25rem;
             height:3.5rem;
@@ -546,14 +556,14 @@ p{
             font-weight:400;
             color:#333;
             line-height:2rem;
-            margin-left: 19rem;
+            margin-left: 21.3%;
             margin-top: 2rem;
         }
         .cai_con4_text1{
             float: left;
             width: 5.88rem;
             height: 5.63rem;
-            margin-left: 19rem;
+            margin-left: 21.3%;
             margin-top: 3rem;
             p:first-child{
                 font-size:2.25rem;
@@ -610,7 +620,7 @@ p{
             height:1.5rem;
             background:rgba(44,198,192,1);
             border-radius:0.19rem;
-            margin-left: 19rem;
+            margin-left: 21.3%;
             margin-top: 9rem;
             font-size:0.88rem;
             font-weight:600;
@@ -624,7 +634,7 @@ p{
             font-size:2.5rem;
             font-weight:600;
             color:rgba(255,255,255,1);
-            margin-left: 19rem;
+            margin-left: 21.3%;
             margin-top: 1.5rem;
         }
         p:nth-child(3){
@@ -634,7 +644,7 @@ p{
             font-weight:400;
             color:rgba(136,136,136,1);
             line-height:2rem;
-            margin-left: 19rem;
+            margin-left: 21.3%;
             margin-top: 2rem;
         }
         .cai_con5_PL{
@@ -642,7 +652,7 @@ p{
             font-weight:600;
             color:rgba(44,198,192,1);
             line-height:3.13rem;
-            margin-left: 19rem;
+            margin-left: 21.3%;
             margin-top: 1.5rem;
         }
         p:nth-child(4){
@@ -686,13 +696,13 @@ p{
             font-weight:600;
             color:rgba(255,255,255,1);
             line-height:3.5rem;
-            left: 12rem;
+            left: 21.3%;
             top: 25rem;
         }
         p:nth-child(3){
             position: absolute;
             top: 34.5rem;
-            left: 12rem;
+            left: 21.3%;
             height:2rem;
             font-size:1rem;
             font-weight:400;
@@ -701,7 +711,7 @@ p{
         }
         .cai_con6_txt1,.cai_con6_txt2{
             position: absolute;
-            left: 12rem;
+            left: 21.3%;
             top: 39.5rem;
             width: 11.25rem;
             height: 5.63rem;
@@ -717,7 +727,7 @@ p{
                 font-weight:400;
                 color:rgba(136,136,136,1);
                 margin-top: -23rem;
-                margin-left: -12rem;
+                margin-left: -21.3%;
             }
         }
         .cai_con6_txt2{
@@ -736,7 +746,7 @@ p{
             background: #2CC6C0;
             border-radius: 0.18rem;
             margin-top: 11.25rem;
-            margin-left: 15rem;
+            margin-left: 21.3%;
             font-size:0.88rem;
             font-weight:600;
             color:rgba(255,255,255,1);
@@ -750,7 +760,7 @@ p{
             font-weight:600;
             color:rgba(0,0,0,1);
             line-height:3.5rem;
-            margin-left: 15rem;
+            margin-left: 21.3%;
             margin-top: 1.63rem;
         }
         p:nth-child(3){
@@ -760,13 +770,13 @@ p{
             font-weight:400;
             color:rgba(51,51,51,1);
             line-height:2rem;
-            margin-left: 15rem;
+            margin-left: 21.3%;
             margin-top: 2.5rem;
         }
         .cai_con7_txt1,.cai_con7_txt2,.cai_con7_txt3,.cai_con7_txt4{
             float: left;
             margin-top: 3rem;
-            margin-left: 15rem;
+            margin-left: 21.3%;
             width: 9rem;
             height: 5.63rem;
             p:first-child{
@@ -801,10 +811,14 @@ p{
         }
         .cai_con7_pic{
             position: absolute;
-            width: 40.82rem;
+            width: 38%;
             height: 33.13rem;
             top: 25.6rem;
-            right: 6.87rem;
+            right: 9.4%;
+            img{
+                width: 100%;
+                height: 100%;
+            }
         }
     }
     .cai_con8{
@@ -815,7 +829,7 @@ p{
         box-shadow:0px 10px 20px 0px rgba(0,0,0,0.02);
         overflow: hidden;
         .cai_con8_title{
-            margin-left: 19rem;
+            margin-left: 21.3%;
             margin-top: 7.5rem;
             width:8rem;
             height:1.5rem;
@@ -833,7 +847,7 @@ p{
             font-size:2.5rem;
             font-weight:600;
             color:rgba(255,255,255,1);
-            margin-left: 19rem;
+            margin-left: 21.3%;
             margin-top: 1.63rem;
         }
         .cai_con8_p2{
@@ -842,14 +856,14 @@ p{
             font-size:1rem;
             font-weight:400;
             color:rgba(136,136,136,1);
-            margin-left: 19rem;
+            margin-left: 21.3%;
             margin-top: 2rem;
         }
         .cai_con8_d1,.cai_con8_d2{
             width: 10rem;
             height: 5.64rem;
             float: left;
-            margin-left: 19rem;
+            margin-left: 21.3%;
             margin-top: 2.75rem;
             p:first-child{
                 width:9.07rem;
@@ -905,10 +919,10 @@ p{
             color:rgba(255,255,255,1);
             line-height:3.5rem;
             margin-top: 7.5rem;
-            margin-left: 19rem;
+            margin-left: 21.3%;
         }
         .cai_con9_p2{
-            margin-left: 19rem;
+            margin-left: 21.3%;
             margin-top: 2.5rem;
             width:52.5rem;
             height:6rem;
@@ -921,7 +935,7 @@ p{
             width: 9rem;
             height: 5.23rem;
             float: left;
-            margin-left: 19rem;
+            margin-left: 21.3%;
             margin-top: 3rem;
             p:first-child{
                 width:9rem;
