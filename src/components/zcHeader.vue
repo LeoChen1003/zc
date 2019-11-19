@@ -31,12 +31,12 @@
           <div class="showPro_line_small"></div>
         </div>
         <div class="showPro_r1">
-          <div class="showPro_r1_cai">
+          <div class="showPro_r1_cai" @click="cai">
             <svg-icon icon-class="header_cai" class-name="icon"></svg-icon>
             <p>智能一拖三炒菜机</p>
             <p>旗舰</p>
           </div>
-          <div class="showPro_r1_AIO">
+          <div class="showPro_r1_AIO" @click="aio">
             <svg-icon icon-class="header_AIO" class-name="icon"></svg-icon>
             <p>智能精炒一体机</p>
             <p>旗舰</p>
@@ -148,6 +148,12 @@ export default {
       var line2 = document.getElementsByClassName("showPro_line1")[0];
       line1.style.display = "none";
       line2.style.display = "block";
+    },
+    cai(){
+      this.$router.push("/product/proCai");
+    },
+    aio(){
+      this.$router.push("/product/proAIO");
     }
   },
   mounted(){
@@ -312,6 +318,7 @@ export default {
         float: left;
         width: 12rem;
         height: 100%;
+        cursor: pointer;
         .icon{
           display: block;
           width: 7.5rem;
@@ -468,7 +475,10 @@ export default {
     }
     span:not(:last-child) {
       margin-right: 3rem;
-      padding-bottom: 3rem;
+      padding-bottom: 1rem;
+    }
+    span:last-child{
+      padding-bottom: 1rem;
     }
   }
   .header_btn {
