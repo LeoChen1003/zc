@@ -34,7 +34,31 @@
       </div>
     </div>
     <div class="detail_3">
-
+      <div class="tag">智能大滚筒炒菜机</div>
+      <div class="slogan">品质升级，<br />
+        全新绽放。</div>
+      <div class="intro1">操控界面升级，OLED屏幕带来全新交互体验</div>
+      <div class="intro2">米家压力IH电饭煲1S将操控界面升级为1.32英寸OLED屏幕，不仅可以显示更多信息内容，而且大大优化设备与用户之间的交互方式，提升设备与APP端配合的软硬件操控体验。连接APP后，海量云菜谱-键烹饪，所选菜谱清晰显示在电饭煲上，美味一目了然，开启全新下厨体验。</div>
+      <div class="data_box">
+        <div class="box_item">
+          <div class="data">3分30秒</div>
+          <div class="comment">平均每份菜</div>
+        </div>
+        <div class="box_item">
+          <div class="data">＞10万次</div>
+          <div class="comment">测试标准</div>
+        </div>
+      </div>
+      <div class="data_box">
+        <div class="box_item">
+          <div class="data">65°</div>
+          <div class="comment">人体工学角度</div>
+        </div>
+        <div class="box_item">
+          <div class="data">国家级</div>
+          <div class="comment">卫生标准</div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -162,6 +186,20 @@ export default {
       color: #333;
       line-height: 1rem;
     }
+  }
+}
+
+.detail_3 {
+  .tag {
+    width: 6.5rem;
+    height: 1.38rem;
+    background: rgba(44, 198, 192, 1);
+    border-radius: 0.19rem;
+    font-size: 0.69rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+    line-height: 1.38rem;
   }
 }
 </style>
