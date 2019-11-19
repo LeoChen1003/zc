@@ -6,7 +6,7 @@
             <div class="new_con_del">
                 <div class="new_con_del_l"></div>
                 <div class="new_con_del_r">
-                    <p>2019年9月19日  <a href="javascript:;">更新</a></p>
+                    <p>2019年9月19日  <a class="a1" href="javascript:;">更新</a></p>
                     <router-link to="/new/detail1">优特智能炒菜机 开启中餐标准化时代</router-link>
                     <p>近年来，餐饮行业陷入三高一低的困境，面对行业不断洗牌，餐饮企业一次次陷入困局。优特智厨一直在思考，如何通过智能化设备，直击餐饮行业痛点，解…</p>
                 </div>
@@ -14,7 +14,7 @@
             <div class="new_con_del">
                 <div class="new_con_del_l"></div>
                 <div class="new_con_del_r">
-                    <p>2019年8月19日  <a href="javascript:;">更新</a></p>
+                    <p>2019年8月19日  <a class="a1" href="javascript:;">更新</a></p>
                     <p>优特智能系统 后厨能效管理</p>
                     <p>云端智能录入菜谱，中控主机协调管理，商用滚筒炒菜机和调料机协同烹饪，实现厨房智能化。</p>
                 </div>
@@ -70,7 +70,7 @@
             <div class="new_con_del">
                 <div class="new_con_del_l"></div>
                 <div class="new_con_del_r">
-                    <p>2019年9月19日  <a href="javascript:;">更新</a></p>
+                    <p>2019年9月19日  <a class="a1" href="javascript:;">更新</a></p>
                     <p>优特智能炒菜机 开启中餐标准化时代</p>
                     <p>近年来，餐饮行业陷入三高一低的困境，面对行业不断洗牌，餐饮企业一次次陷入困局。优特智厨一直在思考，如何通过智能化设备，直击餐饮行业痛点，解…</p>
                 </div>
@@ -78,7 +78,7 @@
             <div class="new_con_del">
                 <div class="new_con_del_l"></div>
                 <div class="new_con_del_r">
-                    <p>2019年8月19日  <a href="javascript:;">更新</a></p>
+                    <p>2019年8月19日  <a class="a1" href="javascript:;">更新</a></p>
                     <p>优特智能系统 后厨能效管理</p>
                     <p>云端智能录入菜谱，中控主机协调管理，商用滚筒炒菜机和调料机协同烹饪，实现厨房智能化。</p>
                 </div>
@@ -134,7 +134,7 @@
             <div class="new_con_del">
                 <div class="new_con_del_l"></div>
                 <div class="new_con_del_r">
-                    <p>2019年9月19日  <a href="javascript:;">更新</a></p>
+                    <p>2019年9月19日  <a class="a1" href="javascript:;">更新</a></p>
                     <p>优特智能炒菜机 开启中餐标准化时代</p>
                     <p>近年来，餐饮行业陷入三高一低的困境，面对行业不断洗牌，餐饮企业一次次陷入困局。优特智厨一直在思考，如何通过智能化设备，直击餐饮行业痛点，解…</p>
                 </div>
@@ -204,8 +204,11 @@ export default {
                 p:first-child{
                     font-size: 0.87rem;
                     margin-top: 0.3rem;
+                    .a1{
+                        color: #0074FF;
+                    }
                 }
-                a:nth-child(2){
+                p:nth-child(2),a:nth-child(2){
                     display: block;
                     margin-top: 0.5rem;
                     font-size: 1.25rem;

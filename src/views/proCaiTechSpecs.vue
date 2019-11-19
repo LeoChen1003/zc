@@ -21,9 +21,16 @@
             <span>智能调料机</span>
             <span>|</span>
             <span>气压站</span>
-            <div class="specs_con1_pic">
-                <img src="../assets/product/seasoningMachine3.png" alt="">
+            <!-- <div class="specs_con1_pic" v-for="(img,i) of imgs" :key="i" :style="{width:img.imgWidth+'px',height:img.imgHeight+'px'}">    
+                <li ref="li_img">
+                    <img :src="img.src" alt="" :style="{width:img.imgWidth+'px',height:img.imgHeight+'px'}">
+                </li>
             </div>
+            <div class="specs_con1_pic"  :style="{width:imgs[0].imgWidth+'px',height:imgs[0].imgHeight+'px'}">
+                <img :src="imgs[0].src" alt="" ref="pic" :style="{width:imgs[0].imgWidth+'px',height:imgs[0].imgHeight+'px'}">
+            </div>
+            <div class="icon" v-for="(img,i) of imgs" :key="i" :class="currentIndex==i?'':'active'" @click="moveTo(idx)"></div> -->
+            <!-- <swiper :option="swiperOption"></swiper> -->
         </div>
         <div class="specs_txt">
             <span>产品参数</span>
@@ -83,11 +90,47 @@
 import zcHeader from '@/components/zcHeader.vue';
 import zcFooter from '@/components/zcFooter.vue';
 import '../styles/variables.scss';
+// import { swiper, swiperSlide } from 'vue-awesome-swiper'
 export default {
     name: 'proCaiTechSpecs',
+    data(){
+        return {
+            imgs: [
+                {
+                    src: require("../assets/product/carousel1.png"),
+                    imgWidth: 800,
+                    imgHeight: 400
+                },
+                {
+                    src: require('../assets/product/carousel2.png'),
+                    imgWidth: 570,
+                    imgHeight: 400
+                },
+                {
+                    src: require('../assets/product/carousel3.png'),
+                    imgWidth: 1022,
+                    imgHeight: 373
+                },
+                {
+                    src: require('../assets/product/carousel4.png'),
+                    imgWidth: 666,
+                    imgHeight: 400
+                },
+                {
+                    src: require('../assets/product/carousel5.png'),
+                    imgWidth: 512,
+                    imgHeight: 377
+                }
+            ],
+            i:0,
+            currentIndex:0
+        }
+    },
     components:{
         zcHeader,
         zcFooter,
+        // swiper,
+        // swiperSlide
     },
     mounted(){
         var hder  = document.getElementsByClassName("whiteBack")[0];
@@ -100,6 +143,12 @@ export default {
             }else{
                 hder.className = "blackBack";
             }
+        }
+    },
+    methods:{
+        moveTo(x){
+            this.currentIndex = x;
+            this.$refs.pic.src = require('../assets/product/carousel'+x+'.png');
         }
     }
 }
@@ -173,7 +222,7 @@ p{
             font-weight:400;
             color:rgba(136,136,136,1);
             line-height:1.25rem;
-            margin-left: 12rem;
+            margin-left: 21%;
             margin-top: 7.5rem;
         }
         p:nth-child(2){
@@ -181,7 +230,7 @@ p{
             font-weight:600;
             color:rgba(255,255,255,1);
             margin-top: 0.5rem;
-            margin-left: 12rem;
+            margin-left: 21%;
         }
         span{
             height:1.25rem;
@@ -192,17 +241,43 @@ p{
             margin-top: 1rem;
         }
         span:first-of-type{
-            margin-left: 12rem;
+            margin-left: 21%;
         }
         span:not(:first-of-type){
             margin-left: 1rem;
         }
-        .specs_con1_pic{
-            width: 41.625rem;
-            height: 25rem;
+        .swiper-container{
             position: absolute;
-            right: 9.19rem;
-            top: 19rem;
+            right: 5rem;
+            bottom: 0;
+            overflow: hidden;
+        }
+        .icon{
+            width: 1.5rem;
+            height: 0.125rem;
+            float: left;
+            position: absolute;
+            bottom: 4rem;
+            background-color: #fff;
+            left: 22%;
+        }
+        .icon:nth-last-child(5){
+            left: 22%;
+        }
+        .icon:nth-last-child(4){
+            left: 24%;
+        }
+        .icon:nth-last-child(3){
+            left: 26%;
+        }
+        .icon:nth-last-child(2){
+            left: 28%;
+        }
+        .icon:last-child{
+            left: 30%;
+        }
+        .active{
+            background-color: #858585;
         }
     }
     .specs_txt{

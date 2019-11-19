@@ -13,7 +13,7 @@
       <div class="header_btn" @click="concat">
         联系我们
       </div>
-      <div class="show">
+      <div class="show" @mousemove="show" @mouseleave="hide">
         <p>企业介绍</p>
         <p>专利发明</p>
         <p>实验室</p>
@@ -199,7 +199,10 @@ export default {
     }
     span:not(:last-child) {
       margin-right: 3rem;
-      padding-bottom: 3rem;
+      padding-bottom: 1rem;
+    }
+    span:last-child{
+      padding-bottom: 1rem;
     }
   }
   .header_btn {
@@ -239,6 +242,7 @@ export default {
     }
   }
   .showPro{
+    display: none;
     position: absolute;
     width: 100%;
     // height: 16.87rem;
