@@ -5,7 +5,7 @@
             <p>智能大滚筒炒菜机套机</p>
             <router-link to="/product/proCai">概览</router-link>
             <router-link to="/product/proCai/proCaiTechSpecs">技术规格</router-link>
-            <div class="specs_hd_btn">
+            <div class="specs_hd_btn" @click="buy">
                 立即预约
             </div>
         </div>
@@ -149,6 +149,9 @@ export default {
         moveTo(x){
             this.currentIndex = x;
             this.$refs.pic.src = require('../assets/product/carousel'+x+'.png');
+        },
+        buy(){
+            this.$router.push("/buyConsult");
         }
     }
 }
@@ -281,7 +284,7 @@ p{
         }
     }
     .specs_txt{
-        width: 60.43rem;
+        width: 67.1%;
         border-top: 1px solid #ECECEC;
         margin: 5rem auto 0;
         overflow: hidden;

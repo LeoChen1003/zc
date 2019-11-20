@@ -2,10 +2,10 @@
     <div class="aio_specs">
         <zcHeader></zcHeader>
         <div class="aio_specs_hd">
-            <p>智能大滚筒炒菜机套机</p>
+            <p>智能精炒一体机</p>
             <router-link to="/product/proAIO">概览</router-link>
             <router-link to="/product/proAIO/proAIOTechSpecs">技术规格</router-link>
-            <div class="aio_specs_hd_btn">
+            <div class="aio_specs_hd_btn" @click="buy">
                 立即预约
             </div>
         </div>
@@ -69,6 +69,11 @@ export default {
             }else{
                 hder.className = "blackBack";
             }
+        }
+    },
+    methods:{
+        buy(){
+            this.$router.push("/buyConsult");
         }
     }
 }
@@ -140,7 +145,7 @@ p{
             font-size:0.88rem;
             font-weight:400;
             color:rgba(136,136,136,1);
-            margin-left: 18rem;
+            margin-left: 21%;
             margin-top: 7.5rem;
         }
         p:nth-child(2){
@@ -148,25 +153,25 @@ p{
             font-weight:600;
             color:rgba(255,255,255,1);
             margin-top: 0.5rem;
-            margin-left: 18rem;
+            margin-left: 21%;
         }
         p:nth-child(3){
             font-size:0.88rem;
             font-weight:400;
             color:rgba(133,133,133,1);
-            margin-left: 18rem;
+            margin-left: 21%;
             margin-top: 1rem;
         }
         .aio_specs_con_pic{
             width: 33.13rem;
             height: 33rem;
             position: absolute;
-            right: 9.37rem;
+            right: 13.4%;;
             bottom: -1.7rem;
         }
     }
     .aio_specs_txt{
-        width: 60.43rem;
+        width: 67.1%;
         border-top: 1px solid #ECECEC;
         margin: 5rem auto 0;
         overflow: hidden;
