@@ -2,12 +2,13 @@
     <div class="about">
         <zcHeader></zcHeader>
         <div class="about_pic">
-            图片
+            <p>优特智厨</p>
+            <p>关于我们</p>
         </div>
         <div class="about_item">
-            <span @click="toggleTab('comIntro')" class="item_span">企业介绍</span>
-            <span @click="toggleTab('inven')" class="item_span">专利发明</span>
-            <span @click="toggleTab('labor')" class="item_span">实验室</span>
+            <span @click="toggleTab('comIntro')" :style="style1" ref="item" class="item_span">企业介绍</span>
+            <span @click="toggleTab('inven')" :style="style2" ref="item" class="item_span">专利发明</span>
+            <span @click="toggleTab('labor')" :style="style2" ref="item" class="item_span">实验室</span>
         </div>
         <comIntro :is="currentTab"></comIntro>
         <zcFooter></zcFooter>
@@ -25,7 +26,9 @@ export default {
     name: 'with',
     data(){
         return {
-            currentTab : 'comIntro'
+            currentTab : 'comIntro',
+            style1 : {color:"#000000",fontWeight:600},
+            style2 : {color:"#333333",fontWeight:300}
         }
     },
     components:{
@@ -41,17 +44,13 @@ export default {
         }
     },
     mounted(){
-        var itemSpan = document.getElementsByClassName("item_span");
-        itemSpan[0].style.color = "#000000";
-        itemSpan[0].style.fontWeight = 600;
-        for(var i = 0; i < itemSpan.length; i++){
-            itemSpan[i].onclick = function(){
-                for(var i = 0; i < itemSpan.length; i++){
-                    itemSpan[i].style.fontWeight = 400;
-                    itemSpan[i].style.color = "#333333";
+        var items = this.$refs.item;
+        for(var i = 0; i < items.length; i++){
+            items[i].onclick = function(){
+                for(var i = 0; i < items.length; i++){
+                    items[i].style=this.style1;
                 }
-                this.style.color = "#000000";
-                this.style.fontWeight = 600;
+                this.style = this.style2;
             }
         }
     }
@@ -70,10 +69,30 @@ export default {
     .about{
         width: 1425px;
         height: 100%;
+        overflow: hidden;
         .about_pic{
             width: 100%;
             height: 15rem;
-            background-color: rgb(250, 246, 246);
+            background: url("../assets/aboutUs/header.jpg");
+            overflow: hidden;
+            background-size: 100% 100%;
+            p:first-child{
+                width:3.5rem;
+                height:1.25rem;
+                font-size:0.87rem;
+                font-family:PingFangSC-Regular,PingFang SC;
+                font-weight:400;
+                color:rgba(255,255,255,1);
+                margin: 5.94rem auto 0;
+            }
+            p:nth-child(2){
+                width:8rem;
+                font-size:2rem;
+                font-family:PingFangSC-Semibold,PingFang SC;
+                font-weight:600;
+                color:rgba(255,255,255,1);
+                margin: 0 auto;
+            }
         }
         .about_item{
             width: 100%;

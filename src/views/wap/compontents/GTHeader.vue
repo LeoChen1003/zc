@@ -5,11 +5,11 @@
       <div class="line"></div>
       <div class="header_box">
         <div class="left"
+             @click="dropdown = !dropdown"
              :style="dropdown&&type=='js' || type=='gl'?'width:97%;':'width:68%;'">
-          <div>智能大滚筒炒菜机套机</div>
+          <div>{{name}}</div>
           <div class="li_arrow"
-               :class="dropdown ? 'open' : ''"
-               @click="dropdown = !dropdown"></div>
+               :class="dropdown ? 'open' : ''"></div>
         </div>
         <reservationBtn v-if="!dropdown&&type=='js'"></reservationBtn>
       </div>
@@ -18,11 +18,11 @@
              v-if="dropdown">
           <div class="dropdown_item dropdown_item_line"
                :class="type=='gl'?'dropdown_item_active':''"
-               @click="$router.push('/wap/proDetailGTGL');dropdown=false">概览
+               @click="$router.push(glUrl);dropdown=false">概览
           </div>
           <div class="dropdown_item"
                :class="type=='js'?'dropdown_item_active':''"
-               @click="$router.push('/wap/proDetailGTJS');dropdown=false">技术规格</div>
+               @click="$router.push(jsUrl);dropdown=false">技术规格</div>
         </div>
       </transition>
     </div>
@@ -37,7 +37,7 @@ import reservationBtn from './reservationBtn'
 export default {
   //import引入的组件需要注入到对象中才能使用
   components: { reservationBtn },
-  props: ['type'],
+  props: ['type', 'name', 'glUrl', 'jsUrl'],
   data () {
     return {
       dropdown: false,

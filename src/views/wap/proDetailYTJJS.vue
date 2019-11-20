@@ -1,9 +1,9 @@
 <template>
   <div class='wrapper proDetail'>
     <GTHeader :type="'js'"
-              :name="'智能大滚筒炒菜机套机'"
-              :glUrl="'/wap/proDetailGTGL'"
-              :jsUrl="'/wap/proDetailGTJS'"></GTHeader>
+              :name="'智能精炒一体机'"
+              :glUrl="'/wap/proDetailYTJGL'"
+              :jsUrl="'/wap/proDetailYTJJS'"></GTHeader>
     <div class="wrapper_content">
       <div class="swiper">
         <div class="top_title">“星级大厨”带你体验舌尖上的美味</div>

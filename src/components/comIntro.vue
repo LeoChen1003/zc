@@ -114,6 +114,9 @@ export default {
     .intro{
         border-top: 1px solid rgb(218, 216, 216);
         .block{
+            .el-timeline{
+                margin-left: -3%;
+            }
             .el-timeline-item__tail{
                 border-left: 8px solid #ECECEC;
             }
@@ -133,7 +136,7 @@ export default {
             }
         }
         .line1{
-            margin-left: 22rem;
+            margin-left: 21%;
             width: 62%;
             height: 0.06rem;
             background-color: rgb(230, 227, 227);
@@ -141,63 +144,63 @@ export default {
         .about_con1{
             width: 100%;
             height: 40.12rem;
-        .about_con1_ct{
-            margin-left: 22.6rem;
-            margin-top: 5rem;
-            width: 61rem;
-            height: 27.6rem;
+            .about_con1_ct{
+                margin-left: 21%;
+                margin-top: 5rem;
+                width: 61rem;
+                height: 27.6rem;
+            }
+            .about_con1_ct_l{
+                float: left;
+                font-size: 3rem;
+                color: #2CC6C0;
+                margin-right: 18.5%;
+            }
+            .about_con1_ct_r{
+                float: left;
+                p{
+                    font-family:PingFangSC-Semibold,PingFang SC;
+                }
+                p:first-child,
+                p:nth-child(3){
+                    font-size:1.75rem;
+                    font-weight:600;
+                    color:rgba(0,0,0,1);
+                    line-height:2.5rem;
+                }
+                p:nth-child(2),
+                p:last-child{
+                    font-size:1rem;
+                    font-weight:400;
+                    color:rgba(51,51,51,1);
+                    line-height:1.87rem;
+                }
+                p:first-child{
+                    width:29.75rem;
+                    height:2.5rem;
+                }
+                p:nth-child(2){
+                    width:38.75rem;
+                    height:9.56rem;
+                    margin-top: 1.5rem;
+                }
+                p:nth-child(3){
+                    width:7rem;
+                    height:2.5rem;
+                    margin-top: 1.5rem;
+                }
+                p:last-child{
+                    width:38.75rem;
+                    height:7.5rem;
+                    margin-top: 1.5rem;
+                }
+            } 
         }
-        .about_con1_ct_l{
-            float: left;
-            font-size: 3rem;
-            color: #2CC6C0;
-            margin-right: 10.5rem;
-        }
-        .about_con1_ct_r{
-            float: left;
-            p{
-                font-family:PingFangSC-Semibold,PingFang SC;
-            }
-            p:first-child,
-            p:nth-child(3){
-                font-size:1.75rem;
-                font-weight:600;
-                color:rgba(0,0,0,1);
-                line-height:2.5rem;
-            }
-            p:nth-child(2),
-            p:last-child{
-                font-size:1rem;
-                font-weight:400;
-                color:rgba(51,51,51,1);
-                line-height:1.87rem;
-            }
-            p:first-child{
-                width:29.75rem;
-                height:2.5rem;
-            }
-            p:nth-child(2){
-                width:38.75rem;
-                height:9.56rem;
-                margin-top: 1.5rem;
-            }
-            p:nth-child(3){
-                width:7rem;
-                height:2.5rem;
-                margin-top: 1.5rem;
-            }
-            p:last-child{
-                width:38.75rem;
-                height:7.5rem;
-                margin-top: 1.5rem;
-            }
-        } 
-    }
         .about_con2{
             width: 100%;
             height: 37.56rem;
             .about_con2_ct{
-                margin-left: 22.6rem;
+                margin-left:21%;
                 margin-top: 4rem;
                 width: 61rem;
                 height: 27.6rem;
@@ -206,7 +209,7 @@ export default {
                 float: left;
                 font-size: 3rem;
                 color: #2CC6C0;
-                margin-right: 10.5rem;
+                margin-right: 18.5%;
             }
             .about_con2_ct_r{
                 float: left;
@@ -271,13 +274,13 @@ export default {
                 width: 66.9rem;
                 margin-top: 4rem;
                 height: 4rem;
-                margin-left: 22.06rem;
+                margin-left: 21%;
             }
             .about_con3_ct_l{
                 float: left;
                 font-size: 3rem;
                 color: #2CC6C0;
-                margin-right: 10.5rem;
+                margin-right: 18.5%;
             }
             .about_con3_ct_r{
                 float: left;

@@ -24,6 +24,8 @@ import wapIndex from '../views/wap/index'
 import wapProductCenter from '../views/wap/productCenter'
 import wapproDetailGTJS from '../views/wap/proDetailGTJS'
 import wapproDetailGTGL from '../views/wap/proDetailGTGL'
+import wapproDetailYTJJS from '../views/wap/proDetailYTJJS'
+import wapproDetailYTJGL from '../views/wap/proDetailYTJGL'
 Vue.use(VueRouter)
 
 const routes = [
@@ -89,6 +91,16 @@ const routes = [
         path: 'proDetailGTJS',
         name: '智能大滚筒炒菜机套机技术规格',
         component: wapproDetailGTJS
+      },
+      {
+        path: 'proDetailYTJGL',
+        name: '智能精炒一体机概览',
+        component: wapproDetailYTJGL
+      },
+      {
+        path: 'proDetailYTJJS',
+        name: '智能精炒一体机技术规格',
+        component: wapproDetailYTJJS
       }
     ]
   },

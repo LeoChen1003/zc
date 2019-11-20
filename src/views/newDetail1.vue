@@ -21,6 +21,9 @@
             <p class="newDel_con_p p6">中控主机配备触控显示器，操作台上有菜谱烹饪等选项可供选择，选择指定菜谱开始任务后，智能灶将按照指定操作进行智能烹饪，实现从预热、炒菜、加入调料、出锅等整个过程的全自动化。无论是产品还是技术本身，优特智能炒菜机作为智慧厨电的引领者无疑是走在行业前列。</p>
             <div class="line1"></div>
         </div>
+        <div ref="toTop" class="arrow">
+            <svg-icon icon-class="returnUp" class="up"></svg-icon>
+        </div>
         <zcFooter></zcFooter>
         <router-view></router-view>
     </div>
@@ -37,12 +40,30 @@ export default {
         zcHeader,
         zcFooter,
         newHeader
+    },
+    mounted(){
+        this.$refs.toTop.onclick = function(){
+            scrollTo(0,0);
+        }
     }
 }
 </script>
 
 <style lang="scss" scope>
 .newDel{
+    position: relative;;
+    .arrow{
+        position: absolute;
+        width: 3.25rem;
+        height: 3.25rem;
+        right: 14%;
+        bottom: 37rem;
+        cursor: pointer;
+        .up{
+            width: 100%;
+            height: 100%;
+        }
+    }
     .newDel_con{
         width: 50rem;
         height: 200rem;

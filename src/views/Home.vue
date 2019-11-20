@@ -1,6 +1,9 @@
 <template>
   <div class="home">
     <zcHeader></zcHeader>
+    <div class="svg_up">
+      <svg-icon icon-class="up1" class="svg"></svg-icon>
+    </div>
     <div class="home_video">
       <div class="home_video_title">优特智厨 人工智能时代的餐饮革命</div>
       <div class="home_video_p">以智能解构中餐，用科技为餐饮业赋能</div>
@@ -49,7 +52,7 @@
     </div>
     <div class="home_pro_one">
       <div class="home_title_top">“星级大厨”带你体验舌尖上的美味</div>
-      <div class="home_pro_one_title">智能一拖三炒菜机</div>
+      <div class="home_pro_one_title" @click="cai">智能一拖三炒菜机</div>
       <div class="home_pro_one_tip">
         <span>智能云菜谱</span>
         <span class="home_pro_one_tip_line">|</span>
@@ -83,7 +86,7 @@
     </div>
     <div class="home_pro_two">
       <div class="home_pro_two_top">超级烹饪专家</div>
-      <div class="home_pro_two_title">智能精炒一体机</div>
+      <div class="home_pro_two_title" @click="AIO">智能精炒一体机</div>
       <div class="home_line"></div>
       <div class="home_pro_two_detail">
         <div class="home_pro_two_item">
@@ -121,7 +124,7 @@
           <div class="home_title_top">对我们了解更多</div>
           <div>新闻中心</div>
         </div>
-        <div class="home_news_header_btn">
+        <div class="home_news_header_btn" @click="news">
           <svg-icon icon-class="homeKnowMore"
                     class-name="svg_size"></svg-icon>
           <span>了解更多</span>
@@ -138,7 +141,7 @@
         <div class="home_title_top">优特智厨</div>
         <div>关于我们</div>
         <div class="home_line"></div>
-        <div class="home_about_left_btn">
+        <div class="home_about_left_btn" @click="aboutUs">
           <svg-icon icon-class="homeKnowMore"
                     class-name="svg_size"></svg-icon>
           <span>了解更多</span>
@@ -192,6 +195,18 @@ export default {
   methods:{
     video(){
       this.$router.push("/home/video");
+    },
+    news(){
+      this.$router.push("/new");
+    },
+    aboutUs(){
+      this.$router.push("/with");
+    },
+    cai(){
+      this.$router.push("/product/proCai");
+    },
+    AIO(){
+      this.$router.push("/product/proAIO");
     }
   }
 }
@@ -201,6 +216,18 @@ export default {
 .home {
   height: 100%;
   width: 100%;
+  position: relative;
+  .svg_up{
+    position: absolute;
+    width: 0.87rem;
+    height: 0.87rem;
+    left: 63%;
+    top: 59rem;
+    .svg{
+      width: 100%;
+      height: 100%;
+    }
+  }
   .home_video {
     background: url("../assets/home/home_videoBg2x.png") no-repeat;
     background-size: 100% 100%;
@@ -294,9 +321,9 @@ export default {
         font-size: 0.88rem;
         font-weight: 600;
         color: #fff;
-        span {
+        span{
           font-size: 3.75rem;
-        }
+        } 
       }
     }
   }
@@ -413,6 +440,7 @@ export default {
       font-size: 2.5rem;
       color: #000;
       margin-bottom: 1rem;
+      cursor: pointer;
     }
     .home_pro_one_tip {
       font-size: 0.88rem;
@@ -465,6 +493,7 @@ export default {
       font-weight: 600;
       color: #fff;
       margin-bottom: 2rem;
+      cursor: pointer;
     }
     .home_pro_two_item {
       div {
@@ -496,6 +525,7 @@ export default {
   border: 0.06rem solid rgba(0, 0, 0, 1);
   text-align: center;
   line-height: 2.25rem;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;

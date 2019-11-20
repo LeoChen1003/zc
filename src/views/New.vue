@@ -70,7 +70,7 @@
             <div class="new_con_del">
                 <div class="new_con_del_l"></div>
                 <div class="new_con_del_r">
-                    <p>2019年9月19日  <a class="a1" href="javascript:;">更新</a></p>
+                    <p>2019年9月19日</p>
                     <p>优特智能炒菜机 开启中餐标准化时代</p>
                     <p>近年来，餐饮行业陷入三高一低的困境，面对行业不断洗牌，餐饮企业一次次陷入困局。优特智厨一直在思考，如何通过智能化设备，直击餐饮行业痛点，解…</p>
                 </div>
@@ -78,7 +78,7 @@
             <div class="new_con_del">
                 <div class="new_con_del_l"></div>
                 <div class="new_con_del_r">
-                    <p>2019年8月19日  <a class="a1" href="javascript:;">更新</a></p>
+                    <p>2019年8月19日</p>
                     <p>优特智能系统 后厨能效管理</p>
                     <p>云端智能录入菜谱，中控主机协调管理，商用滚筒炒菜机和调料机协同烹饪，实现厨房智能化。</p>
                 </div>
@@ -134,16 +134,26 @@
             <div class="new_con_del">
                 <div class="new_con_del_l"></div>
                 <div class="new_con_del_r">
-                    <p>2019年9月19日  <a class="a1" href="javascript:;">更新</a></p>
+                    <p>2019年9月19日</p>
                     <p>优特智能炒菜机 开启中餐标准化时代</p>
                     <p>近年来，餐饮行业陷入三高一低的困境，面对行业不断洗牌，餐饮企业一次次陷入困局。优特智厨一直在思考，如何通过智能化设备，直击餐饮行业痛点，解…</p>
                 </div>
             </div>
             <div class="line"></div>
             <div class="new_footer">
-                <div class="new_footer_l"></div>
+                <div class="new_footer_l" @mouseover="hover1" @mouseout="leave1">
+                    <svg-icon icon-class="leftArrow" class-name="new_svg"></svg-icon>
+                </div>
+                <div class="new_footer_l1" ref="left" @mouseover="hover1" @mouseout="leave1">
+                    <svg-icon icon-class="leftHover" class-name="new_svg"></svg-icon>
+                </div>
                 <div class="new_footer_c">1页 16</div>
-                <div class="new_footer_r"></div>
+                <div class="new_footer_r" @mouseover="hover2" @mouseout="leave2">
+                    <svg-icon icon-class="rightArrow" class-name="new_svg"></svg-icon>
+                </div>
+                <div class="new_footer_r1" ref="right" @mouseover="hover2" @mouseout="leave2">
+                    <svg-icon icon-class="rightHover" class-name="new_svg"></svg-icon>
+                </div>
             </div>
         </div>
         <zcFooter></zcFooter>
@@ -158,10 +168,41 @@ import newHeader from '@/components/newHeader.vue';
 import '../styles/variables.scss';
 export default {
     name: 'new',
+    data(){
+        return{
+            
+        }
+    },
     components:{
         zcHeader,
         zcFooter,
         newHeader
+    },
+    methods:{
+        hover1(){
+            var left1 = document.getElementsByClassName("new_footer_l1")[0];
+            left1.style.display = "block";
+            var left = document.getElementsByClassName("new_footer_l")[0];
+            left.style.display = "none";
+        },
+        leave1(){
+            var left1 = document.getElementsByClassName("new_footer_l1")[0];
+            left1.style.display = "none";
+            var left = document.getElementsByClassName("new_footer_l")[0];
+            left.style.display = "block";
+        },
+        hover2(){
+            var right1 = document.getElementsByClassName("new_footer_r1")[0];
+            right1.style.display = "block";
+            var right = document.getElementsByClassName("new_footer_r")[0];
+            right.style.display = "none";
+        },
+        leave2(){
+            var right1 = document.getElementsByClassName("new_footer_r1")[0];
+            right1.style.display = "none";
+            var right = document.getElementsByClassName("new_footer_r")[0];
+            right.style.display = "block";
+        }
     }
 }
 </script>
@@ -184,7 +225,7 @@ export default {
                 background-color: rgb(230, 227, 227);      
             }
             .new_con_del{
-                width: 62.37rem;
+                width: 100%;
                 margin-right: 22.75rem;
                 border: 1px solid #000;
                 height: 10rem;
@@ -224,14 +265,17 @@ export default {
             .new_footer{
                 margin-top: 6.12rem;
                 .new_footer_l,
-                .new_footer_r{
+                .new_footer_r,
+                .new_footer_l1,
+                .new_footer_r1{
                     float: left;
                     width:2.25rem;
                     height:2.25rem;
-                    background:rgba(224,217,217,0);
-                    border-radius:1.12rem;
-                    border:1px solid rgba(0,0,0,1);
                     cursor: pointer;
+                    .new_svg{
+                        width: 100%;
+                        height: 100%;
+                    }
                 }
                 .new_footer_c{
                     float: left;
@@ -241,6 +285,17 @@ export default {
                 }
                 .new_footer_r{
                     margin-left: 4.75rem;
+                }
+                .new_footer_l1,
+                .new_footer_r1{
+                    display: none;
+                }
+                .new_footer_r1{
+                    margin-left: 4.6rem;
+                }
+                .new_footer_l,
+                .new_footer_r{
+                    display: block;
                 }
             }
         }

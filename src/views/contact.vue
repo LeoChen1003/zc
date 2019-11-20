@@ -19,9 +19,12 @@
                 <span>省市</span><input class="input3" placeholder="例如：浙江省杭州市" /><br>
             </div>
             <div class="contact_commit_input">
-                <span>需求设备</span><input placeholder="请选择需求设备…" class="input4"/><div class="arrow" @click="open" ><svg-icon :icon-class="iconClass" class-name="xia_arrow"></svg-icon></div><br>
-                <div :style="{display:selectDisplay}" class="contact_commit_input_select" ref="select">
-                    <p v-for="(item,i) of machine" @click="changeTxt(i)" :key="i" :class="{blue:changeColor==i}">{{machine[i]}}</p>
+                <span>需求设备</span><input placeholder="请选择需求设备…" class="input4"/><div class="arrow" @click="open" ><svg-icon :icon-class="iconClass" class-name="xia_arrow" id="icon"></svg-icon></div><br>
+                <!-- <div :style="{display:selectDisplay}" class="contact_commit_input_select" ref="select">
+                    <p v-for="(item,i) of machine" @click="changeTxt(i)" :key="i" :class="{blue:changeColor==i}" style="color:#000;">{{machine[i]}}</p>
+                </div> -->
+                <div v-show="visible" class="contact_commit_input_select" id="sel">
+                    <p v-for="(item,i) of machine" @click="changeTxt(i)" :key="i" :class="{blue:changeColor==i}" style="color:#000;">{{machine[i]}}</p>
                 </div>
             </div>
             <div class="contact_commit_input">
@@ -75,14 +78,6 @@
                         <p>浙江省杭州市文一西路西溪八方城9-503</p>
                     </div>
                 </div>
-                <!-- <div class="contact_d3_location_city">
-                    <div v-for="(city,i) of citys" :key="i" :class="classN[i]" @click="changeCity(i)">
-                        <svg-icon :icon-class="city.svg_icon" :class-name="classN1[i]"></svg-icon>
-                        <p>{{city.name}}</p> 
-                        <p>{{city.title}}</p>
-                        <p>{{city.address}}</p>
-                    </div>
-                </div> -->
             </div>
         </div>
         <zcFooter></zcFooter>
@@ -101,29 +96,8 @@ export default {
             machine:["智能大滚筒炒菜机套机","智能精炒一体机","其他设备"],
             changeColor: -1,
             cityColor : false,
-            target: 'btn1'
-            // classN: ['contact_d3_location_city_zh','contact_d3_location_city_sz','contact_d3_location_city_hz'],
-            // classN1: ['svg_zh','svg_zh','svg_hz'],
-            // citys: [
-            //     {
-            //         name : '珠海',
-            //         title : '硬件研发中心 (总部)',
-            //         address: '广东省珠海市香洲区银桦路102号优特科技大厦',
-            //         svg_icon : 'city_zh'
-            //     },
-            //     {
-            //         name : '深圳',
-            //         title : '工业设计中心',
-            //         address : '广东省深圳市广东省深圳市塘朗金骐智谷大厦1705',
-            //         svg_icon : 'city_sz'
-            //     },
-            //     {
-            //         name : '杭州',
-            //         title : '软件研发中心',
-            //         address : '浙江省杭州市文一西路西溪八方城9-503',
-            //         svg_icon : 'city_hz'
-            //     }
-            // ]
+            target: 'btn1',
+            visible: false
         }
     },
     components:{
@@ -132,18 +106,22 @@ export default {
     },
     methods:{
         open(){
-            this.selectDisplay = "block";
-            this.iconClass = "shang";
+            // this.selectDisplay = "block";
+            this.iconClass == "shang" ? this.iconClass= "xia" : this.iconClass = "shang";
+            // this.visible ? this.hide() : this.show();
+            this.visible = ! this.visible;
         },
         // show(){
+        //     this.visible = true;
         //     document.addEventListener('click', this.hidePanel, false)
         // },
         // hide(){
+        //     this.visible = false;
         //     document.removeEventListener('click', this.hidePanel, false);
         // },
-        // showAndHide(e){
+        // hidePanel(e){
         //     if(!this.$refs.select.contains(e.target)){
-        //         this.selectDisplay = "none";
+        //         this.visible = false;
         //         this.hide();
         //     }
         // },
@@ -151,11 +129,34 @@ export default {
             var input4 = document.getElementsByClassName("input4")[0];
             input4.value = this.machine[index];
             this.changeColor = index;
+            // window.console.log(this.visible);
         },
         changeCity(index){
             this.target = index;
         }
-    }
+    },
+    // mounted(){
+    //     document.onclick = function(e){
+    //             window.console.log(e.target);
+    //             // e.stopPropagation();
+    //             var select = document.getElementsByClassName("contact_commit_input_select")[0];
+    //             var id = document.getElementById("icon");
+    //             if(e.target.className!=="arrow"&&e.target.className!="xia_arrow"&&e.target.className!=="shang_arrow"&&e.target.className!=="contact_commit_input_select"&&e.target.id!==id){
+    //                 window.console.log(1);
+    //                 window.console.log(e.target.id);
+    //                 select.style.display = "none";
+    //                 window.console.log(e.target.className);
+    //                 window.console.log(select.style.display);
+    //                 window.console.log(this.visible);
+    //             }
+    //         }
+    //     // window.onload = function(){
+    //     //     var sel = document.getElementById("sel");
+    //     //     document.addEventListener("click",function(){
+    //     //         sel.style.display = "none";
+    //     //     })
+    //     // }
+    // }
 }
 </script>
 
@@ -172,7 +173,7 @@ p{
         width: 100%;
         height: 15rem;
         background:url("../assets/home/aboutUs.jpg");
-        background-position: 73% 0;
+        background-size: 100% 100%;
         p{
             width:8rem;
             height:2.81rem;
@@ -292,7 +293,7 @@ p{
                     cursor: pointer;
                 }
                 .blue{
-                    background-color: #2CC6C0;
+                    background:rgba(44,198,192,.1);
                 }
                 p:nth-child(2){
                     border-top: 1px solid rgba(236,236,236,1);

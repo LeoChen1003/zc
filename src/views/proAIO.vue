@@ -10,7 +10,7 @@
             <p>超级烹饪专家</p>
             <p>智能精炒一体机</p>
             <p>三合一体，中高级餐饮店的御用超级“厨神”</p>
-            <div class="aio_con1_btn">
+            <div class="aio_con1_btn" @click="buy">
                 立即预约
             </div>
         </div>
@@ -21,6 +21,9 @@
                 <span>1000</span>
                 <span>道</span>
                 <p>海量星级菜谱涵盖 8 大菜系</p>
+                <div>
+                    <svg-icon icon-class="up1" class-name="up1"></svg-icon>
+                </div>
             </div>
             <div class="aio_con2_d2">
                 <p>更精准</p>
@@ -142,7 +145,7 @@
             </div>
         </div>
         <div class="aio_con9">
-            <div class="aio_con9_btn">
+            <div class="aio_con9_btn" @click="specs">
                 <img src="../assets/product/addWhite.png" alt="">
                 <span>了解参数明细</span>
             </div>
@@ -164,6 +167,14 @@ export default {
     mounted(){
         var hder  = document.getElementsByClassName("whiteBack")[0];
         hder.className = "blackBack";
+    },
+    methods:{
+        buy(){
+            this.$router.push("/buyConsult");
+        },
+        specs(){
+            this.$router.push("/product/proAIO/proAIOTechSpecs");
+        }
     }
 }
 </script>
@@ -212,6 +223,7 @@ p{
         width:100%;
         height:52.69rem;
         background: url("../assets/product/aioHd.jpg");
+        background-size: 100% 100%;
         overflow: hidden;
         p:first-child{
             width: 5.3rem;
@@ -246,6 +258,7 @@ p{
             color:rgba(255,255,255,1);
             line-height:2.63rem;
             text-align: center;
+            cursor: pointer;
         }
     }
     .aio_con2{
@@ -293,6 +306,20 @@ p{
                 font-weight:400;
                 color:rgba(153,153,153,1);
                 margin: 0.19rem auto 0;
+            }
+        }
+        .aio_con2_d1{
+            position: relative;
+            div{
+                position: absolute;
+                top: 4.5rem;
+                right: 0;
+                width: 0.87rem;
+                height: 0.87rem;
+                .up1{
+                    width: 100%;
+                    height: 100%;
+                }
             }
         }
         .aio_con2_d2{
@@ -349,14 +376,14 @@ p{
             line-height:1.5rem;
             text-align: center;
             margin-top: 11.37rem;
-            margin-left: 13rem;
+            margin-left: 21.3%;
         }
         p:nth-child(2){
             font-size:2.5rem;
             font-weight:600;
             color:rgba(255,255,255,1);
             margin-top: 1.63rem;
-            margin-left: 13rem;
+            margin-left: 21.3%;
         }
         p:nth-child(3){
             width:33.75rem;
@@ -365,7 +392,7 @@ p{
             font-weight:400;
             color:#888888;
             line-height:2rem;
-            margin-left: 13rem;
+            margin-left: 21.3%;
             margin-top: 2.5rem;
             span{
                 color: rgba(44,198,192,1);
@@ -374,7 +401,7 @@ p{
         }
         .aio_con3_txt1,.aio_con3_txt2,.aio_con3_txt3{
             margin-top: 3.13rem;
-            margin-left: 13rem;
+            margin-left: 21.3%;
             float: left;
             .p1{
                 height: 3.13rem;
@@ -395,10 +422,13 @@ p{
         }
         .aio_con3_pic{
             position: absolute;
-            width: 33.75rem;
-            height: 35.56rem;
-            top: 23.19rem;
-            right: 6.75rem;
+            width: 32.2%;
+            top: 32.19rem;
+            right: 9%;
+            img{
+                width: 100%;
+                height: 100%;
+            }
         }
     }
     .aio_con4{
@@ -412,7 +442,7 @@ p{
             font-size:2.5rem;
             font-weight:600;
             color:rgba(255,255,255,1);
-            margin-left: 52rem;
+            margin-left: 56%;
             margin-top: 27.5rem;
         }
         .aio_con4_p2{
@@ -422,7 +452,7 @@ p{
             font-weight:400;
             color:#888888;
             line-height:2rem;
-            margin-left: 52rem;
+            margin-left: 56%;
             margin-top: 2.5rem;
             span{
                 color: rgba(44,198,192,1);
@@ -430,7 +460,7 @@ p{
         }
         .aio_con4_txt1,.aio_con4_txt2{
             width: 9rem;
-            margin-left: 52rem;
+            margin-left: 56%;
             margin-top: 3rem;
             float: left;
             p:first-child{
@@ -450,10 +480,13 @@ p{
         }
         .aio_con4_pic{
             position: absolute;
-            width: 48.81rem;
-            height: 41.44rem;
+            width: 44%;
             top: 0;
-            left: 6.18rem;
+            left: 16.8%;
+            img{
+                width: 100%;
+                height: 100%;
+            }
         }
     }
     .aio_con5{
@@ -468,7 +501,7 @@ p{
             font-weight:600;
             color:rgba(255,255,255,1);
             margin-top: 15rem;
-            margin-left: 13rem;
+            margin-left: 20.8%;
         }
         .p2{
             width:52.5rem;
@@ -478,7 +511,7 @@ p{
             color: #888888;
             line-height:2rem;
             margin-top: 2.5rem;
-            margin-left: 13rem;
+            margin-left: 20.8%;
             span{
                 color:rgba(44,198,192,1);
             }
@@ -486,7 +519,7 @@ p{
         .d1,.d2{
             float: left;
             width: 11.57rem;
-            margin-left: 13rem;
+            margin-left: 20.8%;
             margin-top: 3rem;
             p:first-child{
                 font-size:2rem;
@@ -505,10 +538,13 @@ p{
         }
         .aio_con5_pic{
             position: absolute;
-            width: 42.94rem;
-            height: 42.69rem;
-            top: 16.06rem;
+            width: 40.9%;
+            top: 39.3%;
             right: 5.56rem;
+            img{
+                width: 100%;
+                height: 100%;
+            }
         }
     }
     .aio_con6{
@@ -523,7 +559,7 @@ p{
             font-weight:600;
             color:rgba(255,255,255,1);
             margin-top: 11.25rem;
-            margin-left: 13rem;
+            margin-left: 21.3%;
         }
         .p2{
             width:52.5rem;
@@ -532,14 +568,14 @@ p{
             font-weight:400;
             color: #888888;
             line-height:2rem;
-            margin-left: 13rem;
+            margin-left: 21.3%;
             margin-top: 2.5rem;
             span{
                 color:rgba(44,198,192,1);
             }
         }
         .d{
-            margin-left: 13rem;
+            margin-left: 21.3%;
             margin-top: 3rem;
             p:first-child{
                 font-size:2.25rem;
@@ -573,7 +609,7 @@ p{
         box-shadow:0px 10px 20px 0px rgba(0,0,0,0.02);
         .aio_con7_title{
             margin-top: 7.5rem;
-            margin-left: 13rem;
+            margin-left: 21.3%;
             width:8rem;
             height:1.5rem;
             background:rgba(44,198,192,1);
@@ -592,7 +628,7 @@ p{
             color:rgba(255,255,255,1);
             line-height:3.5rem;
             margin-top: 1.63rem;
-            margin-left: 13rem;
+            margin-left: 21.3%;
         }
         .p2{
             width:33.75rem;
@@ -601,12 +637,12 @@ p{
             font-weight:400;
             color:rgba(136,136,136,1);
             line-height:2rem;
-            margin-left: 13rem;
+            margin-left: 21.3%;
             margin-top: 2rem;
         }
         .d1,.d2{
             float: left;
-            margin-left: 13rem;
+            margin-left: 21.3%;
             margin-top: 2.75rem;
             p:first-child{
                 font-size:2.25rem;
@@ -647,14 +683,14 @@ p{
         box-shadow:0px 10px 20px 0px rgba(0,0,0,0.02);
         .p1{
             margin-top: 7.5rem;
-            margin-left: 13rem;
+            margin-left: 21.3%;
             font-size:2.5rem;
             font-weight:600;
             color:rgba(255,255,255,1);
         }
         .p2{
             margin-top: 2.5rem;
-            margin-left: 13rem;
+            margin-left: 21.3%;
             width:52.5rem;
             height:6rem;
             font-size:1rem;
@@ -664,7 +700,7 @@ p{
         }
         .d1,.d2,.d3{
             margin-top: 3rem;
-            margin-left: 13rem;
+            margin-left: 21.3%;
             float: left;
             p:first-child{
                 font-size:2.25rem;

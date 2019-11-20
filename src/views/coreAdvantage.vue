@@ -25,9 +25,9 @@
                     <p class="core_syt_pic_p4">电脑端后台管理</p>
                 </div>
             </div>
-            <div class="core_syt_btn">
+            <div class="core_syt_btn" @click="os">
                 <img src="../assets/coreAdvantage/iconAddBlack.png" alt="">
-                <p @click="os">了解更多</p>
+                <p>了解更多</p>
             </div>
         </div>
         <div class="core_tech">
@@ -35,9 +35,9 @@
             <router-link to="/coreAdvantage/intelligencTech">智能技术</router-link>
             <p>简单易用的智能，背后藏着强大的科技</p>
             <img src="../assets/coreAdvantage/coreTech.png" alt="">
-            <div class="core_tech_btn">
+            <div class="core_tech_btn" @click="tech">
                 <img src="../assets/coreAdvantage/iconAddWhite.png" alt="">
-                <p @click="tech">了解更多</p>
+                <p>了解更多</p>
             </div>
         </div>
         <div class="core_data">
@@ -45,9 +45,9 @@
             <router-link to="/coreAdvantage/intelligenceData">智能数据管控</router-link>
             <p>智能管理前厅、后厨数据，实现成本、利润全透明化</p>
             <img src="../assets/coreAdvantage/coreData.png" alt="">
-            <div class="core_data_btn">
+            <div class="core_data_btn" @click="data">
                 <img src="../assets/coreAdvantage/iconAddBlack.png" alt="">
-                <p @click="data">了解更多</p>
+                <p>了解更多</p>
             </div>
         </div>
         <div class="core_mach">
@@ -71,9 +71,9 @@
                     <p class="p6">保温保鲜</p>
                 </div>
             </div>
-            <div class="core_mach_btn">
+            <div class="core_mach_btn" @click="mach">
                 <img src="../assets/coreAdvantage/iconAddWhite.png" alt="">
-                <p @click="mach">了解更多</p>
+                <p>了解更多</p>
             </div>
         </div>
         <div class="core_star">
@@ -81,9 +81,9 @@
             <router-link to="/coreAdvantage/intelligenceStar">7 星尊享服务体系</router-link>
             <p>优特智厨科技有限公司配备专业的技术、研发、营销、运营及售后团队。让客户从了解产品第一刻起，即享受专业、周到的服务</p>
             <img src="../assets/coreAdvantage/coreService.png" alt="">
-            <div class="core_star_btn">
+            <div class="core_star_btn" @click="star">
                 <img src="../assets/coreAdvantage/iconAddWhite.png" alt="">
-                <p @click="star">了解更多</p>
+                <p>了解更多</p>
             </div>
         </div>
         <zcFooter></zcFooter>
@@ -144,9 +144,10 @@ p{
     width: 100%;
     .core_syt{
         width: 100%;
-        height: 51.43rem;
+        height: 45rem;
         border-top: 1px solid #cccccc;
         background: url("../assets/coreAdvantage/osBackground.jpg");
+        background-size: 100% 100%;
         .core_syt_l{
             position: relative;
             width:10rem;
@@ -187,7 +188,7 @@ p{
             font-weight: 300;
         }
         .core_syt_pic{
-            width: 52rem;
+            width: 50%;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -244,8 +245,7 @@ p{
         height: 45rem;
         background: url("../assets/coreAdvantage/techBackground.jpg");
         overflow: hidden;
-        // background:linear-gradient(225deg,rgba(0,0,0,0) 0%,rgba(0,0,0,0.26) 26%,rgba(0,0,0,0.75) 50%,rgba(0,0,0,1) 100%);
-        // opacity:0.8;    
+        background-size: 100% 100%;   
         p:first-child{
             width: 7.87rem;
             height: 1.56rem;
@@ -311,6 +311,7 @@ p{
         height: 45rem;
         background: url("../assets/coreAdvantage/dataBackground.jpg");
         overflow: hidden;
+        background-size: 100% 100%;
         p:first-child{
             font-size: 1.12rem;
             width: 7.87rem;
@@ -369,10 +370,9 @@ p{
     .core_mach{
         width: 100%;
         height: 45rem;
-        // background:linear-gradient(225deg,rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 13%,rgba(0,0,0,0.8) 40%,rgba(0,0,0,0.7) 100%);
-        // opacity:0.8;
         background: url("../assets/coreAdvantage/machineBackground.jpg");
         overflow: hidden;
+        background-size: 100% 100%;
         p:first-child{
             width: 7.88rem;
             height: 1.56rem;
@@ -478,9 +478,8 @@ p{
         width: 100%;
         overflow: hidden;
         height: 45rem;
-        // background:linear-gradient(225deg,rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 18%,rgba(0,0,0,0.73) 41%,rgba(0,0,0,0.89) 100%);
-        // opacity:0.2;
         background: url("../assets/coreAdvantage/starBackground.jpg");
+        background-size: 100% 100%;
         img:first-child{
             display: block;
             margin: 7.5rem auto 0;
