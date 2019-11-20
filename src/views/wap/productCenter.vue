@@ -11,7 +11,11 @@
         <div class="btn-1">立即预约</div>
         <div class="btn-2">
           <div class="icon"></div>
-          <div class="btn-text">了解更多</div>
+          <div class="btn-text"
+               @click="$router.push('/wap/proDetailGTGL')">
+            <svg-icon icon-class="homeKnowMore"
+                      style="width:0.88rem;height:0.88rem;margin-right:2px;"></svg-icon>了解更多
+          </div>
         </div>
       </div>
     </div>
@@ -230,6 +234,9 @@ export default {
       border: 0.06rem solid rgba(0, 0, 0, 1);
 
       .btn-text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         font-size: 0.88rem;
         font-weight: 400;
         color: rgba(0, 0, 0, 1);
