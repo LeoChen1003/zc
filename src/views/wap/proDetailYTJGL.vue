@@ -142,7 +142,7 @@
         </div>
       </div>
       <img src="../../assets/wap/productCenter/GT_znld.png"
-           alt="">
+           alt="znld">
     </div>
     <div class="detail_3 detail_8">
       <div class="slogan">不止是一台厨具，更是一名星级大厨。
@@ -165,7 +165,7 @@
         </div>
       </div>
       <img src="../../assets/wap/productCenter/GT_dzcp.png"
-           alt="">
+           alt="dzcp">
     </div>
     <div class="know_more">
       <div class="moore_btn">

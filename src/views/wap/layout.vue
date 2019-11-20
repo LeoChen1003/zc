@@ -54,29 +54,55 @@ export default {
   data () {
     return {
       dropdown: false,
-      route: [{
-        name: '首页',
-        url: '/wap/index'
-      }, {
-        name: '产品中心',
-        children: [
-          {
-            name: '产品中心-1',
-            url: '/wap/productCenter'
-          },
-          {
-            name: '智能大滚筒炒菜机套机',
-            url: '/wap/proDetailGTGL'
-          },
-          {
-            name: '智能精炒一体机',
-            url: '/wap/proDetailYTJGL'
-          },
-        ],
-        show: false
-      }, {
-        name: '新闻中心'
-      }],
+      route: [
+        {
+          name: '首页',
+          url: '/wap/index'
+        },
+        {
+          name: '产品中心',
+          children: [
+            {
+              name: '产品中心-1',
+              url: '/wap/productCenter'
+            },
+            {
+              name: '智能大滚筒炒菜机套机',
+              url: '/wap/proDetailGTGL'
+            },
+            {
+              name: '智能精炒一体机',
+              url: '/wap/proDetailYTJGL'
+            },
+          ],
+          show: false
+        },
+        {
+          name: '新闻中心',
+        },
+        {
+          name: '核心优势',
+          url: '/wap/coreAdvantages'
+        },
+        {
+          name: '关于我们',
+          children: [
+            {
+              name: '企业介绍',
+              url: '/wap/aboutIntro'
+            },
+            {
+              name: '专利发明',
+              url: '/wap/aboutIntro'
+            },
+            {
+              name: '实验室',
+              url: '/wap/aboutIntro'
+            },
+          ],
+          show: false
+        }
+      ],
       windowHeight: ''
     };
   },
