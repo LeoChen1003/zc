@@ -84,8 +84,8 @@ export default {
             //     page: this.page
             // }
             request({
-                url: 'http://zc.12zan.com/outside/posts',
-                methods: 'get'
+                url: '/outside/posts',
+                method: 'get'
             }).then(res=>{
                 this.messNews = res.data.content;
                 window.console.log(this.messNews);
