@@ -45,19 +45,29 @@ export default {
         this.$refs.toTop.onclick = function(){
             scrollTo(0,0);
         }
+        window.onscroll = function(){
+            var arrow  = document.getElementsByClassName("arrow")[0];
+            var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            if(scrollTop > 867){
+                arrow.style.position = "fixed";
+            }else{
+                arrow.style.position = "absolute";
+            }
+        }
     }
 }
 </script>
 
 <style lang="scss" scope>
 .newDel{
-    position: relative;;
+    position: relative;
+    overflow: hidden;
     .arrow{
         position: absolute;
         width: 3.25rem;
         height: 3.25rem;
-        right: 14%;
-        bottom: 37rem;
+        left: 85%;
+        top: 49%;
         cursor: pointer;
         .up{
             width: 100%;
@@ -66,8 +76,8 @@ export default {
     }
     .newDel_con{
         width: 50rem;
-        height: 200rem;
         margin: 0 auto;
+        margin-bottom: 6.75rem;
         .newDel_con_hd{
             margin-top: 5.62rem;
             width: 100%;

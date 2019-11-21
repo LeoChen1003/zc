@@ -12,16 +12,45 @@
         <div class="specs_con1">
             <p>“星级大厨”带你体验舌尖上的美味</p>
             <p>智能一拖三炒菜机</p>
-            <span>智能云菜谱</span>
+            <span :class="curIndex == 0 ? 'activeColor' : ''">智能云菜谱</span>
             <span>|</span>
-            <span>智能大滚筒炒菜机</span>
+            <span :class="curIndex == 1 ? 'activeColor' : ''">智能大滚筒炒菜机</span>
             <span>|</span>
-            <span>中控任务管理</span>
+            <span :class="curIndex == 2 ? 'activeColor' : ''">中控任务管理</span>
             <span>|</span>
-            <span>智能调料机</span>
+            <span :class="curIndex == 3 ? 'activeColor' : ''">智能调料机</span>
             <span>|</span>
-            <span>气压站</span>
-            <productSwiper></productSwiper>
+            <span :class="curIndex == 4 ? 'activeColor' : ''">气压站</span>
+            <div class="pro_swiper">
+                <swiper :options="swiperOption" ref="product_swiper">
+                    <swiper-slide>
+                        <div class="item">
+                            <img class="img1" src="../assets/product/carousel1.png" alt="">
+                        </div>
+                    </swiper-slide>
+                    <swiper-slide>
+                        <div class="item">
+                            <img class="img2" src="../assets/product/carousel2.png" alt="">
+                        </div>
+                    </swiper-slide>
+                    <swiper-slide>
+                        <div class="item">
+                            <img class="img3" src="../assets/product/carousel3.png" alt="">
+                        </div>
+                    </swiper-slide>
+                    <swiper-slide>
+                        <div class="item">
+                            <img class="img4" src="../assets/product/carousel4.png" alt="">
+                        </div>
+                    </swiper-slide>
+                    <swiper-slide>
+                        <div class="item">
+                            <img class="img5" src="../assets/product/carousel5.png" alt="">
+                        </div>
+                    </swiper-slide>
+                </swiper>
+                <div class="swiper-pagination"></div>
+            </div>
         </div>
         <div class="specs_txt">
             <span>产品参数</span>
@@ -81,46 +110,32 @@
 import zcHeader from '@/components/zcHeader.vue';
 import zcFooter from '@/components/zcFooter.vue';
 import '../styles/variables.scss';
-import productSwiper from '@/components/productSwiper.vue';
+let self;
 export default {
     name: 'proCaiTechSpecs',
     data(){
         return {
-            imgs: [
-                {
-                    src: require("../assets/product/carousel1.png"),
-                    imgWidth: 800,
-                    imgHeight: 400
+            curIndex:0,
+            swiperOption: {
+                slidesPerView: 'auto',
+                centeredSlides: true,
+                spaceBetween: 0,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true
                 },
-                {
-                    src: require('../assets/product/carousel2.png'),
-                    imgWidth: 570,
-                    imgHeight: 400
-                },
-                {
-                    src: require('../assets/product/carousel3.png'),
-                    imgWidth: 1022,
-                    imgHeight: 373
-                },
-                {
-                    src: require('../assets/product/carousel4.png'),
-                    imgWidth: 666,
-                    imgHeight: 400
-                },
-                {
-                    src: require('../assets/product/carousel5.png'),
-                    imgWidth: 512,
-                    imgHeight: 377
+                on: {
+                    slideChangeTransitionEnd: function() {
+                        // 切换结束时，告诉我现在是第几个slide
+                        self.curIndex = self.$refs.product_swiper.swiper.activeIndex;
+                    }
                 }
-            ],
-            i:0,
-            currentIndex:0
+            }
         }
     },
     components:{
         zcHeader,
         zcFooter,
-        productSwiper
     },
     mounted(){
         var hder  = document.getElementsByClassName("whiteBack")[0];
@@ -135,18 +150,17 @@ export default {
         }
     },
     methods:{
-        moveTo(x){
-            this.currentIndex = x;
-            this.$refs.pic.src = require('../assets/product/carousel'+x+'.png');
-        },
         buy(){
             this.$router.push("/buyConsult");
         }
-    }
+    },
+    created() {
+        self = this
+    },
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 p{
     font-family:PingFangSC-Semibold,PingFang SC;
 }
@@ -196,7 +210,7 @@ p{
             color:rgba(255,255,255,1);
             line-height:2rem;
             text-align: center;
-            margin-left: 14.00rem;
+            margin-left: 15.00rem;
             margin-top: 0.5rem;
             cursor: pointer;
         }
@@ -208,6 +222,10 @@ p{
         box-shadow:0px 10px 20px 0px rgba(0,0,0,0.02);
         overflow: hidden;
         position: relative;
+        .activeColor {
+            font-weight: 500;
+            color: #fff;
+        }
         p:first-child{
             height:1.25rem;
             font-size:0.88rem;
@@ -299,5 +317,72 @@ p{
             margin-bottom: 4.81rem;
         }
     }
+}
+.pro_swiper{
+    width: 100%;
+    margin-top: 7.41rem;
+    position: relative;
+    .item{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        .img1{
+            margin-left: 39%;
+            width: 47%;
+            margin-top: 4.1%;
+        }
+        .img2{
+            position: absolute;
+            left: 50%;
+            width: 34%;
+            margin-top: 3.4%;
+        }
+        .img3{
+            width: 60.8%;
+            margin-left: 39%;
+            margin-top: 7.3%;
+        }
+        .img4{
+            width: 39.6%;
+            margin-left: 44%;
+            margin-top: 2%;
+        }
+        .img5{
+            width: 31%;
+            margin-left: 49%;
+            margin-top: 2.4%;
+        }
+    }
+    .swiper-pagination{
+        top: 73%;
+        left: 21%;
+        .swiper-pagination-bullet{
+            width: 1.5rem !important;
+            height: 3px !important;
+            background-color: #858585;
+            border-radius: 0;
+            margin-left: 5px;
+        }
+        .swiper-pagination-bullet:focus{
+            border: none;
+            outline-style: none;
+            box-shadow: none !important;
+        }
+        .swiper-pagination-bullet:first-child{
+            margin-left: 0;
+        }
+        .swiper-pagination-bullet-active{
+            background: #fff;
+        }
+    }
+    .swiper-container-autoheight{
+        height: 400px;
+    }
+    .swiper-wrapper{
+        height: 25rem;
+    }
+    // .swiper-slide-active{
+    //     margin-left: 32rem;
+    // }
 }
 </style>
