@@ -479,18 +479,7 @@ export default {
         buy(){
             this.$router.push("/buyConsult");
         },
-        // onScroll(){
-        //     let scrolled = document.documentElement.scrollTop || document.body.scrollTop;
-        //     window.console.log(scrolled); //18
-        //     // let item = this.$refs.pro1.offsetTop;
-        //     // let item1 = this.$refs.pro2.offsetTop;
-        //     // let item2 = this.$refs.pro3.offsetTop;
-        //     // window.console.log(item);//80
-        //     // window.console.log(item1);//1216
-        //     // window.console.log(item2);//2477
-        // },
         jump(i){
-            window.console.log(i);
             let jump = document.getElementsByClassName("d_jump");
             //获取当前滚动条与窗体顶部的距离
             let distance = document.documentElement.scrollTop || document.body.scrollTop;
@@ -498,14 +487,6 @@ export default {
             let total = jump[i].offsetTop - 48;
             //计算每小段的距离
             let step = total / 50;
-            window.console.log(total);
-            //Chrome
-            // document.body.scrollTop = total;
-            //distance = total;
-            //firefox
-            //document.documentElement.scrollTop = total;
-            //safari
-            //window.pageYOffset = total;
             if(total > distance){
                 moveDown();
             }else{
@@ -516,18 +497,13 @@ export default {
             function moveDown(){
                 if(distance < total){
                     distance += step;
-                    window.console.log(step);
-                    // window.console.log(distance);
                     document.body.scrollTop = distance;
                     document.documentElement.scrollTop = distance;
                     setTimeout(moveDown,10);
-                    window.console.log(distance);
-                    // window.console.log(document.documentElement.scrollTop);
                 }else{
                     document.body.scrollTop = distance;
                     document.documentElement.scrollTop = total;
                 }
-                // window.console.log(1);
             }
             function moveUp(){
                 if(distance > total){
@@ -539,13 +515,9 @@ export default {
                     document.body.scrollTop = total;
                     document.documentElement.scrollTop = total;
                 }
-                // window.console.log(2);
             }
         }
     }
-    // mounted(){
-    //     window.addEventListener('scroll',this.onScroll);
-    // }
 }
 </script>
 

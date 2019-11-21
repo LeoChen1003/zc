@@ -10,13 +10,13 @@
         </div>
         <form class="contact_commit">  
             <div class="contact_commit_input">
-                <span>称呼</span><svg-icon icon-class="icon_star" class-name="icon_star"></svg-icon><input class="input1" type="name" placeholder="例如：王先生"/><br>
+                <span>称呼</span><svg-icon icon-class="icon_star" class-name="icon_star"></svg-icon><input class="input1" type="name" v-model="name" placeholder="例如：王先生"/><br>
             </div>
             <div class="contact_commit_input">
-                <span>电话</span><svg-icon icon-class="icon_star" class-name="icon_star"></svg-icon><input class="input2" placeholder="请填写电话" /><br>
+                <span>电话</span><svg-icon icon-class="icon_star" class-name="icon_star"></svg-icon><input class="input2" placeholder="请填写电话" v-model="phone" /><br>
             </div>
             <div class="contact_commit_input">
-                <span>省市</span><input class="input3" placeholder="例如：浙江省杭州市" /><br>
+                <span>省市</span><input class="input3" v-model="provice" placeholder="例如：浙江省杭州市" /><br>
             </div>
             <div class="contact_commit_input">
                 <span>需求设备</span><input placeholder="请选择需求设备…" class="input4"/><div class="arrow" @click="open" ><svg-icon :icon-class="iconClass" class-name="xia_arrow" id="icon"></svg-icon></div><br>
@@ -25,10 +25,10 @@
                 </div>
             </div>
             <div class="contact_commit_input">
-                <span>需求数量</span><input placeholder="请填写需求数量…" /><br>
+                <span>需求数量</span><input v-model="amount" placeholder="请填写需求数量…" /><br>
             </div>
         </form>
-        <div class="contact_commit_btn">
+        <div class="contact_commit_btn" @click="sendMessage">
             提交意愿
         </div>
         <div class="contact_d2">
@@ -84,6 +84,7 @@
 <script>
 import zcHeader from '@/components/zcHeader.vue';
 import zcFooter from '@/components/zcFooter.vue';
+import request from '@/utils/request.js';
 export default {
     name: 'contact',
     data(){
@@ -94,7 +95,13 @@ export default {
             changeColor: -1,
             cityColor : false,
             target: 'btn1',
-            visible: false
+            visible: false,
+            name: null,
+            phone: null,
+            provice: null,
+            amount: null,
+            equipment: null,
+            changeEquip: null
         }
     },
     components:{
@@ -115,6 +122,7 @@ export default {
                 }else if(sel.contains(e.target) && e.target.tagName !=="use"){//如果当前点击的对象在这个父级元素中并且不是箭头
                     this.visible = true;
                     this.iconClass = "shang";
+                    this.equipment = e.target.innerText;
                 }else{ //点击的是空白区域
                     this.visible = false;
                     this.iconClass = "xia";
@@ -128,6 +136,31 @@ export default {
         },
         changeCity(index){
             this.target = index;
+        },
+        sendMessage(){
+            if(this.equipment == "智能大滚筒炒菜机套机"){
+                this.changeEquip = "BIG_BIZ_MACHINE";
+            }else if(this.equipment == "智能精炒一体机"){
+                this.changeEquip = "SMALL_SMART";
+            }else{
+                this.changeEquip = "OTHER";
+            }
+            let formData = {
+                who: this.name,
+                mobile: this.phone,
+                zone: this.provice,
+                deviceType: this.changeEquip,
+                howMany: this.amount
+            }
+            request({
+                url: '/outside/book',
+                method: 'post',
+                data: formData
+            }).then(res=>{
+                window.console.log(res.data);
+            }).catch(function(error){
+                window.console.log(error);
+            })
         }
     }
 }
