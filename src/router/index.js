@@ -29,6 +29,8 @@ import wapproDetailYTJGL from '../views/wap/proDetailYTJGL'
 import wapcoreAdvantages from '../views/wap/coreAdvantages'
 import wapaboutIntro from '../views/wap/aboutIntro'
 import wapaboutPatent from '../views/wap/aboutPatent'
+import wapaboutLab from '../views/wap/aboutLab'
+import wapcontact from '../views/wap/contact'
 Vue.use(VueRouter)
 
 const routes = [
@@ -119,6 +121,16 @@ const routes = [
         path: 'aboutPatent',
         name: '关于我们（发明专利）',
         component: wapaboutPatent
+      },
+      {
+        path: 'aboutLab',
+        name: '关于我们（实验室）',
+        component: wapaboutLab
+      },
+      {
+        path: 'contact',
+        name: '联系我们',
+        component: wapcontact
       }
     ]
   },

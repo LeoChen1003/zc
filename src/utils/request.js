@@ -53,7 +53,7 @@ service.interceptors.request.use(
 service.interceptors.response.use(
   response => {
     const res = response
-    store.dispatch('user/setPlatformid', res.headers.platformid)
+    // store.dispatch('user/setPlatformid', res.headers.platformid)
     // if the custom code is not 20000, it is judged as an error.
     if (res.status !== 200 && res.status) {
       Message({

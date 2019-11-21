@@ -1,24 +1,25 @@
 <template>
-  <div class='my'>
-    <div class="about_header"
-         @click="dropdown=!dropdown">
-      <div class="header_title">{{title}}</div>
-      <div class="li_arrow"
-           :class="dropdown ? 'open' : ''"></div>
+  <div class="my">
+    <div class="about_header" @click="dropdown = !dropdown">
+      <div class="header_title">{{ title }}</div>
+      <div class="li_arrow" :class="dropdown ? 'open' : ''"></div>
     </div>
     <transition name="fade">
-      <div class="model"
-           v-if="dropdown">
-        <div class="dropdown"
-             v-if="dropdown">
-          <div class="dropdown_item"
-               @click="$router.push(item.path);dropdown=false"
-               v-for="(item,index) in routeList"
-               :key="index"
-               v-show="item.name!=title">{{item.name}}
+      <div class="model" v-if="dropdown">
+        <div class="dropdown" v-if="dropdown">
+          <div
+            class="dropdown_item"
+            @click="
+              $router.push(item.path)
+              dropdown = false
+            "
+            v-for="(item, index) in routeList"
+            :key="index"
+            v-show="item.name != title"
+          >
+            {{ item.name }}
           </div>
         </div>
-
       </div>
     </transition>
   </div>
@@ -32,32 +33,26 @@ export default {
   //import引入的组件需要注入到对象中才能使用
   components: {},
   props: ['title'],
-  data () {
+  data() {
     return {
       routeList: [
         { name: '企业介绍', path: '/wap/aboutIntro' },
         { name: '发明专利', path: '/wap/aboutPatent' },
-        { name: '实验室', path: '/wap/aboutIntro' }
+        { name: '实验室', path: '/wap/aboutLab' }
       ],
       dropdown: false
-    };
+    }
   },
   //监听属性 类似于data概念
   computed: {},
   //监控data中的数据变化
   watch: {},
-  methods: {
-
-  },
-  created () {
-
-  },
-  mounted () {
-
-  },
+  methods: {},
+  created() {},
+  mounted() {}
 }
 </script>
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 //@import url(); 引入公共css类
 .about_header {
   height: 3rem;
