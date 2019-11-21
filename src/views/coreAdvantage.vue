@@ -424,7 +424,7 @@ p{
             }
         }
         .core_mach_svg{
-            width: 38.19rem;
+            width: 54.19rem;
             height: 20rem;
             display: flex;
             justify-content: space-between;

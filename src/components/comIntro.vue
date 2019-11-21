@@ -145,9 +145,9 @@ export default {
             width: 100%;
             height: 40.12rem;
             .about_con1_ct{
-                margin-left: 21%;
+                margin: 0 auto;
                 margin-top: 5rem;
-                width: 61rem;
+                width: 59%;
                 height: 27.6rem;
             }
             .about_con1_ct_l{
@@ -200,9 +200,9 @@ export default {
             width: 100%;
             height: 37.56rem;
             .about_con2_ct{
-                margin-left:21%;
+                margin: 0 auto;
                 margin-top: 4rem;
-                width: 61rem;
+                width: 59%;
                 height: 27.6rem;
             }
             .about_con2_ct_l{
@@ -268,13 +268,13 @@ export default {
             height: 58rem;
             .block{
                 margin-top:1rem;
-                margin-left: 36.5rem;
+                margin-left: 37.5%;
             }
             .about_con3_ct{
-                width: 66.9rem;
+                margin: 0 auto;
+                width: 59%;
                 margin-top: 4rem;
                 height: 4rem;
-                margin-left: 21%;
             }
             .about_con3_ct_l{
                 float: left;

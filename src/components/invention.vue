@@ -1,6 +1,6 @@
 <template>
     <div class="inven">
-        <svg-icon icon-class="invention" class-name="inven_svg"></svg-icon>
+        <svg-icon icon-class="inven" class-name="inven_svg"></svg-icon>
     </div>
 </template>
 

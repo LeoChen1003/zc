@@ -21,16 +21,7 @@
             <span>智能调料机</span>
             <span>|</span>
             <span>气压站</span>
-            <!-- <div class="specs_con1_pic" v-for="(img,i) of imgs" :key="i" :style="{width:img.imgWidth+'px',height:img.imgHeight+'px'}">    
-                <li ref="li_img">
-                    <img :src="img.src" alt="" :style="{width:img.imgWidth+'px',height:img.imgHeight+'px'}">
-                </li>
-            </div>
-            <div class="specs_con1_pic"  :style="{width:imgs[0].imgWidth+'px',height:imgs[0].imgHeight+'px'}">
-                <img :src="imgs[0].src" alt="" ref="pic" :style="{width:imgs[0].imgWidth+'px',height:imgs[0].imgHeight+'px'}">
-            </div>
-            <div class="icon" v-for="(img,i) of imgs" :key="i" :class="currentIndex==i?'':'active'" @click="moveTo(idx)"></div> -->
-            <!-- <swiper :option="swiperOption"></swiper> -->
+            <productSwiper></productSwiper>
         </div>
         <div class="specs_txt">
             <span>产品参数</span>
@@ -90,7 +81,7 @@
 import zcHeader from '@/components/zcHeader.vue';
 import zcFooter from '@/components/zcFooter.vue';
 import '../styles/variables.scss';
-// import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import productSwiper from '@/components/productSwiper.vue';
 export default {
     name: 'proCaiTechSpecs',
     data(){
@@ -129,15 +120,13 @@ export default {
     components:{
         zcHeader,
         zcFooter,
-        // swiper,
-        // swiperSlide
+        productSwiper
     },
     mounted(){
         var hder  = document.getElementsByClassName("whiteBack")[0];
         hder.className = "blackBack";
         window.onscroll = function(){
             var top = document.documentElement.scrollTop;
-            // window.console.log(document.documentElement.scrollTop);
             if(top>=755){
                 hder.className = "whiteBack";
             }else{
@@ -248,12 +237,6 @@ p{
         }
         span:not(:first-of-type){
             margin-left: 1rem;
-        }
-        .swiper-container{
-            position: absolute;
-            right: 5rem;
-            bottom: 0;
-            overflow: hidden;
         }
         .icon{
             width: 1.5rem;
