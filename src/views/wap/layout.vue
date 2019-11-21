@@ -19,7 +19,7 @@
              v-for="(item,index) in route"
              :key="index">
           <div class="li-box"
-               @click="item.children ? item.show = !item.show : $router.push({path:item.url})">
+               @click="item.children ? item.show = !item.show : $router.push({path:item.url});">
             <div class="li">{{item.name}}</div>
             <div class="li-arrow"></div>
           </div>
@@ -29,7 +29,7 @@
                  style="margin-top:1rem;">
               <div class="children"
                    v-for="(children,idx) in item.children"
-                   @click="$router.push({path:children.url})"
+                   @click="$router.push({path:children.url});dropdown=false;"
                    :key="index + idx">{{children.name}}</div>
             </div>
           </transition>
@@ -59,13 +59,20 @@ export default {
         url: '/wap/index'
       }, {
         name: '产品中心',
-        children: [{
-          name: '产品中心-1',
-          url: '/wap/productCenter'
-        }, {
-          name: '智能大滚筒炒菜机套机',
-          url: '/wap/proDetailGT'
-        }],
+        children: [
+          {
+            name: '产品中心-1',
+            url: '/wap/productCenter'
+          },
+          {
+            name: '智能大滚筒炒菜机套机',
+            url: '/wap/proDetailGTGL'
+          },
+          {
+            name: '智能精炒一体机',
+            url: '/wap/proDetailYTJGL'
+          },
+        ],
         show: false
       }, {
         name: '新闻中心'
