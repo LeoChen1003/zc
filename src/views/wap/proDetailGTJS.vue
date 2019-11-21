@@ -1,47 +1,75 @@
 <template>
-  <div class='wrapper proDetail'>
-    <GTHeader :type="'js'"
-              :name="'智能大滚筒炒菜机套机'"
-              :glUrl="'/wap/proDetailGTGL'"
-              :jsUrl="'/wap/proDetailGTJS'"></GTHeader>
+  <div class="wrapper proDetail">
+    <GTHeader
+      :type="'js'"
+      :name="'智能大滚筒炒菜机套机'"
+      :glUrl="'/wap/proDetailGTGL'"
+      :jsUrl="'/wap/proDetailGTJS'"
+    ></GTHeader>
     <div class="wrapper_content">
       <div class="swiper">
         <div class="top_title">“星级大厨”带你体验舌尖上的美味</div>
         <div class="title">智能大滚筒炒菜机套机</div>
         <div class="detail">
-          <span :class="curIndex == 0?'activeColor':''">智能云菜谱</span>
+          <span :class="curIndex == 0 ? 'activeColor' : ''">智能云菜谱</span>
           <span>|</span>
-          <span :class="curIndex == 1?'activeColor':''">智能大滚筒炒菜机</span>
+          <span :class="curIndex == 1 ? 'activeColor' : ''"
+            >智能大滚筒炒菜机</span
+          >
           <span>|</span>
-          <span :class="curIndex == 2?'activeColor':''">中控任务管理</span>
+          <span :class="curIndex == 2 ? 'activeColor' : ''">中控任务管理</span>
           <span>|</span>
-          <span :class="curIndex == 3?'activeColor':''">智能调料机</span>
+          <span :class="curIndex == 3 ? 'activeColor' : ''">智能调料机</span>
           <span>|</span>
-          <span :class="curIndex == 4?'activeColor':''">气压站</span>
+          <span :class="curIndex == 4 ? 'activeColor' : ''">气压站</span>
         </div>
-        <swiper :options="swiperOption"
-                ref="myswiper">
+        <swiper :options="swiperOption" ref="myswiper">
           <swiper-slide>
             <div class="ph">
-              <div class="content"></div>
+              <img
+                src="../../assets/wap/productCenter/GT_swiper_2.png"
+                alt="2"
+                style="width:20.19rem;height:10.94rem;"
+              />
             </div>
           </swiper-slide>
           <swiper-slide>
             <div class="ph">
-              <div class="content"></div>
+              <img
+                src="../../assets/wap/productCenter/GT_swiper_1.png"
+                alt="1"
+                style="width:19.25rem;height:13.38rem;"
+              />
             </div>
           </swiper-slide>
           <swiper-slide>
-            <div class="ph"></div>
+            <div class="ph">
+              <img
+                src="../../assets/wap/productCenter/GT_swiper_3.png"
+                alt="3"
+                style="width:100%;height:10.13rem;"
+              />
+            </div>
           </swiper-slide>
           <swiper-slide>
-            <div class="ph"></div>
+            <div class="ph">
+              <img
+                src="../../assets/wap/productCenter/GT_swiper_4.png"
+                alt="4"
+                style="width:20.25rem;height:11.63rem;"
+              />
+            </div>
           </swiper-slide>
           <swiper-slide>
-            <div class="ph"></div>
+            <div class="ph">
+              <img
+                src="../../assets/wap/productCenter/GT_swiper_5.png"
+                alt="5"
+                style="width:15.56rem;height:11.44rem;"
+              />
+            </div>
           </swiper-slide>
-          <div class="swiper-pagination"
-               slot="pagination"></div>
+          <div class="swiper-pagination" slot="pagination"></div>
         </swiper>
       </div>
       <div class="content">
@@ -86,7 +114,8 @@
             电源电压：AC220V/50HZ <br />
             整机尺寸：950*600*1265mm <br />
             屏幕尺寸：7寸电阻屏 <br />
-            存储调料：生抽、老抽、陈醋、白醋、料酒、白酒、盐、糖、鸡精、淀粉 <br />
+            存储调料：生抽、老抽、陈醋、白醋、料酒、白酒、盐、糖、鸡精、淀粉
+            <br />
             配置：与补料柜和投料器组成配料系统
           </div>
         </div>
@@ -101,7 +130,6 @@
         </div>
       </div>
     </div>
-
   </div>
 </template>
 
@@ -115,7 +143,7 @@ let self
 export default {
   //import引入的组件需要注入到对象中才能使用
   components: { GTHeader },
-  data () {
+  data() {
     return {
       curIndex: 0,
       swiperOption: {
@@ -127,30 +155,26 @@ export default {
           clickable: true
         },
         on: {
-          slideChangeTransitionEnd: function () {
+          slideChangeTransitionEnd: function() {
             // 切换结束时，告诉我现在是第几个slide
             self.curIndex = self.$refs.myswiper.swiper.activeIndex
           }
         }
       }
-    };
+    }
   },
   //监听属性 类似于data概念
   computed: {},
   //监控data中的数据变化
   watch: {},
-  methods: {
-
-  },
-  created () {
+  methods: {},
+  created() {
     self = this
   },
-  mounted () {
-
-  },
+  mounted() {}
 }
 </script>
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 //@import url(); 引入公共css类
 .wrapper {
   padding-top: 3rem;
@@ -168,6 +192,7 @@ export default {
     rgba(39, 40, 41, 1) 0%,
     rgba(30, 31, 33, 1) 100%
   );
+  position: relative;
 
   .top_title {
     font-size: 0.69rem;
@@ -198,17 +223,25 @@ export default {
       color: #fff;
     }
   }
+  .swiper-container {
+    margin-left: -34px;
+    margin-top: -13px;
+  }
 
   .swiper-slide {
-    width: 60%;
+    width: 100%;
     height: 18.75rem;
-    padding: 0 2rem !important;
   }
   .ph {
-    height: 18.75rem;
     width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    margin-right: 1rem;
 
-    .content {
+    img {
       width: 100%;
     }
   }
@@ -245,7 +278,7 @@ export default {
 }
 </style>
 
-<style lang='scss'>
+<style lang="scss">
 .proDetail {
   .swiper-pagination-bullet {
     width: 1.5rem;
@@ -259,6 +292,19 @@ export default {
     > .swiper-pagination-bullets
     .swiper-pagination-bullet {
     margin: 0 0.5rem;
+  }
+
+  .swiper-container-horizontal
+    > .swiper-pagination-bullets
+    .swiper-pagination-bullet:focus {
+    border: none;
+    border: none;
+    outline-style: none;
+    box-shadow: none !important;
+  }
+
+  .swiper-slide-active {
+    // margin-left: -1rem;
   }
 
   .swiper-pagination-bullet-active {

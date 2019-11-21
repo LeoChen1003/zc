@@ -51,7 +51,9 @@
       </div>
       <div class="label">
         <div class="title">智能提醒</div>
-        <div class="text">智能屏+语音实时提醒，0基础新手复制大厨烹饪行为，还原顶级厨师口味</div>
+        <div class="text">
+          智能屏+语音实时提醒，0基础新手复制大厨烹饪行为，还原顶级厨师口味
+        </div>
       </div>
       <div class="label">
         <div class="title">精准投料</div>
@@ -59,14 +61,18 @@
       </div>
       <div class="label">
         <div class="title">精准控温</div>
-        <div class="text">11级火力智能调节，满足“煸炒”、“烧”、“煮”等多种烹调行为</div>
+        <div class="text">
+          11级火力智能调节，满足“煸炒”、“烧”、“煮”等多种烹调行为
+        </div>
       </div>
-      <img src="../../assets/home/jcytj.png">
+      <img src="../../assets/home/jcytj.png" />
     </div>
     <div class="cell cell-4">
       <div class="sub-title">“星级大厨”带你体验舌尖上的美味</div>
       <div class="title">智能大滚筒炒菜机套机</div>
-      <div class="text">智能云菜谱 | 智能大滚筒炒菜机 | 中控任务管理 | 智能调料机 | 气压站</div>
+      <div class="text">
+        智能云菜谱 | 智能大滚筒炒菜机 | 中控任务管理 | 智能调料机 | 气压站
+      </div>
       <div class="bar"></div>
       <div class="label">
         <div class="title">星级口味</div>
@@ -78,11 +84,15 @@
       </div>
       <div class="label">
         <div class="title">云端菜谱</div>
-        <div class="text">链接云端海量专属定制化菜谱，经过多道标准化工序，极大程度还原星级大厨餐饮品质</div>
+        <div class="text">
+          链接云端海量专属定制化菜谱，经过多道标准化工序，极大程度还原星级大厨餐饮品质
+        </div>
       </div>
       <div class="label">
         <div class="title">精准调控</div>
-        <div class="text">全自动翻炒，精准喷料至每1克，精准控温至1℃，让美味有保证。</div>
+        <div class="text">
+          全自动翻炒，精准喷料至每1克，精准控温至1℃，让美味有保证。
+        </div>
       </div>
     </div>
     <div class="cell cell-5">
@@ -107,8 +117,11 @@
         <div class="inline">
           <div class="title">新闻中心</div>
           <div class="btn">
-            <div class="icon"></div>
-            <div class="btn-text">了解更多</div>
+            <svg-icon
+              icon-class="homeKnowMore"
+              style="width:0.88rem;height:0.88rem;margin-right:2px;"
+            ></svg-icon>
+            了解更多
           </div>
         </div>
       </div>
@@ -132,31 +145,38 @@
           <swiper-slide>
             <div class="ph"></div>
           </swiper-slide>
-          <div class="swiper-pagination"
-               slot="pagination"></div>
+          <div class="swiper-pagination" slot="pagination"></div>
         </swiper>
       </div>
     </div>
     <div class="cell cell-8">
-      <img src="../../assets/wap/index/aboutBg.jpg"
-           alt="">
+      <img src="../../assets/wap/index/aboutBg.jpg" alt="" />
       <div class="cell-header">
         <div class="sub-title">优特智厨</div>
         <div class="inline">
           <div class="title">关于我们</div>
           <div class="btn">
-            <div class="icon"></div>
-            <div class="btn-text">了解更多</div>
+            <svg-icon
+              icon-class="homeKnowMore"
+              style="width:0.88rem;height:0.88rem;margin-right:2px;"
+            ></svg-icon
+            >了解更多
           </div>
         </div>
       </div>
       <div class="text-box">
         <div class="title">以智能解构中餐，用科技为餐饮业赋能</div>
-        <div class="text">优特智厨隶属于优特集团，以“互联网+”、“智能+”为战略思路，致力于打造新型餐饮生态服务体系。优特智厨以复制大厨烹饪技艺为核心的技术，实现中餐标准化，突破传统餐饮行业对厨师的依赖，让“星级大厨”走进千家万店。</div>
+        <div class="text">
+          优特智厨隶属于优特集团，以“互联网+”、“智能+”为战略思路，致力于打造新型餐饮生态服务体系。优特智厨以复制大厨烹饪技艺为核心的技术，实现中餐标准化，突破传统餐饮行业对厨师的依赖，让“星级大厨”走进千家万店。
+        </div>
         <div class="title">使命</div>
-        <div class="text">我们的使命是推行中餐标准化，提升餐饮品质，让中餐更美味、更安全、更便捷，助力传统中餐走遍全球。</div>
+        <div class="text">
+          我们的使命是推行中餐标准化，提升餐饮品质，让中餐更美味、更安全、更便捷，助力传统中餐走遍全球。
+        </div>
         <div class="title">愿景</div>
-        <div class="text">我们的使命是推行中餐标准化，提升餐饮品质，让中餐更美味、更安全、更便捷，助力传统中餐走遍全球。</div>
+        <div class="text">
+          我们的使命是推行中餐标准化，提升餐饮品质，让中餐更美味、更安全、更便捷，助力传统中餐走遍全球。
+        </div>
       </div>
     </div>
     <router-view />
@@ -169,7 +189,7 @@
 
 // let self
 export default {
-  data () {
+  data() {
     return {
       swiperOption: {
         slidesPerView: 'auto',
@@ -180,29 +200,27 @@ export default {
           clickable: true
         }
       }
-    };
+    }
   },
-  mounted () {
+  mounted() {
     // window.addEventListener('scroll', this.handleScroll)
   },
   methods: {
     // handleScroll () {
     //   console.log(document.documentElement.scrollTop)
     //   console.log('bb')
-
     // },
   },
-  created () {
+  created() {
     // self = this
-  },
+  }
 }
-
 </script>
 <style scoped lang="scss">
 .cell-1 {
   width: 100%;
   height: 33.5rem;
-  background: url("../../assets/home/wap_bg_1.png");
+  background: url('../../assets/home/wap_bg_1.png');
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
@@ -267,7 +285,7 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  background: rgba(0, 0, 0, 1) url("../../assets/wap/productCenter/sjbj.jpg");
+  background: rgba(0, 0, 0, 1) url('../../assets/wap/productCenter/sjbj.jpg');
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: 100% 100%;
@@ -385,7 +403,7 @@ export default {
   box-sizing: border-box;
   padding: 1.8rem 2.5rem;
   padding-bottom: 7rem;
-  background: url("../../assets/home/gtccj.png");
+  background: url('../../assets/home/gtccj.png');
   background-position: bottom;
   background-size: 100%;
   background-repeat: no-repeat;
@@ -471,14 +489,14 @@ export default {
 }
 
 .cell-5 {
-  background: url("../../assets/wap/index/moredeivce.jpg");
+  background: url('../../assets/wap/index/moredeivce.jpg');
   background-position: bottom;
   background-size: 100%;
   background-repeat: no-repeat;
 }
 
 .cell-6 {
-  background: url("../../assets/wap/index/otherproduct.jpg");
+  background: url('../../assets/wap/index/otherproduct.jpg');
   background-position: bottom;
   background-size: 100%;
   background-repeat: no-repeat;
@@ -527,11 +545,12 @@ export default {
         border-radius: 1.13rem;
         border: 0.06rem solid rgba(0, 0, 0, 1);
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         box-sizing: border-box;
-        padding: 0.5rem;
         font-size: 0.88rem;
+        line-height: 1.88rem;
+        text-align: center;
       }
     }
   }
@@ -600,10 +619,9 @@ export default {
         border-radius: 1.13rem;
         border: 0.06rem solid rgba(0, 0, 0, 1);
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         box-sizing: border-box;
-        padding: 0.5rem;
         font-size: 0.88rem;
       }
     }

@@ -26,6 +26,11 @@ import wapproDetailGTJS from '../views/wap/proDetailGTJS'
 import wapproDetailGTGL from '../views/wap/proDetailGTGL'
 import wapproDetailYTJJS from '../views/wap/proDetailYTJJS'
 import wapproDetailYTJGL from '../views/wap/proDetailYTJGL'
+import wapcoreAdvantages from '../views/wap/coreAdvantages'
+import wapaboutIntro from '../views/wap/aboutIntro'
+import wapaboutPatent from '../views/wap/aboutPatent'
+import wapaboutLab from '../views/wap/aboutLab'
+import wapcontact from '../views/wap/contact'
 Vue.use(VueRouter)
 
 const routes = [
@@ -101,6 +106,31 @@ const routes = [
         path: 'proDetailYTJJS',
         name: '智能精炒一体机技术规格',
         component: wapproDetailYTJJS
+      },
+      {
+        path: 'coreAdvantages',
+        name: '核心优势',
+        component: wapcoreAdvantages
+      },
+      {
+        path: 'aboutIntro',
+        name: '关于我们（企业介绍）',
+        component: wapaboutIntro
+      },
+      {
+        path: 'aboutPatent',
+        name: '关于我们（发明专利）',
+        component: wapaboutPatent
+      },
+      {
+        path: 'aboutLab',
+        name: '关于我们（实验室）',
+        component: wapaboutLab
+      },
+      {
+        path: 'contact',
+        name: '联系我们',
+        component: wapcontact
       }
     ]
   },
