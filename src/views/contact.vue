@@ -20,9 +20,6 @@
             </div>
             <div class="contact_commit_input">
                 <span>需求设备</span><input placeholder="请选择需求设备…" class="input4"/><div class="arrow" @click="open" ><svg-icon :icon-class="iconClass" class-name="xia_arrow" id="icon"></svg-icon></div><br>
-                <!-- <div :style="{display:selectDisplay}" class="contact_commit_input_select" ref="select">
-                    <p v-for="(item,i) of machine" @click="changeTxt(i)" :key="i" :class="{blue:changeColor==i}" style="color:#000;">{{machine[i]}}</p>
-                </div> -->
                 <div v-show="visible" class="contact_commit_input_select" id="sel">
                     <p v-for="(item,i) of machine" @click="changeTxt(i)" :key="i" :class="{blue:changeColor==i}" style="color:#000;">{{machine[i]}}</p>
                 </div>
@@ -106,57 +103,26 @@ export default {
     },
     methods:{
         open(){
-            // this.selectDisplay = "block";
-            this.iconClass == "shang" ? this.iconClass= "xia" : this.iconClass = "shang";
-            // this.visible ? this.hide() : this.show();
-            this.visible = ! this.visible;
+            this.iconClass == "shang" ? this.iconClass = "xia" : this.iconClass = "shang";
+            this.visible != this.visible;
+            var sel = document.getElementsByClassName("contact_commit_input")[3];
+            document.onclick=(e)=>{
+                if(e.target.tagName == "use"){
+                    this.visible != this.visible;
+                }else if(sel.contains(e.target) && e.target.tagName !== "use"){
+                    
+                }
+            }
         },
-        // show(){
-        //     this.visible = true;
-        //     document.addEventListener('click', this.hidePanel, false)
-        // },
-        // hide(){
-        //     this.visible = false;
-        //     document.removeEventListener('click', this.hidePanel, false);
-        // },
-        // hidePanel(e){
-        //     if(!this.$refs.select.contains(e.target)){
-        //         this.visible = false;
-        //         this.hide();
-        //     }
-        // },
         changeTxt(index){
             var input4 = document.getElementsByClassName("input4")[0];
             input4.value = this.machine[index];
             this.changeColor = index;
-            // window.console.log(this.visible);
         },
         changeCity(index){
             this.target = index;
         }
-    },
-    // mounted(){
-    //     document.onclick = function(e){
-    //             window.console.log(e.target);
-    //             // e.stopPropagation();
-    //             var select = document.getElementsByClassName("contact_commit_input_select")[0];
-    //             var id = document.getElementById("icon");
-    //             if(e.target.className!=="arrow"&&e.target.className!="xia_arrow"&&e.target.className!=="shang_arrow"&&e.target.className!=="contact_commit_input_select"&&e.target.id!==id){
-    //                 window.console.log(1);
-    //                 window.console.log(e.target.id);
-    //                 select.style.display = "none";
-    //                 window.console.log(e.target.className);
-    //                 window.console.log(select.style.display);
-    //                 window.console.log(this.visible);
-    //             }
-    //         }
-    //     // window.onload = function(){
-    //     //     var sel = document.getElementById("sel");
-    //     //     document.addEventListener("click",function(){
-    //     //         sel.style.display = "none";
-    //     //     })
-    //     // }
-    // }
+    }
 }
 </script>
 
