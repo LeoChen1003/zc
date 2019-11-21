@@ -157,17 +157,17 @@ export default {
     }
   },
   mounted(){
-    var spans = document.getElementsByTagName("span");
-    for(var i = 0; i < spans.length; i++){
-      spans[i].onclick = function(){
-        for(var i = 0; i < spans.length; i++){
-          spans[i].style.color = "#333333";
-          spans[i].style.fontWeight = 400;
-        }
-        this.style.color = "#000000";
-        this.style.fontWeight = 600;
-      }
-    }
+    // var spans = document.getElementsByTagName("span");
+    // for(var i = 0; i < spans.length; i++){
+    //   spans[i].onclick = function(){
+    //     for(var i = 0; i < spans.length; i++){
+    //       spans[i].style.color = "#333333";
+    //       spans[i].style.fontWeight = 400;
+    //     }
+    //     this.style.color = "#000000";
+    //     this.style.fontWeight = 600;
+    //   }
+    // }
   }
 }
 </script>
@@ -176,7 +176,9 @@ export default {
 <style scoped lang="scss">
 .whiteBack,.whiteBack1{
   height: 3rem;
+  min-width: 89rem;
   .header {
+    min-width: 89rem;
     z-index: 99;
     position: fixed;
     display: flex;
@@ -448,7 +450,9 @@ export default {
 }
 .blackBack,.blackBack1{
   height: 3rem;
+  min-width: 89rem;
   .header {
+    min-width: 89rem;
     z-index: 99;
     position: fixed;
     display: flex;
