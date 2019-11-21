@@ -113,11 +113,11 @@
       </div>
       <img class="image"
            src="../../assets/wap/productCenter/GT_tlj1.png"
-           alt="">
+           alt="tlj1">
     </div>
     <div class="detail_6 detail_7">
       <img src="../../assets/wap/productCenter/GT_tlj2.png"
-           alt="">
+           alt="tlj2">
       <div class="slogan">
         一键清洗，<br />
         操作便捷。</div>
@@ -178,7 +178,7 @@
         </div>
       </div>
       <img src="../../assets/wap/productCenter/GT_znld.png"
-           alt="">
+           alt="znld">
     </div>
     <div class="detail_6 detail_13">
       <div class="slogan">不止是一台厨具，更是一名星级大厨。
@@ -201,7 +201,7 @@
         </div>
       </div>
       <img src="../../assets/wap/productCenter/GT_dzcp.png"
-           alt="">
+           alt="dzcp">
     </div>
     <div class="know_more">
       <div class="moore_btn">

@@ -1,86 +1,124 @@
 <!-- layout -->
 <template>
   <div>
-    <div class="header"
-         :class="dropdown ? 'header-dropdown' : ''">
-      <div class="icon"
-           @click="dropdown = !dropdown"></div>
+    <div class="header" :class="dropdown ? 'header-dropdown' : ''">
+      <div class="icon" @click="dropdown = !dropdown"></div>
       <div class="logo"></div>
       <div class="contact"></div>
     </div>
-    <div class="placeholder">
-
-    </div>
+    <div class="placeholder"></div>
     <transition name="dropdown">
-      <div class="dropdown"
-           v-if="dropdown">
-        <div class="ul"
-             :class="item.show ? 'open-ul' : ''"
-             v-for="(item,index) in route"
-             :key="index">
-          <div class="li-box"
-               @click="item.children ? item.show = !item.show : $router.push({path:item.url});">
-            <div class="li">{{item.name}}</div>
+      <div class="dropdown" v-if="dropdown">
+        <div
+          class="ul"
+          :class="item.show ? 'open-ul' : ''"
+          v-for="(item, index) in route"
+          :key="index"
+        >
+          <div
+            class="li-box"
+            @click="
+              item.children
+                ? (item.show = !item.show)
+                : $router.push({ path: item.url })
+            "
+          >
+            <div class="li">{{ item.name }}</div>
             <div class="li-arrow"></div>
           </div>
           <transition name="fade">
-            <div v-if="item.children"
-                 v-show="item.show"
-                 style="margin-top:1rem;">
-              <div class="children"
-                   v-for="(children,idx) in item.children"
-                   @click="$router.push({path:children.url});dropdown=false;"
-                   :key="index + idx">{{children.name}}</div>
+            <div
+              v-if="item.children"
+              v-show="item.show"
+              style="margin-top:1rem;"
+            >
+              <div
+                class="children"
+                v-for="(children, idx) in item.children"
+                @click="
+                  $router.push({ path: children.url })
+                  dropdown = false
+                "
+                :key="index + idx"
+              >
+                {{ children.name }}
+              </div>
             </div>
           </transition>
         </div>
-        <div class="contact-us">联系我们</div>
+        <div class="contact-us" @click="$router.push('/wap/contact')">
+          联系我们
+        </div>
       </div>
     </transition>
     <router-view />
-    <div class="footer">
-
-    </div>
+    <div class="footer"></div>
   </div>
 </template>
 
 <script>
 /* eslint-disable no-alert, no-console*/
-let self;
+let self
 export default {
-  created () {
-    self = this;
+  created() {
+    self = this
   },
-  data () {
+  data() {
     return {
       dropdown: false,
-      route: [{
-        name: '首页',
-        url: '/wap/index'
-      }, {
-        name: '产品中心',
-        children: [
-          {
-            name: '产品中心-1',
-            url: '/wap/productCenter'
-          },
-          {
-            name: '智能大滚筒炒菜机套机',
-            url: '/wap/proDetailGTGL'
-          },
-          {
-            name: '智能精炒一体机',
-            url: '/wap/proDetailYTJGL'
-          },
-        ],
-        show: false
-      }, {
-        name: '新闻中心'
-      }],
+      route: [
+        {
+          name: '首页',
+          url: '/wap/index'
+        },
+        {
+          name: '产品中心',
+          children: [
+            {
+              name: '产品中心-1',
+              url: '/wap/productCenter'
+            },
+            {
+              name: '智能大滚筒炒菜机套机',
+              url: '/wap/proDetailGTGL'
+            },
+            {
+              name: '智能精炒一体机',
+              url: '/wap/proDetailYTJGL'
+            }
+          ],
+          show: false
+        },
+        {
+          name: '新闻中心'
+        },
+        {
+          name: '核心优势',
+          url: '/wap/coreAdvantages'
+        },
+        {
+          name: '关于我们',
+          children: [
+            {
+              name: '企业介绍',
+              url: '/wap/aboutIntro'
+            },
+            {
+              name: '专利发明',
+              url: '/wap/aboutPatent'
+            },
+            {
+              name: '实验室',
+              url: '/wap/aboutLab'
+            }
+          ],
+          show: false
+        }
+      ],
       windowHeight: ''
-    };
+    }
   },
-  mounted () {
+  mounted() {
     // window.addEventListener('scroll', this.handleScroll)
   },
   methods: {
@@ -90,12 +128,11 @@ export default {
     // },
   },
   watch: {
-    $route () {
-      self.dropdown = false;
+    $route() {
+      self.dropdown = false
     }
   }
 }
-
 </script>
 <style scoped lang="scss">
 .header {
