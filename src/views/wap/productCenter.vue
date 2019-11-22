@@ -6,15 +6,19 @@
       <div class="tag">旗舰</div>
       <div class="sub-title">“星级大厨”带你体验舌尖上的美味</div>
       <div class="title">智能大滚筒炒菜机套机</div>
-      <div class="text">智能云菜谱 | 智能大滚筒炒菜机 | 中控任务管理 | 智能调料机 | 气压站</div>
+      <div class="text">
+        智能云菜谱 | 智能大滚筒炒菜机 | 中控任务管理 | 智能调料机 | 气压站
+      </div>
       <div class="btn-box">
         <div class="btn-1">立即预约</div>
         <div class="btn-2">
           <div class="icon"></div>
-          <div class="btn-text"
-               @click="$router.push('/wap/proDetailGTGL')">
-            <svg-icon icon-class="homeKnowMore"
-                      style="width:0.88rem;height:0.88rem;margin-right:2px;"></svg-icon>了解更多
+          <div class="btn-text" @click="$router.push('/wap/proDetailGTGL')">
+            <svg-icon
+              icon-class="homeKnowMore"
+              style="width:0.88rem;height:0.88rem;margin-right:2px;"
+            ></svg-icon
+            >了解更多
           </div>
         </div>
       </div>
@@ -25,15 +29,25 @@
       <div class="title">智能精炒一体机</div>
       <div class="text">
         <div>百种星级主厨菜谱,顶级烹饪手法精确复现;</div>
-        <div>智能屏+语音实时提醒，0基础新手复制大厨烹饪行为，还原顶级厨师口味;</div>
+        <div>
+          智能屏+语音实时提醒，0基础新手复制大厨烹饪行为，还原顶级厨师口味;
+        </div>
         <div>智能精准投料,精准至0.1g，美味丝毫不差;</div>
-        <div>精准控温, 11级火力智能调节，满足“煸炒”、“烧”、“煮”等多种烹调行为。</div>
+        <div>
+          精准控温, 11级火力智能调节，满足“煸炒”、“烧”、“煮”等多种烹调行为。
+        </div>
       </div>
       <div class="btn-box">
         <div class="btn-1">立即预约</div>
         <div class="btn-2">
           <div class="icon"></div>
-          <div class="btn-text">了解更多</div>
+          <div class="btn-text" @click="$router.push('/wap/proDetailYTJGL')">
+            <svg-icon
+              icon-class="white_add"
+              style="width:0.88rem;height:0.88rem;margin-right:2px;"
+            ></svg-icon
+            >了解更多
+          </div>
         </div>
       </div>
     </div>
@@ -71,13 +85,15 @@
       <div class="li">❷ 减重式称重扣费，绝对公平按价取菜</div>
       <div class="li">➌ 自动感应翻盖防逃单，保持食品卫生</div>
       <div class="li">❹ 内嵌式加热系统维持菜温</div>
-      <div class="li li-bottom">❺ 前后厅信息互通，实时插单加菜，提高管理效率</div>
+      <div class="li li-bottom">
+        ❺ 前后厅信息互通，实时插单加菜，提高管理效率
+      </div>
 
       <div class="detail">型号: UDOT-CL02-3.5X4</div>
       <div class="detail">功率: 3.5kW*4</div>
       <div class="detail">电源电压: 380V / 50Hz</div>
       <div class="detail">整机尺寸: ？mm</div>
-      <div class="detail">防水等级: IPX4 </div>
+      <div class="detail">防水等级: IPX4</div>
       <div class="detail">辅助配置: 8档 (可定制)</div>
     </div>
     <div class="other-item other-4">
@@ -86,13 +102,13 @@
       <div class="li">❷ 解决食品安全卫生问题</div>
       <div class="li li-bottom">➌ 2~8℃ 保温保鲜长达12小时</div>
 
-      <div class="detail">型号: SPSX-1A </div>
-      <div class="detail">材质: PP/PE/PU </div>
-      <div class="detail">容积: 32L </div>
-      <div class="detail">整机尺寸: 510*353*346mm </div>
-      <div class="detail">保温时长: 12~48H </div>
-      <div class="detail">存储温度: 冷藏2~8℃ </div>
-      <div class="detail">配送箱对象: 食材、鲜果、鲜奶等冷藏食品 </div>
+      <div class="detail">型号: SPSX-1A</div>
+      <div class="detail">材质: PP/PE/PU</div>
+      <div class="detail">容积: 32L</div>
+      <div class="detail">整机尺寸: 510*353*346mm</div>
+      <div class="detail">保温时长: 12~48H</div>
+      <div class="detail">存储温度: 冷藏2~8℃</div>
+      <div class="detail">配送箱对象: 食材、鲜果、鲜奶等冷藏食品</div>
       <div class="detail">配置: 蓝牙锁、透视窗、冰排</div>
     </div>
     <div class="other-item other-5">
@@ -116,7 +132,9 @@
       <div class="detail">控制面板内部尺寸（主）：740*1050*420mm</div>
       <div class="detail">小箱内部尺寸（主）：740*750*420mm</div>
       <div class="detail">副柜行：2</div>
-      <div class="detail">副柜箱门分布：(左到右) 第一列：10个小箱，第二列：10个小箱</div>
+      <div class="detail">
+        副柜箱门分布：(左到右) 第一列：10个小箱，第二列：10个小箱
+      </div>
       <div class="detail">外部尺寸（副）: 780*1997*500mm</div>
       <div class="detail">小箱外部尺寸（副）：335*180*500mm</div>
       <div class="detail">小箱内部尺寸（副）：200*100*300mm</div>
@@ -125,16 +143,15 @@
 </template>
 
 <script>
-
 export default {
-  data () {
-    return {
-    };
+  data() {
+    return {}
   },
-  mounted () { },
+  mounted() {
+    this.$emit('setisWhite')
+  },
   methods: {}
 }
-
 </script>
 <style scoped lang="scss">
 .wrapper {
@@ -248,14 +265,14 @@ export default {
 
 .product-1 {
   background: rgba(255, 255, 255, 1)
-    url("../../assets/wap/productCenter/yts.jpg");
+    url('../../assets/wap/productCenter/yts.jpg');
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: 100%;
 }
 
 .product-2 {
-  background: rgba(0, 0, 0, 1) url("../../assets/wap/productCenter/ytj.jpg");
+  background: rgba(0, 0, 0, 1) url('../../assets/wap/productCenter/ytj.jpg');
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: 100%;
@@ -328,7 +345,7 @@ export default {
 
 .other-1 {
   background: rgba(256, 256, 256, 1)
-    url("../../assets/wap/productCenter/ZNDTPML.png");
+    url('../../assets/wap/productCenter/ZNDTPML.png');
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: 100% 135%;
@@ -336,7 +353,7 @@ export default {
 
 .other-2 {
   background: rgba(256, 256, 256, 1)
-    url("../../assets/wap/productCenter/ZNDTAMCL.png");
+    url('../../assets/wap/productCenter/ZNDTAMCL.png');
   background-repeat: no-repeat;
   background-size: 85%;
   background-position: 70% 115%;
@@ -344,7 +361,7 @@ export default {
 
 .other-3 {
   background: rgba(256, 256, 256, 1)
-    url("../../assets/wap/productCenter/DCJ.jpg");
+    url('../../assets/wap/productCenter/DCJ.jpg');
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: 100% 100%;
@@ -352,7 +369,7 @@ export default {
 
 .other-4 {
   background: rgba(256, 256, 256, 1)
-    url("../../assets/wap/productCenter/PSX.jpg");
+    url('../../assets/wap/productCenter/PSX.jpg');
   background-repeat: no-repeat;
   background-size: 80%;
   background-position: 50% 100%;
@@ -361,7 +378,7 @@ export default {
 .other-5 {
   height: 43.56rem;
   background: rgba(256, 256, 256, 1)
-    url("../../assets/wap/productCenter/QCG.jpg");
+    url('../../assets/wap/productCenter/QCG.jpg');
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: 100% 100%;

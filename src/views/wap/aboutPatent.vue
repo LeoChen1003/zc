@@ -1,5 +1,5 @@
 <template>
-  <div class='wrapper'>
+  <div class="wrapper">
     <div class="ab_header">
       <div class="name">优特智厨</div>
       <div class="ab">关于我们</div>
@@ -8,7 +8,6 @@
     <div class="ab_content">
       <svg-icon icon-class="about_patent"></svg-icon>
     </div>
-
   </div>
 </template>
 
@@ -20,26 +19,21 @@ import AboutChose from './compontents/aboutChose'
 export default {
   //import引入的组件需要注入到对象中才能使用
   components: { AboutChose },
-  data () {
-    return {
-    };
+  data() {
+    return {}
   },
   //监听属性 类似于data概念
   computed: {},
   //监控data中的数据变化
   watch: {},
-  methods: {
-
-  },
-  created () {
-
-  },
-  mounted () {
-
-  },
+  methods: {},
+  created() {},
+  mounted() {
+    this.$emit('setisWhite')
+  }
 }
 </script>
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 //@import url(); 引入公共css类
 .wrapper {
   padding-top: 3rem;
@@ -48,7 +42,7 @@ export default {
 
 .ab_header {
   height: 5.63rem;
-  background: rgba(256, 256, 256, 0) url("../../assets/wap/about/about_top.png");
+  background: rgba(256, 256, 256, 0) url('../../assets/wap/about/about_top.png');
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: 100% 100%;

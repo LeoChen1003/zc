@@ -116,7 +116,7 @@
         <div class="sub-title">对我们了解更多</div>
         <div class="inline">
           <div class="title">新闻中心</div>
-          <div class="btn">
+          <div class="btn" @click="$router.push('/wap/new')">
             <svg-icon
               icon-class="homeKnowMore"
               style="width:0.88rem;height:0.88rem;margin-right:2px;"
@@ -155,7 +155,7 @@
         <div class="sub-title">优特智厨</div>
         <div class="inline">
           <div class="title">关于我们</div>
-          <div class="btn">
+          <div class="btn" @click="$router.push('/wap/aboutIntro')">
             <svg-icon
               icon-class="homeKnowMore"
               style="width:0.88rem;height:0.88rem;margin-right:2px;"
@@ -203,13 +203,17 @@ export default {
     }
   },
   mounted() {
-    // window.addEventListener('scroll', this.handleScroll)
+    window.addEventListener('scroll', this.handleScroll)
+    this.$emit('setisBlack')
   },
   methods: {
-    // handleScroll () {
-    //   console.log(document.documentElement.scrollTop)
-    //   console.log('bb')
-    // },
+    handleScroll() {
+      if (document.documentElement.scrollTop <= 1464) {
+        this.$emit('setisBlack')
+      } else if (document.documentElement.scrollTop > 1464) {
+        this.$emit('setisWhite')
+      }
+    },
     toVideo() {
       this.$router.push('/wap/video')
       // window.open('http://cdn.withpush.cn/youtezhichu/result.mobile.mp4')
