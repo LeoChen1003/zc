@@ -8,7 +8,7 @@
       <div class="video-box">
         <div class="view-text">观</div>
         <div class="view-text">看</div>
-        <div class="video-button">
+        <div class="video-button" @click="toVideo">
           <div class="video-btn—c"></div>
         </div>
         <div class="view-text">视</div>
@@ -210,6 +210,10 @@ export default {
     //   console.log(document.documentElement.scrollTop)
     //   console.log('bb')
     // },
+    toVideo() {
+      this.$router.push('/wap/video')
+      // window.open('http://cdn.withpush.cn/youtezhichu/result.mobile.mp4')
+    }
   },
   created() {
     // self = this
