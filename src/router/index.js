@@ -33,6 +33,7 @@ import wapaboutLab from '../views/wap/aboutLab'
 import wapcontact from '../views/wap/contact'
 import wapnew from '../views/wap/new'
 import wapnewDetail from '../views/wap/newDetail'
+import wapvideo from '../views/wap/video'
 Vue.use(VueRouter)
 
 const routes = [
@@ -143,6 +144,11 @@ const routes = [
         path: 'newDetail',
         name: '新闻中心',
         component: wapnewDetail
+      },
+      {
+        path: 'video',
+        name: '视频',
+        component: wapvideo
       }
     ]
   },

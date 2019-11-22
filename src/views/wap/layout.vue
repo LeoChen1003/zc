@@ -2,7 +2,12 @@
 <template>
   <div>
     <div class="header" :class="dropdown ? 'header-dropdown' : ''">
-      <div class="icon" @click="dropdown = !dropdown"></div>
+      <div class="icon" @click="dropdown = !dropdown">
+        <svg-icon
+          :icon-class="dropdown ? 'wap_index_close' : 'wap_index_more'"
+          class-name="index_svg"
+        ></svg-icon>
+      </div>
       <div class="logo"></div>
       <div class="contact"></div>
     </div>
@@ -24,7 +29,7 @@
             "
           >
             <div class="li">{{ item.name }}</div>
-            <div class="li-arrow"></div>
+            <div class="li-arrow" v-if="item.children"></div>
           </div>
           <transition name="fade">
             <div
@@ -148,17 +153,18 @@ export default {
   .icon {
     width: 2rem;
     height: 2rem;
-    background: red;
-    transition: all 0.4s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .index_svg {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
   }
 }
 
 .header-dropdown {
   background: #fff;
-
-  .icon {
-    background: blue;
-  }
 }
 
 .dropdown {
