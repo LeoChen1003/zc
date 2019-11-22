@@ -298,7 +298,6 @@ export default {
     > .swiper-pagination-bullets
     .swiper-pagination-bullet:focus {
     border: none;
-    border: none;
     outline-style: none;
     box-shadow: none !important;
   }

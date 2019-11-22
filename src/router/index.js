@@ -31,6 +31,8 @@ import wapaboutIntro from '../views/wap/aboutIntro'
 import wapaboutPatent from '../views/wap/aboutPatent'
 import wapaboutLab from '../views/wap/aboutLab'
 import wapcontact from '../views/wap/contact'
+import wapnew from '../views/wap/new'
+import wapnewDetail from '../views/wap/newDetail'
 Vue.use(VueRouter)
 
 const routes = [
@@ -131,6 +133,16 @@ const routes = [
         path: 'contact',
         name: '联系我们',
         component: wapcontact
+      },
+      {
+        path: 'new',
+        name: '新闻中心',
+        component: wapnew
+      },
+      {
+        path: 'newDetail',
+        name: '新闻中心',
+        component: wapnewDetail
       }
     ]
   },
