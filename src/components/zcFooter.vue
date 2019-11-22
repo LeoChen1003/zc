@@ -2,32 +2,32 @@
   <div class="footer">
     <div class="footer_left">
       <ul>
-        <li>产品中心</li>
-        <li>智能精炒一体机</li>
-        <li>智能炒菜机套装</li>
-        <li>其他智厨产品</li>
-        <li>其他智厨产品</li>
+        <li @click="product">产品中心</li>
+        <li @click="proAIO">智能精炒一体机</li>
+        <li @click="proCai">智能炒菜机套装</li>
+        <li @click="product">其他智厨产品</li>
+        <li @click="product">其他智厨产品</li>
       </ul>
       <ul>
-        <li>新闻中心</li>
+        <li @click="news">新闻中心</li>
       </ul>
       <ul>
-        <li>核心优势</li>
-        <li>适用场景</li>
-        <li>智能系统</li>
-        <li>智能技术</li>
-        <li>智能数据管控</li>
-        <li>智能配件</li>
-        <li>智能服务体系</li>
+        <li @click="coreAdvantage">核心优势</li>
+        <li @click="coreAdvantage">适用场景</li>
+        <li @click="system">智能系统</li>
+        <li @click="tech">智能技术</li>
+        <li @click="data">智能数据管控</li>
+        <li @click="mechine">智能配件</li>
+        <li @click="service">智能服务体系</li>
       </ul>
       <ul>
-        <li>关于我们</li>
-        <li>企业简介</li>
-        <li>发展历程</li>
-        <li>企业实力</li>
+        <li @click="about">关于我们</li>
+        <li @click="about">企业简介</li>
+        <li @click="about">发展历程</li>
+        <li @click="about">企业实力</li>
       </ul>
       <ul>
-        <li>联系我们</li>
+        <li @click="contact">联系我们</li>
         <li>申请使用</li>
       </ul>
       <div class="footer_right">
@@ -52,6 +52,44 @@
 <script>
 export default {
   props: {
+  },
+  methods:{
+    product(){
+      this.$router.push("/product");
+    },
+    proCai(){
+      this.$router.push("/product/proCai");
+    },
+    proAIO(){
+      this.$router.push("/product/proAIO");
+    },
+    news(){
+      this.$router.push("/new");
+    },
+    coreAdvantage(){
+      this.$router.push("/coreAdvantage");
+    },
+    system(){
+      this.$router.push("/coreAdvantage/intelligenceSystem");
+    },
+    tech(){
+      this.$router.push("/coreAdvantage/intelligenceTech");
+    },
+    data(){
+      this.$router.push("/coreAdvantage/intelligenceData");
+    },
+    mechine(){
+      this.$router.push("/coreAdvantage/intelligenceMachine");
+    },
+    service(){
+      this.$router.push("/coreAdvantage/intelligenceStar");
+    },
+    about(){
+      this.$router.push("/with");
+    },
+    contact(){
+      this.$router.push("/contact");
+    }
   }
 }
 </script>
@@ -59,11 +97,15 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .footer {
+  min-width: 89rem;
   background: #020202;
   width: 100%;
   padding: 3.75rem 13.5rem 5.88rem 13.5rem;
   color: #fff;
   box-sizing: border-box;
+  li{
+    cursor: pointer;
+  }
 }
 .footer_left {
   display: flex;

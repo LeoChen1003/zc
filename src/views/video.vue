@@ -1,6 +1,6 @@
 <template>
     <div class="video">
-        <video src="../assets/video/video.mp4" class="shipin" controls></video>
+        <video src="http://cdn.withpush.cn/youtezhichu/result.pc.mp4" class="shipin" controls></video>
         <div class="close" @click="goBack">
             <svg-icon icon-class="close1" class-name="svg_close"></svg-icon>
         </div>

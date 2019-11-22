@@ -4,13 +4,13 @@
         <newHeader></newHeader>
         <div class="new_content">
             <div class="new_con_del" v-for="(messNew,index) of messNews" :key="index">
-                <div class="new_con_del_l">
+                <div class="new_con_del_l" @click="detail">
                     <img :src="messNew.image" alt="">
                 </div>
                 <div class="new_con_del_r">
                     <p>{{messNew.updatedAt.slice(0,4)}}年{{messNew.updatedAt.slice(5,7)}}月{{messNew.updatedAt.slice(8,10)}}日  <a class="a1" href="javascript:;">更新</a></p>
                     <router-link to="/new/detail1">{{messNew.title}}</router-link>
-                    <p v-html="messNew.content">{{messNew.content}}</p>
+                    <p v-html="messNew.content" @click="detail">{{messNew.content}}</p>
                 </div>
             </div>
             <div class="line"></div>
@@ -91,6 +91,9 @@ export default {
                 window.console.log(this.messNews);
                 // window.console.log(res.data);
             })
+        },
+        detail(){
+            this.$router.push('/new/detail1');
         }
     },
     mounted(){
@@ -128,6 +131,7 @@ export default {
                 border: 1px solid #ccc;
                 float: left;
                 border-radius: 10px;
+                cursor: pointer;
                 img{
                     width: 100%;
                     height: 100%;
@@ -139,6 +143,7 @@ export default {
                 margin-left: 2.18rem;
                 height: 10rem;
                 width: 66%;
+                cursor: pointer;
                 p:first-child{
                     font-size: 0.87rem;
                     margin-top: 0.3rem;
@@ -152,11 +157,13 @@ export default {
                     font-size: 1.25rem;
                     color: #161616;
                     font-weight: 600;
+                    cursor: pointer;
                 }
                 p:last-child{
                     font-size: 1.12rem;
                     color: #333333;
                     font-weight: 300;
+                    cursor: pointer;
                 }
             }
             .new_footer{
