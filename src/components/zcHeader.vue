@@ -157,17 +157,6 @@ export default {
     }
   },
   mounted(){
-    // var spans = document.getElementsByTagName("span");
-    // for(var i = 0; i < spans.length; i++){
-    //   spans[i].onclick = function(){
-    //     for(var i = 0; i < spans.length; i++){
-    //       spans[i].style.color = "#333333";
-    //       spans[i].style.fontWeight = 400;
-    //     }
-    //     this.style.color = "#000000";
-    //     this.style.fontWeight = 600;
-    //   }
-    // }
   }
 }
 </script>

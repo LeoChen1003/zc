@@ -3,30 +3,24 @@
         <zcHeader></zcHeader>
         <newHeader></newHeader>
         <div class="new_content">
-            <div class="new_con_del" v-for="(messNew,index) of messNews" :key="index">
-                <div class="new_con_del_l" @click="detail">
+            <div class="new_con_del" v-for="(messNew,index) of messNews" :key="index" @click="detail(messNew)">
+                <div class="new_con_del_l">
                     <img :src="messNew.image" alt="">
                 </div>
                 <div class="new_con_del_r">
                     <p>{{messNew.updatedAt.slice(0,4)}}年{{messNew.updatedAt.slice(5,7)}}月{{messNew.updatedAt.slice(8,10)}}日  <a class="a1" href="javascript:;">更新</a></p>
                     <router-link to="/new/detail1">{{messNew.title}}</router-link>
-                    <p v-html="messNew.content" @click="detail">{{messNew.content}}</p>
+                    <p v-html="messNew.content">{{messNew.content}}</p>
                 </div>
             </div>
             <div class="line"></div>
             <div class="new_footer">
-                <div class="new_footer_l" @mouseover="hover1" @mouseout="leave1">
-                    <svg-icon icon-class="leftArrow" class-name="new_svg"></svg-icon>
+                <div class="new_footer_l" @click="prev" ref="btn1">
+                    <svg-icon :icon-class="activeLeft?'leftHover': 'leftArrow'" class-name="new_svg"></svg-icon>
                 </div>
-                <div class="new_footer_l1" ref="left" @mouseover="hover1" @mouseout="leave1">
-                    <svg-icon icon-class="leftHover" class-name="new_svg"></svg-icon>
-                </div>
-                <div class="new_footer_c">{{page}}页 16</div>
-                <div class="new_footer_r" @mouseover="hover2" @mouseout="leave2">
-                    <svg-icon icon-class="rightArrow" class-name="new_svg"></svg-icon>
-                </div>
-                <div class="new_footer_r1" ref="right" @mouseover="hover2" @mouseout="leave2">
-                    <svg-icon icon-class="rightHover" class-name="new_svg"></svg-icon>
+                <div class="new_footer_c">{{page+1}}页 {{total}}</div>
+                <div class="new_footer_r" @click="next" ref="btn2">
+                    <svg-icon :icon-class="activeRight?'rightHover': 'rightArrow'" class-name="new_svg"></svg-icon>
                 </div>
             </div>
         </div>
@@ -46,7 +40,13 @@ export default {
     data(){
         return{
             messNews: [],
-            page: 1
+            page: 0,
+            total: 1,
+            pageSize: 20,
+            activeLeft: false,
+            activeRight: false,
+            isFirst: true,
+            isLast: false
         }
     },
     components:{
@@ -55,46 +55,51 @@ export default {
         newHeader
     },
     methods:{
-        hover1(){
-            var left1 = document.getElementsByClassName("new_footer_l1")[0];
-            left1.style.display = "block";
-            var left = document.getElementsByClassName("new_footer_l")[0];
-            left.style.display = "none";
-        },
-        leave1(){
-            var left1 = document.getElementsByClassName("new_footer_l1")[0];
-            left1.style.display = "none";
-            var left = document.getElementsByClassName("new_footer_l")[0];
-            left.style.display = "block";
-        },
-        hover2(){
-            var right1 = document.getElementsByClassName("new_footer_r1")[0];
-            right1.style.display = "block";
-            var right = document.getElementsByClassName("new_footer_r")[0];
-            right.style.display = "none";
-        },
-        leave2(){
-            var right1 = document.getElementsByClassName("new_footer_r1")[0];
-            right1.style.display = "none";
-            var right = document.getElementsByClassName("new_footer_r")[0];
-            right.style.display = "block";
-        },
         getNews(){
-            // let param = {
-            //     page: this.page
-            // }
             request({
                 url: '/outside/posts',
-                method: 'get'
+                method: 'get',
+                params: {
+                    page: this.page,
+                    pageSize: this.pageSize
+                }
             }).then(res=>{
                 this.messNews = res.data.content;
+                this.total = res.data.totalPages;
+                this.isLast = res.data.last;
+                this.isFirst = res.data.first;
                 window.console.log(this.messNews);
-                // window.console.log(res.data);
             })
         },
-        detail(){
+        prev(){
+            if(!this.isFirst){
+                this.activeLeft = true;
+                setTimeout(() => {
+                    this.activeLeft = false;
+                }, 200)
+                this.page = this.page - 1;
+                this.getNews();
+            }
+        },
+        next(){
+            if (!this.isLast) {
+                this.activeRight = true;
+                setTimeout(() => {
+                    this.activeRight = false;
+                }, 200)
+                this.page = this.page + 1;
+                this.getNews();
+            }
+        },
+        detail(row){
             this.$router.push('/new/detail1');
-        }
+            localStorage.setItem('newDetail1',JSON.stringify(row));
+        },
+        // hover(){
+        //     if(this.page === 0){
+        //         this.$refs.btn1.style.cursor = "not-allowed";
+        //     }
+        // }
     },
     mounted(){
         this.getNews();
