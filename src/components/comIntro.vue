@@ -36,7 +36,7 @@
             <div class="block">
                 <el-timeline :reverse="reverse">
                     <el-timeline-item v-for="(activity,index) in activities" :key="index" :size="activity.size" :color="activity.color">
-                        <p :class="t[index]">{{activity.timestamp}}</p>
+                        <p style="font-size:2.12rem" :class="t[index]">{{activity.timestamp}}</p>
                         <p>{{activity.content}}</p>
                     </el-timeline-item>
                 </el-timeline>
@@ -100,11 +100,6 @@ export default {
             var div = document.createElement("div");
             var tSmall = tLarge[i].appendChild(div);
             tSmall.className = "el-timeline-item__node--small";
-        }
-        var con = document.getElementsByClassName("el-timeline-item__content");
-        for(var j = 0; j <= con.length; j++){
-            var time = con[j].getElementsByTagName("p")[0];
-            time.style.fontSize = "2.12rem";
         }
     }
 }

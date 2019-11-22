@@ -1,14 +1,14 @@
 <template>
     <div class="about">
-        <zcHeader></zcHeader>
+        <zcHeader v-on:changeTab="receive"></zcHeader>
         <div class="about_pic">
             <p>优特智厨</p>
             <p>关于我们</p>
         </div>
         <div class="about_item">
-            <span @click="toggleTab('comIntro')" :style="style1" ref="item" class="item_span">企业介绍</span>
-            <span @click="toggleTab('inven')" :style="style2" ref="item" class="item_span">专利发明</span>
-            <span @click="toggleTab('labor')" :style="style2" ref="item" class="item_span">实验室</span>
+            <span @click="toggleTab('comIntro')" :class="isActive1?'bolder':'normal'">企业介绍</span>
+            <span @click="toggleTab('inven')" :class="isActive2?'bolder':'normal'">专利发明</span>
+            <span @click="toggleTab('labor')" :class="isActive3?'bolder':'normal'">实验室</span>
         </div>
         <comIntro :is="currentTab"></comIntro>
         <zcFooter></zcFooter>
@@ -27,8 +27,11 @@ export default {
     data(){
         return {
             currentTab : 'comIntro',
-            style1 : {color:"#000000",fontWeight:600},
-            style2 : {color:"#333333",fontWeight:300}
+            isActive1: true,
+            isActive2: false,
+            isActive3: false,
+            items: [],
+            tab: 0 
         }
     },
     components:{
@@ -41,18 +44,44 @@ export default {
     methods:{
         toggleTab:function(tab){
             this.currentTab = tab;
+            if(tab=="comIntro"){
+                this.isActive1 = true;
+                this.isActive2 = false;
+                this.isActive3 = false;
+            }else if(tab == "inven"){
+                this.isActive2 = true;
+                this.isActive1 = false;
+                this.isActive3 = false;
+            }else if(tab == "labor"){
+                this.isActive3 = true;
+                this.isActive2 = false;
+                this.isActive1 = false;
+            }
+        },
+        receive(val){
+            window.console.log(1);
+            this.tab = val;
+            window.console.log(this.tab);
+            if(this.tab===0){
+                this.currentTab = "comIntro";
+                this.isActive1 = true;
+                this.isActive2 = false;
+                this.isActive3 = false;
+            }else if(this.tab === 1){
+                this.currentTab = "inven";
+                this.isActive1 = false;
+                this.isActive2 = true;
+                this.isActive3 = false;
+            }else if(this.tab === 2){
+                this.currentTab = "labor";
+                this.isActive1 = false;
+                this.isActive2 = false;
+                this.isActive3 = true;
+            }
         }
     },
     mounted(){
-        var items = this.$refs.item;
-        for(var i = 0; i < items.length; i++){
-            items[i].onclick = function(){
-                for(var i = 0; i < items.length; i++){
-                    items[i].style=this.style1;
-                }
-                this.style = this.style2;
-            }
-        }
+        
     }
 }
 </script>
@@ -103,6 +132,14 @@ export default {
             span{
                 margin-left: 1.67rem;
                 cursor: pointer;
+            }
+            .bolder{
+                color:"#000000";
+                font-weight:600;
+            }
+            .normal{
+                color:"#333333";
+                font-weight:300;
             }
         }
     }
