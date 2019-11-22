@@ -451,6 +451,7 @@
 //这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）
 //例如：import 《组件名称》 from '《组件路径》';
 
+let self
 export default {
   //import引入的组件需要注入到对象中才能使用
   components: {},
@@ -466,9 +467,41 @@ export default {
   //监听属性 类似于data概念
   computed: {},
   //监控data中的数据变化
-  watch: {},
+  watch: {
+    $route(){
+      self.modelXT=false
+      self.modelJS=false
+      self.modelGK=false
+      self.modelPJ=false
+      self.modelFW=false      
+      let type = self.$route.query.type
+    window.console.log(type == 'modelXT')
+    switch (type) {
+      case 'modelXT':
+        self.modelXT = true
+        break
+      case 'modelJS':
+        self.modelJS = true
+        break
+      case 'modelGK':
+        self.modelGK = true
+        break
+      case 'modelPJ':
+        self.modelPJ = true
+        break
+      case 'modelFW':
+        self.modelFW = true
+        break
+      default:
+        break
+    }
+    }
+  },
   methods: {},
-  created() {},
+  created() {
+    self = this
+    
+  },
   mounted() {}
 }
 </script>

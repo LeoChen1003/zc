@@ -1,9 +1,12 @@
 <template>
-  <div class='wrapper'>
-    <GTHeader :type="'gl'"
-              :name="'智能精炒一体机'"
-              :glUrl="'/wap/proDetailYTJGL'"
-              :jsUrl="'/wap/proDetailYTJJS'"></GTHeader>
+  <div class="wrapper">
+    <GTHeader
+      :type="'gl'"
+      :name="'智能精炒一体机'"
+      :glUrl="'/wap/proDetailYTJGL'"
+      :jsUrl="'/wap/proDetailYTJJS'"
+      :isWhite="true"
+    ></GTHeader>
     <div class="detail_1">
       <div class="top_title">超级烹饪专家</div>
       <div class="title">智能精炒一体机</div>
@@ -14,9 +17,11 @@
       <div class="info_box">
         <div class="title">更丰富</div>
         <div class="sub_title">高级定制菜谱</div>
-        <div class="number">1000<span>
+        <div class="number">
+          1000<span>
             道
-          </span></div>
+          </span>
+        </div>
         <div class="bottom">海量星级菜谱涵盖8大菜系</div>
       </div>
       <div class="info_box">
@@ -40,7 +45,8 @@
     </div>
     <div class="detail_3">
       <div class="tag">智能精炒一体机</div>
-      <div class="slogan">精准复制，<br />
+      <div class="slogan">
+        精准复制，<br />
         星级美味。
       </div>
       <div class="intro2">
@@ -71,8 +77,10 @@
       </div>
     </div>
     <div class="detail_3 detail_4">
-      <div class="slogan">语音提示，<br />
-        操作便捷。</div>
+      <div class="slogan">
+        语音提示，<br />
+        操作便捷。
+      </div>
       <div class="intro2">
         · 全程语音提示，一秒上手，操作无难度<br />
         · DIY自由烹饪与菜谱指导烹饪随心切换<br />
@@ -92,9 +100,7 @@
       </div>
     </div>
     <div class="detail_3 detail_5">
-      <div class="slogan">
-        外观时尚，<br />潮流前沿。
-      </div>
+      <div class="slogan">外观时尚，<br />潮流前沿。</div>
       <div class="intro2">
         · 符合人体工学设计，两种灶台选择<br />
         · 专属面板，可根据家居风格随心搭配<br />
@@ -112,9 +118,7 @@
       </div>
     </div>
     <div class="detail_3 detail_6">
-      <div class="slogan">
-        贴心设计，<br />享健康下厨体验。
-      </div>
+      <div class="slogan">贴心设计，<br />享健康下厨体验。</div>
       <div class="intro2">
         · 油烟机、电磁灶联动，一键开启 <br />
         · 优质控烟、近吸直排，油烟速排不拐弯
@@ -128,9 +132,14 @@
     </div>
     <div class="detail_3 detail_7">
       <div class="tag">智能大滚筒炒菜机</div>
-      <div class="slogan">APP 智能联动，<br />
-        远程同步菜谱。</div>
-      <div class="intro2">每道菜谱都可精准控制烹饪的火力曲线、翻炒速度与角度。酥软、适中、有嚼劲，不同口感，不同烹饪方式。自定义菜谱的口味与口感，同步最新营养菜谱，APP 端统统意见搞定，开启智能数据厨房。</div>
+      <div class="slogan">
+        APP 智能联动，<br />
+        远程同步菜谱。
+      </div>
+      <div class="intro2">
+        每道菜谱都可精准控制烹饪的火力曲线、翻炒速度与角度。酥软、适中、有嚼劲，不同口感，不同烹饪方式。自定义菜谱的口味与口感，同步最新营养菜谱，APP
+        端统统意见搞定，开启智能数据厨房。
+      </div>
       <div class="data_content">
         <div class="box_item margin_r">
           <div class="data">DIY 菜谱</div>
@@ -141,13 +150,13 @@
           <div class="comment">自定义修改翻炒方式</div>
         </div>
       </div>
-      <img src="../../assets/wap/productCenter/GT_znld.png"
-           alt="znld">
+      <img src="../../assets/wap/productCenter/GT_znld.png" alt="znld" />
     </div>
     <div class="detail_3 detail_8">
-      <div class="slogan">不止是一台厨具，更是一名星级大厨。
+      <div class="slogan">不止是一台厨具，更是一名星级大厨。</div>
+      <div class="intro2">
+        海量云菜谱实时更新，连接网络后，APP端还有多种烹饪菜单键选择，支持自定义分组。从火辣的川湘菜到清鲜美味的南方江浙菜肴，均可简单完成，菜谱涵盖8大菜系，配合智能语音提示，零基础无门槛，不用调温不用投料，只需简单跟着提示投入主食材，便可让你使用一台厨具就能享用20名不同类型大厨的美味。
       </div>
-      <div class="intro2">海量云菜谱实时更新，连接网络后，APP端还有多种烹饪菜单键选择，支持自定义分组。从火辣的川湘菜到清鲜美味的南方江浙菜肴，均可简单完成，菜谱涵盖8大菜系，配合智能语音提示，零基础无门槛，不用调温不用投料，只需简单跟着提示投入主食材，便可让你使用一台厨具就能享用20名不同类型大厨的美味。</div>
       <div class="data_content">
         <div class="data_box">
           <div class="box_item rightMargin">
@@ -164,13 +173,15 @@
           </div>
         </div>
       </div>
-      <img src="../../assets/wap/productCenter/GT_dzcp.png"
-           alt="dzcp">
+      <img src="../../assets/wap/productCenter/GT_dzcp.png" alt="dzcp" />
     </div>
     <div class="know_more">
       <div class="moore_btn">
-        <svg-icon icon-class="white_add"
-                  style="width:0.88rem;height:0.88rem;margin-right:2px;"></svg-icon>了解参数明细
+        <svg-icon
+          icon-class="white_add"
+          style="width:0.88rem;height:0.88rem;margin-right:2px;"
+        ></svg-icon
+        >了解参数明细
       </div>
     </div>
   </div>
@@ -186,26 +197,21 @@ import reservationBtn from './compontents/reservationBtn'
 export default {
   //import引入的组件需要注入到对象中才能使用
   components: { GTHeader, reservationBtn },
-  data () {
-    return {
-
-    };
+  data() {
+    return {}
   },
   //监听属性 类似于data概念
   computed: {},
   //监控data中的数据变化
   watch: {},
-  methods: {
-
-  },
-  created () {
-  },
-  mounted () {
-
-  },
+  methods: {},
+  created() {},
+  mounted() {
+    this.$emit('setisBlack')
+  }
 }
 </script>
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 //@import url(); 引入公共css类
 .wrapper {
   padding-top: 3rem;
@@ -215,7 +221,7 @@ export default {
 .detail_1 {
   width: 100%;
   height: 30.44rem;
-  background: rgba(0, 0, 0, 1) url("../../assets/wap/productCenter/YTJ_top.jpg");
+  background: rgba(0, 0, 0, 1) url('../../assets/wap/productCenter/YTJ_top.jpg');
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: 100% 100%;
@@ -254,7 +260,7 @@ export default {
   flex-wrap: wrap;
   justify-content: space-between;
   background: rgba(0, 0, 0, 1)
-    url("../../assets/wap/productCenter/YTJ_data.jpg");
+    url('../../assets/wap/productCenter/YTJ_data.jpg');
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: 100% 100%;
@@ -309,7 +315,7 @@ export default {
   background: rgba(248, 249, 251, 1);
   padding: 2.94rem 2.06rem 0 2.5rem;
   box-sizing: border-box;
-  background: rgba(0, 0, 0, 1) url("../../assets/wap/productCenter/YTJ_3.png");
+  background: rgba(0, 0, 0, 1) url('../../assets/wap/productCenter/YTJ_3.png');
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: 100% 100%;
@@ -382,7 +388,7 @@ export default {
 .detail_4 {
   padding: 16.31rem 1.81rem 0 0;
   box-sizing: border-box;
-  background: rgba(0, 0, 0, 1) url("../../assets/wap/productCenter/YTJ_4.png");
+  background: rgba(0, 0, 0, 1) url('../../assets/wap/productCenter/YTJ_4.png');
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: 100% 100%;
@@ -412,7 +418,7 @@ export default {
 .detail_5 {
   padding: 5.19rem 1.94rem 0 2.31rem;
   box-sizing: border-box;
-  background: rgba(0, 0, 0, 1) url("../../assets/wap/productCenter/YTJ_5.png");
+  background: rgba(0, 0, 0, 1) url('../../assets/wap/productCenter/YTJ_5.png');
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: 100% 100%;
@@ -434,7 +440,7 @@ export default {
 .detail_6 {
   padding: 6.25rem 1.94rem 0 2.31rem;
   box-sizing: border-box;
-  background: rgba(0, 0, 0, 1) url("../../assets/wap/productCenter/YTJ_6.png");
+  background: rgba(0, 0, 0, 1) url('../../assets/wap/productCenter/YTJ_6.png');
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: 100% 100%;
@@ -514,7 +520,7 @@ export default {
 .know_more {
   height: 5.63rem;
   background: rgba(0, 0, 0, 1)
-    url("../../assets/wap/productCenter/YTJ_more_bg.jpg");
+    url('../../assets/wap/productCenter/YTJ_more_bg.jpg');
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: 100% 100%;

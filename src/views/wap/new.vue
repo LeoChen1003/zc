@@ -131,6 +131,7 @@ export default {
   },
   mounted() {
     self.getNewList()
+    this.$emit('setisWhite')
   }
 }
 </script>

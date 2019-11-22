@@ -44,7 +44,9 @@ export default {
   watch: {},
   methods: {},
   created() {},
-  mounted() {}
+  mounted() {
+    this.$emit('setisWhite')
+  }
 }
 </script>
 <style lang="scss" scoped>

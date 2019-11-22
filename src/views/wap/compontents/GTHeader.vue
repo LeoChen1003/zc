@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper" :class="isWhite ? 'wrapperW' : 'wrapperB'">
+  <div class="wrapper" :class="isWhite ? 'wrapperB' : 'wrapperW'">
     <div class="topFix">
       <div class="line"></div>
       <div class="header_box">
@@ -55,11 +55,10 @@ import reservationBtn from './reservationBtn'
 export default {
   //import引入的组件需要注入到对象中才能使用
   components: { reservationBtn },
-  props: ['type', 'name', 'glUrl', 'jsUrl'],
+  props: ['type', 'name', 'glUrl', 'jsUrl', 'isWhite'],
   data() {
     return {
-      dropdown: false,
-      isWhite: false
+      dropdown: false
     }
   },
   //监听属性 类似于data概念
@@ -75,16 +74,6 @@ export default {
 //@import url(); 引入公共css类
 .wrapperW {
   .header_box {
-    background: #000;
-  }
-
-  .dropdown {
-    background: #000;
-  }
-}
-
-.wrapperB {
-  .header_box {
     background: #fff;
     color: #333;
 
@@ -96,6 +85,21 @@ export default {
 
   .dropdown {
     background: #fff;
+  }
+}
+
+.wrapperB {
+  .header_box {
+    background: #000;
+  }
+
+  .dropdown {
+    background: #000;
+    color: rgba(255, 255, 255, 1);
+
+    .dropdown_item_line {
+      border-color: #262728;
+    }
   }
 }
 
