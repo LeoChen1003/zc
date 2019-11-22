@@ -4,7 +4,7 @@
         <newHeader></newHeader>
         <div class="newDel_con">
             <div class="newDel_con_hd">
-                <div class="newDel_con_hd_l">置顶</div>
+                <div class="newDel_con_hd_l" v-if="info.top == 1">置顶</div>
                 <p class="newDel_con_hd_r">{{info.updatedAt?info.updatedAt.slice(0,4):''}}年{{info.updatedAt?info.updatedAt.slice(5,7):''}}月{{info.updatedAt?info.updatedAt.slice(8,10):''}}日</p>
             </div>
             <p class="newDel_con_title">{{info.title}}</p>

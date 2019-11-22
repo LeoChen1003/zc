@@ -15,12 +15,12 @@
             </div>
             <div class="line"></div>
             <div class="new_footer">
-                <div class="new_footer_l" @click="prev" ref="btn1">
-                    <svg-icon :icon-class="activeLeft?'leftHover': 'leftArrow'" class-name="new_svg"></svg-icon>
+                <div class="new_footer_l" @click="prev">
+                    <svg-icon :icon-class="isFirst ? 'leftDisable' : activeLeft?'leftHover':'leftArrow'" class-name="new_svg"></svg-icon>
                 </div>
                 <div class="new_footer_c">{{page+1}}页 {{total}}</div>
-                <div class="new_footer_r" @click="next" ref="btn2">
-                    <svg-icon :icon-class="activeRight?'rightHover': 'rightArrow'" class-name="new_svg"></svg-icon>
+                <div class="new_footer_r" @click="next">
+                    <svg-icon :icon-class="isLast ? 'rightDisable' : activeRight?'rightHover': 'rightArrow'" class-name="new_svg"></svg-icon>
                 </div>
             </div>
         </div>
@@ -94,12 +94,7 @@ export default {
         detail(row){
             this.$router.push('/new/detail1');
             localStorage.setItem('newDetail1',JSON.stringify(row));
-        },
-        // hover(){
-        //     if(this.page === 0){
-        //         this.$refs.btn1.style.cursor = "not-allowed";
-        //     }
-        // }
+        }
     },
     mounted(){
         this.getNews();

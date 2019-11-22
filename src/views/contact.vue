@@ -21,7 +21,7 @@
             <div class="contact_commit_input">
                 <span>需求设备</span><input placeholder="请选择需求设备…" class="input4"/><div class="arrow" @click="open" ><svg-icon :icon-class="iconClass" class-name="xia_arrow" id="icon"></svg-icon></div><br>
                 <div v-show="visible" class="contact_commit_input_select" id="sel">
-                    <p v-for="(item,i) of machine" @click="changeTxt(i)" :key="i" :class="{blue:changeColor==i}" style="color:#000;">{{machine[i]}}</p>
+                    <div v-for="(item,i) of machine" @click="changeTxt(i)" :key="i" :class="{blue:changeColor==i}" style="color:#000;">{{machine[i]}}</div>
                 </div>
             </div>
             <div class="contact_commit_input">
@@ -119,7 +119,7 @@ export default {
             document.onclick = (e)=>{
                 if(e.target.tagName=="use"){ //如果当前点击的对象是箭头
                     this.visible != this.visible;
-                }else if(sel.contains(e.target) && e.target.tagName !=="use"){//如果当前点击的对象在这个父级元素中并且不是箭头
+                }else if(sel.contains(e.target) && e.target.tagName !=="use" && e.target.className !== "input4"){//如果当前点击的对象在这个父级元素中并且不是箭头
                     this.visible = true;
                     this.iconClass = "shang";
                     this.equipment = e.target.innerText;
@@ -138,11 +138,35 @@ export default {
             this.target = index;
         },
         sendMessage(){
+            if(this.name===null){
+                this.$message({
+                    showClose: true,
+                    message: '称呼不能为空',
+                    type: 'warning'
+                })
+                return;
+            }
+            if(this.phone===null){
+                this.$message({
+                    showClose: true,
+                    message: '电话不能为空',
+                    type: 'warning'
+                })
+                return;
+            }
+            if(!(/^1[3456789]\d{9}$/.test(this.phone))){
+                this.$message({
+                    showClose: true,
+                    message: '电话号码格式错误',
+                    type: 'warning'
+                })
+                return;
+            }
             if(this.equipment == "智能大滚筒炒菜机套机"){
                 this.changeEquip = "BIG_BIZ_MACHINE";
             }else if(this.equipment == "智能精炒一体机"){
                 this.changeEquip = "SMALL_SMART";
-            }else{
+            }else if(this.equipment == "其他设备"){
                 this.changeEquip = "OTHER";
             }
             let formData = {
@@ -157,6 +181,11 @@ export default {
                 method: 'post',
                 data: formData
             }).then(res=>{
+                this.$message({
+                    showClose: true,
+                    message: '提交成功',
+                    type: 'success'
+                })
                 window.console.log(res.data);
             }).catch(function(error){
                 window.console.log(error);
@@ -264,15 +293,15 @@ p{
         .contact_commit_input:nth-child(4){
             position: relative;
             .arrow{
-                width: 0.75rem;
-                height: 0.44rem;
+                width: 1.2rem;
+                height: 1rem;
                 position: absolute;
                 top: 1.5rem;
                 right: 0;
                 .xia_arrow{
                     position: absolute;
-                    width: 0.75rem;
-                    height: 0.44rem;
+                    width: 1rem;
+                    height: 0.8rem;
                     cursor: pointer;
                 }
             }
@@ -287,7 +316,7 @@ p{
                 background:rgba(255,255,255,1);
                 border-radius:3px;
                 border:1px solid rgba(236,236,236,1);
-                p{
+                div{
                     box-sizing:border-box;
                     width: 100%;
                     height: 33.3%;
@@ -302,7 +331,7 @@ p{
                 .blue{
                     background:rgba(44,198,192,.1);
                 }
-                p:nth-child(2){
+                div:nth-child(2){
                     border-top: 1px solid rgba(236,236,236,1);
                     border-bottom: 1px solid rgba(236,236,236,1);
                 }
