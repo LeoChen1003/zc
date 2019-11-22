@@ -34,14 +34,22 @@
       <div class="new_footer" v-if="newList.length > 0">
         <div class="new_footer_l" @click="prev">
           <svg-icon
-            :icon-class="activeLeft ? 'leftHover' : 'leftArrow'"
+            :icon-class="
+              isFirst ? 'leftDisable' : activeLeft ? 'leftHover' : 'leftArrow'
+            "
             :class-name="activeLeft ? 'active_new_svg' : 'new_svg'"
           ></svg-icon>
         </div>
         <div class="new_footer_c">{{ page + 1 }}页 {{ total }}</div>
         <div class="new_footer_r" @click="next">
           <svg-icon
-            :icon-class="activeRight ? 'rightHover' : 'rightArrow'"
+            :icon-class="
+              isLast
+                ? 'rightDisable'
+                : activeRight
+                ? 'rightHover'
+                : 'rightArrow'
+            "
             :class-name="activeRight ? 'active_new_svg' : 'new_svg'"
           ></svg-icon>
         </div>
