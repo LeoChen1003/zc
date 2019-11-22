@@ -14,9 +14,9 @@
         联系我们
       </div>
       <div class="show" @mousemove="show" @mouseleave="hide">
-        <p>企业介绍</p>
-        <p>专利发明</p>
-        <p>实验室</p>
+        <p @click="intro">企业介绍</p>
+        <p @click="inven">专利发明</p>
+        <p @click="lab">实验室</p>
       </div>
       <div class="showPro" @mousemove="showPro" @mouseout="hidePro">
         <div class="showPro_l">
@@ -82,10 +82,25 @@ export default {
   },
   data () {
     return {
-      
+      tab: 0
     }
   },
+  components:{
+    
+  },
   methods:{
+    intro(){
+      this.tab = 0;
+      this.$emit("changeTab",this.tab);
+    },
+    inven(){
+      this.tab = 1;
+      this.$emit("changeTab",this.tab);
+    },
+    lab(){
+      this.tab = 2;
+      this.$emit("changeTab",this.tab);
+    },
     show(){
       var show = document.getElementsByClassName("show")[0];
       show.style.display = "block";
@@ -157,17 +172,8 @@ export default {
     }
   },
   mounted(){
-    // var spans = document.getElementsByTagName("span");
-    // for(var i = 0; i < spans.length; i++){
-    //   spans[i].onclick = function(){
-    //     for(var i = 0; i < spans.length; i++){
-    //       spans[i].style.color = "#333333";
-    //       spans[i].style.fontWeight = 400;
-    //     }
-    //     this.style.color = "#000000";
-    //     this.style.fontWeight = 600;
-    //   }
-    // }
+    // this.$emit("changeTab",this.tab);
+    // window.console.log(this.tab);
   }
 }
 </script>

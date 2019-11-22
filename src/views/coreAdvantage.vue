@@ -2,8 +2,8 @@
     <div class="core">
         <zcHeader></zcHeader>
         <div class="core_syt">
-            <div class="core_syt_l">
-                <div class="core_syt_s"></div>
+            <div class="core_syt_cir">
+                <svg-icon icon-class="circle"></svg-icon>
             </div>
             <router-link to="/coreAdvantage/intelligenceSystem" class="core_syt_p1">智能系统 OS</router-link>
             <p class="core_syt_p2">简单易用的智能，背后藏着强大的科技</p>
@@ -148,25 +148,10 @@ p{
         border-top: 1px solid #cccccc;
         background: url("../assets/coreAdvantage/osBackground.jpg");
         background-size: 100% 100%;
-        .core_syt_l{
-            position: relative;
-            width:10rem;
-            height:10rem;
-            margin: 0 auto;
-            background: #3DCECB;
-            border-radius: 50%;
-            margin-top: 4.5rem;
-            .core_syt_s{
-                width: 5rem;
-                height: 5rem;
-                background: #fff;
-                position: absolute;
-                border-radius: 50%;
-                top: 50%;
-                left: 50%;
-                margin-top: -2.5rem;
-                margin-left: -2.5rem;
-            }
+        .core_syt_cir{
+            width: 18.75rem;
+            height: 10rem;
+            margin: 4.5rem auto 0;
         }
         .core_syt_p1{
             width: 12.25rem;

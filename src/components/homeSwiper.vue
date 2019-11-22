@@ -9,6 +9,12 @@
       <swiper-slide>
         <div class="item"> I'm Slide 2</div>
       </swiper-slide>
+      <swiper-slide>
+        <div class="item">I'm Slide 3</div>
+      </swiper-slide>
+      <swiper-slide>
+        <div class="item"> I'm Slide 4</div>
+      </swiper-slide>
     </swiper>
     <div class="swiper-button-prev"
          slot="button-prev"></div>
@@ -19,6 +25,7 @@
 </template>
 
 <script>
+import request from '@/utils/request.js';
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 export default {
   components: {
@@ -27,6 +34,11 @@ export default {
   },
   data () {
     return {
+		messNews:[],
+		activeLeft: false,
+        activeRight: false,
+        isFirst: true,
+        isLast: false,
       swiperOption: {
         notNextTick: true,//notNextTick是一个组件自有属性，如果notNextTick设置为true，组件则不会通过NextTick来实例化swiper，也就意味着你可以在第一时间获取到swiper对象，假如你需要刚加载遍使用获取swiper对象来做什么事，那么这个属性一定要是true
         grabCursor: true,//鼠标覆盖Swiper时指针会变成手掌形状，拖动时指针会变成抓手形状
@@ -52,6 +64,24 @@ export default {
 
     }
   },
+  methods:{
+    getNew(){
+        request({
+            url: '/outside/posts',
+            method: 'get',
+            params: {
+                page: this.page,
+                pageSize: this.pageSize
+            }
+        }).then(res=>{
+            this.messNews = res.data.content;
+            this.total = res.data.totalPages;
+            this.isLast = res.data.last;
+            this.isFirst = res.data.first;
+            window.console.log(this.messNews);
+        })
+    }
+  },
   computed: {
     swiper () {
       return this.$refs.mySwiper.swiper;
@@ -64,3 +94,43 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.scroll{
+	.swiper-container-autoheight,.swiper-slide{
+		height: 20rem !important;
+		.swiper-container-autoheight{
+			margin-top: 3rem;
+		}
+	}
+	.swiper-container{
+		width: 65.7rem;
+		margin-left: -3.4rem;
+		margin-top: 7.8rem;
+		.swiper-wrapper{
+			width: auto !important;
+		}
+	}
+	.swiper-slide,.swiper-slide-active,.swiper-slide-prev,.swiper-slide-next{
+		width: 42.5rem !important;
+		background-color: #E7EAF1;
+		border-radius: 0.62rem;
+	}
+	.swiper-slide-active:nth-of-type(2){
+		margin-left: 30%;
+	}
+	.swiper-slide-active:nth-of-type(3){
+		margin-left: 66%;
+	}
+	.swiper-slide-active:nth-of-type(4){
+		margin-left: 101%;
+	}
+	.swiper-slide-prev{
+		margin-right: 3.5rem;
+	}
+	.swiper-slide-next{
+		margin-left: 2.5rem;
+		display: block;
+	}
+}
+</style>
