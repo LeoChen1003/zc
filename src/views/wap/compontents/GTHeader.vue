@@ -1,28 +1,46 @@
 <template>
-  <div class="wrapper"
-       :class="isWhite?'wrapperW':'wrapperB'">
+  <div class="wrapper" :class="isWhite ? 'wrapperW' : 'wrapperB'">
     <div class="topFix">
       <div class="line"></div>
       <div class="header_box">
-        <div class="left"
-             @click="dropdown = !dropdown"
-             :style="dropdown&&type=='js' || type=='gl'?'width:97%;':'width:68%;'">
-          <div>{{name}}</div>
-          <div class="li_arrow"
-               :class="dropdown ? 'open' : ''"></div>
+        <div
+          class="left"
+          @click="dropdown = !dropdown"
+          :style="
+            (dropdown && type == 'js') || type == 'gl'
+              ? 'width:97%;'
+              : 'width:68%;'
+          "
+        >
+          <div>{{ name }}</div>
+          <div class="li_arrow" :class="dropdown ? 'open' : ''"></div>
         </div>
-        <reservationBtn v-if="!dropdown&&type=='js'"></reservationBtn>
+        <reservationBtn v-if="!dropdown && type == 'js'"></reservationBtn>
       </div>
       <transition name="fade">
-        <div class="dropdown"
-             v-if="dropdown">
-          <div class="dropdown_item dropdown_item_line"
-               :class="type=='gl'?'dropdown_item_active':''"
-               @click="$router.push(glUrl);dropdown=false">概览
+        <div class="model" v-if="dropdown">
+          <div class="dropdown" v-if="dropdown">
+            <div
+              class="dropdown_item dropdown_item_line"
+              :class="type == 'gl' ? 'dropdown_item_active' : ''"
+              @click="
+                $router.push(glUrl)
+                dropdown = false
+              "
+            >
+              概览
+            </div>
+            <div
+              class="dropdown_item"
+              :class="type == 'js' ? 'dropdown_item_active' : ''"
+              @click="
+                $router.push(jsUrl)
+                dropdown = false
+              "
+            >
+              技术规格
+            </div>
           </div>
-          <div class="dropdown_item"
-               :class="type=='js'?'dropdown_item_active':''"
-               @click="$router.push(jsUrl);dropdown=false">技术规格</div>
         </div>
       </transition>
     </div>
@@ -38,28 +56,22 @@ export default {
   //import引入的组件需要注入到对象中才能使用
   components: { reservationBtn },
   props: ['type', 'name', 'glUrl', 'jsUrl'],
-  data () {
+  data() {
     return {
       dropdown: false,
       isWhite: false
-    };
+    }
   },
   //监听属性 类似于data概念
   computed: {},
   //监控data中的数据变化
   watch: {},
-  methods: {
-
-  },
-  created () {
-
-  },
-  mounted () {
-
-  },
+  methods: {},
+  created() {},
+  mounted() {}
 }
 </script>
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 //@import url(); 引入公共css类
 .wrapperW {
   .header_box {
@@ -91,6 +103,7 @@ export default {
   position: fixed;
   top: 3rem;
   z-index: 20;
+  width: 100%;
 }
 
 .line {
@@ -128,6 +141,14 @@ export default {
     transform: rotate(-135deg);
     margin-top: 0.35rem;
   }
+}
+
+.model {
+  height: calc(100vh - 3rem);
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .dropdown {

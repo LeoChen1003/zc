@@ -68,10 +68,6 @@ export default {
       dropdown: false,
       route: [
         {
-          name: '首页',
-          url: '/wap/index'
-        },
-        {
           name: '产品中心',
           children: [
             {
@@ -90,7 +86,8 @@ export default {
           show: false
         },
         {
-          name: '新闻中心'
+          name: '新闻中心',
+          url: '/wap/new'
         },
         {
           name: '核心优势',
