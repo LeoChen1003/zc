@@ -234,9 +234,9 @@ export default {
     },
     prev(){
       this.num--;
-      if(this.num==3){
+      // if(this.num==3){
         
-      }
+      // }
     },
     next(){
       this.num++;
