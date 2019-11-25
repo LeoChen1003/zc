@@ -90,6 +90,7 @@
                   ? 'transform: rotate(0deg);'
                   : 'transform: rotate(45deg);'
               "
+              v-if="item.children && item.children.length > 0"
             ></svg-icon>
           </div>
         </div>
@@ -150,7 +151,7 @@ export default {
           name: '产品中心',
           children: [
             {
-              name: '产品中心-1',
+              name: '产品中心',
               url: '/wap/productCenter'
             },
             {
