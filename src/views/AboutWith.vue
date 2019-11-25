@@ -1,6 +1,6 @@
 <template>
     <div class="about">
-        <zcHeader v-on:changeTab="receive"></zcHeader>
+        <zcHeader v-on:changeTab="receive" :tab4="tab1"></zcHeader>
         <div class="about_pic">
             <p>优特智厨</p>
             <p>关于我们</p>
@@ -31,7 +31,8 @@ export default {
             isActive2: false,
             isActive3: false,
             items: [],
-            tab: 0 
+            tab: 0,
+            tab1: 0
         }
     },
     components:{
@@ -59,9 +60,7 @@ export default {
             }
         },
         receive(val){
-            window.console.log(1);
             this.tab = val;
-            window.console.log(this.tab);
             if(this.tab===0){
                 this.currentTab = "comIntro";
                 this.isActive1 = true;
@@ -96,7 +95,7 @@ export default {
         color: #cccccc;
     }
     .about{
-        width: 1425px;
+        width: 100%;
         height: 100%;
         overflow: hidden;
         .about_pic{

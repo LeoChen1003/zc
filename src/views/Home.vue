@@ -172,46 +172,61 @@
 // @ is an alias to /src
 import zcHeader from '@/components/zcHeader.vue'
 import zcFooter from '@/components/zcFooter.vue'
-import homeSwiper from '@/components/homeSwiper.vue'
 import '../styles/variables.scss'
 export default {
   name: 'home',
   components: {
     zcFooter,
-    zcHeader,
-    homeSwiper
+    zcHeader
   },
-  mounted() {
-    var hder = document.getElementsByClassName('whiteBack')[0]
-    hder.className = 'blackBack'
-    window.onscroll = function() {
-      var top = document.documentElement.scrollTop
+  data(){
+    return{
+      num: 0,
+      photo: true,
+      photo1: true,
+      photo2: true,
+      photo3: true,
+      hide: true,
+      show:true,
+      show1: true,
+      show2: true,
+      show3:true,
+      show4:true,
+      show5:true,
+      show6:true
+    }
+  },
+  mounted(){
+    var hder = document.getElementsByClassName('whiteBack')[0];
+    hder.className = 'blackBack';
+    window.onscroll = function(){
+      var top = document.documentElement.scrollTop;
       // window.console.log(document.documentElement.scrollTop);
-      if (top >= 1005 && top <= 1897) {
+      if(top >= 1005 && top <= 1897){
         hder.className = 'whiteBack1'
-      } else if (top >= 1897 && top <= 2783) {
+      }else if( top >= 1897 && top <= 2783){
         hder.className = 'blackBack1'
-      } else if (top >= 2783) {
+      }else if( top >= 2783){
         hder.className = 'whiteBack1'
-      } else {
+      }else{
         hder.className = 'blackBack1'
       }
     }
   },
-  methods: {
-    video() {
+  methods:{
+    video(){
       this.$router.push('/home/video')
     },
-    news() {
+    news(){
       this.$router.push('/new')
     },
-    aboutUs() {
+    aboutUs(){
       this.$router.push('/with')
     },
-    cai() {
+    cai(){
       this.$router.push('/product/proCai')
     },
-    AIO() {
+    AIO(){
       this.$router.push('/product/proAIO')
     }
   }
@@ -223,19 +238,19 @@ export default {
   height: 100%;
   width: 100%;
   position: relative;
-  .svg_up {
+  .svg_up{
     position: absolute;
     width: 0.87rem;
     height: 0.87rem;
     left: 63%;
     top: 59rem;
-    .svg {
+    .svg{
       width: 100%;
       height: 100%;
     }
   }
   .home_video {
-    background: url('../assets/home/home_videoBg2x.png') no-repeat;
+    background: url("../assets/home/home_videoBg2x.png") no-repeat;
     background-size: 100% 100%;
     width: 100%;
     height: 47.5rem;
@@ -327,7 +342,7 @@ export default {
         font-size: 0.88rem;
         font-weight: 600;
         color: #fff;
-        span {
+        span{
           font-size: 3.75rem;
         }
       }
@@ -335,8 +350,7 @@ export default {
   }
   .home_product_more {
     display: flex;
-    .home_product_more_item1,
-    .home_product_more_item2 {
+    .home_product_more_item1,.home_product_more_item2 {
       display: flex;
       align-items: center;
       flex-direction: column;
@@ -390,6 +404,36 @@ export default {
         }
       }
     }
+    .carousel{
+      position: relative;
+      float: left;
+      width: 100%;
+      height: 20rem;
+      overflow: hidden;
+      top: 16.8rem;
+      .pic,.pic1,.pic2,.pic3,.pic4{
+        position: absolute;
+        width: 42.5rem;
+        height: 100%;
+        background-color: #E7EAF1;
+        border-radius: 10px;
+      }
+      .pic{
+        margin-left: -26%;
+      }
+      .pic1{
+        margin-left: 26%;
+      }
+      .pic2{
+        margin-left: 76%;
+      }
+      .pic3{
+        margin-left: 126%;
+      }
+      .pic4{
+        margin-left: 176%;
+      }
+    }
     .home_news_circle {
       width: 35.63rem;
       height: 35.63rem;
@@ -397,6 +441,21 @@ export default {
       border: 0.06rem solid rgba(44, 198, 192, 1);
       border-radius: 50%;
       margin: 9rem auto;
+    }
+    .btn_prev,.btn_next{
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      position: absolute;
+      background-color: #000;
+      cursor: pointer;
+      margin-top: 45rem;
+    }
+    .btn_prev{
+
+    }
+    .btn_next{
+      margin-left:50px;
     }
   }
   .home_img {

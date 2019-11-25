@@ -13,7 +13,7 @@
                 <span>省市</span><input class="input3" v-model="provice" placeholder="例如：浙江省杭州市" /><br>
             </div>
             <div class="consult_commit_input">
-                <span>需求设备</span><input placeholder="请选择需求设备…" class="input4"/><div class="arrow" @click="open" ><svg-icon :icon-class="iconClass" class-name="xia_arrow"></svg-icon></div><br>
+                <span>需求设备</span><input placeholder="请选择需求设备…" class="input4" @click="inputOpen"/><div class="arrow" @click="open" ><svg-icon :icon-class="iconClass" class-name="xia_arrow"></svg-icon></div><br>
                 <div v-show="visible" class="consult_commit_input_select" ref="select">
                     <div v-for="(item,i) of machine" @click="changeTxt(i)" :key="i" :class="{blue:changeColor==i}">{{machine[i]}}</div>
                 </div>
@@ -49,6 +49,46 @@ export default {
         }
     },
     methods:{
+        inputOpen(){
+            this.visible = true;
+            this.iconClass = "shang";
+            //获取所在的父级元素
+            var sel = document.getElementsByClassName("consult_commit_input")[3];
+            var select  = document.getElementsByClassName("consult_commit_input_select")[0];
+            document.onclick = (e)=>{
+                if(e.target.tagName=="use"){ //如果当前点击的对象是箭头
+                    this.visible != this.visible;
+                    if(select.style.opacity == 1){
+                        select.style.opacity = 0;
+                        setTimeout(()=>{
+                            this.visible = false;
+                            this.iconClass = "xia";
+                        },500)
+                    }else{
+                        select.style.opacity = 1;
+                        setTimeout(()=>{
+                            this.visible = true;
+                            this.iconClass = "shang";
+                        },500)
+                    }
+                }else if(sel.contains(e.target) && e.target.tagName !=="use"){//如果当前点击的对象在这个父级元素中并且不是箭头
+                    this.visible = true;
+                    this.iconClass = "shang";
+                    this.equipment = e.target.innerText;
+                    select.style.opacity = 1;
+                    if(e.target.className=="blue"){
+                        select.style.opacity = 0;
+                        setTimeout(()=>{
+                            this.visible = false;
+                            this.iconClass = "xia";
+                        },500)
+                    }
+                }else{ //点击的是空白区域
+                    this.visible = false;
+                    this.iconClass = "xia";
+                }
+            }
+        },
         open(){
             //每次点击箭头 把箭头方向两次相反
             this.iconClass == "shang" ? this.iconClass= "xia" : this.iconClass = "shang";
@@ -56,13 +96,36 @@ export default {
             this.visible = ! this.visible;
             //获取所在的父级元素
             var sel = document.getElementsByClassName("consult_commit_input")[3];
+            var select  = document.getElementsByClassName("consult_commit_input_select")[0];
             document.onclick = (e)=>{
                 if(e.target.tagName=="use"){ //如果当前点击的对象是箭头
                     this.visible != this.visible;
-                }else if(sel.contains(e.target) && e.target.tagName !=="use" && e.target.className !== "input4"){//如果当前点击的对象在这个父级元素中并且不是箭头
+                    if(select.style.opacity == 1){
+                        select.style.opacity = 0;
+                        setTimeout(()=>{
+                            this.visible = false;
+                            this.iconClass = "xia";
+                        },500)
+                    }else{
+                        select.style.opacity = 1;
+                        setTimeout(()=>{
+                            this.visible = true;
+                            this.iconClass = "shang";
+                        },500)
+                    }
+                }else if(sel.contains(e.target) && e.target.tagName !=="use"){//如果当前点击的对象在这个父级元素中并且不是箭头
                     this.visible = true;
                     this.iconClass = "shang";
                     this.equipment = e.target.innerText;
+                    select.style.opacity = 1;
+                    if(this.visible){
+                        select.style.opacity = 0;
+                        setTimeout(()=>{
+                            this.visible = false;
+                            this.iconClass = "xia";
+                        },500)
+                    }
+                    
                 }else{ //点击的是空白区域
                     this.visible = false;
                     this.iconClass = "xia";
@@ -78,11 +141,35 @@ export default {
             this.$router.go(-1);
         },
         sendMessage(){
+            if(this.name===null){
+                this.$message({
+                    showClose: true,
+                    message: '称呼不能为空',
+                    type: 'warning'
+                })
+                return;
+            }
+            if(this.phone===null){
+                this.$message({
+                    showClose: true,
+                    message: '电话不能为空',
+                    type: 'warning'
+                })
+                return;
+            }
+            if(!(/^1[3456789]\d{9}$/.test(this.phone))){
+                this.$message({
+                    showClose: true,
+                    message: '电话号码格式错误',
+                    type: 'warning'
+                })
+                return;
+            }
             if(this.equipment == "智能大滚筒炒菜机套机"){
                 this.changeEquip = "BIG_BIZ_MACHINE";
             }else if(this.equipment == "智能精炒一体机"){
                 this.changeEquip = "SMALL_SMART";
-            }else{
+            }else if(this.equipment == "其他设备"){
                 this.changeEquip = "OTHER";
             }
             let formData = {
@@ -97,6 +184,11 @@ export default {
                 method: 'post',
                 data: formData
             }).then(res=>{
+                this.$message({
+                    showClose: true,
+                    message: '提交成功',
+                    type: 'success'
+                })
                 window.console.log(res.data);
             }).catch(function(error){
                 window.console.log(error);
@@ -219,6 +311,7 @@ export default {
                 background:rgba(255,255,255,1);
                 border-radius:3px;
                 border:1px solid rgba(236,236,236,1);
+                transition: all 0.5s;
                 div{
                     box-sizing:border-box;
                     width: 100%;

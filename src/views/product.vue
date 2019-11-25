@@ -1,6 +1,6 @@
 <template>
     <div class="product">
-        <zcHeader></zcHeader>
+        <zcHeader :tab1="tab"></zcHeader>
         <div class="product_header">
             <p @click="jump(0)">旗舰智厨产品</p>
             <p>···</p>
@@ -468,6 +468,11 @@ export default {
     components:{
         zcHeader,
         zcFooter,
+    },
+    data(){
+        return {
+            tab: 0
+        }
     },
     methods:{
         proCai(){

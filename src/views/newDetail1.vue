@@ -12,7 +12,10 @@
             <div class="content" v-html="info.content"></div>
             <div class="line1"></div>
         </div>
-        <div ref="toTop" class="arrow">
+        <div v-if="isShow" ref="toTop" class="arrow">
+            <svg-icon icon-class="returnUp" class="up"></svg-icon>
+        </div>
+        <div v-else ref="toTop" class="fix">
             <svg-icon icon-class="returnUp" class="up"></svg-icon>
         </div>
         <zcFooter></zcFooter>
@@ -29,7 +32,8 @@ export default {
     name: 'newDetail1',
     data(){
         return {
-            info:{}
+            info:{},
+            isShow: true
         }
     },
     components:{
@@ -41,15 +45,12 @@ export default {
         this.$refs.toTop.onclick = function(){
             scrollTo(0,0);
         }
-        window.onscroll = function(){
-            var arrow  = document.getElementsByClassName("arrow")[0];
+        window.onscroll = ()=>{
             var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
             if(scrollTop > 867){
-                arrow.style.position = "fixed";
-                arrow.style.display = "block";
+                this.isShow = false;
             }else{
-                arrow.style.position = "absolute";
-                arrow.style.display = "none";
+                this.isShow = true;
             }
         }
         this.info = JSON.parse(localStorage.getItem('newDetail1'));
@@ -61,6 +62,19 @@ export default {
 .newDel{
     position: relative;
     overflow: hidden;
+    .fix{
+        position: fixed;
+        display: block;
+        width: 3.25rem;
+        height: 3.25rem;
+        left: 85%;
+        top: 49%;
+        cursor: pointer;
+        .up{
+            width: 100%;
+            height: 100%;
+        }
+    }
     .arrow{
         display: none;
         position: absolute;
