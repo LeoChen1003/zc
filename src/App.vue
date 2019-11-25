@@ -41,6 +41,9 @@ export default {
           this.$router.replace(this.$route.meta.mobilePath)
         }
       }
+    },
+     $route() {
+      document.documentElement.scrollTop = 0
     }
   }
 }

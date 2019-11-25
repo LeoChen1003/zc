@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home pc_index">
     <zcHeader></zcHeader>
     <div class="svg_up">
       <svg-icon icon-class="up1" class="svg"></svg-icon>
@@ -134,7 +134,40 @@
         </div>
       </div>
       <div class="home_news_circle">
-        <homeSwiper></homeSwiper>
+        <div class="swiper">
+        <div class="bg"></div>
+        <swiper :options="swiperOption" ref="indexswiper">
+          <swiper-slide v-for="(item, index) in newList" :key="index">
+            <div class="ph">
+              <div class="ph_img">
+                <img :src="item.image" alt="" />
+              </div>
+              <div class="ph_content">
+                <div class="ph_content_title">{{ item.title }}</div>
+                <div class="ph_content_short">{{item.shortContent}}</div>
+                <div class="ph_content_bottom">
+                  <div class="time">
+                    {{ item.updatedAt.slice(0, 4) }}/{{
+                      item.updatedAt.slice(5, 7)
+                    }}/{{ item.updatedAt.slice(8, 10) }}
+                  </div>
+                  <div class="detail" @click="toDetail(item)">
+                    <div>
+                      查看详情
+                    </div>
+                    <svg-icon
+                      icon-class="wap_index_detail"
+                      class-name="svg"
+                    ></svg-icon>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </swiper-slide>
+          <div class="swiper-button-prev" slot="button-prev"></div>
+          <div class="swiper-button-next" slot="button-next"></div>
+        </swiper>
+      </div>
       </div>
     </div>
     <div class="home_img"></div>
@@ -173,6 +206,9 @@
 import zcHeader from '@/components/zcHeader.vue'
 import zcFooter from '@/components/zcFooter.vue'
 import '../styles/variables.scss'
+import request from '@/utils/request.js'
+
+let self
 export default {
   name: 'home',
   components: {
@@ -181,19 +217,23 @@ export default {
   },
   data(){
     return{
-      num: 0,
-      photo: true,
-      photo1: true,
-      photo2: true,
-      photo3: true,
-      hide: true,
-      show:true,
-      show1: true,
-      show2: true,
-      show3:true,
-      show4:true,
-      show5:true,
-      show6:true
+       swiperOption: {
+        slidesPerView: 'auto',
+        centeredSlides: true,
+        spaceBetween: 0,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        },
+        on: {
+          slideChangeTransitionEnd: function() {
+            // 切换结束时，告诉我现在是第几个slide
+            self.curIndex = self.$refs.indexswiper.swiper.activeIndex
+          }
+        }
+      },
+      curIndex: 0,
+      newList: []
     }
   },
   mounted(){
@@ -211,7 +251,16 @@ export default {
       }else{
         hder.className = 'blackBack1'
       }
+      request({
+        url: '/outside/posts/top',
+        method: 'get'
+      }).then(res => {
+        self.newList = res.data.content
+      })
     }
+  },
+  created(){
+    self= this
   },
   methods:{
     video(){
@@ -228,7 +277,16 @@ export default {
     },
     AIO(){
       this.$router.push('/product/proAIO')
-    }
+    },
+    toDetail(row) {
+      self.$router.push({
+        path: '/new/detail1',
+        query: {
+          id: row.id
+        }
+      })
+      // localStorage.setItem('newDetail', JSON.stringify(row))
+    },
   }
 }
 </script>
@@ -379,6 +437,7 @@ export default {
   }
   .home_news {
     height: 55rem;
+    overflow: hidden;
     background: linear-gradient(
       177deg,
       rgba(231, 234, 241, 1) 0%,
@@ -404,36 +463,6 @@ export default {
         }
       }
     }
-    .carousel{
-      position: relative;
-      float: left;
-      width: 100%;
-      height: 20rem;
-      overflow: hidden;
-      top: 16.8rem;
-      .pic,.pic1,.pic2,.pic3,.pic4{
-        position: absolute;
-        width: 42.5rem;
-        height: 100%;
-        background-color: #E7EAF1;
-        border-radius: 10px;
-      }
-      .pic{
-        margin-left: -26%;
-      }
-      .pic1{
-        margin-left: 26%;
-      }
-      .pic2{
-        margin-left: 76%;
-      }
-      .pic3{
-        margin-left: 126%;
-      }
-      .pic4{
-        margin-left: 176%;
-      }
-    }
     .home_news_circle {
       width: 35.63rem;
       height: 35.63rem;
@@ -441,21 +470,81 @@ export default {
       border: 0.06rem solid rgba(44, 198, 192, 1);
       border-radius: 50%;
       margin: 9rem auto;
-    }
-    .btn_prev,.btn_next{
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      position: absolute;
-      background-color: #000;
-      cursor: pointer;
-      margin-top: 45rem;
-    }
-    .btn_prev{
+      .swiper-slide {
+        width: 42.5rem;
+        height: 35.63rem;
+        margin-right: 2.5rem;
+        display: flex;
+        align-items: center;
+      }
+      .ph {
+        width: 42.5rem;
+        height: 20rem;
+        background: rgba(231, 234, 241, 1);
+        border-radius: 0.25rem;
+        overflow: hidden;
+        display: flex;
 
+    .ph_img {
+      width: 20rem;
+      height: 20rem;
+      img {
+        width: 100%;
+        background-size: 100% 100%;
+      }
     }
-    .btn_next{
-      margin-left:50px;
+
+    .ph_content {
+      padding: 2rem;
+      width: 22.5rem;
+      box-sizing: border-box;
+      position: relative;
+      .ph_content_short{
+        margin-top: 1rem;
+        font-size: 0.88rem;
+        color: #333;
+        line-height: 1.5rem;
+      }
+      .ph_content_title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: rgba(0, 0, 0, 1);
+        line-height: 1.7rem;
+      }
+
+      .ph_content_bottom {
+        position: absolute;
+        bottom: 1.88rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+
+        .time {
+          font-size: 0.88rem;
+          font-family: Helvetica;
+          color: rgba(153, 153, 153, 1);
+          margin-right: 7.25rem;
+        }
+
+        .detail {
+          font-size: 0.88rem;
+          color: rgba(51, 51, 51, 1);
+          display: flex;
+          font-weight: 400;
+          align-items: center;
+          div{
+            margin-right: 0.75rem;
+            cursor: pointer;
+          }
+          .svg{
+            width: 2.25rem;
+            height: 2.25rem;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
     }
   }
   .home_img {
@@ -617,14 +706,40 @@ export default {
 </style>
 
 <style lang="scss">
-// .swiper-button-prev,
-// .swiper-button-next {
-//   top: 80% !important;
-// }
-// .swiper-button-prev {
-//   left: 15% !important;
-// }
-// .swiper-button-next {
-//   left: 20% !important;
-// }
+.pc_index .swiper-button-prev {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg height='36' viewBox='0 0 36 36' width='36' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Crect fill='none' height='36' rx='18' stroke='%23000' width='36'/%3E%3Cpath d='m13.5036403 25.5-1.5036403-1.3287142 6.181824-6.1577919-6.101354-6.1130039 1.3961554-1.40049 7.5233746 7.5117712z' fill='%230c0c0c' transform='matrix(-1 0 0 1 33 0)'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  left: -34%;
+  top: 93% !important;
+}
+
+.pc_index .swiper-button-next {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg height='36' viewBox='0 0 36 36' width='36' xmlns='http://www.w3.org/2000/svg'%3E%3Crect fill='none' height='36' rx='18' stroke='%23000' width='36'/%3E%3Cpath d='m16.5036403 25.5-1.5036403-1.3287142 6.181824-6.1577919-6.101354-6.1130039 1.3961554-1.40049 7.5233746 7.5117712z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  left: -15%;
+  top: 93% !important;
+}
+
+.pc_index .swiper-button-prev:focus,
+.pc_index .swiper-button-next:focus {
+  border: none;
+  outline-style: none;
+  box-shadow: none !important;
+}
+
+.pc_index .swiper-wrapper {
+  margin-top: 0rem;
+}
+
+.pc_index .swiper-wrapper,
+.pc_index .swiper-container {
+  overflow: visible;
+}
+
+.pc_index .swiper-container {
+  margin-left: 0.8rem;
+}
 </style>
+

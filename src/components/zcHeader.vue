@@ -24,11 +24,7 @@
       <div class="header_btn" @click="concat">
         联系我们
       </div>
-      <div class="show" @mousemove="show" @mouseleave="hide">
-        <p @click="intro">企业介绍</p>
-        <p @click="inven">专利发明</p>
-        <p @click="lab">实验室</p>
-      </div>
+
       <div class="showPro" @mousemove="showPro" @mouseout="hidePro">
         <div class="showPro_l">
           <div class="showPro_l_btn1" @click="changeColor1">旗舰智厨产品</div>
@@ -83,6 +79,13 @@
         </div>
       </div>
     </div>
+	<div style="position:relative;" class="header_bottom">
+		<div class="show" @mousemove="show" @mouseleave="hide">
+			<p @click="intro">企业介绍</p>
+			<p @click="inven">专利发明</p>
+			<p @click="lab">实验室</p>
+       </div>
+	</div>
   </div>
 
 </template>
@@ -190,6 +193,36 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.header_bottom{
+	position: relative;
+	.show{
+    width: 100vw;
+    height: 10.75rem;
+    display: none;
+    min-width: 89rem;
+    position: absolute;
+    margin-top: 2.94rem;
+    background:linear-gradient(180deg,rgba(240,240,240,1) 0%,rgba(255,255,255,1) 12%,rgba(255,255,255,1) 100%);
+    p{
+      cursor: pointer;
+      width: 3.5rem;
+      height: 1.25rem;
+      font-size: 0.87rem;
+      color: #000;
+      margin-left: 63%;
+    }
+    p:first-child{
+      margin-top: 2rem;
+    }
+    p:nth-child(2){
+      margin-top: 1rem;
+    }
+    p:last-child{
+      margin-top: 1rem;
+    }
+  }
+	
+}
 .whiteBack,.whiteBack1{
   height: 3rem;
   min-width: 89rem;
@@ -202,7 +235,7 @@ export default {
     align-items: center;
     width: 100%;
     margin-top: 0rem;
-    padding: 0 22.2rem;
+    padding: 0 20rem;
     box-sizing: border-box;
     height: 3rem;
     line-height: 3rem;
@@ -213,6 +246,7 @@ export default {
     color: #000;
     font-size: 1.6rem;
     font-weight: bolder;
+	cursor: pointer;
       .index_svg_b {
           display: block;
       }
@@ -245,33 +279,7 @@ export default {
     background: rgba(0, 0, 0, 1);
     border-radius: 1rem;
     cursor: pointer;
-  }
-  .show{
-    width: 90rem;
-    height: 10.75rem;
-    display: none;
-      min-width: 89rem;
-    position: absolute;
-    margin-top: 6.94rem;
-    margin-left: -23.12rem;
-    background:linear-gradient(180deg,rgba(240,240,240,1) 0%,rgba(255,255,255,1) 12%,rgba(255,255,255,1) 100%);
-    p{
-      cursor: pointer;
-      width: 3.5rem;
-      height: 1.25rem;
-      font-size: 0.87rem;
-      color: #000;
-      margin-left: 52.5rem;
-    }
-    p:first-child{
-      margin-top: 2rem;
-    }
-    p:nth-child(2){
-      margin-top: 1rem;
-    }
-    p:last-child{
-      margin-top: 1rem;
-    }
+    font-weight: 600;
   }
   .showPro{
     display: none;
@@ -455,6 +463,7 @@ export default {
     }
     .header_btn {
         color: #000;
+        font-weight: 600;
         background: rgba(255, 255, 255, 1);
     }
     .index_svg_b {
@@ -473,6 +482,7 @@ export default {
     }
     .header_btn {
         color: #fff;
+        font-weight: 600;
         background: rgba(0, 0, 0, 1);
     }
 }
@@ -491,7 +501,7 @@ export default {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 0 22.2rem;
+    padding: 0 20rem;
     box-sizing: border-box;
     height: 3rem;
     line-height: 3rem;
@@ -501,9 +511,11 @@ export default {
     color: #fff;
     font-size: 1.6rem;
     font-weight: bolder;
+	cursor: pointer;
+	
   }
   .header_navbar {
-    color: #fff;
+    color: #a2a6ac;
     font-size: 0.88rem;
     font-weight: 400;
     span {
@@ -525,34 +537,8 @@ export default {
     text-align: center;
     background: #fff;
     border-radius: 1rem;
+    font-weight: 600;
     cursor: pointer;
-  }
-  .show{
-    width: 90rem;
-    height: 10.75rem;
-      min-width: 89rem;
-    display: none;
-    position: absolute;
-    margin-top: 6.94rem;
-    margin-left: -23.12rem;
-    background:linear-gradient(180deg,rgba(240,240,240,1) 0%,rgba(255,255,255,1) 12%,rgba(255,255,255,1) 100%);
-    p{
-      cursor: pointer;
-      width: 3.5rem;
-      height: 1.25rem;
-      font-size: 0.87rem;
-      color: #000;
-      margin-left: 52.5rem;
-    }
-    p:first-child{
-      margin-top: 2rem;
-    }
-    p:nth-child(2){
-      margin-top: 1rem;
-    }
-    p:last-child{
-      margin-top: 1rem;
-    }
   }
   .showPro{
     display: none;
@@ -729,10 +715,11 @@ export default {
   color: #000;
   background: #fff;
   .header_navbar {
-    color: #fff;
+    color: #a2a6ac;
     font-weight: 400;
   }
   .header_btn {
+    font-weight: 600;
     color: #fff;
     background: #000;
   }
@@ -741,10 +728,11 @@ export default {
   color: #fff;
   background: #000;
   .header_navbar {
-    color: #fff;
+    color: #a2a6ac;
   }
   .header_btn {
     color: #000;
+    font-weight: 600;
     background: #fff;
   }
     .index_svg_b {

@@ -26,7 +26,7 @@
             <div class="star_con_cen1">
                 <div class="star_con_cen1_l">
                     <p>全方位安装调试</p>
-                    <p>XXXXXXXXXXXXXXXXXXXXXXXXXXX<br>XXXXXXXXXXXXXXX。</p>
+                    <p>专业团队现场安装调试，保障设备高效运行</p>
                 </div>
                 <div class="star_con_cen1_r">
                     <img src="../assets/coreAdvantage/star3.jpg" alt="">
@@ -56,7 +56,7 @@
                 </div>
                 <div class="star_con_cen4_r">
                     <p>全方位配件维修</p>
-                    <p>XXXXXXXXXXXXXXXXXXXXXXXXX<br> sXXXXXXXXXXXXXXXXX。</p>
+                    <p>专业设备零部件维修服务，提供贴心保障</p>
                 </div>
             </div>
             <div class="star_con_cen1">

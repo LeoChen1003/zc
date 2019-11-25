@@ -10,7 +10,7 @@
                 <div class="new_con_del_r">
                     <p>{{messNew.updatedAt.slice(0,4)}}年{{messNew.updatedAt.slice(5,7)}}月{{messNew.updatedAt.slice(8,10)}}日  <a class="a1" href="javascript:;">更新</a></p>
                     <router-link to="/new/detail1">{{messNew.title}}</router-link>
-                    <p v-html="messNew.content">{{messNew.content}}</p>
+                    <p>{{messNew.shortContent}}</p>
                 </div>
             </div>
             <div class="line"></div>
@@ -93,8 +93,12 @@ export default {
             }
         },
         detail(row){
-            this.$router.push('/new/detail1');
-            localStorage.setItem('newDetail1',JSON.stringify(row));
+            this.$router.push({
+                path: '/new/detail1',
+                query: {
+                    id: row.id
+                }
+            })
         }
     },
     mounted(){
