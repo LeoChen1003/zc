@@ -225,12 +225,8 @@ export default {
     window.addEventListener('scroll', this.handleScroll)
     this.$emit('setisBlack')
     request({
-      url: '/outside/posts',
-      method: 'get',
-      params: {
-        page: self.page,
-        pagesize: self.pagesize
-      }
+      url: '/outside/posts/top',
+      method: 'get'
     }).then(res => {
       self.newList = res.data.content
     })
@@ -245,9 +241,12 @@ export default {
     },
     toDetail(row) {
       self.$router.push({
-        path: '/wap/newDetail'
+        path: '/wap/newDetail',
+        query: {
+          id: row.id
+        }
       })
-      localStorage.setItem('newDetail', JSON.stringify(row))
+      // localStorage.setItem('newDetail', JSON.stringify(row))
     },
     toVideo() {
       this.$router.push('/wap/video')
@@ -746,7 +745,7 @@ export default {
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg height='36' viewBox='0 0 36 36' width='36' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Crect fill='none' height='36' rx='18' stroke='%23000' width='36'/%3E%3Cpath d='m13.5036403 25.5-1.5036403-1.3287142 6.181824-6.1577919-6.101354-6.1130039 1.3961554-1.40049 7.5233746 7.5117712z' fill='%230c0c0c' transform='matrix(-1 0 0 1 33 0)'/%3E%3C/g%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-size: 100%;
-  left: 40%;
+  left: 35%;
   top: 118% !important;
 }
 
@@ -754,7 +753,7 @@ export default {
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg height='36' viewBox='0 0 36 36' width='36' xmlns='http://www.w3.org/2000/svg'%3E%3Crect fill='none' height='36' rx='18' stroke='%23000' width='36'/%3E%3Cpath d='m16.5036403 25.5-1.5036403-1.3287142 6.181824-6.1577919-6.101354-6.1130039 1.3961554-1.40049 7.5233746 7.5117712z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-size: 100%;
-  right: 40%;
+  right: 35%;
   top: 118% !important;
 }
 

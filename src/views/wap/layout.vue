@@ -19,11 +19,16 @@
       </div>
       <div
         class="logo"
+        style="width:30%;display:flex;align-items:center;"
         :style="isWhite ? 'color:#000;' : 'color:#fff;'"
         @click="$router.push('/wap/index')"
       >
-        <!-- <svg-icon icon-class="logo" class-name="index_svg"></svg-icon> -->
-        ut
+        <svg-icon
+          :icon-class="dropdown ? '' : isWhite ? 'logo' : 'logo_w'"
+          class-name="index_svg"
+          style="width:15rem;height:1.5rem;"
+        ></svg-icon>
+        <!-- ut -->
       </div>
       <div class="contact" @click="$router.push('/wap/contact')">
         联系我们

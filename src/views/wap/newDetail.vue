@@ -23,6 +23,7 @@
 <script>
 //这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）
 //例如：import 《组件名称》 from '《组件路径》';
+import request from '@/utils/request.js'
 
 let self
 export default {
@@ -42,7 +43,14 @@ export default {
     self = this
   },
   mounted() {
-    self.info = JSON.parse(localStorage.getItem('newDetail'))
+    // self.info = JSON.parse(localStorage.getItem('newDetail'))
+    let id = self.$route.query.id
+    request({
+      url: '/outside/post/' + id,
+      method: 'get'
+    }).then(res => {
+      self.info = res.data
+    })
   }
 }
 </script>
