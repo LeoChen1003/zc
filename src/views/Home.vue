@@ -76,7 +76,9 @@
         </div>
         <div class="home_pro_one_item">
           <div>云端菜谱</div>
-          <p>链接云端海量专属定制化菜谱，经过多道标准化工序，极大程度还原星级大厨餐饮品质</p>
+          <p>
+            链接云端海量专属定制化菜谱，经过多道标准化工序，极大程度还原星级大厨餐饮品质
+          </p>
         </div>
         <div class="home_pro_one_item">
           <div>精准调控</div>
@@ -95,7 +97,9 @@
         </div>
         <div class="home_pro_two_item">
           <div>智能提醒</div>
-          <p>智能屏+语音实时提醒，0基础新手复制大厨烹饪行为，还原顶级厨师口味</p>
+          <p>
+            智能屏+语音实时提醒，0基础新手复制大厨烹饪行为，还原顶级厨师口味
+          </p>
         </div>
         <div class="home_pro_two_item">
           <div>精准投料</div>
@@ -125,8 +129,7 @@
           <div>新闻中心</div>
         </div>
         <div class="home_news_header_btn" @click="news">
-          <svg-icon icon-class="homeKnowMore"
-                    class-name="svg_size"></svg-icon>
+          <svg-icon icon-class="homeKnowMore" class-name="svg_size"></svg-icon>
           <span>了解更多</span>
         </div>
       </div>
@@ -134,27 +137,30 @@
         <homeSwiper></homeSwiper>
       </div>
     </div>
-    <div class="home_img">
-    </div>
+    <div class="home_img"></div>
     <div class="home_about">
       <div class="home_about_left">
         <div class="home_title_top">优特智厨</div>
         <div>关于我们</div>
         <div class="home_line"></div>
         <div class="home_about_left_btn" @click="aboutUs">
-          <svg-icon icon-class="homeKnowMore"
-                    class-name="svg_size"></svg-icon>
+          <svg-icon icon-class="homeKnowMore" class-name="svg_size"></svg-icon>
           <span>了解更多</span>
         </div>
       </div>
       <div class="home_about_right">
         <div class="home_about_right_item">
           <div>以智能解构中餐，用科技为餐饮业赋能</div>
-          <p>优特智厨隶属于优特集团，起步于2007年，经12年的发展，已经成长为一家集智能厨电产品研发、设计、生产和销售于一体的高新技术公司。目前公司员工超200人，珠海、杭州和深圳三地协同发展。优特智厨以“互联网+”、“智能+”为战略思路，以复制大厨烹饪技艺为核心技术，以推行中餐标准化为企业使命，致力于打造新型餐饮生态服务体系。</p>
+          <p>
+            优特智厨隶属于优特集团，起步于2007年，经12年的发展，已经成长为一家集智能厨电产品研发、设计、生产和销售于一体的高新技术公司。目前公司员工超200人，珠海、杭州和深圳三地协同发展。优特智厨以“互联网+”、“智能+”为战略思路，以复制大厨烹饪技艺为核心技术，以推行中餐标准化为企业使命，致力于打造新型餐饮生态服务体系。
+          </p>
         </div>
         <div class="home_about_right_item">
           <div>优特集团</div>
-          <p>珠海优特科技集团（简称“优特集团”） 资产总值超100亿，员工1700人，子公司将近10个，覆盖工业安全与智能化、物联网、地产与商业运营等多个产业。集团先后获得2004年“国家规划布局重点软件企业”“国家火炬计划软件骨干企业”，2017年获“中国专利优秀奖”等称号。</p>
+          <p>
+            珠海优特科技集团（简称“优特集团”）
+            资产总值超100亿，员工1700人，子公司将近10个，覆盖工业安全与智能化、物联网、地产与商业运营等多个产业。集团先后获得2004年“国家规划布局重点软件企业”“国家火炬计划软件骨干企业”，2017年获“中国专利优秀奖”等称号。
+          </p>
         </div>
       </div>
     </div>
@@ -175,61 +181,61 @@ export default {
     zcHeader,
     homeSwiper
   },
-  mounted(){
-    var hder  = document.getElementsByClassName("whiteBack")[0];
-    hder.className = "blackBack";
-    window.onscroll = function(){
-      var top = document.documentElement.scrollTop;
+  mounted() {
+    var hder = document.getElementsByClassName('whiteBack')[0]
+    hder.className = 'blackBack'
+    window.onscroll = function() {
+      var top = document.documentElement.scrollTop
       // window.console.log(document.documentElement.scrollTop);
-      if(top >= 1005 && top <= 1897){
-        hder.className = "whiteBack1";
-      }else if(top >= 1897 && top <= 2783){
-        hder.className = "blackBack1";
-      }else if(top >= 2783){
-        hder.className = "whiteBack1";
-      }else{
-        hder.className = "blackBack1";
+      if (top >= 1005 && top <= 1897) {
+        hder.className = 'whiteBack1'
+      } else if (top >= 1897 && top <= 2783) {
+        hder.className = 'blackBack1'
+      } else if (top >= 2783) {
+        hder.className = 'whiteBack1'
+      } else {
+        hder.className = 'blackBack1'
       }
     }
   },
-  methods:{
-    video(){
-      this.$router.push("/home/video");
+  methods: {
+    video() {
+      this.$router.push('/home/video')
     },
-    news(){
-      this.$router.push("/new");
+    news() {
+      this.$router.push('/new')
     },
-    aboutUs(){
-      this.$router.push("/with");
+    aboutUs() {
+      this.$router.push('/with')
     },
-    cai(){
-      this.$router.push("/product/proCai");
+    cai() {
+      this.$router.push('/product/proCai')
     },
-    AIO(){
-      this.$router.push("/product/proAIO");
+    AIO() {
+      this.$router.push('/product/proAIO')
     }
   }
 }
 </script>
 
-<style lang='scss' scope>
+<style lang="scss" scope>
 .home {
   height: 100%;
   width: 100%;
   position: relative;
-  .svg_up{
+  .svg_up {
     position: absolute;
     width: 0.87rem;
     height: 0.87rem;
     left: 63%;
     top: 59rem;
-    .svg{
+    .svg {
       width: 100%;
       height: 100%;
     }
   }
   .home_video {
-    background: url("../assets/home/home_videoBg2x.png") no-repeat;
+    background: url('../assets/home/home_videoBg2x.png') no-repeat;
     background-size: 100% 100%;
     width: 100%;
     height: 47.5rem;
@@ -321,15 +327,16 @@ export default {
         font-size: 0.88rem;
         font-weight: 600;
         color: #fff;
-        span{
+        span {
           font-size: 3.75rem;
-        } 
+        }
       }
     }
   }
   .home_product_more {
     display: flex;
-    .home_product_more_item1,.home_product_more_item2 {
+    .home_product_more_item1,
+    .home_product_more_item2 {
       display: flex;
       align-items: center;
       flex-direction: column;
@@ -347,12 +354,12 @@ export default {
         margin-top: 0.38rem;
       }
     }
-    .home_product_more_item1{
-      background: url("../assets/home/zcEquipment.jpg");
+    .home_product_more_item1 {
+      background: url('../assets/home/zcEquipment.jpg');
       background-position: 46% 0;
     }
-    .home_product_more_item2{
-      background: url("../assets/home/otherPro.jpg");
+    .home_product_more_item2 {
+      background: url('../assets/home/otherPro.jpg');
       background-position: 46% 0;
     }
   }
@@ -394,7 +401,7 @@ export default {
   }
   .home_img {
     height: 12.8rem;
-    background: url("../assets/home/aboutUs.jpg");
+    background: url('../assets/home/aboutUs.jpg');
     background-size: cover;
   }
   .home_about {
@@ -433,7 +440,7 @@ export default {
   }
   .home_pro_one {
     height: 40.62rem;
-    background:url("../assets/home/drumFryingMachine.jpg");
+    background: url('../assets/home/drumFryingMachine.jpg');
     background-size: 90rem 55.62rem;
     padding: 7.5rem 14%;
     .home_pro_one_title {
@@ -550,15 +557,15 @@ export default {
 }
 </style>
 
-<style lang='scss'>
-.swiper-button-prev,
-.swiper-button-next {
-  top: 80% !important;
-}
-.swiper-button-prev {
-  left: 15% !important;
-}
-.swiper-button-next {
-  left: 20% !important;
-}
+<style lang="scss">
+// .swiper-button-prev,
+// .swiper-button-next {
+//   top: 80% !important;
+// }
+// .swiper-button-prev {
+//   left: 15% !important;
+// }
+// .swiper-button-next {
+//   left: 20% !important;
+// }
 </style>

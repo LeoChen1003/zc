@@ -1,6 +1,13 @@
 <template>
   <div class="reservationBtn">
-    <div class="btn" @click="show = true">立即预约</div>
+    <div
+      :class="
+        type == 'black' ? 'btn_black' : type == 'white' ? 'btn_white' : 'btn'
+      "
+      @click="show = true"
+    >
+      立即预约
+    </div>
     <transition name="dropdown">
       <div class="dialog" v-if="show">
         <div class="svg_close" @click="show = false">
@@ -23,44 +30,63 @@
             ><input
               class="input1"
               type="name"
+              v-model="name"
               placeholder="例如：王先生"
             /><br />
           </div>
           <div class="contact_commit_input">
             <div class="input_name">电话</div>
             <svg-icon icon-class="icon_star" class-name="icon_star"></svg-icon
-            ><input class="input2" placeholder="请填写电话" /><br />
+            ><input
+              class="input2"
+              placeholder="请填写电话"
+              v-model="phone"
+            /><br />
           </div>
           <div class="contact_commit_input">
             <div class="input_name">省市</div>
-            <input class="input3" placeholder="例如：浙江省杭州市" /><br />
+            <input
+              class="input3"
+              placeholder="例如：浙江省杭州市"
+              v-model="provice"
+            /><br />
           </div>
           <div class="contact_commit_input">
             <div class="input_name">需求设备</div>
-            <input placeholder="请选择需求设备…" class="input4" />
-            <div class="arrow" @click="open">
-              <div class="li_arrow" :class="dropdown ? 'open' : ''"></div>
-            </div>
-            <br />
-            <div v-show="dropdown" class="contact_commit_input_select" id="sel">
+            <div @click="open" style="display:flex;align-items:center;">
+              <input
+                placeholder="请选择需求设备…"
+                class="input4"
+                v-model="equipment"
+              />
+              <div class="arrow">
+                <div class="li_arrow" :class="dropdown ? 'open' : ''"></div>
+              </div>
+              <br />
               <div
-                v-for="(item, i) of machine"
-                @click="changeTxt(i)"
-                :key="i"
-                class="select_item"
-                :class="{ blue: changeColor == i }"
-                style="color:#000;"
+                v-show="dropdown"
+                class="contact_commit_input_select"
+                id="sel"
               >
-                {{ machine[i] }}
+                <div
+                  v-for="(item, i) of machine"
+                  @click="changeTxt(i)"
+                  :key="i"
+                  class="select_item"
+                  :class="{ blue: changeColor == i }"
+                  style="color:#000;"
+                >
+                  {{ machine[i] }}
+                </div>
               </div>
             </div>
           </div>
           <div class="contact_commit_input">
             <div class="input_name">需求数量</div>
-            <input placeholder="请填写需求数量…" /><br />
+            <input placeholder="请填写需求数量…" v-model="amount" /><br />
           </div>
         </form>
-        <div class="contact_commit_btn">
+        <div class="contact_commit_btn" @click="sendMessage">
           <div class="btn" @click="show = false">
             提交意愿
           </div>
@@ -73,9 +99,16 @@
 <script>
 //这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）
 //例如：import 《组件名称》 from '《组件路径》';
+import request from '@/utils/request.js'
 
 export default {
   //import引入的组件需要注入到对象中才能使用
+  props: {
+    type: {
+      // 可选字段，有默认值
+      default: ''
+    }
+  },
   components: {},
   data() {
     return {
@@ -87,7 +120,13 @@ export default {
       cityColor: false,
       target: 'btn1',
       visible: false,
-      dropdown: false
+      dropdown: false,
+      name: null,
+      phone: null,
+      amount: null,
+      equipment: null,
+      changeEquip: null,
+      provice: null
     }
   },
   //监听属性 类似于data概念
@@ -97,6 +136,61 @@ export default {
   methods: {
     open() {
       this.dropdown = !this.dropdown
+    },
+    changeTxt(index) {
+      var input4 = document.getElementsByClassName('input4')[0]
+      input4.value = this.machine[index]
+      this.changeColor = index
+      this.equipment = this.machine[index]
+    },
+    sendMessage() {
+      if (this.name === null) {
+        this.$toast({
+          message: '称呼不能为空'
+        })
+        return
+      }
+      if (this.phone === null) {
+        this.$toast({
+          message: '电话不能为空'
+        })
+        return
+      }
+      if (!/^1[3456789]\d{9}$/.test(this.phone)) {
+        this.$toast({
+          message: '电话号码格式错误'
+        })
+        return
+      }
+      if (this.equipment == '智能大滚筒炒菜机套机') {
+        this.changeEquip = 'BIG_BIZ_MACHINE'
+      } else if (this.equipment == '智能精炒一体机') {
+        this.changeEquip = 'SMALL_SMART'
+      } else if (this.equipment == '其他设备') {
+        this.changeEquip = 'OTHER'
+      }
+      let formData = {
+        who: this.name,
+        mobile: this.phone,
+        zone: this.provice,
+        deviceType: this.changeEquip,
+        howMany: this.amount
+      }
+      request({
+        url: '/outside/book',
+        method: 'post',
+        data: formData
+      })
+        .then(res => {
+          this.$toast({
+            message: '提交成功',
+            iconClass: 'icon icon-success'
+          })
+          window.console.log(res.data)
+        })
+        .catch(function(error) {
+          window.console.log(error)
+        })
     }
   },
   created() {},
@@ -115,6 +209,24 @@ export default {
   text-align: center;
   color: #fff;
   line-height: 1.88rem;
+}
+
+.btn_black,
+.btn_white {
+  width: 5.38rem;
+  height: 1.88rem;
+  background: black;
+  border-radius: 1.13rem;
+  border: 0.06rem solid black;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: white;
+  line-height: 1.88rem;
+}
+
+.btn_white {
+  background: white;
+  color: #000;
 }
 
 .dialog {
@@ -188,7 +300,7 @@ export default {
       height: 1.5rem;
       outline: none;
       font-size: 0.94rem;
-      color: rgba(204, 204, 204, 1);
+      color: rgba(0, 0, 0, 1);
       line-height: 1.31rem;
     }
     input::-webkit-input-placeholder {

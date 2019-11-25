@@ -22,9 +22,6 @@
                   item.updatedAt.slice(5, 7)
                 }}月{{ item.updatedAt.slice(8, 10) }}日
               </div>
-              <div class="time_up">
-                更新
-              </div>
             </div>
             <div class="title">{{ item.title }}</div>
           </div>
@@ -121,9 +118,12 @@ export default {
     },
     toDetail(row) {
       self.$router.push({
-        path: '/wap/newDetail'
+        path: '/wap/newDetail',
+        query: {
+          id: row.id
+        }
       })
-      localStorage.setItem('newDetail', JSON.stringify(row))
+      // localStorage.setItem('newDetail', JSON.stringify(row))
     }
   },
   created() {

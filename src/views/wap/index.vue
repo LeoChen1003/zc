@@ -1,6 +1,6 @@
 <!-- index -->
 <template>
-  <div class="wrapper">
+  <div class="wrapper wap_index">
     <div class="cell cell-1">
       <div class="title-1">优特智厨</div>
       <div class="title-2">人工智能时代的餐饮革命</div>
@@ -127,25 +127,35 @@
       </div>
       <div class="swiper">
         <div class="bg"></div>
-        <swiper :options="swiperOption">
-          <swiper-slide>
+        <swiper :options="swiperOption" ref="indexswiper">
+          <swiper-slide v-for="(item, index) in newList" :key="index">
             <div class="ph">
-              <div class="content"></div>
+              <div class="ph_img">
+                <img :src="item.image" alt="" />
+              </div>
+              <div class="ph_content">
+                <div class="ph_content_title">{{ item.title }}</div>
+                <div class="ph_content_bottom">
+                  <div class="time">
+                    {{ item.updatedAt.slice(0, 4) }}/{{
+                      item.updatedAt.slice(5, 7)
+                    }}/{{ item.updatedAt.slice(8, 10) }}
+                  </div>
+                  <div class="detail" @click="toDetail(item)">
+                    <div>
+                      查看详情
+                    </div>
+                    <svg-icon
+                      icon-class="wap_index_detail"
+                      style="width:0.88rem;height:0.88rem;"
+                    ></svg-icon>
+                  </div>
+                </div>
+              </div>
             </div>
           </swiper-slide>
-          <swiper-slide>
-            <div class="ph"></div>
-          </swiper-slide>
-          <swiper-slide>
-            <div class="ph"></div>
-          </swiper-slide>
-          <swiper-slide>
-            <div class="ph"></div>
-          </swiper-slide>
-          <swiper-slide>
-            <div class="ph"></div>
-          </swiper-slide>
-          <div class="swiper-pagination" slot="pagination"></div>
+          <div class="swiper-button-prev" slot="button-prev"></div>
+          <div class="swiper-button-next" slot="button-next"></div>
         </swiper>
       </div>
     </div>
@@ -186,8 +196,9 @@
 <script>
 // import { swiper, swiperSlide } from 'vue-awesome-swiper'
 /* eslint-disable no-alert, no-console*/
+import request from '@/utils/request.js'
 
-// let self
+let self
 export default {
   data() {
     return {
@@ -195,16 +206,30 @@ export default {
         slidesPerView: 'auto',
         centeredSlides: true,
         spaceBetween: 0,
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        },
+        on: {
+          slideChangeTransitionEnd: function() {
+            // 切换结束时，告诉我现在是第几个slide
+            self.curIndex = self.$refs.indexswiper.swiper.activeIndex
+          }
         }
-      }
+      },
+      curIndex: 0,
+      newList: []
     }
   },
   mounted() {
     window.addEventListener('scroll', this.handleScroll)
     this.$emit('setisBlack')
+    request({
+      url: '/outside/posts/top',
+      method: 'get'
+    }).then(res => {
+      self.newList = res.data.content
+    })
   },
   methods: {
     handleScroll() {
@@ -214,13 +239,22 @@ export default {
         this.$emit('setisWhite')
       }
     },
+    toDetail(row) {
+      self.$router.push({
+        path: '/wap/newDetail',
+        query: {
+          id: row.id
+        }
+      })
+      // localStorage.setItem('newDetail', JSON.stringify(row))
+    },
     toVideo() {
       this.$router.push('/wap/video')
       // window.open('http://cdn.withpush.cn/youtezhichu/result.mobile.mp4')
     }
   },
   created() {
-    // self = this
+    self = this
   }
 }
 </script>
@@ -511,8 +545,9 @@ export default {
 }
 
 .cell-7 {
+  height: 36.25rem;
   box-sizing: border-box;
-  padding: 2.5rem 0;
+  padding: 2.5rem 0 0 0;
   background: linear-gradient(
     177deg,
     rgba(231, 234, 241, 1) 0%,
@@ -522,6 +557,7 @@ export default {
     rgba(235, 237, 243, 1) 84%,
     rgba(223, 226, 235, 1) 100%
   );
+  overflow: hidden;
 
   .cell-header {
     box-sizing: border-box;
@@ -571,22 +607,68 @@ export default {
     position: absolute;
     left: 50%;
     margin-left: -9.375rem;
+    box-sizing: border-box;
   }
 
   .swiper-slide {
-    width: 60%;
+    width: 18.75rem;
     height: 18.75rem;
-    padding: 0 2rem !important;
+    margin-right: 1.19rem;
+    display: flex;
+    align-items: center;
   }
   .ph {
-    height: 18.75rem;
-    width: 100%;
+    width: 18.75rem;
+    height: 8.75rem;
+    background: rgba(231, 234, 241, 1);
+    border-radius: 0.25rem;
+    overflow: hidden;
+    display: flex;
 
-    .content {
-      // width: 18.75rem;
-      // height: 8.75rem;
-      // background: rgba(231, 234, 241, 1);
-      // border-radius: 0.25rem;
+    .ph_img {
+      width: 8.75rem;
+      height: 8.75rem;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .ph_content {
+      padding: 0.63rem;
+      box-sizing: border-box;
+      position: relative;
+
+      .ph_content_title {
+        font-size: 0.88rem;
+        font-weight: 600;
+        color: rgba(0, 0, 0, 1);
+        line-height: 1.25rem;
+      }
+
+      .ph_content_bottom {
+        position: absolute;
+        bottom: 0.81rem;
+        width: 8.74rem;
+        display: flex;
+        align-items: center;
+
+        .time {
+          font-size: 0.69rem;
+          font-family: Helvetica;
+          color: rgba(153, 153, 153, 1);
+          margin-right: 0.69rem;
+        }
+
+        .detail {
+          width: 100%;
+          font-size: 0.69rem;
+          color: rgba(51, 51, 51, 1);
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+      }
     }
   }
 }
@@ -655,5 +737,43 @@ export default {
       margin-bottom: 1.8rem;
     }
   }
+}
+</style>
+
+<style lang="scss">
+.wap_index .swiper-button-prev {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg height='36' viewBox='0 0 36 36' width='36' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Crect fill='none' height='36' rx='18' stroke='%23000' width='36'/%3E%3Cpath d='m13.5036403 25.5-1.5036403-1.3287142 6.181824-6.1577919-6.101354-6.1130039 1.3961554-1.40049 7.5233746 7.5117712z' fill='%230c0c0c' transform='matrix(-1 0 0 1 33 0)'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  left: 35%;
+  top: 118% !important;
+}
+
+.wap_index .swiper-button-next {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg height='36' viewBox='0 0 36 36' width='36' xmlns='http://www.w3.org/2000/svg'%3E%3Crect fill='none' height='36' rx='18' stroke='%23000' width='36'/%3E%3Cpath d='m16.5036403 25.5-1.5036403-1.3287142 6.181824-6.1577919-6.101354-6.1130039 1.3961554-1.40049 7.5233746 7.5117712z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  right: 35%;
+  top: 118% !important;
+}
+
+.wap_index .swiper-button-prev:focus,
+.wap_index .swiper-button-next:focus {
+  border: none;
+  outline-style: none;
+  box-shadow: none !important;
+}
+
+.wap_index .swiper-wrapper {
+  margin-top: 0rem;
+}
+
+.wap_index .swiper-wrapper,
+.wap_index .swiper-container {
+  overflow: visible;
+}
+
+.wap_index .swiper-container {
+  margin-left: 0.8rem;
 }
 </style>

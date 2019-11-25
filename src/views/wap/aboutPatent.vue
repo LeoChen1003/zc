@@ -6,7 +6,11 @@
     </div>
     <AboutChose :title="'发明专利'"></AboutChose>
     <div class="ab_content">
-      <svg-icon icon-class="about_patent"></svg-icon>
+      <svg-icon
+        icon-class="about_patent"
+        style="width: 15.13rem;
+    height: 94.38rem;"
+      ></svg-icon>
     </div>
   </div>
 </template>
@@ -68,5 +72,19 @@ export default {
 
 .ab_content {
   width: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(241, 233, 231, 1) 0%,
+    rgba(239, 232, 231, 1) 7%,
+    rgba(249, 247, 247, 1) 39%,
+    rgba(251, 248, 248, 1) 59%,
+    rgba(243, 237, 235, 1) 83%,
+    rgba(235, 226, 223, 1) 100%
+  );
+  padding: 1.5rem 0 2.5rem 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>

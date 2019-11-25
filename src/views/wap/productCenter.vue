@@ -10,7 +10,7 @@
         智能云菜谱 | 智能大滚筒炒菜机 | 中控任务管理 | 智能调料机 | 气压站
       </div>
       <div class="btn-box">
-        <div class="btn-1">立即预约</div>
+        <reservationBtn :type="'black'"></reservationBtn>
         <div class="btn-2">
           <div class="icon"></div>
           <div class="btn-text" @click="$router.push('/wap/proDetailGTGL')">
@@ -38,7 +38,7 @@
         </div>
       </div>
       <div class="btn-box">
-        <div class="btn-1">立即预约</div>
+        <reservationBtn :type="'white'"></reservationBtn>
         <div class="btn-2">
           <div class="icon"></div>
           <div class="btn-text" @click="$router.push('/wap/proDetailYTJGL')">
@@ -143,7 +143,12 @@
 </template>
 
 <script>
+import reservationBtn from './compontents/reservationBtn'
+
 export default {
+  components: {
+    reservationBtn
+  },
   data() {
     return {}
   },
