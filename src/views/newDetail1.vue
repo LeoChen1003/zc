@@ -28,6 +28,7 @@ import zcHeader from '@/components/zcHeader.vue';
 import zcFooter from '@/components/zcFooter.vue';
 import newHeader from '@/components/newHeader.vue';
 import '../styles/variables.scss';
+import request from '@/utils/request.js';
 export default {
     name: 'newDetail1',
     data(){
@@ -53,7 +54,13 @@ export default {
                 this.isShow = true;
             }
         }
-        this.info = JSON.parse(localStorage.getItem('newDetail1'));
+        let id = this.$route.query.id
+        request({
+            url: '/outside/post/' + id,
+            method: 'get'
+        }).then(res => {
+            this.info = res.data;
+        })
     }
 }
 </script>
