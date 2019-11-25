@@ -1,88 +1,87 @@
 <template>
-  <div class="whiteBack">
-    <div class="header headerW">
-      <div class="header_logo">
-        UTZC
-      </div>
-      <div class="header_navbar">
-        <span @click="product" class="productCenter" @mousemove="showPro" @mouseleave="hidePro">产品中心</span>
-        <span @click="newCenter">新闻中心</span> 
-        <span @click="coreAdvantage">核心优势</span>
-        <span @mousemove="show" @mouseleave="hide" @click="withUs">关于我们</span>
-      </div>
-      <div class="header_btn" @click="concat">
-        联系我们
-      </div>
-      <div class="show" @mousemove="show" @mouseleave="hide">
-        <p @click="intro">企业介绍</p>
-        <p @click="inven">专利发明</p>
-        <p @click="lab">实验室</p>
-      </div>
-      <div class="showPro" @mousemove="showPro" @mouseout="hidePro">
-        <div class="showPro_l">
-          <div class="showPro_l_btn1" @click="changeColor1">旗舰智厨产品</div>
-          <div class="showPro_l_btn2" @click="changeColor2">更多智厨产品</div>
-          <div class="showPro_l_btn3">其他智能产品</div>
-        </div>
-        <div class="showPro_line">
-          <div class="showPro_line_small"></div>
-        </div>
-        <div class="showPro_line1">
-          <div class="showPro_line_small"></div>
-        </div>
-        <div class="showPro_r1">
-          <div class="showPro_r1_cai" @click="cai">
-            <svg-icon icon-class="header_cai" class-name="icon"></svg-icon>
-            <p>智能一拖三炒菜机</p>
-            <p>旗舰</p>
-          </div>
-          <div class="showPro_r1_AIO" @click="aio">
-            <svg-icon icon-class="header_AIO" class-name="icon"></svg-icon>
-            <p>智能精炒一体机</p>
-            <p>旗舰</p>
-          </div>
-        </div>
-        <div class="showPro_r2">
-          <div class="d1">
-            <svg-icon icon-class="pingmianlu" class="icon3"></svg-icon>
-            <svg-icon icon-class="pingmianlu" class="icon3"></svg-icon>
-            <svg-icon icon-class="pingmianlu" class="icon3"></svg-icon>
-            <svg-icon icon-class="pingmianlu" class="icon3"></svg-icon>
-            <span class="sp1">智能多头平面炉</span>
-            <span class="sp2">智能多头平面炉</span>
-            <span class="sp3">智能多头平面炉</span>
-            <span class="sp4">智能多头平面炉</span>
-          </div>
-          <div class="d2">
-            <svg-icon icon-class="pingmianlu" class="icon3"></svg-icon>
-            <svg-icon icon-class="pingmianlu" class="icon3"></svg-icon>
-            <svg-icon icon-class="pingmianlu" class="icon3"></svg-icon>
-            <svg-icon icon-class="pingmianlu" class="icon3"></svg-icon>
-            <span class="sp5">智能多头平面炉</span>
-            <span class="sp6">智能多头平面炉</span>
-            <span class="sp7">智能多头平面炉</span>
-            <span class="sp8">智能多头平面炉</span>
-          </div>
-          <div class="d3 d3_r">
-            <svg-icon icon-class="pingmianlu" class="icon3"></svg-icon>
-            <svg-icon icon-class="pingmianlu" class="icon3"></svg-icon>
-            <span class="sp9">智能多头平面炉</span>
-            <span class="sp10">智能多头平面炉</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
+	<div class="whiteBack">
+		<div class="header headerW">
+		<div class="header_logo">
+			UTZC
+		</div>
+		<div class="header_navbar">
+			<span @click="product" class="productCenter" @mousemove="showPro" @mouseleave="hidePro" :class="tab1==0?'bold':'nor'">产品中心</span>
+			<span @click="newCenter" :class="tab2==0?'bold':'nor'">新闻中心</span> 
+			<span @click="coreAdvantage" :class="tab3==0?'bold':'nor'">核心优势</span>
+			<span @mousemove="show" @mouseleave="hide" @click="withUs" :class="tab4==0?'bold':'nor'">关于我们</span>
+		</div>
+		<div class="header_btn" @click="concat">
+			联系我们
+		</div>
+		<div class="show" @mousemove="show" @mouseleave="hide">
+			<p @click="intro">企业介绍</p>
+			<p @click="inven">专利发明</p>
+			<p @click="lab">实验室</p>
+		</div>
+		<div class="showPro" @mousemove="showPro" @mouseout="hidePro">
+			<div class="showPro_l">
+			<div class="showPro_l_btn1" @click="changeColor1">旗舰智厨产品</div>
+			<div class="showPro_l_btn2" @click="changeColor2">更多智厨产品</div>
+			<div class="showPro_l_btn3">其他智能产品</div>
+			</div>
+			<div class="showPro_line">
+			<div class="showPro_line_small"></div>
+			</div>
+			<div class="showPro_line1">
+			<div class="showPro_line_small"></div>
+			</div>
+			<div class="showPro_r1">
+			<div class="showPro_r1_cai" @click="cai">
+				<svg-icon icon-class="header_cai" class-name="icon"></svg-icon>
+				<p>智能一拖三炒菜机</p>
+				<p>旗舰</p>
+			</div>
+			<div class="showPro_r1_AIO" @click="aio">
+				<svg-icon icon-class="header_AIO" class-name="icon"></svg-icon>
+				<p>智能精炒一体机</p>
+				<p>旗舰</p>
+			</div>
+			</div>
+			<div class="showPro_r2">
+			<div class="d1">
+				<svg-icon icon-class="pingmianlu" class="icon3"></svg-icon>
+				<svg-icon icon-class="pingmianlu" class="icon3"></svg-icon>
+				<svg-icon icon-class="pingmianlu" class="icon3"></svg-icon>
+				<svg-icon icon-class="pingmianlu" class="icon3"></svg-icon>
+				<span class="sp1">智能多头平面炉</span>
+				<span class="sp2">智能多头平面炉</span>
+				<span class="sp3">智能多头平面炉</span>
+				<span class="sp4">智能多头平面炉</span>
+			</div>
+			<div class="d2">
+				<svg-icon icon-class="pingmianlu" class="icon3"></svg-icon>
+				<svg-icon icon-class="pingmianlu" class="icon3"></svg-icon>
+				<svg-icon icon-class="pingmianlu" class="icon3"></svg-icon>
+				<svg-icon icon-class="pingmianlu" class="icon3"></svg-icon>
+				<span class="sp5">智能多头平面炉</span>
+				<span class="sp6">智能多头平面炉</span>
+				<span class="sp7">智能多头平面炉</span>
+				<span class="sp8">智能多头平面炉</span>
+			</div>
+			<div class="d3 d3_r">
+				<svg-icon icon-class="pingmianlu" class="icon3"></svg-icon>
+				<svg-icon icon-class="pingmianlu" class="icon3"></svg-icon>
+				<span class="sp9">智能多头平面炉</span>
+				<span class="sp10">智能多头平面炉</span>
+			</div>
+			</div>
+		</div>
+		</div>
+	</div>
 </template>
 
 <script>
+/* eslint-disable */
 export default {
-  props: {
-  },
+  props: ["tab1","tab2","tab3","tab4"],
   data () {
     return {
-      tab: 0
+	  tab: 0
     }
   },
   components:{
@@ -90,90 +89,89 @@ export default {
   },
   methods:{
     intro(){
-      this.tab = 0;
-      this.$emit("changeTab",this.tab);
+		this.tab = 0;
+		this.$emit("changeTab",this.tab);
     },
     inven(){
-      this.tab = 1;
-      this.$emit("changeTab",this.tab);
+		this.tab = 1;
+		this.$emit("changeTab",this.tab);
     },
     lab(){
-      this.tab = 2;
-      this.$emit("changeTab",this.tab);
+		this.tab = 2;
+		this.$emit("changeTab",this.tab);
     },
     show(){
-      var show = document.getElementsByClassName("show")[0];
-      show.style.display = "block";
+		var show = document.getElementsByClassName("show")[0];
+		show.style.display = "block";
     },
     hide(){
-      var show = document.getElementsByClassName("show")[0];
-      show.style.display = "none";
+		var show = document.getElementsByClassName("show")[0];
+		show.style.display = "none";
     },
     product(){
-      this.$router.push("/product");
+      	this.$router.push("/product");
     },
     newCenter(){
-      this.$router.push("/new");
+      	this.$router.push("/new");
     },
     coreAdvantage(){
-      this.$router.push("/coreAdvantage");
+      	this.$router.push("/coreAdvantage");
     },
     withUs(){
-      this.$router.push("/with");
+      	this.$router.push("/with");
     },
     concat(){
-      this.$router.push("/contact");
+      	this.$router.push("/contact");
     },
     showPro(){
-      var showPro = document.getElementsByClassName("showPro")[0];
-      showPro.style.display = "block";
+		var showPro = document.getElementsByClassName("showPro")[0];
+		showPro.style.display = "block";
     },
     hidePro(){
-      var showPro = document.getElementsByClassName("showPro")[0];
-      showPro.style.display = "none";
+		var showPro = document.getElementsByClassName("showPro")[0];
+		showPro.style.display = "none";
     },
     changeColor1(){
-      var btn2 = document.getElementsByClassName("showPro_l_btn2")[0];
-      btn2.style.backgroundColor = "#fff";
-      btn2.style.color = "#000";
-      var right1  = document.getElementsByClassName("showPro_r1")[0];
-      right1.style.display = "block";
-      var right2 = document.getElementsByClassName("showPro_r2")[0];
-      right2.style.display = "none";
-      var btn1 = document.getElementsByClassName("showPro_l_btn1")[0];
-      btn1.style.backgroundColor = "#000";
-      btn1.style.color = "#fff";
-      var line1 = document.getElementsByClassName("showPro_line")[0];
-      var line2 = document.getElementsByClassName("showPro_line1")[0];
-      line1.style.display = "block";
-      line2.style.display = "none";
+		var btn2 = document.getElementsByClassName("showPro_l_btn2")[0];
+		btn2.style.backgroundColor = "#fff";
+		btn2.style.color = "#000";
+		var right1  = document.getElementsByClassName("showPro_r1")[0];
+		right1.style.display = "block";
+		var right2 = document.getElementsByClassName("showPro_r2")[0];
+		right2.style.display = "none";
+		var btn1 = document.getElementsByClassName("showPro_l_btn1")[0];
+		btn1.style.backgroundColor = "#000";
+		btn1.style.color = "#fff";
+		var line1 = document.getElementsByClassName("showPro_line")[0];
+		var line2 = document.getElementsByClassName("showPro_line1")[0];
+		line1.style.display = "block";
+		line2.style.display = "none";
     },
     changeColor2(){
-      var btn2 = document.getElementsByClassName("showPro_l_btn2")[0];
-      var right1  = document.getElementsByClassName("showPro_r1")[0];
-      right1.style.display = "none";
-      btn2.style.backgroundColor = "#000";
-      btn2.style.color = "#fff";
-      var right2 = document.getElementsByClassName("showPro_r2")[0];
-      right2.style.display = "block";
-      var btn1 = document.getElementsByClassName("showPro_l_btn1")[0];
-      btn1.style.backgroundColor = "#fff";
-      btn1.style.color = "#000";
-      var line1 = document.getElementsByClassName("showPro_line")[0];
-      var line2 = document.getElementsByClassName("showPro_line1")[0];
-      line1.style.display = "none";
-      line2.style.display = "block";
+		var btn2 = document.getElementsByClassName("showPro_l_btn2")[0];
+		var right1  = document.getElementsByClassName("showPro_r1")[0];
+		right1.style.display = "none";
+		btn2.style.backgroundColor = "#000";
+		btn2.style.color = "#fff";
+		var right2 = document.getElementsByClassName("showPro_r2")[0];
+		right2.style.display = "block";
+		var btn1 = document.getElementsByClassName("showPro_l_btn1")[0];
+		btn1.style.backgroundColor = "#fff";
+		btn1.style.color = "#000";
+		var line1 = document.getElementsByClassName("showPro_line")[0];
+		var line2 = document.getElementsByClassName("showPro_line1")[0];
+		line1.style.display = "none";
+		line2.style.display = "block";
     },
     cai(){
-      this.$router.push("/product/proCai");
+      	this.$router.push("/product/proCai");
     },
     aio(){
-      this.$router.push("/product/proAIO");
+      	this.$router.push("/product/proAIO");
     }
   },
   mounted(){
-    // this.$emit("changeTab",this.tab);
-    // window.console.log(this.tab);
+    
   }
 }
 </script>
@@ -233,6 +231,7 @@ export default {
     width: 90rem;
     height: 10.75rem;
     display: none;
+	min-width: 89rem;
     position: absolute;
     margin-top: 6.94rem;
     margin-left: -23.12rem;
@@ -257,6 +256,7 @@ export default {
   }
   .showPro{
     display: none;
+	min-width: 89rem;
     position: absolute;
     width: 100%;
     // height: 16.87rem;
@@ -504,6 +504,7 @@ export default {
   .show{
     width: 90rem;
     height: 10.75rem;
+	min-width: 89rem;
     display: none;
     position: absolute;
     margin-top: 6.94rem;
@@ -531,6 +532,7 @@ export default {
     display: none;
     position: absolute;
     width: 100%;
+	min-width: 89rem;
     // height: 16.87rem;
     background:linear-gradient(180deg,rgba(240,240,240,1) 0%,rgba(255,255,255,1) 12%,rgba(255,255,255,1) 100%);
     top: 3rem;
@@ -723,5 +725,11 @@ export default {
 }
 .blackBack1{
   transition: all 2s;
+}
+.nor{
+	font-weight: normal;
+}
+.bold{
+	font-weight: bolder;
 }
 </style>

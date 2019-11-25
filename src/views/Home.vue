@@ -130,8 +130,16 @@
           <span>了解更多</span>
         </div>
       </div>
+      <div class="carousel">
+        <div :class="photo?'pic1':hide?'pic':'pic3'"></div>
+        <div :class="photo1?'pic2':show?'pic1':show4?'pic':'pic3'"></div>
+        <div :class="photo2?'pic3':show1?'pic2':show5?'pic1':show6?'pic':'pic3'"></div>
+        <div :class="photo3?'pic4':show2?'pic2':show3?'pic1':'pic'"></div>
+      </div>
+      <div class="btn_prev" @click="prev"></div>
+      <div class="btn_next" @click="next"></div>
       <div class="home_news_circle">
-        <homeSwiper></homeSwiper>
+        <!-- <homeSwiper></homeSwiper> -->
       </div>
     </div>
     <div class="home_img">
@@ -166,14 +174,30 @@
 // @ is an alias to /src
 import zcHeader from '@/components/zcHeader.vue'
 import zcFooter from '@/components/zcFooter.vue'
-import homeSwiper from '@/components/homeSwiper.vue'
+// import homeSwiper from '@/components/homeSwiper.vue'
 import '../styles/variables.scss'
 export default {
   name: 'home',
   components: {
     zcFooter,
-    zcHeader,
-    homeSwiper
+    zcHeader
+  },
+  data(){
+    return{
+      num: 0,
+      photo: true,
+      photo1: true,
+      photo2: true,
+      photo3: true,
+      hide: true,
+      show:true,
+      show1: true,
+      show2: true,
+      show3:true,
+      show4:true,
+      show5:true,
+      show6:true
+    }
   },
   mounted(){
     var hder  = document.getElementsByClassName("whiteBack")[0];
@@ -207,6 +231,31 @@ export default {
     },
     AIO(){
       this.$router.push("/product/proAIO");
+    },
+    prev(){
+      this.num--;
+      if(this.num==3){
+        
+      }
+    },
+    next(){
+      this.num++;
+      if(this.num==1){
+        this.photo = false;
+        this.photo1 = false;
+        this.show = true;
+        this.photo2 = false;
+      }else if(this.num==2){
+        this.hide = false;
+        this.show = false;
+        this.show1 = false;
+        this.photo3 = false;
+      }else if(this.num == 3){
+        this.show1 = false;
+        this.show4 = false;
+        this.show5 = false;
+        this.show2 = false;
+      }
     }
   }
 }
@@ -383,6 +432,36 @@ export default {
         }
       }
     }
+    .carousel{
+      position: relative;
+      float: left;
+      width: 100%;
+      height: 20rem;
+      overflow: hidden;
+      top: 16.8rem;
+      .pic,.pic1,.pic2,.pic3,.pic4{
+        position: absolute;
+        width: 42.5rem;
+        height: 100%;
+        background-color: #E7EAF1;
+        border-radius: 10px;
+      }
+      .pic{
+        margin-left: -26%;
+      }
+      .pic1{
+        margin-left: 26%;
+      }
+      .pic2{
+        margin-left: 76%;
+      }
+      .pic3{
+        margin-left: 126%;
+      }
+      .pic4{
+        margin-left: 176%;
+      }
+    }
     .home_news_circle {
       width: 35.63rem;
       height: 35.63rem;
@@ -390,6 +469,21 @@ export default {
       border: 0.06rem solid rgba(44, 198, 192, 1);
       border-radius: 50%;
       margin: 9rem auto;
+    }
+    .btn_prev,.btn_next{
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      position: absolute;
+      background-color: #000;
+      cursor: pointer;
+      margin-top: 45rem;
+    }
+    .btn_prev{
+      
+    }
+    .btn_next{
+      margin-left:50px;
     }
   }
   .home_img {

@@ -40,11 +40,13 @@ export default {
         isFirst: true,
         isLast: false,
       swiperOption: {
+        spaceBetween: 30,
+        freeMode: true,
         notNextTick: true,//notNextTick是一个组件自有属性，如果notNextTick设置为true，组件则不会通过NextTick来实例化swiper，也就意味着你可以在第一时间获取到swiper对象，假如你需要刚加载遍使用获取swiper对象来做什么事，那么这个属性一定要是true
         grabCursor: true,//鼠标覆盖Swiper时指针会变成手掌形状，拖动时指针会变成抓手形状
         setWrapperSize: true,//Swiper使用flexbox布局(display: flex)，开启这个设定会在Wrapper上添加等于slides相加的宽或高，在对flexbox布局的支持不是很好的浏览器中可能需要用到。
         autoHeight: true,//自动高度。设置为true时，wrapper和container会随着当前slide的高度而发生变化
-        slidesPerView: 1,//设置slider容器能够同时显示的slides数量(carousel模式)。可以设置为数字（可为小数，小数不可loop），或者 'auto'则自动根据slides的宽度来设定数量。loop模式下如果设置为'auto'还需要设置另外一个参数loopedSlides。
+        slidesPerView: 3,//设置slider容器能够同时显示的slides数量(carousel模式)。可以设置为数字（可为小数，小数不可loop），或者 'auto'则自动根据slides的宽度来设定数量。loop模式下如果设置为'auto'还需要设置另外一个参数loopedSlides。
         resistanceRatio: 0,//抵抗率。边缘抵抗力的大小比例。值越小抵抗越大越难将slide拖离边缘，0时完全无法拖离。本业务需要
         observeParents: true,
         //滑动之后回调函数
@@ -104,33 +106,35 @@ export default {
 		}
 	}
 	.swiper-container{
-		width: 65.7rem;
-		margin-left: -3.4rem;
+		width: 100vw;
+    position: relative;
 		margin-top: 7.8rem;
+    margin-left: -77.8%;
 		.swiper-wrapper{
 			width: auto !important;
 		}
 	}
-	.swiper-slide,.swiper-slide-active,.swiper-slide-prev,.swiper-slide-next{
+  .swiper-slide{
+    width: 42.5rem !important;
+    position: absolute;
+    left: 60%;
+  }
+	.swiper-slide-active,.swiper-slide-prev,.swiper-slide-next{
+    display: block;
+    position: absolute;
 		width: 42.5rem !important;
 		background-color: #E7EAF1;
 		border-radius: 0.62rem;
 	}
-	.swiper-slide-active:nth-of-type(2){
-		margin-left: 30%;
-	}
-	.swiper-slide-active:nth-of-type(3){
-		margin-left: 66%;
-	}
-	.swiper-slide-active:nth-of-type(4){
-		margin-left: 101%;
-	}
-	.swiper-slide-prev{
-		margin-right: 3.5rem;
-	}
-	.swiper-slide-next{
-		margin-left: 2.5rem;
-		display: block;
-	}
+  // .swiper-slide-prev{
+  //   left: -30%;
+  // }
+  .swiper-slide-active{
+    left: 60%;
+  }
+	// .swiper-slide-next{
+	// 	right: -21rem;
+	// 	display: block;
+	// }
 }
 </style>

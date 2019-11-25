@@ -1,6 +1,6 @@
 <template>
     <div class="core">
-        <zcHeader></zcHeader>
+        <zcHeader :tab3="tab"></zcHeader>
         <div class="core_syt">
             <div class="core_syt_cir">
                 <svg-icon icon-class="circle"></svg-icon>
@@ -96,6 +96,11 @@ import zcFooter from '@/components/zcFooter.vue'
 import '../styles/variables.scss';
 export default {
     name: "coreAdvan",
+    data(){
+        return {
+            tab:0
+        }
+    },
     components:{
         zcHeader,
         zcFooter
