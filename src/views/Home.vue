@@ -296,17 +296,20 @@ export default {
   height: 100%;
   width: 100%;
   position: relative;
-  .svg_up{
+
+  .svg_up {
     position: absolute;
     width: 0.87rem;
     height: 0.87rem;
     left: 63%;
     top: 59rem;
-    .svg{
+
+    .svg {
       width: 100%;
       height: 100%;
     }
   }
+
   .home_video {
     background: url('../assets/home/home_videoBg2x.png') no-repeat;
     background-size: 100% 100%;
@@ -315,25 +318,30 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
+
     .home_video_title {
       font-size: 3.13rem;
       font-weight: 600;
       color: #fff;
       margin-top: 12.5rem;
     }
+
     .home_video_p {
       font-size: 1.13rem;
       margin-top: 3rem;
       color: #ffffff;
     }
+
     .home_video_c {
       color: #fff;
       margin-top: 7.13rem;
       display: flex;
       align-items: center;
+
       span {
         margin-right: 3.5rem;
       }
+
       .home_video_c_btn {
         display: flex;
         align-items: center;
@@ -345,6 +353,7 @@ export default {
         border-radius: 50%;
         margin-right: 3.5rem;
         cursor: pointer;
+
         .home_video_c_btn_c {
           width: 0;
           height: 0;
@@ -354,6 +363,7 @@ export default {
         }
       }
     }
+
     .home_video_bottom {
       display: flex;
       justify-content: center;
@@ -363,6 +373,7 @@ export default {
       background: rgba(216, 216, 216, 0);
       border-radius: 1rem;
       border: 0.06rem solid rgba(255, 255, 255, 1);
+
       .home_video_bottom_c {
         width: 0.25rem;
         height: 0.25rem;
@@ -371,6 +382,7 @@ export default {
       }
     }
   }
+
   .home_data {
     display: flex;
     justify-content: space-between;
@@ -379,82 +391,96 @@ export default {
     width: 100%;
     height: 18.25rem;
     background: #000;
+
     .home_data_item {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       color: #fff;
+
       div:first-child {
         font-size: 1.25rem;
         font-weight: 600;
         margin-bottom: 0.5rem;
       }
+
       div:nth-child(2),
       div:nth-child(4) {
         font-size: 0.88rem;
         font-weight: 400;
         color: #999;
       }
+
       div:nth-child(3) {
         font-size: 0.88rem;
         font-weight: 600;
         color: #fff;
-        span{
+
+        span {
           font-size: 3.75rem;
         }
       }
     }
   }
+
   .home_product_more {
     display: flex;
-    .home_product_more_item1,.home_product_more_item2 {
+
+    .home_product_more_item1, .home_product_more_item2 {
       display: flex;
       align-items: center;
       flex-direction: column;
       width: 50%;
       height: 26.25rem;
+
       div:first-child {
         font-size: 1.5rem;
         font-weight: 600;
         color: #000;
         margin-top: 5rem;
       }
+
       div:nth-child(2) {
         font-size: 0.88rem;
         color: #333;
         margin-top: 0.38rem;
       }
     }
+
     .home_product_more_item1 {
       background: url('../assets/home/zcEquipment.jpg');
       background-position: 46% 0;
     }
+
     .home_product_more_item2 {
       background: url('../assets/home/otherPro.jpg');
       background-position: 46% 0;
     }
   }
+
   .home_news {
     height: 55rem;
     overflow: hidden;
     background: linear-gradient(
-      177deg,
-      rgba(231, 234, 241, 1) 0%,
-      rgba(231, 232, 239, 1) 6%,
-      rgba(247, 248, 249, 1) 39%,
-      rgba(255, 255, 255, 1) 60%,
-      rgba(235, 237, 243, 1) 84%,
-      rgba(223, 226, 235, 1) 100%
+                    177deg,
+                    rgba(231, 234, 241, 1) 0%,
+                    rgba(231, 232, 239, 1) 6%,
+                    rgba(247, 248, 249, 1) 39%,
+                    rgba(255, 255, 255, 1) 60%,
+                    rgba(235, 237, 243, 1) 84%,
+                    rgba(223, 226, 235, 1) 100%
     );
     padding: 6.63rem 0;
     position: relative;
+
     .home_news_header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 0 15%;
       box-sizing: border-box;
+
       .home_news_header_title {
         div:nth-child(2) {
           font-size: 2rem;
@@ -463,36 +489,44 @@ export default {
         }
       }
     }
-    .carousel{
+
+    .carousel {
       position: relative;
       float: left;
       width: 100%;
       height: 20rem;
       overflow: hidden;
       top: 16.8rem;
-      .pic,.pic1,.pic2,.pic3,.pic4{
+
+      .pic, .pic1, .pic2, .pic3, .pic4 {
         position: absolute;
         width: 42.5rem;
         height: 100%;
         background-color: #E7EAF1;
         border-radius: 10px;
       }
-      .pic{
+
+      .pic {
         margin-left: -26%;
       }
-      .pic1{
+
+      .pic1 {
         margin-left: 26%;
       }
-      .pic2{
+
+      .pic2 {
         margin-left: 76%;
       }
-      .pic3{
+
+      .pic3 {
         margin-left: 126%;
       }
-      .pic4{
+
+      .pic4 {
         margin-left: 176%;
       }
     }
+
     .home_news_circle {
       width: 35.63rem;
       height: 35.63rem;
@@ -500,6 +534,7 @@ export default {
       border: 0.06rem solid rgba(44, 198, 192, 1);
       border-radius: 50%;
       margin: 9rem auto;
+
       .swiper-slide {
         width: 42.5rem;
         height: 35.63rem;
@@ -507,6 +542,7 @@ export default {
         display: flex;
         align-items: center;
       }
+
       .ph {
         width: 42.5rem;
         height: 20rem;
@@ -515,234 +551,268 @@ export default {
         overflow: hidden;
         display: flex;
 
-    .ph_img {
-      width: 20rem;
-      height: 20rem;
-      img {
-        width: 100%;
-        background-size: 100% 100%;
-      }
-    }
-          .btn_prev,
-          .btn_next {
-              width: 20px;
-              height: 20px;
-              border-radius: 50%;
-              position: absolute;
-              background-color: #000;
-              cursor: pointer;
-              margin-top: 45rem;
+        .ph_img {
+          width: 20rem;
+          height: 20rem;
+
+          img {
+            width: 100%;
+            background-size: 100% 100%;
+          }
+        }
+
+        .btn_prev,
+        .btn_next {
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          position: absolute;
+          background-color: #000;
+          cursor: pointer;
+          margin-top: 45rem;
+        }
+
+        .ph_content {
+          padding: 2rem;
+          width: 22.5rem;
+          box-sizing: border-box;
+          position: relative;
+
+          .ph_content_short {
+            margin-top: 1rem;
+            font-size: 0.88rem;
+            color: #333;
+            line-height: 1.5rem;
           }
 
-    .ph_content {
-      padding: 2rem;
-      width: 22.5rem;
-      box-sizing: border-box;
-      position: relative;
-      .ph_content_short{
-        margin-top: 1rem;
-        font-size: 0.88rem;
-        color: #333;
-        line-height: 1.5rem;
-      }
-      .ph_content_title {
-        font-size: 1.5rem;
-        font-weight: 600;
-        color: rgba(0, 0, 0, 1);
-        line-height: 1.7rem;
+          .ph_content_title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: rgba(0, 0, 0, 1);
+            line-height: 1.7rem;
+          }
+
+          .ph_content_bottom {
+            position: absolute;
+            bottom: 1.88rem;
+            width: 100%;
+            display: flex;
+            align-items: center;
+
+            .time {
+              font-size: 0.88rem;
+              font-family: Helvetica;
+              color: rgba(153, 153, 153, 1);
+              margin-right: 7.25rem;
+            }
+
+            .detail {
+              font-size: 0.88rem;
+              color: rgba(51, 51, 51, 1);
+              display: flex;
+              font-weight: 400;
+              align-items: center;
+
+              div {
+                margin-right: 0.75rem;
+                cursor: pointer;
+              }
+
+              .svg {
+                width: 2.25rem;
+                height: 2.25rem;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+
+        .btn_next {
+          margin-left: 50px;
+        }
       }
 
-      .ph_content_bottom {
-        position: absolute;
-        bottom: 1.88rem;
-        width: 100%;
+      .home_img {
+        height: 12.8rem;
+        background: url('../assets/home/aboutUs.jpg');
+        background-size: cover;
+      }
+
+      .home_about {
         display: flex;
-        align-items: center;
+        justify-content: space-between;
+        height: 46.88rem;
+        background: #fff;
+        padding: 6.63rem 15%;
+        box-sizing: border-box;
 
-        .time {
-          font-size: 0.88rem;
-          font-family: Helvetica;
-          color: rgba(153, 153, 153, 1);
-          margin-right: 7.25rem;
+        .home_about_left {
+          div:nth-child(2) {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 2.5rem;
+          }
         }
 
-        .detail {
-          font-size: 0.88rem;
-          color: rgba(51, 51, 51, 1);
-          display: flex;
-          font-weight: 400;
-          align-items: center;
-          div{
-            margin-right: 0.75rem;
-            cursor: pointer;
-          }
-          .svg{
-            width: 2.25rem;
-            height: 2.25rem;
-            cursor: pointer;
+        .home_about_right {
+          width: 39.31rem;
+
+          .home_about_right_item {
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
+
+            div:nth-child(1) {
+              font-size: 1.75rem;
+              font-weight: 600;
+              color: #000;
+              margin-bottom: 1.5rem;
+            }
+
+            div:nth-child(2) {
+              font-size: 1rem;
+              font-weight: 400;
+              color: #333;
+            }
           }
         }
       }
-    }
-    .btn_next{
-      margin-left:50px;
-    }
-  }
-  .home_img {
-    height: 12.8rem;
-    background: url('../assets/home/aboutUs.jpg');
-    background-size: cover;
-  }
-  .home_about {
-    display: flex;
-    justify-content: space-between;
-    height: 46.88rem;
-    background: #fff;
-    padding: 6.63rem 15%;
-    box-sizing: border-box;
-    .home_about_left {
-      div:nth-child(2) {
-        font-size: 2rem;
-        font-weight: 600;
-        color: #000;
-        margin-bottom: 2.5rem;
-      }
-    }
-    .home_about_right {
-      width: 39.31rem;
-      .home_about_right_item {
-        margin-top: 1.5rem;
-        margin-bottom: 2rem;
-        div:nth-child(1) {
-          font-size: 1.75rem;
-          font-weight: 600;
+
+      .home_pro_one {
+        height: 40.62rem;
+        background: url('../assets/home/drumFryingMachine.jpg');
+        background-size: 90rem 55.62rem;
+        padding: 7.5rem 14%;
+
+        .home_pro_one_title {
+          font-size: 2.5rem;
           color: #000;
-          margin-bottom: 1.5rem;
+          margin-bottom: 1rem;
+          cursor: pointer;
         }
-        div:nth-child(2) {
-          font-size: 1rem;
-          font-weight: 400;
+
+        .home_pro_one_tip {
+          font-size: 0.88rem;
           color: #333;
+          margin-bottom: 2.5rem;
+
+          .home_pro_one_tip_line {
+            color: #ccc;
+            margin-right: 1.25rem;
+            margin-left: 1.25rem;
+          }
+        }
+
+        .home_pro_one_detail {
+          display: flex;
+
+          .home_pro_one_item {
+            margin-right: 3rem;
+
+            div {
+              width: 4.5rem;
+              height: 1.5rem;
+              background: rgba(8, 8, 8, 1);
+              border-radius: 0.19rem;
+              font-size: 0.88rem;
+              font-weight: 600;
+              line-height: 1.5rem;
+              color: #fff;
+              text-align: center;
+              margin-bottom: 0.88rem;
+            }
+
+            p {
+              font-size: 0.88rem;
+              font-weight: 400;
+              color: #333;
+              width: 12.25rem;
+            }
+          }
+        }
+      }
+
+      .home_pro_two {
+        height: 41.77rem;
+        background: #000;
+        background-image: url('../assets/home/AIO.png');
+        background-size: 90rem 55.62rem;
+        padding: 13.88rem 0 0 56%;
+
+        .home_pro_two_top {
+          font-size: 0.88rem;
+          color: #999;
+          margin-bottom: 0.5rem;
+        }
+
+        .home_pro_two_title {
+          font-size: 2.5rem;
+          font-weight: 600;
+          color: #fff;
+          margin-bottom: 2rem;
+          cursor: pointer;
+        }
+
+        .home_pro_two_item {
+          div {
+            width: 4.5rem;
+            height: 1.5rem;
+            background: rgba(255, 255, 255, 1);
+            border-radius: 0.19rem;
+            margin-bottom: 0.75rem;
+            color: #080808;
+            text-align: center;
+            line-height: 1.5rem;
+            font-size: 0.88rem;
+          }
+
+          p {
+            font-size: 0.88rem;
+            color: #999;
+            margin-bottom: 1.5rem;
+          }
         }
       }
     }
-  }
-  .home_pro_one {
-    height: 40.62rem;
-    background: url('../assets/home/drumFryingMachine.jpg');
-    background-size: 90rem 55.62rem;
-    padding: 7.5rem 14%;
-    .home_pro_one_title {
-      font-size: 2.5rem;
-      color: #000;
-      margin-bottom: 1rem;
+
+    // 了解更多
+    .home_about_left_btn,
+    .home_news_header_btn {
+      width: 6.75rem;
+      height: 2.25rem;
+      background: rgba(255, 255, 255, 0);
+      border-radius: 1.13rem;
+      border: 0.06rem solid rgba(0, 0, 0, 1);
+      text-align: center;
+      line-height: 2.25rem;
       cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .svg_size {
+        width: 1.13rem;
+        height: 1.13rem;
+      }
+
+      span {
+        margin-left: 0.3rem;
+      }
     }
-    .home_pro_one_tip {
+
+    .home_title_top {
       font-size: 0.88rem;
       color: #333;
-      margin-bottom: 2.5rem;
-      .home_pro_one_tip_line {
-        color: #ccc;
-        margin-right: 1.25rem;
-        margin-left: 1.25rem;
-      }
-    }
-    .home_pro_one_detail {
-      display: flex;
-      .home_pro_one_item {
-        margin-right: 3rem;
-        div {
-          width: 4.5rem;
-          height: 1.5rem;
-          background: rgba(8, 8, 8, 1);
-          border-radius: 0.19rem;
-          font-size: 0.88rem;
-          font-weight: 600;
-          line-height: 1.5rem;
-          color: #fff;
-          text-align: center;
-          margin-bottom: 0.88rem;
-        }
-        p {
-          font-size: 0.88rem;
-          font-weight: 400;
-          color: #333;
-          width: 12.25rem;
-        }
-      }
-    }
-  }
-  .home_pro_two {
-    height: 41.77rem;
-    background: #000;
-    background-image: url('../assets/home/AIO.png');
-    background-size: 90rem 55.62rem;
-    padding: 13.88rem 0 0 56%;
-    .home_pro_two_top {
-      font-size: 0.88rem;
-      color: #999;
       margin-bottom: 0.5rem;
     }
-    .home_pro_two_title {
-      font-size: 2.5rem;
-      font-weight: 600;
-      color: #fff;
-      margin-bottom: 2rem;
-      cursor: pointer;
-    }
-    .home_pro_two_item {
-      div {
-        width: 4.5rem;
-        height: 1.5rem;
-        background: rgba(255, 255, 255, 1);
-        border-radius: 0.19rem;
-        margin-bottom: 0.75rem;
-        color: #080808;
-        text-align: center;
-        line-height: 1.5rem;
-        font-size: 0.88rem;
-      }
-      p {
-        font-size: 0.88rem;
-        color: #999;
-        margin-bottom: 1.5rem;
-      }
+
+    .home_line {
+      border-bottom: 1px solid #2cc6c0;
+      width: 1.5rem;
+      height: 0.13rem;
+      margin-bottom: 2.5rem;
     }
   }
-}
-// 了解更多
-.home_about_left_btn,
-.home_news_header_btn {
-  width: 6.75rem;
-  height: 2.25rem;
-  background: rgba(255, 255, 255, 0);
-  border-radius: 1.13rem;
-  border: 0.06rem solid rgba(0, 0, 0, 1);
-  text-align: center;
-  line-height: 2.25rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  .svg_size {
-    width: 1.13rem;
-    height: 1.13rem;
-  }
-  span {
-    margin-left: 0.3rem;
-  }
-}
-.home_title_top {
-  font-size: 0.88rem;
-  color: #333;
-  margin-bottom: 0.5rem;
-}
-.home_line {
-  border-bottom: 1px solid #2cc6c0;
-  width: 1.5rem;
-  height: 0.13rem;
-  margin-bottom: 2.5rem;
 }
 </style>
 
