@@ -408,7 +408,7 @@
             <div class="detail">
               <div class="title">全方位安装调试</div>
               <div class="text">
-                XXXXXXXXXXXXXXXXX
+                专业团队现场安装调试，保障设备高效运行
               </div>
             </div>
             <div class="bg bg_3"></div>
@@ -429,7 +429,7 @@
             <div class="detail">
               <div class="title">全方位配件维修</div>
               <div class="text">
-                XXXXXXXXXXXX
+                专业设备零部件维修服务，提供贴心保障
               </div>
             </div>
             <div class="bg bg_6"></div>
