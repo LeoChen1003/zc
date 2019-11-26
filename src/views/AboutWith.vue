@@ -1,6 +1,6 @@
 <template>
     <div class="about">
-        <zcHeader v-on:changeTab="receive" :tab4="tab1"></zcHeader>
+        <zcHeader v-on:changeTab="receive" :tab4="tab1" :isWhite="true"></zcHeader>
         <div class="about_pic">
             <p>优特智厨</p>
             <p>关于我们</p>

@@ -1,6 +1,6 @@
 <template>
     <div class="newDel">
-        <zcHeader></zcHeader>
+        <zcHeader :isWhite="true"></zcHeader>
         <newHeader></newHeader>
         <div class="newDel_con">
             <div class="newDel_con_hd">

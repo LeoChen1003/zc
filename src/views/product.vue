@@ -1,12 +1,12 @@
 <template>
     <div class="product">
-        <zcHeader :tab1="tab"></zcHeader>
+        <zcHeader :tab1="tab" :isWhite="true"></zcHeader>
         <div class="product_header">
-            <p @click="jump(0)">旗舰智厨产品</p>
-            <p>···</p>
-            <p @click="jump(1)">更多智厨产品</p>
-            <p>···</p>
-            <p @click="jump(2)">其他智能产品</p>
+            <span @click="jump(0)" :class="isActive1?'bolder':'normal'">旗舰智厨产品</span>
+            <span>···</span>
+            <span @click="jump(1)" :class="isActive2?'bolder':'normal'">更多智厨产品</span>
+            <span>···</span>
+            <span @click="jump(2)" :class="isActive3?'bolder':'normal'">其他智能产品</span>
         </div>
         <div class="pro">
             <div class="pro_title1 d_jump" ref="pro1">
@@ -14,37 +14,37 @@
             </div>
             <div class="pro_con1">
                 <div class="pro_con1_l">
-                    <div class="pro_con1_l_tag">旗舰</div>
-                    <p class="p1">“星级大厨”带你体验舌尖上的美味</p>
-                    <p class="p2" @click="proCai">智能一拖三炒菜机</p>
-                    <p class="p3">智能一拖三炒菜机是高度集成优特智厨智能厨电技术，在行业率先实现自动喷投多种类型调料，同时满足中餐标准化和规模化的烹饪要求的智能炒菜设备。</p>
+                    <div class="pro_con1_l_tag" @click="proCai">旗舰</div>
+                    <span class="p1" @click="proCai">“星级大厨”带你体验舌尖上的美味</span>
+                    <span class="p2" @click="proCai">智能一拖三炒菜机</span>
+                    <span class="p3" @click="proCai">智能一拖三炒菜机是高度集成优特智厨智能厨电技术，在行业率先实现自动喷投多种类型调料，同时满足中餐标准化和规模化的烹饪要求的智能炒菜设备。</span>
                     <div class="pro_con1_l_btn">
                         <div class="pro_con1_l_btn_1" @click="buy">立即预约</div>
                         <div class="pro_con1_l_btn_2" @click="proCai">
-                            <img src="../assets/product/addBlack.png" alt="">
+                            <svg-icon icon-class="add" class-name="svg"></svg-icon>
                             <p>了解更多</p>
                         </div>
                     </div>
                 </div>
-                <div class="pro_con1_r">
+                <div class="pro_con1_r" @click="proCai">
                     <img src="../assets/product/ODT.jpg" alt="">
                 </div>
             </div>
             <div class="pro_con2">
                 <div class="pro_con2_l">
                     <div class="pro_con2_l_tag">旗舰</div>
-                    <p class="p1">超级烹饪专家</p>
-                    <p class="p2" @click="proAIO">智能精炒一体机</p>
-                    <p class="p3">智能精炒一体机是优特智厨为小份精炒用户量身打造的“超级烹饪专家”。既能通过对温度、调料的智能控制实现菜品口味100%的复刻，又能实现人人都能当大厨的愿望。</p>
+                    <span class="p1" @click="proAIO">超级烹饪专家</span>
+                    <span class="p2" @click="proAIO">智能精炒一体机</span>
+                    <span class="p3" @click="proAIO">智能精炒一体机是优特智厨为小份精炒用户量身打造的“超级烹饪专家”。既能通过对温度、调料的智能控制实现菜品口味100%的复刻，又能实现人人都能当大厨的愿望。</span>
                     <div class="pro_con2_l_btn">
                         <div class="pro_con2_l_btn_1" @click="buy">立即预约</div>
                         <div class="pro_con2_l_btn_2" @click="proAIO">
-                            <img src="../assets/product/addWhite.png" alt="">
+                            <svg-icon icon-class="white_add" class-name="svg"></svg-icon>
                             <p>了解更多</p>
                         </div>
                     </div>
                 </div>
-                <div class="pro_con2_r">
+                <div class="pro_con2_r" @click="proAIO">
                     <img src="../assets/product/AIO.jpg" alt="">
                 </div>
             </div>
@@ -471,7 +471,10 @@ export default {
     },
     data(){
         return {
-            tab: 0
+            tab: 0,
+            isActive1: true,
+            isActive2: false,
+            isActive3: false
         }
     },
     methods:{
@@ -521,6 +524,21 @@ export default {
                     document.documentElement.scrollTop = total;
                 }
             }
+            if(i==0){
+                this.isActive1 = true;
+                this.isActive2 = false;
+                this.isActive3 = false;
+                window.console.log(1);
+            }else if(i==1){
+                this.isActive1 = false;
+                this.isActive2 = true;
+                this.isActive3 = false;
+                window.console.log(this);
+            }else{
+                this.isActive1 = false;
+                this.isActive2 = false;
+                this.isActive3 = true;
+            }
         }
     }
 }
@@ -540,9 +558,6 @@ export default {
 </style>
 
 <style lang="scss" scoped>
-p{
-    font-family:PingFangSC-Semibold,PingFang SC;
-}
 .product {
     width: 100%;
     height: 100%;
@@ -556,21 +571,25 @@ p{
         align-items: center;
         position: fixed;
         z-index: 1;
-        p{
+        span{
             float: left;
             color: #333333;
             font-size:0.75rem;
         }
-        p:first-child{
-            font-weight: 600;
+        span:first-child{
             cursor: pointer;
         }
-        p:nth-child(3),p:nth-child(5){
-            font-weight: 400;
+        span:nth-child(3),span:nth-child(5){
             cursor: pointer;
         }
-        p:not(:first-child){
+        span:not(:first-child){
             margin-left: 1rem;
+        }
+        .normal{
+            font-weight: 400;
+        }
+        .bolder{
+            font-weight: 600;
         }
     }
     .pro{
@@ -622,9 +641,11 @@ p{
                 font-size: 0.875rem;
                 font-weight: 600;
             }
-            p{
+            span{
+                display: block;
                 position: absolute;
                 left: 12%;
+                cursor: pointer;
             }
             .p1{
                 top: 6rem;
@@ -639,7 +660,7 @@ p{
                 width:16rem;
                 height:2.81rem;
                 font-size:2rem;
-                font-weight:600;
+                font-weight:400;
                 cursor: pointer;
                 color:rgba(0,0,0,1);
             }
@@ -649,6 +670,7 @@ p{
                 height:3.38rem;
                 font-size:0.87rem;
                 font-weight:400;
+                line-height: 1.5rem;
                 color:#333333;
             }
             .pro_con1_l_btn{
@@ -677,20 +699,25 @@ p{
                     margin-left: 5%;
                     border: 2px solid #000;
                     border-radius: 21px;
-                    img{
+                    .svg{
+                        width: 1.13rem;
+                        height: 1.13rem;
                         margin-left: 12%;
-                        margin-top: 0.75rem;
+                        margin-top: 0.6rem;
                     }
                     p{
                         font-weight: 600;
                         font-size: 1rem;
                         margin-left: 51%;
                         margin-top: -1.48rem;
+                        position: absolute;
+                        left: 12%;
                     }
                 }
             }
         }
         .pro_con1_r{
+            cursor: pointer;
             width: 47%;
             img{
                 width: 100%;
@@ -723,10 +750,12 @@ p{
                 font-size: 0.875rem;
                 font-weight: 600;
             }
-            p{
+            span{
+                display: block;
                 position: absolute;
                 left: 12%;
                 background: #242426;
+                cursor: pointer;
             }
             .p1{
                 top: 6rem;
@@ -737,7 +766,7 @@ p{
             .p2{
                 top: 7.75rem;
                 font-size:2rem;
-                font-weight:600;
+                font-weight:400;
                 color:#fff;
                 cursor: pointer;
             }
@@ -747,6 +776,7 @@ p{
                 height:3.38rem;
                 font-size:0.87rem;
                 font-weight:400;
+                line-height: 1.5rem;
                 color:#888;
             }
             .pro_con2_l_btn{
@@ -775,9 +805,11 @@ p{
                     margin-left: 6%;
                     border: 2px solid #fff;
                     border-radius: 21px;
-                    img{
-                        margin-left: 12%;
-                        margin-top: 0.75rem;
+                    .svg{
+                        width: 1.13rem;
+                        height: 1.13rem;
+                        margin-left: 11%;
+                        margin-top: 0.6rem;
                     }
                     p{
                         font-weight: 600;
@@ -785,11 +817,14 @@ p{
                         margin-left: 52%;
                         margin-top: -1.48rem;
                         color: #fff;
+                        position: absolute;
+                        left: 12%;
                     }
                 }
             }
         }
         .pro_con2_r{
+            cursor: pointer;
             width: 47%;
             img{
                 width: 100%;

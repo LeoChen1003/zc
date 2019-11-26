@@ -1,6 +1,6 @@
 <template>
     <div class="contact">
-        <zcHeader></zcHeader>
+        <zcHeader :isWhite="true"></zcHeader>
         <div class="contact_hd">
             <p>联系我们</p>
         </div>
@@ -261,9 +261,6 @@ export default {
 <style lang="scss" scoped>
 .hide{
     display: none;
-}
-p{
-    font-family:PingFangSC-Semibold,PingFang SC;
 }
 .contact{
     width: 100%;

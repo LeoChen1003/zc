@@ -60,9 +60,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    p{
-        font-family: PingFangSC-Semibold,PingFang SC;
-    }
     .os{
         background: #000;
         width: 100%;
@@ -162,6 +159,7 @@ export default {
                         margin-top: 1.44rem;
                         font-size: 1rem;
                         font-weight: 400;
+                        line-height: 2rem;
                     }
                 }
                 .os_con_cen1_r{
@@ -197,6 +195,7 @@ export default {
                         margin-top: 1.44rem;
                         font-size: 1rem;
                         font-weight: 400;
+                        line-height: 2rem;
                     }
                 }
             }
@@ -222,6 +221,7 @@ export default {
                         margin-top: 1.44rem;
                         font-size: 1rem;
                         font-weight: 400;
+                        line-height: 2rem;
                     }
                 }
                 .os_con_cen3_r{

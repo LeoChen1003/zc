@@ -48,9 +48,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-p{
-    font-family: PingFangSC-Regular,PingFang SC;
-}
 .mach{
     background-color: #000;
     width: 100%;
@@ -81,6 +78,7 @@ p{
                 font-weight:400;
                 color:rgba(255,255,255,1);
                 margin: 0.5rem auto 0;
+                line-height: 2rem;
             }
         }
         .mach_con_cen1{
@@ -110,6 +108,7 @@ p{
                     color:#333333;
                     margin-left: 4.68rem;
                     margin-top: 1.44rem;
+                    line-height: 2rem;
                 }
             }
         }
@@ -140,6 +139,7 @@ p{
                     color:#333333;
                     margin-left: 6.25rem;
                     margin-top: 1.44rem;
+                    line-height: 2rem;
                 }
             }
         }

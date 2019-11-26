@@ -1,6 +1,6 @@
 <template>
     <div class="aio">
-        <zcHeader></zcHeader>
+        <zcHeader :isWhite="isWhite"></zcHeader>
         <div class="aio_hd">
             <p>智能精炒一体机</p>
             <router-link to="/product/proAIO">概览</router-link>
@@ -18,8 +18,7 @@
             <div class="aio_con2_d1">
                 <p>更丰富</p>
                 <p>高级定制菜谱</p>
-                <span>1000</span>
-                <span>道</span>
+                <div><span>1000</span> 道</div>
                 <p>海量星级菜谱涵盖 8 大菜系</p>
                 <div>
                     <svg-icon icon-class="up1" class-name="up1"></svg-icon>
@@ -28,22 +27,19 @@
             <div class="aio_con2_d2">
                 <p>更精准</p>
                 <p>复现星级厨师美味</p>
-                <span>99.9</span>
-                <span>%</span>
+                <div><span>99.9</span> %</div>
                 <p>精准投料智能控温还原菜肴</p>
             </div>
             <div class="aio_con2_d3">
                 <p>更前沿</p>
                 <p>智能人机交互提示</p>
-                <span>0</span>
-                <span>基础</span>
+                <div><span>0</span> 基础</div>
                 <p>无门槛复制大厨烹饪行为</p>
             </div>
             <div class="aio_con2_d4">
                 <p>更便捷</p>
                 <p>火力智能自动调节</p>
-                <span>11</span>
-                <span>级</span>
+                <div><span>11</span> 级</div>
                 <p>精准控温包租多种烹饪需求</p>
             </div>
         </div>
@@ -164,6 +160,11 @@ export default {
         zcHeader,
         zcFooter,
     },
+    data(){
+        return{
+            isWhite: false
+        }
+    },
     mounted(){
         var hder  = document.getElementsByClassName("whiteBack")[0];
         hder.className = "blackBack";
@@ -180,9 +181,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-p{
-    font-family:PingFangSC-Regular,PingFang SC;
-}
 .aio{
     width: 100%;
     overflow: hidden;
@@ -211,12 +209,12 @@ p{
         a:nth-child(2){
             width:1.5rem;
             font-weight:600;
-            margin-left: 9.62rem;
+            margin-left: 11%;
         }
         a:nth-child(3){
             width: 3rem;
             font-weight: 400;
-            margin-left: 1.5rem;
+            margin-left: 3%;
         }
     }
     .aio_con1{
@@ -269,39 +267,33 @@ p{
         justify-content: center;
         align-items: center;
         .aio_con2_d1,.aio_con2_d2,.aio_con2_d3,.aio_con2_d4{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             height: 10.25rem;
             p:first-child{
-                width:3.75rem;
                 font-size:1.25rem;
                 font-weight:600;
                 color:rgba(255,255,255,1);
                 margin: 0 auto;
             }
             p:nth-child(2){
-                width:5.29rem;
                 font-size:0.88rem;
                 font-weight:400;
                 color:rgba(153,153,153,1);
                 margin:0.5rem auto 0;
             }
-            span:nth-child(3){
-                display: inline-block;
-                width:8.1rem;
-                font-size:3.75rem;
-                font-weight:normal;
-                color:rgba(255,255,255,1);
-                margin-left: 1.5rem;
-                font-family:Oswald-Regular_Medium,Oswald;
+            div:nth-child(3) {
+                font-size: 0.88rem;
+                color: #fff;
+                span{
+                    font-family: Oswald-Regular_Medium,Oswald;
+                    font-size: 3.75rem;
+                    font-weight: 600;
+                }
             }
-            span:nth-child(4){
-                display: inline-block;
-                font-size:0.88rem;
-                font-weight:600;
-                color:rgba(255,255,255,1);
-                margin-left: 0.32rem;
-            }
-            p:nth-child(5){
-                width:10.8rem;
+            p:nth-child(4){
                 font-size:0.88rem;
                 font-weight:400;
                 color:rgba(153,153,153,1);
@@ -310,10 +302,10 @@ p{
         }
         .aio_con2_d1{
             position: relative;
-            div{
+            div:nth-child(5){
                 position: absolute;
                 top: 4.5rem;
-                right: 0;
+                right: 1.2rem;
                 width: 0.87rem;
                 height: 0.87rem;
                 .up1{
@@ -324,38 +316,12 @@ p{
         }
         .aio_con2_d2{
             margin-left: 4.62rem;
-            p:nth-child(2){
-                width: 7.2rem;
-            }
-            span:nth-child(3){
-                width: 7.5rem;
-            }
-            p:last-child{
-                width: 10.6rem;
-            }
         }
         .aio_con2_d3{
             margin-left: 5.43rem;
-            p:nth-child(2){
-                width: 7.5rem;
-            }
-            span:nth-child(3){
-                width: 2.1rem;
-                margin-left: 4rem;
-            }
-            p:last-child{
-                width: 9.68rem;
-            }
         }
         .aio_con2_d4{
             margin-left: 5.13rem;
-            p:nth-child(2){
-                width: 7.5rem;
-            }
-            span:nth-child(3){
-                width: 3.1rem;
-                margin-left: 3.5rem;
-            }
         }
     }
     .aio_con3{
@@ -423,7 +389,7 @@ p{
         .aio_con3_pic{
             position: absolute;
             width: 32.2%;
-            top: 32.19rem;
+            top: 28.5rem;
             right: 9%;
             img{
                 width: 100%;
@@ -723,7 +689,7 @@ p{
         .aio_con8_pic{
             position: absolute;
             bottom: -0.2rem;
-            left: 12rem;
+            left: 13.3%;
         }
     }
     .aio_con9{

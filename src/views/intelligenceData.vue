@@ -39,9 +39,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-p{
-    font-family: PingFangSC-Regular,PingFang SC;
-}
 .data{
     background-color: #000;
     width: 100%;
@@ -72,6 +69,7 @@ p{
                 font-weight:400;
                 color:rgba(255,255,255,1);
                 margin: 0.5rem auto 0;
+                line-height: 2rem;
             }
         }
         .data_con_cen1{
@@ -101,6 +99,7 @@ p{
                     color:#333333;
                     margin-top: 1.44rem;
                     margin-left: 7.19rem;
+                    line-height: 2rem;
                 }
             }
         }
@@ -131,6 +130,7 @@ p{
                     color:#333333;
                     margin-top: 1.44rem;
                     margin-left: 7.19rem;
+                    line-height: 2rem;
                 }
             }
         }

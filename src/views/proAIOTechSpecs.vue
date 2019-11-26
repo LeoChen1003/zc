@@ -1,7 +1,7 @@
 <template>
     <div class="aio_specs">
-        <zcHeader></zcHeader>
-        <div class="aio_specs_hd">
+        <zcHeader :isWhite="isWhite"></zcHeader>
+        <div class="aio_specs_hd" :class="isActive?'colorWhite':''">
             <p>智能精炒一体机</p>
             <router-link to="/product/proAIO">概览</router-link>
             <router-link to="/product/proAIO/proAIOTechSpecs">技术规格</router-link>
@@ -58,16 +58,24 @@ export default {
         zcHeader,
         zcFooter,
     },
+    data(){
+        return {
+            isActive:false,
+            isWhite:false
+        }
+    },
     mounted(){
-        var hder  = document.getElementsByClassName("whiteBack")[0];
+        var hder  = document.getElementsByClassName("blackBack")[0];
         hder.className = "blackBack";
-        window.onscroll = function(){
+        window.onscroll = ()=>{
             var top = document.documentElement.scrollTop;
             // window.console.log(document.documentElement.scrollTop);
             if(top>=774 && top<= 2066){
                 hder.className = "whiteBack";
+                this.isActive = true;
             }else{
                 hder.className = "blackBack";
+                this.isActive = false;
             }
         }
     },
@@ -80,13 +88,24 @@ export default {
 </script>
 
 <style lang="scss" scope>
-p{
-    font-family:PingFangSC-Semibold,PingFang SC;
-}
 .aio_specs{
     width: 100%;
     overflow: hidden;
+    .colorWhite{
+        background-color: #fff !important;
+        border-top: none !important;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        p:first-child{
+            color: #000 !important;
+        }
+        a:nth-child(2),a:nth-child(3){
+            color: #000 !important;
+        }
+    }
     .aio_specs_hd{
+        position: fixed;
+        z-index: 2;
+        transition: all 0.5s;
         width: 100%;
         height: 3rem;
         border-top: 1px solid #000;
@@ -111,12 +130,12 @@ p{
         a:nth-child(2){
             width:1.5rem;
             font-weight:400;
-            margin-left: 9.62rem;
+            margin-left: 11%;
         }
         a:nth-child(3){
             width: 3rem;
             font-weight: 600;
-            margin-left: 1.5rem;
+            margin-left: 3%;
         }
         .aio_specs_hd_btn{
             float: left;
@@ -129,7 +148,7 @@ p{
             color:rgba(255,255,255,1);
             line-height:2rem;
             text-align: center;
-            margin-left: 14.00rem;
+            margin-left: 16.4%;
             margin-top: 0.5rem;
             cursor: pointer;
         }

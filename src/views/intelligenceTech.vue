@@ -93,9 +93,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-p{
-    font-family:PingFangSC-Semibold,PingFang SC;
-}
 .tech{
     background-color: #000;
     width: 100%;
@@ -155,6 +152,7 @@ p{
                     color:#333333;
                     margin-left: 7.19rem;
                     margin-top: 1.44rem;
+                    line-height: 2rem;
                 }
             }
         }
@@ -185,6 +183,7 @@ p{
                     color:#333333;
                     margin-left: 7.19rem;
                     margin-top: 1.44rem;
+                    line-height: 2rem;
                 }
             }
         }

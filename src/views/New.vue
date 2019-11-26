@@ -1,6 +1,6 @@
 <template>
     <div class="new">
-        <zcHeader :tab2="tab"></zcHeader>
+        <zcHeader :tab2="tab" :isWhite="true"></zcHeader>
         <newHeader></newHeader>
         <div class="new_content">
             <div class="new_con_del" v-for="(messNew,index) of messNews" :key="index" @click="detail(messNew)">

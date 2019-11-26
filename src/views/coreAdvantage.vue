@@ -1,6 +1,6 @@
 <template>
     <div class="core">
-        <zcHeader :tab3="tab"></zcHeader>
+        <zcHeader :tab3="tab" :isWhite="isWhite"></zcHeader>
         <div class="core_syt">
             <div class="core_syt_cir">
                 <svg-icon icon-class="circle"></svg-icon>
@@ -26,7 +26,7 @@
                 </div>
             </div>
             <div class="core_syt_btn" @click="os">
-                <img src="../assets/coreAdvantage/iconAddBlack.png" alt="">
+                <svg-icon icon-class="add" class-name="svg"></svg-icon>
                 <p>了解更多</p>
             </div>
         </div>
@@ -36,7 +36,7 @@
             <p>简单易用的智能，背后藏着强大的科技</p>
             <img src="../assets/coreAdvantage/coreTech.png" alt="">
             <div class="core_tech_btn" @click="tech">
-                <img src="../assets/coreAdvantage/iconAddWhite.png" alt="">
+                <svg-icon icon-class="white_add" class-name="svg"></svg-icon>
                 <p>了解更多</p>
             </div>
         </div>
@@ -46,7 +46,7 @@
             <p>智能管理前厅、后厨数据，实现成本、利润全透明化</p>
             <img src="../assets/coreAdvantage/coreData.png" alt="">
             <div class="core_data_btn" @click="data">
-                <img src="../assets/coreAdvantage/iconAddBlack.png" alt="">
+                <svg-icon icon-class="add" class-name="svg"></svg-icon>
                 <p>了解更多</p>
             </div>
         </div>
@@ -72,7 +72,7 @@
                 </div>
             </div>
             <div class="core_mach_btn" @click="mach">
-                <img src="../assets/coreAdvantage/iconAddWhite.png" alt="">
+                <svg-icon icon-class="white_add" class-name="svg"></svg-icon>
                 <p>了解更多</p>
             </div>
         </div>
@@ -82,7 +82,7 @@
             <p>优特智厨科技有限公司配备专业的技术、研发、营销、运营及售后团队。让客户从了解产品第一刻起，即享受专业、周到的服务</p>
             <img src="../assets/coreAdvantage/coreService.png" alt="">
             <div class="core_star_btn" @click="star">
-                <img src="../assets/coreAdvantage/iconAddWhite.png" alt="">
+                <svg-icon icon-class="white_add" class-name="svg"></svg-icon>
                 <p>了解更多</p>
             </div>
         </div>
@@ -98,7 +98,8 @@ export default {
     name: "coreAdvan",
     data(){
         return {
-            tab:0
+            tab:0,
+            isWhite: true
         }
     },
     components:{
@@ -142,9 +143,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-p{
-    font-family: PingFangSC-Regular,PingFang SC;
-}
 .core{
     width: 100%;
     .core_syt{
@@ -213,7 +211,7 @@ p{
             box-sizing: border-box;
             line-height: 2.62rem;
             cursor: pointer;
-            img{
+            .svg{
                 float: left;
                 margin-top: 0.6rem;
                 margin-left: 1rem;
@@ -278,7 +276,7 @@ p{
             box-sizing: border-box;
             line-height: 2.62rem;
             cursor: pointer;
-            img{
+            .svg{
                 float: left;
                 margin-top: 0.6rem;
                 margin-left: 1rem;
@@ -341,7 +339,7 @@ p{
             box-sizing: border-box;
             line-height: 2.62rem;
             cursor: pointer;
-            img{
+            .svg{
                 float: left;
                 margin-top: 0.6rem;
                 margin-left: 1rem;
@@ -397,7 +395,7 @@ p{
             box-sizing: border-box;
             line-height: 2.62rem;
             cursor: pointer;
-            img{
+            .svg{
                 float: left;
                 margin-top: 0.6rem;
                 margin-left: 1rem;
@@ -505,7 +503,7 @@ p{
             box-sizing: border-box;
             line-height: 2.62rem;
             cursor: pointer;
-            img{
+            .svg{
                 float: left;
                 margin-top: 0.6rem;
                 margin-left: 1rem;

@@ -1,7 +1,7 @@
 <template>
     <div class="specs">
-        <zcHeader></zcHeader>
-        <div class="specs_hd">
+        <zcHeader :isWhite="isWhite"></zcHeader>
+        <div class="specs_hd" :class="isActive?'colorWhite':''">
             <p>智能大滚筒炒菜机套机</p>
             <router-link to="/product/proCai">概览</router-link>
             <router-link to="/product/proCai/proCaiTechSpecs">技术规格</router-link>
@@ -12,15 +12,15 @@
         <div class="specs_con1">
             <p>“星级大厨”带你体验舌尖上的美味</p>
             <p>智能一拖三炒菜机</p>
-            <span :class="curIndex == 0 ? 'activeColor' : ''">智能云菜谱</span>
+            <span :class="curIndex == 0 ? 'activeColor' : ''" @click="changeSwiper(0)">智能云菜谱</span>
             <span>|</span>
-            <span :class="curIndex == 1 ? 'activeColor' : ''">智能大滚筒炒菜机</span>
+            <span :class="curIndex == 1 ? 'activeColor' : ''" @click="changeSwiper(1)">智能大滚筒炒菜机</span>
             <span>|</span>
-            <span :class="curIndex == 2 ? 'activeColor' : ''">中控任务管理</span>
+            <span :class="curIndex == 2 ? 'activeColor' : ''" @click="changeSwiper(2)">中控任务管理</span>
             <span>|</span>
-            <span :class="curIndex == 3 ? 'activeColor' : ''">智能调料机</span>
+            <span :class="curIndex == 3 ? 'activeColor' : ''" @click="changeSwiper(3)">智能调料机</span>
             <span>|</span>
-            <span :class="curIndex == 4 ? 'activeColor' : ''">气压站</span>
+            <span :class="curIndex == 4 ? 'activeColor' : ''" @click="changeSwiper(4)">气压站</span>
             <div class="pro_swiper">
                 <swiper :options="swiperOption" ref="product_swiper">
                     <swiper-slide>
@@ -55,18 +55,18 @@
         <div class="specs_txt">
             <span>产品参数</span>
             <span>智能大滚筒炒菜机</span>
-            <p>型号：SYZNZ01A<br>
+            <span>型号：SYZNZ01A<br>
             额定功率：3000-18000W<br>
             电源电压：AC380V/50HZ<br>
             整机尺寸：1000*820*1100<br>
             屏幕尺寸：4.3寸<br>
             锅口径：390mm<br>
-            配置：水枪，菜盆</p>
+            配置：水枪，菜盆</span>
         </div>
         <div class="specs_txt">
             <span>产品参数</span>
             <span>中控任务管理</span>
-            <p>型号：K-QT156<br>
+            <span>型号：K-QT156<br>
                 额定功率：30W<br>
                 电源电压：AC220V<br>
                 尺寸：15.6英寸<br>
@@ -81,26 +81,26 @@
                 功率：30W<br>
                 接口类型：.LVDS<br>
                 工作温度：0℃ — 50℃ <br>
-                存储温度： -20℃ — 60℃</p>
+                存储温度： -20℃ — 60℃</span>
         </div>
         <div class="specs_txt">
             <span>产品参数</span>
             <span>智能调料机</span>
-            <p>型号：PLZJ-1A<br>
+            <span>型号：PLZJ-1A<br>
                 额定功率：2200W<br>
                 电源电压：AC220V/50HZ<br>
                 整机尺寸：950*600*1265mm<br>
                 屏幕尺寸：7寸电阻屏<br>
                 存储调料：生抽、老抽、陈醋、白醋、料酒、白酒、盐、糖、鸡精、淀粉<br>
-                配置：与补料柜和投料器组成配料系统</p>
+                配置：与补料柜和投料器组成配料系统</span>
         </div>
         <div class="specs_txt last">
             <span>产品参数</span>
             <span>气压站</span>
-            <p>型号：UCQYZ-1<br>
+            <span>型号：UCQYZ-1<br>
                 额定功率：3000W<br>
                 电源电压：AC380V/50HZ<br>
-                整机尺寸：900*800*1500mm</p>
+                整机尺寸：900*800*1500mm</span>
         </div>
         <zcFooter></zcFooter>
     </div>
@@ -115,7 +115,9 @@ export default {
     name: 'proCaiTechSpecs',
     data(){
         return {
+            isActive:false,
             curIndex:0,
+            isWhite:false,
             swiperOption: {
                 slidesPerView: 'auto',
                 centeredSlides: true,
@@ -137,21 +139,31 @@ export default {
         zcHeader,
         zcFooter,
     },
+    // created(){
+    //     this.isWhite = false;
+    // },
     mounted(){
-        var hder  = document.getElementsByClassName("whiteBack")[0];
+        var hder  = document.getElementsByClassName("blackBack")[0];
         hder.className = "blackBack";
-        window.onscroll = function(){
+        window.onscroll =()=>{
             var top = document.documentElement.scrollTop;
             if(top>=755){
                 hder.className = "whiteBack";
+                this.isActive = true;
+                window.console.log(this.isActive);
             }else{
                 hder.className = "blackBack";
+                this.isActive = false;
             }
         }
     },
     methods:{
         buy(){
             this.$router.push("/buyConsult");
+        },
+        changeSwiper(index) {
+            self.curIndex = index
+            self.$refs.product_swiper.swiper.slideTo(index)
         }
     },
     created() {
@@ -161,19 +173,31 @@ export default {
 </script>
 
 <style lang="scss">
-p{
-    font-family:PingFangSC-Semibold,PingFang SC;
-}
 .specs{
     width: 100%;
     overflow: hidden;
+    .colorWhite{
+        background-color: #fff !important;
+        border-top: none !important;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        p:first-child{
+            color: #000 !important;
+        }
+        a:nth-child(2),a:nth-child(3){
+            color: #000 !important;
+        }
+    }
     .specs_hd{
+        transition: all 0.5s;
         width: 100%;
         height: 3rem;
         border-top: 1px solid #000;
         background-color: #000;
+        position: fixed;
+        z-index:2;
         p:first-child{
             float: left;
+            display: block;
             width:8.75rem;
             height:1.25rem;
             font-size:0.87rem;
@@ -192,12 +216,12 @@ p{
         a:nth-child(2){
             width:1.5rem;
             font-weight:400;
-            margin-left: 9.62rem;
+            margin-left: 11%;
         }
         a:nth-child(3){
             width: 3rem;
             font-weight: 600;
-            margin-left: 1.5rem;
+            margin-left: 3%;
         }
         .specs_hd_btn{
             float: left;
@@ -210,7 +234,7 @@ p{
             color:rgba(255,255,255,1);
             line-height:2rem;
             text-align: center;
-            margin-left: 15.00rem;
+            margin-left: 16.4%;
             margin-top: 0.5rem;
             cursor: pointer;
         }
@@ -241,6 +265,7 @@ p{
             color:rgba(255,255,255,1);
             margin-top: 0.5rem;
             margin-left: 21%;
+            margin-bottom: 1rem;
         }
         span{
             height:1.25rem;
@@ -248,7 +273,9 @@ p{
             font-weight:400;
             color:rgba(133,133,133,1);
             line-height:1.25rem;
-            margin-top: 1rem;
+        }
+        span:nth-child(2n+1){
+            cursor: pointer;
         }
         span:first-of-type{
             margin-left: 21%;
@@ -292,7 +319,6 @@ p{
         span{
             display: inline-block;
             font-size:1.25rem;
-            font-family:PingFangSC-Semibold,PingFang SC;
             font-weight:600;
             color:rgba(51,51,51,1);
             margin-top: 5rem;
@@ -300,11 +326,12 @@ p{
         span:nth-child(2){
             margin-left: 10.5rem;
         }
-        p{
+        span:nth-child(3){
+            display: block;
             width:12.07rem;
             font-size:1rem;
             font-weight:400;
-            color:rgba(51,51,51,1);
+            color:#333;
             line-height:2rem;
             margin-left: 15.5rem;
             margin-top: 1.38rem;
@@ -313,7 +340,7 @@ p{
     .last{
         border-bottom: 1px solid #ECECEC;
         margin-bottom: 5rem;
-        p{
+        span:nth-child(3){
             margin-bottom: 4.81rem;
         }
     }

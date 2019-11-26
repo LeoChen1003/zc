@@ -1,6 +1,6 @@
 <template>
     <div class="cai">
-        <zcHeader></zcHeader>
+        <zcHeader :isWhite="isWhite"></zcHeader>
         <div class="cai_hd">
             <p>智能大滚筒炒菜机套机</p>
             <p>概览</p>
@@ -21,31 +21,25 @@
             <div class="cai_con2_data1">
                 <p>更高效</p>
                 <p>后厨员工提效 :</p>
-                <span>300</span>
-                <span>%</span>
+                <div><span>300</span> %</div>
                 <p>1 个小工可以替代 3 位大厨</p>
             </div>
             <div class="cai_con2_data2">
                 <p>更专研</p>
                 <p>历史研发投入：</p>
-                <span>400</span>
-                <span>万元</span>
+                <div><span>400</span> 万元<svg-icon icon-class="up" class-name="up"></svg-icon></div>
                 <p>12年持续研发创新</p>
-                <svg-icon icon-class="up" class-name="up"></svg-icon>
             </div>
             <div class="cai_con2_data3">
                 <p>更丰富</p>
                 <p>云菜谱数量 :</p>
-                <span>1000</span>
-                <span>道</span>
+                <div><span>1000</span> 道<svg-icon icon-class="up" class-name="up"></svg-icon></div>
                 <p>1 台设备拥有 20 名大厨的手艺</p>
-                <svg-icon icon-class="up" class-name="up"></svg-icon>
             </div>
             <div class="cai_con2_data4">
                 <p>更标准</p>
                 <p>菜肴口味还原度 :</p>
-                <span>99.9</span>
-                <span>%</span>
+                <div><span>99.9</span> %</div>
                 <p>精准投料智能控温还原菜肴</p>
             </div>
         </div>
@@ -195,6 +189,11 @@ export default {
         zcHeader,
         zcFooter,
     },
+    data(){
+        return{
+            isWhite:true
+        }
+    },
     mounted(){
         var hder  = document.getElementsByClassName("whiteBack")[0];
         window.onscroll = function(){
@@ -219,9 +218,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-p{
-    font-family:PingFangSC-Regular,PingFang SC;
-}
 .cai{
     width: 100%;
     .cai_hd{
@@ -248,12 +244,12 @@ p{
         p:nth-child(2){
             width:1.5rem;
             font-weight:600;
-            margin-left: 9.62rem;
+            margin-left: 11%;
         }
         a:last-child{
             width: 3rem;
             font-weight: 400;
-            margin-left: 1.5rem;
+            margin-left: 3%;
         }
     }
     .cai_con1{
@@ -307,11 +303,12 @@ p{
             border:1px solid rgba(0,0,0,1);
             margin: 30.31rem auto 0;
             div{
-                width: 0.5rem;
-                height: 0.5rem;
+                width: 0.25rem;
+                height: 0.25rem;
                 background-color: #000;
-                margin-left: 0.5rem;
-                margin-top: 0.5rem;
+                margin:0 auto;
+                margin-top: 0.4rem;
+                border-radius: 50%;
             }
         }
     }
@@ -322,7 +319,13 @@ p{
         display: flex;
         justify-content: center;
         align-items: center;
+        // padding: 0 22.25rem;
+        // box-sizing: border-box;
         .cai_con2_data1,.cai_con2_data2,.cai_con2_data3,.cai_con2_data4{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             p:first-child{
                 width:3.75rem;
                 height:1.75rem;
@@ -337,128 +340,42 @@ p{
                 color:#333;
                 margin-top: 0.5rem;
             }
-            span:nth-child(3){
-                height:5.57rem;
-                font-size:3.75rem;
-                font-family:Oswald-Regular,Oswald;
-                font-weight:400;
-                color:rgba(0,0,0,1);
-                margin-left: -1.6rem;
+            div:nth-child(3) {
+                font-size: 0.88rem;
+                color: #000;
+                span{
+                    font-family: mFont;
+                    font-size: 3.75rem;
+                    font-weight: normal;
+                }
             }
-            span:nth-child(4){
-                height:1.25rem;
-                font-size:0.88rem;
-                font-family:PingFangSC-Semibold,PingFang SC;
-                font-weight:600;
-                color:rgba(0,0,0,1);
+            p:last-child{
+                color: #333;
             }
         }
         .cai_con2_data1{
-            margin-left: 2rem;
-            height: 10.25rem;
-            width: 10.5rem;
-            p:nth-child(2){
-                width: 5.82rem;
-                margin-left: -1rem;
-            }
-            span:nth-child(3){
-                width: 5.69rem;
-            }
-            span:nth-child(4){
-                width:0.88rem;
-            }
-            p:nth-child(5){
-                width:10.7rem;
-                height:1.25rem;
-                font-size:0.88rem;
-                font-weight:400;
-                color:#333;
-                margin-left: -2.5rem;
-            }
+            margin-right: 6.63rem;
         }
         .cai_con2_data2{
-            margin-left: 6.63rem;
-            width: 7.25rem;
-            height: 10.25rem;
+            margin-right: 5.81rem;
             position: relative;
-            p:nth-child(2){
-                width: 6.41rem;
-                margin-left: -1rem;
-            }
-            span:nth-child(3){
-                width: 5.75rem;
-            }
-            span:nth-child(4){
-                width:1.75rem;
-            }
-            p:nth-child(5){
-                width:7.09rem;
-                height:1.25rem;
-                font-size:0.88rem;
-                font-weight:400;
-                color:#333;
-                margin-left: -1.5rem;
-            }
             .up{
                 position: absolute;
                 width: 0.88rem;
                 height: 0.88rem;
                 top: 5.31rem;
-                left: 5.31rem;
+                left: 6.31rem;
             }
         }
         .cai_con2_data3{
-            margin-left: 5.81rem;
-            width: 11.94rem;
-            height: 10.25rem;
+            margin-right: 4rem;
             position: relative;
-            p:nth-child(2){
-                width: 5rem;
-                margin-left: -0.5rem;
-            }
-            span:nth-child(3){
-                width: 7.32rem;
-            }
-            span:nth-child(4){
-                width:0.88rem;
-            }
-            p:nth-child(5){
-                width:12rem;
-                height:1.25rem;
-                font-size:0.88rem;
-                font-weight:400;
-                color:#333;
-                margin-left: -2.5rem;
-            }
             .up{
                 position: absolute;
                 width: 0.88rem;
                 height: 0.88rem;
                 top: 5.31rem;
-                left: 6.8rem;
-            }
-        }
-        .cai_con2_data4{
-            margin-left: 4rem;
-            width: 10.5rem;
-            height: 10.25rem;
-            p:nth-child(2){
-                width: 6.69rem;
-                margin-left: -1rem;
-            }
-            span:nth-child(3){
-                width: 6.38rem;
-            }
-            span:nth-child(4){
-                width:0.88rem;
-            }
-            p:nth-child(5){
-                width:10.6rem;
-                height:1.25rem;
-                font-size:0.88rem;
-                font-weight:400;
-                color:#333;
-                margin-left: -2.5rem;
+                left: 10.3rem;
             }
         }
     }
@@ -664,7 +581,7 @@ p{
             font-weight:400;
             color:rgba(136,136,136,1);
             line-height:2rem;
-            margin-left: 19rem;
+            margin-left: 21.3%;
             margin-top: 0.5rem;
         }
         .cai_con5_pic{
@@ -731,7 +648,7 @@ p{
             }
         }
         .cai_con6_txt2{
-            left:32.62rem;
+            left:43%;
         }
     }
     .cai_con7{
@@ -858,6 +775,7 @@ p{
             color:rgba(136,136,136,1);
             margin-left: 21.3%;
             margin-top: 2rem;
+            line-height: 2rem;
         }
         .cai_con8_d1,.cai_con8_d2{
             width: 10rem;
