@@ -184,6 +184,7 @@ export default {
     .new_item_left {
       width: 6.31rem;
       height: 3.5rem;
+      min-width: 6.31rem;
       border-radius: 0.5rem;
       overflow: hidden;
       margin-right: 0.69rem;

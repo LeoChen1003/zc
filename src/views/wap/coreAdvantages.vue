@@ -197,8 +197,8 @@
       </div>
     </div>
     <!-- 了解更多 -->
-    <transition name="fade">
-      <div>
+    <div>
+      <transition name="fade">
         <div
           class="model"
           v-if="modelXT || modelJS || modelGK || modelPJ || modelFW"
@@ -210,6 +210,8 @@
             modelFW = false
           "
         ></div>
+      </transition>
+      <transition name="fade">
         <div class="dialog" v-if="modelXT">
           <div class="xt_more">
             <div @click="modelXT = false">
@@ -442,8 +444,8 @@
             <div class="bg bg_7"></div>
           </div>
         </div>
-      </div>
-    </transition>
+      </transition>
+    </div>
   </div>
 </template>
 
@@ -468,39 +470,38 @@ export default {
   computed: {},
   //监控data中的数据变化
   watch: {
-    $route(){
-      self.modelXT=false
-      self.modelJS=false
-      self.modelGK=false
-      self.modelPJ=false
-      self.modelFW=false      
+    $route() {
+      self.modelXT = false
+      self.modelJS = false
+      self.modelGK = false
+      self.modelPJ = false
+      self.modelFW = false
       let type = self.$route.query.type
-    window.console.log(type == 'modelXT')
-    switch (type) {
-      case 'modelXT':
-        self.modelXT = true
-        break
-      case 'modelJS':
-        self.modelJS = true
-        break
-      case 'modelGK':
-        self.modelGK = true
-        break
-      case 'modelPJ':
-        self.modelPJ = true
-        break
-      case 'modelFW':
-        self.modelFW = true
-        break
-      default:
-        break
-    }
+      window.console.log(type == 'modelXT')
+      switch (type) {
+        case 'modelXT':
+          self.modelXT = true
+          break
+        case 'modelJS':
+          self.modelJS = true
+          break
+        case 'modelGK':
+          self.modelGK = true
+          break
+        case 'modelPJ':
+          self.modelPJ = true
+          break
+        case 'modelFW':
+          self.modelFW = true
+          break
+        default:
+          break
+      }
     }
   },
   methods: {},
   created() {
     self = this
-    
   },
   mounted() {}
 }
@@ -855,6 +856,7 @@ export default {
   top: 3rem;
   height: calc(100vh - 3rem);
   background: rgba(0, 0, 0, 0.9);
+  opacity: 1;
 }
 
 .dialog {
@@ -868,7 +870,7 @@ export default {
   box-sizing: border-box;
   top: 3rem;
   left: 1.88rem;
-
+  opacity: 1;
   .detail_1 {
     height: 10.88rem;
 

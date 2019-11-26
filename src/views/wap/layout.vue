@@ -261,13 +261,13 @@ export default {
   background: #000000;
   position: fixed;
   top: 0;
-  z-index: 999;
+  z-index: 15;
   display: flex;
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
   padding: 0 1rem;
-  transition: all 0.4s;
+  transition: all 0.5s;
 
   .icon {
     width: 2rem;

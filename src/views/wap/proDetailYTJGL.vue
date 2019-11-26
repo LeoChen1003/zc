@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <GTHeader
-      :type="'gl'"
+      :type="type"
       :name="'智能精炒一体机'"
       :glUrl="'/wap/proDetailYTJGL'"
       :jsUrl="'/wap/proDetailYTJJS'"
@@ -194,20 +194,38 @@ import GTHeader from './compontents/GTHeader'
 import reservationBtn from './compontents/reservationBtn'
 /* eslint-disable no-alert, no-console*/
 
+let self
 export default {
   //import引入的组件需要注入到对象中才能使用
   components: { GTHeader, reservationBtn },
   data() {
-    return {}
+    return {
+      type: 'gl'
+    }
   },
   //监听属性 类似于data概念
   computed: {},
   //监控data中的数据变化
   watch: {},
-  methods: {},
-  created() {},
+  methods: {
+    handleScroll() {
+      console.log(document.documentElement.scrollTop)
+      if (document.documentElement.scrollTop > 276) {
+        self.type = 'js'
+      } else {
+        self.type = 'gl'
+      }
+    }
+  },
+  created() {
+    self = this
+  },
   mounted() {
+    window.addEventListener('scroll', this.handleScroll)
     this.$emit('setisBlack')
+  },
+  destroyed() {
+    window.removeEventListener('scroll', this.handleScroll)
   }
 }
 </script>

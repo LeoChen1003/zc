@@ -12,17 +12,35 @@
         <div class="top_title">“星级大厨”带你体验舌尖上的美味</div>
         <div class="title">智能大滚筒炒菜机套机</div>
         <div class="detail">
-          <span :class="curIndex == 0 ? 'activeColor' : ''">智能云菜谱</span>
+          <span
+            :class="curIndex == 0 ? 'activeColor' : ''"
+            @click="changeSwiper(0)"
+            >智能云菜谱</span
+          >
           <span>|</span>
-          <span :class="curIndex == 1 ? 'activeColor' : ''"
+          <span
+            :class="curIndex == 1 ? 'activeColor' : ''"
+            @click="changeSwiper(1)"
             >智能大滚筒炒菜机</span
           >
           <span>|</span>
-          <span :class="curIndex == 2 ? 'activeColor' : ''">中控任务管理</span>
+          <span
+            :class="curIndex == 2 ? 'activeColor' : ''"
+            @click="changeSwiper(2)"
+            >中控任务管理</span
+          >
           <span>|</span>
-          <span :class="curIndex == 3 ? 'activeColor' : ''">智能调料机</span>
+          <span
+            :class="curIndex == 3 ? 'activeColor' : ''"
+            @click="changeSwiper(3)"
+            >智能调料机</span
+          >
           <span>|</span>
-          <span :class="curIndex == 4 ? 'activeColor' : ''">气压站</span>
+          <span
+            :class="curIndex == 4 ? 'activeColor' : ''"
+            @click="changeSwiper(4)"
+            >气压站</span
+          >
         </div>
         <swiper :options="swiperOption" ref="myswiper">
           <swiper-slide>
@@ -168,7 +186,12 @@ export default {
   computed: {},
   //监控data中的数据变化
   watch: {},
-  methods: {},
+  methods: {
+    changeSwiper(index) {
+      self.curIndex = index
+      self.$refs.myswiper.swiper.slideTo(index)
+    }
+  },
   created() {
     self = this
   },
