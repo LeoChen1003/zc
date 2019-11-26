@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home pc_index">
     <zcHeader></zcHeader>
     <div class="svg_up">
       <svg-icon icon-class="up1" class="svg"></svg-icon>
@@ -632,147 +632,7 @@ export default {
         }
       }
 
-      .home_img {
-        height: 12.8rem;
-        background: url('../assets/home/aboutUs.jpg');
-        background-size: cover;
-      }
 
-      .home_about {
-        display: flex;
-        justify-content: space-between;
-        height: 46.88rem;
-        background: #fff;
-        padding: 6.63rem 15%;
-        box-sizing: border-box;
-
-        .home_about_left {
-          div:nth-child(2) {
-            font-size: 2rem;
-            font-weight: 600;
-            color: #000;
-            margin-bottom: 2.5rem;
-          }
-        }
-
-        .home_about_right {
-          width: 39.31rem;
-
-          .home_about_right_item {
-            margin-top: 1.5rem;
-            margin-bottom: 2rem;
-
-            div:nth-child(1) {
-              font-size: 1.75rem;
-              font-weight: 600;
-              color: #000;
-              margin-bottom: 1.5rem;
-            }
-
-            div:nth-child(2) {
-              font-size: 1rem;
-              font-weight: 400;
-              color: #333;
-            }
-          }
-        }
-      }
-
-      .home_pro_one {
-        height: 40.62rem;
-        background: url('../assets/home/drumFryingMachine.jpg');
-        background-size: 90rem 55.62rem;
-        padding: 7.5rem 14%;
-
-        .home_pro_one_title {
-          font-size: 2.5rem;
-          color: #000;
-          margin-bottom: 1rem;
-          cursor: pointer;
-        }
-
-        .home_pro_one_tip {
-          font-size: 0.88rem;
-          color: #333;
-          margin-bottom: 2.5rem;
-
-          .home_pro_one_tip_line {
-            color: #ccc;
-            margin-right: 1.25rem;
-            margin-left: 1.25rem;
-          }
-        }
-
-        .home_pro_one_detail {
-          display: flex;
-
-          .home_pro_one_item {
-            margin-right: 3rem;
-
-            div {
-              width: 4.5rem;
-              height: 1.5rem;
-              background: rgba(8, 8, 8, 1);
-              border-radius: 0.19rem;
-              font-size: 0.88rem;
-              font-weight: 600;
-              line-height: 1.5rem;
-              color: #fff;
-              text-align: center;
-              margin-bottom: 0.88rem;
-            }
-
-            p {
-              font-size: 0.88rem;
-              font-weight: 400;
-              color: #333;
-              width: 12.25rem;
-            }
-          }
-        }
-      }
-
-      .home_pro_two {
-        height: 41.77rem;
-        background: #000;
-        background-image: url('../assets/home/AIO.png');
-        background-size: 90rem 55.62rem;
-        padding: 13.88rem 0 0 56%;
-
-        .home_pro_two_top {
-          font-size: 0.88rem;
-          color: #999;
-          margin-bottom: 0.5rem;
-        }
-
-        .home_pro_two_title {
-          font-size: 2.5rem;
-          font-weight: 600;
-          color: #fff;
-          margin-bottom: 2rem;
-          cursor: pointer;
-        }
-
-        .home_pro_two_item {
-          div {
-            width: 4.5rem;
-            height: 1.5rem;
-            background: rgba(255, 255, 255, 1);
-            border-radius: 0.19rem;
-            margin-bottom: 0.75rem;
-            color: #080808;
-            text-align: center;
-            line-height: 1.5rem;
-            font-size: 0.88rem;
-          }
-
-          p {
-            font-size: 0.88rem;
-            color: #999;
-            margin-bottom: 1.5rem;
-          }
-        }
-      }
     }
 
     // 了解更多
@@ -813,6 +673,150 @@ export default {
       margin-bottom: 2.5rem;
     }
   }
+
+  .home_pro_one {
+    height: 40.62rem;
+    background: url('../assets/home/drumFryingMachine.jpg');
+    background-size: 90rem 55.62rem;
+    padding: 7.5rem 14%;
+
+    .home_pro_one_title {
+      font-size: 2.5rem;
+      color: #000;
+      margin-bottom: 1rem;
+      cursor: pointer;
+    }
+
+    .home_pro_one_tip {
+      font-size: 0.88rem;
+      color: #333;
+      margin-bottom: 2.5rem;
+
+      .home_pro_one_tip_line {
+        color: #ccc;
+        margin-right: 1.25rem;
+        margin-left: 1.25rem;
+      }
+    }
+
+    .home_pro_one_detail {
+      display: flex;
+
+      .home_pro_one_item {
+        margin-right: 3rem;
+
+        div {
+          width: 4.5rem;
+          height: 1.5rem;
+          background: rgba(8, 8, 8, 1);
+          border-radius: 0.19rem;
+          font-size: 0.88rem;
+          font-weight: 600;
+          line-height: 1.5rem;
+          color: #fff;
+          text-align: center;
+          margin-bottom: 0.88rem;
+        }
+
+        p {
+          font-size: 0.88rem;
+          font-weight: 400;
+          color: #333;
+          width: 12.25rem;
+        }
+      }
+    }
+  }
+
+  .home_pro_two {
+    height: 41.77rem;
+    background: #000;
+    background-image: url('../assets/home/AIO.png');
+    background-size: 90rem 55.62rem;
+    padding: 13.88rem 0 0 56%;
+
+    .home_pro_two_top {
+      font-size: 0.88rem;
+      color: #999;
+      margin-bottom: 0.5rem;
+    }
+
+    .home_pro_two_title {
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 2rem;
+      cursor: pointer;
+    }
+
+    .home_pro_two_item {
+      div {
+        width: 4.5rem;
+        height: 1.5rem;
+        background: rgba(255, 255, 255, 1);
+        border-radius: 0.19rem;
+        margin-bottom: 0.75rem;
+        color: #080808;
+        text-align: center;
+        line-height: 1.5rem;
+        font-size: 0.88rem;
+      }
+
+      p {
+        font-size: 0.88rem;
+        color: #999;
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+
+  .home_img {
+    height: 12.8rem;
+    background: url('../assets/home/aboutUs.jpg');
+    background-size: cover;
+  }
+
+  .home_about {
+    display: flex;
+    justify-content: space-between;
+    height: 46.88rem;
+    background: #fff;
+    padding: 6.63rem 15%;
+    box-sizing: border-box;
+
+    .home_about_left {
+      div:nth-child(2) {
+        font-size: 2rem;
+        font-weight: 600;
+        color: #000;
+        margin-bottom: 2.5rem;
+      }
+    }
+
+    .home_about_right {
+      width: 39.31rem;
+
+      .home_about_right_item {
+        margin-top: 1.5rem;
+        margin-bottom: 2rem;
+
+        div:nth-child(1) {
+          font-size: 1.75rem;
+          font-weight: 600;
+          color: #000;
+          margin-bottom: 1.5rem;
+        }
+
+        div:nth-child(2) {
+          font-size: 1rem;
+          font-weight: 400;
+          color: #333;
+        }
+      }
+    }
+  }
+
+
 }
 </style>
 
