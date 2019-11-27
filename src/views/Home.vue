@@ -1,9 +1,6 @@
 <template>
   <div class="home pc_index">
     <zcHeader :isWhite="isWhite"></zcHeader>
-    <div class="svg_up">
-      <svg-icon icon-class="up1" class="svg"></svg-icon>
-    </div>
     <div class="home_v">
       <video loop autoplay="autoplay" src="../assets/video/video.mp4">
       </video>
@@ -30,29 +27,31 @@
       </div>
     </div>
     <div class="home_data">
-      <div class="home_data_item">
-        <div>更高效</div>
-        <div>后厨员工提效 :</div>
-        <div><span>300</span> %</div>
-        <div>1 个小工可以替代 3 位大厨</div>
-      </div>
-      <div class="home_data_item">
-        <div>更专业</div>
-        <div>专利及专利申请 :</div>
-        <div><span>522</span> 件</div>
-        <div>远超行业平均水平</div>
-      </div>
-      <div class="home_data_item">
-        <div>更丰富</div>
-        <div>云菜谱数量 :</div>
-        <div><span>1000</span> 道</div>
-        <div>1 台设备拥有 20 名大厨的手艺</div>
-      </div>
-      <div class="home_data_item">
-        <div>更标准</div>
-        <div>菜肴口味还原度 :</div>
-        <div><span>99.9</span> %</div>
-        <div>精准投料智能控温还原菜肴</div>
+      <div class="home_data_items">
+        <div class="home_data_item">
+          <div>更高效</div>
+          <div>后厨员工提效 :</div>
+          <div><span>300</span> %</div>
+          <div>1 个小工可以替代 3 位大厨</div>
+        </div>
+        <div class="home_data_item">
+          <div>更专业</div>
+          <div>专利及专利申请 :</div>
+          <div><span>522</span> 件</div>
+          <div>远超行业平均水平</div>
+        </div>
+        <div class="home_data_item">
+          <div>更丰富</div>
+          <div>云菜谱数量 :</div>
+          <div><span>1000</span> 道<svg-icon icon-class="up1" class="svg"></svg-icon></div>
+          <div>1 台设备拥有 20 名大厨的手艺</div>
+        </div>
+        <div class="home_data_item">
+          <div>更标准</div>
+          <div>菜肴口味还原度 :</div>
+          <div><span>99.9</span> %</div>
+          <div>精准投料智能控温还原菜肴</div>
+        </div>
       </div>
     </div>
     <div class="home_pro_one" @click="cai">
@@ -259,15 +258,15 @@
         if(top >= 1005 && top <= 1897){
           hder.className = 'whiteBack'
           self.isWhite = true
-
         }else if( top >= 1897 && top <= 2783){
           hder.className = 'blackBack'
-
+          self.isWhite = false;
         }else if( top >= 2783){
           hder.className = 'whiteBack'
-
+          self.isWhite = true;
         }else{
           hder.className = 'blackBack'
+          self.isWhite = false;
         }
       }
       request({
@@ -319,19 +318,6 @@
     height: 100%;
     width: 100%;
     position: relative;
-
-    .svg_up {
-      position: absolute;
-      width: 0.87rem;
-      height: 0.87rem;
-      left: 63%;
-      top: 59rem;
-
-      .svg {
-        width: 100%;
-        height: 100%;
-      }
-    }
     .home_v{
       width: 100%;
       height: 47.5rem;
@@ -422,13 +408,17 @@
     }
 
     .home_data {
-      display: flex;
-      justify-content: space-between;
-      padding: 4rem 15%;
       box-sizing: border-box;
       width: 100%;
       height: 18.25rem;
       background: url('../assets/home/data.jpg');
+      .home_data_items{
+        display: flex;
+        justify-content: space-between;
+        width: 56.44rem;
+        height: 100%;
+        margin: 0 auto;
+      }
       .home_data_item {
         display: flex;
         flex-direction: column;
@@ -452,12 +442,18 @@
         div:nth-child(3) {
           font-size: 0.88rem;
           color: #fff;
-
+          position: relative;
           span {
             font-size: 3.75rem;
             font-family: mFont;
             font-weight: normal;
-
+          }
+          .svg{
+            position: absolute;
+            width: 0.87rem;
+            height: 0.87rem;
+            top: 1.2rem;
+            left: 7.9rem;
           }
         }
       }
@@ -673,44 +669,6 @@
 
 
       }
-
-      // 了解更多
-      .home_about_left_btn,
-      .home_news_header_btn {
-        width: 6.75rem;
-        height: 2.25rem;
-        background: rgba(255, 255, 255, 0);
-        border-radius: 1.13rem;
-        border: 0.06rem solid rgba(0, 0, 0, 1);
-        text-align: center;
-        line-height: 2.25rem;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        .svg_size {
-          width: 1.13rem;
-          height: 1.13rem;
-        }
-
-        span {
-          margin-left: 0.3rem;
-        }
-      }
-
-      .home_title_top {
-        font-size: 0.88rem;
-        color: #333;
-        margin-bottom: 0.5rem;
-      }
-
-      .home_line {
-        border-bottom: 1px solid #2cc6c0;
-        width: 1.5rem;
-        height: 0.13rem;
-        margin-bottom: 2.5rem;
-      }
     }
 
     .home_pro_one {
@@ -864,7 +822,44 @@
       }
     }
 
+      // 了解更多
+      .home_about_left_btn,
+      .home_news_header_btn {
+        width: 6.75rem;
+        height: 2.25rem;
+        background: rgba(255, 255, 255, 0);
+        border-radius: 1.13rem;
+        border: 0.06rem solid rgba(0, 0, 0, 1);
+        text-align: center;
+        line-height: 2.25rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
+        .svg_size {
+          width: 1.13rem;
+          height: 1.13rem;
+        }
+
+        span {
+          margin-left: 0.3rem;
+        }
+      }
+
+      .home_title_top {
+        font-size: 0.88rem;
+        color: #333;
+        margin-bottom: 0.5rem;
+      }
+
+      .home_line {
+        width: 1.5rem;
+        height: 2px;
+        border-radius: 1rem;
+        margin-bottom: 2.5rem;
+        background: #2cc6c0;
+      }
   }
 </style>
 

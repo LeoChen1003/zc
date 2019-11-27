@@ -14,7 +14,7 @@
                     <img src="../assets/coreAdvantage/data1.jpg" alt="">
                 </div>
             </div>
-            <div class="data_con_cen2">
+            <div class="data_con_cen2" style="overflow:hidden;border-radius:0 0 0.62rem 0.62rem;">
                 <div class="data_con_cen2_l">
                     <img src="../assets/coreAdvantage/data2.jpg" alt="">
                 </div>
@@ -23,8 +23,10 @@
                     <p>订单任务、运行状态、故障能源消耗全程可视化；设备能耗数据分析管理。</p>
                 </div>
             </div>
+            <div class="data_chose" @click="cancel">
+                <svg-icon icon-class="close1" class-name="svg"></svg-icon>
+            </div>
         </div>
-        <div class="data_chose" @click="cancel"></div>
     </div>
 </template>
 
@@ -32,7 +34,7 @@
 export default {
     methods:{
         cancel(){
-            this.$router.push("/coreAdvantage");
+            this.$parent.modelData = false
         }
     }
 }
@@ -40,20 +42,26 @@ export default {
 
 <style lang="scss" scoped>
 .data{
-    background-color: #000;
+    background-color: rgba(0,0,0,0.9);
     width: 100%;
-    overflow: hidden;
+    position: fixed;
+    top:0;
+    left: 0;
+    height: 100vh;
+    z-index: 1000;
+    overflow: auto;
     .data_con{
         width: 60rem;
         height: 80.87rem;
         margin: 3rem auto 0;
-        overflow: hidden;
-        border-radius: 0.62rem;
+        margin-bottom: 9.06rem;
+        position: relative;
         .data_con_hd{
             width: 100%;
             height: 33.75rem;
             background: url("../assets/coreAdvantage/dataHeader.jpg");
             overflow: hidden;
+            border-radius: 0.62rem 0.62rem 0 0;
             p:first-child{
                 width:12.75rem;
                 height:3rem;
@@ -79,6 +87,10 @@ export default {
                 width: 50%;
                 float: left;
                 height: 100%;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
             }
             .data_con_cen1_l{
                 background-color: #fff;
@@ -136,30 +148,16 @@ export default {
         }
     }
     .data_chose{
-        width: 3rem;
-        height: 3rem;
-        background-color: transparent;
-        border: 2px solid #fff;
-        position: fixed;
-        top: 3.12rem;
-        right: 9.87rem;
-        border-radius: 50%;
-        cursor: pointer;
-    }
-    .data_chose:before,.data_chose:after{
-        position: absolute;
-        content: ' ';
-        height: 1.81rem;
-        width: 0.13rem;
-        left: 1.5rem;
-        top: 0.56rem;
-        background-color: #fff;
-    }
-    .data_chose:before{
-        transform: rotate(45deg);
-    }
-    .data_chose:after{
-        transform: rotate(-45deg);
+            width: 3rem;
+            height: 3rem;
+            position: absolute;
+            top: 0;
+            right: -4rem;
+            cursor: pointer;
+            svg{
+                width: 3rem;
+                height: 3rem;
+            }
     }
 }
 </style>

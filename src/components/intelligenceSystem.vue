@@ -38,8 +38,10 @@
                     <img src="../assets/coreAdvantage/system_os3.jpg" alt="">
                 </div>
             </div>
+            <div class="os_chose" @click="cancel">
+                <svg-icon icon-class="close1" class-name="svg"></svg-icon>
+            </div>
         </div>
-        <div class="os_chose" @click="cancel"></div>
     </div>
 </template>
 
@@ -53,7 +55,7 @@ export default {
     },
     methods:{
         cancel(){
-            this.$router.push("/coreAdvantage")
+            this.$parent.modelSystem = false;
         }
     }
 }
@@ -61,17 +63,22 @@ export default {
 
 <style lang="scss" scoped>
     .os{
-        background: #000;
+        background-color: rgba(0, 0, 0, 0.9);
         width: 100%;
-        overflow: hidden;
-        position: relative;
+        position: fixed;
+        top:0;
+        left: 0;
+        height: 100vh;
+        z-index: 1000;
+        overflow: auto;
         .os_con{
             width: 61.25rem;
             height: 111rem;
             border-radius: 0.62rem;
             background-color: #fff;
             margin: 3rem auto 0;
-            overflow: hidden;
+            position: relative;
+            margin-bottom: 9.06rem;
             .os_con_hd{
                 width: 100%;
                 height: 33.75rem;
@@ -202,6 +209,8 @@ export default {
             .os_con_cen3{
                 width: 100%;
                 height: 26.13rem;
+                overflow: hidden;
+                border-radius: 0 0 10px 10px;
                 .os_con_cen3_l{
                     float: left;
                     width: 50%;
@@ -234,28 +243,15 @@ export default {
         .os_chose{
             width: 3rem;
             height: 3rem;
-            background-color: transparent;
-            border: 2px solid #fff;
-            position: fixed;
-            top: 3.12rem;
-            right: 9.87rem;
-            border-radius: 50%;
-            cursor: pointer;
-        }
-        .os_chose:before,.os_chose:after{
             position: absolute;
-            content: ' ';
-            height: 1.81rem;
-            width: 0.13rem;
-            left: 1.5rem;
-            top: 0.56rem;
-            background-color: #fff;
+            top: 0;
+            right: -4rem;
+            cursor: pointer;
+            svg{
+                width: 3rem;
+                height: 3rem;
+            }
         }
-        .os_chose:before{
-            transform: rotate(45deg);
-        }
-        .os_chose:after{
-            transform: rotate(-45deg);
-        }
+        
     }
 </style>

@@ -59,7 +59,7 @@
                     <p>专业设备零部件维修服务，提供贴心保障</p>
                 </div>
             </div>
-            <div class="star_con_cen1">
+            <div class="star_con_cen1" style="overflow:hidden;border-radius:0 0 10px 10px;">
                 <div class="star_con_cen1_l">
                     <p>全方位回访跟踪</p>
                     <p>不定期进行回访，全面了解客户使用体验，提高服务质量。</p>
@@ -68,8 +68,10 @@
                     <img src="../assets/coreAdvantage/star7.jpg" alt="">
                 </div>
             </div>
+            <div class="star_chose" @click="cancel">
+                <svg-icon icon-class="close1" class-name="svg"></svg-icon>
+            </div>
         </div>
-        <div class="star_close" @click="cancel"></div>
     </div>
 </template>
 
@@ -78,7 +80,7 @@ export default {
     name: 'intellStar',
     methods:{
         cancel(){
-            this.$router.push("/coreAdvantage");
+            this.$parent.modelStar = false;
         }
     }
 }
@@ -86,19 +88,25 @@ export default {
 
 <style lang="scss" scoped>
 .star{
-    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.9);
     width: 100%;
-    overflow: hidden;
+    position: fixed;
+    top:0;
+    left: 0;
+    height: 100vh;
+    z-index: 1000;
+    overflow: auto;
     .star_con{
         width: 60rem;
         height: 213.25rem;
         margin: 3rem auto 0;
-        overflow: hidden;
-        border-radius: 0.62rem;
+        position: relative;
+        margin-bottom: 9.06rem;
         .star_con_hd{
             background: url("../assets/coreAdvantage/starHeader.jpg");
             width: 100%;
             height: 33.75rem;
+            border-radius: 0.62rem;
             overflow: hidden;
             p:first-child{
                 width:16.81rem;
@@ -126,6 +134,11 @@ export default {
                 width: 50%;
                 height: 100%;
                 float: left;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    background-size: 100% 100%;
+                }
             }
             .star_con_cen1_l{
                 background-color: #fff;
@@ -244,31 +257,17 @@ export default {
             }
         }
     }
-    .star_close{
-        width: 3rem;
-        height: 3rem;
-        background-color: transparent;
-        border: 2px solid #fff;
-        position: fixed;
-        top: 3.12rem;
-        right: 9.87rem;
-        border-radius: 50%;
-        cursor: pointer;
-    }
-    .star_close:before,.star_close:after{
-        position: absolute;
-        content: ' ';
-        height: 1.81rem;
-        width: 0.13rem;
-        left: 1.5rem;
-        top: 0.56rem;
-        background-color: #fff;
-    }
-    .star_close:before{
-        transform: rotate(45deg);
-    }
-    .star_close:after{
-        transform: rotate(-45deg);
+    .star_chose{
+            width: 3rem;
+            height: 3rem;
+            position: absolute;
+            top: 0;
+            right: -4rem;
+            cursor: pointer;
+            svg{
+                width: 3rem;
+                height: 3rem;
+            }
     }
 }
 </style>

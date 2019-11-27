@@ -129,16 +129,16 @@ export default {
             justify-content: center;
             align-items: center;
             span{
-                margin-left: 1.67rem;
+                margin-left: 3rem;
                 cursor: pointer;
             }
             .bolder{
-                color:"#000000";
                 font-weight:600;
+                color:#000;
             }
             .normal{
-                color:"#333333";
                 font-weight:300;
+                color: #333;
             }
         }
     }

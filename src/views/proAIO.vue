@@ -146,6 +146,9 @@
                 <span>了解参数明细</span>
             </div>
         </div>
+        <transition name="fade">
+            <buyConsult v-if="isBuy"></buyConsult>
+        </transition>
         <zcFooter></zcFooter>
     </div>
 </template>
@@ -154,15 +157,18 @@
 import zcHeader from '@/components/zcHeader.vue';
 import zcFooter from '@/components/zcFooter.vue';
 import '../styles/variables.scss';
+import buyConsult from '@/components/buyConsult.vue';
 export default {
     name: 'proCaiTechSpecs',
     components:{
         zcHeader,
         zcFooter,
+        buyConsult
     },
     data(){
         return{
-            isWhite: false
+            isWhite: false,
+            isBuy:false
         }
     },
     mounted(){
@@ -171,7 +177,7 @@ export default {
     },
     methods:{
         buy(){
-            this.$router.push("/buyConsult");
+            this.isBuy = true;
         },
         specs(){
             this.$router.push("/product/proAIO/proAIOTechSpecs");
@@ -725,5 +731,14 @@ export default {
             }
         }
     }
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>

@@ -5,18 +5,12 @@ import AboutWith from '../views/AboutWith.vue'
 import New from '../views/New.vue'
 import newDetail1 from '../views/newDetail1.vue'
 import coreAdvantage from '../views/coreAdvantage.vue'
-import intelligenceSystem from '../views/intelligenceSystem'
-import intelligenceTech from '../views/intelligenceTech.vue'
-import intelligenceData from '../views/intelligenceData.vue'
-import intelligenceMachine from '../views/intelligenceMachine.vue'
-import intelligenceStar from '../views/intelligenceStar.vue'
 import product from '../views/product.vue'
 import proCai from '../views/proCai.vue'
 import proCaiTechSpecs from '../views/proCaiTechSpecs.vue'
 import proAIO from '../views/proAIO.vue'
 import proAIOTechSpecs from '../views/proAIOTechSpecs.vue'
 import contact from '../views/contact.vue'
-import buyConsult from '../views/buyConsult.vue'
 import homeVideo from '../views/video.vue'
 
 import wapLayout from '../views/wap/layout'
@@ -74,10 +68,6 @@ const routes = [
     path: '/contact',
     meta: { pcPath: '/contact', mobilePath: '/wap/contact' },
     component: contact
-  },
-  {
-    path: '/buyConsult',
-    component: buyConsult
   },
   {
     path: '/wap',
@@ -189,51 +179,6 @@ const routes = [
       mobilePath: '/wap/coreAdvantages'
     },
     component: coreAdvantage
-  },
-  {
-    path: '/coreAdvantage/intelligenceSystem',
-    name: 'intelligenceSystem',
-    meta: {
-      pcPath: '/coreAdvantage/intelligenceSystem',
-      mobilePath: '/wap/coreAdvantages'
-    },
-    component: intelligenceSystem
-  },
-  {
-    path: '/coreAdvantage/intelligenceTech',
-    name: 'intelligenceTech',
-    meta: {
-      pcPath: '/coreAdvantage/intelligenceTech',
-      mobilePath: '/wap/coreAdvantages'
-    },
-    component: intelligenceTech
-  },
-  {
-    path: '/coreAdvantage/intelligenceData',
-    name: 'intelligenceData',
-    meta: {
-      pcPath: '/coreAdvantage/intelligenceData',
-      mobilePath: '/wap/coreAdvantages'
-    },
-    component: intelligenceData
-  },
-  {
-    path: '/coreAdvantage/intelligenceMachine',
-    name: 'intelligenceMachine',
-    meta: {
-      pcPath: '/coreAdvantage/intelligenceMachine',
-      mobilePath: '/wap/coreAdvantages'
-    },
-    component: intelligenceMachine
-  },
-  {
-    path: '/coreAdvantage/intelligenceStar',
-    meta: {
-      pcPath: '/coreAdvantage/intelligenceStar',
-      mobilePath: '/wap/coreAdvantages'
-    },
-    name: 'intelligenceStar',
-    component: intelligenceStar
   },
   {
     path: '/product',

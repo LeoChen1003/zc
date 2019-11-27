@@ -21,7 +21,7 @@
             <div class="contact_commit_input">
                 <span>需求设备</span><input placeholder="请选择需求设备…" class="input4" @click="inputOpen"/><div class="arrow" @click="open" ><svg-icon :icon-class="iconClass" class-name="xia_arrow" id="icon"></svg-icon></div><br>
                 <div v-show="visible" class="contact_commit_input_select" id="sel">
-                    <div v-for="(item,i) of machine" @click="changeTxt(i)" :key="i" :class="{blue:changeColor==i}" style="color:#000;">{{machine[i]}}</div>
+                    <div v-for="(item,i) of machine" @click="changeTxt(i)" :key="i" style="color:#000;" @mousemove="showBlue(i)" @mouseleave="hideBlue(i)">{{machine[i]}}</div>
                 </div>
             </div>
             <div class="contact_commit_input">
@@ -36,11 +36,11 @@
             <p class="p2">咨询合作联系邮箱</p>
             <div class="contact_commit_email">
                 <p>
-                    <span>品牌合作邮箱：</span><span>zhaochenghua@ut.com</span>
+                    <span>品牌合作邮箱：</span><span>ucmarket@ut.cn</span>
                 </p>
                 <p>
                     <span>媒体合作邮箱：</span>
-                    <span>zhaochenghua@ut.com</span>
+                    <span>ucmarket@ut.cn</span>
                 </p>
                 <p>
                     <span>人才招聘：</span>
@@ -92,7 +92,6 @@ export default {
             selectDisplay : 'none',
             iconClass: 'xia',
             machine:["智能大滚筒炒菜机套机","智能精炒一体机","其他设备"],
-            changeColor: -1,
             cityColor : false,
             target: 'btn1',
             visible: false,
@@ -109,6 +108,9 @@ export default {
         zcFooter,
     },
     methods:{
+        changeCity(index){
+            this.target = index;
+        },
         inputOpen(){
             this.visible = true;
             this.iconClass = "shang";
@@ -197,8 +199,13 @@ export default {
             input4.value = this.machine[index];
             this.changeColor = index;
         },
-        changeCity(index){
-            this.target = index;
+        showBlue(index){
+            var div = document.querySelectorAll(".contact_commit_input_select>div");
+            div[index].className = "blue";
+        },
+        hideBlue(index){
+            var div = document.querySelectorAll(".contact_commit_input_select>div");
+            div[index].className = "";
         },
         sendMessage(){
             if(this.name===null){
@@ -295,7 +302,7 @@ export default {
         p:nth-child(2){
             height:1.25rem;
             font-weight:400;
-            color:rgba(0,0,0,1);
+            color:#333;
             margin-top: 0.25rem;
         }
     }
@@ -306,8 +313,8 @@ export default {
         margin-top: 4rem;
         .contact_commit_input{
             width: 100%;
-            height: 2.75rem;
-            border-bottom: 1px solid #cccccc;
+            height: 3.75rem;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
             position: relative;
             .icon_star{
                 position: absolute;
@@ -318,15 +325,16 @@ export default {
             }
             span{
                 display: inline-block;
-                margin-top: 0.8rem;
+                margin-top: 1rem;
                 font-size: 1.25rem;
+                font-weight: 600;
+                color: #000;
             }
             input{
                 padding-left: 1.5rem;
                 border: none;
                 display: inline-block;
                 width: 37.5rem;
-                height: 1.5rem;
                 outline: none;
                 font-size: 1.25rem;
             }
@@ -335,17 +343,16 @@ export default {
             }
             input::-webkit-input-placeholder{
                 font-size:1.25rem;
+                font-weight: normal;
                 color: #cccccc;
             }
             input::-moz-placeholder{
-                font-size:1.25rem;
-                color: #cccccc;
-            }
-            input:-moz-placeholder{
+                font-weight: normal;
                 font-size:1.25rem;
                 color: #cccccc;
             }
             input:-ms-input-placeholder{
+                font-weight: normal;
                 font-size:1.25rem;
                 color: #cccccc;
             }
@@ -397,9 +404,6 @@ export default {
                     border-bottom: 1px solid rgba(236,236,236,1);
                 }
             }
-        }
-        .contact_commit_input:not(:first-child){
-            margin-top: 1rem;
         }
     }
     .contact_commit_btn{
@@ -465,25 +469,25 @@ export default {
         position: relative;
         .contact_d3_circle1,.contact_d3_circle2,.contact_d3_circle3{
             position: absolute;
-            width:1.38rem;
-            height:1.38rem;
+            width:1rem;
+            height:1rem;
             border:3px solid rgba(255,255,255,1);
             border-radius: 50%;
             z-index: 1;
         }
         .contact_d3_circle1{
-            left: 35.5rem;
+            left: 33.5rem;
             top: 30.06rem;
             background:rgba(13,168,162,1);
         }
         .contact_d3_circle2{
-            left: 30.32rem;
-            top: 33rem;
+            left: 28.8rem;
+            top: 33.5rem;
             background:rgba(13,168,162,1);
         }
         .contact_d3_circle3{
-            left: 32.06rem;
-            top: 33.89rem;
+            left: 30.06rem;
+            top: 34.4rem;
             background-color: #fff;
         }
         .cir_blue{
@@ -510,7 +514,7 @@ export default {
                 width: 37.5rem;
                 height: 30.94rem;
                 margin-top: 2rem;
-                margin-left: 8.5rem;
+                margin-left: 7%;
                 float: left;
             }
             .contact_d3_location_city{
@@ -519,7 +523,7 @@ export default {
                 height: 23.63rem;
                 border-radius: 0.63rem;
                 top: 5.68rem;
-                right: 9.88rem;
+                right: 14%;
                 position: absolute;
                 cursor: pointer;
                 .contact_d3_location_city_zh,.contact_d3_location_city_sz,.contact_d3_location_city_hz{

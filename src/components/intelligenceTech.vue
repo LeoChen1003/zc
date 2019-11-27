@@ -68,7 +68,7 @@
                     <img src="../assets/coreAdvantage/tech7.jpg" alt="">
                 </div>
             </div> 
-            <div class="tech_con_cen2">
+            <div class="tech_con_cen2" style="overflow:hidden;border-radius:0 0 0.62rem 0.62rem">
                 <div class="tech_con_cen2_l">
                     <img src="../assets/coreAdvantage/tech8.jpg" alt="">
                 </div>
@@ -77,8 +77,10 @@
                     <p>智能电子菜谱实时操控，让我们的生活更方便哦。</p>
                 </div>
             </div> 
+            <div class="tech_chose" @click="cancel">
+                <svg-icon icon-class="close1" class-name="svg"></svg-icon>
+            </div>
         </div>
-        <div class="tech_chose" @click="cancel"></div>
     </div>
 </template>
 
@@ -86,7 +88,7 @@
 export default {
     methods:{
         cancel(){
-            this.$router.push("/coreAdvantage");
+            this.$parent.modelTech = false;
         }
     }
 }
@@ -94,20 +96,26 @@ export default {
 
 <style lang="scss" scoped>
 .tech{
-    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.9);
     width: 100%;
-    overflow: hidden;
+    position: fixed;
+    top:0;
+    left: 0;
+    height: 100vh;
+    z-index: 1000;
+    overflow: auto;
     .tech_con{
         width: 61.25rem;
         height: 238.25rem;
         margin: 3rem auto 0;
-        border-radius: 0.62rem;
-        overflow: hidden;
+        margin-bottom: 9.06rem;
+        position: relative;
         .tech_con_hd{
             width: 100%;
             height: 33.75rem;
             background: url("../assets/coreAdvantage/techHeader.jpg");
             overflow: hidden;
+            border-radius: 0.62rem 0.62rem 0 0;
             p:first-child{
                 width:8.5rem;
                 height:3rem;
@@ -189,30 +197,16 @@ export default {
         }
     }
     .tech_chose{
-        position: fixed;
-        width: 3rem;
-        height: 3rem;
-        background-color: transparent;
-        border: 2px solid #fff;
-        top: 3.12rem;
-        right: 9.87rem;
-        border-radius: 50%;
-        cursor: pointer;
-    }
-    .tech_chose:before,.tech_chose:after{
-        position: absolute;
-        content: ' ';
-        height: 1.81rem;
-        width: 0.13rem;
-        left: 1.5rem;
-        top: 0.56rem;
-        background-color: #fff;
-    }
-    .tech_chose:before{
-        transform: rotate(45deg);
-    }
-    .tech_chose:after{
-        transform: rotate(-45deg);
+            width: 3rem;
+            height: 3rem;
+            position: absolute;
+            top: 0;
+            right: -4rem;
+            cursor: pointer;
+            svg{
+                width: 3rem;
+                height: 3rem;
+            }
     }
 }
 </style>

@@ -175,6 +175,9 @@
                 <span>了解参数明细</span>
             </div>
         </div>
+        <transition name="fade">
+            <buyConsult v-if="isBuy"></buyConsult>
+        </transition>
         <zcFooter></zcFooter>
     </div>
 </template>
@@ -183,32 +186,37 @@
 import zcHeader from '@/components/zcHeader.vue';
 import zcFooter from '@/components/zcFooter.vue';
 import '../styles/variables.scss';
+import buyConsult from '@/components/buyConsult.vue';
 export default {
     name: 'proCai',
     components:{
         zcHeader,
         zcFooter,
+        buyConsult
     },
     data(){
         return{
-            isWhite:true
+            isWhite:true,
+            isBuy:false
         }
     },
     mounted(){
         var hder  = document.getElementsByClassName("whiteBack")[0];
-        window.onscroll = function(){
+        window.onscroll = ()=>{
             var top = document.documentElement.scrollTop;
             // window.console.log(document.documentElement.scrollTop);
             if(top >= 3018 && top <= 4897){
-                hder.className = "blackBack1";
+                hder.className = "blackBack";
+                this.isWhite = false;
             }else{
-                hder.className = "whiteBack1";
+                hder.className = "whiteBack";
+                this.isWhite = true;
             }
         }
     },
     methods:{
         buy(){
-            this.$router.push("/buyConsult");
+            this.isBuy = true;
         },
         tech(){
             this.$router.push("/product/proCai/proCaiTechSpecs");
@@ -924,5 +932,14 @@ export default {
             }
         }
     }
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>

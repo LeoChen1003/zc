@@ -23,7 +23,7 @@
                     <p>蓝牙锁管控配送过程<br>解决食品安全卫生问题2~8℃ 保温保鲜长达12小时</p>
                 </div>
             </div>
-            <div class="mach_con_cen1">
+            <div class="mach_con_cen1" style="overflow:hidden;border-radius:0 0 0.62rem 0.62rem;">
                 <div class="mach_con_cen1_l">
                     <p>智能取餐柜</p>
                     <p>热柜具备热菜保温功能<br>冷柜具备凉菜冷藏功能、净菜冷藏功能冷柜和热柜可级联、结合场景按需组合模块具备自动除菌功能支持多种送餐取餐方式</p>
@@ -32,8 +32,10 @@
                     <img src="../assets/coreAdvantage/machine3.jpg" alt="">
                 </div>
             </div>
+            <div class="mach_chose" @click="cancel">
+                <svg-icon icon-class="close1" class-name="svg"></svg-icon>
+            </div>
         </div>
-        <div class="mach_close" @click="cancel"></div>
     </div>
 </template>
 
@@ -41,7 +43,7 @@
 export default {
     methods:{
         cancel(){
-            this.$router.push("/coreAdvantage");
+            this.$parent.modelMachine = false;
         }
     }
 }
@@ -49,20 +51,26 @@ export default {
 
 <style lang="scss" scoped>
 .mach{
-    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.9);
     width: 100%;
-    overflow: hidden;
+    position: fixed;
+    top:0;
+    left: 0;
+    height: 100vh;
+    z-index: 1000;
+    overflow: auto;
     .mach_con{
         width: 60rem;
         height: 111rem;
         margin: 3rem auto 0;
-        overflow: hidden;
-        border-radius: 0.62rem;
+        margin-bottom: 9.06rem;
+        position: relative;
         .mach_con_hd{
             width: 100%;
             height: 33.75rem;
             background: url("../assets/coreAdvantage/machineHeader.jpg");
             overflow: hidden;
+            border-radius: 0.62rem 0.62rem 0 0;
             p:first-child{
                 width:8.5rem;
                 height:3rem;
@@ -88,6 +96,10 @@ export default {
                 width: 50%;
                 height: 100%;
                 float: left;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
             }
             .mach_con_cen1_l{
                 background-color: #fff;
@@ -144,31 +156,17 @@ export default {
             }
         }
     }
-    .mach_close{
-        width: 3rem;
-        height: 3rem;
-        background-color: transparent;
-        border: 2px solid #fff;
-        position: fixed;
-        top: 3.12rem;
-        right: 9.87rem;
-        border-radius: 50%;
-        cursor: pointer;
-    }
-    .mach_close:before,.mach_close:after{
-        position: absolute;
-        content: ' ';
-        height: 1.81rem;
-        width: 0.13rem;
-        left: 1.5rem;
-        top: 0.56rem;
-        background-color: #fff;
-    }
-    .mach_close:before{
-        transform: rotate(45deg);
-    }
-    .mach_close:after{
-        transform: rotate(-45deg);
+    .mach_chose{
+            width: 3rem;
+            height: 3rem;
+            position: absolute;
+            top: 0;
+            right: -4rem;
+            cursor: pointer;
+            svg{
+                width: 3rem;
+                height: 3rem;
+            }
     }
 }
 </style>
