@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <GTHeader
-      :type="'gl'"
+      :type="type"
       :name="'智能大滚筒炒菜机套机'"
       :glUrl="'/wap/proDetailGTGL'"
       :jsUrl="'/wap/proDetailGTJS'"
@@ -205,6 +205,7 @@
           <div class="comment">自定义修改翻炒方式</div>
         </div>
       </div>
+      <svg-icon icon-class="wap_pro_gt" class-name="detail_12_svg"></svg-icon>
       <img src="../../assets/wap/productCenter/GT_znld.png" alt="znld" />
     </div>
     <div class="detail_6 detail_13">
@@ -231,7 +232,7 @@
       <img src="../../assets/wap/productCenter/GT_dzcp.png" alt="dzcp" />
     </div>
     <div class="know_more">
-      <div class="moore_btn">
+      <div class="moore_btn" @click="$router.push('/wap/proDetailGTJS')">
         <svg-icon
           icon-class="homeKnowMore"
           style="width:0.88rem;height:0.88rem;margin-right:2px;"
@@ -249,20 +250,37 @@ import GTHeader from './compontents/GTHeader'
 import reservationBtn from './compontents/reservationBtn'
 /* eslint-disable no-alert, no-console*/
 
+let self
 export default {
   //import引入的组件需要注入到对象中才能使用
   components: { GTHeader, reservationBtn },
   data() {
-    return {}
+    return {
+      type: 'gl'
+    }
   },
   //监听属性 类似于data概念
   computed: {},
   //监控data中的数据变化
   watch: {},
-  methods: {},
-  created() {},
+  methods: {
+    handleScroll() {
+      if (document.documentElement.scrollTop > 227) {
+        self.type = 'js'
+      } else {
+        self.type = 'gl'
+      }
+    }
+  },
+  created() {
+    self = this
+  },
   mounted() {
+    window.addEventListener('scroll', this.handleScroll)
     this.$emit('setisWhite')
+  },
+  destroyed() {
+    window.removeEventListener('scroll', this.handleScroll)
   }
 }
 </script>
@@ -585,10 +603,21 @@ export default {
     width: 8rem;
   }
 
+  .detail_12_svg {
+    position: absolute;
+    bottom: -10px;
+    width: 21rem;
+    height: 7.88rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
   img {
     position: absolute;
     bottom: 0;
-    left: 0.5rem;
+    width: 6.63rem;
+    height: 8.5rem;
+    right: 3.8rem;
   }
 }
 
@@ -599,6 +628,7 @@ export default {
     rgba(30, 31, 32, 1) 100%
   );
   position: relative;
+  overflow: hidden;
 
   .data_box {
     display: flex;
@@ -614,8 +644,9 @@ export default {
   }
 
   img {
+    width: 90%;
     position: absolute;
-    bottom: 0;
+    bottom: -40px;
     left: 1.38rem;
   }
 }

@@ -161,10 +161,10 @@ export default {
   box-sizing: border-box;
 
   .content_item {
-    padding-bottom: 2.63rem;
+    padding-bottom: 2.7rem;
     box-sizing: border-box;
     border-bottom: 0.06rem solid #ececec;
-    margin-bottom: 2.56rem;
+    margin-bottom: 2.7rem;
 
     .title {
       font-size: 1.25rem;

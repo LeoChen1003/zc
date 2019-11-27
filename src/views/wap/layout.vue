@@ -17,16 +17,10 @@
           class-name="index_svg"
         ></svg-icon>
       </div>
-      <div
-        class="logo"
-        style="width:30%;display:flex;align-items:center;"
-        :style="isWhite ? 'color:#000;' : 'color:#fff;'"
-        @click="$router.push('/wap/index')"
-      >
+      <div class="logo" @click="$router.push('/wap/index')">
         <svg-icon
-          :icon-class="dropdown ? '' : isWhite ? 'logo' : 'logo_w'"
-          class-name="index_svg"
-          style="width:15rem;height:1.5rem;"
+          :icon-class="dropdown ? 'logo' : isWhite ? 'logo' : 'logo_w'"
+          class-name="index_logo"
         ></svg-icon>
         <!-- ut -->
       </div>
@@ -58,7 +52,7 @@
             <div
               v-if="item.children"
               v-show="item.show"
-              style="margin-top:1rem;"
+              style="margin-top:1.88rem;"
             >
               <div
                 class="children"
@@ -69,7 +63,11 @@
                 "
                 :key="index + idx"
               >
-                {{ children.name }}
+                <div>{{ children.name }}</div>
+                <svg-icon
+                  icon-class="wap_index_right"
+                  class-name="children_svg"
+                ></svg-icon>
               </div>
             </div>
           </transition>
@@ -80,8 +78,8 @@
       </div>
     </transition>
     <transition name="fade-transform" mode="out-in">
-      <router-view @setisWhite="setisWhite" @setisBlack="setisBlack"
-    /></transition>
+      <router-view @setisWhite="setisWhite" @setisBlack="setisBlack" />
+    </transition>
     <div class="footer">
       <div class="footer_item" v-for="(item, index) in route" :key="index">
         <div class="footer_item_box" @click="item.footshow = !item.footshow">
@@ -255,6 +253,10 @@ export default {
 }
 </script>
 <style scoped lang="scss">
+@font-face {
+  font-family: Oswald_Light;
+  src: url('../../assets/font/Oswald-Light.ttf');
+}
 .header {
   width: 100%;
   height: 3rem;
@@ -270,13 +272,24 @@ export default {
   transition: all 0.5s;
 
   .icon {
-    width: 2rem;
-    height: 2rem;
+    width: 1.5rem;
+    height: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
     .index_svg {
-      width: 1.5rem;
+      width: 1.25rem;
+      height: 1rem;
+    }
+  }
+
+  .logo {
+    width: 30%;
+    display: flex;
+    align-items: center;
+
+    .index_logo {
+      width: 15rem;
       height: 1.5rem;
     }
   }
@@ -307,17 +320,24 @@ export default {
   background: #fff;
 
   .contact {
-    display: none;
+    visibility: hidden;
+    // display: none;
   }
 
   .logo {
-    display: none;
+    // display: none;
   }
+
+  // .logo {
+  //   position: absolute;
+  //   left: 50%;
+  //   transform: translateX(-75%);
+  // }
 }
 
 .dropdown {
   width: 100%;
-  height: 100%;
+  height: calc(100% - 3rem);
   background: #fff;
   position: fixed;
   top: 3rem;
@@ -365,11 +385,20 @@ export default {
     line-height: 1.13rem;
     box-sizing: border-box;
     padding: 0 0.6rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.88rem;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+
+    .children_svg {
+      width: 0.5rem;
+      height: 0.88rem;
+    }
   }
 
   .children:last-child {
-    margin: 0;
+    margin-bottom: 0.88rem;
   }
 
   .contact-us {
@@ -434,6 +463,7 @@ export default {
 
     .footer_info_left {
       .phone {
+        font-family: Oswald_Light;
         font-size: 1.25rem;
         color: rgba(255, 255, 255, 1);
         margin-bottom: 0.81rem;

@@ -85,9 +85,8 @@
       <div class="li">❷ 减重式称重扣费，绝对公平按价取菜</div>
       <div class="li">➌ 自动感应翻盖防逃单，保持食品卫生</div>
       <div class="li">❹ 内嵌式加热系统维持菜温</div>
-      <div class="li li-bottom">
-        ❺ 前后厅信息互通，实时插单加菜，提高管理效率
-      </div>
+      <div class="li ">❺ 前后厅信息互通，实时插单加菜，</div>
+      <div class="li li-bottom" style="margin-left:15px;">提高管理效率</div>
 
       <div class="detail">型号: UDOT-CL02-3.5X4</div>
       <div class="detail">功率: 3.5kW*4</div>
@@ -185,7 +184,7 @@ export default {
   margin: 0 auto;
   box-sizing: border-box;
   padding: 2.9rem 1.6rem 15rem 1.6rem;
-  border-radius: 1rem;
+  border-radius: 0.63rem;
   overflow: hidden;
   position: relative;
   margin-bottom: 1.38rem;
@@ -317,7 +316,7 @@ export default {
   box-sizing: border-box;
   padding-top: 1.38rem;
   padding-left: 2.38rem;
-  border-radius: 1rem;
+  border-radius: 0.63rem;
   overflow: hidden;
   position: relative;
   margin-bottom: 1.38rem;
@@ -335,6 +334,8 @@ export default {
     color: #161616;
     font-weight: 500;
     margin-bottom: 0.37rem;
+    line-height: 1.06rem;
+    font-family: PingFangSC-Medium, PingFang SC;
   }
 
   .li-bottom {
@@ -360,7 +361,7 @@ export default {
   background: rgba(256, 256, 256, 1)
     url('../../assets/wap/productCenter/ZNDTAMCL.png');
   background-repeat: no-repeat;
-  background-size: 85%;
+  background-size: 83%;
   background-position: 70% 115%;
 }
 

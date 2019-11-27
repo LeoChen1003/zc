@@ -48,19 +48,19 @@
           <div class="box_text">智能补料</div>
         </div>
         <div class="cell_item">
-          <svg-icon icon-class="core_js_3" class-name="box_svg"></svg-icon>
+          <svg-icon icon-class="core_js_5" class-name="box_svg"></svg-icon>
           <div class="box_text">智能翻炒</div>
         </div>
         <div class="cell_item">
-          <svg-icon icon-class="core_js_4" class-name="box_svg"></svg-icon>
+          <svg-icon icon-class="core_js_6" class-name="box_svg"></svg-icon>
           <div class="box_text">智能提醒</div>
         </div>
         <div class="cell_item">
-          <svg-icon icon-class="core_js_5" class-name="box_svg"></svg-icon>
+          <svg-icon icon-class="core_js_3" class-name="box_svg"></svg-icon>
           <div class="box_text">智能调整角度</div>
         </div>
         <div class="cell_item">
-          <svg-icon icon-class="core_js_6" class-name="box_svg"></svg-icon>
+          <svg-icon icon-class="core_js_4" class-name="box_svg"></svg-icon>
           <div class="box_text">智能控温</div>
         </div>
         <div class="cell_item">
@@ -213,7 +213,7 @@
       </transition>
       <transition name="fade">
         <div class="dialog" v-if="modelXT">
-          <div class="xt_more">
+          <div class="xt_more all_more">
             <div @click="modelXT = false">
               <svg-icon icon-class="close1" class-name="close"></svg-icon>
             </div>
@@ -246,7 +246,7 @@
           </div>
         </div>
         <div class="dialog" v-if="modelJS">
-          <div class="js_more">
+          <div class="js_more all_more">
             <div @click="modelJS = false">
               <svg-icon icon-class="close1" class-name="close"></svg-icon>
             </div>
@@ -314,7 +314,7 @@
           </div>
         </div>
         <div class="dialog" v-if="modelGK">
-          <div class="gk_more">
+          <div class="gk_more all_more">
             <div @click="modelGK = false">
               <svg-icon icon-class="close1" class-name="close"></svg-icon>
             </div>
@@ -342,7 +342,7 @@
           </div>
         </div>
         <div class="dialog" v-if="modelPJ">
-          <div class="pj_more">
+          <div class="pj_more all_more">
             <div @click="modelPJ = false">
               <svg-icon icon-class="close1" class-name="close"></svg-icon>
             </div>
@@ -382,7 +382,7 @@
           </div>
         </div>
         <div class="dialog" v-if="modelFW">
-          <div class="fw_more">
+          <div class="fw_more all_more">
             <div @click="modelFW = false">
               <svg-icon icon-class="close1" class-name="close"></svg-icon>
             </div>
@@ -503,7 +503,9 @@ export default {
   created() {
     self = this
   },
-  mounted() {}
+  mounted() {
+    self.$emit('setisWhite')
+  }
 }
 </script>
 <style lang="scss" scoped>
@@ -634,7 +636,7 @@ export default {
   .cell_box {
     display: flex;
     flex-wrap: wrap;
-    padding: 0 4.44rem;
+    width: 14rem;
     box-sizing: border-box;
     justify-content: space-between;
     margin-bottom: 1rem;
@@ -765,7 +767,7 @@ export default {
       }
 
       .box_content {
-        padding: 0.19rem;
+        padding: 0.19rem 0.44rem;
         box-sizing: border-box;
         background: rgba(255, 255, 255, 1);
         border-radius: 0.19rem;
@@ -804,7 +806,8 @@ export default {
 
   .cell_box {
     display: flex;
-    padding: 0 5.94rem 0 6.63rem;
+    // padding: 0 5.94rem 0 6.63rem;
+    width: 10.86rem;
     box-sizing: border-box;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -814,7 +817,8 @@ export default {
   .cell_box_row {
     width: 100%;
     display: flex;
-    padding: 0 2.88rem 0 3.56rem;
+    // padding: 0 2.88rem 0 3.56rem;
+    width: 17rem;
     box-sizing: border-box;
     justify-content: space-between;
     margin-bottom: 3.44rem;
@@ -863,7 +867,9 @@ export default {
   position: fixed;
   z-index: 11;
   width: calc(100vw - 3.76rem);
-  height: calc(100vh - 7.19rem);
+  // height: calc(100vh - 7.19rem);
+  height: calc(100vh - 3rem);
+  overflow: auto;
   // background: rgba(0, 0, 0, 0.9);
   // padding: 1.13rem 1.88rem 3.06rem 1.88rem;
   padding: 1.13rem 0rem 3.06rem 0rem;
@@ -914,12 +920,12 @@ export default {
 }
 
 .xt_more {
-  height: calc(100vh - 6.06rem);
-  background: #fff;
-  border-radius: 0.6rem;
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch;
-  position: relative;
+  // height: calc(100vh - 6.06rem);
+  // background: #fff;
+  // // border-radius: 0.8rem;
+  // // overflow: scroll;
+  // // -webkit-overflow-scrolling: touch;
+  // position: relative;
 
   .detail_1 {
     background: rgba(256, 256, 256, 0)
@@ -956,12 +962,12 @@ export default {
 }
 
 .js_more {
-  height: calc(100vh - 6.06rem);
-  background: #fff;
-  border-radius: 0.8rem;
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch;
-  position: relative;
+  // height: calc(100vh - 6.06rem);
+  // background: #fff;
+  // // border-radius: 0.8rem;
+  // // overflow: scroll;
+  // // -webkit-overflow-scrolling: touch;
+  // position: relative;
 
   .detail_1 {
     background: rgba(256, 256, 256, 0)
@@ -1042,12 +1048,12 @@ export default {
 }
 
 .gk_more {
-  height: calc(100vh - 6.06rem);
-  background: #fff;
-  border-radius: 0.6rem;
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch;
-  position: relative;
+  // height: calc(100vh - 6.06rem);
+  // background: #fff;
+  // border-radius: 0.6rem;
+  // // overflow: scroll;
+  // // -webkit-overflow-scrolling: touch;
+  // position: relative;
 
   .detail_1 {
     background: rgba(256, 256, 256, 0)
@@ -1076,12 +1082,12 @@ export default {
 }
 
 .pj_more {
-  height: calc(100vh - 6.06rem);
-  background: #fff;
-  border-radius: 0.6rem;
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch;
-  position: relative;
+  // height: calc(100vh - 6.06rem);
+  // background: #fff;
+  // border-radius: 0.6rem;
+  // // overflow: scroll;
+  // // -webkit-overflow-scrolling: touch;
+  // position: relative;
 
   .sub {
     font-size: 0.69rem;
@@ -1125,12 +1131,12 @@ export default {
 }
 
 .fw_more {
-  height: calc(100vh - 6.06rem);
-  background: #fff;
-  border-radius: 0.8rem;
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch;
-  position: relative;
+  // height: calc(100vh - 6.06rem);
+  // background: #fff;
+  // border-radius: 0.8rem;
+  // // overflow: scroll;
+  // // -webkit-overflow-scrolling: touch;
+  // position: relative;
 
   .detail_1 {
     background: rgba(256, 256, 256, 0)
@@ -1200,6 +1206,16 @@ export default {
     background-size: 100%;
     background-position: 100% 100%;
   }
+}
+
+.all_more {
+  // height: calc(100vh - 6.06rem);
+  background: #fff;
+  border-radius: 1rem;
+  position: relative;
+  overflow: hidden;
+  // overflow: scroll;
+  // -webkit-overflow-scrolling: touch;
 }
 
 .fade-enter-active,

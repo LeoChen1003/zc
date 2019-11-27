@@ -176,7 +176,7 @@
       <img src="../../assets/wap/productCenter/GT_dzcp.png" alt="dzcp" />
     </div>
     <div class="know_more">
-      <div class="moore_btn">
+      <div class="moore_btn" @click="$router.push('/wap/proDetailYTJJS')">
         <svg-icon
           icon-class="white_add"
           style="width:0.88rem;height:0.88rem;margin-right:2px;"
@@ -209,7 +209,6 @@ export default {
   watch: {},
   methods: {
     handleScroll() {
-      console.log(document.documentElement.scrollTop)
       if (document.documentElement.scrollTop > 276) {
         self.type = 'js'
       } else {
@@ -409,12 +408,14 @@ export default {
   background: rgba(0, 0, 0, 1) url('../../assets/wap/productCenter/YTJ_4.png');
   background-repeat: no-repeat;
   background-size: 100%;
-  background-position: 100% 100%;
+  // background-position: 100% 100%;
   text-align: right;
 
   .intro2 {
     text-align: left;
-    margin-left: 7.63rem;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 2.5rem;
     margin-bottom: 4.25rem;
   }
 

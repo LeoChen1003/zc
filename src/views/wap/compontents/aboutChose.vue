@@ -4,21 +4,28 @@
       <div class="header_title">{{ title }}</div>
       <div class="li_arrow" :class="dropdown ? 'open' : ''"></div>
     </div>
+    <div class="top_model" v-if="dropdown" @touchmove.prevent></div>
     <transition name="fade">
-      <div class="model" v-if="dropdown">
-        <div class="dropdown" v-if="dropdown">
-          <div
-            class="dropdown_item"
-            @click="
-              $router.push(item.path)
-              dropdown = false
-            "
-            v-for="(item, index) in routeList"
-            :key="index"
-            v-show="item.name != title"
-          >
-            {{ item.name }}
-          </div>
+      <div
+        class="model"
+        v-if="dropdown"
+        @touchmove.prevent
+        @click="dropdown = false"
+      ></div>
+    </transition>
+    <transition name="fade">
+      <div class="dropdown" v-if="dropdown">
+        <div
+          class="dropdown_item"
+          @click="
+            $router.push(item.path)
+            dropdown = false
+          "
+          v-for="(item, index) in routeList"
+          :key="index"
+          v-show="item.name != title"
+        >
+          {{ item.name }}
         </div>
       </div>
     </transition>
@@ -58,6 +65,7 @@ export default {
   height: 3rem;
   padding: 0 1.81rem;
   box-sizing: border-box;
+  border-bottom: 1px solid #f2f2f2;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -76,6 +84,15 @@ export default {
     transform: rotate(-135deg);
     margin-top: 0.35rem;
   }
+}
+
+.top_model {
+  height: 5.63rem;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 3rem;
+  left: 0;
 }
 
 .model {
@@ -97,4 +114,15 @@ export default {
   z-index: 10;
   background: #fff;
 }
+
+// .fade-enter-active,
+// .fade-leave-active {
+//   transition: all 0.3s;
+// }
+
+// .fade-enter,
+// .fade-leave-to {
+//   opacity: 0;
+//   height: 0;
+// }
 </style>

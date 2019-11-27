@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper" :class="isWhite ? 'wrapperB' : 'wrapperW'">
     <div class="topFix">
-      <div class="line"></div>
+      <div class="line" :class="isWhite ? 'line_b' : ''"></div>
       <div class="header_box">
         <div
           class="left"
@@ -111,9 +111,13 @@ export default {
 }
 
 .line {
-  width: 23.44rem;
+  width: 100%;
   height: 0.06rem;
-  background: rgba(38, 39, 40, 1);
+  background: #f2f2f2;
+}
+
+.line_b {
+  background: #262728;
 }
 
 .header_box {
@@ -121,7 +125,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.88rem 0.63rem 0.88rem 1.13rem;
+  padding: 0.88rem 1rem;
   color: #fff;
   box-sizing: border-box;
 
@@ -158,7 +162,7 @@ export default {
 .dropdown {
   color: #333;
   font-size: 0.75rem;
-  padding: 0 2.38rem;
+  padding: 0 2.38rem 1.12rem 2.38rem;
   box-sizing: border-box;
   .dropdown_item {
     padding: 0.75rem 0.63rem;

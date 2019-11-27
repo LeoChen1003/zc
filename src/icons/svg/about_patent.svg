@@ -193,5 +193,47 @@
       </g>
     </g>
     <path d="m114 1426c-1.104569 0-2-.89543-2-2s.895431-2 2-2 2 .89543 2 2-.895431 2-2 2zm6 0c-1.104569 0-2-.89543-2-2s.895431-2 2-2 2 .89543 2 2-.895431 2-2 2zm6 0c-1.104569 0-2-.89543-2-2s.895431-2 2-2 2 .89543 2 2-.895431 2-2 2z" fill="#b78717"/>
+    <g transform="matrix(-1 0 0 1 146 617)">
+      <path d="m3 0h51c1.6568542 0 3 1.34314575 3 3v11c0 1.6568542-1.3431458 3-3 3h-51c-1.65685425 0-3-1.3431458-3-3v-11c0-1.65685425 1.34314575-3 3-3z" fill="#6b574e"/>
+      <text fill="#fff" font-family="PingFangSC-Semibold, PingFang SC" font-size="11" font-weight="500">
+        <tspan x="7" y="12">发明专利</tspan>
+      </text>
+    </g>
+    <g fill="#6b574e" transform="matrix(-1 0 0 1 135 581)">
+      <text font-family="Oswald-Bold, Oswald" font-size="20" font-weight="bold">
+        <tspan x=".16" y="24">211</tspan>
+      </text>
+      <text font-family="PingFangSC-Semibold, PingFang SC" font-size="11" font-weight="500">
+        <tspan x="31" y="26">项</tspan>
+      </text>
+    </g>
+    <g transform="matrix(-1 0 0 1 146 908)">
+      <path d="m3 0h51c1.6568542 0 3 1.34314575 3 3v11c0 1.6568542-1.3431458 3-3 3h-51c-1.65685425 0-3-1.3431458-3-3v-11c0-1.65685425 1.34314575-3 3-3z" fill="#6b574e"/>
+      <text fill="#fff" font-family="PingFangSC-Semibold, PingFang SC" font-size="11" font-weight="500">
+        <tspan x="7" y="12">国外授权</tspan>
+      </text>
+    </g>
+    <g fill="#6b574e" transform="matrix(-1 0 0 1 130 872)">
+      <text font-family="Oswald-Bold, Oswald" font-size="20" font-weight="bold">
+        <tspan x=".82" y="24">5</tspan>
+      </text>
+      <text font-family="PingFangSC-Semibold, PingFang SC" font-size="11" font-weight="500">
+        <tspan x="16" y="26">项</tspan>
+      </text>
+    </g>
+    <g transform="matrix(-1 0 0 1 147 1199)">
+      <path d="m3 0h51c1.6568542 0 3 1.34314575 3 3v11c0 1.6568542-1.3431458 3-3 3h-51c-1.65685425 0-3-1.3431458-3-3v-11c0-1.65685425 1.34314575-3 3-3z" fill="#6b574e"/>
+      <text fill="#fff" font-family="PingFangSC-Semibold, PingFang SC" font-size="11" font-weight="500">
+        <tspan x="6.989" y="12">PCT专利</tspan>
+      </text>
+    </g>
+    <g fill="#6b574e" transform="matrix(-1 0 0 1 131 1163)">
+      <text font-family="Oswald-Bold, Oswald" font-size="20" font-weight="bold">
+        <tspan x=".72" y="24">3</tspan>
+      </text>
+      <text font-family="PingFangSC-Semibold, PingFang SC" font-size="11" font-weight="500">
+        <tspan x="16" y="26">项</tspan>
+      </text>
+    </g>
   </g>
 </svg>

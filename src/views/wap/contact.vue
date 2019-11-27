@@ -126,6 +126,7 @@
                 <svg-icon
                   icon-class="city_zh"
                   class-name="city_zh city_svg"
+                  style="margin-bottom:9px;"
                 ></svg-icon>
                 <div class="location_city">珠海</div>
               </div>
@@ -336,7 +337,7 @@ export default {
     box-sizing: border-box;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #cccccc;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     position: relative;
     .icon_star {
       position: absolute;
@@ -588,12 +589,13 @@ export default {
           display: flex;
           flex-direction: column;
           align-items: center;
+          justify-content: center;
           margin-right: 0.81rem;
 
           .city_svg {
             width: 3.63rem;
             height: 3.63rem;
-            margin-bottom: 1.06rem;
+            margin-bottom: 0.5rem;
           }
 
           .location_city {

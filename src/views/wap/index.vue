@@ -6,13 +6,13 @@
       <div class="title-2">人工智能时代的餐饮革命</div>
       <div class="title-3">以智能解构中餐，用科技为餐饮业赋能</div>
       <div class="video-box">
-        <div class="view-text">观</div>
+        <div class="view-text" style="margin-right:30px;">观</div>
         <div class="view-text">看</div>
         <div class="video-button" @click="toVideo">
-          <div class="video-btn—c"></div>
+          <svg-icon icon-class="wap_index_video_btn" class="svg"></svg-icon>
         </div>
         <div class="view-text">视</div>
-        <div class="view-text">频</div>
+        <div class="view-text" style="margin-left:30px;">频</div>
       </div>
     </div>
     <div class="cell cell-2">
@@ -25,13 +25,19 @@
       <div class="info-box">
         <div class="title">更专业</div>
         <div class="sub-title">专利及专利申请 :</div>
-        <div class="number">466<span>件</span></div>
+        <div class="number">522<span>件</span></div>
         <div class="bottom">专利多显得我们专业牛逼啊</div>
       </div>
       <div class="info-box">
         <div class="title">更丰富</div>
         <div class="sub-title">云菜谱数量 :</div>
-        <div class="number">1000<span>道</span></div>
+        <div class="number">
+          1000
+          <span style="margin-left:0;">
+            道
+            <svg-icon icon-class="up1" class="number_svg"></svg-icon>
+          </span>
+        </div>
         <div class="bottom">1台设备拥有20名大厨的手艺</div>
       </div>
       <div class="info-box">
@@ -262,6 +268,10 @@ export default {
 }
 </script>
 <style scoped lang="scss">
+@font-face {
+  font-family: Oswald_SemiBold;
+  src: url('../../assets/font/Oswald-SemiBold.ttf');
+}
 .cell-1 {
   width: 100%;
   height: 33.5rem;
@@ -298,7 +308,7 @@ export default {
 
   .video-box {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     color: #fff;
     font-size: 0.81rem;
     align-items: center;
@@ -310,16 +320,12 @@ export default {
       justify-content: center;
       width: 3.75rem;
       height: 3.75rem;
-      background: rgba(216, 216, 216, 0);
-      border: 0.06rem solid #2cc6c0;
       border-radius: 50%;
+      margin-left: 30px;
+      margin-right: 30px;
       cursor: pointer;
-      .video-btn—c {
-        width: 0;
-        height: 0;
-        border-top: 0.35rem solid transparent;
-        border-left: 0.6rem solid #fff;
-        border-bottom: 0.35rem solid transparent;
+      .svg {
+        width: 100%;
       }
     }
   }
@@ -358,6 +364,7 @@ export default {
     .number {
       font-size: 2.19rem;
       font-weight: normal;
+      font-family: Oswald_SemiBold;
       color: rgba(255, 255, 255, 1);
       line-height: 3.25rem;
 
@@ -366,6 +373,16 @@ export default {
         font-weight: 600;
         color: rgba(255, 255, 255, 1);
         line-height: 1.06rem;
+        margin-left: 0.31rem;
+        position: relative;
+
+        .number_svg {
+          width: 0.75rem;
+          height: 0.75rem;
+          position: absolute;
+          top: -0.88rem;
+          right: 0;
+        }
       }
     }
 

@@ -5,7 +5,7 @@
       :name="'智能大滚筒炒菜机套机'"
       :glUrl="'/wap/proDetailGTGL'"
       :jsUrl="'/wap/proDetailGTJS'"
-      :isWhite="false"
+      :isWhite="true"
     ></GTHeader>
     <div class="wrapper_content">
       <div class="swiper">
@@ -195,7 +195,9 @@ export default {
   created() {
     self = this
   },
-  mounted() {}
+  mounted() {
+    this.$emit('setisBlack')
+  }
 }
 </script>
 <style lang="scss" scoped>

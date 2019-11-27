@@ -208,6 +208,8 @@ export default {
   font-size: 0.88rem;
   text-align: center;
   color: #fff;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
   line-height: 1.88rem;
 }
 
@@ -219,6 +221,7 @@ export default {
   border-radius: 1.13rem;
   border: 0.06rem solid black;
   font-size: 0.88rem;
+  font-family: PingFangSC-Semibold, PingFang SC;
   font-weight: 600;
   color: white;
   line-height: 1.88rem;
@@ -277,7 +280,7 @@ export default {
     box-sizing: border-box;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #cccccc;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     position: relative;
     .icon_star {
       position: absolute;

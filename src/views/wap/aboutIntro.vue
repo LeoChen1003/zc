@@ -118,6 +118,10 @@ export default {
 </script>
 <style lang="scss" scoped>
 //@import url(); 引入公共css类
+@font-face {
+  font-family: Oswald_Bold;
+  src: url('../../assets/font/Oswald-Bold.ttf');
+}
 .wrapper {
   padding-top: 3rem;
   box-sizing: border-box;
@@ -131,7 +135,7 @@ export default {
   background-position: 100% 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  // justify-content: center;
   align-items: center;
 
   .name {
@@ -162,6 +166,7 @@ export default {
       font-weight: bold;
       color: rgba(44, 198, 192, 1);
       margin-bottom: 0.81rem;
+      font-family: Oswald_Bold;
     }
 
     .title {
@@ -173,6 +178,12 @@ export default {
 
     .margin_b {
       margin-bottom: 1rem;
+    }
+
+    .content {
+      font-size: 0.88rem;
+      color: rgba(51, 51, 51, 1);
+      line-height: 1.88rem;
     }
   }
 
@@ -194,6 +205,7 @@ export default {
       font-weight: bold;
       color: rgba(204, 204, 204, 1);
       margin-bottom: 0.63rem;
+      font-family: Oswald_Bold;
     }
   }
 

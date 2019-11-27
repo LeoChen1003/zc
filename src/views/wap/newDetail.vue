@@ -125,6 +125,11 @@ export default {
     box-sizing: border-box;
     border-top: 0.06rem solid #d4d4d4;
     border-bottom: 0.06rem solid #d4d4d4;
+    font-size: 0.81rem;
+    font-family: PingFangSC-Light, PingFang SC;
+    font-weight: 300;
+    color: rgba(22, 22, 22, 1);
+    line-height: 1.87rem;
 
     .img {
       width: 100%;
@@ -136,5 +141,8 @@ export default {
 <style lang="scss">
 .new_detail .content img {
   width: 100%;
+  height: auto;
+  margin: 1.5rem 0;
+  object-fit: contain;
 }
 </style>
