@@ -1,5 +1,5 @@
 <template>
-  <div class="reservationBtn">
+  <div class="reservationBtn" @touchmove.prevent>
     <div
       :class="
         type == 'black' ? 'btn_black' : type == 'white' ? 'btn_white' : 'btn'
