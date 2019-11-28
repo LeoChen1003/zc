@@ -75,11 +75,11 @@
       <div class="contact_commit_email">
         <div class="email_item">
           <div class="email_name">品牌合作邮箱：</div>
-          <div class="email">zhaochenghua@ut.com</div>
+          <div class="email">ucmarket@ut.cn</div>
         </div>
         <div class="email_item">
           <div class="email_name">媒体合作邮箱：</div>
-          <div class="email">zhaochenghua@ut.com</div>
+          <div class="email">ucmarket@ut.cn</div>
         </div>
         <div class="email_item">
           <div class="email_name">人才招聘：</div>

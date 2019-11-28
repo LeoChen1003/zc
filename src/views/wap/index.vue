@@ -216,6 +216,10 @@ export default {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev'
         },
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false
+        },
         on: {
           slideChangeTransitionEnd: function() {
             // 切换结束时，告诉我现在是第几个slide

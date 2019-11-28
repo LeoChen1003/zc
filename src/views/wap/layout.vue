@@ -43,6 +43,11 @@
               item.children
                 ? (item.show = !item.show)
                 : $router.push({ path: item.url })
+              /*for (let i in route) {
+                if (route[i].name !== item.name) {
+                  route[i].show = false
+                }
+              }*/
             "
           >
             <div class="li">{{ item.name }}</div>
