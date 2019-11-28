@@ -36,7 +36,7 @@
             <div class="block">
                 <el-timeline :reverse="reverse">
                     <el-timeline-item v-for="(activity,index) in activities" :key="index" :size="activity.size" :color="activity.color">
-                        <p style="font-size:2.12rem" :class="t[index]">{{activity.timestamp}}</p>
+                        <p style="font-size:2.13rem;font-family:mFont1;" :class="t[index]">{{activity.timestamp}}</p>
                         <p>{{activity.content}}</p>
                     </el-timeline-item>
                 </el-timeline>
@@ -106,6 +106,10 @@ export default {
 </script>
 
 <style  lang="scss" scope>
+@font-face {
+    font-family: mFont1;
+    src: url('../assets/font/Oswald-SemiBold.ttf');
+  }
     .intro{
         border-top: 1px solid rgb(218, 216, 216);
         .block{
@@ -150,12 +154,10 @@ export default {
                 font-size: 3rem;
                 color: #2CC6C0;
                 margin-right: 18.5%;
+                font-family: mFont1;
             }
             .about_con1_ct_r{
                 float: left;
-                p{
-                    font-family:PingFangSC-Semibold,PingFang SC;
-                }
                 p:first-child,
                 p:nth-child(3){
                     font-size:1.75rem;
@@ -205,12 +207,10 @@ export default {
                 font-size: 3rem;
                 color: #2CC6C0;
                 margin-right: 18.5%;
+                font-family: mFont1;
             }
             .about_con2_ct_r{
                 float: left;
-                p{
-                    font-family:PingFangSC-Semibold,PingFang SC;
-                }
                 p:first-child,
                 p:nth-child(4){
                     font-size:1.75rem;
@@ -276,6 +276,7 @@ export default {
                 font-size: 3rem;
                 color: #2CC6C0;
                 margin-right: 18.5%;
+                font-family: mFont1;
             }
             .about_con3_ct_r{
                 float: left;

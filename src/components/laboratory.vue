@@ -52,6 +52,7 @@ export default {
             font-size: 1.75rem;
             color: #000;
             width: 8.81rem;
+            font-weight: 600;
         }
         .lab_con1{
             width: 100%;
@@ -71,6 +72,7 @@ export default {
                     width: 27.9rem;
                     margin-left: 6.56rem;
                     margin-top: 1.44rem;
+                    line-height: 1.88rem;
                 }
             }
             .lab_con1_r{
@@ -106,6 +108,7 @@ export default {
                     margin-top: 1.43rem;
                     margin-left: 4.06rem;
                     width: 12.12rem;
+                    line-height: 1.88rem;
                 }
             }
         }
@@ -129,6 +132,7 @@ export default {
                     font-size: 1rem;
                     color: #333;
                     width: 27.9rem;
+                    line-height: 1.88rem;
                 }
             }
             .lab_con3_r{

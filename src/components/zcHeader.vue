@@ -130,13 +130,23 @@ export default {
     },
     show() {
       var show = document.getElementsByClassName("show")[0];
-      show.style.display = "block";
+      show.style.height="10.75rem";
+      show.style.visibility="visible";
       this.$refs.nav.className = "whiteBack";
+      var black = document.getElementsByClassName("black")[0]
+      black.style.display = "block";
     },
     hide() {
       var show = document.getElementsByClassName("show")[0];
-      show.style.display = "none";
-      this.$refs.nav.className = "blackBack";
+      show.style.visibility = "hidden";
+      show.style.height=0;
+      var black = document.getElementsByClassName("black")[0]
+      black.style.display = "none";
+      if(this.isWhite){
+        this.$refs.nav.className = "whiteBack";
+      }else{
+        this.$refs.nav.className = "blackBack";
+      }
     },
     product() {
       this.$router.push("/product");
@@ -165,7 +175,11 @@ export default {
       var black = document.getElementsByClassName("black")[0]
       showPro.style.display = "none";
       black.style.display = "none";
-      this.$refs.nav.className = "blackBack";
+      if(this.isWhite){
+        this.$refs.nav.className = "whiteBack";
+      }else{
+        this.$refs.nav.className = "blackBack";
+      }
     },
     changeColor1() {
       var btn2 = document.getElementsByClassName("showPro_l_btn2")[0];
@@ -207,8 +221,7 @@ export default {
     }
   },
   mounted() {
-    // this.$emit("changeTab",this.tab);
-    // window.console.log(this.tab);
+
   }
 };
 </script>
@@ -218,13 +231,17 @@ export default {
 .header_bottom {
   position: relative;
   .show {
+    transition: all 0.5s;
     width: 100vw;
-    height: 10.75rem;
-    display: none;
+    // height: 10.75rem;
+    // display: none;
+    height: 0;
+    visibility: hidden;
     min-width: 89rem;
     position: fixed;
     z-index: 10;
     margin-top: 2.94rem;
+    overflow: hidden;
     background: linear-gradient(
       180deg,
       rgba(240, 240, 240, 1) 0%,
@@ -238,6 +255,8 @@ export default {
       font-size: 0.87rem;
       color: #000;
       margin-left: 63%;
+      // opacity: 0;
+      transition: all 0.5s;
     }
     p:first-child {
       margin-top: 2rem;
@@ -441,78 +460,12 @@ export default {
             align-items: center;
             justify-content: center;
           }
-          div:nth-child(3n) {
+          div:nth-child(4n-1) {
             width: 10rem;
           }
           div:nth-child(4n) {
             margin-right: 0rem;
           }
-          // display:none;
-          // .d1,.d2,.d3{
-          //     float: left;
-          //     width: 48rem;
-          //     height: 8.75rem;
-          //     margin-top: 3rem;
-          //     span{
-          //         position: absolute;
-          //         // width:98px;
-          //         height:20px;
-          //         font-size:0.87rem;
-          //         font-weight:400;
-          //         color:rgba(51,51,51,1);
-          //     }
-          //     .sp1{
-          //         top: 9rem;
-          //         left: 38.8rem;
-          //     }
-          //     .sp2{
-          //         top: 9rem;
-          //         left: 49.5rem;
-          //     }
-          //     .sp3{
-          //         top: 9rem;
-          //         left: 59rem;
-          //     }
-          //     .sp4{
-          //         top: 9rem;
-          //         left: 70.5rem;
-          //     }
-          //     .sp5{
-          //         top: 20rem;
-          //         left: 39.5rem;
-          //     }
-          //     .sp6{
-          //         top: 20rem;
-          //         left: 50rem;
-          //     }
-          //     .sp7{
-          //         top: 20rem;
-          //         left: 62rem;
-          //     }
-          //     .sp8{
-          //         top: 20rem;
-          //         left: 70.5rem;
-          //     }
-          //     .sp9{
-          //         top: 31rem;
-          //         left: 38.5rem;
-          //     }
-          //     .sp10{
-          //         top: 31rem;
-          //         left: 49.5rem;
-          //     }
-          //     .icon3{
-          //         width: 7.5rem;
-          //         height: 7.5rem;
-          //         margin-left: 3rem;
-          //     }
-          // }
-          // .d2,.d3{
-          //     margin-top: 2rem;
-          // }
-          // .d3_r{
-          //     margin-left: 35rem;
-          // }
         }
       }
     }
@@ -558,9 +511,6 @@ export default {
     background: rgba(0,0,0,0.5);
     z-index: 2;
   }
-}
-.whiteBack1 {
-  transition: all 2s;
 }
 .blackBack,
 .blackBack1 {
@@ -739,78 +689,12 @@ export default {
             align-items: center;
             justify-content: center;
           }
-          div:nth-child(3n) {
+          div:nth-child(4n-1) {
             width: 10rem;
           }
           div:nth-child(4n) {
             margin-right: 0rem;
           }
-          // display:none;
-          // .d1,.d2,.d3{
-          //     float: left;
-          //     width: 48rem;
-          //     height: 8.75rem;
-          //     margin-top: 3rem;
-          //     span{
-          //         position: absolute;
-          //         // width:98px;
-          //         height:20px;
-          //         font-size:0.87rem;
-          //         font-weight:400;
-          //         color:rgba(51,51,51,1);
-          //     }
-          //     .sp1{
-          //         top: 9rem;
-          //         left: 38.8rem;
-          //     }
-          //     .sp2{
-          //         top: 9rem;
-          //         left: 49.5rem;
-          //     }
-          //     .sp3{
-          //         top: 9rem;
-          //         left: 59rem;
-          //     }
-          //     .sp4{
-          //         top: 9rem;
-          //         left: 70.5rem;
-          //     }
-          //     .sp5{
-          //         top: 20rem;
-          //         left: 39.5rem;
-          //     }
-          //     .sp6{
-          //         top: 20rem;
-          //         left: 50rem;
-          //     }
-          //     .sp7{
-          //         top: 20rem;
-          //         left: 62rem;
-          //     }
-          //     .sp8{
-          //         top: 20rem;
-          //         left: 70.5rem;
-          //     }
-          //     .sp9{
-          //         top: 31rem;
-          //         left: 38.5rem;
-          //     }
-          //     .sp10{
-          //         top: 31rem;
-          //         left: 49.5rem;
-          //     }
-          //     .icon3{
-          //         width: 7.5rem;
-          //         height: 7.5rem;
-          //         margin-left: 3rem;
-          //     }
-          // }
-          // .d2,.d3{
-          //     margin-top: 2rem;
-          // }
-          // .d3_r{
-          //     margin-left: 35rem;
-          // }
         }
       }
     }
@@ -856,9 +740,6 @@ export default {
     background: rgba(0,0,0,0.5);
     z-index: 2;
   }
-}
-.blackBack1 {
-  transition: all 2s;
 }
 .nor {
   font-weight: normal;

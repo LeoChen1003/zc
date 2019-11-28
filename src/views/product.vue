@@ -1,6 +1,6 @@
 <template>
     <div class="product">
-        <zcHeader :tab1="tab" :isWhite="true"></zcHeader>
+        <zcHeader :tab1="tab" :isWhite="isWhite"></zcHeader>
         <div class="product_header">
             <span @click="jump(0)" :class="isActive1?'bolder':'normal'">旗舰智厨产品</span>
             <span>···</span>
@@ -454,7 +454,10 @@
                     </div>
                 </div>
             </div>
-        </div>     
+        </div>  
+        <transition name="fade">
+            <buyConsult v-if="isBuy"></buyConsult>
+        </transition>   
         <zcFooter></zcFooter>
     </div>
 </template>
@@ -463,18 +466,22 @@
 import zcHeader from '@/components/zcHeader.vue';
 import zcFooter from '@/components/zcFooter.vue';
 import '../styles/variables.scss';
+import buyConsult from '@/components/buyConsult.vue';
 export default {
     name: 'product',
     components:{
         zcHeader,
         zcFooter,
+        buyConsult
     },
     data(){
         return {
             tab: 0,
             isActive1: true,
             isActive2: false,
-            isActive3: false
+            isActive3: false,
+            isWhite: true,
+            isBuy: false
         }
     },
     methods:{
@@ -485,7 +492,7 @@ export default {
             this.$router.push("/product/proAIO");
         },
         buy(){
-            this.$router.push("/buyConsult");
+            this.isBuy = true;
         },
         jump(i){
             let jump = document.getElementsByClassName("d_jump");
@@ -1126,5 +1133,14 @@ export default {
         }
     }
 }
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>

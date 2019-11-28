@@ -1,32 +1,37 @@
 <template>
     <div class="consult">
-        <p class="p1">订购咨询</p>
-        <p class="p2">填写并提交以下信息，我们的工作人员将在2个工作日内与您联系</p>
-        <form class="consult_commit">  
-            <div class="consult_commit_input">
-                <span>称呼</span><svg-icon icon-class="icon_star" class-name="icon_star"></svg-icon><input class="input1" type="name" v-model="name" placeholder="例如：王先生"/><br>
+        <div class="consult_bg"></div>
+        <div class="consult_filter">
+            <p class="p1">订购咨询</p>
+            <div class="close" @click="goBack">
+                <svg-icon icon-class="close" class-name="svg_close"></svg-icon>
             </div>
-            <div class="consult_commit_input">
-                <span>电话</span><svg-icon icon-class="icon_star" class-name="icon_star"></svg-icon><input class="input2" v-model="phone" placeholder="请填写电话" /><br>
-            </div>
-            <div class="consult_commit_input">
-                <span>省市</span><input class="input3" v-model="provice" placeholder="例如：浙江省杭州市" /><br>
-            </div>
-            <div class="consult_commit_input">
-                <span>需求设备</span><input placeholder="请选择需求设备…" class="input4" @click="inputOpen"/><div class="arrow" @click="open" ><svg-icon :icon-class="iconClass" class-name="xia_arrow"></svg-icon></div><br>
-                <div v-show="visible" class="consult_commit_input_select" ref="select">
-                    <div v-for="(item,i) of machine" @click="changeTxt(i)" :key="i" :class="{blue:changeColor==i}">{{machine[i]}}</div>
+            <p class="p2">填写并提交以下信息，我们的工作人员将在2个工作日内与您联系</p>
+            <form class="consult_commit">  
+                <div class="consult_commit_input">
+                    <span>称呼</span><svg-icon icon-class="icon_star" class-name="icon_star"></svg-icon><input class="input1" type="name" v-model="name" placeholder="例如：王先生"/><br>
                 </div>
+                <div class="consult_commit_input">
+                    <span>电话</span><svg-icon icon-class="icon_star" class-name="icon_star"></svg-icon><input class="input2" v-model="phone" placeholder="请填写电话" /><br>
+                </div>
+                <div class="consult_commit_input">
+                    <span>省市</span><input class="input3" v-model="provice" placeholder="例如：浙江省杭州市" /><br>
+                </div>
+                <div class="consult_commit_input">
+                    <span>需求设备</span><input placeholder="请选择需求设备…" class="input4" @click="inputOpen"/><div class="arrow" @click="open" ><svg-icon :icon-class="iconClass" class-name="xia_arrow"></svg-icon></div><br>
+                    <div v-show="visible" class="consult_commit_input_select" ref="select">
+                        <div v-for="(item,i) of machine" @click="changeTxt(i)" :key="i" @mousemove="showBlue(i)" @mouseleave="hideBlue(i)">{{machine[i]}}</div>
+                    </div>
+                </div>
+                <div class="consult_commit_input">
+                    <span>需求数量</span><input v-model="amount" placeholder="请填写需求数量…" /><br>
+                </div>
+            </form>
+            
+            <div class="consult_commit_btn" @click="sendMessage">
+                提交意愿
             </div>
-            <div class="consult_commit_input">
-                <span>需求数量</span><input v-model="amount" placeholder="请填写需求数量…" /><br>
-            </div>
-        </form>
-        <div class="consult_commit_btn" @click="sendMessage">
-            提交意愿
-        </div>
-        <div class="close" @click="goBack">
-            <svg-icon icon-class="close" class-name="svg_close"></svg-icon>
+            
         </div>
     </div>
 </template>
@@ -49,6 +54,14 @@ export default {
         }
     },
     methods:{
+        showBlue(index){
+            var div = document.querySelectorAll(".consult_commit_input_select>div");
+            div[index].className = "blue";
+        },
+        hideBlue(index){
+            var div = document.querySelectorAll(".consult_commit_input_select>div");
+            div[index].className = "";
+        },
         inputOpen(){
             this.visible = true;
             this.iconClass = "shang";
@@ -138,9 +151,10 @@ export default {
             this.changeColor = index;
         },
         goBack(){
-            this.$router.go(-1);
+            this.$parent.isBuy=false;
         },
         sendMessage(){
+            window.console.log(1);
             if(this.name===null){
                 this.$message({
                     showClose: true,
@@ -199,19 +213,48 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .consult{
+    transition: all 0.5s;
     width:100%;
     height: 51rem;
-    background:#F8F9FB;
-    opacity: 0.8;
-    overflow: hidden;
-    position: relative;
+    // background:rgba(255, 255, 255, 0.8);
+    // overflow: hidden;
+    // position: relative;
+    position: fixed;
+    // filter: blur(5px);
+    top:0;
+    left: 0;
+    z-index: 1000;
+    overflow: auto;
+    .consult_bg{
+        width: 100%;
+        height: 100%;
+        // background:rgba(255, 255, 255, 0.8);
+        background: url('../assets/white.png') repeat;
+        background-size: cover;
+        opacity: 0.97;
+        filter: blur(5px) !important;
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+    }
+    .consult_filter{
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        position: relative;
+        // background:rgba(255, 255, 255, 0.8);
+    }
     .close{
         cursor: pointer;
         position: absolute;
         width: 3rem;
         height: 3rem;
-        top: 7.5rem;
+        top: 0;
+        margin-left: 1rem;
         right: 17rem;
         .svg_close{
             width: 3rem;
@@ -240,8 +283,8 @@ export default {
         margin-top: 4rem;
         .consult_commit_input{
             width: 100%;
-            height: 2.75rem;
-            border-bottom: 1px solid #cccccc;
+            height: 3.75rem;
+            border-bottom: 1px solid rgba(0,0,0,.1);
             position: relative;
             .icon_star{
                 position: absolute;
@@ -252,18 +295,20 @@ export default {
             }
             span{
                 display: inline-block;
-                margin-top: 0.8rem;
+                margin-top: 1rem;
                 font-size: 1.25rem;
+                font-weight: 600;
+                color: #000;
             }
             input{
                 padding-left: 1.5rem;
                 border: none;
                 display: inline-block;
                 width: 37.5rem;
-                height: 1.5rem;
+                // height: 1.5rem;
                 outline: none;
-                background-color: #F8F9FB;
                 font-size: 1.25rem;
+                background-color: transparent;
             }
             .input1,.input2,.input3{
                 padding-left: 4rem;
@@ -332,9 +377,6 @@ export default {
                     border-bottom: 1px solid rgba(236,236,236,1);
                 }
             }
-        }
-        .consult_commit_input:not(:first-child){
-            margin-top: 1rem;
         }
     }
     .consult_commit_btn{

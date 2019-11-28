@@ -143,4 +143,18 @@ export default {
         }
     }
 }
+.newDel .newDel_con .content {
+  font-size: 1.25rem;
+  font-family: PingFangSC-Light, PingFang SC;
+  font-weight: 300;
+  color: rgba(22, 22, 22, 1);
+  line-height: 2.19rem;
+
+  img {
+    width: 100%;
+    height: auto;
+    margin: 2.31rem 0;
+    object-fit: contain;
+  }
+}
 </style>

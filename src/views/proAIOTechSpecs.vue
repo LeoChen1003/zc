@@ -44,6 +44,9 @@
                 净重：90kg<br>
                 配置：内嵌抽油烟机</p>
         </div>
+        <transition name="fade">
+            <buyConsult v-if="isBuy"></buyConsult>
+        </transition>
         <zcFooter></zcFooter>
     </div>
 </template>
@@ -52,16 +55,19 @@
 import zcHeader from '@/components/zcHeader.vue';
 import zcFooter from '@/components/zcFooter.vue';
 import '../styles/variables.scss';
+import buyConsult from '@/components/buyConsult.vue';
 export default {
     name: 'proAIOTechSpecs',
     components:{
         zcHeader,
         zcFooter,
+        buyConsult
     },
     data(){
         return {
             isActive:false,
-            isWhite:false
+            isWhite:false,
+            isBuy:false
         }
     },
     mounted(){
@@ -73,15 +79,17 @@ export default {
             if(top>=774 && top<= 2066){
                 hder.className = "whiteBack";
                 this.isActive = true;
+                this.isWhite = true;
             }else{
                 hder.className = "blackBack";
                 this.isActive = false;
+                this.isWhite = false;
             }
         }
     },
     methods:{
         buy(){
-            this.$router.push("/buyConsult");
+            this.isBuy = true;
         }
     }
 }
@@ -222,5 +230,14 @@ export default {
             margin-bottom: 4.81rem;
         }
     }
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>

@@ -102,6 +102,9 @@
                 电源电压：AC380V/50HZ<br>
                 整机尺寸：900*800*1500mm</span>
         </div>
+        <transition name="fade">
+            <buyConsult v-if="isBuy"></buyConsult>
+        </transition>
         <zcFooter></zcFooter>
     </div>
 </template>
@@ -110,6 +113,7 @@
 import zcHeader from '@/components/zcHeader.vue';
 import zcFooter from '@/components/zcFooter.vue';
 import '../styles/variables.scss';
+import buyConsult from '@/components/buyConsult.vue';
 let self;
 export default {
     name: 'proCaiTechSpecs',
@@ -118,6 +122,7 @@ export default {
             isActive:false,
             curIndex:0,
             isWhite:false,
+            isBuy:false,
             swiperOption: {
                 slidesPerView: 'auto',
                 centeredSlides: true,
@@ -138,10 +143,8 @@ export default {
     components:{
         zcHeader,
         zcFooter,
+        buyConsult
     },
-    // created(){
-    //     this.isWhite = false;
-    // },
     mounted(){
         var hder  = document.getElementsByClassName("blackBack")[0];
         hder.className = "blackBack";
@@ -150,16 +153,17 @@ export default {
             if(top>=755){
                 hder.className = "whiteBack";
                 this.isActive = true;
-                window.console.log(this.isActive);
+                this.isWhite = true;
             }else{
                 hder.className = "blackBack";
                 this.isActive = false;
+                this.isWhite = false;
             }
         }
     },
     methods:{
         buy(){
-            this.$router.push("/buyConsult");
+            this.isBuy = true;
         },
         changeSwiper(index) {
             self.curIndex = index
@@ -411,5 +415,14 @@ export default {
     // .swiper-slide-active{
     //     margin-left: 32rem;
     // }
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
