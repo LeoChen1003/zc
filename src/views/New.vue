@@ -8,7 +8,7 @@
                     <img :src="messNew.image" alt="">
                 </div>
                 <div class="new_con_del_r">
-                    <p>{{messNew.updatedAt.slice(0,4)}}年{{messNew.updatedAt.slice(5,7)}}月{{messNew.updatedAt.slice(8,10)}}日  <a class="a1" href="javascript:;">更新</a></p>
+                    <p>{{messNew.updatedAt.slice(0,4)}}年{{messNew.updatedAt.slice(5,7)}}月{{messNew.updatedAt.slice(8,10)}}日</p>
                     <router-link to="/new/detail1">{{messNew.title}}</router-link>
                     <p>{{messNew.shortContent}}</p>
                 </div>

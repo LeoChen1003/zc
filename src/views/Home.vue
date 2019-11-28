@@ -5,7 +5,7 @@
       <video loop autoplay="autoplay" src="../assets/video/video.mp4">
       </video>
     </div>
-
+    <div class="home_mask"></div>
     <div class="home_video">
       <div class="home_video_title">优特智厨 人工智能时代的餐饮革命</div>
       <div class="home_video_p">以智能解构中餐，用科技为餐饮业赋能</div>
@@ -55,69 +55,72 @@
       </div>
     </div>
     <div class="home_pro_one" @click="cai">
-      <div class="home_title_top">“星级大厨”带你体验舌尖上的美味</div>
-      <div class="home_pro_one_title" >智能一拖三炒菜机</div>
-      <div class="home_pro_one_tip">
-        <span>智能云菜谱</span>
-        <span class="home_pro_one_tip_line">|</span>
-        <span>智能大滚筒炒菜机</span>
-        <span class="home_pro_one_tip_line">|</span>
-        <span>中控任务管理</span>
-        <span class="home_pro_one_tip_line">|</span>
-        <span>智能调料机</span>
-        <span class="home_pro_one_tip_line">|</span>
-        <span>气压站</span>
-      </div>
-      <div class="home_line"></div>
-      <div class="home_pro_one_detail">
-        <div class="home_pro_one_item">
-          <div>星级口味</div>
-          <span>百种星级主厨菜谱，顶级烹饪手法精确复现</span>
+      <div class="home_pro_one_con">
+        <div class="home_title_top">“星级大厨”带你体验舌尖上的美味</div>
+        <div class="home_pro_one_title" >智能一拖三炒菜机</div>
+        <div class="home_pro_one_tip">
+          <span>智能云菜谱</span>
+          <span class="home_pro_one_tip_line">|</span>
+          <span>智能大滚筒炒菜机</span>
+          <span class="home_pro_one_tip_line">|</span>
+          <span>中控任务管理</span>
+          <span class="home_pro_one_tip_line">|</span>
+          <span>智能调料机</span>
+          <span class="home_pro_one_tip_line">|</span>
+          <span>气压站</span>
+        </div>
+        <div class="home_line"></div>
+        <div class="home_pro_one_detail">
+          <div class="home_pro_one_item">
+            <div>星级口味</div>
+            <span>百种星级主厨菜谱，顶级烹饪手法精确复现</span>
+          </div>
+          <div class="home_pro_one_item">
+            <div>中控软件</div>
+            <span>通过中控系统，智能控制硬件，实现软硬件精准配合</span>
+          </div>
+          <div class="home_pro_one_item">
+            <div>云端菜谱</div>
+            <span>
+              链接云端海量专属定制化菜谱，经过多道标准化工序，极大程度还原星级大厨餐饮品质
+            </span>
+          </div>
+          <div class="home_pro_one_item">
+            <div>精准调控</div>
+            <span>全自动翻炒，精准喷料至每1克，精准控温至1℃，让美味有保证。</span>
 
-        </div>
-        <div class="home_pro_one_item">
-          <div>中控软件</div>
-          <span>通过中控系统，智能控制硬件，实现软硬件精准配合</span>
-        </div>
-        <div class="home_pro_one_item">
-          <div>云端菜谱</div>
-          <span>
-            链接云端海量专属定制化菜谱，经过多道标准化工序，极大程度还原星级大厨餐饮品质
-          </span>
-        </div>
-        <div class="home_pro_one_item">
-          <div>精准调控</div>
-          <span>全自动翻炒，精准喷料至每1克，精准控温至1℃，让美味有保证。</span>
-
+          </div>
         </div>
       </div>
     </div>
     <div class="home_pro_two" @click="AIO">
-      <div class="home_pro_two_top">超级烹饪专家</div>
-      <div class="home_pro_two_title">智能精炒一体机</div>
-      <div class="home_line"></div>
-      <div class="home_pro_two_detail">
-        <div class="home_pro_two_item">
-          <div>星级菜谱</div>
-          <span>海量星级主厨菜谱，顶级烹饪手法精确复现</span>
-        </div>
-        <div class="home_pro_two_item">
-          <div>智能提醒</div>
-          <span>
-            智能屏+语音实时提醒，0基础新手复制大厨烹饪行为，还原顶级厨师口味
-          </span>
-        </div>
-        <div class="home_pro_two_item">
-          <div>精准投料</div>
-          <span>智能精准投料,精准至0.1g，美味丝毫不差</span>
+      <div class="home_pro_two_con">
+          <div class="home_pro_two_top">超级烹饪专家</div>
+        <div class="home_pro_two_title">智能精炒一体机</div>
+        <div class="home_line"></div>
+        <div class="home_pro_two_detail">
+          <div class="home_pro_two_item">
+            <div>星级菜谱</div>
+            <span>海量星级主厨菜谱，顶级烹饪手法精确复现</span>
+          </div>
+          <div class="home_pro_two_item">
+            <div>智能提醒</div>
+            <span>
+              智能屏+语音实时提醒，0基础新手复制大厨烹饪行为，还原顶级厨师口味
+            </span>
+          </div>
+          <div class="home_pro_two_item">
+            <div>精准投料</div>
+            <span>智能精准投料,精准至0.1g，美味丝毫不差</span>
 
-        </div>
-        <div class="home_pro_two_item">
-          <div>精准控温</div>
-          <span>11级火力智能调节，满足“煸炒”、“烧”、“煮”等多种烹调行为</span>
-
+          </div>
+          <div class="home_pro_two_item">
+            <div>精准控温</div>
+            <span>11级火力智能调节，满足“煸炒”、“烧”、“煮”等多种烹调行为</span>
+          </div>
         </div>
       </div>
+      
     </div>
     <div class="home_product_more">
       <div class="home_product_more_item1">
@@ -180,30 +183,33 @@
     </div>
     <div class="home_img"></div>
     <div class="home_about">
-      <div class="home_about_left">
-        <div class="home_title_top">优特智厨</div>
-        <div>关于我们</div>
-        <div class="home_line"></div>
-        <div class="home_about_left_btn" @click="aboutUs">
-          <svg-icon icon-class="homeKnowMore" class-name="svg_size"></svg-icon>
-          <span>了解更多</span>
+      <div class="home_about_con">
+          <div class="home_about_left">
+          <div class="home_title_top">优特智厨</div>
+          <div>关于我们</div>
+          <div class="home_line"></div>
+          <div class="home_about_left_btn" @click="aboutUs">
+            <svg-icon icon-class="homeKnowMore" class-name="svg_size"></svg-icon>
+            <span>了解更多</span>
+          </div>
+        </div>
+        <div class="home_about_right">
+          <div class="home_about_right_item">
+            <div>以智能解构中餐，用科技为餐饮业赋能</div>
+            <span>
+              优特智厨隶属于优特集团，起步于2007年，经12年的发展，已经成长为一家集智能厨电产品研发、设计、生产和销售于一体的高新技术公司。目前公司员工超200人，珠海、杭州和深圳三地协同发展。优特智厨以“互联网+”、“智能+”为战略思路，以复制大厨烹饪技艺为核心技术，以推行中餐标准化为企业使命，致力于打造新型餐饮生态服务体系。
+            </span>
+          </div>
+          <div class="home_about_right_item">
+            <div>优特集团</div>
+            <p>
+              珠海优特科技集团（简称“优特集团”）
+              资产总值超100亿，员工1700人，子公司将近10个，覆盖工业安全与智能化、物联网、地产与商业运营等多个产业。集团先后获得2004年“国家规划布局重点软件企业”“国家火炬计划软件骨干企业”，2017年获“中国专利优秀奖”等称号。
+            </p>
+          </div>
         </div>
       </div>
-      <div class="home_about_right">
-        <div class="home_about_right_item">
-          <div>以智能解构中餐，用科技为餐饮业赋能</div>
-          <span>
-            优特智厨隶属于优特集团，起步于2007年，经12年的发展，已经成长为一家集智能厨电产品研发、设计、生产和销售于一体的高新技术公司。目前公司员工超200人，珠海、杭州和深圳三地协同发展。优特智厨以“互联网+”、“智能+”为战略思路，以复制大厨烹饪技艺为核心技术，以推行中餐标准化为企业使命，致力于打造新型餐饮生态服务体系。
-          </span>
-        </div>
-        <div class="home_about_right_item">
-          <div>优特集团</div>
-          <p>
-            珠海优特科技集团（简称“优特集团”）
-            资产总值超100亿，员工1700人，子公司将近10个，覆盖工业安全与智能化、物联网、地产与商业运营等多个产业。集团先后获得2004年“国家规划布局重点软件企业”“国家火炬计划软件骨干企业”，2017年获“中国专利优秀奖”等称号。
-          </p>
-        </div>
-      </div>
+      
     </div>
     <zcFooter></zcFooter>
   </div>
@@ -328,16 +334,19 @@
       }
     }
 
-
+    .home_mask{
+      width: 100%;
+      height: 47.5rem;
+      background-color: rgba(0,0,0,0.6);
+      position: absolute;
+      top: 3rem;
+      left: 0;
+    }
     .home_video {
-      /*background: url('../assets/home/home_videoBg2x.png') no-repeat;*/
-      /*background-size: 100% 100%;*/
       z-index: 1;
       position: absolute;
-
       width: 100%;
       top: 0;
-
       height: 47.5rem;
       display: flex;
       flex-direction: column;
@@ -403,6 +412,7 @@
           height: 0.25rem;
           background: rgba(255, 255, 255, 1);
           margin-top: 0.63rem;
+          border-radius: 50%;
         }
       }
     }
@@ -672,13 +682,20 @@
     }
 
     .home_pro_one {
-      height: 40.62rem;
+      width: 100%;
+      height: 55.63rem;
       background: url('../assets/home/drumFryingMachine.jpg');
       background-size: 100% 100%;
       cursor: pointer;
 
-      padding: 7.5rem 14%;
-
+      // padding: 7.5rem 14%;
+      .home_pro_one_con{
+        width: 58rem;
+        height: 100%;
+        overflow: hidden;
+        margin-left: 21%;
+        margin-top: 7.5rem;
+      }
       .home_pro_one_title {
         font-size: 2.5rem;
         color: #000;
@@ -733,12 +750,19 @@
     .home_pro_two {
       cursor: pointer;
 
-      height: 41.77rem;
+      height: 55.63rem;
       background: #000;
       background-image: url('../assets/home/AIO.png');
       background-size: 100% 100%;
+      overflow: hidden;
 
-      padding: 13.88rem 0 0 56%;
+      // padding: 13.88rem 0 0 56%;
+      .home_pro_two_con{
+        width: 28.19rem;
+        margin-top: 13.88rem;
+        overflow: hidden;
+        margin-left: 55.9%;
+      }
 
       .home_pro_two_top {
         font-size: 0.88rem;
@@ -787,10 +811,16 @@
       justify-content: space-between;
       height: 46.88rem;
       background: #fff;
-      padding: 6.63rem 15%;
+      // padding: 6.63rem 15%;
       box-sizing: border-box;
-
+      overflow: hidden;
+      .home_about_con{
+        width: 61rem;
+        margin: 0 auto;
+        margin-top: 6.63rem;
+      }
       .home_about_left {
+        float: left;
         div:nth-child(2) {
           font-size: 2rem;
           font-weight: 600;
@@ -800,12 +830,19 @@
       }
 
       .home_about_right {
+        float: left;
         width: 39.31rem;
+        margin-left: 13.69rem;
+        span{
+          line-height: 1.88rem;
+        }
 
         .home_about_right_item {
           margin-top: 1.5rem;
           margin-bottom: 2rem;
-
+          p{
+              line-height: 1.88rem;
+            }
           div:nth-child(1) {
             font-size: 1.75rem;
             font-weight: 600;

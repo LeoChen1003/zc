@@ -5,6 +5,9 @@
             <p>智能精炒一体机</p>
             <router-link to="/product/proAIO">概览</router-link>
             <router-link to="/product/proAIO/proAIOTechSpecs">技术规格</router-link>
+            <div class="aio_hd_btn" @click="buy" :class="isShow?'show':''">
+                立即预约
+            </div>
         </div>
         <div class="aio_con1">
             <p>超级烹饪专家</p>
@@ -15,33 +18,35 @@
             </div>
         </div>
         <div class="aio_con2">
-            <div class="aio_con2_d1">
-                <p>更丰富</p>
-                <p>高级定制菜谱</p>
-                <div><span>1000</span> 道</div>
-                <p>海量星级菜谱涵盖 8 大菜系</p>
-                <div>
-                    <svg-icon icon-class="up1" class-name="up1"></svg-icon>
+            <div class="aio_con2_center">
+                <div class="aio_con2_d1">
+                    <p>更丰富</p>
+                    <p>高级定制菜谱</p>
+                    <div><span>1000</span> 道</div>
+                    <p>海量星级菜谱涵盖 8 大菜系</p>
+                    <div>
+                        <svg-icon icon-class="up1" class-name="up1"></svg-icon>
+                    </div>
                 </div>
-            </div>
-            <div class="aio_con2_d2">
-                <p>更精准</p>
-                <p>复现星级厨师美味</p>
-                <div><span>99.9</span> %</div>
-                <p>精准投料智能控温还原菜肴</p>
-            </div>
-            <div class="aio_con2_d3">
-                <p>更前沿</p>
-                <p>智能人机交互提示</p>
-                <div><span>0</span> 基础</div>
-                <p>无门槛复制大厨烹饪行为</p>
-            </div>
-            <div class="aio_con2_d4">
-                <p>更便捷</p>
-                <p>火力智能自动调节</p>
-                <div><span>11</span> 级</div>
-                <p>精准控温包租多种烹饪需求</p>
-            </div>
+                <div class="aio_con2_d2">
+                    <p>更精准</p>
+                    <p>复现星级厨师美味</p>
+                    <div><span>99.9</span> %</div>
+                    <p>精准投料智能控温还原菜肴</p>
+                </div>
+                <div class="aio_con2_d3">
+                    <p>更前沿</p>
+                    <p>智能人机交互提示</p>
+                    <div><span>0</span> 基础</div>
+                    <p>无门槛复制大厨烹饪行为</p>
+                </div>
+                <div class="aio_con2_d4">
+                    <p>更便捷</p>
+                    <p>火力智能自动调节</p>
+                    <div><span>11</span> 级</div>
+                    <p>精准控温包租多种烹饪需求</p>
+                </div>
+            </div>     
         </div>
         <div class="aio_con3">
             <div class="aio_con3_title">智能精炒一体机</div>
@@ -168,12 +173,22 @@ export default {
     data(){
         return{
             isWhite: false,
-            isBuy:false
+            isBuy:false,
+            isShow:false
         }
     },
     mounted(){
         var hder  = document.getElementsByClassName("whiteBack")[0];
         hder.className = "blackBack";
+        window.onscroll = ()=>{
+            var top = document.documentElement.scrollTop;
+            window.console.log(document.documentElement.scrollTop);
+            if(top<795){
+                this.isShow = false;
+            }else{
+                this.isShow = true;
+            }
+        }
     },
     methods:{
         buy(){
@@ -187,6 +202,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.show{
+    display: block !important;
+}
 .aio{
     width: 100%;
     overflow: hidden;
@@ -195,6 +213,9 @@ export default {
         height: 3rem;
         border-top: 1px solid #000;
         background-color: #000;
+        position: fixed;
+        top: 3rem;
+        z-index: 3;
         p:first-child{
             float: left;
             width:8.75rem;
@@ -222,6 +243,22 @@ export default {
             font-weight: 400;
             margin-left: 3%;
         }
+        .aio_hd_btn{
+            display: none;
+            float: left;
+            width:6.5rem;
+            height:2rem;
+            background:rgba(44,198,192,1);
+            border-radius:1rem;
+            font-size:0.88rem;
+            font-weight:600;
+            color:rgba(255,255,255,1);
+            line-height:2rem;
+            text-align: center;
+            margin-left: 16.4%;
+            margin-top: 0.5rem;
+            cursor: pointer;
+        }
     }
     .aio_con1{
         width:100%;
@@ -229,6 +266,7 @@ export default {
         background: url("../assets/product/aioHd.jpg");
         background-size: 100% 100%;
         overflow: hidden;
+        margin-top: 3rem;
         p:first-child{
             width: 5.3rem;
             font-size:0.88rem;
@@ -269,9 +307,15 @@ export default {
         width: 100%;
         height: 18.25rem;
         background: url("../assets/product/dataBack1.jpg");
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        overflow: hidden;
+        .aio_con2_center{
+            width: 57rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            margin-top: 4rem;
+        }
         .aio_con2_d1,.aio_con2_d2,.aio_con2_d3,.aio_con2_d4{
             display: flex;
             flex-direction: column;
@@ -294,7 +338,7 @@ export default {
                 font-size: 0.88rem;
                 color: #fff;
                 span{
-                    font-family: Oswald-Regular_Medium,Oswald;
+                    font-family: mFont;
                     font-size: 3.75rem;
                     font-weight: 600;
                 }
@@ -511,7 +555,7 @@ export default {
         .aio_con5_pic{
             position: absolute;
             width: 40.9%;
-            top: 39.3%;
+            top: 43.3%;
             right: 5.56rem;
             img{
                 width: 100%;
