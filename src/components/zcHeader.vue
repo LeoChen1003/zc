@@ -2,11 +2,12 @@
   <div :class="isWhite?'whiteBack':'blackBack'" ref="nav">
     <div class="header headerW">
       <div class="header_logo" @click="$router.push('/')">
-        <svg-icon icon-class="logo" class-name="index_svg_b" style="width:15rem;height:1.5rem;"></svg-icon>
-        <svg-icon icon-class="logo_w" class-name="index_svg_w" style="width:15rem;height:1.5rem;"></svg-icon>
+        <svg-icon icon-class="logo" class-name="index_svg_b" style="width:7rem;height:1.12rem;"></svg-icon>
+        <svg-icon icon-class="logo_w" class-name="index_svg_w" style="width:7rem;height:1.12rem;"></svg-icon>
       </div>
       <div class="header_navbar">
         <div class="header_navbar">
+          <span @click="index" :class="tab0==0?'bold':'nor'">首页</span>
           <span
             @click="product"
             class="productCenter"
@@ -25,7 +26,15 @@
         </div>
       </div>
       <div class="header_btn" @click="concat">联系我们</div>
-      <div class="showPro" @mousemove="showPro" @mouseout="hidePro">
+    </div>
+    <div class="black"></div>
+    <div style="position:relative;" class="header_bottom">
+      <div class="show" @mousemove="show" @mouseleave="hide">
+        <p @click="intro">企业介绍</p>
+        <p @click="inven">专利发明</p>
+        <p @click="lab">实验室</p>
+      </div>
+      <div class="showPro" @mousemove="showPro" @mouseout="hidePro" :class="isHeight?'':isHeight1?'height':'height1'">
         <div class="showPro_l">
           <div class="showPro_l_btn1" @mousemove="changeColor1">旗舰智厨产品</div>
           <div class="showPro_l_btn2" @mousemove="changeColor2">更多智厨产品</div>
@@ -35,87 +44,90 @@
           <div class="showPro_line_small"></div>
         </div>
         <div class="showPro_line1">
-          <div class="showPro_line_small"></div>
+          <div :class="pos?'showPro_line_small':'showPro_line_small1'"></div>
         </div>
-        <div class="showPro_r1">
-          <div class="showPro_r1_cai" @click="cai">
-            <svg-icon icon-class="header_cai" class-name="icon"></svg-icon>
-            <p>智能一拖三炒菜机</p>
-            <p>旗舰</p>
-          </div>
-          <div class="showPro_r1_AIO" @click="aio">
-            <svg-icon icon-class="header_AIO" class-name="icon"></svg-icon>
-            <p>智能精炒一体机</p>
-            <p>旗舰</p>
-          </div>
-        </div>
-        <div class="showhh">
-          <div class="showPro_r2">
-            <div>
-              <svg-icon icon-class="pingmianlu" class="icon3" style=" width: 7.5rem;"></svg-icon>
-              <span class="sp1">智能多头平面炉</span>
+        <div class="showPro_all">
+          <div class="showPro_r1">
+            <div class="showPro_r1_cai" @click="cai">
+              <svg-icon icon-class="header_cai" class-name="icon"></svg-icon>
+              <p>智能一拖三炒菜机</p>
+              <p>旗舰</p>
             </div>
-            <div>
-              <svg-icon icon-class="header1" class="icon3" style=" width: 7.5rem;"></svg-icon>
-              <span class="sp2">智能单头凹面炒炉</span>
-            </div>
-            <div>
-              <svg-icon icon-class="header2" class="icon3" style=" width: 7.5rem;"></svg-icon>
-              <span class="sp3">智能单头单尾凹面炒炉</span>
-            </div>
-            <div>
-              <svg-icon icon-class="header3" class="icon3" style=" width: 7.5rem;"></svg-icon>
-              <span class="sp4">智能海鲜蒸柜</span>
-            </div>
-            <div>
-              <svg-icon icon-class="header4" class="icon3" style=" width: 7.5rem;"></svg-icon>
-              <span class="sp1">智能蒸饭柜</span>
-            </div>
-            <div>
-              <svg-icon icon-class="header5" class="icon3" style=" width: 7.5rem;"></svg-icon>
-              <span class="sp2">智能蒸点炉</span>
-            </div>
-            <div>
-              <svg-icon icon-class="header6" class="icon3" style=" width: 7.5rem;"></svg-icon>
-              <span class="sp3">智能烤箱</span>
-            </div>
-            <div>
-              <svg-icon icon-class="header7" class="icon3" style=" width: 7.5rem;"></svg-icon>
-              <span class="sp4">智能炸炉</span>
-            </div>
-            <div>
-              <svg-icon icon-class="header8" class="icon3" style=" width: 7.5rem;"></svg-icon>
-              <span class="sp3">智能煮面机</span>
-            </div>
-            <div>
-              <svg-icon icon-class="header9" class="icon3"></svg-icon>
-              <span class="sp4">智能矮汤炉</span>
+            <div class="showPro_r1_AIO" @click="aio">
+              <svg-icon icon-class="header_AIO" class-name="icon"></svg-icon>
+              <p>智能精炒一体机</p>
+              <p>旗舰</p>
             </div>
           </div>
+          <div class="showhh">
+            <div class="showPro_r2">
+              <div>
+                <svg-icon icon-class="pingmianlu" class="icon3" style=" width: 7.5rem; height:7.5rem"></svg-icon>
+                <span class="sp1">智能多头平面炉</span>
+              </div>
+              <div>
+                <svg-icon icon-class="header1" class="icon3" style=" width: 7.5rem; height:7.5rem"></svg-icon>
+                <span class="sp2">智能单头凹面炒炉</span>
+              </div>
+              <div>
+                <svg-icon icon-class="header2" class="icon3" style=" width: 7.5rem; height:7.5rem"></svg-icon>
+                <span class="sp3">智能单头单尾凹面炒炉</span>
+              </div>
+              <div>
+                <svg-icon icon-class="header3" class="icon3" style=" width: 7.5rem; height:7.5rem"></svg-icon>
+                <span class="sp4">智能海鲜蒸柜</span>
+              </div>
+              <div style="margin-top:2rem;">
+                <svg-icon icon-class="header4" class="icon3" style=" width: 7.5rem; height:7.5rem"></svg-icon>
+                <span class="sp1">智能蒸饭柜</span>
+              </div>
+              <div style="margin-top:2rem;">
+                <svg-icon icon-class="header5" class="icon3" style=" width: 7.5rem; height:7.5rem"></svg-icon>
+                <span class="sp2">智能蒸点炉</span>
+              </div>
+              <div style="margin-top:2rem;">
+                <svg-icon icon-class="header6" class="icon3" style=" width: 7.5rem; height:7.5rem"></svg-icon>
+                <span class="sp3">智能烤箱</span>
+              </div>
+              <div style="margin-top:2rem;">
+                <svg-icon icon-class="header7" class="icon3" style=" width: 7.5rem; height:7.5rem"></svg-icon>
+                <span class="sp4">智能炸炉</span>
+              </div>
+              <div style="margin-top:2rem;">
+                <svg-icon icon-class="header8" class="icon3" style=" width: 7.5rem; height:7.5rem"></svg-icon>
+                <span class="sp3">智能煮面机</span>
+              </div>
+              <div style="margin-top:2rem;">
+                <svg-icon icon-class="header9" class="icon3" style=" width: 7.5rem; height:7.5rem"></svg-icon>
+                <span class="sp4">智能矮汤炉</span>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="showPro_r3">
+
+          </div> -->
         </div>
-      </div>
     </div>
-    <div class="black"></div>
-    <div style="position:relative;" class="header_bottom">
-      <div class="show" @mousemove="show" @mouseleave="hide">
-        <p @click="intro">企业介绍</p>
-        <p @click="inven">专利发明</p>
-        <p @click="lab">实验室</p>
-      </div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["tab1", "tab2", "tab3", "tab4","isWhite"],
+  props: ["tab0","tab1", "tab2", "tab3", "tab4","isWhite"],
   data() {
     return {
-      tab: 0
+      tab: 0,
+      isHeight: true,
+      isHeight1: true,
+      pos: true
     };
   },
   components: {},
   methods: {
+    index(){ 
+      this.$router.push("/");
+    },
     intro() {
       this.tab = 0;
       this.$emit("changeTab", this.tab);
@@ -164,17 +176,23 @@ export default {
       this.$router.push("/contact");
     },
     showPro() {
-      var showPro = document.getElementsByClassName("showPro")[0];
-      var black = document.getElementsByClassName("black")[0]
-      showPro.style.display = "block";
+      var black = document.getElementsByClassName("black")[0];
+      this.isHeight = false;
       black.style.display = "block";
       this.$refs.nav.className = "whiteBack";
+      var all = document.getElementsByClassName("showPro_all")[0];
+      all.style.display = "block";
+      // var pro = document.getElementsByClassName("showPro")[0];
+      // pro.style.height = "";
     },
     hidePro() {
-      var showPro = document.getElementsByClassName("showPro")[0];
-      var black = document.getElementsByClassName("black")[0]
-      showPro.style.display = "none";
+      var black = document.getElementsByClassName("black")[0];
+      this.isHeight  = true;
       black.style.display = "none";
+      var all = document.getElementsByClassName("showPro_all")[0];
+      all.style.display = "none";
+      // var pro = document.getElementsByClassName("showPro")[0];
+      // pro.style.height = "0";
       if(this.isWhite){
         this.$refs.nav.className = "whiteBack";
       }else{
@@ -182,13 +200,15 @@ export default {
       }
     },
     changeColor1() {
+      this.isHeight = false;
+      this.isHeight1 = true;
       var btn2 = document.getElementsByClassName("showPro_l_btn2")[0];
       btn2.style.backgroundColor = "#fff";
       btn2.style.color = "#000";
       var right1 = document.getElementsByClassName("showPro_r1")[0];
-      right1.style.display = "block";
+      right1.style.display= "block";
       var right2 = document.getElementsByClassName("showhh")[0];
-      right2.style.display = "none";
+      right2.style.display= "none";
       var btn1 = document.getElementsByClassName("showPro_l_btn1")[0];
       btn1.style.backgroundColor = "#000";
       btn1.style.color = "#fff";
@@ -198,13 +218,16 @@ export default {
       line2.style.display = "none";
     },
     changeColor2() {
-      var btn2 = document.getElementsByClassName("showPro_l_btn2")[0];
+      this.isHeight = false;
+      this.isHeight1 = false;
+      this.pos = false;
       var right1 = document.getElementsByClassName("showPro_r1")[0];
-      right1.style.display = "none";
+      right1.style.display= "none";
+      var right2 = document.getElementsByClassName("showhh")[0];
+      right2.style.display= "block";
+      var btn2 = document.getElementsByClassName("showPro_l_btn2")[0];
       btn2.style.backgroundColor = "#000";
       btn2.style.color = "#fff";
-      var right2 = document.getElementsByClassName("showhh")[0];
-      right2.style.display = "block";
       var btn1 = document.getElementsByClassName("showPro_l_btn1")[0];
       btn1.style.backgroundColor = "#fff";
       btn1.style.color = "#000";
@@ -228,13 +251,29 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+@keyframes key_showPro{
+    0%{
+      opacity: 0;
+      transform: translateX(-.7rem);
+    }
+    100%{
+      opacity: 1;
+      transform: translateX(0);
+    }
+}
+.height{
+  height: 16.88rem !important;
+  visibility: visible !important;
+}
+.height1{
+  height: 37.06rem !important;
+  visibility: visible !important;
+}
 .header_bottom {
   position: relative;
   .show {
     transition: all 0.5s;
     width: 100vw;
-    // height: 10.75rem;
-    // display: none;
     height: 0;
     visibility: hidden;
     min-width: 89rem;
@@ -254,7 +293,7 @@ export default {
       height: 1.25rem;
       font-size: 0.87rem;
       color: #000;
-      margin-left: 63%;
+      margin-left: 61.5%;
       // opacity: 0;
       transition: all 0.5s;
     }
@@ -268,75 +307,15 @@ export default {
       margin-top: 1rem;
     }
   }
-}
-.header {
-  transition: all 0.5s;
-}
-.whiteBack,
-.whiteBack1 {
-  height: 3rem;
-  min-width: 89rem;
-  position: relative;
-  .header {
-    min-width: 89rem;
-    z-index: 99;
-    position: fixed;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin-top: 0rem;
-    padding: 0 20rem;
-    box-sizing: border-box;
-    height: 3rem;
-    line-height: 3rem;
-    box-shadow: 0rem -0.08rem 0rem 0rem;
-    background-color: #fff;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-
-    .header_logo {
-      color: #000;
-      font-size: 1.6rem;
-      font-weight: bolder;
-      cursor: pointer;
-      .index_svg_b {
-        display: block;
-      }
-
-      .index_svg_w {
-        display: none;
-      }
-    }
-    .header_navbar {
-      color: #333333;
-      font-size: 0.88rem;
-      font-weight: 400;
-      span {
-        cursor: pointer;
-      }
-      span:not(:last-child) {
-        margin-right: 3rem;
-        padding-bottom: 1rem;
-      }
-      span:last-child {
-        padding-bottom: 1rem;
-      }
-    }
-    .header_btn {
-      width: 6.5rem;
-      height: 2rem;
-      line-height: 2rem;
-      color: #fff;
-      text-align: center;
-      background: rgba(0, 0, 0, 1);
-      border-radius: 1rem;
-      cursor: pointer;
-      font-weight: 600;
-    }
-    .showPro {
-      display: none;
+  .showPro {
+      // display: none;
+      transition: all 0.5s;
+      visibility: hidden;
+      height: 0;
       min-width: 89rem;
-      position: absolute;
+      position: fixed;
+      overflow: hidden;
+      z-index: 10;
       width: 100%;
       // height: 16.87rem;
       background: linear-gradient(
@@ -348,12 +327,13 @@ export default {
       top: 3rem;
       left: 0rem;
       padding-bottom: 3.44rem;
+      // box-sizing: border-box;
       .showPro_l,
       .showPro_r1 {
-        float: left;
+        float: left;  
       }
       .showPro_l {
-        width: 34.93rem;
+        width: 32.93rem;
         height: 100%;
         .showPro_l_btn1,
         .showPro_l_btn2,
@@ -388,7 +368,7 @@ export default {
         top: 3.68rem;
         .showPro_line_small {
           width: 0.12rem;
-          height: 2rem;
+          height: 2.5rem;
           background-color: #2cc6c0;
           margin-left: -0.02rem;
         }
@@ -401,15 +381,25 @@ export default {
         background-color: #ececec;
         left: 32.93rem;
         top: 3.68rem;
-        .showPro_line_small {
+        .showPro_line_small,.showPro_line_small1 {
+          position: absolute;
           width: 0.12rem;
-          height: 2rem;
+          height: 2.5rem;
           background-color: #2cc6c0;
           margin-left: -0.02rem;
         }
+        .showPro_line_small1{
+          top: 3rem;
+        }
+      }
+      .showPro_all{
+        display: none;
       }
       .showPro_r1 {
-        display: block;
+        float: left;
+        animation-name: key_showPro;
+        animation-duration: 1s;
+        animation-timing-function: ease;
         .showPro_r1_cai,
         .showPro_r1_AIO {
           float: left;
@@ -448,10 +438,16 @@ export default {
       }
       .showhh {
         display: none;
+        float: left;
+        margin-left: 4.5rem;
+        animation-name: key_showPro;
+        animation-duration: 1s;
+        animation-timing-function: ease;
         .showPro_r2 {
           width: 52rem;
           display: flex;
           flex-wrap: wrap;
+          margin-top: 3.38rem;
           div {
             width: calc(25% - 4.5rem);
             margin-right: 4.5rem;
@@ -468,11 +464,80 @@ export default {
           }
         }
       }
+  }
+}
+.header {
+  transition: all 0.5s;
+}
+.whiteBack,
+.whiteBack1 {
+  height: 3rem;
+  min-width: 89rem;
+  position: relative;
+  .header {
+    min-width: 89rem;
+    z-index: 99;
+    position: fixed;
+    // display: flex;
+    // justify-content: space-between;
+    // align-items: center;
+    width: 100%;
+    // margin-top: 0rem;
+    // padding: 0 20rem;
+    box-sizing: border-box;
+    height: 3rem;
+    line-height: 3rem;
+    box-shadow: 0rem -0.08rem 0rem 0rem;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+    .header_logo {
+      color: #fff;
+      font-size: 1.6rem;
+      font-weight: bolder;
+      cursor: pointer;
+      width: 7rem;
+      margin-left: 21%;
+      height: 1.12rem;
+    }
+    .header_navbar {
+      color: #333333;
+      font-size: 0.88rem;
+      font-weight: 400;
+      width: 28rem;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      position: absolute;
+      span {
+        cursor: pointer;
+      }
+      span:not(:last-child) {
+        margin-right: 3rem;
+        padding-bottom: 1rem;
+      }
+      span:last-child {
+        padding-bottom: 1rem;
+      }
+    }
+    .header_btn {
+      width: 6.5rem;
+      height: 2rem;
+      line-height: 2rem;
+      color: #fff;
+      text-align: center;
+      background: rgba(0, 0, 0, 1);
+      border-radius: 1rem;
+      margin-top: -0.7rem;
+      margin-left: 72%;
+      cursor: pointer;
+      font-weight: 600;
     }
   }
   .headerB {
     color: #fff;
     background: #000;
+    overflow: hidden;
     .header_navbar {
       color: #333333;
       font-weight: 400;
@@ -485,7 +550,6 @@ export default {
     .index_svg_b {
       display: none;
     }
-
     .index_svg_w {
       display: block;
     }
@@ -493,6 +557,7 @@ export default {
   .headerW {
     color: #333;
     background: #ffffff;
+    overflow: hidden;
     .header_navbar {
       color: #333333;
     }
@@ -520,26 +585,40 @@ export default {
     min-width: 89rem;
     z-index: 99;
     position: fixed;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    // display: flex;
+    // justify-content: space-between;
+    // align-items: center;
     width: 100%;
-    padding: 0 20rem;
+    // padding: 0 20rem;
     box-sizing: border-box;
     height: 3rem;
     line-height: 3rem;
     box-shadow: 0rem -0.06rem 0rem 0rem;
     background-color: #000;
+    // .index_svg_b {
+    //   display: block;
+    // }
+    // .index_svg_w {
+    //   display: none;
+    // }
     .header_logo {
       color: #fff;
       font-size: 1.6rem;
       font-weight: bolder;
       cursor: pointer;
+      margin-top: 1rem;
+      width: 7rem;
+      margin-left: 21%;
     }
     .header_navbar {
       color: #a2a6ac;
       font-size: 0.88rem;
       font-weight: 400;
+      width: 28rem;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      position: absolute;
       span {
         cursor: pointer;
       }
@@ -561,142 +640,8 @@ export default {
       border-radius: 1rem;
       font-weight: 600;
       cursor: pointer;
-    }
-    .showPro {
-      display: none;
-      min-width: 89rem;
-      position: absolute;
-      width: 100%;
-      // height: 16.87rem;
-      background: linear-gradient(
-        180deg,
-        rgba(240, 240, 240, 1) 0%,
-        rgba(255, 255, 255, 1) 12%,
-        rgba(255, 255, 255, 1) 100%
-      );
-      top: 3rem;
-      left: 0rem;
-      padding-bottom: 3.44rem;
-      .showPro_l,
-      .showPro_r1 {
-        float: left;
-      }
-      .showPro_l {
-        width: 34.93rem;
-        height: 100%;
-        .showPro_l_btn1,
-        .showPro_l_btn2,
-        .showPro_l_btn3 {
-          width: 8.25rem;
-          height: 2rem;
-          background: rgba(0, 0, 0, 1);
-          border-radius: 1rem;
-          font-size: 14px;
-          font-weight: 400;
-          color: rgba(252, 253, 254, 1);
-          line-height: 2rem;
-          text-align: center;
-          margin-left: 20.12rem;
-          margin-top: 3.62rem;
-          cursor: pointer;
-        }
-        .showPro_l_btn2,
-        .showPro_l_btn3 {
-          margin-top: 1.5rem;
-          background: #fff;
-          color: #000;
-        }
-      }
-      .showPro_line {
-        display: block;
-        width: 0.07rem;
-        height: 9.5rem;
-        position: absolute;
-        background-color: #ececec;
-        left: 32.93rem;
-        top: 3.68rem;
-        .showPro_line_small {
-          width: 0.12rem;
-          height: 2rem;
-          background-color: #2cc6c0;
-          margin-left: -0.02rem;
-        }
-      }
-      .showPro_line1 {
-        display: none;
-        width: 0.07rem;
-        height: 29.56rem;
-        position: absolute;
-        background-color: #ececec;
-        left: 32.93rem;
-        top: 3.68rem;
-        .showPro_line_small {
-          width: 0.12rem;
-          height: 2rem;
-          background-color: #2cc6c0;
-          margin-left: -0.02rem;
-        }
-      }
-      .showPro_r1 {
-        display: block;
-        .showPro_r1_cai,
-        .showPro_r1_AIO {
-          float: left;
-          width: 12rem;
-          height: 100%;
-          cursor: pointer;
-          .icon {
-            display: block;
-            width: 7.5rem;
-            height: 7.5rem;
-            margin-top: 3.44rem;
-            margin-left: 4.5rem;
-          }
-          p:nth-child(2) {
-            font-size: 0.87rem;
-            font-weight: 400;
-            color: rgba(51, 51, 51, 1);
-            margin-left: 5rem;
-          }
-          p:nth-child(3) {
-            width: 1.5rem;
-            height: 1.07rem;
-            font-size: 0.75rem;
-            font-weight: 400;
-            color: rgba(44, 198, 192, 1);
-            line-height: 1.07rem;
-            text-align: center;
-            margin-left: 7.5rem;
-          }
-          .showPro_r1_AIO {
-            p:nth-child(2) {
-              margin-left: 6rem !important;
-            }
-          }
-        }
-      }
-      .showhh {
-        display: none;
-        .showPro_r2 {
-          width: 52rem;
-          display: flex;
-          flex-wrap: wrap;
-          div {
-            width: calc(25% - 4.5rem);
-            margin-right: 4.5rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-          }
-          div:nth-child(4n-1) {
-            width: 10rem;
-          }
-          div:nth-child(4n) {
-            margin-right: 0rem;
-          }
-        }
-      }
+      margin-top: -1.7rem;
+      margin-left: 72%;
     }
   }
   .headerB {

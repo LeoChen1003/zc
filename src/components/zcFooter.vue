@@ -67,22 +67,52 @@ export default {
       this.$router.push("/new");
     },
     coreAdvantage(){
-      this.$router.push("/coreAdvantage");
+      this.$router.push({
+        path:"/coreAdvantage",
+        query:{
+          type:''
+        }
+      });
     },
     system(){
-      this.$router.push("/coreAdvantage/intelligenceSystem");
+      this.$router.push({
+        path:"/coreAdvantage",
+        query:{
+          type:'modelSt'
+        }
+      });
     },
     tech(){
-      this.$router.push("/coreAdvantage/intelligenceTech");
+      this.$router.push({
+        path:"/coreAdvantage",
+        query:{
+          type:'modelTech'
+        }
+      });
     },
     data(){
-      this.$router.push("/coreAdvantage/intelligenceData");
+      this.$router.push({
+        path:"/coreAdvantage",
+        query:{
+          type:'modelData'
+        }
+      });
     },
     mechine(){
-      this.$router.push("/coreAdvantage/intelligenceMachine");
+      this.$router.push({
+        path:'/coreAdvantage',
+        query:{
+          type:'modelMc'
+        }
+      });
     },
     service(){
-      this.$router.push("/coreAdvantage/intelligenceStar");
+      this.$router.push({
+        path:'/coreAdvantage',
+        query:{
+          type:'modelSe'
+        }
+      });
     },
     about(){
       this.$router.push("/with");

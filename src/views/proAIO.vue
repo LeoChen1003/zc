@@ -5,7 +5,7 @@
             <p>智能精炒一体机</p>
             <router-link to="/product/proAIO">概览</router-link>
             <router-link to="/product/proAIO/proAIOTechSpecs">技术规格</router-link>
-            <div class="aio_hd_btn" @click="buy" :class="isShow?'show':''">
+            <div class="aio_hd_btn" @click="buy" :class="isShow1?'btn_show1':''">
                 立即预约
             </div>
         </div>
@@ -174,25 +174,25 @@ export default {
         return{
             isWhite: false,
             isBuy:false,
-            isShow:false
+            isShow1:false
         }
     },
     mounted(){
-        var hder  = document.getElementsByClassName("whiteBack")[0];
-        hder.className = "blackBack";
+        this.canScroll()
         window.onscroll = ()=>{
             var top = document.documentElement.scrollTop;
             window.console.log(document.documentElement.scrollTop);
             if(top<795){
-                this.isShow = false;
+                this.isShow1 = false;
             }else{
-                this.isShow = true;
+                this.isShow1 = true;
             }
         }
     },
     methods:{
         buy(){
             this.isBuy = true;
+            this.noScroll()
         },
         specs(){
             this.$router.push("/product/proAIO/proAIOTechSpecs");
@@ -202,7 +202,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.show{
+.btn_show1{
     display: block !important;
 }
 .aio{
@@ -255,7 +255,7 @@ export default {
             color:rgba(255,255,255,1);
             line-height:2rem;
             text-align: center;
-            margin-left: 16.4%;
+            margin-left: 17.4%;
             margin-top: 0.5rem;
             cursor: pointer;
         }
@@ -264,7 +264,7 @@ export default {
         width:100%;
         height:52.69rem;
         background: url("../assets/product/aioHd.jpg");
-        background-size: 100% 100%;
+        background-size: cover;
         overflow: hidden;
         margin-top: 3rem;
         p:first-child{

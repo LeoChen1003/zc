@@ -35,6 +35,7 @@ export default {
     methods:{
         cancel(){
             this.$parent.modelData = false
+            this.canScroll()
         }
     }
 }

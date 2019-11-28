@@ -493,6 +493,7 @@ export default {
         },
         buy(){
             this.isBuy = true;
+            this.noScroll()
         },
         jump(i){
             let jump = document.getElementsByClassName("d_jump");
@@ -547,6 +548,9 @@ export default {
                 this.isActive3 = true;
             }
         }
+    },
+    mounted(){
+        this.canScroll()
     }
 }
 </script>
@@ -667,7 +671,7 @@ export default {
                 width:16rem;
                 height:2.81rem;
                 font-size:2rem;
-                font-weight:400;
+                font-weight:600;
                 cursor: pointer;
                 color:rgba(0,0,0,1);
             }
@@ -773,7 +777,7 @@ export default {
             .p2{
                 top: 7.75rem;
                 font-size:2rem;
-                font-weight:400;
+                font-weight:600;
                 color:#fff;
                 cursor: pointer;
             }

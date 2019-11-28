@@ -89,6 +89,7 @@ export default {
     methods:{
         cancel(){
             this.$parent.modelTech = false;
+            this.canScroll()
         }
     }
 }

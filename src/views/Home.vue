@@ -1,6 +1,6 @@
 <template>
   <div class="home pc_index">
-    <zcHeader :isWhite="isWhite"></zcHeader>
+    <zcHeader :isWhite="isWhite" :tab0="tab"></zcHeader>
     <div class="home_v">
       <video loop autoplay="autoplay" src="../assets/video/video.mp4">
       </video>
@@ -232,6 +232,7 @@
     data(){
       return{
         isWhite: false,
+        tab:0,
         swiperOption: {
           slidesPerView: 'auto',
           centeredSlides: true,
@@ -240,7 +241,7 @@
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev'
           },
-          initialSlide: 1,
+          initialSlide: 0,
           on: {
             slideChangeTransitionEnd: function() {
               // 切换结束时，告诉我现在是第几个slide
@@ -599,10 +600,10 @@
           .ph_img {
             width: 20rem;
             height: 20rem;
-
             img {
               width: 100%;
-              background-size: 100% 100%;
+              height: 100%;
+              background-size: cover;
             }
           }
 
@@ -634,7 +635,7 @@
               font-size: 1.5rem;
               font-weight: 600;
               color: rgba(0, 0, 0, 1);
-              line-height: 1.7rem;
+              line-height: 2.06rem;
             }
 
             .ph_content_bottom {
@@ -646,8 +647,8 @@
 
               .time {
                 font-size: 0.88rem;
-                font-family: Helvetica;
-                color: rgba(153, 153, 153, 1);
+                font-family: Oswald;
+                color: #999;
                 margin-right: 7.25rem;
               }
 
@@ -685,7 +686,7 @@
       width: 100%;
       height: 55.63rem;
       background: url('../assets/home/drumFryingMachine.jpg');
-      background-size: 100% 100%;
+      background-size: cover;
       cursor: pointer;
 
       // padding: 7.5rem 14%;
@@ -753,7 +754,7 @@
       height: 55.63rem;
       background: #000;
       background-image: url('../assets/home/AIO.png');
-      background-size: 100% 100%;
+      background-size: cover;
       overflow: hidden;
 
       // padding: 13.88rem 0 0 56%;

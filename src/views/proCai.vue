@@ -3,8 +3,10 @@
     <zcHeader :isWhite="isWhite"></zcHeader>
     <div class="cai_hd" :class="isActive?'colorBlack':''">
         <p>智能大滚筒炒菜机套机</p>
-        <p>概览</p>
-        <router-link to="/product/proCai/proCaiTechSpecs">技术规格</router-link>
+        <div class="cai_hd_center">
+          <span>概览</span>
+          <router-link to="/product/proCai/proCaiTechSpecs">技术规格</router-link>
+        </div>
         <div class="cai_hd_btn" @click="buy" :class="isShow?'btn_show':''">
             立即预约
         </div>
@@ -247,6 +249,7 @@ export default {
     };
   },
   mounted() {
+    this.canScroll()
     var hder = document.getElementsByClassName("whiteBack")[0];
     window.onscroll = () => {
         var top = document.documentElement.scrollTop;
@@ -270,6 +273,7 @@ export default {
   methods: {
     buy() {
       this.isBuy = true;
+      this.noScroll()
     },
     tech() {
       this.$router.push("/product/proCai/proCaiTechSpecs");
@@ -304,6 +308,27 @@ export default {
     z-index: 3;
     top: 3rem;
     background-color: #fff;
+    .cai_hd_center{
+      width: 6.5rem;
+      margin: 0 auto;
+      span,a{
+        float: left;
+        height: 1.06rem;
+        font-size: 0.75rem;
+        color: #333;
+        margin-top: 0.88rem;
+      }
+      span{
+        width: 1.5rem;
+        font-weight: 600;
+        // margin-left: 11%;
+      }
+      a{
+        width: 3rem;
+        font-weight: 400;
+        margin-left: 1.5rem;
+      }
+    }
     p:first-child {
       float: left;
       width: 8.75rem;
@@ -311,27 +336,27 @@ export default {
       font-size: 0.87rem;
       font-weight: 400;
       color: #333;
-      margin-left: 22.12rem;
+      margin-left: 21%;
       margin-top: 0.88rem;
     }
-    p:nth-child(2),
-    a:nth-child(3){
-      float: left;
-      height: 1.06rem;
-      font-size: 0.75rem;
-      color: #333;
-      margin-top: 0.88rem;
-    }
-    p:nth-child(2) {
-      width: 1.5rem;
-      font-weight: 600;
-      margin-left: 11%;
-    }
-    a:nth-child(3) {
-      width: 3rem;
-      font-weight: 400;
-      margin-left: 3%;
-    }
+    // p:nth-child(2),
+    // a:nth-child(3){
+    //   float: left;
+    //   height: 1.06rem;
+    //   font-size: 0.75rem;
+    //   color: #333;
+    //   margin-top: 0.88rem;
+    // }
+    // p:nth-child(2) {
+    //   width: 1.5rem;
+    //   font-weight: 600;
+    //   margin-left: 11%;
+    // }
+    // a:nth-child(3) {
+    //   width: 3rem;
+    //   font-weight: 400;
+    //   margin-left: 3%;
+    // }
     .cai_hd_btn{
         display: none;
         float: left;
@@ -353,7 +378,7 @@ export default {
     width: 100%;
     height: 52.68rem;
     background: url("../assets/product/caiHd.jpg");
-    background-size: 100% 100%;
+    background-size: cover;
     overflow: hidden;
     margin-top: 3rem;
     p:first-child {

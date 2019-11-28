@@ -56,6 +56,7 @@ export default {
     methods:{
         cancel(){
             this.$parent.modelSystem = false;
+            this.canScroll()
         }
     }
 }

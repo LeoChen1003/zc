@@ -22,6 +22,24 @@ import 'swiper/dist/css/swiper.css'
 
 import './icons' // icon
 
+//页面禁止滑动
+Vue.prototype.noScroll = function() {
+  var mo = function(e) {
+    e.preventDefault()
+  }
+  document.body.style.overflow = 'hidden'
+  document.addEventListener('touchmove', mo, false)
+}
+
+//页面可以滑动
+Vue.prototype.canScroll = function() {
+  var mo = function(e) {
+    e.preventDefault()
+  }
+  document.body.style.overflow = ''
+  document.removeEventListener('touchmove', mo, false)
+}
+
 Vue.config.productionTip = false
 
 new Vue({

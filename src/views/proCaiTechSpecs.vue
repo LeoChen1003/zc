@@ -146,6 +146,7 @@ export default {
         buyConsult
     },
     mounted(){
+        this.canScroll()
         var hder  = document.getElementsByClassName("blackBack")[0];
         hder.className = "blackBack";
         window.onscroll =()=>{
@@ -164,6 +165,7 @@ export default {
     methods:{
         buy(){
             this.isBuy = true;
+            this.noScroll()
         },
         changeSwiper(index) {
             self.curIndex = index

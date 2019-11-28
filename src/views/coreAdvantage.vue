@@ -217,25 +217,48 @@ export default {
         os(){
             // this.$router.push("/coreAdvantage/intelligenceSystem");
             this.modelSystem = true;
+            this.noScroll()
         },
         tech(){
             // this.$router.push("/coreAdvantage/intelligenceTech");
             this.modelTech = true;
+            this.noScroll()
         },
         data(){
             // this.$router.push("/coreAdvantage/intelligenceData");
             this.modelData = true
+            this.noScroll()
         },
         mach(){
             // this.$router.push("/coreAdvantage/intelligenceMachine");
             this.modelMachine = true;
+            this.noScroll()
         },
         star(){
             // this.$router.push("/coreAdvantage/intelligenceStar");
             this.modelStar = true;
+            this.noScroll()
+        }
+    },
+    watch:{
+        $route(){
+            let type = this.$route.query.type
+            // window.console.log(type)
+            if(type == 'modelData'){
+                this.modelData = true;
+            }else if(type == "modelSt"){
+                this.modelSystem = true;
+            }else if(type == "modelTech"){
+                this.modelTech = true;
+            }else if(type == "modelMc"){
+                this.modelMachine = true;
+            }else if(type == "modelSe"){
+                this.modelStar = true;
+            }
         }
     },
     mounted(){
+        this.canScroll()
         var hder  = document.getElementsByClassName("whiteBack")[0];
         window.onscroll = ()=>{
             var top = document.documentElement.scrollTop;
@@ -253,6 +276,19 @@ export default {
                 hder.className = "whiteBack1";
                 this.isWhite = true;
             }
+        }
+        let type = this.$route.query.type
+        // window.console.log(type)
+        if(type == 'modelData'){
+            this.modelData = true;
+        }else if(type == "modelSt"){
+            this.modelSystem = true;
+        }else if(type == "modelTech"){
+            this.modelTech = true;
+        }else if(type == "modelMc"){
+            this.modelMachine = true;
+        }else if(type == "modelSe"){
+            this.modelStar = true;
         }
     },
 }

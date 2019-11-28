@@ -44,6 +44,7 @@ export default {
     methods:{
         cancel(){
             this.$parent.modelMachine = false;
+            this.canScroll()
         }
     }
 }

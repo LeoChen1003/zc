@@ -20,7 +20,7 @@ export default {
 <style lang="scss" scoped>
 .video{
     width: 100%;
-    height: 51rem;
+    height: 58.69rem;
     background: #000;
     position: relative;
     overflow: hidden;
@@ -31,13 +31,14 @@ export default {
         position: absolute;
         left: 14rem;
         outline: none;
+        margin: 0 auto;
     }
     .close{
         position: absolute;
         width: 3rem;
         height: 3rem;
         top: 10rem;
-        right: 10rem;
+        right: 17%;
         cursor: pointer;
         .svg_close{
             width: 3rem;

@@ -152,6 +152,7 @@ export default {
         },
         goBack(){
             this.$parent.isBuy=false;
+            this.canScroll()
         },
         sendMessage(){
             window.console.log(1);
@@ -242,7 +243,7 @@ export default {
     }
     .consult_filter{
         width: 100%;
-        height: 100%;
+        // height: 100%;
         top: 0;
         left: 0;
         position: relative;
