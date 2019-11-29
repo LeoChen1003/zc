@@ -150,6 +150,7 @@
           <div class="comment">自定义修改翻炒方式</div>
         </div>
       </div>
+      <svg-icon icon-class="wap_pro_gt" class-name="detail_7_svg"></svg-icon>
       <img src="../../assets/wap/productCenter/GT_znld.png" alt="znld" />
     </div>
     <div class="detail_3 detail_8">
@@ -497,10 +498,21 @@ export default {
     width: 8rem;
   }
 
+  .detail_7_svg {
+    position: absolute;
+    bottom: -10px;
+    width: 21rem;
+    height: 7.88rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
   img {
     position: absolute;
     bottom: 0;
-    left: 0.5rem;
+    width: 6.63rem;
+    height: 8.5rem;
+    right: 3.8rem;
   }
 }
 
@@ -514,6 +526,7 @@ export default {
     rgba(30, 31, 32, 1) 100%
   );
   position: relative;
+  overflow: hidden;
 
   .data_box {
     display: flex;
@@ -530,8 +543,9 @@ export default {
   }
 
   img {
+    width: 90%;
     position: absolute;
-    bottom: 0;
+    bottom: -40px;
     left: 1.38rem;
   }
 }

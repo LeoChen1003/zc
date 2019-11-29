@@ -469,7 +469,7 @@ export default {
   box-sizing: border-box;
   padding: 1.8rem 2.5rem;
   padding-bottom: 7rem;
-  background: url('../../assets/home/gtccj.png');
+  background: url('../../assets/home/gtccj.jpg');
   background-position: bottom;
   background-size: 100%;
   background-repeat: no-repeat;

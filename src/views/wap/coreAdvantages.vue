@@ -209,6 +209,7 @@
             modelPJ = false
             modelFW = false
           "
+          @touchmove.prevent
         ></div>
       </transition>
       <transition name="fade">
