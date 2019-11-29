@@ -27,4 +27,4 @@ WORKDIR /usr/share/nginx/html
 COPY --from=builder /app/dist .
 
 # 拷贝nginx配置文件
-COPY ./ci/nginx_conf/default.conf /etc/nginx/conf.d/default.conf
+COPY nginx_default.conf /etc/nginx/conf.d/default.conf
