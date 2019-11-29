@@ -117,7 +117,7 @@ export default {
                     width:21.37rem;
                     height:10.19rem;
                     font-size:1rem;
-                    font-weight:600;
+                    font-weight:400;
                     color:#333333;
                     margin-left: 4.68rem;
                     margin-top: 1.44rem;
@@ -148,7 +148,7 @@ export default {
                     width:16.25rem;
                     height:5.38rem;
                     font-size:1rem;
-                    font-weight:600;
+                    font-weight:400;
                     color:#333333;
                     margin-left: 6.25rem;
                     margin-top: 1.44rem;
@@ -160,9 +160,9 @@ export default {
     .mach_chose{
             width: 3rem;
             height: 3rem;
-            position: absolute;
-            top: 0;
-            right: -4rem;
+            position: fixed;
+            top:3rem;
+            left: 85.1%;
             cursor: pointer;
             svg{
                 width: 3rem;

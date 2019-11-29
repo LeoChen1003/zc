@@ -522,9 +522,11 @@ export default {
                 width: 27.75rem;
                 height: 23.63rem;
                 border-radius: 0.63rem;
-                top: 5.68rem;
-                right: 14%;
-                position: absolute;
+                // top: 5.68rem;
+                // right: 14%;
+                // position: absolute;
+                margin-left: 100px;
+                margin-top: 5.68rem;
                 cursor: pointer;
                 .contact_d3_location_city_zh,.contact_d3_location_city_sz,.contact_d3_location_city_hz{
                     width: 100%;

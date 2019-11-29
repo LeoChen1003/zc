@@ -3,8 +3,11 @@
         <zcHeader :isWhite="isWhite"></zcHeader>
         <div class="aio_hd">
             <p>智能精炒一体机</p>
-            <router-link to="/product/proAIO">概览</router-link>
-            <router-link to="/product/proAIO/proAIOTechSpecs">技术规格</router-link>
+            <div class="aio_hd_center">
+                <router-link to="/product/proAIO">概览</router-link>
+                <router-link to="/product/proAIO/proAIOTechSpecs">技术规格</router-link>
+            </div>
+            
             <div class="aio_hd_btn" @click="buy" :class="isShow1?'btn_show1':''">
                 立即预约
             </div>
@@ -223,25 +226,28 @@ export default {
             font-size:0.87rem;
             font-weight:400;
             color:#fff;
-            margin-left: 22.12rem;
+            margin-left: 21%;
             margin-top: 0.88rem;
         }
-        a:nth-child(2),a:nth-child(3){
-            float: left;
-            height:1.06rem;
-            font-size:0.75rem;
-            color:#fff;
-            margin-top: 0.88rem;
-        }
-        a:nth-child(2){
-            width:1.5rem;
-            font-weight:600;
-            margin-left: 11%;
-        }
-        a:nth-child(3){
-            width: 3rem;
-            font-weight: 400;
-            margin-left: 3%;
+        .aio_hd_center{
+            width: 6.5rem;
+            margin: 0 auto;
+            a{
+                float: left;
+                height:1.06rem;
+                font-size:0.75rem;
+                color:#fff;
+                margin-top: 0.88rem;
+            }
+            a:first-child{
+                width:1.5rem;
+                font-weight:600;
+            }
+            a:nth-child(2){
+                width: 3rem;
+                font-weight: 400;
+                margin-left: 1.5rem;
+            }
         }
         .aio_hd_btn{
             display: none;
@@ -255,7 +261,7 @@ export default {
             color:rgba(255,255,255,1);
             line-height:2rem;
             text-align: center;
-            margin-left: 17.4%;
+            margin-left: 19%;
             margin-top: 0.5rem;
             cursor: pointer;
         }
@@ -677,10 +683,10 @@ export default {
         }
         .con7_svg{
             width: 70rem;
-            height: 23.75rem;
+            height: 21.75rem;
             position: absolute;
-            left: 10rem;
-            bottom: -0.8rem;
+            bottom: 0;
+            left: 6.8rem;
         }
         .aio_con7_pic{
             width: 12.38rem;
@@ -737,9 +743,9 @@ export default {
             margin-left: 8.56rem;
         }
         .aio_con8_pic{
-            position: absolute;
-            bottom: -0.2rem;
-            left: 13.3%;
+            width: 1040px;
+            margin: 0 auto;
+            margin-top: 14.2rem;
         }
     }
     .aio_con9{

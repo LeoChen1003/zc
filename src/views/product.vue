@@ -6,7 +6,7 @@
             <span>···</span>
             <span @click="jump(1)" :class="isActive2?'bolder':'normal'">更多智厨产品</span>
             <span>···</span>
-            <span @click="jump(2)" :class="isActive3?'bolder':'normal'">其他智能产品</span>
+            <span @click="jump(7)" :class="isActive3?'bolder':'normal'">其他智能产品</span>
         </div>
         <div class="pro">
             <div class="pro_title1 d_jump" ref="pro1">
@@ -51,7 +51,7 @@
             <div class="pro_title2 d_jump" ref="pro2">
                 其他智厨产品
             </div>
-            <div class="pro_con3">
+            <div class="pro_con3 d_jump">
                 <div class="pro_con3_l">
                     <p>智能多头平面炉</p>
                     <div class="pro_con3_l_c1">
@@ -112,7 +112,7 @@
                     </div>
                 </div>
             </div>
-            <div class="pro_con3">
+            <div class="pro_con3 d_jump">
                 <div class="pro_con3_l">
                     <p>智能单头单尾凹面炒炉</p>
                     <div class="pro_con3_l_c1">
@@ -173,7 +173,7 @@
                     </div>
                 </div>
             </div>
-            <div class="pro_con3">
+            <div class="pro_con3 d_jump">
                 <div class="pro_con3_l">
                     <p>智能蒸饭柜</p>
                     <div class="pro_con3_l_c1">
@@ -235,7 +235,7 @@
                     </div>
                 </div>
             </div>
-            <div class="pro_con3">
+            <div class="pro_con3 d_jump">
                 <div class="pro_con3_l">
                     <p>智能烤箱</p>
                     <div class="pro_con3_l_c1">
@@ -296,7 +296,7 @@
                     </div>
                 </div>
             </div>
-            <div class="pro_con3">
+            <div class="pro_con3 d_jump">
                 <div class="pro_con3_l">
                     <p>智能煮面机</p>
                     <div class="pro_con3_l_c1">
@@ -361,7 +361,7 @@
             <div class="pro_title3 d_jump" ref="pro3">
                 其他智能产品
             </div>
-            <div class="pro_con4">
+            <div class="pro_con4 d_jump">
                 <div class="pro_con4_l">
                     <p>优特智能打菜机</p>
                     <div class="pro_con4_l_c1">
@@ -396,7 +396,7 @@
                     <img src="../assets/home/addBlack2.png" alt="">
                 </div>
             </div>
-            <div class="pro_con5">
+            <div class="pro_con5 d_jump">
                 <div class="pro_con5_l">
                     <p>优特配送箱</p>
                     <div class="pro_con5_l_c1">
@@ -536,13 +536,11 @@ export default {
                 this.isActive1 = true;
                 this.isActive2 = false;
                 this.isActive3 = false;
-                window.console.log(1);
             }else if(i==1){
                 this.isActive1 = false;
                 this.isActive2 = true;
                 this.isActive3 = false;
-                window.console.log(this);
-            }else{
+            }else if(i==2){
                 this.isActive1 = false;
                 this.isActive2 = false;
                 this.isActive3 = true;
@@ -550,7 +548,59 @@ export default {
         }
     },
     mounted(){
-        this.canScroll()
+        this.canScroll();
+        let type = this.$route.query.type;
+        if(type=="other3"){
+            this.jump(8);
+        }else if(type=="other2" || type=="other1"){
+            this.jump(9);
+        }else if(type=="more1" || type=="more2"){
+            this.jump(2);
+        }else if(type=="more3" || type=="more4"){
+            this.jump(3);
+        }else if(type=="more5" || type=="more6"){
+            this.jump(4);
+        }else if(type=="more7" || type=="more8"){
+            this.jump(5);
+        }else if(type=="more9" || type=="more10"){
+            this.jump(6);
+        }
+        window.onscroll = () =>{
+            let top = document.documentElement.scrollTop || document.body.scrollTop;
+            if(top<1148){
+                this.isActive1 = true;
+                this.isActive2 = false;
+                this.isActive3 = false;
+            }else if(top>1148&&top<3630){
+                this.isActive1 = false;
+                this.isActive2 = true;
+                this.isActive3 = false;
+            }else{
+                this.isActive1 = false;
+                this.isActive2 = false;
+                this.isActive3 = true;
+            }
+        }
+    },
+    watch:{
+        $route(){
+            let type = this.$route.query.type;
+            if(type=="other3"){
+                this.jump(8);
+            }else if(type=="other2" || type=="other1"){
+                this.jump(9);
+            }else if(type=="more1" || type=="more2"){
+                this.jump(2);
+            }else if(type=="more3" || type=="more4"){
+                this.jump(3);
+            }else if(type=="more5" || type=="more6"){
+                this.jump(4);
+            }else if(type=="more7" || type=="more8"){
+                this.jump(5);
+            }else if(type=="more9" || type=="more10"){
+                this.jump(6);
+            }
+        }
     }
 }
 </script>

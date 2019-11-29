@@ -1,51 +1,54 @@
 <template>
   <div class="footer">
-    <div class="footer_left">
-      <ul>
-        <li @click="product">产品中心</li>
-        <li @click="proAIO">智能精炒一体机</li>
-        <li @click="proCai">智能炒菜机套装</li>
-        <li @click="product">其他智厨产品</li>
-        <li @click="product">其他智厨产品</li>
-      </ul>
-      <ul>
-        <li @click="news">新闻中心</li>
-      </ul>
-      <ul>
-        <li @click="coreAdvantage">核心优势</li>
-        <li @click="coreAdvantage">适用场景</li>
-        <li @click="system">智能系统</li>
-        <li @click="tech">智能技术</li>
-        <li @click="data">智能数据管控</li>
-        <li @click="mechine">智能配件</li>
-        <li @click="service">智能服务体系</li>
-      </ul>
-      <ul>
-        <li @click="about">关于我们</li>
-        <li @click="about">企业简介</li>
-        <li @click="about">发展历程</li>
-        <li @click="about">企业实力</li>
-      </ul>
-      <ul>
-        <li @click="contact">联系我们</li>
-        <li>申请使用</li>
-      </ul>
+    <div class="footer_content">
+      <div class="footer_left">
+        <ul>
+          <li @click="product">产品中心</li>
+          <li @click="proAIO">智能精炒一体机</li>
+          <li @click="proCai">智能炒菜机套装</li>
+          <li @click="product">其他智厨产品</li>
+          <li @click="product">其他智厨产品</li>
+        </ul>
+        <ul>
+          <li @click="news">新闻中心</li>
+        </ul>
+        <ul>
+          <li @click="coreAdvantage">核心优势</li>
+          <li @click="coreAdvantage">适用场景</li>
+          <li @click="system">智能系统</li>
+          <li @click="tech">智能技术</li>
+          <li @click="data">智能数据管控</li>
+          <li @click="mechine">智能配件</li>
+          <li @click="service">智能服务体系</li>
+        </ul>
+        <ul>
+          <li @click="about">关于我们</li>
+          <li @click="about">企业简介</li>
+          <li @click="about">发展历程</li>
+          <li @click="about">企业实力</li>
+        </ul>
+        <ul>
+          <li @click="contact">联系我们</li>
+          <li>申请使用</li>
+        </ul>
+      </div>
       <div class="footer_right">
-        <div class="footer_right_tel">4000-666-888</div>
-        <div class="footer_right_time">
-          <div>客服联系电话</div>
-          <div>周一至周日 8:00-20:00</div>
-        </div>
-        <div class="footer_right_about">
-          <span>关注我们：</span>
-          <svg-icon icon-class="homeWeixin"
-                    style="margin-right:1rem;"
-                    class-name="svg_size"></svg-icon>
-          <svg-icon icon-class="homeWeibo"
-                    class-name="svg_size"></svg-icon>
-        </div>
+          <div class="footer_right_tel">4000-666-888</div>
+          <div class="footer_right_time">
+            <div>客服联系电话</div>
+            <div>周一至周日 8:00-20:00</div>
+          </div>
+          <div class="footer_right_about">
+            <span>关注我们：</span>
+            <svg-icon icon-class="homeWeixin"
+                      style="margin-right:1rem;"
+                      class-name="svg_size"></svg-icon>
+            <svg-icon icon-class="homeWeibo"
+                      class-name="svg_size"></svg-icon>
+          </div>
       </div>
     </div>
+    
   </div>
 </template>
 
@@ -130,16 +133,30 @@ export default {
   min-width: 89rem;
   background: #020202;
   width: 100%;
-  padding: 3.75rem 13.5rem 5.88rem 13.5rem;
+  // padding: 3.75rem 13.5rem 5.88rem 13.5rem;
+  padding-top: 3.75rem;
+  height: 25rem;
   color: #fff;
   box-sizing: border-box;
   li{
     cursor: pointer;
   }
+  .footer_content{
+    width: 74rem;
+    margin: 0 auto;
+    height: 100%;
+    position: relative;
+  }
+}
+.footer::after{
+  clear: both;
+  content: '';
 }
 .footer_left {
+  float: left;
   display: flex;
   justify-content: space-between;
+  width: 50rem;
   ul > li:first-child {
     font-size: 1rem;
     font-weight: 400;
@@ -155,7 +172,10 @@ export default {
 .footer_right {
   text-align: right;
   margin-top: -1rem;
-  margin-left: 9.88rem;
+  float: left;
+  position: absolute;
+  right: 0;
+  // margin-left: 9.88rem;
   color: #888888;
   font-size: 0.88rem;
   .footer_right_tel {

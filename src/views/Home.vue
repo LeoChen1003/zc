@@ -603,7 +603,7 @@
             img {
               width: 100%;
               height: 100%;
-              background-size: cover;
+              object-fit: cover;
             }
           }
 
@@ -688,6 +688,7 @@
       background: url('../assets/home/drumFryingMachine.jpg');
       background-size: cover;
       cursor: pointer;
+      overflow: hidden;
 
       // padding: 7.5rem 14%;
       .home_pro_one_con{

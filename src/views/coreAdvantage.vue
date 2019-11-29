@@ -277,8 +277,7 @@ export default {
                 this.isWhite = true;
             }
         }
-        let type = this.$route.query.type
-        // window.console.log(type)
+        let type = this.$route.query.type;
         if(type == 'modelData'){
             this.modelData = true;
         }else if(type == "modelSt"){
@@ -618,10 +617,10 @@ export default {
             }
         }
         .core_mach_svg{
-            width: 54.19rem;
+            width: 56.19rem;
             height: 20rem;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             margin: 0 auto;
             margin-top: 2rem;
             div{

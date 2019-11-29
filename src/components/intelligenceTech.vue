@@ -200,9 +200,9 @@ export default {
     .tech_chose{
             width: 3rem;
             height: 3rem;
-            position: absolute;
-            top: 0;
-            right: -4rem;
+            position: fixed;
+            top:3rem;
+            left: 85.1%;
             cursor: pointer;
             svg{
                 width: 3rem;

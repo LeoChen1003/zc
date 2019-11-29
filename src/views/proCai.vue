@@ -14,7 +14,17 @@
     <div class="cai_con1">
       <p>“星级大厨”带你体验舌尖上的美味</p>
       <p>智能一拖三炒菜机</p>
-      <p>智能云菜谱 &nbsp;| &nbsp;智能大滚筒炒菜机 &nbsp; | &nbsp; 中控任务管理 &nbsp; | &nbsp; 智能调料机 &nbsp; | &nbsp; 气压站</p>
+      <div class="cai_con1_tip">
+          <span>智能云菜谱</span>
+          <span class="cai_con1_tip_line">|</span>
+          <span>智能大滚筒炒菜机</span>
+          <span class="cai_con1_tip_line">|</span>
+          <span>中控任务管理</span>
+          <span class="cai_con1_tip_line">|</span>
+          <span>智能调料机</span>
+          <span class="cai_con1_tip_line">|</span>
+          <span>气压站</span>
+        </div>
       <div @click="buy" class="cai_con1_btn">立即预约</div>
       <div class="cai_con1_cir">
         <div></div>
@@ -253,20 +263,32 @@ export default {
     var hder = document.getElementsByClassName("whiteBack")[0];
     window.onscroll = () => {
         var top = document.documentElement.scrollTop;
-        //   window.console.log(document.documentElement.scrollTop);
+          window.console.log(document.documentElement.scrollTop);
         if(top<795){
             this.isShow = false;
         }else{
             this.isShow = true;
         }
-        if (top >= 3018 && top <= 4897) {
-            hder.className = "blackBack";
-            this.isWhite = false;
-            this.isActive = true;
-        } else {
-            hder.className = "whiteBack";
-            this.isWhite = true;
-            this.isActive = false;
+        if(top<3018){
+          hder.className = "whiteBack";
+          this.isWhite = true;
+          this.isActive = false;
+        }else if(top >= 3018 && top <= 4897){
+          hder.className = "blackBack";
+          this.isWhite = false;
+          this.isActive = true;
+        }else if(top>4897 && top<= 5836){
+          hder.className = "whiteBack";
+          this.isWhite = true;
+          this.isActive = false;
+        }else if(top>=5836 && top<= 7714){
+          hder.className = "blackBack";
+          this.isWhite = false;
+          this.isActive = true;
+        }else{
+          hder.className = "whiteBack";
+          this.isWhite = true;
+          this.isActive = false;
         }
     };
   },
@@ -293,9 +315,12 @@ export default {
     p:first-child{
         color: #fff !important;
     }
-    p:nth-child(2),a:nth-child(3){
+    div{
+      span:first-child,a:nth-child(2){
         color: #fff !important;
+      }
     }
+    
 }
 .cai {
   width: 100%;
@@ -339,24 +364,6 @@ export default {
       margin-left: 21%;
       margin-top: 0.88rem;
     }
-    // p:nth-child(2),
-    // a:nth-child(3){
-    //   float: left;
-    //   height: 1.06rem;
-    //   font-size: 0.75rem;
-    //   color: #333;
-    //   margin-top: 0.88rem;
-    // }
-    // p:nth-child(2) {
-    //   width: 1.5rem;
-    //   font-weight: 600;
-    //   margin-left: 11%;
-    // }
-    // a:nth-child(3) {
-    //   width: 3rem;
-    //   font-weight: 400;
-    //   margin-left: 3%;
-    // }
     .cai_hd_btn{
         display: none;
         float: left;
@@ -369,7 +376,7 @@ export default {
         color:rgba(255,255,255,1);
         line-height:2rem;
         text-align: center;
-        margin-left: 16.4%;
+        margin-left: 19%;
         margin-top: 0.5rem;
         cursor: pointer;
     }
@@ -397,14 +404,18 @@ export default {
       color: rgba(0, 0, 0, 1);
       margin: 0.5rem auto 0;
     }
-    p:nth-child(3) {
-      width: 26.5rem;
-      height: 1.25rem;
-      font-size: 0.87rem;
-      font-weight: 400;
-      color: #333;
-      margin: 1rem auto 0;
-    }
+    .cai_con1_tip {
+        font-size: 0.88rem;
+        width: 35rem;
+        color: #333;
+        margin: 0 auto;
+        margin-top: 1rem;
+        .cai_con1_tip_line {
+          color: #ccc;
+          margin-right: 1.25rem;
+          margin-left: 1.25rem;
+        }
+      }
     .cai_con1_btn {
       width: 9rem;
       height: 2.62rem;
@@ -472,6 +483,7 @@ export default {
       div:nth-child(3) {
         font-size: 0.88rem;
         color: #000;
+        margin-top: -0.5rem;
         span {
           font-family: mFont;
           font-size: 3.75rem;
@@ -493,7 +505,7 @@ export default {
         position: absolute;
         width: 0.88rem;
         height: 0.88rem;
-        top: 5.31rem;
+        top: 4.8rem;
         left: 6.31rem;
       }
     }
@@ -504,7 +516,7 @@ export default {
         position: absolute;
         width: 0.88rem;
         height: 0.88rem;
-        top: 5.31rem;
+        top: 4.8rem;
         left: 9.5rem;
       }
     }
@@ -981,8 +993,10 @@ export default {
     .cai_con8_svg {
       width: 75.13rem;
       height: 23.75rem;
-      margin-top: 1.13rem;
-      margin-left: 6.8rem;
+      // margin-top: 1.13rem;
+      position: absolute;
+      bottom: 0;
+      left: 6.8rem;
     }
     .cai_con8_pic {
       width: 12.38rem;
