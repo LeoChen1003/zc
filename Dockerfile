@@ -14,6 +14,7 @@ RUN yarn config set registry https://nexus.utcook.com/repository/npm-repo/ \
   && yarn install
 RUN yarn build
 
+# 使用nginx作为web服务
 FROM nginx:1.17.5-alpine
 
 # 维护人
@@ -22,4 +23,8 @@ LABEL maintainer="yangguangqing@ut.cn"
 # 工作目录
 WORKDIR /usr/share/nginx/html
 
-copy --from=builder /app/build .
+# 拷贝编译结果文件
+COPY --from=builder /app/dist .
+
+# 拷贝nginx配置文件
+COPY ci/nginx_conf/default.conf /etc/nginx/conf.d/default.conf
