@@ -1,0 +1,6 @@
+.codeclimate
+.gitlab-ci.yml
+Dockerfile
+.git
+.gitignore
+ci

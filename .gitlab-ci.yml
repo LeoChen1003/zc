@@ -1,0 +1,108 @@
+# This file is a template, and might need editing before it works on your project.
+
+image: reg.utcook.com/pub/k8s-alpine:v1.13.0
+
+# 注释的变量使用默认值，否则为未定义
+# 具体请查看下文include所在项目文件
+variables:
+  DEV_NAMESPACE: "utcook-website"  # 各环境namespace
+
+  DOCKER_HOST: "192.168.105.71:2375"
+  DOCKER_USER: "docker"
+  DOCKER_DRIVER: "overlay2"
+  DOCKER_BUILD: "true"  # 添加注释或者设置为false，不进行docker build
+  UAT_ENABLED: "false"  # 添加注释或者设置为false,不部署uat环境
+  STAGING_ENABLED: "true"  # 添加注释或者设置为false,不部署dev环境
+  REVIEW_DISABLED: "true"  # 设置为true,不部署review环境
+  ZAPROXY_DISABLED: "true"  # 设置为true,不进行zaproxy扫描
+  TEST_DISABLED: "false"  # 设置为true,不进行test任务
+  # CODE_QUALITY_DISABLED: "true"  # 取消注释，并设置为true，不进行代码质量扫描
+
+  # cache dir
+  CACHE_DIR: "node_modules"
+
+  # POD个数
+  REPLICAS: "1"  # 默认为1
+  UAT_REPLICAS: "1"
+
+
+# job覆盖include中的，需要提供完整的job
+build:
+  stage: build
+  image: reg.utcook.com/pub/docker:stable
+  services:
+  - reg.utcook.com/pub/docker:stable-dind  
+  script:
+    - setup_docker
+    - build
+  only:  # 执行条件
+    refs:
+    - tags  # 打了tag时触发
+    - branches  # 分支有提交时触发
+  # 添加缓存目录，加快编译速度
+  cache:
+    paths:
+      - $CACHE_DIR/ # Node modules and dependencies
+      - yarn.lock
+    policy: pull
+
+# job覆盖include中的，需要提供完整的job
+test:
+  stage: test
+  variables: 
+    DOCKER_HOST: 'tcp://localhost:2375'
+  image: reg.utcook.com/pub/docker:stable-git
+  services:
+    - reg.utcook.com/pub/docker:stable-dind  
+  script:
+    - test_image
+  only:
+    refs:
+    - tags
+    - branches
+  except:
+    variables:
+      - $TEST_DISABLED == "true"
+  # 添加缓存目录，加快编译速度
+  cache:
+    paths:
+      - $CACHE_DIR/ # Node modules and dependencies       
+      - yarn.lock
+    policy: push
+
+# # job覆盖include中的，需要提供完整的job
+# # 设置 STAGING_ENABLED 决定是否执行此job
+# staging:
+#   stage: staging
+#   script:
+#     - check_kube_domain
+#     - install_dependencies
+#     - download_chart
+#     - ensure_namespace $DEV_NAMESPACE
+#     - initialize_tiller
+#     - create_secret $DEV_NAMESPACE
+#     - deploy $DEV_NAMESPACE
+#   environment:
+#     name: staging
+#     url: http://wwwdev.utcook.com
+#   only:
+#     refs:
+#       - master  # 默认master才会自动部署，若需要其它分支部署，请打开此段注释并在此处设置你的分支名
+#     kubernetes: active
+#     variables:
+#       - $STAGING_ENABLED == "true"
+
+
+include:
+  # 变量、流水线定义于此
+  - project: 'pub/ci-templates'
+    ref: dev  # 正式设置请使用 master
+    file: 'all/base-gitlab-ci.yml'
+  # shell各函数定义于此
+  - project: 'pub/ci-templates'
+    ref: dev  # 正式设置请使用 master
+    file: 'node/shell-functions-gitlab-ci.yml'
+  # 代码覆盖率分析
+  - project: 'pub/ci-templates'
+    ref: dev  # 正式设置请使用 master
+    file: 'node/code_coverage-gitlab-ci.yml'
