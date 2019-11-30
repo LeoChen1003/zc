@@ -210,7 +210,8 @@ export default {
   watch: {},
   methods: {
     handleScroll() {
-      if (document.documentElement.scrollTop > 276) {
+      let top = document.documentElement.scrollTop || document.body.scrollTop
+      if (top > 276) {
         self.type = 'js'
       } else {
         self.type = 'gl'
@@ -241,7 +242,7 @@ export default {
   height: 30.44rem;
   background: rgba(0, 0, 0, 1) url('../../assets/wap/productCenter/YTJ_top.jpg');
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   background-position: 100% 100%;
   padding: 2.31rem 2.5rem 0 2.31rem;
   box-sizing: border-box;
@@ -280,7 +281,7 @@ export default {
   background: rgba(0, 0, 0, 1)
     url('../../assets/wap/productCenter/YTJ_data.jpg');
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   background-position: 100% 100%;
 
   .info_box {
@@ -335,7 +336,7 @@ export default {
   box-sizing: border-box;
   background: rgba(0, 0, 0, 1) url('../../assets/wap/productCenter/YTJ_3.png');
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   background-position: 100% 100%;
 
   .tag {
@@ -408,7 +409,7 @@ export default {
   box-sizing: border-box;
   background: rgba(0, 0, 0, 1) url('../../assets/wap/productCenter/YTJ_4.png');
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   // background-position: 100% 100%;
   text-align: right;
 
@@ -440,7 +441,7 @@ export default {
   box-sizing: border-box;
   background: rgba(0, 0, 0, 1) url('../../assets/wap/productCenter/YTJ_5.png');
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   background-position: 100% 100%;
   text-align: left;
 
@@ -462,7 +463,7 @@ export default {
   box-sizing: border-box;
   background: rgba(0, 0, 0, 1) url('../../assets/wap/productCenter/YTJ_6.png');
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   background-position: 100% 100%;
   text-align: left;
 
@@ -555,7 +556,7 @@ export default {
   background: rgba(0, 0, 0, 1)
     url('../../assets/wap/productCenter/YTJ_more_bg.jpg');
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   background-position: 100% 100%;
   display: flex;
   align-items: center;

@@ -61,6 +61,10 @@ export default {
 </script>
 <style lang="scss" scoped>
 //@import url(); 引入公共css类
+.my {
+  position: relative;
+}
+
 .about_header {
   height: 3rem;
   padding: 0 1.81rem;
@@ -106,11 +110,11 @@ export default {
 .dropdown {
   color: #333;
   width: 100%;
-  line-height: 3rem;
   font-size: 0.75rem;
-  padding: 0 1.81rem;
+  line-height: 3rem;
+  padding: 0 1.81rem 1.12rem 1.81rem;
   box-sizing: border-box;
-  position: fixed;
+  position: absolute;
   z-index: 10;
   background: #fff;
 }
