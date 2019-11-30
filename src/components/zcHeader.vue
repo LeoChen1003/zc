@@ -276,13 +276,13 @@ export default {
       btn3.style.color = "#000";
       var right1 = document.getElementsByClassName("showPro_r1")[0];
       right1.style.display= "none";
+      var right3 = document.getElementsByClassName("showhh1")[0];
+      right3.style.display= "none";
       var right2 = document.getElementsByClassName("showhh")[0];
       right2.style.display= "block";
       var btn2 = document.getElementsByClassName("showPro_l_btn2")[0];
       btn2.style.backgroundColor = "#000";
       btn2.style.color = "#fff";
-      var right3 = document.getElementsByClassName("showhh1")[0];
-      right3.style.display= "none";
       var btn1 = document.getElementsByClassName("showPro_l_btn1")[0];
       btn1.style.backgroundColor = "#fff";
       btn1.style.color = "#000";
@@ -651,8 +651,9 @@ export default {
         animation-name: key_showPro;
         animation-duration: 1s;
         animation-timing-function: ease;
+        // min-width: 52rem;
         .showPro_r2 {
-          width: 52rem;
+          width: 51rem;
           display: flex;
           flex-wrap: wrap;
           margin-top: 3.38rem;

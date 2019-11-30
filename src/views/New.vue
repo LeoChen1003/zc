@@ -9,7 +9,7 @@
                 </div>
                 <div class="new_con_del_r">
                     <p>{{messNew.updatedAt.slice(0,4)}}年{{messNew.updatedAt.slice(5,7)}}月{{messNew.updatedAt.slice(8,10)}}日</p>
-                    <router-link to="/new/detail1">{{messNew.title}}</router-link>
+                    <a>{{messNew.title}}</a>
                     <p>{{messNew.shortContent}}</p>
                 </div>
             </div>
@@ -133,7 +133,7 @@ export default {
             .new_con_del_l{
                 width: 29%;
                 height: 10rem;
-                border: 1px solid #ccc;
+                // border: 1px solid #ccc;
                 float: left;
                 border-radius: 10px;
                 cursor: pointer;
@@ -169,6 +169,8 @@ export default {
                     color: #333333;
                     font-weight: 300;
                     cursor: pointer;
+                    font-family:PingFangSC-Light,PingFang SC;
+                    line-height: 1.56rem;
                 }
             }
             .new_footer{

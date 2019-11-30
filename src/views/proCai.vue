@@ -1,234 +1,236 @@
 <template>
   <div class="cai">
-    <zcHeader :isWhite="isWhite"></zcHeader>
-    <div class="cai_hd" :class="isActive?'colorBlack':''">
-        <p>智能大滚筒炒菜机套机</p>
-        <div class="cai_hd_center">
-          <span>概览</span>
-          <router-link to="/product/proCai/proCaiTechSpecs">技术规格</router-link>
-        </div>
-        <div class="cai_hd_btn" @click="buy" :class="isShow?'btn_show':''">
-            立即预约
-        </div>
-    </div>
-    <div class="cai_con1">
-      <p>“星级大厨”带你体验舌尖上的美味</p>
-      <p>智能一拖三炒菜机</p>
-      <div class="cai_con1_tip">
-          <span>智能云菜谱</span>
-          <span class="cai_con1_tip_line">|</span>
-          <span>智能大滚筒炒菜机</span>
-          <span class="cai_con1_tip_line">|</span>
-          <span>中控任务管理</span>
-          <span class="cai_con1_tip_line">|</span>
-          <span>智能调料机</span>
-          <span class="cai_con1_tip_line">|</span>
-          <span>气压站</span>
-        </div>
-      <div @click="buy" class="cai_con1_btn">立即预约</div>
-      <div class="cai_con1_cir">
-        <div></div>
-      </div>
-    </div>
-    <div class="cai_con2">
-      <div class="cai_con2_center">
-        <div class="cai_con2_data1">
-          <p>更高效</p>
-          <p>后厨员工提效 :</p>
-          <div>
-            <span>300</span> %
+    <div :style="isBuy?'filter:blur(5px)':''">
+      <zcHeader :isWhite="isWhite"></zcHeader>
+      <div class="cai_hd" :class="isActive?'colorBlack':''">
+          <p>智能大滚筒炒菜机套机</p>
+          <div class="cai_hd_center">
+            <span>概览</span>
+            <router-link to="/product/proCai/proCaiTechSpecs">技术规格</router-link>
           </div>
-          <p>1 个小工可以替代 3 位大厨</p>
-        </div>
-        <div class="cai_con2_data2">
-          <p>更专研</p>
-          <p>历史研发投入：</p>
-          <div>
-            <span>400</span> 万元
-            <svg-icon icon-class="up" class-name="up"></svg-icon>
+          <div class="cai_hd_btn" @click="buy" :class="isShow?'btn_show':''">
+              立即预约
           </div>
-          <p>12年持续研发创新</p>
-        </div>
-        <div class="cai_con2_data3">
-          <p>更丰富</p>
-          <p>云菜谱数量 :</p>
-          <div>
-            <span>1000</span> 道
-            <svg-icon icon-class="up" class-name="up"></svg-icon>
+      </div>
+      <div class="cai_con1">
+        <p>“星级大厨”带你体验舌尖上的美味</p>
+        <p>智能一拖三炒菜机</p>
+        <div class="cai_con1_tip">
+            <span>智能云菜谱</span>
+            <span class="cai_con1_tip_line">|</span>
+            <span>智能大滚筒炒菜机</span>
+            <span class="cai_con1_tip_line">|</span>
+            <span>中控任务管理</span>
+            <span class="cai_con1_tip_line">|</span>
+            <span>智能调料机</span>
+            <span class="cai_con1_tip_line">|</span>
+            <span>气压站</span>
           </div>
-          <p>1 台设备拥有 20 名大厨的手艺</p>
+        <div @click="buy" class="cai_con1_btn">立即预约</div>
+        <div class="cai_con1_cir">
+          <div></div>
         </div>
-        <div class="cai_con2_data4">
-          <p>更标准</p>
-          <p>菜肴口味还原度 :</p>
-          <div>
-            <span>99.9</span> %
+      </div>
+      <div class="cai_con2">
+        <div class="cai_con2_center">
+          <div class="cai_con2_data1">
+            <p>更高效</p>
+            <p>后厨员工提效 :</p>
+            <div>
+              <span>300</span> %
+            </div>
+            <p>1 个小工可以替代 3 位大厨</p>
           </div>
-          <p>精准投料智能控温还原菜肴</p>
+          <div class="cai_con2_data2">
+            <p>更专研</p>
+            <p>历史研发投入：</p>
+            <div>
+              <span>400</span> 万元
+              <svg-icon icon-class="up" class-name="up"></svg-icon>
+            </div>
+            <p>12年持续研发创新</p>
+          </div>
+          <div class="cai_con2_data3">
+            <p>更丰富</p>
+            <p>云菜谱数量 :</p>
+            <div>
+              <span>1000</span> 道
+              <svg-icon icon-class="up" class-name="up"></svg-icon>
+            </div>
+            <p>1 台设备拥有 20 名大厨的手艺</p>
+          </div>
+          <div class="cai_con2_data4">
+            <p>更标准</p>
+            <p>菜肴口味还原度 :</p>
+            <div>
+              <span>99.9</span> %
+            </div>
+            <p>精准投料智能控温还原菜肴</p>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="cai_con3">
-      <div class="cai_con2_title">智能一拖三炒菜机</div>
-      <p>
-        复刻星厨技艺，
-        <br />稳定出菜品质，
-        <br />降低对大厨的依赖。
-      </p>
-      <p>云端录入五星大厨烹饪技艺，100%复刻星厨技艺，小工也能替代大厨标准化操作流程，标准化计量控制，统一出菜品质减少后厨培训，降低多门店管理的成本自主录入菜谱，一键加密同步多门店，新菜品快速复制同步。</p>
-      <div class="cai_con3_box">
-        <div class="cai_con3_item">
-          <span>100%</span>
-          <span>标准化</span>
-          <br />
+      <div class="cai_con3">
+        <div class="cai_con2_title">智能一拖三炒菜机</div>
+        <p>
+          复刻星厨技艺，
+          <br />稳定出菜品质，
+          <br />降低对大厨的依赖。
+        </p>
+        <p>云端录入五星大厨烹饪技艺，100%复刻星厨技艺，小工也能替代大厨标准化操作流程，标准化计量控制，统一出菜品质减少后厨培训，降低多门店管理的成本自主录入菜谱，一键加密同步多门店，新菜品快速复制同步。</p>
+        <div class="cai_con3_box">
+          <div class="cai_con3_item">
+            <span>100%</span>
+            <span>标准化</span>
+            <br />
+          </div>
+          <div class="cai_con3_item">
+            <span>厨艺还原</span>
+            <span>出菜品质</span>
+          </div>
         </div>
-        <div class="cai_con3_item">
-          <span>厨艺还原</span>
-          <span>出菜品质</span>
+        <div class="cai_con3_pic">
+          <img src="../assets/product/rotary1.png" alt />
         </div>
       </div>
-      <div class="cai_con3_pic">
-        <img src="../assets/product/rotary1.png" alt />
+      <div class="cai_con4">
+        <p class="p1">按需组合，提高产能。</p>
+        <p
+          class="p2"
+        >一名操作工可以同时操作三台设备，一拖三效率更高18KW超大功率，球釜内锅立体环绕加热0-150°智能调节位置，4档火力自动控制3-5分钟轻松出菜5Kg，一小时可以出菜450份根据厨房空间可2-3工位自由组合选择。</p>
+        <div class="cai_con4_text1">
+          <p>4分钟</p>
+          <p>平均每份菜</p>
+        </div>
+        <div class="cai_con4_text2">
+          <p>＞10000次</p>
+          <p>测试标准</p>
+        </div>
+        <div class="cai_con4_text3">
+          <p>180KW</p>
+          <p>超大功率</p>
+        </div>
+        <div class="cai_con4_text4">
+          <p>450份</p>
+          <p>平均1小时出菜量</p>
+        </div>
+        <div class="cai_con4_pic">
+          <img src="../assets/product/rotary2.png" alt />
+        </div>
       </div>
-    </div>
-    <div class="cai_con4">
-      <p class="p1">按需组合，提高产能。</p>
-      <p
-        class="p2"
-      >一名操作工可以同时操作三台设备，一拖三效率更高18KW超大功率，球釜内锅立体环绕加热0-150°智能调节位置，4档火力自动控制3-5分钟轻松出菜5Kg，一小时可以出菜450份根据厨房空间可2-3工位自由组合选择。</p>
-      <div class="cai_con4_text1">
-        <p>4分钟</p>
-        <p>平均每份菜</p>
+      <div class="cai_con5">
+        <div class="cai_con5_title">智能调料机</div>
+        <p>精准投料，保证出品。</p>
+        <p>
+          14种调料自动添加，精准度高，误差≤1%
+          <br />航天级技术调料传输阀门，精准度高，耐压性强
+          <br />支持14种中餐常用调料：
+          <br />• 固体调料: 盐、糖、鸡精、淀粉
+          <br />• 液体调料: 食用油、香油、生抽、老抽、陈醋、白醋、料酒、白酒、水淀粉、水
+        </p>
+        <p class="cai_con5_PL">14种</p>
+        <p class="cai_con5_PM">调料自动添加</p>
+        <p class="cai_con5_PL">≤1%</p>
+        <p class="cai_con5_PM">调料投放误差</p>
+        <p class="cai_con5_PL">航天级</p>
+        <p class="cai_con5_PM">保证零配件精准度</p>
+        <div class="cai_con5_pic">
+          <img src="../assets/product/seasoningMachine1.png" alt />
+        </div>
       </div>
-      <div class="cai_con4_text2">
-        <p>＞10000次</p>
-        <p>测试标准</p>
+      <div class="cai_con6">
+        <div class="cai_con6_pic">
+          <img src="../assets/product/seasoningMachine2.png" alt />
+        </div>
+        <p>
+          一键清洗，
+          <br />操作便捷。
+        </p>
+        <p>一键锅体加热，高压水枪辅助冲刷。调料机臭氧水消毒，自动烘干。</p>
+        <div class="cai_con6_txt1">
+          <p>臭氧水消毒</p>
+          <p>严格的卫生标准</p>
+        </div>
+        <div class="cai_con6_txt2">
+          <p>自动烘干</p>
+          <p>安心无虑</p>
+        </div>
       </div>
-      <div class="cai_con4_text3">
-        <p>180KW</p>
-        <p>超大功率</p>
+      <div class="cai_con7">
+        <div class="cai_con7_title">中控任务管理</div>
+        <p>
+          智能中控系统，
+          <br />厨房的大脑。
+        </p>
+        <p>智能管理烹饪任务，协调订单与生产管理实时监控全套智能设备工作状态，提前进行故障诊断统计分析后厨能耗数据，有效优化后厨成本。</p>
+        <div class="cai_con7_txt1">
+          <p>高效操作</p>
+          <p class="p">控制多台设备运行</p>
+        </div>
+        <div class="cai_con7_txt2">
+          <p>数据统计</p>
+          <p class="p">优化后厨成本</p>
+        </div>
+        <br />
+        <div class="cai_con7_txt3">
+          <p>协调订单</p>
+          <p class="p">联动操控</p>
+        </div>
+        <div class="cai_con7_txt4">
+          <p>实时监控</p>
+          <p class="p">动态变化一目了然</p>
+        </div>
+        <div class="cai_con7_pic">
+          <img src="../assets/product/zhongkong1.png" alt />
+        </div>
       </div>
-      <div class="cai_con4_text4">
-        <p>450份</p>
-        <p>平均1小时出菜量</p>
+      <div class="cai_con8">
+        <div class="cai_con8_title">智能大滚筒炒菜机</div>
+        <p class="cai_con8_p1">
+          APP 智能联动，
+          <br />远程同步菜谱。
+        </p>
+        <p
+          class="cai_con8_p2"
+        >每道菜谱都可精准控制烹饪的火力曲线、翻炒速度与角度。酥软、适中、有嚼劲，不同口感，不同烹饪方式。自定义菜谱的口味与口感，同步最新营养菜谱，APP 端统统意见搞定，开启智能数据厨房。</p>
+        <div class="cai_con8_d1">
+          <p>DIY 菜谱</p>
+          <p>自定义修改口味与口感</p>
+        </div>
+        <div class="cai_con8_d2">
+          <p>自定义烹饪</p>
+          <p>自定义修改翻炒方式</p>
+        </div>
+        <svg-icon icon-class="productHd" class-name="cai_con8_svg"></svg-icon>
+        <div class="cai_con8_pic">
+          <img src="../assets/product/phone1.png" alt />
+        </div>
       </div>
-      <div class="cai_con4_pic">
-        <img src="../assets/product/rotary2.png" alt />
+      <div class="cai_con9">
+        <p class="cai_con9_p1">不止是一台厨具，更是一名星级大厨。</p>
+        <p
+          class="cai_con9_p2"
+        >海量云菜谱实时更新，连接网络后，APP端还有多种烹饪菜单键选择，支持自定义分组。从火辣的川湘菜到清鲜美味的南方江浙菜肴，均可简单完成，菜谱涵盖8大菜系，配合智能语音提示，零基础无门槛，不用调温不用投料，只需简单跟着提示投入主食材，便可让你使用一台厨具就能享用20名不同类型大厨的美味。</p>
+        <div class="cai_con9_d1">
+          <p>实时更新</p>
+          <p>海量云菜谱</p>
+        </div>
+        <div class="cai_con9_d2">
+          <p>＞1000道</p>
+          <p>理论菜谱支持</p>
+        </div>
+        <div class="cai_con9_d3">
+          <p>8大菜系</p>
+          <p>菜谱涵盖</p>
+        </div>
+        <div class="cai_con9_pic">
+          <img src="../assets/product/phone2.png" alt />
+        </div>
       </div>
-    </div>
-    <div class="cai_con5">
-      <div class="cai_con5_title">智能调料机</div>
-      <p>精准投料，保证出品。</p>
-      <p>
-        14种调料自动添加，精准度高，误差≤1%
-        <br />航天级技术调料传输阀门，精准度高，耐压性强
-        <br />支持14种中餐常用调料：
-        <br />• 固体调料: 盐、糖、鸡精、淀粉
-        <br />• 液体调料: 食用油、香油、生抽、老抽、陈醋、白醋、料酒、白酒、水淀粉、水
-      </p>
-      <p class="cai_con5_PL">14种</p>
-      <p class="cai_con5_PM">调料自动添加</p>
-      <p class="cai_con5_PL">≤1%</p>
-      <p class="cai_con5_PM">调料投放误差</p>
-      <p class="cai_con5_PL">航天级</p>
-      <p class="cai_con5_PM">保证零配件精准度</p>
-      <div class="cai_con5_pic">
-        <img src="../assets/product/seasoningMachine1.png" alt />
-      </div>
-    </div>
-    <div class="cai_con6">
-      <div class="cai_con6_pic">
-        <img src="../assets/product/seasoningMachine2.png" alt />
-      </div>
-      <p>
-        一键清洗，
-        <br />操作便捷。
-      </p>
-      <p>一键锅体加热，高压水枪辅助冲刷。调料机臭氧水消毒，自动烘干。</p>
-      <div class="cai_con6_txt1">
-        <p>臭氧水消毒</p>
-        <p>严格的卫生标准</p>
-      </div>
-      <div class="cai_con6_txt2">
-        <p>自动烘干</p>
-        <p>安心无虑</p>
-      </div>
-    </div>
-    <div class="cai_con7">
-      <div class="cai_con7_title">中控任务管理</div>
-      <p>
-        智能中控系统，
-        <br />厨房的大脑。
-      </p>
-      <p>智能管理烹饪任务，协调订单与生产管理实时监控全套智能设备工作状态，提前进行故障诊断统计分析后厨能耗数据，有效优化后厨成本。</p>
-      <div class="cai_con7_txt1">
-        <p>高效操作</p>
-        <p class="p">控制多台设备运行</p>
-      </div>
-      <div class="cai_con7_txt2">
-        <p>数据统计</p>
-        <p class="p">优化后厨成本</p>
-      </div>
-      <br />
-      <div class="cai_con7_txt3">
-        <p>协调订单</p>
-        <p class="p">联动操控</p>
-      </div>
-      <div class="cai_con7_txt4">
-        <p>实时监控</p>
-        <p class="p">动态变化一目了然</p>
-      </div>
-      <div class="cai_con7_pic">
-        <img src="../assets/product/zhongkong1.png" alt />
-      </div>
-    </div>
-    <div class="cai_con8">
-      <div class="cai_con8_title">智能大滚筒炒菜机</div>
-      <p class="cai_con8_p1">
-        APP 智能联动，
-        <br />远程同步菜谱。
-      </p>
-      <p
-        class="cai_con8_p2"
-      >每道菜谱都可精准控制烹饪的火力曲线、翻炒速度与角度。酥软、适中、有嚼劲，不同口感，不同烹饪方式。自定义菜谱的口味与口感，同步最新营养菜谱，APP 端统统意见搞定，开启智能数据厨房。</p>
-      <div class="cai_con8_d1">
-        <p>DIY 菜谱</p>
-        <p>自定义修改口味与口感</p>
-      </div>
-      <div class="cai_con8_d2">
-        <p>自定义烹饪</p>
-        <p>自定义修改翻炒方式</p>
-      </div>
-      <svg-icon icon-class="productHd" class-name="cai_con8_svg"></svg-icon>
-      <div class="cai_con8_pic">
-        <img src="../assets/product/phone1.png" alt />
-      </div>
-    </div>
-    <div class="cai_con9">
-      <p class="cai_con9_p1">不止是一台厨具，更是一名星级大厨。</p>
-      <p
-        class="cai_con9_p2"
-      >海量云菜谱实时更新，连接网络后，APP端还有多种烹饪菜单键选择，支持自定义分组。从火辣的川湘菜到清鲜美味的南方江浙菜肴，均可简单完成，菜谱涵盖8大菜系，配合智能语音提示，零基础无门槛，不用调温不用投料，只需简单跟着提示投入主食材，便可让你使用一台厨具就能享用20名不同类型大厨的美味。</p>
-      <div class="cai_con9_d1">
-        <p>实时更新</p>
-        <p>海量云菜谱</p>
-      </div>
-      <div class="cai_con9_d2">
-        <p>＞1000道</p>
-        <p>理论菜谱支持</p>
-      </div>
-      <div class="cai_con9_d3">
-        <p>8大菜系</p>
-        <p>菜谱涵盖</p>
-      </div>
-      <div class="cai_con9_pic">
-        <img src="../assets/product/phone2.png" alt />
-      </div>
-    </div>
-    <div class="cai_bottom">
-      <div class="cai_bottom_btn" @click="tech">
-        <img src="../assets/product/addBlack.png" alt />
-        <span>了解参数明细</span>
+      <div class="cai_bottom">
+        <div class="cai_bottom_btn" @click="tech">
+          <img src="../assets/product/addBlack.png" alt />
+          <span>了解参数明细</span>
+        </div>
       </div>
     </div>
     <transition name="fade">

@@ -1,50 +1,52 @@
 <template>
     <div class="aio_specs">
-        <zcHeader :isWhite="isWhite"></zcHeader>
-        <div class="aio_specs_hd" :class="isActive?'colorWhite':''">
-            <p>智能精炒一体机</p>
-            <div class="aio_specs_hd_center">
-                <router-link to="/product/proAIO">概览</router-link>
-                <router-link to="/product/proAIO/proAIOTechSpecs">技术规格</router-link>
+        <div :style="isBuy?'filter:blur(5px)':''">
+            <zcHeader :isWhite="isWhite"></zcHeader>
+            <div class="aio_specs_hd" :class="isActive?'colorWhite':''">
+                <p>智能精炒一体机</p>
+                <div class="aio_specs_hd_center">
+                    <router-link to="/product/proAIO">概览</router-link>
+                    <router-link to="/product/proAIO/proAIOTechSpecs">技术规格</router-link>
+                </div>
+                <div class="aio_specs_hd_btn" @click="buy">
+                    立即预约
+                </div>
             </div>
-            <div class="aio_specs_hd_btn" @click="buy">
-                立即预约
+            <div class="aio_specs_con">
+                <p>超级烹饪专家</p>
+                <p>智能精炒一体机</p>
+                <p>三合一体，中高级餐饮店的御用超级“厨神”</p>
+                <div class="aio_specs_con_pic">
+                    <img src="../assets/product/AIO5.png" alt="">
+                </div>
             </div>
-        </div>
-        <div class="aio_specs_con">
-            <p>超级烹饪专家</p>
-            <p>智能精炒一体机</p>
-            <p>三合一体，中高级餐饮店的御用超级“厨神”</p>
-            <div class="aio_specs_con_pic">
-                <img src="../assets/product/AIO5.png" alt="">
-            </div>
-        </div>
-         <div class="aio_specs_txt">
-            <span>产品参数</span>
-            <p>型号：SZZNYTJ-1B<br>
-            额定功率：8200W<br>
-            电源电压：220V/50HZ<br>
-            整机尺寸：900*650*1505mm<br>
-            净重：110kg<br>
-            配置：内嵌抽油烟机</p>
-        </div>
-        <div class="aio_specs_txt">
-            <span>产品参数</span>
-            <p>型号：SZZNYTJ-1A<br>
-            额定功率：6700W<br>
-            电源电压：220V/50HZ<br>
-            整机尺寸：900*650*1505mm<br>
-            净重：115kg<br>
-            配置：内嵌抽油烟机</p>
-        </div>
-        <div class="aio_specs_txt aio_last">
-            <span>产品参数</span>
-            <p>型号：DZZNYTJ-1A<br>
-                额定功率：4500W<br>
+            <div class="aio_specs_txt">
+                <span>产品参数</span>
+                <p>型号：SZZNYTJ-1B<br>
+                额定功率：8200W<br>
                 电源电压：220V/50HZ<br>
                 整机尺寸：900*650*1505mm<br>
-                净重：90kg<br>
+                净重：110kg<br>
                 配置：内嵌抽油烟机</p>
+            </div>
+            <div class="aio_specs_txt">
+                <span>产品参数</span>
+                <p>型号：SZZNYTJ-1A<br>
+                额定功率：6700W<br>
+                电源电压：220V/50HZ<br>
+                整机尺寸：900*650*1505mm<br>
+                净重：115kg<br>
+                配置：内嵌抽油烟机</p>
+            </div>
+            <div class="aio_specs_txt aio_last">
+                <span>产品参数</span>
+                <p>型号：DZZNYTJ-1A<br>
+                    额定功率：4500W<br>
+                    电源电压：220V/50HZ<br>
+                    整机尺寸：900*650*1505mm<br>
+                    净重：90kg<br>
+                    配置：内嵌抽油烟机</p>
+            </div>
         </div>
         <transition name="fade">
             <buyConsult v-if="isBuy"></buyConsult>

@@ -123,12 +123,12 @@
       
     </div>
     <div class="home_product_more">
-      <div class="home_product_more_item1">
+      <div class="home_product_more_item1" @click="more_pro">
         <div>更多智厨产品</div>
         <div>更多智厨产品</div>
         <div></div>
       </div>
-      <div class="home_product_more_item2">
+      <div class="home_product_more_item2" @click="other_pro">
         <div>其他产品</div>
         <div>其他智能产品</div>
       </div>
@@ -311,6 +311,22 @@
         })
         // localStorage.setItem('newDetail', JSON.stringify(row))
       },
+      more_pro(){
+        this.$router.push({
+          path:"/product",
+          query:{
+            type:'more_pro'
+          }
+        })
+      },
+      other_pro(){
+        this.$router.push({
+          path:"/product",
+          query:{
+            type:'other_pro'
+          }
+        })
+      }
     }
   }
 </script>
@@ -479,6 +495,7 @@
         flex-direction: column;
         width: 50%;
         height: 26.25rem;
+        cursor: pointer;
 
         div:first-child {
           font-size: 1.5rem;
@@ -496,12 +513,12 @@
 
       .home_product_more_item1 {
         background: url('../assets/home/zcEquipment.jpg');
-        background-position: 46% 0;
+        background-size: cover;
       }
 
       .home_product_more_item2 {
         background: url('../assets/home/otherPro.jpg');
-        background-position: 46% 0;
+        background-size: cover;
       }
     }
 

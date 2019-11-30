@@ -114,9 +114,9 @@ export default {
                 color: #fff;
             }
             .newDel_con_hd_r{
-                float: left;
+                width: 8.4rem;
+                margin: 0 auto;
                 color: #626262;
-                margin-left: 16rem;
                 font-size: 1.12rem;
             }
         }
@@ -126,6 +126,7 @@ export default {
             font-size: 2.5rem;
             margin: 0 auto;
             margin-top: 2.75rem;
+            font-family: PingFangSC-Semibold,PingFang SC;
         }
         .line,.line1{
             width: 100%;

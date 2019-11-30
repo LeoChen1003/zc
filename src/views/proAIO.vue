@@ -1,157 +1,159 @@
 <template>
     <div class="aio">
-        <zcHeader :isWhite="isWhite"></zcHeader>
-        <div class="aio_hd">
-            <p>智能精炒一体机</p>
-            <div class="aio_hd_center">
-                <router-link to="/product/proAIO">概览</router-link>
-                <router-link to="/product/proAIO/proAIOTechSpecs">技术规格</router-link>
+        <div :style="isBuy?'filter:blur(5px)':''">
+            <zcHeader :isWhite="isWhite"></zcHeader>
+            <div class="aio_hd">
+                <p>智能精炒一体机</p>
+                <div class="aio_hd_center">
+                    <router-link to="/product/proAIO">概览</router-link>
+                    <router-link to="/product/proAIO/proAIOTechSpecs">技术规格</router-link>
+                </div>
+                
+                <div class="aio_hd_btn" @click="buy" :class="isShow1?'btn_show1':''">
+                    立即预约
+                </div>
             </div>
-            
-            <div class="aio_hd_btn" @click="buy" :class="isShow1?'btn_show1':''">
-                立即预约
+            <div class="aio_con1">
+                <p>超级烹饪专家</p>
+                <p>智能精炒一体机</p>
+                <p>三合一体，中高级餐饮店的御用超级“厨神”</p>
+                <div class="aio_con1_btn" @click="buy">
+                    立即预约
+                </div>
             </div>
-        </div>
-        <div class="aio_con1">
-            <p>超级烹饪专家</p>
-            <p>智能精炒一体机</p>
-            <p>三合一体，中高级餐饮店的御用超级“厨神”</p>
-            <div class="aio_con1_btn" @click="buy">
-                立即预约
-            </div>
-        </div>
-        <div class="aio_con2">
-            <div class="aio_con2_center">
-                <div class="aio_con2_d1">
-                    <p>更丰富</p>
-                    <p>高级定制菜谱</p>
-                    <div><span>1000</span> 道</div>
-                    <p>海量星级菜谱涵盖 8 大菜系</p>
-                    <div>
-                        <svg-icon icon-class="up1" class-name="up1"></svg-icon>
+            <div class="aio_con2">
+                <div class="aio_con2_center">
+                    <div class="aio_con2_d1">
+                        <p>更丰富</p>
+                        <p>高级定制菜谱</p>
+                        <div><span>1000</span> 道</div>
+                        <p>海量星级菜谱涵盖 8 大菜系</p>
+                        <div>
+                            <svg-icon icon-class="up1" class-name="up1"></svg-icon>
+                        </div>
                     </div>
+                    <div class="aio_con2_d2">
+                        <p>更精准</p>
+                        <p>复现星级厨师美味</p>
+                        <div><span>99.9</span> %</div>
+                        <p>精准投料智能控温还原菜肴</p>
+                    </div>
+                    <div class="aio_con2_d3">
+                        <p>更前沿</p>
+                        <p>智能人机交互提示</p>
+                        <div><span>0</span> 基础</div>
+                        <p>无门槛复制大厨烹饪行为</p>
+                    </div>
+                    <div class="aio_con2_d4">
+                        <p>更便捷</p>
+                        <p>火力智能自动调节</p>
+                        <div><span>11</span> 级</div>
+                        <p>精准控温包租多种烹饪需求</p>
+                    </div>
+                </div>     
+            </div>
+            <div class="aio_con3">
+                <div class="aio_con3_title">智能精炒一体机</div>
+                <p>精准复制，星级美味。</p>
+                <p><span>·</span>海量定制化星厨菜谱，并支持自主录入 <br><span>·</span>调料智能精准测量，精准至0.1g<br><span>·</span>锅体嵌入式多点测温，蓝牙实时反馈精确到0.1秒<br><span>·</span>11级火力智能调节，满足多种菜品烹饪需求</p>
+                <div class="aio_con3_txt1">
+                    <p class="p1">0.1g</p>
+                    <p class="p2">投料精准至</p>
                 </div>
-                <div class="aio_con2_d2">
-                    <p>更精准</p>
-                    <p>复现星级厨师美味</p>
-                    <div><span>99.9</span> %</div>
-                    <p>精准投料智能控温还原菜肴</p>
+                <div class="aio_con3_txt2">
+                    <p class="p1">0.1 秒</p>
+                    <p class="p2">蓝牙反馈精准至</p>
                 </div>
-                <div class="aio_con2_d3">
-                    <p>更前沿</p>
-                    <p>智能人机交互提示</p>
-                    <div><span>0</span> 基础</div>
-                    <p>无门槛复制大厨烹饪行为</p>
+                <div class="aio_con3_txt3">
+                    <p class="p1">11 级</p>
+                    <p class="p2">火力调节</p>
                 </div>
-                <div class="aio_con2_d4">
-                    <p>更便捷</p>
-                    <p>火力智能自动调节</p>
-                    <div><span>11</span> 级</div>
-                    <p>精准控温包租多种烹饪需求</p>
+                <div class="aio_con3_pic">
+                    <img src="../assets/product/AIO1.png" alt="">
                 </div>
-            </div>     
-        </div>
-        <div class="aio_con3">
-            <div class="aio_con3_title">智能精炒一体机</div>
-            <p>精准复制，星级美味。</p>
-            <p><span>·</span>海量定制化星厨菜谱，并支持自主录入 <br><span>·</span>调料智能精准测量，精准至0.1g<br><span>·</span>锅体嵌入式多点测温，蓝牙实时反馈精确到0.1秒<br><span>·</span>11级火力智能调节，满足多种菜品烹饪需求</p>
-            <div class="aio_con3_txt1">
-                <p class="p1">0.1g</p>
-                <p class="p2">投料精准至</p>
             </div>
-            <div class="aio_con3_txt2">
-                <p class="p1">0.1 秒</p>
-                <p class="p2">蓝牙反馈精准至</p>
+            <div class="aio_con4">
+                <p class="aio_con4_p1">语音提示，操作便捷。</p>
+                <p class="aio_con4_p2"><span>·</span>  全程语音提示，一秒上手，操作无难度<br><span>·</span> DIY自由烹饪与菜谱指导烹饪随心切换<br><span>·</span> 故障自诊提示</p>
+                <div class="aio_con4_txt1">
+                    <p>智能提示</p>
+                    <p>0基础门槛</p>
+                </div>
+                <div class="aio_con4_txt2">
+                    <p>故障自诊</p>
+                    <p>操作无难度</p>
+                </div>
+                <div class="aio_con4_pic">
+                    <img src="../assets/product/AIO2.png" alt="">
+                </div>
             </div>
-            <div class="aio_con3_txt3">
-                <p class="p1">11 级</p>
-                <p class="p2">火力调节</p>
+            <div class="aio_con5">
+                <p class="p1">外观时尚，潮流前沿。</p>
+                <p class="p2"><span>·</span> 符合人体工学设计，两种灶台选择<br><span>·</span> 专属面板，可根据家居风格随心搭配<br><span>·</span> 电磁灶、调料机、油烟机、三合一体，有效提高空间利用率</p>
+                <div class="d1">
+                    <p>三合一体</p>
+                    <p>电磁灶 + 调料机 + 油烟机</p>
+                </div>
+                <div class="d2">
+                    <p>双灶台</p>
+                    <p>平底锅 + 炒锅</p>
+                </div>
+                <div class="aio_con5_pic">
+                    <img src="../assets/product/AIO3.png" alt="">
+                </div>
             </div>
-            <div class="aio_con3_pic">
-                <img src="../assets/product/AIO1.png" alt="">
+            <div class="aio_con6">
+                <p class="p1">贴心设计，享健康下厨体验。</p>
+                <p class="p2"><span>·</span> 油烟机、电磁灶联动，一键开启<br><span>·</span> 优质控烟、近吸直排，油烟速排不拐弯</p>
+                <div class="d">
+                    <p>优质控烟</p>
+                    <p>油烟速排</p>
+                </div>
+                <div class="aio_con6_pic">
+                    <img src="../assets/product/AIO4.png" alt="">
+                </div>
             </div>
-        </div>
-        <div class="aio_con4">
-            <p class="aio_con4_p1">语音提示，操作便捷。</p>
-            <p class="aio_con4_p2"><span>·</span>  全程语音提示，一秒上手，操作无难度<br><span>·</span> DIY自由烹饪与菜谱指导烹饪随心切换<br><span>·</span> 故障自诊提示</p>
-            <div class="aio_con4_txt1">
-                <p>智能提示</p>
-                <p>0基础门槛</p>
+            <div class="aio_con7">
+                <div class="aio_con7_title">智能大滚筒炒菜机</div>
+                <p class="p1">APP 智能联动，远程同步菜谱。</p>
+                <p class="p2">每道菜谱都可精准控制烹饪的火力曲线、翻炒速度与角度。酥软、适中、有嚼劲，不同口感，不同烹饪方式。自定义菜谱的口味与口感，同步最新营养菜谱，APP 端统统意见搞定，开启智能数据厨房。</p>
+                <div class="d1">
+                    <p>DIY 菜谱</p>
+                    <p>自定义修改口味与口感</p>
+                </div>
+                <div class="d2">
+                    <p>自定义烹饪</p>
+                    <p>自定义修改翻炒方式</p>
+                </div>
+                <svg-icon icon-class="productHd" class-name="con7_svg"></svg-icon>
+                <div class="aio_con7_pic">
+                    <img src="../assets/product/phone1.png" alt="">
+                </div>
             </div>
-            <div class="aio_con4_txt2">
-                <p>故障自诊</p>
-                <p>操作无难度</p>
+            <div class="aio_con8">
+                <p class="p1">不止是一台厨具，更是一名星级大厨。</p>
+                <p class="p2">海量云菜谱实时更新，连接网络后，APP端还有多种烹饪菜单键选择，支持自定义分组。从火辣的川湘菜到清鲜美味的南方江浙菜肴，均可简单完成，菜谱涵盖8大菜系，配合智能语音提示，零基础无门槛，不用调温不用投料，只需简单跟着提示投入主食材，便可让你使用一台厨具就能享用20名不同类型大厨的美味。</p>
+                <div class="d1">
+                    <p>实时更新</p>
+                    <p>海量云菜谱</p>
+                </div>
+                <div class="d2">
+                    <p>＞1000道</p>
+                    <p>理论菜谱支持</p>
+                </div>
+                <div class="d3">
+                    <p>8大菜系</p>
+                    <p>菜谱涵盖</p>
+                </div>
+                <div class="aio_con8_pic">
+                    <img src="../assets/product/phone2.png" alt="">
+                </div>
             </div>
-            <div class="aio_con4_pic">
-                <img src="../assets/product/AIO2.png" alt="">
-            </div>
-        </div>
-        <div class="aio_con5">
-            <p class="p1">外观时尚，潮流前沿。</p>
-            <p class="p2"><span>·</span> 符合人体工学设计，两种灶台选择<br><span>·</span> 专属面板，可根据家居风格随心搭配<br><span>·</span> 电磁灶、调料机、油烟机、三合一体，有效提高空间利用率</p>
-            <div class="d1">
-                <p>三合一体</p>
-                <p>电磁灶 + 调料机 + 油烟机</p>
-            </div>
-            <div class="d2">
-                <p>双灶台</p>
-                <p>平底锅 + 炒锅</p>
-            </div>
-            <div class="aio_con5_pic">
-                <img src="../assets/product/AIO3.png" alt="">
-            </div>
-        </div>
-        <div class="aio_con6">
-            <p class="p1">贴心设计，享健康下厨体验。</p>
-            <p class="p2"><span>·</span> 油烟机、电磁灶联动，一键开启<br><span>·</span> 优质控烟、近吸直排，油烟速排不拐弯</p>
-            <div class="d">
-                <p>优质控烟</p>
-                <p>油烟速排</p>
-            </div>
-            <div class="aio_con6_pic">
-                <img src="../assets/product/AIO4.png" alt="">
-            </div>
-        </div>
-        <div class="aio_con7">
-            <div class="aio_con7_title">智能大滚筒炒菜机</div>
-            <p class="p1">APP 智能联动，远程同步菜谱。</p>
-            <p class="p2">每道菜谱都可精准控制烹饪的火力曲线、翻炒速度与角度。酥软、适中、有嚼劲，不同口感，不同烹饪方式。自定义菜谱的口味与口感，同步最新营养菜谱，APP 端统统意见搞定，开启智能数据厨房。</p>
-            <div class="d1">
-                <p>DIY 菜谱</p>
-                <p>自定义修改口味与口感</p>
-            </div>
-            <div class="d2">
-                <p>自定义烹饪</p>
-                <p>自定义修改翻炒方式</p>
-            </div>
-            <svg-icon icon-class="productHd" class-name="con7_svg"></svg-icon>
-            <div class="aio_con7_pic">
-                <img src="../assets/product/phone1.png" alt="">
-            </div>
-        </div>
-        <div class="aio_con8">
-            <p class="p1">不止是一台厨具，更是一名星级大厨。</p>
-            <p class="p2">海量云菜谱实时更新，连接网络后，APP端还有多种烹饪菜单键选择，支持自定义分组。从火辣的川湘菜到清鲜美味的南方江浙菜肴，均可简单完成，菜谱涵盖8大菜系，配合智能语音提示，零基础无门槛，不用调温不用投料，只需简单跟着提示投入主食材，便可让你使用一台厨具就能享用20名不同类型大厨的美味。</p>
-            <div class="d1">
-                <p>实时更新</p>
-                <p>海量云菜谱</p>
-            </div>
-            <div class="d2">
-                <p>＞1000道</p>
-                <p>理论菜谱支持</p>
-            </div>
-            <div class="d3">
-                <p>8大菜系</p>
-                <p>菜谱涵盖</p>
-            </div>
-            <div class="aio_con8_pic">
-                <img src="../assets/product/phone2.png" alt="">
-            </div>
-        </div>
-        <div class="aio_con9">
-            <div class="aio_con9_btn" @click="specs">
-                <img src="../assets/product/addWhite.png" alt="">
-                <span>了解参数明细</span>
+            <div class="aio_con9">
+                <div class="aio_con9_btn" @click="specs">
+                    <img src="../assets/product/addWhite.png" alt="">
+                    <span>了解参数明细</span>
+                </div>
             </div>
         </div>
         <transition name="fade">

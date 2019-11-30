@@ -1,108 +1,110 @@
 <template>
     <div class="specs">
-        <zcHeader :isWhite="isWhite"></zcHeader>
-        <div class="specs_hd" :class="isActive?'colorWhite':''">
-            <p>智能大滚筒炒菜机套机</p>
-            <div class="specs_hd_center">
-                <router-link to="/product/proCai">概览</router-link>
-                <router-link to="/product/proCai/proCaiTechSpecs">技术规格</router-link>
+        <div :style="isBuy?'filter:blur(5px)':''">
+            <zcHeader :isWhite="isWhite"></zcHeader>
+            <div class="specs_hd" :class="isActive?'colorWhite':''">
+                <p>智能大滚筒炒菜机套机</p>
+                <div class="specs_hd_center">
+                    <router-link to="/product/proCai">概览</router-link>
+                    <router-link to="/product/proCai/proCaiTechSpecs">技术规格</router-link>
+                </div>
+                <div class="specs_hd_btn" @click="buy">
+                    立即预约
+                </div>
             </div>
-            <div class="specs_hd_btn" @click="buy">
-                立即预约
+            <div class="specs_con1">
+                <p>“星级大厨”带你体验舌尖上的美味</p>
+                <p>智能一拖三炒菜机</p>
+                <span :class="curIndex == 0 ? 'activeColor' : ''" @click="changeSwiper(0)">智能云菜谱</span>
+                <span>|</span>
+                <span :class="curIndex == 1 ? 'activeColor' : ''" @click="changeSwiper(1)">智能大滚筒炒菜机</span>
+                <span>|</span>
+                <span :class="curIndex == 2 ? 'activeColor' : ''" @click="changeSwiper(2)">中控任务管理</span>
+                <span>|</span>
+                <span :class="curIndex == 3 ? 'activeColor' : ''" @click="changeSwiper(3)">智能调料机</span>
+                <span>|</span>
+                <span :class="curIndex == 4 ? 'activeColor' : ''" @click="changeSwiper(4)">气压站</span>
+                <div class="pro_swiper">
+                    <swiper :options="swiperOption" ref="product_swiper">
+                        <swiper-slide>
+                            <div class="item">
+                                <img class="img1" src="../assets/product/carousel1.png" alt="">
+                            </div>
+                        </swiper-slide>
+                        <swiper-slide>
+                            <div class="item">
+                                <img class="img2" src="../assets/product/carousel2.png" alt="">
+                            </div>
+                        </swiper-slide>
+                        <swiper-slide>
+                            <div class="item">
+                                <img class="img3" src="../assets/product/carousel3.png" alt="">
+                            </div>
+                        </swiper-slide>
+                        <swiper-slide>
+                            <div class="item">
+                                <img class="img4" src="../assets/product/carousel4.png" alt="">
+                            </div>
+                        </swiper-slide>
+                        <swiper-slide>
+                            <div class="item">
+                                <img class="img5" src="../assets/product/carousel5.png" alt="">
+                            </div>
+                        </swiper-slide>
+                    </swiper>
+                    <div class="swiper-pagination"></div>
+                </div>
             </div>
-        </div>
-        <div class="specs_con1">
-            <p>“星级大厨”带你体验舌尖上的美味</p>
-            <p>智能一拖三炒菜机</p>
-            <span :class="curIndex == 0 ? 'activeColor' : ''" @click="changeSwiper(0)">智能云菜谱</span>
-            <span>|</span>
-            <span :class="curIndex == 1 ? 'activeColor' : ''" @click="changeSwiper(1)">智能大滚筒炒菜机</span>
-            <span>|</span>
-            <span :class="curIndex == 2 ? 'activeColor' : ''" @click="changeSwiper(2)">中控任务管理</span>
-            <span>|</span>
-            <span :class="curIndex == 3 ? 'activeColor' : ''" @click="changeSwiper(3)">智能调料机</span>
-            <span>|</span>
-            <span :class="curIndex == 4 ? 'activeColor' : ''" @click="changeSwiper(4)">气压站</span>
-            <div class="pro_swiper">
-                <swiper :options="swiperOption" ref="product_swiper">
-                    <swiper-slide>
-                        <div class="item">
-                            <img class="img1" src="../assets/product/carousel1.png" alt="">
-                        </div>
-                    </swiper-slide>
-                    <swiper-slide>
-                        <div class="item">
-                            <img class="img2" src="../assets/product/carousel2.png" alt="">
-                        </div>
-                    </swiper-slide>
-                    <swiper-slide>
-                        <div class="item">
-                            <img class="img3" src="../assets/product/carousel3.png" alt="">
-                        </div>
-                    </swiper-slide>
-                    <swiper-slide>
-                        <div class="item">
-                            <img class="img4" src="../assets/product/carousel4.png" alt="">
-                        </div>
-                    </swiper-slide>
-                    <swiper-slide>
-                        <div class="item">
-                            <img class="img5" src="../assets/product/carousel5.png" alt="">
-                        </div>
-                    </swiper-slide>
-                </swiper>
-                <div class="swiper-pagination"></div>
-            </div>
-        </div>
-        <div class="specs_txt">
-            <span>产品参数</span>
-            <span>智能大滚筒炒菜机</span>
-            <span>型号：SYZNZ01A<br>
-            额定功率：3000-18000W<br>
-            电源电压：AC380V/50HZ<br>
-            整机尺寸：1000*820*1100<br>
-            屏幕尺寸：4.3寸<br>
-            锅口径：390mm<br>
-            配置：水枪，菜盆</span>
-        </div>
-        <div class="specs_txt">
-            <span>产品参数</span>
-            <span>中控任务管理</span>
-            <span>型号：K-QT156<br>
-                额定功率：30W<br>
-                电源电压：AC220V<br>
-                尺寸：15.6英寸<br>
-                屏体分辨率：1920*1080<br>
-                颜色：16.7M<br>
-                亮度：250cd/m2<br>
-                对比度：1000:01:00<br>
-                响应时间：4ms<br>
-                屏幕比例：16:10<br>
-                点距：0.0163mm x 0.0620mm x RGB<br>
-                可视角度(上/下/左/右)：89/89/70/55<br>
-                功率：30W<br>
-                接口类型：.LVDS<br>
-                工作温度：0℃ — 50℃ <br>
-                存储温度： -20℃ — 60℃</span>
-        </div>
-        <div class="specs_txt">
-            <span>产品参数</span>
-            <span>智能调料机</span>
-            <span>型号：PLZJ-1A<br>
-                额定功率：2200W<br>
-                电源电压：AC220V/50HZ<br>
-                整机尺寸：950*600*1265mm<br>
-                屏幕尺寸：7寸电阻屏<br>
-                存储调料：生抽、老抽、陈醋、白醋、料酒、白酒、盐、糖、鸡精、淀粉<br>
-                配置：与补料柜和投料器组成配料系统</span>
-        </div>
-        <div class="specs_txt last">
-            <span>产品参数</span>
-            <span>气压站</span>
-            <span>型号：UCQYZ-1<br>
-                额定功率：3000W<br>
+            <div class="specs_txt">
+                <span>产品参数</span>
+                <span>智能大滚筒炒菜机</span>
+                <span>型号：SYZNZ01A<br>
+                额定功率：3000-18000W<br>
                 电源电压：AC380V/50HZ<br>
-                整机尺寸：900*800*1500mm</span>
+                整机尺寸：1000*820*1100<br>
+                屏幕尺寸：4.3寸<br>
+                锅口径：390mm<br>
+                配置：水枪，菜盆</span>
+            </div>
+            <div class="specs_txt">
+                <span>产品参数</span>
+                <span>中控任务管理</span>
+                <span>型号：K-QT156<br>
+                    额定功率：30W<br>
+                    电源电压：AC220V<br>
+                    尺寸：15.6英寸<br>
+                    屏体分辨率：1920*1080<br>
+                    颜色：16.7M<br>
+                    亮度：250cd/m2<br>
+                    对比度：1000:01:00<br>
+                    响应时间：4ms<br>
+                    屏幕比例：16:10<br>
+                    点距：0.0163mm x 0.0620mm x RGB<br>
+                    可视角度(上/下/左/右)：89/89/70/55<br>
+                    功率：30W<br>
+                    接口类型：.LVDS<br>
+                    工作温度：0℃ — 50℃ <br>
+                    存储温度： -20℃ — 60℃</span>
+            </div>
+            <div class="specs_txt">
+                <span>产品参数</span>
+                <span>智能调料机</span>
+                <span>型号：PLZJ-1A<br>
+                    额定功率：2200W<br>
+                    电源电压：AC220V/50HZ<br>
+                    整机尺寸：950*600*1265mm<br>
+                    屏幕尺寸：7寸电阻屏<br>
+                    存储调料：生抽、老抽、陈醋、白醋、料酒、白酒、盐、糖、鸡精、淀粉<br>
+                    配置：与补料柜和投料器组成配料系统</span>
+            </div>
+            <div class="specs_txt last">
+                <span>产品参数</span>
+                <span>气压站</span>
+                <span>型号：UCQYZ-1<br>
+                    额定功率：3000W<br>
+                    电源电压：AC380V/50HZ<br>
+                    整机尺寸：900*800*1500mm</span>
+            </div>
         </div>
         <transition name="fade">
             <buyConsult v-if="isBuy"></buyConsult>
