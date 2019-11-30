@@ -569,9 +569,9 @@ export default {
       this.jump(5);
     } else if (type == "more9" || type == "more10") {
       this.jump(6);
-    } else if (type == "more_pro") {
+    } else if (type == "more_pro" || type == "pro_more") {
       this.jump(1);
-    } else if (type == "other_pro") {
+    } else if (type == "other_pro" || type == "pro_other") {
       this.jump(7);
     }
     window.onscroll = () => {
@@ -608,6 +608,10 @@ export default {
         this.jump(5);
       } else if (type == "more9" || type == "more10") {
         this.jump(6);
+      } else if (type == "more_pro" || type == "pro_more") {
+        this.jump(1);
+      } else if (type == "other_pro" || type == "pro_other") {
+        this.jump(7);
       }
     }
   }
@@ -853,7 +857,6 @@ export default {
         .p3 {
           top: 11.62rem;
           width: 72%;
-          height: 3.38rem;
           font-size: 0.87rem;
           font-weight: 400;
           line-height: 1.5rem;

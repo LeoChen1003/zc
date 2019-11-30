@@ -96,9 +96,9 @@ export default {
     let type = this.$route.query.type;
     if (type == "about_intro") {
       this.toggleTab("comIntro");
-    } else if (type == "about_inven") {
+    } else if (type == "about_inven" || type == "inven") {
       this.toggleTab("inven");
-    } else if (type == "about_lab") {
+    } else if (type == "about_lab" || type == "lab") {
       this.toggleTab("labor");
     }
     // window.console.log(left);
@@ -108,9 +108,9 @@ export default {
       let type = this.$route.query.type;
       if (type == "about_intro") {
         this.toggleTab("comIntro");
-      } else if (type == "about_inven") {
+      } else if (type == "about_inven" || type == "inven") {
         this.toggleTab("inven");
-      } else if (type == "about_lab") {
+      } else if (type == "about_lab" || type == "lab") {
         this.toggleTab("labor");
       }
     },

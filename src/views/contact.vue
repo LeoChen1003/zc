@@ -31,7 +31,7 @@
         <div class="contact_commit_btn" @click="sendMessage">
             提交意愿
         </div>
-        <div class="contact_d2">
+        <div class="contact_d2 c_jump">
             <p class="p1">咨询合作</p>
             <p class="p2">咨询合作联系邮箱</p>
             <div class="contact_commit_email">
@@ -48,14 +48,16 @@
                 </p>
             </div>
         </div>
-        <div class="contact_d3">
+        <div class="contact_d3 c_jump">
             <p>企业位置</p>
-            <div class="contact_d3_circle1" :class="{cir_white:target ==='btn3',cir_blue:target!=='btn3'}"></div>
-            <div class="contact_d3_circle2" :class="{cir_white:target ==='btn2',cir_blue:target!=='btn2'}"></div>
-            <div class="contact_d3_circle3" :class="{cir_white:target ==='btn1',cir_blue:target!=='btn1'}"></div>
             <div class="contact_d3_location">
-                <svg-icon icon-class="china" class-name="svg_china"></svg-icon>
-                <div class="contact_d3_location_city">
+                <div ref="location">
+                    <svg-icon icon-class="china" class-name="svg_china" ></svg-icon>
+                    <div class="contact_d3_circle1" :class="{cir_white:target ==='btn3',cir_blue:target!=='btn3'}"></div>
+                    <div class="contact_d3_circle2" :class="{cir_white:target ==='btn2',cir_blue:target!=='btn2'}"></div>
+                    <div class="contact_d3_circle3" :class="{cir_white:target ==='btn1',cir_blue:target!=='btn1'}"></div>
+                </div>
+                <div class="contact_d3_location_city" :style="`margin-right: ${right}px;`">
                     <div class="contact_d3_location_city_zh" @click="changeCity('btn1')" :class="{white:target==='btn1',light:target!=='btn1'}">
                         <svg-icon icon-class="city_zh" class-name="svg_zh"></svg-icon>
                         <p>珠海</p>
@@ -82,6 +84,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 import zcHeader from '@/components/zcHeader.vue';
 import zcFooter from '@/components/zcFooter.vue';
 import request from '@/utils/request.js';
@@ -100,7 +103,8 @@ export default {
             provice: null,
             amount: null,
             equipment: null,
-            changeEquip: null
+            changeEquip: null,
+            right: 0 
         }
     },
     components:{
@@ -108,6 +112,45 @@ export default {
         zcFooter,
     },
     methods:{
+        jump(i) {
+            let jump = document.getElementsByClassName("c_jump");
+            //获取当前滚动条与窗体顶部的距离
+            let distance =
+                document.documentElement.scrollTop || document.body.scrollTop;
+            //获取需要滚动的距离
+            let total = jump[i].offsetTop - 48;
+            //计算每小段的距离
+            let step = total / 50;
+            if (total > distance) {
+                moveDown();
+            } else {
+                let newTotal = distance - total;
+                step = newTotal / 50;
+                moveUp();
+            }
+            function moveDown() {
+                if (distance < total) {
+                    distance += step;
+                    document.body.scrollTop = distance;
+                    document.documentElement.scrollTop = distance;
+                    setTimeout(moveDown, 10);
+                } else {
+                    document.body.scrollTop = distance;
+                    document.documentElement.scrollTop = total;
+                }
+            }
+            function moveUp() {
+                if (distance > total) {
+                    distance -= step;
+                    document.body.scrollTop = distance;
+                    document.documentElement.scrollTop = distance;
+                    setTimeout(moveUp, 10);
+                } else {
+                    document.body.scrollTop = total;
+                    document.documentElement.scrollTop = total;
+                }
+            }
+        },
         changeCity(index){
             this.target = index;
         },
@@ -260,6 +303,33 @@ export default {
             }).catch(function(error){
                 window.console.log(error);
             })
+        }
+    },
+     computed: {
+        ...mapState({
+            windowWidth: "windowWidth"
+        })
+    },
+    mounted(){
+        this.right = this.$refs.location.offsetLeft*2/3;
+        let type = this.$route.query.type;
+        if(type=="company"){
+            this.jump(0);
+        }else if(type=="location"){
+            this.jump(1);
+        }
+    },
+    watch: {
+        windowWidth() {
+            this.right= this.$refs.location.offsetLeft*2/3;
+        },
+        $route(){
+            let type = this.$route.query.type;
+            if(type=="company"){
+                this.jump(0);
+            }else if(type=="location"){
+                this.jump(1);
+            }
         }
     }
 }
@@ -467,35 +537,6 @@ export default {
         width: 100%;
         margin: 5rem auto 0;
         position: relative;
-        .contact_d3_circle1,.contact_d3_circle2,.contact_d3_circle3{
-            position: absolute;
-            width:1rem;
-            height:1rem;
-            border:3px solid rgba(255,255,255,1);
-            border-radius: 50%;
-            z-index: 1;
-        }
-        .contact_d3_circle1{
-            left: 33.5rem;
-            top: 30.06rem;
-            background:rgba(13,168,162,1);
-        }
-        .contact_d3_circle2{
-            left: 28.8rem;
-            top: 33.5rem;
-            background:rgba(13,168,162,1);
-        }
-        .contact_d3_circle3{
-            left: 30.06rem;
-            top: 34.4rem;
-            background-color: #fff;
-        }
-        .cir_blue{
-            background:rgba(13,168,162,1);
-        }
-        .cir_white{
-            background-color: #fff;
-        }
         p:first-child{
             width:7rem;
             height:2.5rem;
@@ -509,16 +550,47 @@ export default {
             height: 35rem;
             background:linear-gradient(180deg,rgba(61,206,203,1) 0%,rgba(44,198,192,1) 100%);
             margin-top: 5rem;
+            display: flex;
+            justify-content: center;
             position: relative;
+            div:first-child{
+                position: relative;
+                .contact_d3_circle1,.contact_d3_circle2,.contact_d3_circle3{
+                    position: absolute;
+                    width:1rem;
+                    height:1rem;
+                    border:3px solid rgba(255,255,255,1);
+                    border-radius: 50%;
+                    z-index: 1;
+                }
+                .contact_d3_circle1{
+                    left: 27.5rem;
+                    top: 22.06rem;
+                    background:rgba(13,168,162,1);
+                }
+                .contact_d3_circle2{
+                    left: 24.5rem;
+                    top: 25.06rem;
+                    background:rgba(13,168,162,1);
+                }
+                .contact_d3_circle3{
+                    left: 25.63rem;
+                    top: 26.5rem;
+                    background-color: #fff;
+                }
+                .cir_blue{
+                    background:rgba(13,168,162,1);
+                }
+                .cir_white{
+                    background-color: #fff;
+                }
+            }
             .svg_china{
                 width: 37.5rem;
                 height: 30.94rem;
                 margin-top: 2rem;
-                margin-left: 7%;
-                float: left;
             }
             .contact_d3_location_city{
-                float: left;
                 width: 27.75rem;
                 height: 23.63rem;
                 border-radius: 0.63rem;

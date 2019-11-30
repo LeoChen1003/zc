@@ -15,7 +15,10 @@
           <span>看</span>
         </div>
         <div class="home_video_c_btn" @click="video">
-          <div class="home_video_c_btn_c"></div>
+          <div @mousemove="videoHover" @mouseleave="videoOut">
+            <svg-icon v-if="isHover==false" icon-class="video_play" class-name="svg"></svg-icon>
+            <svg-icon v-else icon-class="hover" class-name="svg"></svg-icon>
+          </div>
         </div>
         <div>
           <span>视</span>
@@ -23,7 +26,7 @@
         </div>
       </div>
       <div class="home_video_bottom">
-        <div class="home_video_bottom_c"></div>
+        <svg-icon icon-class="small_white" class-name="svg"></svg-icon>
       </div>
     </div>
     <div class="home_data">
@@ -233,6 +236,7 @@
       return{
         isWhite: false,
         tab:0,
+        isHover:false,
         swiperOption: {
           slidesPerView: 'auto',
           centeredSlides: true,
@@ -287,6 +291,12 @@
       self= this
     },
     methods:{
+      videoHover(){
+        this.isHover = true;
+      },
+      videoOut(){
+        this.isHover = false;
+      },
       video(){
         this.$router.push('/home/video')
       },
@@ -363,7 +373,7 @@
       z-index: 1;
       position: absolute;
       width: 100%;
-      top: 0;
+      top: 3rem;
       height: 47.5rem;
       display: flex;
       flex-direction: column;
@@ -393,44 +403,47 @@
         }
 
         .home_video_c_btn {
-          display: flex;
-          align-items: center;
-          justify-content: center;
           width: 5.25rem;
           height: 5.25rem;
-          background: rgba(216, 216, 216, 0);
-          border: 0.06rem solid #2cc6c0;
-          border-radius: 50%;
           margin-right: 3.5rem;
           cursor: pointer;
-
-          .home_video_c_btn_c {
-            width: 0;
-            height: 0;
-            border-top: 0.35rem solid transparent;
-            border-left: 0.6rem solid #fff;
-            border-bottom: 0.35rem solid transparent;
+          .svg{
+            width: 5.25rem;
+            height: 5.25rem;
           }
+          // .home_video_c_btn_c {
+          //   width: 0;
+          //   height: 0;
+          //   border-top: 0.35rem solid transparent;
+          //   border-left: 0.6rem solid #fff;
+          //   border-bottom: 0.35rem solid transparent;
+          // }
         }
       }
 
       .home_video_bottom {
+        position: absolute;
         display: flex;
         justify-content: center;
         width: 1.5rem;
         height: 2.25rem;
-        margin-top: 8.94rem;
+        // margin-top: 8.94rem;
+        bottom: 40px;
         background: rgba(216, 216, 216, 0);
         border-radius: 1rem;
         border: 0.06rem solid rgba(255, 255, 255, 1);
-
-        .home_video_bottom_c {
+        .svg{
           width: 0.25rem;
-          height: 0.25rem;
-          background: rgba(255, 255, 255, 1);
+          height:0.25rem;
           margin-top: 0.63rem;
-          border-radius: 50%;
         }
+        // .home_video_bottom_c {
+        //   width: 0.25rem;
+        //   height: 0.25rem;
+        //   background: rgba(255, 255, 255, 1);
+        //   margin-top: 0.63rem;
+        //   border-radius: 50%;
+        // }
       }
     }
 

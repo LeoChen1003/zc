@@ -3,15 +3,17 @@
         <div :style="isBuy?'filter:blur(5px)':''">
             <zcHeader :isWhite="isWhite"></zcHeader>
             <div class="aio_hd">
-                <p>智能精炒一体机</p>
-                <div class="aio_hd_center">
-                    <router-link to="/product/proAIO">概览</router-link>
-                    <router-link to="/product/proAIO/proAIOTechSpecs">技术规格</router-link>
+                <div>
+                    <p>智能精炒一体机</p>
+                    <div class="aio_hd_center">
+                        <router-link to="/product/proAIO">概览</router-link>
+                        <router-link to="/product/proAIO/proAIOTechSpecs">技术规格</router-link>
+                    </div>
+                    <div class="aio_hd_btn" @click="buy" :class="isShow1?'btn_show1':''">
+                        立即预约
+                    </div>
                 </div>
                 
-                <div class="aio_hd_btn" @click="buy" :class="isShow1?'btn_show1':''">
-                    立即预约
-                </div>
             </div>
             <div class="aio_con1">
                 <p>超级烹饪专家</p>
@@ -221,16 +223,22 @@ export default {
         position: fixed;
         top: 3rem;
         z-index: 3;
-        p:first-child{
-            float: left;
-            width:8.75rem;
-            height:1.25rem;
-            font-size:0.87rem;
-            font-weight:400;
-            color:#fff;
-            margin-left: 21%;
-            margin-top: 0.88rem;
+        div:first-child{
+            width: 53.49rem;
+            margin: 0 auto;
+            height: 100%;
+            position: relative;
+            p:first-child{
+                float: left;
+                width:8.75rem;
+                height:1.25rem;
+                font-size:0.87rem;
+                font-weight:400;
+                color:#fff;
+                margin-top: 0.88rem;
+            }
         }
+        
         .aio_hd_center{
             width: 6.5rem;
             margin: 0 auto;
@@ -256,6 +264,8 @@ export default {
             float: left;
             width:6.5rem;
             height:2rem;
+            position: absolute;
+            right: 0;
             background:rgba(44,198,192,1);
             border-radius:1rem;
             font-size:0.88rem;
@@ -263,7 +273,7 @@ export default {
             color:rgba(255,255,255,1);
             line-height:2rem;
             text-align: center;
-            margin-left: 19%;
+            // margin-left: 19%;
             margin-top: 0.5rem;
             cursor: pointer;
         }
@@ -315,6 +325,7 @@ export default {
         width: 100%;
         height: 18.25rem;
         background: url("../assets/product/dataBack1.jpg");
+        background-size: cover;
         overflow: hidden;
         .aio_con2_center{
             width: 57rem;
@@ -754,6 +765,7 @@ export default {
         width: 100%;
         height: 18.25rem;
         background: url("../assets/product/AIOBottom.jpg");
+        background-size: cover;
         overflow: hidden;
         .aio_con9_btn{
             width:9.38rem;

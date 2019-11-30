@@ -3,13 +3,15 @@
         <div :style="isBuy?'filter:blur(5px)':''">
             <zcHeader :isWhite="isWhite"></zcHeader>
             <div class="specs_hd" :class="isActive?'colorWhite':''">
-                <p>智能大滚筒炒菜机套机</p>
-                <div class="specs_hd_center">
-                    <router-link to="/product/proCai">概览</router-link>
-                    <router-link to="/product/proCai/proCaiTechSpecs">技术规格</router-link>
-                </div>
-                <div class="specs_hd_btn" @click="buy">
-                    立即预约
+                <div>
+                    <p>智能大滚筒炒菜机套机</p>
+                    <div class="specs_hd_center">
+                        <router-link to="/product/proCai">概览</router-link>
+                        <router-link to="/product/proCai/proCaiTechSpecs">技术规格</router-link>
+                    </div>
+                    <div class="specs_hd_btn" @click="buy">
+                        立即预约
+                    </div>
                 </div>
             </div>
             <div class="specs_con1">
@@ -207,17 +209,23 @@ export default {
         background-color: #000;
         position: fixed;
         z-index:2;
-        p:first-child{
-            float: left;
-            display: block;
-            width:8.75rem;
-            height:1.25rem;
-            font-size:0.87rem;
-            font-weight:400;
-            color:#fff;
-            margin-left: 21%;
-            margin-top: 0.88rem;
+        div:first-child{
+            width: 53.49rem;
+            margin: 0 auto;
+            height: 100%;
+            position: relative;
+            p:first-child{
+                float: left;
+                display: block;
+                width:8.75rem;
+                height:1.25rem;
+                font-size:0.87rem;
+                font-weight:400;
+                color:#fff;
+                margin-top: 0.88rem;
+            }
         }
+        
         .specs_hd_center{
             width: 6.5rem;
             margin: 0 auto;
@@ -249,7 +257,8 @@ export default {
             color:rgba(255,255,255,1);
             line-height:2rem;
             text-align: center;
-            margin-left: 19%;
+            position: absolute;
+            right: 0;
             margin-top: 0.5rem;
             cursor: pointer;
         }

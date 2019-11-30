@@ -228,6 +228,8 @@ export default {
     left: 0;
     z-index: 1000;
     overflow: auto;
+    display: flex;
+    justify-content: center;
     .consult_bg{
         width: 100%;
         height: 100%;
@@ -242,7 +244,7 @@ export default {
         left: 0;
     }
     .consult_filter{
-        width: 100%;
+        width: 45rem;
         // height: 100%;
         top: 0;
         left: 0;
@@ -254,9 +256,8 @@ export default {
         position: absolute;
         width: 3rem;
         height: 3rem;
-        top: 0;
-        margin-left: 1rem;
-        right: 17rem;
+        top: 7rem;
+        right: -4rem;
         .svg_close{
             width: 3rem;
             height: 3rem;

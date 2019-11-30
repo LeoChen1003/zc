@@ -386,9 +386,9 @@ export default {
         overflow: hidden;
         background-size: 100% 100%;   
         p:first-child{
-            width: 7.87rem;
+            // width: 7.87rem;
             height: 1.56rem;
-            margin: 0 auto;
+            text-align: center;
             font-size: 1.12rem;
             color: #888888;
             margin-top: 7.5rem;
@@ -475,9 +475,9 @@ export default {
         background-size: 100% 100%;
         p:first-child{
             font-size: 1.12rem;
-            width: 7.87rem;
+            text-align: center;
             height: 1.56rem;
-            margin: 7.5rem auto 0;
+            margin-top: 7.5rem;
             font-weight: 400;
             color: #888888;
         }
@@ -567,11 +567,11 @@ export default {
         overflow: hidden;
         background-size: 100% 100%;
         p:first-child{
-            width: 7.88rem;
+           text-align: center;
             height: 1.56rem;
             font-size: 1.12rem;
             color: #888888;
-            margin: 7.5rem auto 0;
+            margin-top:7.5rem;
             font-weight: 400;
         }
         a:nth-child(2){

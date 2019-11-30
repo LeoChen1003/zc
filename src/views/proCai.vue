@@ -3,13 +3,15 @@
     <div :style="isBuy?'filter:blur(5px)':''">
       <zcHeader :isWhite="isWhite"></zcHeader>
       <div class="cai_hd" :class="isActive?'colorBlack':''">
-          <p>智能大滚筒炒菜机套机</p>
-          <div class="cai_hd_center">
-            <span>概览</span>
-            <router-link to="/product/proCai/proCaiTechSpecs">技术规格</router-link>
-          </div>
-          <div class="cai_hd_btn" @click="buy" :class="isShow?'btn_show':''">
-              立即预约
+          <div>
+            <p>智能大滚筒炒菜机套机</p>
+            <div class="cai_hd_center">
+              <span>概览</span>
+              <router-link to="/product/proCai/proCaiTechSpecs">技术规格</router-link>
+            </div>
+            <div class="cai_hd_btn" @click="buy" :class="isShow?'btn_show':''">
+                立即预约
+            </div>
           </div>
       </div>
       <div class="cai_con1">
@@ -330,11 +332,17 @@ export default {
     transition: all 0.5s;
     width: 100%;
     height: 3rem;
-    border-top: 1px solid #ccc;
+    // border-top: 1px solid #ccc;
     position: fixed;
     z-index: 3;
     top: 3rem;
     background-color: #fff;
+    div:first-child{
+      width: 53.49rem;
+      margin: 0 auto;
+      height: 100%;
+      position: relative;
+    }
     .cai_hd_center{
       width: 6.5rem;
       margin: 0 auto;
@@ -363,12 +371,14 @@ export default {
       font-size: 0.87rem;
       font-weight: 400;
       color: #333;
-      margin-left: 21%;
+      // margin-left: 21%;
       margin-top: 0.88rem;
     }
     .cai_hd_btn{
         display: none;
         float: left;
+        position: absolute;
+        right: 0;
         width:6.5rem;
         height:2rem;
         background:rgba(44,198,192,1);
@@ -378,7 +388,7 @@ export default {
         color:rgba(255,255,255,1);
         line-height:2rem;
         text-align: center;
-        margin-left: 19%;
+        // margin-left: 19%;
         margin-top: 0.5rem;
         cursor: pointer;
     }
@@ -451,6 +461,7 @@ export default {
     width: 100%;
     height: 18.25rem;
     background: url("../assets/product/dataBack.jpg");
+    background-size: cover;
     overflow: hidden;
     .cai_con2_center {
       width: 57.6rem;
@@ -1088,6 +1099,7 @@ export default {
     width: 100%;
     height: 15rem;
     background: url("../assets/product/bottom.jpg");
+    background-size: cover;
     overflow: hidden;
     .cai_bottom_btn {
       width: 9.38rem;

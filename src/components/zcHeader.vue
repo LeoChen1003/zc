@@ -1,31 +1,34 @@
 <template>
   <div :class="isWhite?'whiteBack':'blackBack'" ref="nav">
     <div class="header headerW">
-      <div class="header_logo" @click="$router.push('/')">
-        <svg-icon icon-class="logo" class-name="index_svg_b" style="width:7rem;height:1.12rem;"></svg-icon>
-        <svg-icon icon-class="logo_w" class-name="index_svg_w" style="width:7rem;height:1.12rem;"></svg-icon>
-      </div>
-      <div class="header_navbar">
-        <div class="header_navbar">
-          <span @click="index" :class="tab0==0?'bold':'nor'">首页</span>
-          <span
-            @click="product"
-            class="productCenter"
-            @mousemove="showPro"
-            @mouseleave="hidePro"
-            :class="tab1==0?'bold':'nor'"
-          >产品中心</span>
-          <span @click="newCenter" :class="tab2==0?'bold':'nor'">新闻中心</span>
-          <span @click="coreAdvantage" :class="tab3==0?'bold':'nor'">核心优势</span>
-          <span
-            @mousemove="show"
-            @mouseleave="hide"
-            @click="withUs"
-            :class="tab4==0?'bold':'nor'"
-          >关于我们</span>
+      <div class="header_center">
+        <div class="header_logo" @click="$router.push('/')">
+          <svg-icon icon-class="logo" class-name="index_svg_b" style="width:7rem;height:1.12rem;"></svg-icon>
+          <svg-icon icon-class="logo_w" class-name="index_svg_w" style="width:7rem;height:1.12rem;"></svg-icon>
         </div>
+        <div class="header_navbar">
+          <div class="header_navbar">
+            <span @click="index" :class="tab0==0?'bold':'nor'">首页</span>
+            <span
+              @click="product"
+              class="productCenter"
+              @mousemove="showPro"
+              @mouseleave="hidePro"
+              :class="tab1==0?'bold':'nor'"
+            >产品中心</span>
+            <span @click="newCenter" :class="tab2==0?'bold':'nor'">新闻中心</span>
+            <span @click="coreAdvantage" :class="tab3==0?'bold':'nor'">核心优势</span>
+            <span
+              @mousemove="show"
+              @mouseleave="hide"
+              @click="withUs"
+              :class="tab4==0?'bold':'nor'"
+            >关于我们</span>
+          </div>
+        </div>
+        <div class="header_btn" @click="concat">联系我们</div>
       </div>
-      <div class="header_btn" @click="concat">联系我们</div>
+      
     </div>
     <div class="black"></div>
     <div style="position:relative;" class="header_bottom">
@@ -450,6 +453,15 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.header .header_center{
+  width: 53.49rem;
+  position: relative;
+  margin: 0 auto;
+  .header_btn{
+    position: absolute;
+    right: 0;
+  }
+}
 @keyframes key_showPro{
     0%{
       opacity: 0;
@@ -713,10 +725,10 @@ export default {
 .whiteBack,
 .whiteBack1 {
   height: 3rem;
-  min-width: 89rem;
+  // min-width: 89rem;
   position: relative;
   .header {
-    min-width: 89rem;
+    // min-width: 89rem;
     z-index: 99;
     position: fixed;
     // display: flex;
@@ -738,7 +750,6 @@ export default {
       font-weight: bolder;
       cursor: pointer;
       width: 7rem;
-      margin-left: 21%;
       height: 1.12rem;
     }
     .header_navbar {
@@ -769,11 +780,11 @@ export default {
       text-align: center;
       background: rgba(0, 0, 0, 1);
       border-radius: 1rem;
-      margin-top: -0.7rem;
-      margin-left: 72%;
+      // margin-top: -0.7rem;
       font-size: 14px;
       cursor: pointer;
       font-weight: 600;
+      margin-top: -0.7rem;
     }
   }
   .headerB {
@@ -824,9 +835,9 @@ export default {
 .blackBack,
 .blackBack1 {
   height: 3rem;
-  min-width: 89rem;
+  // min-width: 89rem;
   .header {
-    min-width: 89rem;
+    // min-width: 89rem;
     z-index: 99;
     position: fixed;
     // display: flex;
@@ -850,9 +861,8 @@ export default {
       font-size: 1.6rem;
       font-weight: bolder;
       cursor: pointer;
-      margin-top: 1rem;
       width: 7rem;
-      margin-left: 21%;
+      height: 1.12rem;
     }
     .header_navbar {
       color: #a2a6ac;
@@ -885,8 +895,7 @@ export default {
       border-radius: 1rem;
       font-weight: 600;
       cursor: pointer;
-      margin-top: -1.7rem;
-      margin-left: 72%;
+      margin-top: -0.7rem;
     }
   }
   .headerB {
@@ -918,9 +927,9 @@ export default {
       display: none;
     }
 
-    .index_svg_w {
-      display: block;
-    }
+    // .index_svg_w {
+    //   display: block;
+    // }
   }
   .black{
     display: none;

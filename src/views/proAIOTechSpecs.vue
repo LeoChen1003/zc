@@ -3,13 +3,15 @@
         <div :style="isBuy?'filter:blur(5px)':''">
             <zcHeader :isWhite="isWhite"></zcHeader>
             <div class="aio_specs_hd" :class="isActive?'colorWhite':''">
-                <p>智能精炒一体机</p>
-                <div class="aio_specs_hd_center">
-                    <router-link to="/product/proAIO">概览</router-link>
-                    <router-link to="/product/proAIO/proAIOTechSpecs">技术规格</router-link>
-                </div>
-                <div class="aio_specs_hd_btn" @click="buy">
-                    立即预约
+                <div>
+                    <p>智能精炒一体机</p>
+                    <div class="aio_specs_hd_center">
+                        <router-link to="/product/proAIO">概览</router-link>
+                        <router-link to="/product/proAIO/proAIOTechSpecs">技术规格</router-link>
+                    </div>
+                    <div class="aio_specs_hd_btn" @click="buy">
+                        立即预约
+                    </div>
                 </div>
             </div>
             <div class="aio_specs_con">
@@ -127,16 +129,22 @@ export default {
         height: 3rem;
         border-top: 1px solid #000;
         background-color: #000;
-        p:first-child{
-            float: left;
-            width:8.75rem;
-            height:1.25rem;
-            font-size:0.87rem;
-            font-weight:400;
-            color:#fff;
-            margin-left: 21%;
-            margin-top: 0.88rem;
+        div:first-child{
+            width: 53.49rem;
+            margin: 0 auto;
+            height: 100%;
+            position: relative;
+            p:first-child{
+                float: left;
+                width:8.75rem;
+                height:1.25rem;
+                font-size:0.87rem;
+                font-weight:400;
+                color:#fff;
+                margin-top: 0.88rem;
+            }
         }
+        
         .aio_specs_hd_center{
             width: 6.5rem;
             margin: 0 auto;
@@ -168,7 +176,8 @@ export default {
             color:rgba(255,255,255,1);
             line-height:2rem;
             text-align: center;
-            margin-left: 19%;
+            position: absolute;
+            right: 0;
             margin-top: 0.5rem;
             cursor: pointer;
         }

@@ -3,18 +3,17 @@
     <div class="footer_content">
       <div class="footer_left">
         <ul>
-          <li @click="product">产品中心</li>
+          <li>产品中心</li>
+          <li @click="proCai">智能一拖三炒菜机</li>
           <li @click="proAIO">智能精炒一体机</li>
-          <li @click="proCai">智能炒菜机套装</li>
-          <li @click="product">其他智厨产品</li>
-          <li @click="product">其他智厨产品</li>
+          <li @click="pro_more">更多智厨产品</li>
+          <li @click="pro_other">其他智能产品</li>
         </ul>
         <ul>
           <li @click="news">新闻中心</li>
         </ul>
         <ul>
           <li @click="coreAdvantage">核心优势</li>
-          <li @click="coreAdvantage">适用场景</li>
           <li @click="system">智能系统</li>
           <li @click="tech">智能技术</li>
           <li @click="data">智能数据管控</li>
@@ -23,13 +22,15 @@
         </ul>
         <ul>
           <li @click="about">关于我们</li>
-          <li @click="about">企业简介</li>
-          <li @click="about">发展历程</li>
-          <li @click="about">企业实力</li>
+          <li @click="about">企业介绍</li>
+          <li @click="about_invor">发明专利</li>
+          <li @click="about_lab">实验室</li>
         </ul>
         <ul>
           <li @click="contact">联系我们</li>
-          <li>申请使用</li>
+          <li @click="buy">预约订购</li>
+          <li @click="company">商务合作</li>
+          <li @click="location">企业位置</li>
         </ul>
       </div>
       <div class="footer_right">
@@ -47,18 +48,43 @@
                       class-name="svg_size"></svg-icon>
           </div>
       </div>
+      <transition name="fade">
+        <buyConsult v-if="isBuy"></buyConsult>
+      </transition>
     </div>
     
   </div>
 </template>
 
 <script>
+import buyConsult from "@/components/buyConsult.vue";
 export default {
+  data(){
+    return {
+      isBuy:false
+    }
+  },
   props: {
   },
+  components:{
+    buyConsult
+  },
   methods:{
-    product(){
-      this.$router.push("/product");
+    pro_more(){
+      this.$router.push({
+        path:'/product',
+        query:{
+          type:'pro_more'
+        }
+      });
+    },
+    pro_other(){
+      this.$router.push({
+        path:'/product',
+        query:{
+          type:'pro_other'
+        }
+      });
     },
     proCai(){
       this.$router.push("/product/proCai");
@@ -120,17 +146,62 @@ export default {
     about(){
       this.$router.push("/with");
     },
+    about_invor(){
+      this.$router.push({
+        path:'/with',
+        query:{
+          type:'inven'
+        }
+      });
+    },
+    about_lab(){
+      this.$router.push({
+        path:'/with',
+        query:{
+          type:'lab'
+        }
+      });
+    },
+    company(){
+      this.$router.push({
+        path:'/contact',
+        query:{
+          type:'company'
+        }
+      });
+    },
+    location(){
+      this.$router.push({
+        path:'/contact',
+        query:{
+          type:'location'
+        }
+      });
+    },
     contact(){
       this.$router.push("/contact");
-    }
+    },
+    buy() {
+      this.isBuy = true;
+      this.noScroll();
+    },
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
 .footer {
-  min-width: 89rem;
+  // min-width: 89rem;
   background: #020202;
   width: 100%;
   // padding: 3.75rem 13.5rem 5.88rem 13.5rem;
