@@ -234,7 +234,7 @@ export default {
         // background:rgba(255, 255, 255, 0.8);
         background: url('../assets/white.png') repeat;
         background-size: cover;
-        opacity: 0.8;
+        opacity: 0.9;
         filter: blur(5px) !important;
         position: absolute;
         z-index: -2;

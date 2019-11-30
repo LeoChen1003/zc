@@ -1,6 +1,6 @@
 <template>
     <div class="mach">
-        <div class="mach_con">
+        <div class="mach_con"  ref="machCon">
             <div class="mach_con_hd">
                 <p>智能配件</p>
                 <p>全面打通餐饮产业链</p>
@@ -32,7 +32,7 @@
                     <img src="../assets/coreAdvantage/machine3.jpg" alt="">
                 </div>
             </div>
-            <div class="mach_chose" @click="cancel">
+            <div class="mach_chose" @click="cancel" :style="`left:${left}px`">
                 <svg-icon icon-class="close1" class-name="svg"></svg-icon>
             </div>
         </div>
@@ -40,11 +40,31 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
+    data(){
+        return {
+            left: 0
+        }
+    },
     methods:{
         cancel(){
             this.$parent.modelMachine = false;
             this.canScroll()
+        }
+    },
+    computed: {
+        ...mapState({
+            windowWidth: "windowWidth"
+        })
+    },
+    mounted(){
+      this.left = this.$refs.machCon.offsetLeft + 960 + 16
+    },
+    watch: {
+        windowWidth() {
+            this.left = this.$refs.machCon.offsetLeft + 960 + 16
+            window.console.log(this.$refs.machCon.offsetLeft )
         }
     }
 }

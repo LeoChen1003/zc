@@ -5,6 +5,7 @@
         <div class="new_content">
             <div class="new_con_del" v-for="(messNew,index) of messNews" :key="index" @click="detail(messNew)">
                 <div class="new_con_del_l">
+                    <div class="top" v-if="messNew.top==1">置顶</div>
                     <img :src="messNew.image" alt="">
                 </div>
                 <div class="new_con_del_r">
@@ -69,7 +70,8 @@ export default {
                 this.total = res.data.totalPages;
                 this.isLast = res.data.last;
                 this.isFirst = res.data.first;
-                window.console.log(this.messNews);
+                // this.top = res.data.top;
+                // window.console.log(this.messNews);
             })
         },
         prev(){
@@ -135,8 +137,24 @@ export default {
                 height: 10rem;
                 // border: 1px solid #ccc;
                 float: left;
+                position: relative;
                 border-radius: 10px;
                 cursor: pointer;
+                .top{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width:4.75rem;
+                    height:2rem;
+                    background:rgba(44,198,192,1);
+                    border-radius:0.63rem 0rem 0.63rem 0rem;
+                    text-align: center;
+                    font-size:0.88rem;
+                    font-family:PingFangSC-Semibold,PingFang SC;
+                    font-weight:600;
+                    color:rgba(255,255,255,1);
+                    line-height:2rem;
+                }
                 img{
                     width: 100%;
                     height: 100%;
@@ -164,13 +182,19 @@ export default {
                     font-weight: 600;
                     cursor: pointer;
                 }
+                //文本两行之后显示省略号
                 p:last-child{
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp:2;
+                    overflow: hidden;
                     font-size: 1.12rem;
                     color: #333333;
                     font-weight: 300;
                     cursor: pointer;
                     font-family:PingFangSC-Light,PingFang SC;
                     line-height: 1.56rem;
+                    margin-top: 0.31rem;
                 }
             }
             .new_footer{

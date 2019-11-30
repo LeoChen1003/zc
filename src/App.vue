@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" ref="app">
     <router-view />
   </div>
 </template>
@@ -24,6 +24,7 @@ export default {
       } else {
         this.site = 1
       }
+      this.$store.commit('GET_WINDOW_WIDTH', this.$refs.app.clientWidth)
     }
   },
   watch: {

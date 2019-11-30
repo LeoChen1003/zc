@@ -20,6 +20,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 import zcHeader from "@/components/zcHeader.vue";
 import zcFooter from "@/components/zcFooter.vue";
 import comIntro from "@/components/comIntro.vue";
@@ -84,6 +85,11 @@ export default {
       }
     }
   },
+  computed: {
+    ...mapState({
+      windowWidth: "windowWidth"
+    })
+  },
   mounted() {
     this.left = this.$refs.aboutComIntro.offsetLeft;
     window.console.log(this.left);
@@ -107,6 +113,9 @@ export default {
       } else if (type == "about_lab") {
         this.toggleTab("labor");
       }
+    },
+    windowWidth() {
+      this.left = this.$refs.aboutComIntro.offsetLeft;
     }
   }
 };

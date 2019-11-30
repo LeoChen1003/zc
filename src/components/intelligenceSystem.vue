@@ -1,6 +1,6 @@
 <template>
     <div class="os">
-        <div class="os_con">
+        <div class="os_con" ref="osCon">
             <div class="os_con_hd">
                 <div class="os_con_hd_1">
                     <svg-icon icon-class="os" class-name="svgIcon"></svg-icon>
@@ -38,7 +38,7 @@
                     <img src="../assets/coreAdvantage/system_os3.jpg" alt="">
                 </div>
             </div>
-            <div class="os_chose" @click="cancel">
+            <div class="os_chose" @click="cancel" :style="`left:${left}px`">
                 <svg-icon icon-class="close1" class-name="svg"></svg-icon>
             </div>
         </div>
@@ -46,17 +46,32 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
     name: 'sytOs',
     data(){
         return{
-
+            left:0
         }
     },
     methods:{
         cancel(){
             this.$parent.modelSystem = false;
             this.canScroll()
+        }
+    },
+    computed: {
+        ...mapState({
+            windowWidth: "windowWidth"
+        })
+    },
+    mounted(){
+        this.left = this.$refs.osCon.offsetLeft + 980 + 16
+    },
+    watch: {
+        windowWidth() {
+            this.left = this.$refs.osCon.offsetLeft + 980 + 16
+            window.console.log(this.$refs.osCon.offsetLeft )
         }
     }
 }

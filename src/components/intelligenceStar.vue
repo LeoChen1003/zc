@@ -1,6 +1,6 @@
 <template>
     <div class="star">
-        <div class="star_con">
+        <div class="star_con" ref="starCon">
             <div class="star_con_hd">
                 <p>7 星尊享服务体系</p>
                 <p>优特智厨科技有限公司配备专业的技术、研发、营销、运营及售后团队。让客户从了解产品第一刻起，即享受专业、周到的服务</p>
@@ -68,7 +68,7 @@
                     <img src="../assets/coreAdvantage/star7.jpg" alt="">
                 </div>
             </div>
-            <div class="star_chose" @click="cancel">
+            <div class="star_chose" @click="cancel" :style="`left:${left}px`">
                 <svg-icon icon-class="close1" class-name="svg"></svg-icon>
             </div>
         </div>
@@ -76,12 +76,32 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
     name: 'intellStar',
+    data(){
+        return{
+            left: 0
+        }
+    },
     methods:{
         cancel(){
             this.$parent.modelStar = false;
             this.canScroll()
+        }
+    },
+    computed: {
+        ...mapState({
+            windowWidth: "windowWidth"
+        })
+    },
+    mounted(){
+        this.left = this.$refs.starCon.offsetLeft + 960 + 16
+    },
+    watch: {
+        windowWidth() {
+            this.left = this.$refs.starCon.offsetLeft + 960 + 16
+            window.console.log(this.$refs.starCon.offsetLeft )
         }
     }
 }

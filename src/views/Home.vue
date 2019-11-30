@@ -439,6 +439,7 @@
       width: 100%;
       height: 18.25rem;
       background: url('../assets/home/data.jpg');
+      background-size: cover;
       .home_data_items{
         display: flex;
         justify-content: space-between;

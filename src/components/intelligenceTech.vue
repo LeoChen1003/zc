@@ -1,6 +1,6 @@
 <template>
     <div class="tech">
-        <div class="tech_con">
+        <div class="tech_con" ref="techCon">
             <div class="tech_con_hd">
                 <p>智能技术</p>
                 <p>简单易用的智能，背后藏着强大的科技</p>
@@ -77,7 +77,7 @@
                     <p>智能电子菜谱实时操控，让我们的生活更方便哦。</p>
                 </div>
             </div> 
-            <div class="tech_chose" @click="cancel">
+            <div class="tech_chose" @click="cancel" :style="`left:${left}px`">
                 <svg-icon icon-class="close1" class-name="svg"></svg-icon>
             </div>
         </div>
@@ -85,17 +85,38 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
+    data(){
+        return {
+            left: 0
+        }
+    },
     methods:{
         cancel(){
             this.$parent.modelTech = false;
             this.canScroll()
+        }
+    },
+     computed: {
+        ...mapState({
+            windowWidth: "windowWidth"
+        })
+    },
+    mounted(){
+        this.left = this.$refs.techCon.offsetLeft + 980 + 16
+    },
+    watch: {
+        windowWidth() {
+            this.left = this.$refs.techCon.offsetLeft + 980 + 16
+            window.console.log(this.$refs.techCon.offsetLeft )
         }
     }
 }
 </script>
 
 <style lang="scss" scoped>
+
 .tech{
     background-color: rgba(0, 0, 0, 0.9);
     width: 100%;
