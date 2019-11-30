@@ -342,7 +342,7 @@ export default {
   justify-content: space-between;
   background: rgba(0, 0, 0, 1) url('../../assets/wap/productCenter/sjbj.jpg');
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   background-position: 100% 100%;
 
   .info-box {
@@ -471,7 +471,7 @@ export default {
   padding-bottom: 7rem;
   background: url('../../assets/home/gtccj.jpg');
   background-position: bottom;
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
 
   .sub-title {
@@ -557,14 +557,14 @@ export default {
 .cell-5 {
   background: url('../../assets/wap/index/moredeivce.jpg');
   background-position: bottom;
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
 .cell-6 {
   background: url('../../assets/wap/index/otherproduct.jpg');
   background-position: bottom;
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
@@ -655,10 +655,13 @@ export default {
 
       img {
         width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
     }
 
     .ph_content {
+      width: 10rem;
       padding: 0.63rem;
       box-sizing: border-box;
       position: relative;

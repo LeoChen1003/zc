@@ -573,7 +573,7 @@ export default {
   background: rgba(0, 0, 0, 1)
     url('../../assets/wap/coreAdvantages/core_list_xt.jpg');
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   background-position: 100% 100%;
   padding: 3.31rem 0 0 0;
   box-sizing: border-box;
@@ -627,7 +627,7 @@ export default {
   background: rgba(0, 0, 0, 1)
     url('../../assets/wap/coreAdvantages/core_list_js.jpg');
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   background-position: 100% 100%;
 
   .tip {
@@ -676,7 +676,7 @@ export default {
   background: rgba(0, 0, 0, 1)
     url('../../assets/wap/coreAdvantages/core_list_gk.jpg');
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   background-position: 100% 100%;
 
   .title {
@@ -733,7 +733,7 @@ export default {
   background: rgba(0, 0, 0, 1)
     url('../../assets/wap/coreAdvantages/core_list_pj.jpg');
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   background-position: 100% 100%;
 
   .tip {
@@ -791,7 +791,7 @@ export default {
   background: rgba(0, 0, 0, 1)
     url('../../assets/wap/coreAdvantages/core_list_fw.jpg');
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   background-position: 100% 100%;
 
   .star {
@@ -932,7 +932,7 @@ export default {
     background: rgba(256, 256, 256, 0)
       url('../../assets/wap/coreAdvantages/xt_top.png');
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     padding: 5.75rem 0 1.88rem 4rem;
     box-sizing: border-box;
   }
@@ -941,7 +941,7 @@ export default {
     background: rgba(245, 240, 239, 1)
       url('../../assets/coreAdvantage/system_os1.jpg');
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     background-position: 0% 50%;
   }
 
@@ -949,7 +949,7 @@ export default {
     background: rgba(245, 240, 239, 1)
       url('../../assets/coreAdvantage/system_os2.jpg');
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     background-position: 0% 50%;
   }
 
@@ -957,7 +957,7 @@ export default {
     background: rgba(245, 240, 239, 1)
       url('../../assets/coreAdvantage/system_os3.jpg');
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     background-position: 0% 50%;
   }
 }
@@ -974,7 +974,7 @@ export default {
     background: rgba(256, 256, 256, 0)
       url('../../assets/wap/coreAdvantages/js_top.jpg');
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     padding: 4.25rem 0 1.88rem 2.25rem;
     box-sizing: border-box;
   }
@@ -987,7 +987,7 @@ export default {
     background: rgba(245, 240, 239, 1)
       url('../../assets/wap/coreAdvantages/js_1.jpg');
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     background-position: 0% 50%;
   }
 
@@ -995,7 +995,7 @@ export default {
     background: rgba(245, 240, 239, 1)
       url('../../assets/wap/coreAdvantages/js_2.jpg');
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     background-position: 0% 50%;
   }
 
@@ -1003,7 +1003,7 @@ export default {
     background: rgba(245, 240, 239, 1)
       url('../../assets/wap/coreAdvantages/js_3.jpg');
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     background-position: 0% 50%;
   }
 
@@ -1011,7 +1011,7 @@ export default {
     background: rgba(245, 240, 239, 1)
       url('../../assets/wap/coreAdvantages/js_4.jpg');
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     background-position: 0% 50%;
   }
 
@@ -1019,7 +1019,7 @@ export default {
     background: rgba(245, 240, 239, 1)
       url('../../assets/wap/coreAdvantages/js_5.jpg');
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     background-position: 0% 50%;
   }
 
@@ -1027,7 +1027,7 @@ export default {
     background: rgba(245, 240, 239, 1)
       url('../../assets/wap/coreAdvantages/js_6.jpg');
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     background-position: 0% 50%;
   }
 
@@ -1035,7 +1035,7 @@ export default {
     background: rgba(245, 240, 239, 1)
       url('../../assets/wap/coreAdvantages/js_7.jpg');
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     background-position: 0% 50%;
   }
 
@@ -1043,7 +1043,7 @@ export default {
     background: rgba(245, 240, 239, 1)
       url('../../assets/wap/coreAdvantages/js_8.jpg');
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     background-position: 0% 50%;
   }
 }
@@ -1060,7 +1060,7 @@ export default {
     background: rgba(256, 256, 256, 0)
       url('../../assets/wap/coreAdvantages/gk_top.jpg');
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     padding: 4.31rem 0 1.88rem 2.63rem;
     box-sizing: border-box;
   }
@@ -1069,7 +1069,7 @@ export default {
     background: rgba(245, 240, 239, 1)
       url('../../assets/coreAdvantage/data1.jpg');
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     background-position: 0% 50%;
   }
 
@@ -1077,7 +1077,7 @@ export default {
     background: rgba(245, 240, 239, 1)
       url('../../assets/coreAdvantage/data1.jpg');
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     background-position: 0% 50%;
   }
 }
@@ -1101,7 +1101,7 @@ export default {
     background: rgba(256, 256, 256, 0)
       url('../../assets/wap/coreAdvantages/pj_top.jpg');
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     padding: 4.31rem 0 1.88rem 2.63rem;
     box-sizing: border-box;
   }
@@ -1110,7 +1110,7 @@ export default {
     background: rgba(245, 240, 239, 1)
       url('../../assets/wap/coreAdvantages/pj_1.jpg');
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     background-position: 0% 50%;
   }
 
@@ -1118,7 +1118,7 @@ export default {
     background: rgba(245, 240, 239, 1)
       url('../../assets/wap/coreAdvantages/pj_2.jpg');
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     background-position: 0% 50%;
   }
 
@@ -1126,7 +1126,7 @@ export default {
     background: rgba(245, 240, 239, 1)
       url('../../assets/wap/coreAdvantages/pj_3.jpg');
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     background-position: 0% 50%;
   }
 }
@@ -1143,7 +1143,7 @@ export default {
     background: rgba(256, 256, 256, 0)
       url('../../assets/wap/coreAdvantages/fw_top.jpg');
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     padding: 4.25rem 0 1.88rem 2.25rem;
     box-sizing: border-box;
   }
@@ -1156,7 +1156,7 @@ export default {
     background: rgba(245, 240, 239, 1)
       url('../../assets/wap/coreAdvantages/fw_1.jpg');
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     background-position: 0% 50%;
   }
 
@@ -1164,7 +1164,7 @@ export default {
     background: rgba(245, 240, 239, 1)
       url('../../assets/wap/coreAdvantages/fw_2.jpg');
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     background-position: 0% 50%;
   }
 
@@ -1172,7 +1172,7 @@ export default {
     background: rgba(245, 240, 239, 1)
       url('../../assets/wap/coreAdvantages/fw_3.jpg');
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     background-position: 0% 50%;
   }
 
@@ -1180,7 +1180,7 @@ export default {
     background: rgba(245, 240, 239, 1)
       url('../../assets/wap/coreAdvantages/fw_4.jpg');
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     background-position: 0% 50%;
   }
 
@@ -1188,7 +1188,7 @@ export default {
     background: rgba(245, 240, 239, 1)
       url('../../assets/wap/coreAdvantages/fw_5.jpg');
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     background-position: 0% 50%;
   }
 
@@ -1196,7 +1196,7 @@ export default {
     background: rgba(245, 240, 239, 1)
       url('../../assets/wap/coreAdvantages/fw_6.jpg');
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     background-position: 0% 50%;
   }
 
@@ -1204,7 +1204,7 @@ export default {
     background: rgba(245, 240, 239, 1)
       url('../../assets/wap/coreAdvantages/fw_7.jpg');
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     background-position: 100% 100%;
   }
 }

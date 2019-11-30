@@ -265,7 +265,8 @@ export default {
   watch: {},
   methods: {
     handleScroll() {
-      if (document.documentElement.scrollTop > 227) {
+      let top = document.documentElement.scrollTop || document.body.scrollTop
+      if (top > 227) {
         self.type = 'js'
       } else {
         self.type = 'gl'
@@ -296,7 +297,7 @@ export default {
   height: 23.75rem;
   background: rgba(0, 0, 0, 1) url('../../assets/wap/productCenter/GT_dpt.jpg');
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   background-position: 100% 100%;
   padding: 2.44rem 2.5rem 0 2.5rem;
   box-sizing: border-box;
@@ -334,7 +335,7 @@ export default {
   justify-content: space-between;
   background: rgba(0, 0, 0, 1) url('../../assets/wap/productCenter/GT_bg.jpg');
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   background-position: 100% 100%;
 
   .info_box {
@@ -396,7 +397,7 @@ export default {
   box-sizing: border-box;
   background: rgba(0, 0, 0, 1) url('../../assets/wap/productCenter/GT_1.jpg');
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   background-position: 100% 100%;
 
   .tag {
@@ -466,7 +467,7 @@ export default {
   box-sizing: border-box;
   background: rgba(0, 0, 0, 1) url('../../assets/wap/productCenter/GT_2.jpg');
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   background-position: 100% 100%;
 }
 
@@ -583,7 +584,7 @@ export default {
 .detail_9 {
   background: rgba(0, 0, 0, 1) url('../../assets/wap/productCenter/GT_zk.jpg');
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   background-position: 100% 100%;
 
   .tag {
@@ -656,7 +657,7 @@ export default {
   background: rgba(0, 0, 0, 1)
     url('../../assets/wap/productCenter/GT_bottom.jpg');
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   background-position: 100% 100%;
   display: flex;
   align-items: center;

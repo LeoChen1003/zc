@@ -87,7 +87,14 @@
     </transition>
     <div class="footer">
       <div class="footer_item" v-for="(item, index) in route" :key="index">
-        <div class="footer_item_box" @click="item.footshow = !item.footshow">
+        <div
+          class="footer_item_box"
+          @click="
+            item.children
+              ? (item.footshow = !item.footshow)
+              : $router.push({ path: item.url })
+          "
+        >
           <div>{{ item.name }}</div>
           <div class="item_icon">
             <svg-icon
@@ -253,6 +260,7 @@ export default {
     $route() {
       self.dropdown = false
       document.documentElement.scrollTop = 0
+      document.body.scrollTop = 0
     }
   }
 }
