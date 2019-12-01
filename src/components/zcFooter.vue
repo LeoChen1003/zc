@@ -41,11 +41,18 @@
           </div>
           <div class="footer_right_about">
             <span>关注我们：</span>
-            <svg-icon icon-class="homeWeixin"
+            <div class="weixin">
+              <svg-icon icon-class="weixin" style="width:160px;height:165px;"></svg-icon>
+            </div>
+            <div @mousemove="show_wx" @mouseleave="hide_wx">
+              <svg-icon icon-class="homeWeixin"
                       style="margin-right:1rem;"
                       class-name="svg_size"></svg-icon>
-            <svg-icon icon-class="homeWeibo"
+            </div>
+            <div @click="weibo" target="_blank">
+              <svg-icon icon-class="homeWeibo"
                       class-name="svg_size"></svg-icon>
+            </div>
           </div>
       </div>
       <transition name="fade">
@@ -185,6 +192,18 @@ export default {
       this.isBuy = true;
       this.noScroll();
     },
+    show_wx(){
+      var wechat = document.getElementsByClassName("weixin")[0];
+      wechat.style.display='block';
+    },
+    hide_wx(){
+      var wechat = document.getElementsByClassName("weixin")[0];
+      wechat.style.display='none';
+    },
+    weibo(){
+      window.open("https://weibo.com/u/7274001357?profile_ftype=1&is_all=1#_0");
+      // window.location.href=
+    }
   }
 }
 </script>
@@ -266,12 +285,22 @@ export default {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    position: relative;
+    .weixin{
+      width: 160px;
+      height: 165px;
+      position: absolute;
+      top: -10.7rem;
+      right: -1.5rem;
+      display: none;
+    }
     span {
       margin-right: 1rem;
     }
     .svg_size {
       width: 1.5rem;
       height: 1.5rem;
+      cursor: pointer;
     }
   }
 }
