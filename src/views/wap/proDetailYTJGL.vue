@@ -358,6 +358,7 @@ export default {
     color: #fff;
     line-height: 1.88rem;
     margin-bottom: 0.88rem;
+    margin-right: -0.69rem;
   }
 
   .intro1 {
@@ -405,7 +406,7 @@ export default {
 }
 
 .detail_4 {
-  padding: 16.31rem 1.81rem 0 0;
+  padding: 16.31rem 2.5rem 0 0;
   box-sizing: border-box;
   background: rgba(0, 0, 0, 1) url('../../assets/wap/productCenter/YTJ_4.png');
   background-repeat: no-repeat;
@@ -414,11 +415,14 @@ export default {
   text-align: right;
 
   .intro2 {
-    text-align: left;
+    text-align: right;
     display: flex;
     justify-content: flex-end;
-    margin-right: 2.5rem;
     margin-bottom: 4.25rem;
+  }
+
+  .data_content {
+    justify-content: flex-end;
   }
 
   .data_box {
