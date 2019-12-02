@@ -1,6 +1,6 @@
 <!-- layout -->
 <template>
-  <div ref="wapHeader">
+  <div ref="wapHeader" class="wap">
     <div
       class="header"
       :class="dropdown ? 'header-dropdown' : isWhite ? 'headerW' : ''"
@@ -270,6 +270,15 @@ export default {
   font-family: Oswald_Light;
   src: url('../../assets/font/Oswald-Light.ttf');
 }
+.wap {
+  position: relative;
+  .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
 .header {
   width: 100%;
   height: 3rem;
@@ -283,6 +292,7 @@ export default {
   box-sizing: border-box;
   padding: 0 1rem;
   transition: all 0.5s;
+  // position: relative;
 
   .icon {
     width: 1.5rem;
