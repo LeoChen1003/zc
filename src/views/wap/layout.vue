@@ -136,15 +136,34 @@
         </div>
         <div class="footer_info_right">
           <div class="icon">
-            <svg-icon
-              icon-class="homeWeixin"
-              style="margin-right:1rem;"
-              class-name="svg_size"
-            ></svg-icon>
-            <svg-icon icon-class="homeWeibo" class-name="svg_size"></svg-icon>
+            <div @click="wxModel = true">
+              <svg-icon
+                icon-class="homeWeixin"
+                style="margin-right:1rem;"
+                class-name="svg_size"
+              ></svg-icon>
+            </div>
+            <div @click="weibo">
+              <svg-icon icon-class="homeWeibo" class-name="svg_size"></svg-icon>
+            </div>
           </div>
           <div class="tip">关注我们</div>
         </div>
+      </div>
+    </div>
+    <div class="weixin" v-if="wxModel" @touchmove.prevent>
+      <div class="weixin_model" @click="wxModel = false"></div>
+      <div class="weixin_content">
+        <div class="weixin_close" @click="wxModel = false">
+          <svg-icon icon-class="close1" class-name="close_svg"></svg-icon>
+        </div>
+        <div class="title">公众号：优特智厨</div>
+        <div class="icon">
+          <!-- <svg-icon icon-class="weixin" class-name="wx_svg"></svg-icon> -->
+          <img src="../../assets/wap/wexin.png" alt="wx" class="wx_svg" />
+        </div>
+        <div class="t">保存二维码</div>
+        <div class="tip">保存后可在微信扫码关注哦</div>
       </div>
     </div>
   </div>
@@ -161,6 +180,7 @@ export default {
     return {
       dropdown: false,
       isWhite: false,
+      wxModel: false,
       route: [
         {
           name: '产品中心',
@@ -254,6 +274,9 @@ export default {
     },
     setisBlack() {
       self.isWhite = false
+    },
+    weibo() {
+      window.open('https://weibo.com/u/7274001357?profile_ftype=1&is_all=1#_0')
     }
   },
   watch: {
@@ -516,6 +539,77 @@ export default {
         font-size: 0.69rem;
         color: rgba(136, 136, 136, 1);
       }
+    }
+  }
+}
+
+// wxModel
+.weixin {
+  .weixin_model {
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+  }
+
+  .weixin_content {
+    width: 15.63rem;
+    height: 19.06rem;
+    background: rgba(246, 246, 246, 1);
+    border-radius: 0.63rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    left: 50%;
+    z-index: 10001;
+
+    .weixin_close {
+      width: 1.88rem;
+      height: 1.88rem;
+      position: absolute;
+      top: -2.47rem;
+      right: -1.88rem;
+
+      .close_svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .title {
+      margin-top: 1.5rem;
+      font-size: 0.81rem;
+      color: rgba(0, 0, 0, 1);
+    }
+
+    .icon {
+      margin-top: 0.94rem;
+      margin-bottom: 0.88rem;
+      width: 8.75rem;
+      height: 8.75rem;
+      overflow: hidden;
+      .wx_svg {
+        width: 100%;
+      }
+    }
+
+    .t {
+      font-size: 0.88rem;
+      font-family: PingFangSC-Medium, PingFang SC;
+      font-weight: 500;
+      color: rgba(0, 0, 0, 1);
+      margin-bottom: 2.06rem;
+    }
+
+    .tip {
+      font-size: 0.69rem;
+      color: rgba(0, 0, 0, 0.25);
     }
   }
 }
