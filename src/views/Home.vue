@@ -2,7 +2,7 @@
   <div class="home pc_index">
     <zcHeader :isWhite="isWhite" :tab0="tab"></zcHeader>
     <div class="home_v">
-      <video loop autoplay="autoplay" src="../assets/video/video.mp4">
+      <video loop autoplay="autoplay" src="http://cdn.withpush.cn/youtezhichu/result.bg.mp4">
       </video>
     </div>
     <div class="home_mask"></div>
@@ -123,7 +123,7 @@
           </div>
         </div>
       </div>
-      
+
     </div>
     <div class="home_product_more">
       <div class="home_product_more_item1" @click="more_pro">
@@ -212,7 +212,7 @@
           </div>
         </div>
       </div>
-      
+
     </div>
     <zcFooter></zcFooter>
   </div>
