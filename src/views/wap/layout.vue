@@ -557,7 +557,6 @@ export default {
 
   .weixin_content {
     width: 15.63rem;
-    height: 19.06rem;
     background: rgba(246, 246, 246, 1);
     border-radius: 0.63rem;
     display: flex;
@@ -594,6 +593,8 @@ export default {
       width: 8.75rem;
       height: 8.75rem;
       overflow: hidden;
+      background-color: #fff;
+      padding: 0.5rem;
       .wx_svg {
         width: 100%;
       }
@@ -610,6 +611,7 @@ export default {
     .tip {
       font-size: 0.69rem;
       color: rgba(0, 0, 0, 0.25);
+      margin-bottom: 1.56rem;
     }
   }
 }
