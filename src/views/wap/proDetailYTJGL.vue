@@ -551,7 +551,8 @@ export default {
     width: 90%;
     position: absolute;
     bottom: -40px;
-    left: 1.38rem;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 
@@ -579,6 +580,36 @@ export default {
     color: #fff;
     line-height: 1.88rem;
     text-align: center;
+  }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+  .detail_1 {
+    height: 53rem;
+  }
+
+  .detail_3 {
+    height: 66rem;
+  }
+
+  .detail_4 {
+    padding-top: 40rem;
+  }
+
+  .detail_7 {
+    height: 41rem;
+    .detail_7_svg {
+      width: 100%;
+    }
+
+    img {
+      right: 50%;
+      transform: translateX(100%);
+    }
+  }
+
+  .detail_8 {
+    height: 50rem;
   }
 }
 </style>

@@ -765,6 +765,17 @@ export default {
     }
   }
 }
+
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+  .cell-4 {
+    height: 48rem;
+  }
+
+  .cell-5,
+  .cell-6 {
+    height: 31rem;
+  }
+}
 </style>
 
 <style lang="scss">
