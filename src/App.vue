@@ -13,13 +13,13 @@ export default {
   },
   methods: {},
   mounted() {
-    if (document.documentElement.offsetWidth > 996) {
+    if (document.documentElement.offsetWidth > 1024) {
       this.site = 0
     } else {
       this.site = 1
     }
     window.onresize = () => {
-      if (document.documentElement.offsetWidth > 996) {
+      if (document.documentElement.offsetWidth > 1024) {
         this.site = 0
       } else {
         this.site = 1
@@ -43,7 +43,7 @@ export default {
         }
       }
     },
-     $route() {
+    $route() {
       document.documentElement.scrollTop = 0
     }
   }

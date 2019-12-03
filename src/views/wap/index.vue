@@ -279,7 +279,7 @@ export default {
 .cell-1 {
   width: 100%;
   height: 33.5rem;
-  background: url('../../assets/home/wap_bg_1.png');
+  background: #000 url('../../assets/home/wap_bg_1.png');
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
@@ -763,6 +763,17 @@ export default {
       line-height: 1.13rem;
       margin-bottom: 1.8rem;
     }
+  }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+  .cell-4 {
+    height: 48rem;
+  }
+
+  .cell-5,
+  .cell-6 {
+    height: 31rem;
   }
 }
 </style>

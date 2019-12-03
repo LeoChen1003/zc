@@ -205,8 +205,10 @@
           <div class="comment">自定义修改翻炒方式</div>
         </div>
       </div>
-      <svg-icon icon-class="wap_pro_gt" class-name="detail_12_svg"></svg-icon>
-      <img src="../../assets/wap/productCenter/GT_znld.png" alt="znld" />
+      <div>
+        <svg-icon icon-class="wap_pro_gt" class-name="detail_12_svg"></svg-icon>
+        <img src="../../assets/wap/productCenter/GT_znld.png" alt="znld" />
+      </div>
     </div>
     <div class="detail_6 detail_13">
       <div class="slogan">不止是一台厨具，更是一名星级大厨。</div>
@@ -287,6 +289,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 //@import url(); 引入公共css类
+
 .wrapper {
   padding-top: 3rem;
   box-sizing: border-box;
@@ -605,6 +608,7 @@ export default {
   }
 
   .detail_12_svg {
+    width: 90%;
     position: absolute;
     bottom: -10px;
     width: 21rem;
@@ -648,7 +652,8 @@ export default {
     width: 90%;
     position: absolute;
     bottom: -40px;
-    left: 1.38rem;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 
@@ -676,6 +681,35 @@ export default {
     color: rgba(0, 0, 0, 1);
     line-height: 1.88rem;
     text-align: center;
+  }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+  .detail_1 {
+    height: 37rem;
+  }
+
+  .detail_3 {
+    height: 51rem;
+  }
+
+  .detail_9 {
+    height: 54rem;
+  }
+
+  .detail_12 {
+    .detail_12_svg {
+      width: 100%;
+    }
+
+    img {
+      right: 50%;
+      transform: translateX(100%);
+    }
+  }
+
+  .detail_13 {
+    height: 50rem;
   }
 }
 </style>
