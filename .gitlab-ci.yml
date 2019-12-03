@@ -17,6 +17,7 @@ variables:
   ZAPROXY_DISABLED: "true"  # 设置为true,不进行zaproxy扫描
   TEST_DISABLED: "false"  # 设置为true,不进行test任务
   CODE_QUALITY_DISABLED: "true"  # 取消注释，并设置为true，不进行代码质量扫描
+  CODE_COVERAGE_DISABLED: "true"  # 取消注释，并设置为true，不进行代码覆盖率检测
 
   # cache dir
   CACHE_DIR: "node_modules"
@@ -96,13 +97,13 @@ test:
 include:
   # 变量、流水线定义于此
   - project: 'pub/ci-templates'
-    ref: dev  # 正式设置请使用 master
+    ref: master  # 正式设置请使用 master
     file: 'all/base-gitlab-ci.yml'
   # shell各函数定义于此
   - project: 'pub/ci-templates'
-    ref: dev  # 正式设置请使用 master
+    ref: master  # 正式设置请使用 master
     file: 'node/shell-functions-gitlab-ci.yml'
   # 代码覆盖率分析
   - project: 'pub/ci-templates'
-    ref: dev  # 正式设置请使用 master
+    ref: master  # 正式设置请使用 master
     file: 'node/code_coverage-gitlab-ci.yml'
