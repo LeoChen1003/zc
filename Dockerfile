@@ -12,7 +12,7 @@ WORKDIR /app
 RUN yarn config set registry https://nexus.utcook.com/repository/npm-repo/ \
   && yarn config set sass-binary-site http://npm.taobao.org/mirrors/node-sass \
   && yarn install
-RUN yarn build
+RUN yarn build:prod
 
 # 使用nginx作为web服务
 FROM nginx:1.17.5-alpine
