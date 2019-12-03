@@ -5,8 +5,21 @@ import store from '@/store'
 // import { getToken, setToken } from '@/utils/auth'
 
 // create an axios instance
+let urlBase = process.env.VUE_APP_BASE_API;
+if(location.href.match(/utcook/)){
+  if (location.href.match(/dev/)){
+    urlBase = "cmsdev.utcook.com/"
+  } else {
+    urlBase = "cms.utcook.com/"
+  }
+  if(location.href.match(/https:/)){
+    urlBase = "https://" + urlBase
+  }else{
+    urlBase = "http://" + urlBase
+  }
+}
 const service = axios.create({
-  baseURL: process.env.VUE_APP_BASE_API, // url = base url + request url
+  baseURL: urlBase, // url = base url + request url
   // withCredentials: true, // send cookies when cross-domain requests
   timeout: 5000 // request timeout
 })

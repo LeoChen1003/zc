@@ -2,7 +2,7 @@
   <div class="home pc_index">
     <zcHeader :isWhite="isWhite" :tab0="tab"></zcHeader>
     <div class="home_v" ref="homeV" :style="`height:${height1}px;`">
-      <video loop autoplay="autoplay" src="../assets/video/video.mp4">
+      <video loop autoplay="autoplay" src="http://cdn.withpush.cn/youtezhichu/result.bg.mp4">
       </video>
     </div>
     <div class="home_mask" ref="homeMask" :style="`height:${height1}px;`"></div>
