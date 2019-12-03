@@ -57,7 +57,7 @@
         </div>
       </div>
     </div>
-    <div class="home_pro_one" @click="cai" :style="`height:${height3}px;`">
+    <div class="home_pro_one" @click="cai" :style="`height:${height3}px;`" ref="pro1">
       <div class="home_pro_one_con">
         <div class="home_title_top">“星级大厨”带你体验舌尖上的美味</div>
         <div class="home_pro_one_title" >智能一拖三炒菜机</div>
@@ -96,7 +96,7 @@
         </div>
       </div>
     </div>
-    <div class="home_pro_two" @click="AIO" :style="`height:${height3}px;`">
+    <div class="home_pro_two" @click="AIO" :style="`height:${height3}px;`" ref="pro2">
       <div class="home_pro_two_con">
           <div class="home_pro_two_top">超级烹饪专家</div>
         <div class="home_pro_two_title">智能精炒一体机</div>
@@ -125,7 +125,7 @@
       </div>
 
     </div>
-    <div class="home_product_more">
+    <div class="home_product_more" :style="`height:${height4}px;`" ref="pro3">
       <div class="home_product_more_item1" @click="more_pro">
         <div>更多智厨产品</div>
         <div>更多智厨产品</div>
@@ -241,6 +241,8 @@
         height1: 0,
         height2: 0,
         height3: 0,
+        height4: 0,
+        oTop:0,
         swiperOption: {
           slidesPerView: 'auto',
           centeredSlides: true,
@@ -268,18 +270,23 @@
       this.height1 = document.documentElement.clientWidth/(1680/760);
       this.height2 = document.documentElement.clientWidth/(1680/292);
       this.height3 = document.documentElement.clientWidth/(1680/890);
+      this.height4 = document.documentElement.clientWidth/(1680/420);
       var hder = document.getElementsByClassName('blackBack')[0];
       hder.className = 'blackBack';
-      window.onscroll = function(){
+      window.onscroll = ()=>{
         var top = document.documentElement.scrollTop;
-        // window.console.log(document.documentElement.scrollTop);
-        if(top >= 1005 && top <= 1897){
+        // window.console.log(top);
+        // window.console.log(this.$refs.pro1.offsetTop);
+        this.oTop1 =  this.$refs.pro1.offsetTop - 48;
+        this.oTop2 = this.$refs.pro2.offsetTop - 48;
+        this.oTop3 = this.$refs.pro3.offsetTop - 48;
+        if(top >= this.oTop1 && top <= this.oTop2){
           hder.className = 'whiteBack'
           self.isWhite = true
-        }else if( top >= 1897 && top <= 2783){
+        }else if( top >= this.oTop2 && top <= this.oTop3){
           hder.className = 'blackBack'
           self.isWhite = false;
-        }else if( top >= 2783){
+        }else if( top >= this.oTop3){
           hder.className = 'whiteBack'
           self.isWhite = true;
         }else{
@@ -355,7 +362,7 @@
         this.height1 = document.documentElement.clientWidth/(1680/760);
         this.height2 = document.documentElement.clientWidth/(1680/292);
         this.height3 = document.documentElement.clientWidth/(1680/890);
-        window.console.log(this.height2)
+        this.height4 = document.documentElement.clientWidth/(1680/420);
       }
     }
   }
@@ -512,20 +519,22 @@
 
     .home_product_more {
       display: flex;
+      width: 100%;
 
       .home_product_more_item1, .home_product_more_item2 {
         display: flex;
         align-items: center;
         flex-direction: column;
         width: 50%;
-        height: 26.25rem;
+        height: 100%;
         cursor: pointer;
 
         div:first-child {
           font-size: 1.5rem;
           font-weight: 600;
           color: #000;
-          margin-top: 5rem;
+          // margin-top: 5rem;
+          margin-top: 9.5%;
         }
 
         div:nth-child(2) {
@@ -538,11 +547,13 @@
       .home_product_more_item1 {
         background: url('../assets/home/zcEquipment.jpg');
         background-size: cover;
+        // background-position: center bottom;
       }
 
       .home_product_more_item2 {
         background: url('../assets/home/otherPro.jpg');
         background-size: cover;
+        // background-position: center bottom;
       }
     }
 
@@ -558,14 +569,17 @@
                       rgba(235, 237, 243, 1) 84%,
                       rgba(223, 226, 235, 1) 100%
       );
-      padding: 6.63rem 0;
+      // padding: 6.63rem 0;
+      padding-top: 6.63rem;
       position: relative;
 
       .home_news_header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0 15%;
+        // padding: 0 15%;
+        width: 61rem;
+        margin:  0 auto;
         box-sizing: border-box;
 
         .home_news_header_title {
@@ -620,7 +634,10 @@
         background: rgba(216, 216, 216, 0);
         border: 0.06rem solid rgba(44, 198, 192, 1);
         border-radius: 50%;
-        margin: 9rem auto;
+        // margin: 9rem auto;
+        margin: 0 auto;
+        margin-top: 3rem;
+        // margin-bottom: 6rem;
 
         .swiper-slide {
           width: 42.5rem;

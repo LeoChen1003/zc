@@ -139,11 +139,15 @@ export default {
 .intro {
   border-top: 1px solid rgb(218, 216, 216);
   .block {
+    position: absolute;
+    left: 534px;
+    // margin-left: 0;
     .el-timeline {
-      margin-left: -3%;
+      // margin-left: -3%;
     }
     .el-timeline-item__tail {
       border-left: 8px solid #ececec;
+      top: 1px;
     }
     .el-timeline-item__node--large {
       width: 1.25rem;
@@ -296,7 +300,7 @@ export default {
     height: 58rem;
     .block {
       margin-top: 1rem;
-      margin-left: 42.5%;
+      // margin-left: 42.5%;
     }
     .about_con3_ct {
     //   margin: 0 auto;

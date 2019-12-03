@@ -14,8 +14,9 @@
                     </div>
                 </div>
             </div>
-            <div class="specs_con1">
-                <p>“星级大厨”带你体验舌尖上的美味</p>
+            <div class="specs_con1" :style="`height:${height1}px;`">
+                <div class="specs_con1_center">
+                <p ref="specsP">“星级大厨”带你体验舌尖上的美味</p>
                 <p>智能一拖三炒菜机</p>
                 <span :class="curIndex == 0 ? 'activeColor' : ''" @click="changeSwiper(0)">智能云菜谱</span>
                 <span>|</span>
@@ -26,31 +27,42 @@
                 <span :class="curIndex == 3 ? 'activeColor' : ''" @click="changeSwiper(3)">智能调料机</span>
                 <span>|</span>
                 <span :class="curIndex == 4 ? 'activeColor' : ''" @click="changeSwiper(4)">气压站</span>
-                <div class="pro_swiper">
+                </div>
+                <div class="pro_swiper" :style="`height:${height2}px;`">
                     <swiper :options="swiperOption" ref="product_swiper">
                         <swiper-slide>
                             <div class="item">
-                                <img class="img1" src="../assets/product/carousel1.png" alt="">
+                                <div class="item_img">
+                                    <img class="img1" src="../assets/product/carousel1.png" alt="">
+                                </div>   
                             </div>
                         </swiper-slide>
                         <swiper-slide>
                             <div class="item">
+                                <div class="item_img">
                                 <img class="img2" src="../assets/product/carousel2.png" alt="">
+                                </div>
                             </div>
                         </swiper-slide>
                         <swiper-slide>
                             <div class="item">
+                                <div class="item_img">
                                 <img class="img3" src="../assets/product/carousel3.png" alt="">
+                                </div>
                             </div>
                         </swiper-slide>
                         <swiper-slide>
                             <div class="item">
+                                <div class="item_img">
                                 <img class="img4" src="../assets/product/carousel4.png" alt="">
+                                </div>
                             </div>
                         </swiper-slide>
                         <swiper-slide>
                             <div class="item">
+                                <div class="item_img">
                                 <img class="img5" src="../assets/product/carousel5.png" alt="">
+                                </div>
                             </div>
                         </swiper-slide>
                     </swiper>
@@ -116,6 +128,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 import zcHeader from '@/components/zcHeader.vue';
 import zcFooter from '@/components/zcFooter.vue';
 import '../styles/variables.scss';
@@ -129,6 +142,9 @@ export default {
             curIndex:0,
             isWhite:false,
             isBuy:false,
+            height1: 0,
+            height2: 0,
+            cWidth:document.documentElement.clientWidth,
             swiperOption: {
                 slidesPerView: 'auto',
                 centeredSlides: true,
@@ -152,12 +168,16 @@ export default {
         buyConsult
     },
     mounted(){
+        this.$refs.specsP.style.marginTop = this.marginT + 'px';
+        // window.console.log(this.marginT);
+        this.height1 = document.documentElement.clientWidth/(1680/704);
+        this.height2 = this.height1 - 120 - this.marginT;
         this.canScroll()
         var hder  = document.getElementsByClassName("blackBack")[0];
         hder.className = "blackBack";
         window.onscroll =()=>{
             var top = document.documentElement.scrollTop;
-            if(top>=755){
+            if(top>=this.height1){
                 hder.className = "whiteBack";
                 this.isActive = true;
                 this.isWhite = true;
@@ -181,6 +201,20 @@ export default {
     created() {
         self = this
     },
+    computed: {
+        ...mapState({
+            windowWidth: "windowWidth"
+        }),
+        marginT(){
+            return this.cWidth*(7.1/100);
+        }
+    },
+    watch:{
+        windowWidth(){
+            this.height1 = document.documentElement.clientWidth/(1680/704);
+            this.height2 = this.height1 - 120 - this.marginT;
+        }
+    }
 }
 </script>
 
@@ -265,11 +299,16 @@ export default {
     }
     .specs_con1{
         width: 100%;
-        height: 44rem;
+        // height: 44rem;
+        margin-top: 3rem;
         background:linear-gradient(180deg,rgba(39,40,41,1) 0%,rgba(30,31,33,1) 100%);
         box-shadow:0px 10px 20px 0px rgba(0,0,0,0.02);
         overflow: hidden;
         position: relative;
+        .specs_con1_center{
+            width: 53.49rem;
+            margin: 0 auto;
+        }
         .activeColor {
             font-weight: 500;
             color: #fff;
@@ -280,15 +319,16 @@ export default {
             font-weight:400;
             color:rgba(136,136,136,1);
             line-height:1.25rem;
-            margin-left: 21%;
+            // margin-left: 21%;
             margin-top: 7.5rem;
+            // margin-top: 7.1%;
         }
         p:nth-child(2){
             font-size:2.5rem;
             font-weight:600;
             color:rgba(255,255,255,1);
             margin-top: 0.5rem;
-            margin-left: 21%;
+            // margin-left: 21%;
             margin-bottom: 1rem;
         }
         span{
@@ -302,7 +342,7 @@ export default {
             cursor: pointer;
         }
         span:first-of-type{
-            margin-left: 21%;
+            // margin-left: 21%;
         }
         span:not(:first-of-type){
             margin-left: 1rem;
@@ -371,37 +411,55 @@ export default {
 }
 .pro_swiper{
     width: 100%;
-    margin-top: 7.41rem;
+    // margin-top: 7.41rem;
+    // margin-top: 1.2%;
     position: relative;
+    // height: 60%;
     .item{
         position: relative;
         width: 100%;
         height: 100%;
+        // bottom: 5.1%;
+        .item_img{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            bottom: 0;
+        }
         .img1{
             margin-left: 39%;
             width: 47%;
-            margin-top: 4.1%;
+            // margin-top: 4.1%;
+            position: absolute;
+            bottom: 0;
         }
         .img2{
             position: absolute;
             left: 50%;
             width: 34%;
-            margin-top: 3.4%;
+            // margin-top: 3.4%;
+            bottom: 0;
         }
         .img3{
             width: 60.8%;
             margin-left: 39%;
-            margin-top: 7.3%;
+            // margin-top: 7.3%;
+            bottom: 0;
+            position: absolute;
         }
         .img4{
             width: 39.6%;
             margin-left: 44%;
-            margin-top: 2%;
+            // margin-top: 2%;
+            bottom: 0;
+            position: absolute;
         }
         .img5{
             width: 31%;
             margin-left: 49%;
-            margin-top: 2.4%;
+            // margin-top: 2.4%;
+            bottom: 0;
+            position: absolute;
         }
     }
     .swiper-pagination{
@@ -426,11 +484,15 @@ export default {
             background: #fff;
         }
     }
+    .swiper-container{
+        height: 100%;
+    }
     .swiper-container-autoheight{
         height: 400px;
     }
     .swiper-wrapper{
-        height: 25rem;
+        // height: 25rem;
+        height: 100%;
     }
     // .swiper-slide-active{
     //     margin-left: 32rem;
