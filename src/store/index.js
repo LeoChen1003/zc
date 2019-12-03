@@ -9,7 +9,7 @@ export default new Vuex.Store({
   },
   mutations: {
     GET_WINDOW_WIDTH(state, newWidth) {
-      state.windowWidth = newWidth
+      state.windowWidth = newWidth 
     }
   },
   actions: {

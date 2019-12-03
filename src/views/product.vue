@@ -11,7 +11,7 @@
       </div>
       <div class="pro">
         <div class="pro_title1 d_jump" ref="pro1">旗舰智厨产品</div>
-        <div class="pro_con1">
+        <div class="pro_con1" :style="`height:${height1}px;`">
           <div class="pro_con1_l">
             <div class="pro_con1_l_tag" @click="proCai">旗舰</div>
             <span class="p1" @click="proCai">“星级大厨”带你体验舌尖上的美味</span>
@@ -29,10 +29,10 @@
             </div>
           </div>
           <div class="pro_con1_r" @click="proCai">
-            <img src="../assets/product/ODT.jpg" alt />
+            <!-- <img src="../assets/product/ODT.jpg" alt /> -->
           </div>
         </div>
-        <div class="pro_con2">
+        <div class="pro_con2" :style="`height:${height1}px;`">
           <div class="pro_con2_l">
             <div class="pro_con2_l_tag">旗舰</div>
             <span class="p1" @click="proAIO">超级烹饪专家</span>
@@ -50,11 +50,11 @@
             </div>
           </div>
           <div class="pro_con2_r" @click="proAIO">
-            <img src="../assets/product/AIO.jpg" alt />
+            <!-- <img src="../assets/product/AIO.jpg" alt /> -->
           </div>
         </div>
         <div class="pro_title2 d_jump" ref="pro2">其他智厨产品</div>
-        <div class="pro_con3 d_jump">
+        <div class="pro_con3 d_jump" :style="`height:${height2}px;`">
           <div class="pro_con3_l">
             <p>智能多头平面炉</p>
             <div class="pro_con3_l_c1">
@@ -115,7 +115,7 @@
             </div>
           </div>
         </div>
-        <div class="pro_con3 d_jump">
+        <div class="pro_con3 d_jump" :style="`height:${height2}px;`">
           <div class="pro_con3_l">
             <p>智能单头单尾凹面炒炉</p>
             <div class="pro_con3_l_c1">
@@ -177,7 +177,7 @@
             </div>
           </div>
         </div>
-        <div class="pro_con3 d_jump">
+        <div class="pro_con3 d_jump" :style="`height:${height2}px;`">
           <div class="pro_con3_l">
             <p>智能蒸饭柜</p>
             <div class="pro_con3_l_c1">
@@ -239,7 +239,7 @@
             </div>
           </div>
         </div>
-        <div class="pro_con3 d_jump">
+        <div class="pro_con3 d_jump" :style="`height:${height2}px;`">
           <div class="pro_con3_l">
             <p>智能烤箱</p>
             <div class="pro_con3_l_c1">
@@ -300,7 +300,7 @@
             </div>
           </div>
         </div>
-        <div class="pro_con3 d_jump">
+        <div class="pro_con3 d_jump" :style="`height:${height2}px;`">
           <div class="pro_con3_l">
             <p>智能煮面机</p>
             <div class="pro_con3_l_c1">
@@ -363,7 +363,7 @@
           </div>
         </div>
         <div class="pro_title3 d_jump" ref="pro3">其他智能产品</div>
-        <div class="pro_con4 d_jump">
+        <div class="pro_con4 d_jump" :style="`height:${height2}px;`">
           <div class="pro_con4_l">
             <p>优特智能打菜机</p>
             <div class="pro_con4_l_c1">
@@ -398,7 +398,7 @@
             <img src="../assets/home/addBlack2.png" alt />
           </div>
         </div>
-        <div class="pro_con5 d_jump">
+        <div class="pro_con5 d_jump" :style="`height:${height2}px;`">
           <div class="pro_con5_l">
             <p>优特配送箱</p>
             <div class="pro_con5_l_c1">
@@ -467,6 +467,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 import zcHeader from "@/components/zcHeader.vue";
 import zcFooter from "@/components/zcFooter.vue";
 import "../styles/variables.scss";
@@ -485,7 +486,9 @@ export default {
       isActive2: false,
       isActive3: false,
       isWhite: true,
-      isBuy: false
+      isBuy: false,
+      height1: 0,
+      height2: 0
     };
   },
   methods: {
@@ -552,7 +555,14 @@ export default {
       }
     }
   },
+  computed: {
+    ...mapState({
+      windowWidth: "windowWidth"
+    })
+  },
   mounted() {
+    this.height1 = 480;
+    this.height2 = document.documentElement.clientWidth/(1680/440);
     this.canScroll();
     let type = this.$route.query.type;
     if (type == "other3") {
@@ -613,6 +623,10 @@ export default {
       } else if (type == "other_pro" || type == "pro_other") {
         this.jump(7);
       }
+    },
+    windowWidth(){
+      this.height1 = document.documentElement.clientWidth/(1680/480);
+      this.height2 = document.documentElement.clientWidth/(1680/440);
     }
   }
 };
@@ -695,11 +709,12 @@ export default {
     }
     .pro_con1 {
       width: 72%;
-      height: 30rem;
+      // height: 30rem;
       background: #fff;
       box-shadow: 0px 10px 20px 0px rgba(5, 21, 44, 0.02);
       border-radius: 0.625rem;
       margin: 2rem auto 0;
+      overflow: hidden;
       .pro_con1_l,
       .pro_con1_r {
         float: left;
@@ -726,7 +741,7 @@ export default {
           cursor: pointer;
         }
         .p1 {
-          top: 6rem;
+          top: 20%;
           width: 13.25rem;
           height: 1.25rem;
           font-size: 0.87rem;
@@ -734,7 +749,7 @@ export default {
           color: #333333;
         }
         .p2 {
-          top: 7.75rem;
+          top: 25.8%;
           width: 16rem;
           height: 2.81rem;
           font-size: 2rem;
@@ -743,7 +758,8 @@ export default {
           color: rgba(0, 0, 0, 1);
         }
         .p3 {
-          top: 11.62rem;
+          // top: 11.62rem;
+          top: 38.8%;
           width: 72%;
           height: 3.38rem;
           font-size: 0.87rem;
@@ -753,16 +769,19 @@ export default {
         }
         .pro_con1_l_btn {
           position: absolute;
-          top: 23.37rem;
+          // top: 23.37rem;
+          top: 78%;
           left: 12%;
-          width: 40%;
+          // width: 40%;
+          width: 15.75rem;
           .pro_con1_l_btn_1,
           .pro_con1_l_btn_2 {
             cursor: pointer;
             float: left;
           }
           .pro_con1_l_btn_1 {
-            width: 44%;
+            // width: 44%;
+            width: 7rem;
             height: 2.625rem;
             border-radius: 1.44rem;
             background-color: #000;
@@ -773,7 +792,8 @@ export default {
           }
           .pro_con1_l_btn_2 {
             box-sizing: border-box;
-            width: 48%;
+            // width: 48%;
+            width: 7.75rem;
             height: 2.625rem;
             margin-left: 5%;
             border: 2px solid #000;
@@ -790,7 +810,8 @@ export default {
               margin-left: 51%;
               margin-top: -1.48rem;
               position: absolute;
-              left: 12%;
+              // left: 12%;
+              left: 2.5rem;
             }
           }
         }
@@ -798,15 +819,16 @@ export default {
       .pro_con1_r {
         cursor: pointer;
         width: 47%;
-        img {
-          width: 100%;
-          height: 100%;
-        }
+        background: url("../assets/product/ODT.jpg");
+        // img {
+        //   width: 100%;
+        //   height: 100%;
+        // }
       }
     }
     .pro_con2 {
       width: 72%;
-      height: 30rem;
+      // height: 30rem;
       background: linear-gradient(
         180deg,
         rgba(36, 36, 38, 1) 0%,
@@ -815,6 +837,7 @@ export default {
       box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.02);
       border-radius: 0.625rem;
       margin: 2rem auto 0;
+      overflow: hidden;
       .pro_con2_l,
       .pro_con2_r {
         float: left;
@@ -842,20 +865,23 @@ export default {
           cursor: pointer;
         }
         .p1 {
-          top: 6rem;
+          // top: 6rem;
+          top: 20%;
           font-size: 0.87rem;
           font-weight: 400;
           color: #888888;
         }
         .p2 {
-          top: 7.75rem;
+          // top: 7.75rem;
+          top: 25.8%;
           font-size: 2rem;
           font-weight: 600;
           color: #fff;
           cursor: pointer;
         }
         .p3 {
-          top: 11.62rem;
+          // top: 11.62rem;
+          top: 38.8%;
           width: 72%;
           font-size: 0.87rem;
           font-weight: 400;
@@ -864,16 +890,19 @@ export default {
         }
         .pro_con2_l_btn {
           position: absolute;
-          top: 23.37rem;
+          // top: 23.37rem;
+          top: 78%;
           left: 12%;
-          width: 40%;
+          // width: 40%;
+          width: 15.75rem;
           .pro_con2_l_btn_1,
           .pro_con2_l_btn_2 {
             float: left;
             cursor: pointer;
           }
           .pro_con2_l_btn_1 {
-            width: 44%;
+            // width: 44%;
+            width: 7rem;
             height: 2.625rem;
             border-radius: 1.44rem;
             background-color: #fff;
@@ -884,7 +913,8 @@ export default {
           }
           .pro_con2_l_btn_2 {
             box-sizing: border-box;
-            width: 48%;
+            // width: 48%;
+            width: 7.75rem;
             height: 2.625rem;
             margin-left: 6%;
             border: 2px solid #fff;
@@ -902,7 +932,8 @@ export default {
               margin-top: -1.48rem;
               color: #fff;
               position: absolute;
-              left: 12%;
+              // left: 12%;
+              left: 2.5rem;
             }
           }
         }
@@ -910,15 +941,13 @@ export default {
       .pro_con2_r {
         cursor: pointer;
         width: 47%;
-        img {
-          width: 100%;
-          height: 100%;
-        }
+        background: url("../assets/product/AIO.jpg");
+        background-size: cover;
       }
     }
     .pro_con3 {
       width: 72%;
-      height: 27.5rem;
+      // height: 27.5rem;
       margin: 2rem auto 0;
       .pro_con3_l,
       .pro_con3_r {
@@ -934,13 +963,14 @@ export default {
           font-size: 1.5rem;
           font-weight: 600;
           color: rgba(22, 22, 22, 1);
-          margin-top: 3.5rem;
+          // margin-top: 3.5rem;
+          margin-top: 7.9%;
           margin-left: 12.3%;
         }
         .pro_con3_l_c1,
         .pro_con3_l_c2,
         .pro_con3_l_c3 {
-          margin-top: 1.5rem;
+          // margin-top: 1.5rem;
           margin-left: 12.3%;
           div {
             float: left;
@@ -962,13 +992,18 @@ export default {
             margin-left: 0.5rem;
           }
         }
+        .pro_con3_l_c1{
+          margin-top: 2.8%;
+        }
         .pro_con3_l_c2,
         .pro_con3_l_c3 {
-          margin-top: 0.5rem;
+          // margin-top: 0.5rem;
+          margin-top: 1.7%;
         }
         .pro_con3_l_det {
           margin-left: 12.3%;
-          margin-top: 1rem;
+          // margin-top: 1rem;
+          margin-top: 2%;
           color: #808080;
           width: 20.07rem;
           height: 9.38rem;
@@ -999,7 +1034,7 @@ export default {
     }
     .pro_con4 {
       width: 72%;
-      height: 27.5rem;
+      // height: 27.5rem;
       background: rgba(255, 255, 255, 1);
       border-radius: 0.625rem;
       margin: 2rem auto 0;
@@ -1014,7 +1049,8 @@ export default {
           font-size: 1.5rem;
           font-weight: 600;
           color: #161616;
-          margin-top: 8.5rem;
+          // margin-top: 8.5rem;
+          margin-top: 25%;
         }
         .pro_con4_l_c1 {
           margin-top: 1.5rem;
@@ -1080,11 +1116,12 @@ export default {
       }
       .pro_con4_r {
         width: 46%;
-        height: 19.6rem;
+        // height: 19.6rem;
         float: left;
         position: absolute;
-        top: 3.94rem;
-        left: 44%;
+        // top: 3.94rem;
+        top: 14.3%;
+        left: 47%;
         img {
           width: 100%;
           height: 100%;
@@ -1106,24 +1143,26 @@ export default {
     }
     .pro_con5 {
       width: 72%;
-      height: 27.5rem;
+      // height: 27.5rem;
       margin: 2rem auto 5rem;
+      overflow: hidden;
       .pro_con5_l,
       .pro_con5_r {
         position: relative;
         background-color: #fff;
         width: 48.6%;
-        height: 27.5rem;
+        height: 100%;
         float: left;
         border-radius: 0.625rem;
       }
       .pro_con5_l {
         .pro_con5_pic {
-          width: 16.68rem;
-          height: 10.8rem;
+          // width: 16.68rem;
+          width: 45%;
           position: absolute;
           left: 40%;
-          top: 14.18rem;
+          // top: 14.18rem;
+          top: 52%;
           img {
             width: 100%;
             height: 100%;
@@ -1146,7 +1185,8 @@ export default {
           }
         }
         p:first-child {
-          margin-top: 2.13rem;
+          // margin-top: 2.13rem;
+          margin-top: 8.2%;
           margin-left: 13.6%;
           width: 10.5rem;
           height: 2.07rem;
@@ -1155,7 +1195,8 @@ export default {
           color: #161616;
         }
         .pro_con5_l_c1 {
-          margin-top: 1.5rem;
+          // margin-top: 1.5rem;
+          margin-top: 2.7%;
           margin-left: 13.5%;
           div {
             float: left;
@@ -1212,10 +1253,12 @@ export default {
         margin-left: 2.7%;
         .pro_con5_pic1 {
           position: absolute;
-          width: 21.5rem;
-          height: 10.56rem;
+          // width: 21.5rem;
+          width: 58%;
+          // height: 10.56rem;
           left: 30%;
-          top: 14.9rem;
+          // top: 14.9rem;
+          top: 62%;
           img {
             width: 100%;
             height: 100%;

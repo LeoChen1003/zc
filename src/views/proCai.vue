@@ -14,7 +14,7 @@
             </div>
           </div>
       </div>
-      <div class="cai_con1">
+      <div class="cai_con1" :style="`height:${height1}px;`">
         <p>“星级大厨”带你体验舌尖上的美味</p>
         <p>智能一拖三炒菜机</p>
         <div class="cai_con1_tip">
@@ -33,7 +33,7 @@
           <div></div>
         </div>
       </div>
-      <div class="cai_con2">
+      <div class="cai_con2" :style="`height:${height2}px;`">
         <div class="cai_con2_center">
           <div class="cai_con2_data1">
             <p>更高效</p>
@@ -71,7 +71,7 @@
           </div>
         </div>
       </div>
-      <div class="cai_con3">
+      <div class="cai_con3" :style="`height:${height3}px;`">
         <div class="cai_con2_title">智能一拖三炒菜机</div>
         <p>
           复刻星厨技艺，
@@ -94,7 +94,7 @@
           <img src="../assets/product/rotary1.png" alt />
         </div>
       </div>
-      <div class="cai_con4">
+      <div class="cai_con4" :style="`height:${height3}px;`">
         <p class="p1">按需组合，提高产能。</p>
         <p
           class="p2"
@@ -119,7 +119,7 @@
           <img src="../assets/product/rotary2.png" alt />
         </div>
       </div>
-      <div class="cai_con5">
+      <div class="cai_con5" :style="`height:${height3}px;`">
         <div class="cai_con5_title">智能调料机</div>
         <p>精准投料，保证出品。</p>
         <p>
@@ -139,7 +139,7 @@
           <img src="../assets/product/seasoningMachine1.png" alt />
         </div>
       </div>
-      <div class="cai_con6">
+      <div class="cai_con6" :style="`height:${height3}px;`">
         <div class="cai_con6_pic">
           <img src="../assets/product/seasoningMachine2.png" alt />
         </div>
@@ -157,7 +157,7 @@
           <p>安心无虑</p>
         </div>
       </div>
-      <div class="cai_con7">
+      <div class="cai_con7" :style="`height:${height3}px;`">
         <div class="cai_con7_title">中控任务管理</div>
         <p>
           智能中控系统，
@@ -185,7 +185,7 @@
           <img src="../assets/product/zhongkong1.png" alt />
         </div>
       </div>
-      <div class="cai_con8">
+      <div class="cai_con8" :style="`height:${height3}px;`">
         <div class="cai_con8_title">智能大滚筒炒菜机</div>
         <p class="cai_con8_p1">
           APP 智能联动，
@@ -207,7 +207,7 @@
           <img src="../assets/product/phone1.png" alt />
         </div>
       </div>
-      <div class="cai_con9">
+      <div class="cai_con9" :style="`height:${height3}px;`">
         <p class="cai_con9_p1">不止是一台厨具，更是一名星级大厨。</p>
         <p
           class="cai_con9_p2"
@@ -228,7 +228,7 @@
           <img src="../assets/product/phone2.png" alt />
         </div>
       </div>
-      <div class="cai_bottom">
+      <div class="cai_bottom" :style="`height:${height4}px;`">
         <div class="cai_bottom_btn" @click="tech">
           <img src="../assets/product/addBlack.png" alt />
           <span>了解参数明细</span>
@@ -243,6 +243,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 import zcHeader from "@/components/zcHeader.vue";
 import zcFooter from "@/components/zcFooter.vue";
 import "../styles/variables.scss";
@@ -259,10 +260,18 @@ export default {
       isWhite: true,
       isBuy: false,
       isActive:false,
-      isShow:false
+      isShow:false,
+      height1:0,
+      height2:0,
+      height3:0,
+      height4:0
     };
   },
   mounted() {
+    this.height1 = document.documentElement.clientWidth/(1680/843);
+    this.height2 = document.documentElement.clientWidth/(1680/292);
+    this.height3 = document.documentElement.clientWidth/(1680/940);
+    this.height4 = document.documentElement.clientWidth/(1680/240);
     this.canScroll()
     var hder = document.getElementsByClassName("whiteBack")[0];
     window.onscroll = () => {
@@ -303,6 +312,19 @@ export default {
     },
     tech() {
       this.$router.push("/product/proCai/proCaiTechSpecs");
+    }
+  },
+  computed: {
+    ...mapState({
+      windowWidth: "windowWidth"
+    })
+  },
+  watch:{
+    windowWidth(){
+      this.height1 = document.documentElement.clientWidth/(1680/843);
+      this.height2 = document.documentElement.clientWidth/(1680/292);
+      this.height3 = document.documentElement.clientWidth/(1680/940);
+      this.height4 = document.documentElement.clientWidth/(1680/240);
     }
   }
 };
@@ -395,18 +417,19 @@ export default {
   }
   .cai_con1 {
     width: 100%;
-    height: 52.68rem;
+    // height: 52.68rem;
     background: url("../assets/product/caiHd.jpg");
     background-size: cover;
     overflow: hidden;
     margin-top: 3rem;
+    position: relative;
     p:first-child {
       width: 13.25rem;
       height: 1.25rem;
       font-size: 0.87rem;
       font-weight: 400;
       color: #333;
-      margin: 5rem auto 0;
+      margin: 2.9% auto 0;
     }
     p:nth-child(2) {
       width: 20rem;
@@ -438,7 +461,7 @@ export default {
       line-height: 2.62rem;
       font-size: 1rem;
       color: #fff;
-      margin: 3.63rem auto 0;
+      margin: 2.1% auto 0;
       cursor: pointer;
     }
     .cai_con1_cir {
@@ -446,7 +469,11 @@ export default {
       height: 2.25rem;
       border-radius: 1rem;
       border: 1px solid rgba(0, 0, 0, 1);
-      margin: 29.31rem auto 0;
+      // margin: 0 auto;
+      left: 50%;
+      margin-left: -0.75rem;
+      bottom: 2rem;
+      position: absolute;
       div {
         width: 0.25rem;
         height: 0.25rem;
@@ -459,14 +486,15 @@ export default {
   }
   .cai_con2 {
     width: 100%;
-    height: 18.25rem;
+    // height: 18.25rem;
     background: url("../assets/product/dataBack.jpg");
     background-size: cover;
     overflow: hidden;
     .cai_con2_center {
       width: 57.6rem;
       margin: 0 auto;
-      margin-top: 4rem;
+      height: 100%;
+      // margin-top: 4rem;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -556,7 +584,8 @@ export default {
       font-size: 0.88rem;
       text-align: center;
       color: #ffffff;
-      margin-top: 10rem;
+      // margin-top: 10rem;
+      margin-top: 5.9%;
       margin-left: 21.3%;
       line-height: 1.5rem;
     }
@@ -567,7 +596,8 @@ export default {
       font-size: 2.5rem;
       font-weight: 600;
       color: rgba(0, 0, 0, 1);
-      margin-top: 1.62rem;
+      // margin-top: 1.62rem;
+      margin-top: 0.9%;
     }
     p:nth-child(3) {
       width: 27.32rem;
@@ -575,7 +605,8 @@ export default {
       font-size: 1rem;
       font-weight: 400;
       color: #333;
-      margin-top: 2.5rem;
+      // margin-top: 2.5rem;
+      margin-top: 1.48%;
       margin-left: 21.3%;
       font-family: PingFangSC-Regular, PingFang SC;
       line-height: 2rem;
@@ -583,7 +614,8 @@ export default {
     .cai_con3_box {
       display: flex;
       margin-left: 21.3%;
-      margin-top: 3rem;
+      // margin-top: 3rem;
+      margin-top: 1.78%;
 
       .cai_con3_item {
         display: flex;
@@ -606,15 +638,21 @@ export default {
     }
     .cai_con3_pic {
       position: absolute;
-      width: 41.875rem;
-      height: 26.875rem;
-      top: 31.87rem;
+      width: 39.8%;
+      // height: 26.875rem;
+      height: 45.7%;
+      // top: 31.87rem;
+      bottom: 0;
       right: 8.4%;
+      img{
+        width: 100%;
+        height: 100%;
+      }
     }
   }
   .cai_con4 {
     width: 100%;
-    height: 58.75rem;
+    // height: 58.75rem;
     background: linear-gradient(
       149deg,
       rgba(231, 238, 241, 1) 0%,
@@ -625,9 +663,11 @@ export default {
       rgba(223, 231, 235, 1) 100%
     );
     overflow: hidden;
+    position: relative;
     .p1 {
       margin-left: 21.3%;
-      margin-top: 10rem;
+      // margin-top: 10rem;
+      margin-top: 5.9%;
       width: 25rem;
       height: 3.5rem;
       font-size: 2.5rem;
@@ -642,14 +682,16 @@ export default {
       color: #333;
       line-height: 2rem;
       margin-left: 21.3%;
-      margin-top: 2rem;
+      // margin-top: 2rem;
+      margin-top: 1.2%;
     }
     .cai_con4_text1 {
       float: left;
       width: 5.88rem;
       height: 5.63rem;
       margin-left: 21.3%;
-      margin-top: 3rem;
+      // margin-top: 3rem;
+      margin-top: 1.78%;
       p:first-child {
         font-size: 2.25rem;
         font-weight: 600;
@@ -669,7 +711,8 @@ export default {
       width: 10.88rem;
       height: 5.63rem;
       margin-left: 7rem;
-      margin-top: 3rem;
+      // margin-top: 3rem;
+      margin-top: 1.78%;
       p:first-child {
         font-size: 2.25rem;
         font-weight: 600;
@@ -689,15 +732,25 @@ export default {
       width: 7.44rem;
     }
     .cai_con4_pic {
-      width: 77.88rem;
-      height: 19.82rem;
-      margin: 0 auto;
-      margin-top: 20.82rem;
+      // width: 77.88rem;
+      width: 74.17%;
+      // height: 19.82rem;
+      height: 33.72%;
+      // margin: 0 auto;
+      // margin-top: 20.82rem;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      img{
+        width: 100%;
+        height: 100%;
+      }
     }
   }
   .cai_con5 {
     width: 100%;
-    height: 58.75rem;
+    // height: 58.75rem;
     background: linear-gradient(
       180deg,
       rgba(39, 40, 41, 1) 0%,
@@ -712,7 +765,8 @@ export default {
       background: rgba(44, 198, 192, 1);
       border-radius: 0.19rem;
       margin-left: 21.3%;
-      margin-top: 9rem;
+      // margin-top: 9rem;
+      margin-top: 5.3%;
       font-size: 0.88rem;
       font-weight: 600;
       color: rgba(255, 255, 255, 1);
@@ -726,7 +780,8 @@ export default {
       font-weight: 600;
       color: rgba(255, 255, 255, 1);
       margin-left: 21.3%;
-      margin-top: 1.5rem;
+      // margin-top: 1.5rem;
+      margin-top: 0.89%;
     }
     p:nth-child(3) {
       width: 37.07rem;
@@ -736,7 +791,8 @@ export default {
       color: rgba(136, 136, 136, 1);
       line-height: 2rem;
       margin-left: 21.3%;
-      margin-top: 2rem;
+      // margin-top: 2rem;
+      margin-top: 1.2%;
     }
     .cai_con5_PL {
       font-size: 2.25rem;
@@ -744,10 +800,12 @@ export default {
       color: rgba(44, 198, 192, 1);
       line-height: 3.13rem;
       margin-left: 21.3%;
-      margin-top: 1.5rem;
+      // margin-top: 1.5rem;
+      margin-top: 0.89%;
     }
     p:nth-child(4) {
-      margin-top: 3rem;
+      // margin-top: 3rem;
+      margin-top: 1.78%;
     }
     .cai_con5_PM {
       height: 2rem;
@@ -756,19 +814,27 @@ export default {
       color: rgba(136, 136, 136, 1);
       line-height: 2rem;
       margin-left: 21.3%;
-      margin-top: 0.5rem;
+      // margin-top: 0.5rem;
+      margin-top: 0.3%;
     }
     .cai_con5_pic {
       position: absolute;
-      width: 48.82rem;
-      height: 29.06rem;
-      top: 31.56rem;
-      right: 3.68rem;
+      // width: 48.82rem;
+      width: 46.49%;
+      // height: 29.06rem;
+      height: 49.4%;
+      bottom: 0;
+      right: 3.5%;
+      // right: 3.68rem;
+      img{
+        width: 100%;
+        height: 100%;
+      }
     }
   }
   .cai_con6 {
     width: 100%;
-    height: 58.75rem;
+    // height: 58.75rem;
     background: linear-gradient(
       180deg,
       rgba(39, 40, 41, 1) 0%,
@@ -779,9 +845,17 @@ export default {
     position: relative;
     .cai_con6_pic {
       position: absolute;
-      width: 47.44rem;
-      height: 29.44rem;
-      right: 10.17rem;
+      // width: 47.44rem;
+      width: 45.18%;
+      // height: 29.44rem;
+      height: 50.11%;
+      // right: 10.17rem;
+      right: 9.68%;
+      top: 0;
+      img{
+        width: 100%;
+        height: 100%;
+      }
     }
     p:nth-child(2) {
       position: absolute;
@@ -792,11 +866,13 @@ export default {
       color: rgba(255, 255, 255, 1);
       line-height: 3.5rem;
       left: 21.3%;
-      top: 25rem;
+      // top: 25rem;
+      top: 42.5%;
     }
     p:nth-child(3) {
       position: absolute;
-      top: 34.5rem;
+      // top: 34.5rem;
+      top: 58.72%;
       left: 21.3%;
       height: 2rem;
       font-size: 1rem;
@@ -808,7 +884,8 @@ export default {
     .cai_con6_txt2 {
       position: absolute;
       left: 21.3%;
-      top: 39.5rem;
+      // top: 39.5rem;
+      top: 67.2%;
       width: 11.25rem;
       height: 5.63rem;
       p:first-child {
@@ -822,7 +899,7 @@ export default {
         font-size: 1rem;
         font-weight: 400;
         color: rgba(136, 136, 136, 1);
-        margin-top: -23rem;
+        // margin-top: -23rem; 
         margin-left: -21.3%;
       }
     }
@@ -832,7 +909,7 @@ export default {
   }
   .cai_con7 {
     width: 100%;
-    height: 58.75rem;
+    // height: 58.75rem;
     background: linear-gradient(
       149deg,
       rgba(231, 238, 241, 1) 0%,
@@ -849,7 +926,8 @@ export default {
       height: 1.5rem;
       background: #2cc6c0;
       border-radius: 0.18rem;
-      margin-top: 11.25rem;
+      // margin-top: 11.25rem;
+      margin-top: 10.71%;
       margin-left: 21.3%;
       font-size: 0.88rem;
       font-weight: 600;
@@ -865,7 +943,8 @@ export default {
       color: rgba(0, 0, 0, 1);
       line-height: 3.5rem;
       margin-left: 21.3%;
-      margin-top: 1.63rem;
+      // margin-top: 1.63rem;
+      margin-top: 1.55%;
     }
     p:nth-child(3) {
       width: 25rem;
@@ -875,14 +954,16 @@ export default {
       color: rgba(51, 51, 51, 1);
       line-height: 2rem;
       margin-left: 21.3%;
-      margin-top: 2.5rem;
+      // margin-top: 2.5rem;
+      margin-top: 2.38%;
     }
     .cai_con7_txt1,
     .cai_con7_txt2,
     .cai_con7_txt3,
     .cai_con7_txt4 {
       float: left;
-      margin-top: 3rem;
+      // margin-top: 3rem;
+      margin-top: 2.8%;
       margin-left: 21.3%;
       width: 9rem;
       height: 5.63rem;
@@ -910,18 +991,24 @@ export default {
     }
     .cai_con7_txt3 {
       margin-left: -22.4rem;
-      margin-top: 9rem;
+      // margin-top: 9rem;
+      margin-top: 8.57%;
     }
     .cai_con7_txt4 {
       margin-left: -9.2rem;
-      margin-top: 9rem;
+      // margin-top: 9rem;
+      margin-top: 8.57%;
     }
     .cai_con7_pic {
       position: absolute;
-      width: 38%;
-      height: 33.13rem;
-      top: 25.6rem;
-      right: 9.4%;
+      width: 38.8%;
+      // height: 33.13rem;
+      height: 56.39%;
+      // top: 25.6rem;
+      bottom: 0;
+      right: 9%;
+      // margin-left: 6.5%;
+      // left: 54.7%;
       img {
         width: 100%;
         height: 100%;
@@ -930,7 +1017,7 @@ export default {
   }
   .cai_con8 {
     width: 100%;
-    height: 58.75rem;
+    // height: 58.75rem;
     position: relative;
     background: linear-gradient(
       180deg,
@@ -941,7 +1028,8 @@ export default {
     overflow: hidden;
     .cai_con8_title {
       margin-left: 21.3%;
-      margin-top: 7.5rem;
+      // margin-top: 7.5rem;
+      margin-top: 6.14%;
       width: 8rem;
       height: 1.5rem;
       background: rgba(44, 198, 192, 1);
@@ -959,7 +1047,8 @@ export default {
       font-weight: 600;
       color: rgba(255, 255, 255, 1);
       margin-left: 21.3%;
-      margin-top: 1.63rem;
+      // margin-top: 1.63rem;
+      margin-top: 1.55%;
     }
     .cai_con8_p2 {
       width: 33.75rem;
@@ -968,7 +1057,8 @@ export default {
       font-weight: 400;
       color: rgba(136, 136, 136, 1);
       margin-left: 21.3%;
-      margin-top: 2rem;
+      // margin-top: 2rem;
+      margin-top: 1%;
       line-height: 2rem;
     }
     .cai_con8_d1,
@@ -977,7 +1067,8 @@ export default {
       height: 5.64rem;
       float: left;
       margin-left: 21.3%;
-      margin-top: 2.75rem;
+      // margin-top: 2.75rem;
+      margin-top: 1.6%;
       p:first-child {
         width: 9.07rem;
         height: 3.13rem;
@@ -1004,24 +1095,36 @@ export default {
       }
     }
     .cai_con8_svg {
-      width: 75.13rem;
-      height: 23.75rem;
+      // width: 75.13rem;
+      width: 71.5%;
+      // height: 23.75rem;
+      height: 40.4%;
       // margin-top: 1.13rem;
       position: absolute;
       bottom: 0;
-      left: 6.8rem;
+      // left: 6.8rem;
+      left: 50%;
+      transform: translateX(-50%);
     }
     .cai_con8_pic {
-      width: 12.38rem;
-      height: 26.38rem;
+      // width: 12.38rem;
+      width: 22.4%;
+      height: 54%;
+      // height: 26.38rem;
       position: absolute;
-      top: 28.56rem;
-      right: 24.93rem;
+      // top: 28.56rem;
+      // right: 24.93rem;
+      bottom: 0;
+      right: 18.57%;
+      img{
+        width: 100%;
+        height: 100%;
+      }
     }
   }
   .cai_con9 {
     width: 100%;
-    height: 58.75rem;
+    // height: 58.75rem;
     background: linear-gradient(
       180deg,
       rgba(7, 47, 51, 1) 0%,
@@ -1037,12 +1140,14 @@ export default {
       font-weight: 600;
       color: rgba(255, 255, 255, 1);
       line-height: 3.5rem;
-      margin-top: 7.5rem;
+      // margin-top: 7.5rem;
+      margin-top: 7.1%;
       margin-left: 21.3%;
     }
     .cai_con9_p2 {
       margin-left: 21.3%;
-      margin-top: 2.5rem;
+      // margin-top: 2.5rem;
+      margin-top: 2.3%;
       width: 52.5rem;
       height: 6rem;
       font-size: 1rem;
@@ -1057,7 +1162,8 @@ export default {
       height: 5.23rem;
       float: left;
       margin-left: 21.3%;
-      margin-top: 3rem;
+      // margin-top: 3rem;
+      margin-top: 2.7%;
       p:first-child {
         width: 9rem;
         height: 3.13rem;
@@ -1087,17 +1193,24 @@ export default {
       margin-left: 8.56rem;
     }
     .cai_con9_pic {
-      width: 65.06rem;
-      height: 24.88rem;
-      margin: 14.4rem auto 0;
+      // width: 65.06rem;
+      width: 61.9%;
+      height: 42.34%;
+      // height: 24.88rem;
+      margin: 13.7% auto 0;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
       img {
-        margin-bottom: 0rem;
+        width: 100%;
+        height: 100%;
       }
     }
   }
   .cai_bottom {
     width: 100%;
-    height: 15rem;
+    // height: 15rem;
     background: url("../assets/product/bottom.jpg");
     background-size: cover;
     overflow: hidden;
@@ -1107,8 +1220,12 @@ export default {
       background: rgba(255, 255, 255, 0);
       border-radius: 1rem;
       border: 1px solid rgba(0, 0, 0, 1);
-      margin: 6.56rem auto 0;
+      // margin: 6.56rem auto 0;
       position: relative;
+      left: 50%;
+      top: 50%;
+      margin-left: -4.69rem;
+      margin-top: -1rem;
       cursor: pointer;
       img {
         position: absolute;

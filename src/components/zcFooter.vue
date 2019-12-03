@@ -202,7 +202,6 @@ export default {
     },
     weibo(){
       window.open("https://weibo.com/u/7274001357?profile_ftype=1&is_all=1#_0");
-      // window.location.href=
     }
   }
 }

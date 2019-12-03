@@ -98,7 +98,7 @@ export default {
             this.canScroll()
         }
     },
-     computed: {
+    computed: {
         ...mapState({
             windowWidth: "windowWidth"
         })

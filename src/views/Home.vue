@@ -1,12 +1,12 @@
 <template>
   <div class="home pc_index">
     <zcHeader :isWhite="isWhite" :tab0="tab"></zcHeader>
-    <div class="home_v">
-      <video loop autoplay="autoplay" src="http://cdn.withpush.cn/youtezhichu/result.bg.mp4">
+    <div class="home_v" ref="homeV" :style="`height:${height1}px;`">
+      <video loop autoplay="autoplay" src="../assets/video/video.mp4">
       </video>
     </div>
-    <div class="home_mask"></div>
-    <div class="home_video">
+    <div class="home_mask" ref="homeMask" :style="`height:${height1}px;`"></div>
+    <div class="home_video" ref="homeVideo" :style="`height:${height1}px;`">
       <div class="home_video_title">优特智厨 人工智能时代的餐饮革命</div>
       <div class="home_video_p">以智能解构中餐，用科技为餐饮业赋能</div>
       <div class="home_video_c">
@@ -29,7 +29,7 @@
         <svg-icon icon-class="small_white" class-name="svg"></svg-icon>
       </div>
     </div>
-    <div class="home_data">
+    <div class="home_data" :style="`height:${height2}px;`">
       <div class="home_data_items">
         <div class="home_data_item">
           <div>更高效</div>
@@ -57,7 +57,7 @@
         </div>
       </div>
     </div>
-    <div class="home_pro_one" @click="cai">
+    <div class="home_pro_one" @click="cai" :style="`height:${height3}px;`">
       <div class="home_pro_one_con">
         <div class="home_title_top">“星级大厨”带你体验舌尖上的美味</div>
         <div class="home_pro_one_title" >智能一拖三炒菜机</div>
@@ -96,7 +96,7 @@
         </div>
       </div>
     </div>
-    <div class="home_pro_two" @click="AIO">
+    <div class="home_pro_two" @click="AIO" :style="`height:${height3}px;`">
       <div class="home_pro_two_con">
           <div class="home_pro_two_top">超级烹饪专家</div>
         <div class="home_pro_two_title">智能精炒一体机</div>
@@ -219,6 +219,7 @@
 </template>
 
 <script>
+  import { mapState } from "vuex";
   // @ is an alias to /src
   import zcHeader from '@/components/zcHeader.vue'
   import zcFooter from '@/components/zcFooter.vue'
@@ -237,6 +238,9 @@
         isWhite: false,
         tab:0,
         isHover:false,
+        height1: 0,
+        height2: 0,
+        height3: 0,
         swiperOption: {
           slidesPerView: 'auto',
           centeredSlides: true,
@@ -261,6 +265,9 @@
       }
     },
     mounted(){
+      this.height1 = document.documentElement.clientWidth/(1680/760);
+      this.height2 = document.documentElement.clientWidth/(1680/292);
+      this.height3 = document.documentElement.clientWidth/(1680/890);
       var hder = document.getElementsByClassName('blackBack')[0];
       hder.className = 'blackBack';
       window.onscroll = function(){
@@ -337,6 +344,19 @@
           }
         })
       }
+    },
+    computed: {
+        ...mapState({
+            windowWidth: "windowWidth"
+        })
+    },
+    watch:{
+      windowWidth(){
+        this.height1 = document.documentElement.clientWidth/(1680/760);
+        this.height2 = document.documentElement.clientWidth/(1680/292);
+        this.height3 = document.documentElement.clientWidth/(1680/890);
+        window.console.log(this.height2)
+      }
     }
   }
 </script>
@@ -353,7 +373,7 @@
     position: relative;
     .home_v{
       width: 100%;
-      height: 47.5rem;
+      // height: 47.5rem;
       video{
         width: 100%;
         height: 100%;
@@ -363,7 +383,7 @@
 
     .home_mask{
       width: 100%;
-      height: 47.5rem;
+      // height: 47.5rem;
       background-color: rgba(0,0,0,0.6);
       position: absolute;
       top: 3rem;
@@ -374,7 +394,7 @@
       position: absolute;
       width: 100%;
       top: 3rem;
-      height: 47.5rem;
+      // height: 47.5rem;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -383,18 +403,21 @@
         font-size: 3.13rem;
         font-weight: 600;
         color: #fff;
-        margin-top: 12.5rem;
+        // margin-top: 12.5rem;
+        margin-top: 12%;
       }
 
       .home_video_p {
         font-size: 1.13rem;
-        margin-top: 3rem;
+        // margin-top: 3rem;
+        margin-top: 2.8%;
         color: #ffffff;
       }
 
       .home_video_c {
         color: #fff;
-        margin-top: 7.13rem;
+        // margin-top: 7.13rem;
+        margin-top: 6.7%;
         display: flex;
         align-items: center;
 
@@ -423,34 +446,21 @@
 
       .home_video_bottom {
         position: absolute;
-        display: flex;
-        justify-content: center;
         width: 1.5rem;
         height: 2.25rem;
-        // margin-top: 8.94rem;
         bottom: 40px;
-        background: rgba(216, 216, 216, 0);
-        border-radius: 1rem;
-        border: 0.06rem solid rgba(255, 255, 255, 1);
         .svg{
-          width: 0.25rem;
-          height:0.25rem;
-          margin-top: 0.63rem;
+          width: 1.5rem;
+          height: 2.25rem;
+          // margin-top: 0.63rem;
         }
-        // .home_video_bottom_c {
-        //   width: 0.25rem;
-        //   height: 0.25rem;
-        //   background: rgba(255, 255, 255, 1);
-        //   margin-top: 0.63rem;
-        //   border-radius: 50%;
-        // }
       }
     }
 
     .home_data {
       box-sizing: border-box;
       width: 100%;
-      height: 18.25rem;
+      // height: 18.25rem;
       background: url('../assets/home/data.jpg');
       background-size: cover;
       .home_data_items{
@@ -715,9 +725,10 @@
 
     .home_pro_one {
       width: 100%;
-      height: 55.63rem;
+      // height: 55.63rem;
       background: url('../assets/home/drumFryingMachine.jpg');
       background-size: cover;
+      background-position: bottom;
       cursor: pointer;
       overflow: hidden;
 
@@ -727,7 +738,8 @@
         height: 100%;
         overflow: hidden;
         margin-left: 21%;
-        margin-top: 7.5rem;
+        // margin-top: 7.5rem;
+        margin-top: 7.1%;
       }
       .home_pro_one_title {
         font-size: 2.5rem;
@@ -783,8 +795,8 @@
     .home_pro_two {
       cursor: pointer;
 
-      height: 55.63rem;
-      background: #000;
+      // height: 55.63rem;
+      // background: #000;
       background-image: url('../assets/home/AIO.png');
       background-size: cover;
       overflow: hidden;
@@ -792,7 +804,8 @@
       // padding: 13.88rem 0 0 56%;
       .home_pro_two_con{
         width: 28.19rem;
-        margin-top: 13.88rem;
+        // margin-top: 13.88rem;
+        margin-top: 13.2%;
         overflow: hidden;
         margin-left: 55.9%;
       }
