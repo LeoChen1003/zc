@@ -125,10 +125,10 @@ ingress:  # 是否使用nginx暴露域名或端口
   path: /
   hosts:
     - wwwdev.utcook.com
-  tls: []
-  #  - secretName: chart-example-tls
-  #    hosts:
-  #      - chart-example.local
+  tls:
+    - secretName: all-utcook
+      hosts:
+        - wwwdev.utcook.com
 
 
 deployment:
