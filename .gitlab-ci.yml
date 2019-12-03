@@ -16,7 +16,7 @@ variables:
   REVIEW_DISABLED: "true"  # 设置为true,不部署review环境
   ZAPROXY_DISABLED: "true"  # 设置为true,不进行zaproxy扫描
   TEST_DISABLED: "false"  # 设置为true,不进行test任务
-  # CODE_QUALITY_DISABLED: "true"  # 取消注释，并设置为true，不进行代码质量扫描
+  CODE_QUALITY_DISABLED: "true"  # 取消注释，并设置为true，不进行代码质量扫描
 
   # cache dir
   CACHE_DIR: "node_modules"
