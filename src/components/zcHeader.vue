@@ -456,7 +456,8 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .header .header_center{
-  width: 53.49rem;
+  // width: 53.49rem;
+  width: 61rem;
   position: relative;
   margin: 0 auto;
   .header_btn{
@@ -588,7 +589,8 @@ export default {
         height: 9.5rem;
         position: absolute;
         background-color: #ececec;
-        left: 26rem;
+        // left: 26rem;
+        margin-left: 12.5rem;
         top: 3.68rem;
         float: left;
         .showPro_line_small,.showPro_line_small1 {
@@ -608,7 +610,8 @@ export default {
         height: 29.56rem;
         position: absolute;
         background-color: #ececec;
-        left: 26rem;
+        // left: 26rem;
+        margin-left: 12.5rem;        
         top: 3.68rem;
         // .showPro_line_small,
         .showPro_line_small1 {

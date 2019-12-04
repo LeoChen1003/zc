@@ -345,7 +345,9 @@ export default {
         width: 100%;
         height: 15rem;
         background:url("../assets/home/aboutUs.jpg");
-        background-size: 100% 100%;
+        // background-size: 100% 100%;
+        background-size: cover;
+        background-position-x: center; 
         p{
             width:8rem;
             height:2.81rem;

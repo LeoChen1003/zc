@@ -751,10 +751,11 @@
 
       // padding: 7.5rem 14%;
       .home_pro_one_con{
-        width: 58rem;
+        width: 61rem;
         height: 100%;
         overflow: hidden;
-        margin-left: 21%;
+        margin: 0 auto;
+        // margin-left: 21%;
         // margin-top: 7.5rem;
         margin-top: 7.1%;
       }

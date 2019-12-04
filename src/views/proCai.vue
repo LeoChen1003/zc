@@ -374,7 +374,7 @@ export default {
     top: 3rem;
     background-color: #fff;
     div:first-child{
-      width: 53.49rem;
+      width: 61rem;
       margin: 0 auto;
       height: 100%;
       position: relative;
@@ -591,7 +591,7 @@ export default {
     position: relative;
     overflow: hidden;
     .cai_con3_center{
-      width: 52.49rem;
+      width: 61rem;
       margin: 0 auto;
     }
     .cai_con2_title {
@@ -685,7 +685,7 @@ export default {
     overflow: hidden;
     position: relative;
     .cai_con4_center{
-      width: 52.49rem;
+      width: 61rem;
       margin: 0 auto;
     }
     .p1 {
@@ -784,7 +784,7 @@ export default {
     overflow: hidden;
     position: relative;
     .cai_con5_center{
-      width: 52.49rem;
+      width: 61rem;
       margin: 0 auto;
     }
     .cai_con5_title {
@@ -872,7 +872,7 @@ export default {
     overflow: hidden;
     position: relative;
     .cai_con6_center{
-      width: 52.49rem;
+      width: 61rem;
       margin: 0 auto;
       position: relative;
       .p3 {
@@ -957,7 +957,7 @@ export default {
     overflow: hidden;
     position: relative;
     .cai_con7_center{
-      width: 52.49rem;
+      width: 61rem;
       margin: 0 auto;
     }
     .cai_con7_title {
@@ -1067,7 +1067,7 @@ export default {
     box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.02);
     overflow: hidden;
     .cai_con8_center{
-      width: 52.49rem;
+      width: 61rem;
       margin: 0 auto;
     }
     .cai_con8_title {
@@ -1188,7 +1188,7 @@ export default {
     overflow: hidden;
     position: relative;
     .cai_con9_center{
-      width: 52.49rem;
+      width: 61rem;
       margin: 0 auto;
     }
     .cai_con9_p1 {

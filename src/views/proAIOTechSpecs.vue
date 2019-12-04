@@ -145,7 +145,7 @@ export default {
         border-top: 1px solid #000;
         background-color: #000;
         div:first-child{
-            width: 53.49rem;
+            width: 61rem;
             margin: 0 auto;
             height: 100%;
             position: relative;
@@ -206,7 +206,7 @@ export default {
         overflow: hidden;
         position: relative;
         .aio_specs_con_center{
-            width: 53.49rem;
+            width: 61rem;
             margin: 0 auto;
         }
         p:first-child{

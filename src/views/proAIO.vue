@@ -252,7 +252,7 @@ export default {
         top: 3rem;
         z-index: 3;
         div:first-child{
-            width: 53.49rem;
+            width: 61rem;
             margin: 0 auto;
             height: 100%;
             position: relative;
@@ -432,7 +432,7 @@ export default {
         overflow: hidden;
         position: relative;
         .aio_con3_center{
-            width: 52.49rem;
+            width: 61rem;
             margin:  0 auto;
         }
         .aio_con3_title{
@@ -574,7 +574,7 @@ export default {
         background:linear-gradient(180deg,rgba(5,7,8,1) 0%,rgba(30,31,33,1) 100%);
         box-shadow:0px 10px 20px 0px rgba(0,0,0,0.02);
         .aio_con5_center{
-            width: 52.49rem;
+            width: 61rem;
             margin:  0 auto;
         }
         .p1{
@@ -639,7 +639,7 @@ export default {
         background:linear-gradient(180deg,rgba(5,7,8,1) 0%,rgba(30,31,33,1) 100%);
         box-shadow:0px 10px 20px 0px rgba(0,0,0,0.02);
         .aio_con6_center{
-            width: 52.49rem;
+            width: 61rem;
             margin:  0 auto;
         }
         .p1{
@@ -697,7 +697,7 @@ export default {
         background:linear-gradient(180deg,rgba(7,47,51,1) 0%,rgba(30,31,32,1) 100%);
         box-shadow:0px 10px 20px 0px rgba(0,0,0,0.02);
         .aio_con7_center{
-            width: 52.49rem;
+            width: 61rem;
             margin:  0 auto;
         }
         .aio_con7_title{
@@ -798,7 +798,7 @@ export default {
         background:linear-gradient(180deg,rgba(7,47,51,1) 0%,rgba(30,31,32,1) 100%);
         box-shadow:0px 10px 20px 0px rgba(0,0,0,0.02);
         .aio_con8_center{
-            width: 52.49rem;
+            width: 61rem;
             margin:  0 auto;
         }
         .p1{

@@ -5,7 +5,7 @@
         <div class="new_content">
             <div class="new_con_del" v-for="(messNew,index) of messNews" :key="index" @click="detail(messNew)">
                 <div class="new_con_del_l">
-                    <div class="top" v-if="messNew.top==1">置顶</div>
+                    <!-- <div class="top" v-if="messNew.top==1">置顶</div> -->
                     <img :src="messNew.image" alt="">
                 </div>
                 <div class="new_con_del_r">
@@ -118,17 +118,18 @@ export default {
         background-color: #F8F9FB;
         .new_content{
             background-color: #F8F9FB;
-            width: 58%;
-            margin: 0 auto;
             padding-top: 6rem;
             .line{
-                width: 100%;
+                width: 61rem;
+                margin: 0 auto;
                 height: 0.06rem;
                 background-color: rgb(230, 227, 227);
             }
             .new_con_del{
-                width: 100%;
-                margin-right: 22.75rem;
+                // width: 100%;
+                width: 61rem;
+                margin: 0 auto;
+                // margin-right: 22.75rem;
                 height: 10rem;
                 margin-bottom: 3.5rem;
             }
@@ -198,8 +199,10 @@ export default {
                 }
             }
             .new_footer{
+                width: 61rem;
+                margin:  0 auto;
                 margin-top: 6.12rem;
-                height: 5rem;
+                height:8.25rem;
                 .new_footer_l,
                 .new_footer_r,
                 .new_footer_l1,

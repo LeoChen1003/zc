@@ -244,7 +244,7 @@ export default {
         position: fixed;
         z-index:2;
         div:first-child{
-            width: 53.49rem;
+            width: 61rem;
             margin: 0 auto;
             height: 100%;
             position: relative;
@@ -306,7 +306,7 @@ export default {
         overflow: hidden;
         position: relative;
         .specs_con1_center{
-            width: 53.49rem;
+            width: 61rem;
             margin: 0 auto;
         }
         .activeColor {
