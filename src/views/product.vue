@@ -11,7 +11,7 @@
       </div>
       <div class="pro">
         <div class="pro_title1 d_jump" ref="pro1">旗舰智厨产品</div>
-        <div class="pro_con1" :style="`height:${height1}px;`">
+        <div class="pro_con1">
           <div class="pro_con1_l">
             <div class="pro_con1_l_tag" @click="proCai">旗舰</div>
             <span class="p1" @click="proCai">“星级大厨”带你体验舌尖上的美味</span>
@@ -32,7 +32,7 @@
             <!-- <img src="../assets/product/ODT.jpg" alt /> -->
           </div>
         </div>
-        <div class="pro_con2" :style="`height:${height1}px;`">
+        <div class="pro_con2">
           <div class="pro_con2_l">
             <div class="pro_con2_l_tag">旗舰</div>
             <span class="p1" @click="proAIO">超级烹饪专家</span>
@@ -54,7 +54,7 @@
           </div>
         </div>
         <div class="pro_title2 d_jump" ref="pro2">其他智厨产品</div>
-        <div class="pro_con3 d_jump" :style="`height:${height2}px;`">
+        <div class="pro_con3 d_jump">
           <div class="pro_con3_l">
             <p>智能多头平面炉</p>
             <div class="pro_con3_l_c1">
@@ -110,12 +110,12 @@
               <br />屏幕尺寸: 5英寸彩色液晶屏
               <br />辅助配置: 蓝牙测温锅，400/600柜座
             </div>
-            <div class="pro_con3_pic1">
+            <div class="pro_con3_pic">
               <img src="../assets/product/pro2.png" alt />
             </div>
           </div>
         </div>
-        <div class="pro_con3 d_jump" :style="`height:${height2}px;`">
+        <div class="pro_con3 d_jump">
           <div class="pro_con3_l">
             <p>智能单头单尾凹面炒炉</p>
             <div class="pro_con3_l_c1">
@@ -172,12 +172,12 @@
               <br />輔助配置: 2+2+4盘
               <br />
             </div>
-            <div class="pro_con3_pic1">
+            <div class="pro_con3_pic">
               <img src="../assets/product/pro4.png" alt />
             </div>
           </div>
         </div>
-        <div class="pro_con3 d_jump" :style="`height:${height2}px;`">
+        <div class="pro_con3 d_jump">
           <div class="pro_con3_l">
             <p>智能蒸饭柜</p>
             <div class="pro_con3_l_c1">
@@ -204,7 +204,7 @@
               <br />防水等级: IPX4
               <br />辅助配置: 蒸盘*12
             </div>
-            <div class="pro_con3_pic1">
+            <div class="pro_con3_pic">
               <img src="../assets/product/pro5.png" alt />
             </div>
           </div>
@@ -239,7 +239,7 @@
             </div>
           </div>
         </div>
-        <div class="pro_con3 d_jump" :style="`height:${height2}px;`">
+        <div class="pro_con3 d_jump">
           <div class="pro_con3_l">
             <p>智能烤箱</p>
             <div class="pro_con3_l_c1">
@@ -265,7 +265,7 @@
               <br />屏幕尺寸: 10英寸彩 色液晶屏
               <br />辅助配置: 单层、两层、三层可组合
             </div>
-            <div class="pro_con3_pic1">
+            <div class="pro_con3_pic">
               <img src="../assets/product/pro7.png" alt />
             </div>
           </div>
@@ -300,7 +300,7 @@
             </div>
           </div>
         </div>
-        <div class="pro_con3 d_jump" :style="`height:${height2}px;`">
+        <div class="pro_con3 d_jump">
           <div class="pro_con3_l">
             <p>智能煮面机</p>
             <div class="pro_con3_l_c1">
@@ -327,7 +327,7 @@
               <br />防水等级: IPX4
               <br />辅助配置: 煮面篮*6
             </div>
-            <div class="pro_con3_pic1">
+            <div class="pro_con3_pic">
               <img src="../assets/product/pro9.png" alt />
             </div>
           </div>
@@ -363,7 +363,7 @@
           </div>
         </div>
         <div class="pro_title3 d_jump" ref="pro3">其他智能产品</div>
-        <div class="pro_con4 d_jump" :style="`height:${height2}px;`">
+        <div class="pro_con4 d_jump">
           <div class="pro_con4_l">
             <p>优特智能打菜机</p>
             <div class="pro_con4_l_c1">
@@ -398,7 +398,7 @@
             <img src="../assets/home/addBlack2.png" alt />
           </div>
         </div>
-        <div class="pro_con5 d_jump" :style="`height:${height2}px;`">
+        <div class="pro_con5 d_jump">
           <div class="pro_con5_l">
             <p>优特配送箱</p>
             <div class="pro_con5_l_c1">
@@ -486,9 +486,7 @@ export default {
       isActive2: false,
       isActive3: false,
       isWhite: true,
-      isBuy: false,
-      height1: 0,
-      height2: 0
+      isBuy: false
     };
   },
   methods: {
@@ -561,8 +559,6 @@ export default {
     })
   },
   mounted() {
-    this.height1 = 480;
-    this.height2 = document.documentElement.clientWidth/(1680/440);
     this.canScroll();
     let type = this.$route.query.type;
     if (type == "other3") {
@@ -624,10 +620,10 @@ export default {
         this.jump(7);
       }
     },
-    windowWidth(){
-      this.height1 = document.documentElement.clientWidth/(1680/480);
-      this.height2 = document.documentElement.clientWidth/(1680/440);
-    }
+    // windowWidth(){
+    //   this.height1 = document.documentElement.clientWidth/(1680/480);
+    //   this.height2 = document.documentElement.clientWidth/(1680/440);
+    // }
   }
 };
 </script>
@@ -708,8 +704,8 @@ export default {
       margin: 5rem auto 0;
     }
     .pro_con1 {
-      width: 72%;
-      // height: 30rem;
+      width: 75rem;
+      height: 30rem;
       background: #fff;
       box-shadow: 0px 10px 20px 0px rgba(5, 21, 44, 0.02);
       border-radius: 0.625rem;
@@ -741,7 +737,7 @@ export default {
           cursor: pointer;
         }
         .p1 {
-          top: 20%;
+          top: 6rem;
           width: 13.25rem;
           height: 1.25rem;
           font-size: 0.87rem;
@@ -749,7 +745,7 @@ export default {
           color: #333333;
         }
         .p2 {
-          top: 25.8%;
+          top: 7.75rem;
           width: 16rem;
           height: 2.81rem;
           font-size: 2rem;
@@ -758,8 +754,8 @@ export default {
           color: rgba(0, 0, 0, 1);
         }
         .p3 {
-          // top: 11.62rem;
-          top: 38.8%;
+          top: 11.44rem;
+          // top: 38.8%;
           width: 72%;
           height: 3.38rem;
           font-size: 0.87rem;
@@ -769,8 +765,8 @@ export default {
         }
         .pro_con1_l_btn {
           position: absolute;
-          // top: 23.37rem;
-          top: 78%;
+          top: 23.37rem;
+          // top: 78%;
           left: 12%;
           // width: 40%;
           width: 15.75rem;
@@ -820,6 +816,7 @@ export default {
         cursor: pointer;
         width: 47%;
         background: url("../assets/product/ODT.jpg");
+        background-size: cover;
         // img {
         //   width: 100%;
         //   height: 100%;
@@ -827,8 +824,8 @@ export default {
       }
     }
     .pro_con2 {
-      width: 72%;
-      // height: 30rem;
+      width: 75rem;
+      height: 30rem;
       background: linear-gradient(
         180deg,
         rgba(36, 36, 38, 1) 0%,
@@ -865,23 +862,23 @@ export default {
           cursor: pointer;
         }
         .p1 {
-          // top: 6rem;
-          top: 20%;
+          top: 6rem;
+          // top: 20%;
           font-size: 0.87rem;
           font-weight: 400;
           color: #888888;
         }
         .p2 {
-          // top: 7.75rem;
-          top: 25.8%;
+          top: 7.75rem;
+          // top: 25.8%;
           font-size: 2rem;
           font-weight: 600;
           color: #fff;
           cursor: pointer;
         }
         .p3 {
-          // top: 11.62rem;
-          top: 38.8%;
+          top: 11.62rem;
+          // top: 38.8%;
           width: 72%;
           font-size: 0.87rem;
           font-weight: 400;
@@ -890,8 +887,8 @@ export default {
         }
         .pro_con2_l_btn {
           position: absolute;
-          // top: 23.37rem;
-          top: 78%;
+          top: 23.37rem;
+          // top: 78%;
           left: 12%;
           // width: 40%;
           width: 15.75rem;
@@ -946,9 +943,10 @@ export default {
       }
     }
     .pro_con3 {
-      width: 72%;
-      // height: 27.5rem;
+      width: 75rem;
+      height: 27.5rem;
       margin: 2rem auto 0;
+      // position: relative;
       .pro_con3_l,
       .pro_con3_r {
         float: left;
@@ -956,6 +954,7 @@ export default {
         width: 48.6%;
         background: #fff;
         border-radius: 0.625rem;
+        position: relative;
       }
       .pro_con3_l,
       .pro_con3_r {
@@ -963,9 +962,9 @@ export default {
           font-size: 1.5rem;
           font-weight: 600;
           color: rgba(22, 22, 22, 1);
-          // margin-top: 3.5rem;
-          margin-top: 7.9%;
-          margin-left: 12.3%;
+          margin-top: 4rem;
+          // margin-top: 7.9%;
+          margin-left: 4.5rem;
         }
         .pro_con3_l_c1,
         .pro_con3_l_c2,
@@ -993,17 +992,17 @@ export default {
           }
         }
         .pro_con3_l_c1{
-          margin-top: 2.8%;
+          margin-top: 1.06rem;
         }
         .pro_con3_l_c2,
         .pro_con3_l_c3 {
-          // margin-top: 0.5rem;
-          margin-top: 1.7%;
+          margin-top: 0.5rem;
+          // margin-top: 1.7%;
         }
         .pro_con3_l_det {
           margin-left: 12.3%;
-          // margin-top: 1rem;
-          margin-top: 2%;
+          margin-top: 1.13rem;
+          // margin-top: 2%;
           color: #808080;
           width: 20.07rem;
           height: 9.38rem;
@@ -1011,30 +1010,32 @@ export default {
           font-weight: 300;
           line-height: 1.56rem;
         }
-        .pro_con3_pic,
-        .pro_con3_pic1 {
-          float: left;
+        .pro_con3_pic{
+          // float: left;
           width: 50%;
           height: 100%;
-          margin-top: -67%;
-          margin-left: 50%;
+          position: absolute;
+          top: 0;
+          right: 0;
+          // margin-top: -67%;
+          // margin-left: 50%;
           img {
-            width: 90%;
-            height: 90%;
-            margin-left: 10%;
+            width: 100%;
+            height: 100%;
+            // margin-left: 10%;
           }
         }
-        .pro_con3_pic1 {
-          margin-left: 53%;
-        }
+        // .pro_con3_pic1 {
+        //   margin-left: 53%;
+        // }
       }
       .pro_con3_r {
         margin-left: 2.6%;
       }
     }
     .pro_con4 {
-      width: 72%;
-      // height: 27.5rem;
+      width: 74.94rem;
+      height: 27.5rem;
       background: rgba(255, 255, 255, 1);
       border-radius: 0.625rem;
       margin: 2rem auto 0;
@@ -1042,15 +1043,15 @@ export default {
       .pro_con4_l {
         float: left;
         height: 100%;
-        margin-left: 10%;
+        margin-left: 9.13rem;
         p:first-child {
           width: 10.5rem;
           height: 2.06rem;
           font-size: 1.5rem;
           font-weight: 600;
           color: #161616;
-          // margin-top: 8.5rem;
-          margin-top: 25%;
+          margin-top: 8.5rem;
+          // margin-top: 25%;
         }
         .pro_con4_l_c1 {
           margin-top: 1.5rem;
@@ -1115,13 +1116,14 @@ export default {
         }
       }
       .pro_con4_r {
-        width: 46%;
-        // height: 19.6rem;
+        width: 31.06rem;
+        height: 17.75rem;
         float: left;
         position: absolute;
-        // top: 3.94rem;
-        top: 14.3%;
-        left: 47%;
+        top: 6.44rem;
+        right: 9rem;
+        // top: 14.3%;
+        // left: 47%;
         img {
           width: 100%;
           height: 100%;
@@ -1142,8 +1144,8 @@ export default {
       }
     }
     .pro_con5 {
-      width: 72%;
-      // height: 27.5rem;
+      width: 75rem;
+      height: 27.5rem;
       margin: 2rem auto 5rem;
       overflow: hidden;
       .pro_con5_l,
@@ -1157,12 +1159,14 @@ export default {
       }
       .pro_con5_l {
         .pro_con5_pic {
-          // width: 16.68rem;
-          width: 45%;
+          width: 14.94rem;
+          // width: 45%;
+          height: 9.69rem;
           position: absolute;
-          left: 40%;
+          left: 11.06rem;
           // top: 14.18rem;
-          top: 52%;
+          // top: 52%;
+          bottom: 2.44rem;
           img {
             width: 100%;
             height: 100%;
@@ -1185,9 +1189,9 @@ export default {
           }
         }
         p:first-child {
-          // margin-top: 2.13rem;
-          margin-top: 8.2%;
-          margin-left: 13.6%;
+          margin-top: 2.13rem;
+          // margin-top: 8.2%;
+          margin-left: 5rem;
           width: 10.5rem;
           height: 2.07rem;
           font-size: 1.5rem;
@@ -1195,9 +1199,9 @@ export default {
           color: #161616;
         }
         .pro_con5_l_c1 {
-          // margin-top: 1.5rem;
-          margin-top: 2.7%;
-          margin-left: 13.5%;
+          margin-top: 1.5rem;
+          // margin-top: 2.7%;
+          margin-left: 5rem;
           div {
             float: left;
             width: 1.25rem;
@@ -1253,12 +1257,12 @@ export default {
         margin-left: 2.7%;
         .pro_con5_pic1 {
           position: absolute;
-          // width: 21.5rem;
-          width: 58%;
-          // height: 10.56rem;
-          left: 30%;
-          // top: 14.9rem;
-          top: 62%;
+          width: 21.5rem;
+          // width: 58%;
+          height: 10.56rem;
+          left: 11rem;
+          top: 16rem;
+          // top: 62%;
           img {
             width: 100%;
             height: 100%;
