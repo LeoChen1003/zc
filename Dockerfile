@@ -9,7 +9,7 @@ WORKDIR /app
 
 # 运行命令
 #RUN npm install
-RUN yarn config set registry https://nexus.utcook.com/repository/npm-repo/ \
+RUN yarn config set registry https://registry.npm.taobao.org \
   && yarn config set sass-binary-site http://npm.taobao.org/mirrors/node-sass \
   && yarn install
 RUN yarn build:prod
