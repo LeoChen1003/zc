@@ -244,9 +244,19 @@ export default {
   },
   methods: {
     handleScroll() {
-      if (document.documentElement.scrollTop <= 1464) {
+      if (document.documentElement.scrollTop <= 815) {
         this.$emit('setisBlack')
-      } else if (document.documentElement.scrollTop > 1464) {
+      } else if (
+        document.documentElement.scrollTop > 815 &&
+        document.documentElement.scrollTop <= 1392
+      ) {
+        this.$emit('setisWhite')
+      } else if (
+        document.documentElement.scrollTop > 1392 &&
+        document.documentElement.scrollTop <= 2032
+      ) {
+        this.$emit('setisBlack')
+      } else if (document.documentElement.scrollTop > 2032) {
         this.$emit('setisWhite')
       }
     },
