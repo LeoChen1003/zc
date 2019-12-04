@@ -40,91 +40,93 @@
         </div>
       </div>
       <div class="showPro" @mousemove="showPro" @mouseout="hidePro" :class="isHeight?'':isHeight1?'height':'height1'">
-        <div class="showPro_l">
-          <div class="showPro_l_btn1" @mousemove="changeColor1">旗舰智厨产品</div>
-          <div class="showPro_l_btn2" @mousemove="changeColor2">更多智厨产品</div>
-          <div class="showPro_l_btn3" @mousemove="changeColor3">其他智能产品</div>
-        </div>
-        <div class="showPro_line">
-          <div :class="pos?'showPro_line_small':'showPro_line_small1'"></div>
-        </div>
-        <div class="showPro_line1">
-          <div class="showPro_line_small1"></div>
-          <!-- <div :class="pos?'showPro_line_small':'showPro_line_small1'"></div> -->
-        </div>
-        <div class="showPro_all">
-          <div class="showPro_r1">
-            <div class="showPro_r1_cai" @click="cai">
-              <svg-icon icon-class="header_cai" class-name="icon"></svg-icon>
-              <p>智能一拖三炒菜机</p>
-              <p>旗舰</p>
-            </div>
-            <div class="showPro_r1_AIO" @click="aio">
-              <svg-icon icon-class="header_AIO" class-name="icon"></svg-icon>
-              <p>智能精炒一体机</p>
-              <p>旗舰</p>
-            </div>
+        <div class="showPro_center">
+          <div class="showPro_l">
+            <div class="showPro_l_btn1" @mousemove="changeColor1">旗舰智厨产品</div>
+            <div class="showPro_l_btn2" @mousemove="changeColor2">更多智厨产品</div>
+            <div class="showPro_l_btn3" @mousemove="changeColor3">其他智能产品</div>
           </div>
-          <div class="showhh">
-            <div class="showPro_r2">
-              <div @click="morePro1">
-                <svg-icon icon-class="pingmianlu" class="icon3" style=" width: 7.5rem; height:7.5rem"></svg-icon>
-                <span class="sp1">智能多头平面炉</span>
+          <div class="showPro_line">
+            <div :class="pos?'showPro_line_small':'showPro_line_small1'"></div>
+          </div>
+          <div class="showPro_line1">
+            <div class="showPro_line_small1"></div>
+            <!-- <div :class="pos?'showPro_line_small':'showPro_line_small1'"></div> -->
+          </div>
+          <div class="showPro_all">
+            <div class="showPro_r1">
+              <div class="showPro_r1_cai" @click="cai">
+                <svg-icon icon-class="header_cai" class-name="icon"></svg-icon>
+                <p>智能一拖三炒菜机</p>
+                <p>旗舰</p>
               </div>
-              <div @click="morePro2">
-                <svg-icon icon-class="header1" class="icon3" style=" width: 7.5rem; height:7.5rem"></svg-icon>
-                <span class="sp2">智能单头凹面炒炉</span>
-              </div>
-              <div @click="morePro3">
-                <svg-icon icon-class="header2" class="icon3" style=" width: 7.5rem; height:7.5rem"></svg-icon>
-                <span class="sp3">智能单头单尾凹面炒炉</span>
-              </div>
-              <div @click="morePro4">
-                <svg-icon icon-class="header3" class="icon3" style=" width: 7.5rem; height:7.5rem"></svg-icon>
-                <span class="sp4">智能海鲜蒸柜</span>
-              </div>
-              <div style="margin-top:2rem;"  @click="morePro5">
-                <svg-icon icon-class="header4" class="icon3" style=" width: 7.5rem; height:7.5rem"></svg-icon>
-                <span class="sp1">智能蒸饭柜</span>
-              </div>
-              <div style="margin-top:2rem;"  @click="morePro6">
-                <svg-icon icon-class="header5" class="icon3" style=" width: 7.5rem; height:7.5rem"></svg-icon>
-                <span class="sp2">智能蒸点炉</span>
-              </div>
-              <div style="margin-top:2rem;"  @click="morePro7">
-                <svg-icon icon-class="header6" class="icon3" style=" width: 7.5rem; height:7.5rem"></svg-icon>
-                <span class="sp3">智能烤箱</span>
-              </div>
-              <div style="margin-top:2rem;"  @click="morePro8">
-                <svg-icon icon-class="header7" class="icon3" style=" width: 7.5rem; height:7.5rem"></svg-icon>
-                <span class="sp4">智能炸炉</span>
-              </div>
-              <div style="margin-top:2rem;"  @click="morePro9">
-                <svg-icon icon-class="header8" class="icon3" style=" width: 7.5rem; height:7.5rem"></svg-icon>
-                <span class="sp3">智能煮面机</span>
-              </div>
-              <div style="margin-top:2rem;"  @click="morePro10">
-                <svg-icon icon-class="header9" class="icon3" style=" width: 7.5rem; height:7.5rem"></svg-icon>
-                <span class="sp4">智能矮汤炉</span>
+              <div class="showPro_r1_AIO" @click="aio">
+                <svg-icon icon-class="header_AIO" class-name="icon"></svg-icon>
+                <p>智能精炒一体机</p>
+                <p>旗舰</p>
               </div>
             </div>
-          </div>
-          <div class="showhh1">
-              <div class="showPro_r3">
-              <div class="showPro_r3_other1" @click="otherPro1">
-                <svg-icon icon-class="other1" class-name="svg"></svg-icon>
-                <p>智能配送保温箱</p>
-              </div>
-              <div class="showPro_r3_other2" @click="otherPro2">
-                <svg-icon icon-class="other2" class-name="svg"></svg-icon>
-                <p>智能取餐</p>
-              </div>
-              <div class="showPro_r3_other3" @click="otherPro3">
-                <svg-icon icon-class="other3" class-name="svg"></svg-icon>
-                <p>智能打菜机</p>
+            <div class="showhh">
+              <div class="showPro_r2">
+                <div @click="morePro1">
+                  <svg-icon icon-class="pingmianlu" class="icon3" style=" width: 7.5rem; height:7.5rem"></svg-icon>
+                  <span class="sp1">智能多头平面炉</span>
+                </div>
+                <div @click="morePro2">
+                  <svg-icon icon-class="header1" class="icon3" style=" width: 7.5rem; height:7.5rem"></svg-icon>
+                  <span class="sp2">智能单头凹面炒炉</span>
+                </div>
+                <div @click="morePro3">
+                  <svg-icon icon-class="header2" class="icon3" style=" width: 7.5rem; height:7.5rem"></svg-icon>
+                  <span class="sp3">智能单头单尾凹面炒炉</span>
+                </div>
+                <div @click="morePro4">
+                  <svg-icon icon-class="header3" class="icon3" style=" width: 7.5rem; height:7.5rem"></svg-icon>
+                  <span class="sp4">智能海鲜蒸柜</span>
+                </div>
+                <div style="margin-top:2rem;"  @click="morePro5">
+                  <svg-icon icon-class="header4" class="icon3" style=" width: 7.5rem; height:7.5rem"></svg-icon>
+                  <span class="sp1">智能蒸饭柜</span>
+                </div>
+                <div style="margin-top:2rem;"  @click="morePro6">
+                  <svg-icon icon-class="header5" class="icon3" style=" width: 7.5rem; height:7.5rem"></svg-icon>
+                  <span class="sp2">智能蒸点炉</span>
+                </div>
+                <div style="margin-top:2rem;"  @click="morePro7">
+                  <svg-icon icon-class="header6" class="icon3" style=" width: 7.5rem; height:7.5rem"></svg-icon>
+                  <span class="sp3">智能烤箱</span>
+                </div>
+                <div style="margin-top:2rem;"  @click="morePro8">
+                  <svg-icon icon-class="header7" class="icon3" style=" width: 7.5rem; height:7.5rem"></svg-icon>
+                  <span class="sp4">智能炸炉</span>
+                </div>
+                <div style="margin-top:2rem;"  @click="morePro9">
+                  <svg-icon icon-class="header8" class="icon3" style=" width: 7.5rem; height:7.5rem"></svg-icon>
+                  <span class="sp3">智能煮面机</span>
+                </div>
+                <div style="margin-top:2rem;"  @click="morePro10">
+                  <svg-icon icon-class="header9" class="icon3" style=" width: 7.5rem; height:7.5rem"></svg-icon>
+                  <span class="sp4">智能矮汤炉</span>
+                </div>
               </div>
             </div>
+            <div class="showhh1">
+                <div class="showPro_r3">
+                <div class="showPro_r3_other1" @click="otherPro1">
+                  <svg-icon icon-class="other1" class-name="svg"></svg-icon>
+                  <p>智能配送保温箱</p>
+                </div>
+                <div class="showPro_r3_other2" @click="otherPro2">
+                  <svg-icon icon-class="other2" class-name="svg"></svg-icon>
+                  <p>智能取餐</p>
+                </div>
+                <div class="showPro_r3_other3" @click="otherPro3">
+                  <svg-icon icon-class="other3" class-name="svg"></svg-icon>
+                  <p>智能打菜机</p>
+                </div>
+              </div>
           </div>
+        </div>
       </div>
     </div>
     </div>
@@ -545,12 +547,17 @@ export default {
       left: 0rem;
       padding-bottom: 3.44rem;
       // box-sizing: border-box;
+      .showPro_center{
+        width: 61rem;
+        margin: 0 auto;
+      }
       .showPro_l,
       .showPro_r1 {
         float: left;  
       }
       .showPro_l {
-        width: 32.93rem;
+        // width: 32.93rem;
+        width: 11rem;
         height: 100%;
         .showPro_l_btn1,
         .showPro_l_btn2,
@@ -564,7 +571,7 @@ export default {
           color: rgba(252, 253, 254, 1);
           line-height: 2rem;
           text-align: center;
-          margin-left: 20.12rem;
+          // margin-left: 20.12rem;
           margin-top: 3.62rem;
           cursor: pointer;
         }
@@ -581,8 +588,9 @@ export default {
         height: 9.5rem;
         position: absolute;
         background-color: #ececec;
-        left: 32.93rem;
+        left: 26rem;
         top: 3.68rem;
+        float: left;
         .showPro_line_small,.showPro_line_small1 {
           position: absolute;
           width: 0.12rem;
@@ -600,7 +608,7 @@ export default {
         height: 29.56rem;
         position: absolute;
         background-color: #ececec;
-        left: 32.93rem;
+        left: 26rem;
         top: 3.68rem;
         // .showPro_line_small,
         .showPro_line_small1 {
@@ -659,7 +667,9 @@ export default {
       .showhh {
         display: none;
         float: left;
-        margin-left: 4.5rem;
+        // margin-left: 4.5rem;
+        margin-left: 15.5rem;
+        margin-top: -14rem;
         animation-name: key_showPro;
         animation-duration: 1s;
         animation-timing-function: ease;

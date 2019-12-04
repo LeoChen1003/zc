@@ -14,12 +14,14 @@
                     </div>
                 </div>
             </div>
-            <div class="aio_specs_con">
-                <p>超级烹饪专家</p>
-                <p>智能精炒一体机</p>
-                <p>三合一体，中高级餐饮店的御用超级“厨神”</p>
-                <div class="aio_specs_con_pic">
-                    <img src="../assets/product/AIO5.png" alt="">
+            <div class="aio_specs_con" :style="`height:${height1}px;`">
+                <div class="aio_specs_con_center">
+                    <p>超级烹饪专家</p>
+                    <p>智能精炒一体机</p>
+                    <p>三合一体，中高级餐饮店的御用超级“厨神”</p>
+                    <div class="aio_specs_con_pic">
+                        <img src="../assets/product/AIO5.png" alt="">
+                    </div>
                 </div>
             </div>
             <div class="aio_specs_txt">
@@ -58,6 +60,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 import zcHeader from '@/components/zcHeader.vue';
 import zcFooter from '@/components/zcFooter.vue';
 import '../styles/variables.scss';
@@ -73,17 +76,24 @@ export default {
         return {
             isActive:false,
             isWhite:false,
-            isBuy:false
+            isBuy:false,
+            height1: 0
         }
     },
+    computed: {
+        ...mapState({
+        windowWidth: "windowWidth"
+        })
+    },
     mounted(){
+        this.height1 = document.documentElement.clientWidth/(1680/704);
         this.canScroll()
         var hder  = document.getElementsByClassName("blackBack")[0];
         hder.className = "blackBack";
         window.onscroll = ()=>{
             var top = document.documentElement.scrollTop;
             // window.console.log(document.documentElement.scrollTop);
-            if(top>=774 && top<= 2066){
+            if(top>=this.height1){
                 hder.className = "whiteBack";
                 this.isActive = true;
                 this.isWhite = true;
@@ -98,6 +108,11 @@ export default {
         buy(){
             this.isBuy = true;
             this.noScroll()
+        }
+    },
+    watch:{
+        windowWidth(){
+            this.height1 = document.documentElement.clientWidth/(1680/704);
         }
     }
 }
@@ -185,37 +200,50 @@ export default {
     .aio_specs_con{
         width:100%;
         height:44rem;
+        margin-top: 3rem;
         background:linear-gradient(180deg,rgba(17,17,17,1) 0%,rgba(30,31,33,1) 100%);
         box-shadow:0px 10px 20px 0px rgba(0,0,0,0.02);
         overflow: hidden;
         position: relative;
+        .aio_specs_con_center{
+            width: 53.49rem;
+            margin: 0 auto;
+        }
         p:first-child{
             font-size:0.88rem;
             font-weight:400;
             color:rgba(136,136,136,1);
-            margin-left: 21%;
-            margin-top: 7.5rem;
+            // margin-left: 21%;
+            // margin-top: 7.5rem;
+            margin-top: 7.1%;
         }
         p:nth-child(2){
             font-size:2.5rem;
             font-weight:600;
             color:rgba(255,255,255,1);
             margin-top: 0.5rem;
-            margin-left: 21%;
+            // margin-left: 21%;
         }
         p:nth-child(3){
             font-size:0.88rem;
             font-weight:400;
             color:rgba(133,133,133,1);
-            margin-left: 21%;
+            // margin-left: 21%;
             margin-top: 1rem;
         }
         .aio_specs_con_pic{
-            width: 33.13rem;
-            height: 33rem;
+            // width: 33.13rem;
+            width: 31.55rem;
+            // height: 33rem;
+            height: 75%;
             position: absolute;
-            right: 13.4%;;
-            bottom: -1.7rem;
+            // right: 13.4%;
+            bottom: 0;
+            margin-left: 30.38rem;
+            img{
+                width: 100%;
+                height: 100%;
+            }
         }
     }
     .aio_specs_txt{

@@ -299,7 +299,7 @@ export default {
     .core_syt{
         width: 100%;
         height: 45rem;
-        border-top: 1px solid #cccccc;
+        // border-top: 1px solid #cccccc;
         background: url("../assets/coreAdvantage/osBackground.jpg");
         background-size: 100% 100%;
         .core_syt_cir{
@@ -327,12 +327,22 @@ export default {
             font-weight: 300;
         }
         .core_syt_pic{
-            width: 50%;
+            width: 56rem;
             margin: 0 auto;
             display: flex;
-            justify-content: space-between;
+            // justify-content: space-between;
+            justify-content: center;
             align-items: center;
             margin-top: 3rem;
+            div:not(:first-child){
+                margin-left: 10rem;
+            }
+            div{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
             p{
                 font-size: 1rem;
                 font-weight: 600;
