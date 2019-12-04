@@ -47,33 +47,7 @@
         <div class="bottom">精准投料智能控温还原菜肴</div>
       </div>
     </div>
-    <div class="cell cell-3">
-      <div class="sub-title">超级烹饪专家</div>
-      <div class="title">智能精炒一体机</div>
-      <div class="bar"></div>
-      <div class="label">
-        <div class="title">星级菜谱</div>
-        <div class="text">百种星级主厨菜谱，顶级烹饪手法精确复现</div>
-      </div>
-      <div class="label">
-        <div class="title">智能提醒</div>
-        <div class="text">
-          智能屏+语音实时提醒，0基础新手复制大厨烹饪行为，还原顶级厨师口味
-        </div>
-      </div>
-      <div class="label">
-        <div class="title">精准投料</div>
-        <div class="text">智能精准投料,精准至0.1g，美味丝毫不差</div>
-      </div>
-      <div class="label">
-        <div class="title">精准控温</div>
-        <div class="text">
-          11级火力智能调节，满足“煸炒”、“烧”、“煮”等多种烹调行为
-        </div>
-      </div>
-      <img src="../../assets/home/jcytj.png" />
-    </div>
-    <div class="cell cell-4">
+    <div class="cell cell-4" @click="$router.push('/wap/proDetailGTGL')">
       <div class="sub-title">“星级大厨”带你体验舌尖上的美味</div>
       <div class="title">智能大滚筒炒菜机套机</div>
       <div class="text">
@@ -101,6 +75,33 @@
         </div>
       </div>
     </div>
+    <div class="cell cell-3" @click="$router.push('/wap/proDetailYTJGL')">
+      <div class="sub-title">超级烹饪专家</div>
+      <div class="title">智能精炒一体机</div>
+      <div class="bar"></div>
+      <div class="label">
+        <div class="title">星级菜谱</div>
+        <div class="text">百种星级主厨菜谱，顶级烹饪手法精确复现</div>
+      </div>
+      <div class="label">
+        <div class="title">智能提醒</div>
+        <div class="text">
+          智能屏+语音实时提醒，0基础新手复制大厨烹饪行为，还原顶级厨师口味
+        </div>
+      </div>
+      <div class="label">
+        <div class="title">精准投料</div>
+        <div class="text">智能精准投料,精准至0.1g，美味丝毫不差</div>
+      </div>
+      <div class="label">
+        <div class="title">精准控温</div>
+        <div class="text">
+          11级火力智能调节，满足“煸炒”、“烧”、“煮”等多种烹调行为
+        </div>
+      </div>
+      <img src="../../assets/home/jcytj.png" />
+    </div>
+
     <div class="cell cell-5">
       <div class="cell-header">
         更多智厨产品

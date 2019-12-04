@@ -289,6 +289,10 @@ export default {
 </script>
 <style lang="scss" scoped>
 //@import url(); 引入公共css类
+@font-face {
+  font-family: Oswald_Regular;
+  src: url('../../assets/font/Oswald-Regular.ttf');
+}
 
 .wrapper {
   padding-top: 3rem;
@@ -368,6 +372,7 @@ export default {
       color: #000;
       line-height: 3.25rem;
       margin-bottom: 0.62rem;
+      font-family: Oswald_Regular;
 
       span {
         position: relative;
@@ -375,6 +380,7 @@ export default {
         font-weight: 600;
         line-height: 1.06rem;
         margin-left: 0.31rem;
+        font-family: PingFangSC-Regular, PingFang SC;
 
         .up {
           position: absolute;
