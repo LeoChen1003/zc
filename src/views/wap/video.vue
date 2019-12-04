@@ -38,8 +38,9 @@ export default {
 <style lang="scss" scoped>
 //@import url(); 引入公共css类
 .wrapper {
-  padding-top: 3rem;
-  height: calc(100vh);
+  // padding-top: 3rem;
+  margin-top: 3rem;
+  height: calc(100vh - 3rem);
   box-sizing: border-box;
   display: flex;
   justify-content: center;

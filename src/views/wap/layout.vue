@@ -1,6 +1,6 @@
 <!-- layout -->
 <template>
-  <div ref="wapHeader" class="wap">
+  <div ref="wapHeader" class="wap" :class="hidden ? 'hiddenwap' : ''">
     <div
       class="header"
       :class="dropdown ? 'header-dropdown' : isWhite ? 'headerW' : ''"
@@ -254,11 +254,17 @@ export default {
           footshow: false
         }
       ],
-      windowHeight: ''
+      windowHeight: '',
+      hidden: false
     }
   },
   mounted() {
     // window.addEventListener('scroll', this.handleScroll)
+    if (self.$route.path == '/wap/video') {
+      self.hidden = true
+    } else {
+      self.hidden = false
+    }
   },
   methods: {
     // handleScroll () {
@@ -280,10 +286,16 @@ export default {
     }
   },
   watch: {
-    $route() {
+    $route(val) {
       self.dropdown = false
       document.documentElement.scrollTop = 0
       document.body.scrollTop = 0
+      window.console.log(val.path)
+      if (val.path == '/wap/video') {
+        self.hidden = true
+      } else {
+        self.hidden = false
+      }
     }
   }
 }
@@ -300,6 +312,11 @@ export default {
     left: 50%;
     transform: translateX(-50%);
   }
+}
+
+.hiddenwap {
+  height: 100vh;
+  overflow: hidden;
 }
 
 .header {
