@@ -24,7 +24,8 @@ export default {
 <style lang="scss" scoped>
 .video {
   width: 100%;
-  height: 58.69rem;
+  // height: 58.69rem;
+  height: 100vh;
   background: #131318;
   display: flex;
   justify-content: center;
