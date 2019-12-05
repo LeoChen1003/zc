@@ -9,7 +9,7 @@
                     <img :src="messNew.image" alt="">
                 </div>
                 <div class="new_con_del_r">
-                    <p>{{messNew.updatedAt.slice(0,4)}}年{{messNew.updatedAt.slice(5,7)}}月{{messNew.updatedAt.slice(8,10)}}日</p>
+                    <p>{{messNew.createdAt.slice(0,4)}}年{{messNew.createdAt.slice(5,7)}}月{{messNew.createdAt.slice(8,10)}}日</p>
                     <a>{{messNew.title}}</a>
                     <p>{{messNew.shortContent}}</p>
                 </div>
@@ -71,7 +71,7 @@ export default {
                 this.isLast = res.data.last;
                 this.isFirst = res.data.first;
                 // this.top = res.data.top;
-                // window.console.log(this.messNews);
+                window.console.log(this.messNews);
             })
         },
         prev(){

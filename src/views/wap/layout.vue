@@ -128,11 +128,11 @@
       </div>
       <div class="footer_info">
         <div class="footer_info_left">
-          <div class="phone">4000-666-888</div>
+          <!-- <div class="phone">4000-666-888</div>
           <div class="working_time">
             客服联系电话<br />
             周一至周日 8:00-20:00
-          </div>
+          </div> -->
         </div>
         <div class="footer_info_right">
           <div class="icon">

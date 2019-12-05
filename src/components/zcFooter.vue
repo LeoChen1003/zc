@@ -268,6 +268,7 @@ export default {
   color: #888888;
   font-size: 0.88rem;
   .footer_right_tel {
+    visibility: hidden;
     font-size: 2.5rem;
     color: #fff;
     font-family: Oswald-Regular_Light, Oswald;
@@ -275,6 +276,7 @@ export default {
     margin-bottom: 0.88rem;
   }
   .footer_right_time {
+    visibility: hidden;
     margin-bottom: 1.5rem;
     div {
       margin-bottom: 0.5rem;
