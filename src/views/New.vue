@@ -70,8 +70,6 @@ export default {
                 this.total = res.data.totalPages;
                 this.isLast = res.data.last;
                 this.isFirst = res.data.first;
-                // this.top = res.data.top;
-                window.console.log(this.messNews);
             })
         },
         prev(){

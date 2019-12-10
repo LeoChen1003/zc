@@ -1,6 +1,6 @@
 <template>
     <div class="specs">
-        <div :style="isBuy?'filter:blur(5px)':''">
+        <div :style="isBuy?'filter:blur(20px)':''">
             <zcHeader :isWhite="isWhite"></zcHeader>
             <div class="specs_hd" :class="isActive?'colorWhite':''">
                 <div>
@@ -169,7 +169,6 @@ export default {
     },
     mounted(){
         this.$refs.specsP.style.marginTop = this.marginT + 'px';
-        // window.console.log(this.marginT);
         this.height1 = document.documentElement.clientWidth/(1680/704);
         this.height2 = this.height1 - 120 - this.marginT;
         this.canScroll()

@@ -1,6 +1,6 @@
 <template>
   <div class="cai">
-    <div :style="isBuy?'filter:blur(5px)':''">
+    <div :style="isBuy?'filter:blur(20px)':''">
       <zcHeader :isWhite="isWhite"></zcHeader>
       <div class="cai_hd" :class="isActive?'colorBlack':''">
           <div>
@@ -285,14 +285,11 @@ export default {
     var hder = document.getElementsByClassName("whiteBack")[0];
     window.onscroll = () => {
         var top = document.documentElement.scrollTop;
-          window.console.log(document.documentElement.scrollTop);
         var cTop1 = this.$refs.cai1.offsetTop - 96;
         var cTop2 = this.$refs.cai2.offsetTop - 96;
         var cTop3 = this.$refs.cai3.offsetTop - 96;
         var cTop4 = this.$refs.cai4.offsetTop - 96;
         var cTop5 = this.$refs.cai5.offsetTop - 96;
-        // window.console.log(cTop1);
-        // window.console.log(document.documentElement.scrollTop)
         if(top<cTop1){
             this.isShow = false;
         }else{
@@ -438,7 +435,7 @@ export default {
     margin-top: 3rem;
     position: relative;
     p:first-child {
-      width: 13.25rem;
+      text-align: center;
       height: 1.25rem;
       font-size: 0.87rem;
       font-weight: 400;
@@ -446,7 +443,7 @@ export default {
       margin: 2.9% auto 0;
     }
     p:nth-child(2) {
-      width: 20rem;
+      text-align: center;
       height: 3.5rem;
       font-size: 2.5rem;
       font-weight: 600;
@@ -510,7 +507,7 @@ export default {
       height: 100%;
       // margin-top: 4rem;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
     }
     .cai_con2_data1,
@@ -522,7 +519,6 @@ export default {
       align-items: center;
       justify-content: center;
       p:first-child {
-        width: 3.75rem;
         height: 1.75rem;
         font-size: 1.25rem;
         font-weight: 600;
@@ -551,10 +547,10 @@ export default {
       }
     }
     .cai_con2_data1 {
-      margin-right: 6.63rem;
+      // margin-right: 6.63rem;
     }
     .cai_con2_data2 {
-      margin-right: 5.81rem;
+      // margin-right: 5.81rem;
       position: relative;
       .up {
         position: absolute;
@@ -565,7 +561,7 @@ export default {
       }
     }
     .cai_con2_data3 {
-      margin-right: 4rem;
+      // margin-right: 4rem;
       position: relative;
       .up {
         position: absolute;
@@ -608,8 +604,6 @@ export default {
       line-height: 1.5rem;
     }
     p:nth-child(2) {
-      // 
-      width: 22.5rem;
       height: 11.25rem;
       font-size: 2.5rem;
       font-weight: 600;
@@ -692,7 +686,6 @@ export default {
       
       margin-top: 10rem;
       // margin-top: 5.9%;
-      width: 25rem;
       height: 3.5rem;
       font-size: 2.5rem;
       font-weight: 600;
@@ -711,7 +704,6 @@ export default {
     }
     .cai_con4_text1 {
       float: left;
-      width: 5.88rem;
       height: 5.63rem;
       
       margin-top: 3rem;
@@ -732,7 +724,6 @@ export default {
     .cai_con4_text3,
     .cai_con4_text4 {
       float: left;
-      width: 10.88rem;
       height: 5.63rem;
       margin-left: 6.5rem;
       margin-top: 3rem;
@@ -748,12 +739,6 @@ export default {
         font-weight: 400;
         margin-top: 0.5rem;
       }
-    }
-    .cai_con4_text3 {
-      width: 7.38rem;
-    }
-    .cai_con4_text4 {
-      width: 7.44rem;
     }
     .cai_con4_pic {
       width: 77.88rem;
@@ -802,7 +787,6 @@ export default {
       text-align: center;
     }
     p:nth-child(2) {
-      width: 25rem;
       height: 3.5rem;
       font-size: 2.5rem;
       font-weight: 600;
@@ -877,7 +861,7 @@ export default {
       position: relative;
       .p3 {
           position: absolute;
-          width: 12.5rem;
+          // width: 12.5rem;
           height: 7rem;
           font-size: 2.5rem;
           font-weight: 600;
@@ -906,7 +890,6 @@ export default {
         left: 0;
         top: 39.5rem;
         // top: 67.2%;
-        width: 11.25rem;
         height: 5.63rem;
         .p1 {
           font-size: 2rem;
@@ -914,7 +897,6 @@ export default {
           color: rgba(44, 198, 192, 1);
         }
         .p2 {
-          width: 7rem;
           height: 2rem;
           font-size: 1rem;
           font-weight: 400;
@@ -975,7 +957,6 @@ export default {
       text-align: center;
     }
     p:nth-child(2) {
-      width: 17.5rem;
       height: 7rem;
       font-size: 2.5rem;
       font-weight: 600;
@@ -1004,10 +985,8 @@ export default {
       margin-top: 3rem;
       // margin-top: 2.8%;
       
-      width: 9rem;
       height: 5.63rem;
       p:first-child {
-        width: 9rem;
         height: 3.13rem;
         font-size: 2.25rem;
         font-weight: 600;
@@ -1015,7 +994,6 @@ export default {
         line-height: 3.13rem;
       }
       .p {
-        width: 8rem;
         height: 2rem;
         font-size: 1rem;
         font-weight: 400;
@@ -1085,7 +1063,6 @@ export default {
       text-align: center;
     }
     .cai_con8_p1 {
-      width: 18.32rem;
       height: 7rem;
       font-size: 2.5rem;
       font-weight: 600;
@@ -1107,14 +1084,12 @@ export default {
     }
     .cai_con8_d1,
     .cai_con8_d2 {
-      width: 10rem;
       height: 5.64rem;
       float: left;
       
       margin-top: 2.75rem;
       // margin-top: 1.6%;
       p:first-child {
-        width: 9.07rem;
         height: 3.13rem;
         font-size: 2.25rem;
         font-weight: 600;
@@ -1122,7 +1097,6 @@ export default {
         line-height: 3.13rem;
       }
       p:nth-child(2) {
-        width: 10rem;
         height: 2rem;
         font-size: 1rem;
         font-weight: 400;
@@ -1132,11 +1106,7 @@ export default {
       }
     }
     .cai_con8_d2 {
-      width: 11.25rem;
       margin-left: 3.88rem;
-      p:first-child {
-        width: 11.25rem;
-      }
     }
     .cai_con8_svg {
       width: 75.13rem;
@@ -1192,7 +1162,6 @@ export default {
       margin: 0 auto;
     }
     .cai_con9_p1 {
-      width: 42.5rem;
       height: 3.5rem;
       font-size: 2.5rem;
       font-weight: 600;
@@ -1216,14 +1185,12 @@ export default {
     .cai_con9_d1,
     .cai_con9_d2,
     .cai_con9_d3 {
-      width: 9rem;
       height: 5.23rem;
       float: left;
       
       margin-top: 3rem;
       // margin-top: 2.7%;
       p:first-child {
-        width: 9rem;
         height: 3.13rem;
         font-size: 2.25rem;
         font-weight: 600;
@@ -1231,7 +1198,6 @@ export default {
         line-height: 3.13rem;
       }
       p:nth-child(2) {
-        width: 6rem;
         height: 2rem;
         font-size: 1rem;
         font-weight: 400;
@@ -1241,11 +1207,7 @@ export default {
       }
     }
     .cai_con9_d2 {
-      width: 9.5rem;
       margin-left: 7.31rem;
-      p:first-child {
-        width: 9.5rem;
-      }
     }
     .cai_con9_d3 {
       margin-left: 8.56rem;

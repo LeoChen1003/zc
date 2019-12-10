@@ -259,7 +259,6 @@ export default {
     }
   },
   mounted() {
-    // window.addEventListener('scroll', this.handleScroll)
     if (self.$route.path == '/wap/video') {
       self.hidden = true
     } else {
@@ -267,10 +266,6 @@ export default {
     }
   },
   methods: {
-    // handleScroll () {
-    //   console.log(document.documentElement.scrollTop)
-    //   console.log('aa')
-    // },
     footerActive(url, row) {
       self.$router.push({ path: url })
       row.footshow = false
@@ -290,7 +285,6 @@ export default {
       self.dropdown = false
       document.documentElement.scrollTop = 0
       document.body.scrollTop = 0
-      window.console.log(val.path)
       if (val.path == '/wap/video') {
         self.hidden = true
       } else {

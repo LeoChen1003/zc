@@ -1,6 +1,6 @@
 <template>
     <div class="aio_specs">
-        <div :style="isBuy?'filter:blur(5px)':''">
+        <div :style="isBuy?'filter:blur(20px)':''">
             <zcHeader :isWhite="isWhite"></zcHeader>
             <div class="aio_specs_hd" :class="isActive?'colorWhite':''">
                 <div>
@@ -92,7 +92,6 @@ export default {
         hder.className = "blackBack";
         window.onscroll = ()=>{
             var top = document.documentElement.scrollTop;
-            // window.console.log(document.documentElement.scrollTop);
             if(top>=this.height1){
                 hder.className = "whiteBack";
                 this.isActive = true;

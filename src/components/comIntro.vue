@@ -103,14 +103,6 @@ export default {
       t: ["time1", "time2", "time2", "time2", "time2", "time2", "time2"]
     };
   },
-  // watch: {
-  //   intro(val) {
-  //   window.console.log(val)
-  //      self.$refs.aboutCon2.style.left = val +'px';
-  //      self.$refs.aboutCon1.style.left = val + 'px';
-  //      self.$refs.aboutCon3.style.left = val + 'px';
-  //   }
-  // },
   mounted() {
     var tLine = document.getElementsByClassName("el-timeline")[0];
     var tTail = tLine.getElementsByClassName("el-timeline-item__tail")[0];
@@ -123,9 +115,6 @@ export default {
       var tSmall = tLarge[i].appendChild(div);
       tSmall.className = "el-timeline-item__node--small";
     }
-    // setTimeout(() => {
-    //   window.console.log(this.intro);
-    // }, 2000);
   },
   // created() {
   //   self = this;

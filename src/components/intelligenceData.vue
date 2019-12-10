@@ -55,7 +55,6 @@ export default {
   watch: {
     windowWidth() {
         this.left = this.$refs.dataCon.offsetLeft + 960 + 16
-        window.console.log(this.$refs.dataCon.offsetLeft )
     }
   }
 };

@@ -1,6 +1,6 @@
 <template>
     <div class="aio">
-        <div :style="isBuy?'filter:blur(5px)':''">
+        <div :style="isBuy?'filter:blur(20px)':''">
             <zcHeader :isWhite="isWhite"></zcHeader>
             <div class="aio_hd">
                 <div>
@@ -210,7 +210,6 @@ export default {
         this.canScroll()
         window.onscroll = ()=>{
             var top = document.documentElement.scrollTop;
-            window.console.log(document.documentElement.scrollTop);
             if(top<795){
                 this.isShow1 = false;
             }else{
@@ -315,21 +314,21 @@ export default {
         overflow: hidden; 
         margin-top: 3rem;
         p:first-child{
-            width: 5.3rem;
+            text-align: center;
             font-size:0.88rem;
             font-weight:400;
             color:rgba(136,136,136,1);
             margin: 4.7% auto 0;
         }
         p:nth-child(2){
-            width:17.5rem;
+            text-align: center;
             font-size:2.5rem;
             font-weight:600;
             color:rgba(255,255,255,1);
             margin: 0.5rem auto 0;
         }
         p:nth-child(3){
-            width:16.8rem;
+            text-align: center;
             font-size:0.88rem;
             font-weight:400;
             color:rgba(136,136,136,1);
@@ -360,7 +359,7 @@ export default {
         .aio_con2_center{
             width: 57rem;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             margin: 0 auto;
             // margin-top: 4rem;
@@ -413,15 +412,6 @@ export default {
                     height: 100%;
                 }
             }
-        }
-        .aio_con2_d2{
-            margin-left: 4.62rem;
-        }
-        .aio_con2_d3{
-            margin-left: 5.43rem;
-        }
-        .aio_con2_d4{
-            margin-left: 5.13rem;
         }
     }
     .aio_con3{
@@ -535,7 +525,6 @@ export default {
             }
         }
         .aio_con4_txt1,.aio_con4_txt2{
-            width: 9rem;
             margin-left: 56%;
             margin-top: 3rem;
             float: left;
@@ -599,8 +588,6 @@ export default {
         }
         .d1,.d2{
             float: left;
-            width: 11.57rem;
-            
             margin-top: 3rem;
             p:first-child{
                 font-size:2rem;
@@ -714,7 +701,7 @@ export default {
             text-align: center;
         }
         .p1{
-            width:18.32rem;
+            // width:18.32rem;
             height:7rem;
             font-size:2.5rem;
             font-weight:600;
