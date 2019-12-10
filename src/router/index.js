@@ -32,6 +32,10 @@ Vue.use(VueRouter)
 
 const routes = [
   {
+    path:'/dsmall/public/index.php',
+    redirect:'/'
+  },
+  {
     path: '/',
     name: 'home',
     meta: {
