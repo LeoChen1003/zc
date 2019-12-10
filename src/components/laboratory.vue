@@ -47,11 +47,10 @@ export default {
         margin: 0 auto;
         margin-bottom: 12.8rem;
         .lab_title{
-            margin: 0 auto;
+            text-align: center;
             margin-top: 5.81rem;
             font-size: 1.75rem;
             color: #000;
-            width: 8.81rem;
             font-weight: 600;
         }
         .lab_con1{

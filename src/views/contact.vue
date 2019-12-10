@@ -348,13 +348,12 @@ export default {
         background-size: cover;
         background-position-x: center; 
         p{
-            width:8rem;
+            text-align: center;
             height:2.81rem;
             font-size:2rem;
             font-weight:600;
             color:rgba(255,255,255,1);
             line-height: 15rem;
-            margin: 0 auto;
         }
     }
     .contact_d1{
@@ -363,12 +362,11 @@ export default {
         margin: 0 auto;
         margin-top: 5rem;
         p:first-child{
-            width:7rem;
+            text-align: center;
             height:2.5rem;
             font-size:1.75rem;
             font-weight:600;
             color:rgba(0,0,0,1);
-            margin: 0 auto;
         }
         p:nth-child(2){
             height:1.25rem;
@@ -498,7 +496,7 @@ export default {
         border-bottom: 1px solid #ececec;
         position: relative;
         .p1{
-            width:7rem;
+            text-align: center;
             height:2.5rem;
             font-size:1.75rem;
             font-weight:600;
@@ -506,7 +504,6 @@ export default {
             margin: 5rem auto 0;
         }
         .p2{
-            width:10rem;
             height:1.75rem;
             font-size:1.25rem;
             font-weight:600;
@@ -539,12 +536,11 @@ export default {
         margin: 5rem auto 0;
         position: relative;
         p:first-child{
-            width:7rem;
+            text-align: center;
             height:2.5rem;
             font-size:1.75rem;
             font-weight:600;
             color:rgba(0,0,0,1);
-            margin: 0 auto;
         }
         .contact_d3_location{
             width: 100%;

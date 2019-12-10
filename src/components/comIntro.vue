@@ -203,7 +203,6 @@ export default {
         line-height: 1.87rem;
       }
       p:first-child {
-        width: 29.75rem;
         height: 2.5rem;
       }
       p:nth-child(2) {
@@ -212,7 +211,6 @@ export default {
         margin-top: 1.5rem;
       }
       p:nth-child(3) {
-        width: 7rem;
         height: 2.5rem;
         margin-top: 1.5rem;
       }
@@ -264,7 +262,6 @@ export default {
         line-height: 1.87rem;
       }
       p:first-child {
-        width: 7rem;
         height: 2.5rem;
       }
       p:nth-child(2) {
@@ -278,7 +275,6 @@ export default {
         margin-top: 1rem;
       }
       p:nth-child(4) {
-        width: 7rem;
         height: 2.5rem;
         margin-top: 2.5rem;
       }
@@ -330,7 +326,6 @@ export default {
       float: left;
       margin-left: 350px;
       p:first-child {
-        width: 112px;
         height: 40px;
         font-size: 28px;
         font-family: PingFangSC-Semibold, PingFang SC;

@@ -92,7 +92,7 @@ export default {
             overflow: hidden;
             border-radius: 0.62rem 0.62rem 0 0;
             p:first-child{
-                width:8.5rem;
+                text-align: center;
                 height:3rem;
                 font-size:2.12rem;
                 font-weight:600;

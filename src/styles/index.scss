@@ -1,24 +1,35 @@
 @import './variables.scss';
+
+@font-face {
+	font-family: 'webfont';
+	font-display: swap;
+	src: url('//at.alicdn.com/t/webfont_xf3lwgsq7i.eot'); /* IE9*/
+	src: url('//at.alicdn.com/t/webfont_xf3lwgsq7i.eot?#iefix') format('embedded-opentype'),
+		url('//at.alicdn.com/t/webfont_xf3lwgsq7i.woff2') format('woff2'),
+		url('//at.alicdn.com/t/webfont_xf3lwgsq7i.woff') format('woff'),
+		url('//at.alicdn.com/t/webfont_xf3lwgsq7i.ttf') format('truetype'),
+		url('//at.alicdn.com/t/webfont_xf3lwgsq7i.svg#Alibaba-PuHuiTi-Regular') format('svg'); /* iOS 4.1- */
+}
 body {
-  height: 100%;
-  font-family: PingFangSC-Regular, PingFang SC;
+	height: 100%;
+	font-family: PingFangSC-Regular, PingFang SC, webfont;
 }
 
 body,
 html,
 ul,
 p {
-  padding: 0;
-  margin: 0;
-  font-size: 16px;
+	padding: 0;
+	margin: 0;
+	font-size: 16px;
 }
 
 ::-webkit-scrollbar {
-  background-color: transparent;
-  display: none;
-  width: 0;
+	background-color: transparent;
+	display: none;
+	width: 0;
 }
 
 li {
-  list-style-type: none;
+	list-style-type: none;
 }

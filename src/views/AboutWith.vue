@@ -139,7 +139,7 @@ export default {
     overflow: hidden;
     background-size: 100% 100%;
     p:first-child {
-      width: 3.5rem;
+      text-align: center;
       height: 1.25rem;
       font-size: 0.87rem;
       font-family: PingFangSC-Regular, PingFang SC;
@@ -148,12 +148,11 @@ export default {
       margin: 5.94rem auto 0;
     }
     p:nth-child(2) {
-      width: 8rem;
+      text-align: center;
       font-size: 2rem;
       font-family: PingFangSC-Semibold, PingFang SC;
       font-weight: 600;
       color: rgba(255, 255, 255, 1);
-      margin: 0 auto;
     }
   }
   .about_item {

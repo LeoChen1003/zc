@@ -83,7 +83,7 @@ export default {
       overflow: hidden;
       border-radius: 0.62rem 0.62rem 0 0;
       p:first-child {
-        width: 12.75rem;
+        text-align: center;
         height: 3rem;
         font-size: 2.12rem;
         font-weight: 600;
@@ -91,7 +91,7 @@ export default {
         margin: 14.44rem auto 0;
       }
       p:nth-child(2) {
-        width: 23rem;
+        text-align: center;
         height: 1.38rem;
         font-size: 1rem;
         font-weight: 400;
