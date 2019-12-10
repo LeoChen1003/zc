@@ -262,12 +262,11 @@ export default {
         method: 'post',
         data: formData
       })
-        .then(res => {
+        .then(() => {
           this.$toast({
             message: '提交成功',
             iconClass: 'icon icon-success'
           })
-          window.console.log(res.data)
         })
         .catch(function(error) {
           window.console.log(error)

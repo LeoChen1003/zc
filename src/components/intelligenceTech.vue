@@ -109,7 +109,6 @@ export default {
     watch: {
         windowWidth() {
             this.left = this.$refs.techCon.offsetLeft + 980 + 16
-            window.console.log(this.$refs.techCon.offsetLeft )
         }
     }
 }

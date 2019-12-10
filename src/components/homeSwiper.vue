@@ -80,7 +80,6 @@ export default {
             this.total = res.data.totalPages;
             this.isLast = res.data.last;
             this.isFirst = res.data.first;
-            window.console.log(this.messNews);
         })
     }
   },

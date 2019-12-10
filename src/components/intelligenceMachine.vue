@@ -64,7 +64,6 @@ export default {
     watch: {
         windowWidth() {
             this.left = this.$refs.machCon.offsetLeft + 960 + 16
-            window.console.log(this.$refs.machCon.offsetLeft )
         }
     }
 }

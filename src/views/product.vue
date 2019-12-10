@@ -1,6 +1,6 @@
 <template>
   <div class="product">
-    <div :style="isBuy?'filter:blur(5px)':''">
+    <div :style="isBuy?'filter:blur(20px)':''">
       <zcHeader :tab1="tab" :isWhite="isWhite"></zcHeader>
       <div class="product_header">
         <span @click="jump(0)" :class="isActive1?'bolder':'normal'">旗舰智厨产品</span>
@@ -738,7 +738,6 @@ export default {
         }
         .p1 {
           top: 6rem;
-          width: 13.25rem;
           height: 1.25rem;
           font-size: 0.87rem;
           font-weight: 400;
@@ -746,7 +745,6 @@ export default {
         }
         .p2 {
           top: 7.75rem;
-          width: 16rem;
           height: 2.81rem;
           font-size: 2rem;
           font-weight: 600;

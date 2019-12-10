@@ -92,7 +92,6 @@ export default {
   },
   mounted() {
     this.left = this.$refs.aboutComIntro.offsetLeft;
-    window.console.log(this.left);
     let type = this.$route.query.type;
     if (type == "about_intro") {
       this.toggleTab("comIntro");
@@ -101,7 +100,6 @@ export default {
     } else if (type == "about_lab" || type == "lab") {
       this.toggleTab("labor");
     }
-    // window.console.log(left);
   },
   watch: {
     $route() {

@@ -478,7 +478,6 @@ export default {
       self.modelPJ = false
       self.modelFW = false
       let type = self.$route.query.type
-      window.console.log(type == 'modelXT')
       switch (type) {
         case 'modelXT':
           self.modelXT = true

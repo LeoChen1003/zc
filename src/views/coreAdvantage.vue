@@ -243,7 +243,6 @@ export default {
     watch:{
         $route(){
             let type = this.$route.query.type
-            // window.console.log(type)
             if(type == 'modelData'){
                 this.modelData = true;
             }else if(type == "modelSt"){
@@ -262,7 +261,6 @@ export default {
         var hder  = document.getElementsByClassName("whiteBack")[0];
         window.onscroll = ()=>{
             var top = document.documentElement.scrollTop;
-            // window.console.log(document.documentElement.scrollTop);
             if(top >= 776 && top <= 1497){
                 hder.className = "blackBack1";
                 this.isWhite = false;

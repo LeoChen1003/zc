@@ -101,7 +101,6 @@ export default {
     watch: {
         windowWidth() {
             this.left = this.$refs.starCon.offsetLeft + 960 + 16
-            window.console.log(this.$refs.starCon.offsetLeft )
         }
     }
 }

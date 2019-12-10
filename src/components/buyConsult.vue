@@ -155,7 +155,6 @@ export default {
             this.canScroll()
         },
         sendMessage(){
-            window.console.log(1);
             if(this.name===null){
                 this.$message({
                     showClose: true,
@@ -198,13 +197,12 @@ export default {
                 url: '/outside/book',
                 method: 'post',
                 data: formData
-            }).then(res=>{
+            }).then(()=>{
                 this.$message({
                     showClose: true,
                     message: '提交成功',
                     type: 'success'
                 })
-                window.console.log(res.data);
             }).catch(function(error){
                 window.console.log(error);
             })
@@ -218,12 +216,9 @@ export default {
 .consult{
     transition: all 0.5s;
     width:100%;
-    height: 51rem;
-    // background:rgba(255, 255, 255, 0.8);
-    // overflow: hidden;
-    // position: relative;
+    min-height: 51rem;
+    height: 100vh;
     position: fixed;
-    // filter: blur(5px);
     top:0;
     left: 0;
     z-index: 1000;
@@ -233,7 +228,6 @@ export default {
     .consult_bg{
         width: 100%;
         height: 100%;
-        // background:rgba(255, 255, 255, 0.8);
         background: url('../assets/white.png') repeat;
         background-size: cover;
         opacity: 0.9;
@@ -245,11 +239,9 @@ export default {
     }
     .consult_filter{
         width: 45rem;
-        // height: 100%;
         top: 0;
         left: 0;
         position: relative;
-        // background:rgba(255, 255, 255, 0.8);
     }
     .close{
         cursor: pointer;
@@ -264,14 +256,14 @@ export default {
         }
     }
     .p1{
-        width:7rem;
+        text-align: center;
         height:2.5rem;
         font-size:1.75rem;
         font-weight:600;
         margin: 7.5rem auto 0;
     }
     .p2{
-        width:25.06rem;
+        text-align: center;
         height:1.25rem;
         font-size:0.87rem;
         font-weight:400;

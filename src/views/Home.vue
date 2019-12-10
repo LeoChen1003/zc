@@ -275,8 +275,6 @@
       hder.className = 'blackBack';
       window.onscroll = ()=>{
         var top = document.documentElement.scrollTop;
-        // window.console.log(top);
-        // window.console.log(this.$refs.pro1.offsetTop);
         this.oTop1 =  this.$refs.pro1.offsetTop - 48;
         this.oTop2 = this.$refs.pro2.offsetTop - 48;
         this.oTop3 = this.$refs.pro3.offsetTop - 48;

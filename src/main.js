@@ -8,8 +8,6 @@ import { Toast, MessageBox } from 'mint-ui'
 Vue.prototype.$toast = Toast
 Vue.prototype.$messagebox = MessageBox
 
-// window.console.log(MessageBox)
-
 import './styles/index.scss'
 
 import ElementUI from 'element-ui'
