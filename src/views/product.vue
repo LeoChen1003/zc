@@ -1043,7 +1043,6 @@ export default {
         height: 100%;
         margin-left: 9.13rem;
         p:first-child {
-          width: 10.5rem;
           height: 2.06rem;
           font-size: 1.5rem;
           font-weight: 600;
@@ -1190,7 +1189,6 @@ export default {
           margin-top: 2.13rem;
           // margin-top: 8.2%;
           margin-left: 5rem;
-          width: 10.5rem;
           height: 2.07rem;
           font-size: 1.5rem;
           font-weight: 600;

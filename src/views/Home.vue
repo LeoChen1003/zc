@@ -880,9 +880,10 @@
         width: 61rem;
         margin: 0 auto;
         margin-top: 6.63rem;
+        display: flex;
+        justify-content: space-between;
       }
       .home_about_left {
-        float: left;
         div:nth-child(2) {
           font-size: 2rem;
           font-weight: 600;
@@ -892,9 +893,7 @@
       }
 
       .home_about_right {
-        float: left;
         width: 39.31rem;
-        margin-left: 13.69rem;
         span{
           line-height: 1.88rem;
         }

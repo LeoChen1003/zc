@@ -506,7 +506,7 @@ export default {
             font-size:2.5rem;
             font-weight:600;
             color:rgba(255,255,255,1);
-            margin-left: 56%;
+            text-align: right;
             margin-top: 27.5rem;
         }
         .aio_con4_p2{
@@ -861,7 +861,6 @@ export default {
                 margin-top: 0.44rem;
             }
             span{
-                width:5.3rem;
                 height:1.25rem;
                 font-size:0.88rem;
                 font-family:PingFangSC-Semibold,PingFang SC;

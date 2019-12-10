@@ -306,7 +306,7 @@ export default {
             margin: 4.5rem auto 0;
         }
         .core_syt_p1{
-            width: 12.25rem;
+            text-align: center;
             height: 3rem;
             color: #000;
             display: block;
@@ -317,7 +317,7 @@ export default {
             cursor: pointer;
         }
         .core_syt_p2{
-            width: 17rem;
+            text-align: center;
             height: 1.37rem;
             margin: 0 auto;
             margin-top: 0.5rem;
@@ -403,8 +403,8 @@ export default {
             font-weight: 400;
         }
         a:nth-child(2){
+            text-align: center;
             display: block;
-            width: 8.5rem;
             height: 3rem;
             margin: 0 auto;
             font-weight: 600;
@@ -413,7 +413,7 @@ export default {
             color: #fff;
         }
         p:nth-child(3){
-            width: 17rem;
+            text-align: center;
             height: 1.37rem;
             margin: 0 auto;
             margin-top: 1rem;
@@ -490,8 +490,8 @@ export default {
             color: #888888;
         }
         a:nth-child(2){
+            text-align: center;
             display: block;
-            width: 12.75rem;
             height: 3rem;
             font-size: 2.12rem;
             font-weight: 600;
@@ -499,7 +499,7 @@ export default {
             margin: 0.5rem auto 0;
         }
         p:nth-child(3){
-            width: 23rem;
+            text-align: center;
             height: 1.38rem;
             font-size: 1rem;
             margin: 1rem auto 0;
@@ -584,15 +584,15 @@ export default {
         }
         a:nth-child(2){
             display: block;
-            width: 8.5rem;
             height: 3rem;
             font-weight: 600;
             color: #fff;
             margin: 0.5rem auto 0;
             font-size: 2.12rem;
+            text-align: center;
         }
         p:nth-child(3){
-            width: 23rem;
+            text-align: center;
             height: 1.38rem;
             margin: 1rem auto 0;
             font-size: 1rem;
@@ -625,33 +625,30 @@ export default {
             }
         }
         .core_mach_svg{
-            width: 56.19rem;
-            height: 20rem;
+            width: 40.88rem;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             margin: 0 auto;
-            margin-top: 2rem;
+            margin-top: 2.38rem;
             div{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 5rem;
                 .svg{
                     color: #fff;
+                    height: 7.5rem;
+                    width: 7.5rem;
                 }
                 .p1,.p3,.p5{
-                    width:7.88rem;
                     height:1.56rem;
                     font-size:1.12rem;
                     font-weight:600;
                     color:rgba(255,255,255,1);
                 }
-                .p1{
-                    margin-left: 6.5rem;
-                }
-                .p3{
-                    margin-left: 5.7rem;
-                }
-                .p5{
-                    margin-left: 6.6rem;
-                }
                 .p2,.p4,.p6{
+                    height:24px;
                     font-size:14px;
                     font-weight:600;
                     color:rgba(0,0,0,1);
@@ -659,18 +656,7 @@ export default {
                     padding: 0 0.5rem;
                     line-height: 24px;
                     border-radius: 2px;
-                }
-                .p2{
-                    width:126px;
-                    height:24px;
-                }
-                .p4{
-                    width:112px;
-                    height:24px;
-                }
-                .p6{
-                    width:56px;
-                    height:24px;
+                    box-sizing: border-box;
                 }
             }
         }

@@ -1251,7 +1251,6 @@ export default {
         left: 1rem;
       }
       span {
-        width: 5.3rem;
         height: 1.25rem;
         font-size: 0.88rem;
         font-family: PingFangSC-Semibold, PingFang SC;
