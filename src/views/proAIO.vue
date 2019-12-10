@@ -277,11 +277,9 @@ export default {
                 margin-top: 0.88rem;
             }
             a:first-child{
-                width:1.5rem;
                 font-weight:600;
             }
             a:nth-child(2){
-                width: 3rem;
                 font-weight: 400;
                 margin-left: 1.5rem;
             }
