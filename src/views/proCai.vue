@@ -387,12 +387,10 @@ export default {
         margin-top: 0.88rem;
       }
       span{
-        width: 1.5rem;
         font-weight: 600;
         // margin-left: 11%;
       }
       a{
-        width: 3rem;
         font-weight: 400;
         margin-left: 1.5rem;
       }
