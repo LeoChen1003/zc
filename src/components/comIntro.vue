@@ -149,6 +149,8 @@ export default {
         width: 0.68rem;
         height: 0.68rem;
         border-radius: 50%;
+        top: 4.56px;
+        left: 4.56px;
       }
     }
     .el-timeline-item__wrapper {

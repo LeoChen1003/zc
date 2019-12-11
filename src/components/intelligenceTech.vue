@@ -138,12 +138,13 @@ export default {
             overflow: hidden;
             border-radius: 0.62rem 0.62rem 0 0;
             p:first-child{
-                width:8.5rem;
+                // width:8.5rem;
                 height:3rem;
                 font-size:2.12rem;
                 font-weight:600;
                 color:#fff;
                 margin: 14.44rem auto 0;
+                text-align: center;
             }
             p:nth-child(2){
                 width: 17rem;
@@ -165,7 +166,7 @@ export default {
             .tech_con_cen1_l{
                 background-color: #fff;
                 p:first-child{
-                    width:9.75rem;
+                    // width:9.75rem;
                     height:2.31rem;
                     font-size:1.62rem;
                     font-weight:600;

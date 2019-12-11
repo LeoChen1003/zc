@@ -116,7 +116,7 @@ export default {
       .data_con_cen1_l {
         background-color: #fff;
         p:first-child {
-          width: 9.75rem;
+          // width: 9.75rem;
           height: 2.31rem;
           font-size: 1.62rem;
           font-weight: 600;
@@ -148,7 +148,7 @@ export default {
       .data_con_cen2_r {
         background-color: #fff;
         p:first-child {
-          width: 9.75rem;
+          // width: 9.75rem;
           height: 2.31rem;
           font-size: 1.62rem;
           font-weight: 600;

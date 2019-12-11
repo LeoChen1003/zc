@@ -163,7 +163,7 @@ export default {
             .star_con_cen1_l{
                 background-color: #fff;
                 p:first-child{
-                    width:11.37rem;
+                    // width:11.37rem;
                     height:2.32rem;
                     font-size:1.62rem;
                     font-weight:600;
@@ -194,8 +194,6 @@ export default {
             .star_con_cen2_r{
                 background-color: #fff;
                 p:first-child{
-                    width:11.37rem;
-                    height:2.32rem;
                     font-size:1.62rem;
                     font-weight:600;
                     color:#000;
@@ -225,7 +223,6 @@ export default {
             .star_con_cen3_r{
                 background-color: #fff;
                 p:first-child{
-                    width:11.37rem;
                     height:2.32rem;
                     font-size:1.62rem;
                     font-weight:600;
@@ -256,7 +253,6 @@ export default {
             .star_con_cen4_r{
                 background-color: #fff;
                 p:first-child{
-                    width:11.37rem;
                     height:2.32rem;
                     font-size:1.62rem;
                     font-weight:600;

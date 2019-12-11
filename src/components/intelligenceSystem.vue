@@ -136,7 +136,7 @@ export default {
                     }
                     .p1{
                         z-index: 1;
-                        width: 12.25rem;
+                        // width: 12.25rem;
                         height: 3rem;
                         font-weight: 600;
                         color: #000;

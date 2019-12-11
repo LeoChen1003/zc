@@ -124,7 +124,7 @@ export default {
             .mach_con_cen1_l{
                 background-color: #fff;
                 p:first-child{
-                    width:8.12rem;
+                    // width:8.12rem;
                     height:2.31rem;
                     font-size:1.62rem;
                     font-weight:600;
@@ -155,7 +155,7 @@ export default {
             .mach_con_cen2_r{
                 background-color: #fff;
                 p:first-child{
-                    width:8.12rem;
+                    // width:8.12rem;
                     height:2.31rem;
                     font-size:1.62rem;
                     font-weight:600;
