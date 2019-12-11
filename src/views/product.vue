@@ -15,11 +15,11 @@
           <div class="pro_con1_l">
             <div class="pro_con1_l_tag" @click="proCai">旗舰</div>
             <span class="p1" @click="proCai">“星级大厨”带你体验舌尖上的美味</span>
-            <span class="p2" @click="proCai">智能一拖三炒菜机</span>
+            <span class="p2" @click="proCai">智能大滚筒炒菜机套机</span>
             <span
               class="p3"
               @click="proCai"
-            >智能一拖三炒菜机是高度集成优特智厨智能厨电技术，在行业率先实现自动喷投多种类型调料，同时满足中餐标准化和规模化的烹饪要求的智能炒菜设备。</span>
+            >智能大滚筒炒菜机套机是高度集成优特智厨智能厨电技术，在行业率先实现自动喷投多种类型调料，同时满足中餐标准化和规模化的烹饪要求的智能炒菜设备。</span>
             <div class="pro_con1_l_btn">
               <div class="pro_con1_l_btn_1" @click="buy">立即预约</div>
               <div class="pro_con1_l_btn_2" @click="proCai">

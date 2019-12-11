@@ -52,7 +52,7 @@
       </div>
     </div>
     <div class="detail_3">
-      <div class="tag">智能一拖三炒菜机</div>
+      <div class="tag">智能大滚筒炒菜机套机</div>
       <div class="slogan">
         复刻星厨技艺，<br />
         稳定出菜品质，<br />
@@ -411,7 +411,7 @@ export default {
   background-position: 100% 100%;
 
   .tag {
-    width: 6.5rem;
+    width: 8rem;
     height: 1.38rem;
     background: rgba(44, 198, 192, 1);
     border-radius: 0.19rem;

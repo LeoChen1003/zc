@@ -73,7 +73,7 @@
       </div>
       <div class="cai_con3">
         <div class="cai_con3_center">
-        <div class="cai_con2_title">智能一拖三炒菜机</div>
+        <div class="cai_con2_title">智能大滚筒炒菜机套机</div>
         <p>
           复刻星厨技艺，
           <br />稳定出菜品质，
@@ -592,7 +592,7 @@ export default {
       margin: 0 auto;
     }
     .cai_con2_title {
-      width: 8rem;
+      width: 10rem;
       height: 1.5rem;
       background: #2cc6c0;
       border-radius: 0.19rem;
