@@ -26,30 +26,30 @@
             </div>
             <div class="aio_specs_txt">
                 <span>产品参数</span>
-                <p>型号：SZZNYTJ-1B<br>
-                额定功率：8200W<br>
-                电源电压：220V/50HZ<br>
-                整机尺寸：900*650*1505mm<br>
-                净重：110kg<br>
-                配置：内嵌抽油烟机</p>
+                <p>产品型号：DZZNYTJ-1A<br>
+                    额定电压：220V-/50Hz<br>
+                    额定输入功率：4500W<br>
+                    整机尺寸：600*600*1515mm<br>
+                    净重：90Kg<br>配置：内嵌抽油烟机
+                    </p>
             </div>
             <div class="aio_specs_txt">
                 <span>产品参数</span>
-                <p>型号：SZZNYTJ-1A<br>
-                额定功率：6700W<br>
-                电源电压：220V/50HZ<br>
-                整机尺寸：900*650*1505mm<br>
-                净重：115kg<br>
+                <p>产品型号：SZZNYTJ-1A<br>
+                额定输出功率：6700W<br>
+                额定电压：220V-/50Hz<br>
+                整机尺寸：900*600*1515mm<br>
+                净重：115Kg<br>
                 配置：内嵌抽油烟机</p>
             </div>
             <div class="aio_specs_txt aio_last">
                 <span>产品参数</span>
-                <p>型号：DZZNYTJ-1A<br>
-                    额定功率：4500W<br>
-                    电源电压：220V/50HZ<br>
-                    整机尺寸：900*650*1505mm<br>
-                    净重：90kg<br>
-                    配置：内嵌抽油烟机</p>
+                <p>产品型号：SZZNYTJ-2A<br>
+                    额定输出功率：8200W<br>
+                    额定电压：220V-/50Hz<br>
+                    整机尺寸：900*650*1515mm<br>
+                    配置：内嵌油烟机
+                    </p>
             </div>
         </div>
         <transition name="fade">

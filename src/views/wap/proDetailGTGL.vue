@@ -9,7 +9,8 @@
     ></GTHeader>
     <div class="detail_1">
       <div class="top_title">“星级大厨”带你体验舌尖上的美味</div>
-      <div class="title">智能大滚筒炒菜机套机</div>
+      <div class="title">智能大滚筒炒菜机套机
+</div>
       <div class="tip">
         智能云菜谱 | 智能大滚筒炒菜机 | 中控任务管理 | 智能调料机 | 气压站
       </div>
@@ -64,13 +65,13 @@
         <div class="data_box">
           <div class="box_item">
             <div class="data">100%</div>
-            <div class="comment">厨艺还原</div>
+            <div class="comment">烹饪流程复制</div>
           </div>
         </div>
         <div class="data_box">
           <div class="box_item">
-            <div class="data">标准化</div>
-            <div class="comment">出菜品质</div>
+            <div class="data">1:1</div>
+            <div class="comment">菜品保真还原</div>
           </div>
         </div>
       </div>
@@ -78,7 +79,7 @@
     <div class="detail_3 detail_4">
       <div class="slogan">按需组合，提高产能。</div>
       <div class="intro2">
-        一名操作工可以同时操作三台设备，一拖三效率更高18KW超大功率，球釜内锅立体环绕加热0-150°智能调节位置，4档火力自动控制3-5分钟轻松出菜5Kg，一小时可以出菜450份根据厨房空间可2-3工位自由组合选择。
+        一名操作工可同时操作三台设备。功率最高可达18KW，球釜内锅立体环绕加热，4档火力自动调节。3-5分钟最高出菜15Kg，1小时轻松出菜450份。根据厨房空间，2-3工位自由组合选择。
       </div>
       <div class="data_content">
         <div class="data_box">
@@ -87,7 +88,7 @@
             <div class="comment">平均每份菜</div>
           </div>
           <div class="box_item">
-            <div class="data">180KW</div>
+            <div class="data">18KW</div>
             <div class="comment">超大功率</div>
           </div>
         </div>

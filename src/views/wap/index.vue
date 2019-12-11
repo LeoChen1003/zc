@@ -2,9 +2,9 @@
 <template>
   <div class="wrapper wap_index">
     <div class="cell cell-1">
-      <div class="title-1">优特智厨</div>
-      <div class="title-2">人工智能时代的餐饮革命</div>
-      <div class="title-3">以智能解构中餐，用科技为餐饮业赋能</div>
+      <!-- <div class="title-1">优特智厨</div> -->
+      <div class="title-2">智慧餐饮整体解决方案生态平台，致力中餐标准化，把中餐推向全球</div>
+      <div class="title-3">用机器智造大师级风味菜，立志成为厨电界爱因斯坦</div>
       <div class="video-box">
         <div class="view-text" style="margin-right:30px;">观</div>
         <div class="view-text">看</div>
@@ -17,20 +17,21 @@
     </div>
     <div class="cell cell-2">
       <div class="info-box">
-        <div class="title">更高效</div>
-        <div class="sub-title">后厨员工提效 :</div>
-        <div class="number">600<span>%</span></div>
-        <div class="bottom">1个小工可以替代3位大厨</div>
+        <div class="title">员工更高效</div>
+        <div class="sub-title">人员提效 :</div>
+        <div class="number">300<span>%</span></div>
+        <div class="bottom">1位小工即可代替3位大厨职能</div>
       </div>
       <div class="info-box">
-        <div class="title">更专业</div>
-        <div class="sub-title">专利及专利申请 :</div>
+        <div class="title">资质更优越</div>
+        <div class="sub-title">专利申请 :</div>
         <div class="number">522<span>件</span></div>
-        <div class="bottom">专利多显得我们专业牛逼啊</div>
+        <div class="bottom">超过50%以上的行业水平</div>
       </div>
       <div class="info-box">
-        <div class="title">更丰富</div>
-        <div class="sub-title">云菜谱数量 :</div>
+        <div class="title">
+菜谱更丰富</div>
+        <div class="sub-title">设备云储菜谱 :</div>
         <div class="number">
           1000
           <span style="margin-left:0;">
@@ -38,13 +39,14 @@
             <svg-icon icon-class="up1" class="number_svg"></svg-icon>
           </span>
         </div>
-        <div class="bottom">1台设备拥有20名大厨的手艺</div>
+        <div class="bottom">1台设备=20名大厨手艺</div>
       </div>
       <div class="info-box">
-        <div class="title">更标准</div>
-        <div class="sub-title">菜肴口味还原度 :</div>
+        <div class="title">口味更标准</div>
+        <div class="sub-title">菜品还原度高达 :</div>
         <div class="number">99.9<span>%</span></div>
-        <div class="bottom">精准投料智能控温还原菜肴</div>
+        <div class="bottom">精准投料智能控温
+</div>
       </div>
     </div>
     <div class="cell cell-4" @click="$router.push('/wap/proDetailGTGL')">
@@ -311,6 +313,7 @@ export default {
     color: rgba(255, 255, 255, 1);
     line-height: 1.75rem;
     margin-bottom: 1.8rem;
+    padding: 0 40px;
   }
 
   .title-3 {

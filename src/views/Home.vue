@@ -7,8 +7,8 @@
     </div>
     <div class="home_mask" ref="homeMask" :style="`height:${height1}px;`"></div>
     <div class="home_video" ref="homeVideo" :style="`height:${height1}px;`">
-      <div class="home_video_title">优特智厨 人工智能时代的餐饮革命</div>
-      <div class="home_video_p">以智能解构中餐，用科技为餐饮业赋能</div>
+      <div class="home_video_title">智慧餐饮整体解决方案生态平台，致力中餐标准化，把中餐推向全球</div>
+      <div class="home_video_p">用机器智造大师级风味菜，立志成为厨电界爱因斯坦</div>
       <div class="home_video_c">
         <div>
           <span>观</span>
@@ -32,28 +32,28 @@
     <div class="home_data" :style="`height:${height2}px;`">
       <div class="home_data_items">
         <div class="home_data_item">
-          <div>更高效</div>
-          <div>后厨员工提效 :</div>
+          <div>员工更高效</div>
+          <div>人员提效 :</div>
           <div><span>300</span> %</div>
-          <div>1 个小工可以替代 3 位大厨</div>
+          <div>1位小工即可代替3位大厨职能</div>
         </div>
         <div class="home_data_item">
-          <div>更专业</div>
-          <div>专利及专利申请 :</div>
+          <div>资质更优越</div>
+          <div>专利申请 :</div>
           <div><span>522</span> 件</div>
-          <div>远超行业平均水平</div>
+          <div>超过50%以上的行业水平</div>
         </div>
         <div class="home_data_item">
-          <div>更丰富</div>
-          <div>云菜谱数量 :</div>
+          <div>菜谱更丰富</div>
+          <div>设备云储菜谱 :</div>
           <div><span>1000</span> 道<svg-icon icon-class="up1" class="svg"></svg-icon></div>
-          <div>1 台设备拥有 20 名大厨的手艺</div>
+          <div>1台设备=20名大厨手艺</div>
         </div>
         <div class="home_data_item">
-          <div>更标准</div>
-          <div>菜肴口味还原度 :</div>
+          <div>口味更标准</div>
+          <div>菜品还原度高达 :</div>
           <div><span>99.9</span> %</div>
-          <div>精准投料智能控温还原菜肴</div>
+          <div>精准投料智能控温</div>
         </div>
       </div>
     </div>
@@ -407,9 +407,12 @@
       .home_video_title {
         font-size: 3.13rem;
         font-weight: 600;
+        width: 51rem;
+        text-align: center;
         color: #fff;
         // margin-top: 12.5rem;
-        margin-top: 12%;
+        // margin-top: 12%;
+        margin-top: 10%;
       }
 
       .home_video_p {
