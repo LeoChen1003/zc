@@ -2,7 +2,7 @@
   <div class="video">
     <div class="video_center">
       <div>
-        <video src="http://cdn.withpush.cn/youtezhichu/result.pc.mp4" class="shipin" controls></video>
+        <video src="http://cdn.withpush.cn/youtezhichu/result.pc.mp4" class="shipin" controls autoplay></video>
       </div>
       <div class="close" @click="goBack">
         <svg-icon icon-class="close1" class-name="svg_close"></svg-icon>
@@ -30,12 +30,12 @@ export default {
   display: flex;
   justify-content: center;
   // position: relative;
-  overflow: hidden;
+  overflow: auto;
   .video_center {
     width: 61.25rem;
     height: 34.37rem;
     position: relative;
-    margin: 0 auto;
+    // margin: 0 auto;
     margin-top: 9rem;
     // // float: left;
     // div:first-child{
