@@ -31,10 +31,7 @@ import wapvideo from '../views/wap/video'
 Vue.use(VueRouter)
 
 const routes = [
-  {
-    path:'/dsmall/public/index.php',
-    redirect:'/'
-  },
+  { path: "*", redirect: "/" },
   {
     path: '/',
     name: 'home',
