@@ -100,7 +100,8 @@ export default {
                 margin: 14.44rem auto 0;
             }
             p:nth-child(2){
-                width:9rem;
+                // width:9rem;
+                text-align: center;
                 height:1.38rem;
                 font-size:1rem;
                 font-weight:400;

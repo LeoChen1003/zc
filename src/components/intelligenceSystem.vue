@@ -147,7 +147,7 @@ export default {
                     }
                     .p2{
                         z-index: 1;
-                        width: 17rem;
+                        // width: 17rem;
                         height: 1.38rem;
                         float: left;
                         margin-top: -9.38rem;

@@ -450,9 +450,10 @@ export default {
     }
     .cai_con1_tip {
         font-size: 0.88rem;
-        width: 35rem;
+        // width: 35rem;
+        text-align: center;
         color: #333;
-        margin: 0 auto;
+        // margin: 0 auto;
         margin-top: 1rem;
         .cai_con1_tip_line {
           color: #ccc;

@@ -673,7 +673,8 @@ export default {
         }
         a:nth-child(2){
             display: block;
-            width: 16.81rem;
+            // width: 16.81rem;
+            text-align: center;
             height: 3rem;
             font-weight: 600;
             font-size: 2.12rem;

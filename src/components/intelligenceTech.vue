@@ -147,7 +147,8 @@ export default {
                 text-align: center;
             }
             p:nth-child(2){
-                width: 17rem;
+                // width: 17rem;
+                text-align: center;
                 height: 1.37rem;
                 font-size: 1rem;
                 font-weight:400;
@@ -197,7 +198,7 @@ export default {
             .tech_con_cen2_r{
                 background-color: #fff;
                 p:first-child{
-                    width:9.75rem;
+                    // width:9.75rem;
                     height:2.31rem;
                     font-size:1.62rem;
                     font-weight:600;
