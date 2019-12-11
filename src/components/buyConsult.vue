@@ -248,7 +248,7 @@ export default {
         position: absolute;
         width: 3rem;
         height: 3rem;
-        top: 7rem;
+        top: 8%;
         right: -4rem;
         .svg_close{
             width: 3rem;
@@ -260,7 +260,10 @@ export default {
         height:2.5rem;
         font-size:1.75rem;
         font-weight:600;
-        margin: 7.5rem auto 0;
+        // margin: 3.5rem auto 0;
+        margin: 0 auto;
+        color: black;
+        margin-top: 8%;
     }
     .p2{
         text-align: center;

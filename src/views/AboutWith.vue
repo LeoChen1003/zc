@@ -161,9 +161,11 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    span{
+      cursor: pointer;
+    }
     span:not(:first-child) {
       margin-left: 3rem;
-      cursor: pointer;
     }
     .bolder {
       font-weight: 600;

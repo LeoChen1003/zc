@@ -507,7 +507,7 @@ export default {
       position: relative;
       p {
         cursor: pointer;
-        width: 3.5rem;
+        width: 4rem;
         height: 1.25rem;
         font-size: 0.87rem;
         color: #000;
