@@ -57,7 +57,7 @@
             <div class="showPro_r1">
               <div class="showPro_r1_cai" @click="cai">
                 <svg-icon icon-class="header_cai" class-name="icon"></svg-icon>
-                <p>智能一拖三炒菜机</p>
+                <p>智能大滚筒炒菜机套机</p>
                 <p>旗舰</p>
               </div>
               <div class="showPro_r1_AIO" @click="aio">
@@ -634,31 +634,34 @@ export default {
         .showPro_r1_cai,
         .showPro_r1_AIO {
           float: left;
-          width: 12rem;
+          // width: 12rem;
           height: 100%;
           cursor: pointer;
+          margin-left: 6rem;
           .icon {
             display: block;
             width: 7.5rem;
             height: 7.5rem;
+            margin: 0 auto;
             margin-top: 3.44rem;
-            margin-left: 4.5rem;
+            // margin-left: 4.5rem;
           }
           p:nth-child(2) {
             font-size: 0.87rem;
             font-weight: 400;
             color: rgba(51, 51, 51, 1);
-            margin-left: 5rem;
+            // margin-left: 5rem;
+            text-align: center;
           }
           p:nth-child(3) {
-            width: 1.5rem;
+            // width: 1.5rem;
             height: 1.07rem;
             font-size: 0.75rem;
             font-weight: 400;
             color: rgba(44, 198, 192, 1);
             line-height: 1.07rem;
             text-align: center;
-            margin-left: 7.5rem;
+            // margin-left: 7.5rem;
           }
           .showPro_r1_AIO {
             p:nth-child(2) {

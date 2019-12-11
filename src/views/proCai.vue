@@ -16,7 +16,7 @@
       </div>
       <div class="cai_con1" :style="`height:${height1}px;`">
         <p>“星级大厨”带你体验舌尖上的美味</p>
-        <p>智能一拖三炒菜机</p>
+        <p>智能大滚筒炒菜机套机</p>
         <div class="cai_con1_tip">
             <span>智能云菜谱</span>
             <span class="cai_con1_tip_line">|</span>
@@ -83,12 +83,12 @@
         <div class="cai_con3_box">
           <div class="cai_con3_item">
             <span>100%</span>
-            <span>标准化</span>
+            <span>烹饪流程复制</span>
             <br />
           </div>
           <div class="cai_con3_item">
-            <span>厨艺还原</span>
-            <span>出菜品质</span>
+            <span>1 : 1</span>
+            <span>菜品保真还原</span>
           </div>
         </div>
         <div class="cai_con3_pic">
@@ -100,7 +100,9 @@
         <p class="p1">按需组合，提高产能。</p>
         <p
           class="p2"
-        >一名操作工可以同时操作三台设备，一拖三效率更高18KW超大功率，球釜内锅立体环绕加热0-150°智能调节位置，4档火力自动控制3-5分钟轻松出菜5Kg，一小时可以出菜450份根据厨房空间可2-3工位自由组合选择。</p>
+        >一名操作工可同时操作三台设备。功率最高可达18KW，球釜内锅立体环绕加热，4档火力自动调节。
+3-5分钟最高出菜15Kg，1小时轻松出菜450份。
+根据厨房空间，2-3工位自由组合选择。</p>
         <div class="cai_con4_text1">
           <p>4分钟</p>
           <p>平均每份菜</p>
@@ -110,7 +112,7 @@
           <p>测试标准</p>
         </div>
         <div class="cai_con4_text3">
-          <p>180KW</p>
+          <p>18KW</p>
           <p>超大功率</p>
         </div>
         <div class="cai_con4_text4">
