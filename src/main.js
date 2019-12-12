@@ -2,11 +2,13 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import MetaInfo from 'vue-meta-info'
 
 import { Toast, MessageBox } from 'mint-ui'
 
 Vue.prototype.$toast = Toast
 Vue.prototype.$messagebox = MessageBox
+Vue.use(MetaInfo)
 
 import './styles/index.scss'
 

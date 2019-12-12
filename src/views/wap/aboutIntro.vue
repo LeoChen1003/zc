@@ -64,6 +64,13 @@ import AboutChose from './compontents/aboutChose'
 export default {
   //import引入的组件需要注入到对象中才能使用
   components: { AboutChose },
+  metaInfo:{
+    title:"关于我们 - 优特智厨",
+    meta:[{
+      name:'description',
+      content: '优特深耕电力安全领域30年,将综合自动化、智能化应用于电力、石化及轨道交通行业,覆盖三万座发电厂及变电站。在智能领域浸淫30多年，优特集团成立优特智厨科技有限公司，正式涉足餐饮领域，通过智能化与自动化，以智能解构中餐，推行中餐标准化，用科技为餐饮业赋能。'
+    }]
+  },
   data() {
     return {
       activities: [

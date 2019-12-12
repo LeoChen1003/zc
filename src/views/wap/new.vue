@@ -62,6 +62,13 @@ import request from '@/utils/request.js'
 
 let self
 export default {
+  metaInfo:{
+      title:'新闻中心 - 优特智厨',
+      meta:[{
+        name:'keywords',
+        content:'新闻中心'
+      }]
+    },
   //import引入的组件需要注入到对象中才能使用
   components: {},
   data() {

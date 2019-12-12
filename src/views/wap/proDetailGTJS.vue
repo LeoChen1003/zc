@@ -160,6 +160,13 @@ import GTHeader from './compontents/GTHeader'
 
 let self
 export default {
+  metaInfo:{
+      title:'智能大滚筒炒菜机套机 - 优特智厨',
+      meta:[{
+        name:'keywords',
+        content:'智能云菜谱 智能大滚筒炒菜机 中控任务管理 智能调料机 气压站'
+      }]
+    },
   //import引入的组件需要注入到对象中才能使用
   components: { GTHeader },
   data() {

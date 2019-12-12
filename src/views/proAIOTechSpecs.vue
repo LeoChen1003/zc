@@ -67,6 +67,13 @@ import '../styles/variables.scss';
 import buyConsult from '@/components/buyConsult.vue';
 export default {
     name: 'proAIOTechSpecs',
+    metaInfo:{
+      title:'智能精炒一体机 - 优特智厨',
+      meta:[{
+        name:'description',
+        content:'超级烹饪专家 智能精炒一体机 三合一体，中高级餐饮店的御用超级“厨神”'
+      }]
+    },
     components:{
         zcHeader,
         zcFooter,

@@ -209,6 +209,13 @@ import request from '@/utils/request.js'
 
 let self
 export default {
+  metaInfo:{
+      title:'优特智厨 - 官方网站',
+      meta:[{
+        name:'description',
+        content:'智慧餐饮整体解决方案生态平台，致力中餐标准化，把中餐推向全球'
+      }]
+    },
   data() {
     return {
       swiperOption: {

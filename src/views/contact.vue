@@ -90,6 +90,13 @@ import zcFooter from '@/components/zcFooter.vue';
 import request from '@/utils/request.js';
 export default {
     name: 'contact',
+    metaInfo:{
+        title:'联系我们 - 优特智厨',
+        meta:[{
+            name:'description',
+            content:'订购咨询 填写并提交以下信息，我们的工作人员将在2个工作日内与您联系'
+        }]
+    },
     data(){
         return {
             selectDisplay : 'none',

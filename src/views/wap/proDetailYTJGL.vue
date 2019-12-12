@@ -197,6 +197,13 @@ import reservationBtn from './compontents/reservationBtn'
 
 let self
 export default {
+  metaInfo:{
+      title:'智能精炒一体机 - 优特智厨',
+      meta:[{
+        name:'description',
+        content:'超级烹饪专家 智能精炒一体机 三合一体，中高级餐饮店的御用超级“厨神”'
+      }]
+    },
   //import引入的组件需要注入到对象中才能使用
   components: { GTHeader, reservationBtn },
   data() {

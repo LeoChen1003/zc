@@ -31,6 +31,13 @@ import '../styles/variables.scss';
 import request from '@/utils/request.js';
 export default {
     name: 'newDetail1',
+    metaInfo:{
+      title:'新闻中心 - 优特智厨',
+      meta:[{
+        name:'keywords',
+        content:'新闻中心'
+      }]
+    },
     data(){
         return {
             info:{},

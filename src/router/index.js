@@ -112,7 +112,7 @@ const routes = [
         name: '产品中心',
         component: wapProductCenter
       },
-      {
+      { 
         path: 'proDetailGTGL',
         meta: {
           pcPath: '/product/proCai',
@@ -260,7 +260,7 @@ const routes = [
     meta: {
       pcPath: '/product/proCai',
       mobilePath: '/wap/proDetailGTGL',
-      title: '智能一拖三炒菜机 - 优特智厨'
+      title: '智能大滚筒炒菜机套机 - 优特智厨'
     },
     component: proCai
   },
@@ -279,7 +279,7 @@ const routes = [
     meta: {
       pcPath: '/product/proCai/proCaiTechSpecs',
       mobilePath: '/wap/proDetailGTJS',
-      title: '智能一拖三炒菜机 - 优特智厨'
+      title: '智能大滚筒炒菜机套机 - 优特智厨'
     },
     name: 'proCaiTechSpecs',
     component: proCaiTechSpecs

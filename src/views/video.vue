@@ -13,6 +13,13 @@
 
 <script>
 export default {
+  metaInfo:{
+      title:'优特智厨 - 官方网站',
+      meta:[{
+        name:'keywords',
+        content:'视频'
+      }]
+    },
   methods: {
     goBack() {
       this.$router.go(-1);

@@ -265,6 +265,13 @@ import "../styles/variables.scss";
 import buyConsult from "@/components/buyConsult.vue";
 export default {
   name: "proCai",
+  metaInfo:{
+      title:'智能大滚筒炒菜机套机 - 优特智厨',
+      meta:[{
+        name:'description',
+        content:'云端录入五星大厨烹饪技艺，100%复刻星厨技艺，小工也能替代大厨标准化操作流程，标准化计量控制，统一出菜品质减少后厨培训，降低多门店管理的成本自主录入菜谱，一键加密同步多门店，新菜品快速复制同步。'
+      }]
+  },
   components: {
     zcHeader,
     zcFooter,

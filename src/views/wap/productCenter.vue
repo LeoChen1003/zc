@@ -145,6 +145,13 @@
 import reservationBtn from './compontents/reservationBtn'
 
 export default {
+   metaInfo:{
+      title:'产品中心 - 优特智厨',
+      meta:[{
+        name:'keywords',
+        content:'旗舰智厨产品 更多智厨产品 其他智能产品'
+      }]
+    },
   components: {
     reservationBtn
   },

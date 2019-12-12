@@ -189,6 +189,13 @@ import request from '@/utils/request.js'
 export default {
   //import引入的组件需要注入到对象中才能使用
   components: {},
+  metaInfo:{
+        title:'联系我们 - 优特智厨',
+        meta:[{
+            name:'description',
+            content:'订购咨询 填写并提交以下信息，我们的工作人员将在2个工作日内与您联系'
+        }]
+    },
   data() {
     return {
       selectDisplay: 'none',

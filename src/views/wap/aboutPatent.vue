@@ -23,6 +23,13 @@ import AboutChose from './compontents/aboutChose'
 export default {
   //import引入的组件需要注入到对象中才能使用
   components: { AboutChose },
+  metaInfo:{
+    title:"关于我们 - 优特智厨",
+    meta:[{
+      name:'description',
+      content: '发明专利'
+    }]
+  },
   data() {
     return {}
   },

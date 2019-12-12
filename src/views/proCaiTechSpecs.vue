@@ -136,6 +136,13 @@ import buyConsult from '@/components/buyConsult.vue';
 let self;
 export default {
     name: 'proCaiTechSpecs',
+    metaInfo:{
+      title:'智能大滚筒炒菜机套机 - 优特智厨',
+      meta:[{
+        name:'keywords',
+        content:'智能云菜谱 智能大滚筒炒菜机 中控任务管理 智能调料机 气压站'
+      }]
+    },
     data(){
         return {
             isActive:false,

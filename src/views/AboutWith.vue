@@ -29,6 +29,13 @@ import inven from "@/components/invention.vue";
 import "../styles/variables.scss";
 export default {
   name: "with",
+  metaInfo:{
+    title:"关于我们 - 优特智厨",
+    meta:[{
+      name:'keywords',
+      content: '优特智厨 关于我们 企业介绍 专利发明 实验室'
+    }]
+  },
   data() {
     return {
       currentTab: "comIntro",

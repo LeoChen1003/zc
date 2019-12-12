@@ -456,6 +456,13 @@
 
 let self
 export default {
+  metaInfo:{
+        title:'核心优势 - 优特智厨',
+        meta:[{
+            name:'keywords',
+            content:'核心优势 智能系统OS 智能技术 智能数据管控 智能配件 7星尊享服务体系'
+        }]
+    },
   //import引入的组件需要注入到对象中才能使用
   components: {},
   data() {

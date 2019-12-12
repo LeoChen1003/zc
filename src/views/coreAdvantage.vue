@@ -193,6 +193,13 @@ import systemModel from '@/components/intelligenceSystem'
 import '../styles/variables.scss';
 export default {
     name: "coreAdvan",
+    metaInfo:{
+        title:'核心优势 - 优特智厨',
+        meta:[{
+            name:'keywords',
+            content:'核心优势 智能系统OS 智能技术 智能数据管控 智能配件 7星尊享服务体系'
+        }]
+    },
     data(){
         return {
             tab:0,

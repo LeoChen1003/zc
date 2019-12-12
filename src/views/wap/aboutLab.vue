@@ -35,6 +35,13 @@ import AboutChose from './compontents/aboutChose'
 export default {
   //import引入的组件需要注入到对象中才能使用
   components: { AboutChose },
+  metaInfo:{
+    title:"关于我们 - 优特智厨",
+    meta:[{
+      name:'description',
+      content: '获得国家认可委员会实验室认可。严格执行检验标准、规划，确保检测方法的科学性。引入LVO2HC4:358SHIYAN 实验室管理体系，达标国际级标准。'
+    }]
+  },
   data() {
     return {}
   },
