@@ -265,7 +265,6 @@
               if (self.$refs.indexswiper.swiper) {
                 self.curIndex = self.$refs.indexswiper.swiper.activeIndex
               }
-
             }
           }
         },

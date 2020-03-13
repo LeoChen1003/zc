@@ -18,7 +18,7 @@ Vue.use(ElementUI)
 
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 Vue.use(VueAwesomeSwiper /* { default global options } */)
-import 'swiper/dist/css/swiper.css'
+import 'swiper/dist/css/swiper.css' 
 
 import './icons' // icon
 
